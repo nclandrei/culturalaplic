@@ -65,8 +65,11 @@ def parse_json_event(data: dict) -> Event | None:
         venue = f"Teatrul Bulandra - {sala_name}"
         
         buttons = data.get("buttons", {})
-        main_btn = buttons.get("main", {})
-        custom_url = main_btn.get("custom_url")
+        if isinstance(buttons, dict):
+            main_btn = buttons.get("main", {})
+            custom_url = main_btn.get("custom_url") if isinstance(main_btn, dict) else None
+        else:
+            custom_url = None
         permalink = data.get("permalink", "")
         
         if custom_url:
