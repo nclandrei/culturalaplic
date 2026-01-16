@@ -3,9 +3,11 @@
 
 import json
 import os
+import traceback
 from dataclasses import asdict
 from datetime import datetime, timedelta
 from pathlib import Path
+from types import ModuleType
 
 from rapidfuzz import fuzz
 
@@ -14,18 +16,37 @@ from scrapers.culture import arcub, mnac
 from scrapers.music import control, expirat, iabilet, jfr, quantic
 from scrapers.theatre import bulandra
 from services.dedup import llm_dedup, stage1_dedup
-from services.email import send_digest
+from services.email import ScraperError, send_digest, send_scraper_alert
 from services.spotify import get_followed_artists, normalize
 
 DATA_DIR = Path(__file__).parent / "data"
 RETENTION_DAYS = 7
+
+scraper_errors: list[ScraperError] = []
+
+
+def run_scraper_safely(scraper: ModuleType) -> list[Event]:
+    """Run a single scraper, catching and recording any errors."""
+    scraper_name = scraper.__name__.split(".")[-1]
+    try:
+        return scraper.scrape()
+    except Exception as e:
+        tb = traceback.format_exc()
+        error = ScraperError(
+            scraper_name=scraper_name,
+            error_message=str(e),
+            traceback=tb,
+        )
+        scraper_errors.append(error)
+        print(f"⚠️  Scraper '{scraper_name}' failed: {e}")
+        return []
 
 
 def run_music_scrapers() -> list[Event]:
     """Run all music scrapers and collect events."""
     events: list[Event] = []
     for scraper in [iabilet, control, expirat, quantic, jfr]:
-        events.extend(scraper.scrape())
+        events.extend(run_scraper_safely(scraper))
     return events
 
 
@@ -33,7 +54,7 @@ def run_theatre_scrapers() -> list[Event]:
     """Run all theatre scrapers and collect events."""
     events: list[Event] = []
     for scraper in [bulandra]:
-        events.extend(scraper.scrape())
+        events.extend(run_scraper_safely(scraper))
     return events
 
 
@@ -41,7 +62,7 @@ def run_culture_scrapers() -> list[Event]:
     """Run all culture scrapers and collect events."""
     events: list[Event] = []
     for scraper in [arcub, mnac]:
-        events.extend(scraper.scrape())
+        events.extend(run_scraper_safely(scraper))
     return events
 
 
@@ -186,6 +207,15 @@ def main() -> None:
 
     print("Cleaning up old files...")
     cleanup_old_files()
+
+    if scraper_errors:
+        print(f"Sending alert for {len(scraper_errors)} failed scraper(s)...")
+        to_email = os.environ.get("NOTIFY_EMAIL", "")
+        if to_email:
+            send_scraper_alert(scraper_errors, to_email)
+            print("Alert sent!")
+        else:
+            print("NOTIFY_EMAIL not set, skipping alert")
 
     print("Done!")
 

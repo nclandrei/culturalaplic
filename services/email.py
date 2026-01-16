@@ -1,8 +1,50 @@
 import os
+import traceback
+from dataclasses import dataclass
 
 import resend
 
 from models import Event
+
+
+@dataclass
+class ScraperError:
+    """Represents a scraper failure."""
+
+    scraper_name: str
+    error_message: str
+    traceback: str
+
+
+def send_scraper_alert(errors: list[ScraperError], to_email: str) -> None:
+    """Send an alert email when scrapers fail."""
+    if not errors:
+        return
+
+    resend.api_key = os.environ["RESEND_API_KEY"]
+
+    subject = f"🚨 GigRadar Alert: {len(errors)} scraper(s) failed"
+
+    body_parts = [
+        "# Scraper Failures\n",
+        "The following scrapers failed and may need attention:\n",
+    ]
+
+    for error in errors:
+        body_parts.append(f"## {error.scraper_name}\n")
+        body_parts.append(f"**Error:** {error.error_message}\n")
+        body_parts.append(f"```\n{error.traceback}\n```\n")
+
+    body = "\n".join(body_parts)
+
+    resend.Emails.send(
+        {
+            "from": "GigRadar <gigradar@resend.dev>",
+            "to": [to_email],
+            "subject": subject,
+            "text": body,
+        }
+    )
 
 
 def format_event(event: Event) -> str:
