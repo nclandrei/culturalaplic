@@ -4,7 +4,10 @@
 - **Run**: `python main.py`
 - **Install deps**: `pip install -r requirements.txt`
 - **Playwright setup**: `playwright install chromium`
-- No test suite exists; add tests with pytest if needed
+- **Unit tests**: `pytest tests/`
+- **Integration test**: `python scripts/test_full_flow.py`
+- **Integration test + alert**: `python scripts/test_full_flow.py --alert`
+- **Test alert only**: `python scripts/test_full_flow.py --alert-only`
 
 ## Architecture
 - **main.py**: Orchestrator - runs scrapers, matches artists, deduplicates, sends emails
