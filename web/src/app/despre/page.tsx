@@ -15,6 +15,7 @@ const sources = {
     { name: "JFR", url: "https://jfrclub.ro" },
     { name: "Opera Națională București", url: "https://operanb.ro" },
     { name: "Gărâna Jazz Festival", url: "https://garana-jazz.ro" },
+    { name: "JAZZx Festival", url: "https://plai.ro/jazz" },
     { name: "iaBilet", url: "https://www.iabilet.ro" },
     { name: "Eventbook", url: "https://eventbook.ro" },
   ],
