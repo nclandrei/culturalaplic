@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Neobrutalism CSS variables */
+@theme inline {
+  /* Colors */
+  --color-main: var(--main);
+  --color-main-foreground: var(--main-foreground);
+  --color-secondary-background: var(--secondary-background);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  
+  /* Category colors */
+  --color-music: #0EA5E9;
+  --color-theatre: #EC4899;
+  --color-culture: #EAB308;
+  
+  /* Shadow */
+  --shadow-shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
+  
+  /* Border radius */
+  --radius-base: 5px;
+  
+  /* Translate values for hover effects */
+  --translate-box-shadow-x: var(--box-shadow-x);
+  --translate-box-shadow-y: var(--box-shadow-y);
+  --translate-reverse-box-shadow-x: calc(var(--box-shadow-x) * -1);
+  --translate-reverse-box-shadow-y: calc(var(--box-shadow-y) * -1);
+  
+  /* Fonts */
+  --font-heading: var(--font-dm-sans);
+  --font-base: var(--font-dm-sans);
+}
+
+:root {
+  /* Cream background as specified */
+  --background: #FEF6E4;
+  --foreground: #000000;
+  
+  /* Main color (for buttons, calendar, etc.) */
+  --main: #FEF6E4;
+  --main-foreground: #000000;
+  
+  /* Secondary background */
+  --secondary-background: #FFFFFF;
+  
+  /* Border - black for neobrutalism */
+  --border: #000000;
+  --ring: #000000;
+  
+  /* Box shadow offset */
+  --box-shadow-x: 4px;
+  --box-shadow-y: 4px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+  }
+}
+
+/* Neobrutalism utility classes */
+@layer utilities {
+  .rounded-base {
+    border-radius: var(--radius-base);
+  }
+  
+  .shadow-shadow {
+    box-shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
+  }
+  
+  .translate-x-boxShadowX {
+    transform: translateX(var(--box-shadow-x));
+  }
+  
+  .translate-y-boxShadowY {
+    transform: translateY(var(--box-shadow-y));
+  }
+  
+  .translate-x-reverseBoxShadowX {
+    transform: translateX(calc(var(--box-shadow-x) * -1));
+  }
+  
+  .translate-y-reverseBoxShadowY {
+    transform: translateY(calc(var(--box-shadow-y) * -1));
+  }
+  
+  .font-heading {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-weight: 700;
+  }
+  
+  .font-base {
+    font-family: var(--font-dm-sans), system-ui, sans-serif;
+    font-weight: 400;
+  }
+}

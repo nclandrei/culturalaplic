@@ -9,6 +9,11 @@
 - **Integration test + alert**: `python scripts/test_full_flow.py --alert`
 - **Test alert only**: `python scripts/test_full_flow.py --alert-only`
 
+### Web (Next.js)
+- **Dev server**: `cd web && pnpm dev`
+- **Build**: `cd web && pnpm build`
+- **Install deps**: `cd web && pnpm install`
+
 ## Architecture
 - **main.py**: Orchestrator - runs scrapers, matches artists, deduplicates, sends emails
 - **models.py**: `Event` dataclass (title, artist, venue, date, url, source, category, price)
@@ -19,6 +24,12 @@
 - **services/**: Shared utilities (http, spotify, dedup, email)
 - **data/**: JSON output files (date-prefixed, 7-day retention)
 - **tmp/**: Test data, screenshots, debug output (gitignored)
+- **web/**: Next.js frontend ("Calendarul Hipsterului")
+  - `src/app/`: App router pages and layout
+  - `src/components/`: React components (EventCard, EventCalendar, EventList, Header)
+  - `src/components/ui/`: neobrutalism.dev UI components
+  - `src/types/`: TypeScript types (Event)
+  - `src/data/`: Sample JSON data for development
 
 ## Code Style
 - Python 3.11+ with type hints (`str | None`, `list[Event]`)
