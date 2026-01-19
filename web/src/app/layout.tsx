@@ -9,8 +9,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Calendarul Hipsterului",
-  description: "Ce faci în weekend?",
+  title: "Cultură la plic",
+  description: "Evenimente culturale în București",
 };
 
 export default function RootLayout({

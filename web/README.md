@@ -1,4 +1,4 @@
-# Calendarul Hipsterului
+# Cultură la plic
 
 A cultural events calendar for Bucharest - "Ce faci în weekend?"
 

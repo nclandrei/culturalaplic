@@ -2,6 +2,7 @@
 
 import { Calendar } from "@/components/ui/calendar";
 import { Event } from "@/types/event";
+import { ro } from "date-fns/locale";
 import { useMemo } from "react";
 
 interface EventCalendarProps {
@@ -37,6 +38,7 @@ export function EventCalendar({
         selected={selectedDate}
         onSelect={onSelectDate}
         weekStartsOn={1}
+        locale={ro}
         modifiers={modifiers}
         modifiersClassNames={{
           hasEvent: "relative after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1.5 after:h-1.5 after:bg-[#0EA5E9] after:rounded-full",

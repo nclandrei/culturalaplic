@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { EventCalendar } from "@/components/EventCalendar";
 import { EventList } from "@/components/EventList";
 import { Event } from "@/types/event";
@@ -12,10 +13,11 @@ export default function Home() {
   const events = sampleEvents as Event[];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
-      <main className="max-w-4xl mx-auto px-4 py-6">
+      <main className="flex-1 w-full">
+        <div className="max-w-4xl mx-auto px-4 py-6">
         <EventCalendar
           events={events}
           selectedDate={selectedDate}
@@ -23,7 +25,10 @@ export default function Home() {
         />
         
         <EventList events={events} selectedDate={selectedDate} />
+        </div>
       </main>
+      
+      <Footer />
     </div>
   );
 }
