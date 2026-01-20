@@ -10,6 +10,7 @@ const sources = {
   music: [
     { name: "Control Club", url: "https://control-club.ro" },
     { name: "Expirat", url: "https://expirat.org" },
+    { name: "Festivalul George Enescu", url: "https://festivalenescu.ro" },
     { name: "Gărâna Jazz Festival", url: "https://garana-jazz.ro" },
     { name: "Hard Rock Cafe", url: "https://hardrockcafe.com/location/bucharest" },
     { name: "Jazz Fan Rising", url: "https://eventbook.ro/program/jazz-fan-rising" },
