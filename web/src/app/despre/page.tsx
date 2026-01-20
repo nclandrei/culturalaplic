@@ -14,6 +14,7 @@ const sources = {
     { name: "Gărâna Jazz Festival", url: "https://garana-jazz.ro" },
     { name: "Hard Rock Cafe", url: "https://hardrockcafe.com/location/bucharest" },
     { name: "Jazz Fan Rising", url: "https://eventbook.ro/program/jazz-fan-rising" },
+    { name: "Jazz in the Park", url: "https://jazzinthepark.ro" },
     { name: "JAZZx Festival", url: "https://plai.ro/jazz" },
     { name: "Opera Națională București", url: "https://operanb.ro" },
     { name: "Quantic", url: "https://quantic.ro" },

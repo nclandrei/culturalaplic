@@ -13,7 +13,7 @@ from rapidfuzz import fuzz
 
 from models import Event
 from scrapers.culture import arcub, mnac
-from scrapers.music import control, enescu, expirat, garana, jazzx, jfr, quantic
+from scrapers.music import control, enescu, expirat, garana, jazzinthepark, jazzx, jfr, quantic
 from scrapers.theatre import bulandra
 from services.dedup import llm_dedup, stage1_dedup
 from services.email import ScraperError, send_digest, send_scraper_alert
@@ -45,7 +45,7 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
 def run_music_scrapers() -> list[Event]:
     """Run all music scrapers and collect events."""
     events: list[Event] = []
-    for scraper in [control, enescu, expirat, quantic, jfr, garana, jazzx]:
+    for scraper in [control, enescu, expirat, quantic, jfr, garana, jazzinthepark, jazzx]:
         events.extend(run_scraper_safely(scraper))
     return events
 
