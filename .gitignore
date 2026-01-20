@@ -7,6 +7,6 @@ venv/
 *.egg-info/
 dist/
 build/
-data/
+/data/
 .DS_Store
 tmp/
