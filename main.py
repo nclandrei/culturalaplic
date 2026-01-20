@@ -4,8 +4,11 @@
 import json
 import os
 import traceback
+
+from dotenv import load_dotenv
+load_dotenv()
 from dataclasses import asdict, replace
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 from types import ModuleType
 
@@ -18,7 +21,7 @@ from services.email import ScraperError, send_digest, send_scraper_alert
 from services.spotify import search_artist
 
 DATA_DIR = Path(__file__).parent / "data"
-RETENTION_DAYS = 7
+EVENTS_FILE = DATA_DIR / "events.json"
 FESTIVAL_SCRAPERS = {garana, jazzinthepark, jfr}
 
 scraper_errors: list[ScraperError] = []
@@ -80,6 +83,10 @@ def run_culture_scrapers() -> list[Event]:
 
 def enrich_with_spotify(events: list[Event]) -> list[Event]:
     """Add Spotify URLs to music events where artist is found."""
+    if not os.environ.get("SPOTIFY_CLIENT_ID"):
+        print("  SPOTIFY_CLIENT_ID not set, skipping Spotify enrichment")
+        return events
+    
     enriched: list[Event] = []
     for event in events:
         if event.category == "music" and event.artist:
@@ -90,58 +97,104 @@ def enrich_with_spotify(events: list[Event]) -> list[Event]:
     return enriched
 
 
-def load_previous_events() -> set[str]:
-    """Load event keys from the most recent JSON file."""
+def load_existing_events() -> dict[str, list[dict]]:
+    """Load existing events from events.json."""
     DATA_DIR.mkdir(exist_ok=True)
-    files = sorted(DATA_DIR.glob("*.json"), reverse=True)
-
-    if not files:
-        return set()
-
-    with open(files[0]) as f:
+    
+    if not EVENTS_FILE.exists():
+        return {"music_events": [], "theatre_events": [], "culture_events": []}
+    
+    with open(EVENTS_FILE) as f:
         data = json.load(f)
+    
+    return {
+        "music_events": data.get("music_events", []),
+        "theatre_events": data.get("theatre_events", []),
+        "culture_events": data.get("culture_events", []),
+    }
 
+
+def get_event_key(event: dict | Event) -> str:
+    """Generate a unique key for an event (artist|date|venue)."""
+    if isinstance(event, Event):
+        date_str = event.date.strftime("%Y-%m-%d")
+        return f"{event.artist}|{date_str}|{event.venue}"
+    else:
+        date_str = event["date"][:10] if event.get("date") else ""
+        return f"{event.get('artist')}|{date_str}|{event.get('venue')}"
+
+
+def load_previous_event_keys(existing_events: dict[str, list[dict]]) -> set[str]:
+    """Get event keys from existing events dict."""
     keys: set[str] = set()
-    for event in data.get("music_events", []) + data.get("theatre_events", []) + data.get("culture_events", []):
-        key = f"{event['artist']}|{event['date']}|{event['venue']}"
-        keys.add(key)
-
+    for event in existing_events["music_events"] + existing_events["theatre_events"] + existing_events["culture_events"]:
+        keys.add(get_event_key(event))
     return keys
+
+
+def merge_events(existing: list[dict], new_events: list[Event]) -> list[dict]:
+    """Merge new events with existing, deduplicating by key."""
+    existing_keys = {get_event_key(e) for e in existing}
+    merged = list(existing)
+    
+    for event in new_events:
+        key = get_event_key(event)
+        if key not in existing_keys:
+            merged.append(asdict(event))
+            existing_keys.add(key)
+    
+    return merged
+
+
+def cleanup_past_events(events: list[dict]) -> list[dict]:
+    """Remove events with date < today."""
+    today = datetime.now().date()
+    future_events = []
+    
+    for event in events:
+        event_date_val = event.get("date")
+        if event_date_val:
+            if isinstance(event_date_val, datetime):
+                event_date = event_date_val.date()
+            elif isinstance(event_date_val, str):
+                event_date = datetime.strptime(event_date_val[:10], "%Y-%m-%d").date()
+            else:
+                continue
+            if event_date >= today:
+                future_events.append(event)
+    
+    return future_events
 
 
 def save_results(
     music_events: list[Event],
     theatre_events: list[Event],
     culture_events: list[Event],
+    existing_events: dict[str, list[dict]],
 ) -> None:
-    """Save results to a date-prefixed JSON file."""
+    """Merge new events with existing and save to events.json."""
     DATA_DIR.mkdir(exist_ok=True)
-    today = datetime.now().strftime("%Y-%m-%d")
-    filepath = DATA_DIR / f"{today}.json"
+    
+    merged_music = merge_events(existing_events["music_events"], music_events)
+    merged_theatre = merge_events(existing_events["theatre_events"], theatre_events)
+    merged_culture = merge_events(existing_events["culture_events"], culture_events)
+    
+    merged_music = cleanup_past_events(merged_music)
+    merged_theatre = cleanup_past_events(merged_theatre)
+    merged_culture = cleanup_past_events(merged_culture)
 
     data = {
         "scraped_at": datetime.now().isoformat(),
-        "music_events": [asdict(e) for e in music_events],
-        "theatre_events": [asdict(e) for e in theatre_events],
-        "culture_events": [asdict(e) for e in culture_events],
+        "music_events": merged_music,
+        "theatre_events": merged_theatre,
+        "culture_events": merged_culture,
     }
 
-    with open(filepath, "w") as f:
+    with open(EVENTS_FILE, "w") as f:
         json.dump(data, f, indent=2, default=str)
 
 
-def cleanup_old_files() -> None:
-    """Delete JSON files older than RETENTION_DAYS."""
-    cutoff = datetime.now() - timedelta(days=RETENTION_DAYS)
 
-    for filepath in DATA_DIR.glob("*.json"):
-        try:
-            date_str = filepath.stem
-            file_date = datetime.strptime(date_str, "%Y-%m-%d")
-            if file_date < cutoff:
-                filepath.unlink()
-        except ValueError:
-            pass
 
 
 def get_new_events(
@@ -150,7 +203,7 @@ def get_new_events(
     """Filter to only new events not seen in previous run."""
     new_events: list[Event] = []
     for event in events:
-        key = f"{event.artist}|{event.date.strftime('%Y-%m-%d')}|{event.venue}"
+        key = get_event_key(event)
         if key not in previous_keys:
             new_events.append(event)
     return new_events
@@ -158,6 +211,11 @@ def get_new_events(
 
 def main() -> None:
     """Main orchestrator."""
+    print("Loading existing events...")
+    existing_events = load_existing_events()
+    previous_keys = load_previous_event_keys(existing_events)
+    print(f"Loaded {len(previous_keys)} existing events")
+
     print("Running music scrapers...")
     music_events = run_music_scrapers()
     print(f"Found {len(music_events)} music events")
@@ -182,9 +240,6 @@ def main() -> None:
     spotify_count = sum(1 for e in deduped_music if e.spotify_url)
     print(f"Found {spotify_count} artists on Spotify")
 
-    print("Loading previous results...")
-    previous_keys = load_previous_events()
-
     new_music = get_new_events(deduped_music, previous_keys)
     new_theatre = get_new_events(deduped_theatre, previous_keys)
     new_culture = get_new_events(deduped_culture, previous_keys)
@@ -199,11 +254,8 @@ def main() -> None:
         else:
             print("NOTIFY_EMAIL not set, skipping email")
 
-    print("Saving results...")
-    save_results(deduped_music, deduped_theatre, deduped_culture)
-
-    print("Cleaning up old files...")
-    cleanup_old_files()
+    print("Saving results (merging new events and removing past events)...")
+    save_results(deduped_music, deduped_theatre, deduped_culture, existing_events)
 
     if scraper_errors:
         print(f"Sending alert for {len(scraper_errors)} failed scraper(s)...")
