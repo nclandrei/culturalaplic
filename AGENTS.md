@@ -21,9 +21,7 @@
 - **main.py**: Orchestrator - runs scrapers, matches artists, deduplicates, sends emails
 - **models.py**: `Event` dataclass (title, artist, venue, date, url, source, category, price)
 - **scrapers/**: Site-specific scrapers returning `list[Event]`
-  - `music/`: iabilet, eventbook, control, expirat, quantic, jfr, hardrock, ateneul
-  - `theatre/`: bulandra
-  - `culture/`: arcub
+  - `music/`, `theatre/`, `culture/` subdirectories by category
 - **services/**: Shared utilities (http, spotify, dedup, email)
 - **data/**: JSON output files (date-prefixed, 7-day retention)
 - **tmp/**: Test data, screenshots, debug output (gitignored)
