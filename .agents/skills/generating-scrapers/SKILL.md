@@ -17,21 +17,47 @@ Before starting, collect from user:
 
 ## Workflow
 
-### Phase 1: Reconnaissance
+### Phase 1: Reconnaissance (Chrome DevTools MCP)
 
-1. Fetch the page using the verification script (run from project root):
-   ```bash
-   python .agents/skills/generating-scrapers/scripts/verify_scraper.py --url "URL" --screenshot-only
+**Always use Chrome DevTools MCP for page inspection** - it's more reliable than Playwright for understanding page structure.
+
+1. Open the page in Chrome DevTools MCP:
    ```
-   This saves screenshot and HTML to `tmp/` for inspection.
+   mcp__chrome_devtools__new_page with url: "URL"
+   ```
 
-2. Examine the HTML structure:
+2. Take a snapshot to see the page structure:
+   ```
+   mcp__chrome_devtools__take_snapshot
+   ```
+   This shows the accessibility tree with UIDs for each element.
+
+3. Examine the structure:
    - Look for event containers (divs, cards, list items)
    - Identify data elements: title, date, time, venue/hall, price, URL
-   - Check for embedded JSON (search for `"feed":`, `application/ld+json`, `__NEXT_DATA__`)
-   - Note if content is JS-rendered (empty containers = needs `needs_js=True`)
+   - Use `mcp__chrome_devtools__take_screenshot` for visual reference
+   - Check for infinite scroll or "load more" buttons
 
-3. If page has no current events, check Wayback Machine:
+4. For infinite scroll pages, scroll to load more content:
+   ```
+   mcp__chrome_devtools__evaluate_script with function: "window.scrollTo(0, document.body.scrollHeight)"
+   ```
+   Then take another snapshot to see new elements.
+
+5. Check for embedded JSON data:
+   ```
+   mcp__chrome_devtools__evaluate_script with function: "() => {
+     const scripts = document.querySelectorAll('script');
+     for (const s of scripts) {
+       if (s.textContent.includes('feed') || s.type === 'application/ld+json') {
+         return s.textContent.substring(0, 500);
+       }
+     }
+     return null;
+   }"
+   ```
+
+6. If page has no current events, check Wayback Machine:
    ```
    https://web.archive.org/web/*/URL
    ```
@@ -98,19 +124,16 @@ def scrape() -> list[Event]:
 
 ### Phase 3: Verify
 
-Run the verification script to compare scraper output against screenshot (from project root):
+Test the scraper directly (from project root):
 
 ```bash
-python .agents/skills/generating-scrapers/scripts/verify_scraper.py --scraper scrapers/{category}/{name}.py --url "URL"
+python3 -c "from scrapers.{category}.{name} import scrape; import json; events = scrape(); print(f'{len(events)} events'); print(json.dumps([{'title': e.title, 'date': e.date.isoformat(), 'venue': e.venue} for e in events[:5]], indent=2))"
 ```
 
-This will:
-1. Run the scraper and save events to `tmp/{name}_events_{timestamp}.json`
-2. Take a screenshot of the page to `tmp/{name}_screenshot_{timestamp}.png`
-3. Save rendered HTML to `tmp/{name}_page_{timestamp}.html`
-4. Display event count and sample data for comparison
-
-Use the `look_at` tool to analyze the screenshot and compare against the JSON output.
+Then compare against the live page using Chrome DevTools MCP:
+1. Use `mcp__chrome_devtools__take_snapshot` to see current page state
+2. Use `mcp__chrome_devtools__take_screenshot` for visual comparison
+3. Verify event count matches visible events on page
 
 ### Phase 4: Compare & Fix
 
@@ -127,9 +150,13 @@ Common fixes:
 - Wrong dates → adjust date parsing regex
 - Relative URLs → prepend BASE_URL
 
-### Phase 5: Commit
+### Phase 5: Register & Commit
 
-Once verified:
+1. Add scraper to `main.py` SCRAPERS dict (if not already there)
+
+2. Add source to `web/src/app/despre/page.tsx` sources list (appropriate category)
+
+3. Commit:
 ```bash
 git add scrapers/{category}/{name}.py
 git commit -m "Add {Source Name} scraper"
@@ -192,6 +219,8 @@ if event_date < datetime.now().replace(hour=0, minute=0, second=0, microsecond=0
 5. **Pagination**: Some sites load more via AJAX - may need multiple fetches
 6. **Price formats**: Vary widely - extract as string, don't parse numbers
 7. **Deduplication**: Use `(title, date.isoformat())` tuple as seen key
+8. **Infinite scroll**: Use `scroll_count` and `scroll_item_selector` params in `fetch_page()`
+9. **Alternative data sources**: If official site is hard to scrape, check ticketing platforms (Oveit, iaBilet, Eventim)
 
 ## Event Model Reference
 

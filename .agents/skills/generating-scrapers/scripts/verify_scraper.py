@@ -3,10 +3,13 @@
 
 Usage (run from project root):
     # Screenshot only (for reconnaissance)
-    python .agents/skills/generating-scrapers/scripts/verify_scraper.py --url "https://example.com/events" --screenshot-only
+    python3 .agents/skills/generating-scrapers/scripts/verify_scraper.py --url "https://example.com/events" --screenshot-only
     
     # Full verification (run scraper + screenshot + compare)
-    python .agents/skills/generating-scrapers/scripts/verify_scraper.py --scraper scrapers/theatre/example.py --url "https://example.com/events"
+    python3 .agents/skills/generating-scrapers/scripts/verify_scraper.py --scraper scrapers/theatre/example.py --url "https://example.com/events"
+    
+Note: Prefer Chrome DevTools MCP for page inspection during development.
+This script is useful for quick command-line verification of scrapers.
 """
 
 import argparse

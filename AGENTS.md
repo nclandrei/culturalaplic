@@ -38,3 +38,8 @@
 - Each scraper exposes a `scrape() -> list[Event]` function
 - Use `services/http.fetch_page(url, needs_js=bool)` for HTTP requests
 - Env vars: `SPOTIFY_*`, `GEMINI_API_KEY`, `RESEND_API_KEY`, `NOTIFY_EMAIL`
+
+## Scraper Development
+- **Page inspection**: Use Chrome DevTools MCP (`mcp__chrome_devtools__*`) for analyzing page structure - more reliable than Playwright for development
+- **Runtime scraping**: Use `services/http.fetch_page()` with Playwright for JS-rendered pages
+- **Skill**: Load `generating-scrapers` skill for full workflow
