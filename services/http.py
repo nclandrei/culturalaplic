@@ -52,27 +52,103 @@ def _fetch_http(url: str) -> str:
     retry=retry_if_exception(_is_retryable_playwright),
     reraise=True,
 )
-def _fetch_js(url: str, timeout: int) -> str:
-    """Fetch JS-rendered page with retry."""
+def _fetch_js(
+    url: str,
+    timeout: int,
+    click_selector: str | None = None,
+    click_count: int = 0,
+    scroll_count: int = 0,
+    scroll_item_selector: str | None = None,
+) -> str:
+    """Fetch JS-rendered page with retry.
+    
+    Args:
+        url: Page URL to fetch
+        timeout: Timeout in milliseconds
+        click_selector: Optional selector for a "load more" button to click
+        click_count: Number of times to click the button (0 = don't click)
+        scroll_count: Number of times to scroll (for infinite scroll pages)
+        scroll_item_selector: Optional selector to count items for scroll completion
+    """
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(url, timeout=timeout, wait_until="domcontentloaded")
         page.wait_for_timeout(3000)
+
+        if click_selector and click_count > 0:
+            for _ in range(click_count):
+                try:
+                    button = page.locator(click_selector).first
+                    if button.is_visible():
+                        button.click()
+                        page.wait_for_timeout(2000)
+                    else:
+                        break
+                except Exception:
+                    break
+
+        if scroll_count > 0:
+            no_change_count = 0
+            prev_item_count = 0
+            for _ in range(scroll_count):
+                page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                page.wait_for_timeout(2000)
+                if scroll_item_selector:
+                    item_count = page.evaluate(
+                        f"document.querySelectorAll('{scroll_item_selector}').length"
+                    )
+                    if item_count == prev_item_count:
+                        no_change_count += 1
+                        if no_change_count >= 3:
+                            break
+                    else:
+                        no_change_count = 0
+                        prev_item_count = item_count
+                else:
+                    prev_height = page.evaluate("document.body.scrollHeight")
+                    page.wait_for_timeout(500)
+                    new_height = page.evaluate("document.body.scrollHeight")
+                    if new_height == prev_height:
+                        no_change_count += 1
+                        if no_change_count >= 3:
+                            break
+                    else:
+                        no_change_count = 0
+
         content = page.content()
         browser.close()
         return content
 
 
-def fetch_page(url: str, needs_js: bool = False, timeout: int = 30000) -> str:
+def fetch_page(
+    url: str,
+    needs_js: bool = False,
+    timeout: int = 30000,
+    click_selector: str | None = None,
+    click_count: int = 0,
+    scroll_count: int = 0,
+    scroll_item_selector: str | None = None,
+) -> str:
     """Fetch a page, using Playwright for JS-heavy sites.
 
     Retries with exponential backoff on transient failures (429, 5xx, timeouts).
     Raises HttpError on permanent failures.
+    
+    Args:
+        url: Page URL to fetch
+        needs_js: Whether to use Playwright for JS-rendered pages
+        timeout: Timeout in milliseconds
+        click_selector: Optional selector for a "load more" button to click
+        click_count: Number of times to click the button (0 = don't click)
+        scroll_count: Number of times to scroll (for infinite scroll pages)
+        scroll_item_selector: Optional selector to count items for scroll completion
     """
     if needs_js:
         try:
-            return _fetch_js(url, timeout)
+            return _fetch_js(
+                url, timeout, click_selector, click_count, scroll_count, scroll_item_selector
+            )
         except Exception as e:
             raise HttpError(f"Failed to fetch {url}: {e}") from e
     else:
