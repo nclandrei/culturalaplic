@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
   const maxResults = limit ? parseInt(limit, 10) : null;
 
   try {
-    const eventsPath = path.join(process.cwd(), "..", "data", "events.json");
+    const eventsPath = path.join(process.cwd(), "public", "data", "events.json");
     let eventsData: EventsData = {};
 
     try {

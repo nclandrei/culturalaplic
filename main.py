@@ -18,7 +18,7 @@ from scrapers.theatre import bulandra
 from services.dedup import llm_dedup, stage1_dedup
 from services.spotify import search_artist
 
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).parent / "web" / "public" / "data"
 EVENTS_FILE = DATA_DIR / "events.json"
 FESTIVAL_SCRAPERS = {garana, jazzinthepark, jfr}
 

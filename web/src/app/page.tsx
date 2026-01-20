@@ -34,7 +34,7 @@ export default function Home() {
       <main className="flex-1 w-full">
         <div className="max-w-4xl mx-auto px-4 py-6">
         {loading ? (
-          <div className="text-center py-8">Loading events...</div>
+          <div className="text-center py-8">Se încarcă evenimentele...</div>
         ) : (
           <>
             <EventCalendar
