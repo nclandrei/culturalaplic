@@ -1,4 +1,4 @@
-import { Logo } from "@/components/Logo";
+import { Header } from "@/components/Header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,11 +37,7 @@ const sources = {
 export default function DesprePage() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b-2 border-border bg-secondary-background py-6 px-4">
-        <div className="max-w-4xl mx-auto">
-          <Logo />
-        </div>
-      </header>
+      <Header />
 
       <main className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Despre</h1>
