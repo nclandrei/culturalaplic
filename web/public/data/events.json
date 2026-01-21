@@ -628,7 +628,10 @@
       "source": "bulandra",
       "category": "theatre",
       "price": null,
-      "spotify_url": null
+      "spotify_url": null,
+      "description": "Un spectacol captivant bazat pe opera lui A.P. Cehov, care explorează natura umană prin prisma comediei și a dramei. O producție remarcabilă care aduce în fața publicului personaje memorabile și situații pline de umor și reflexie.",
+      "description_source": "ai",
+      "image_url": null
     },
     {
       "title": "TACHE, IANKE \u0218I CAD\u00c2R",

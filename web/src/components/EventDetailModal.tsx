@@ -1,7 +1,7 @@
 "use client";
 
 import { Event } from "@/types/event";
-import { Component, ReactNode } from "react";
+import { Component, ReactNode, useState } from "react";
 import { createPortal } from "react-dom";
 
 const categoryColors: Record<string, string> = {
@@ -50,6 +50,7 @@ interface EventDetailModalProps {
 }
 
 function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">) {
+  const [imageError, setImageError] = useState(false);
   const eventDate = new Date(event.date);
   const dateString = eventDate.toLocaleDateString("ro-RO", {
     weekday: "long",
@@ -80,10 +81,20 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-main border-2 border-border rounded-base font-bold hover:bg-main/80 transition-colors"
+          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-main border-2 border-border rounded-base hover:bg-main/80 transition-colors"
           aria-label="Închide"
         >
-          ✕
+          <svg
+            className="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
         </button>
 
         {/* Image/Video section */}
@@ -96,12 +107,13 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
               allowFullScreen
             />
           </div>
-        ) : event.imageUrl ? (
+        ) : event.imageUrl && !imageError ? (
           <div className="w-full">
             <img
               src={event.imageUrl}
               alt={event.title}
               className="w-full h-auto max-h-64 object-cover border-b-4 border-border"
+              onError={() => setImageError(true)}
             />
           </div>
         ) : null}
