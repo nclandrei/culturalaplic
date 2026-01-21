@@ -11,9 +11,9 @@ const categoryColors: Record<string, string> = {
 };
 
 const categoryLabels: Record<string, string> = {
-  music: "Music",
-  theatre: "Theatre",
-  culture: "Culture",
+  music: "Muzică",
+  theatre: "Teatru",
+  culture: "Cultură",
 };
 
 interface ErrorBoundaryProps {
@@ -150,7 +150,7 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
               <>
                 {isAiGenerated && (
                   <span className="inline-block mb-2 px-2 py-0.5 text-xs font-bold bg-purple-200 text-purple-800 rounded-base border-2 border-border">
-                    ✨ Summary
+                    ✨ Rezumat
                   </span>
                 )}
                 <p className="text-foreground/90 leading-relaxed whitespace-pre-line">

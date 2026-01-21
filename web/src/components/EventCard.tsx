@@ -11,9 +11,9 @@ const categoryColors: Record<Category, string> = {
 };
 
 const categoryLabels: Record<Category, string> = {
-  music: "Music",
-  theatre: "Theatre",
-  culture: "Culture",
+  music: "Muzică",
+  theatre: "Teatru",
+  culture: "Cultură",
 };
 
 interface EventCardProps {
