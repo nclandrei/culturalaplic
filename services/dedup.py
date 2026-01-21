@@ -12,7 +12,6 @@ VENUE_ALIASES: dict[str, list[str]] = {
     "control": ["control club", "control bucuresti", "club control"],
     "expirat": ["expirat club", "club expirat", "expirat halele carol"],
     "quantic": ["quantic club", "club quantic", "quantic bucuresti"],
-    "hard rock cafe": ["hard rock cafe bucuresti", "hardrock cafe", "hard rock bucuresti"],
     "beraria h": ["beraria h bucuresti", "berăria h"],
     "arenele romane": ["arenele romane bucuresti"],
     "sala palatului": ["sala palatului bucuresti"],
