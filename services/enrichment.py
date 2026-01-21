@@ -444,6 +444,33 @@ def extract_mare(soup: BeautifulSoup, url: str) -> dict:
     return result
 
 
+def extract_elvirepopescu(soup: BeautifulSoup, url: str) -> dict:
+    """Extract enrichment data from Cinema Elvire Popescu event pages (via eventbook.ro)."""
+    result: dict = {"description": None, "image_url": None, "video_url": None}
+    
+    og_image = soup.select_one("meta[property='og:image']")
+    if og_image and og_image.get("content"):
+        result["image_url"] = og_image["content"]
+    
+    paragraphs = soup.select("p")
+    texts = []
+    skip_patterns = ["cookie", "subscribe", "eventbook", "bilete", "price"]
+    for p in paragraphs:
+        text = p.get_text(strip=True)
+        if len(text) > 50:
+            if not any(skip.lower() in text.lower() for skip in skip_patterns):
+                texts.append(text)
+    
+    if texts:
+        result["description"] = " ".join(texts[:2])[:500]
+    
+    iframe = soup.select_one("iframe[src*='youtube']")
+    if iframe and iframe.get("src"):
+        result["video_url"] = iframe["src"]
+    
+    return result
+
+
 def extract_generic(soup: BeautifulSoup, url: str) -> dict:
     """Generic extractor for unknown sources."""
     result: dict = {"description": None, "image_url": None, "video_url": None}
@@ -497,6 +524,7 @@ SOURCE_EXTRACTORS = {
     "teatrulmic": extract_teatrulmic,
     "improteca": extract_improteca,
     "mare": extract_mare,
+    "elvirepopescu": extract_elvirepopescu,
 }
 
 
