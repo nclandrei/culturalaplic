@@ -16,6 +16,11 @@ export function EventCalendar({
   selectedDate,
   onSelectDate,
 }: EventCalendarProps) {
+  const firstOfMonth = useMemo(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  }, []);
+
   const eventCountByDate = useMemo(() => {
     const counts = new Map<string, number>();
     events.forEach((event) => {
@@ -54,6 +59,8 @@ export function EventCalendar({
         onSelect={onSelectDate}
         weekStartsOn={1}
         locale={ro}
+        disabled={{ before: firstOfMonth }}
+        fromMonth={firstOfMonth}
         modifiers={modifiers}
         modifiersClassNames={{
           heatLow: "!bg-orange-200 !text-orange-900 hover:!bg-orange-300",

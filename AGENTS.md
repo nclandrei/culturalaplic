@@ -23,7 +23,7 @@
 - **scrapers/**: Site-specific scrapers returning `list[Event]`
   - `music/`, `theatre/`, `culture/` subdirectories by category
 - **services/**: Shared utilities (http, spotify, dedup, email)
-- **data/**: JSON output files (date-prefixed, 7-day retention)
+- **data/**: JSON output files (retains events from 1st of current month onwards)
 - **tmp/**: Test data, screenshots, debug output (gitignored)
 - **web/**: Next.js frontend ("Cultură la plic")
   - `src/app/`: App router pages and layout

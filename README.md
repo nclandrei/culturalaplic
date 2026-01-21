@@ -58,7 +58,7 @@ A GitHub Actions workflow runs every Monday at 9am UTC. Configure the secrets li
 │   ├── dedup.py         # Event deduplication
 │   └── email.py         # Email digest via Resend
 ├── scripts/             # Utility scripts
-└── data/                # JSON output (7-day retention)
+└── data/                # JSON output (retains events from 1st of current month onwards)
 ```
 
 ## Adding a New Scraper
