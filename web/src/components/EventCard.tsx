@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { Event, Category } from "@/types/event";
+import { EventDetailModal, hasEnrichmentData } from "./EventDetailModal";
 
 const categoryColors: Record<Category, string> = {
   music: "bg-[#0EA5E9]",
@@ -17,6 +21,11 @@ interface EventCardProps {
 }
 
 export function EventCard({ event }: EventCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const showDetaliiButton =
+    (event.category === "theatre" || event.category === "culture") &&
+    hasEnrichmentData(event);
   const eventDate = new Date(event.date);
   const hasTime = eventDate.getHours() !== 0 || eventDate.getMinutes() !== 0;
   const timeString = hasTime
@@ -59,6 +68,29 @@ export function EventCard({ event }: EventCardProps) {
                 Ascultă
               </a>
             )}
+            {showDetaliiButton && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setIsModalOpen(true);
+                }}
+                className="flex items-center gap-1 text-xs text-[#EC4899] font-bold hover:underline"
+              >
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="16" x2="12" y2="12" />
+                  <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                Detalii
+              </button>
+            )}
           </div>
           
           <h3 className="font-bold text-lg leading-tight mb-1 truncate">
@@ -84,6 +116,12 @@ export function EventCard({ event }: EventCardProps) {
           )}
         </div>
       </div>
+      
+      <EventDetailModal
+        event={event}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </a>
   );
 }

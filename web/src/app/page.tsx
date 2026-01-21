@@ -15,6 +15,10 @@ interface RawEvent {
   category: Category;
   price: string | null;
   spotify_url: string | null;
+  description?: string | null;
+  description_source?: "scraped" | "ai" | null;
+  image_url?: string | null;
+  video_url?: string | null;
 }
 
 interface EventsData {
@@ -50,6 +54,10 @@ async function getEvents(): Promise<Event[]> {
       price: e.price,
       spotifyUrl: e.spotify_url,
       spotifyMatch: !!e.spotify_url,
+      description: e.description,
+      descriptionSource: e.description_source,
+      imageUrl: e.image_url,
+      videoUrl: e.video_url,
     }));
 
     allEvents = allEvents.filter((event) => new Date(event.date) >= today);
