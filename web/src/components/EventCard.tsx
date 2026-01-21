@@ -35,12 +35,15 @@ export function EventCard({ event }: EventCardProps) {
       })
     : null;
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('a, button')) return;
+    window.open(event.url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
-    <a
-      href={event.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block rounded-base border-2 border-border bg-secondary-background p-4 shadow-shadow transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
+    <div
+      onClick={handleCardClick}
+      className="cursor-pointer block rounded-base border-2 border-border bg-secondary-background p-4 shadow-shadow transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
@@ -124,6 +127,6 @@ export function EventCard({ event }: EventCardProps) {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-    </a>
+    </div>
   );
 }
