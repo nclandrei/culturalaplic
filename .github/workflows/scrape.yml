@@ -23,6 +23,8 @@ jobs:
         run: playwright install chromium
 
       - name: Run GigRadar
+        id: scrape
+        continue-on-error: true
         run: python main.py
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
@@ -32,10 +34,34 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
 
+      - name: Upload scraper errors
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraper-errors
+          path: artifacts/scraper_errors.json
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Commit data changes
+        if: steps.scrape.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add web/public/data/events.json
           git diff --staged --quiet || git commit -m "Update event data $(date +%Y-%m-%d)"
           git push
+
+      - name: Trigger fix-scrapers workflow
+        if: steps.scrape.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              event_type: 'fix-scrapers',
+              client_payload: {
+                run_id: context.runId
+              }
+            })
