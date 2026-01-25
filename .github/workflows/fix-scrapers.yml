@@ -1,0 +1,148 @@
+name: Fix Scrapers
+
+on:
+  repository_dispatch:
+    types: [fix-scrapers]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Run ID of the failed scrape workflow (optional - will use latest errors)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Dry run - do not create PR'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Playwright browsers
+        run: playwright install chromium
+
+      - name: Download scraper errors artifact
+        if: github.event.client_payload.run_id || inputs.run_id
+        uses: actions/download-artifact@v4
+        with:
+          name: scraper-errors
+          path: artifacts
+          run-id: ${{ github.event.client_payload.run_id || inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: Check for errors file
+        id: check-errors
+        run: |
+          if [ -f "artifacts/scraper_errors.json" ]; then
+            echo "has_errors=true" >> $GITHUB_OUTPUT
+            echo "Errors found:"
+            cat artifacts/scraper_errors.json
+          else
+            echo "has_errors=false" >> $GITHUB_OUTPUT
+            echo "No errors file found"
+          fi
+
+      - name: Install Amp CLI
+        if: steps.check-errors.outputs.has_errors == 'true'
+        run: npm install -g @anthropic-ai/amp
+
+      - name: Run Amp to fix scrapers
+        if: steps.check-errors.outputs.has_errors == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          # Extract first error from the errors file
+          SCRAPER_NAME=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['scraper_name'])")
+          CATEGORY=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['category'] or 'unknown')")
+          ERROR_MSG=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['error_message'])")
+          EVENTS_URL=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['events_url'] or 'unknown')")
+          
+          echo "Fixing scraper: $SCRAPER_NAME ($CATEGORY)"
+          echo "Error: $ERROR_MSG"
+          echo "URL: $EVENTS_URL"
+          
+          # Create the prompt for Amp
+          PROMPT="You are fixing a broken scraper for the Cultură la plic event aggregator.
+
+          SCRAPER: $SCRAPER_NAME
+          CATEGORY: $CATEGORY
+          FILE: scrapers/$CATEGORY/$SCRAPER_NAME.py
+          ERROR: $ERROR_MSG
+          EVENTS_URL: $EVENTS_URL
+
+          INSTRUCTIONS:
+          1. First, load the generating-scrapers skill using the skill tool
+          2. Read the current scraper code
+          3. Use Playwright via Python to inspect the page:
+             python3 -c \"
+             from playwright.sync_api import sync_playwright
+             with sync_playwright() as p:
+                 browser = p.chromium.launch()
+                 page = browser.new_page()
+                 page.goto('$EVENTS_URL')
+                 page.wait_for_timeout(3000)
+                 print(page.content()[:5000])
+                 page.screenshot(path='tmp/debug_page.png')
+                 browser.close()
+             \"
+          4. Analyze the HTML structure and compare with the scraper's selectors
+          5. Fix the scraper code
+          6. Test the fix by running: python3 -c \"from scrapers.$CATEGORY.$SCRAPER_NAME import scrape; events = scrape(); print(f'{len(events)} events found'); [print(f'  - {e.title}') for e in events[:3]]\"
+          7. If the test returns 0 events, iterate and try again
+          8. Once working, confirm the fix is complete
+
+          Do NOT commit any changes. Just fix the code and verify it works."
+
+          # Run Amp with the prompt
+          amp --print "$PROMPT"
+
+      - name: Create fix branch and PR
+        if: steps.check-errors.outputs.has_errors == 'true' && inputs.dry_run != true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SCRAPER_NAME=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['scraper_name'])")
+          CATEGORY=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['category'] or 'unknown')")
+          BRANCH_NAME="bot/fix-$SCRAPER_NAME-$(date +%Y%m%d)"
+          
+          # Check if there are any changes
+          if git diff --quiet; then
+            echo "No changes detected - scraper may not have been fixed"
+            exit 0
+          fi
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Create branch and commit
+          git checkout -b "$BRANCH_NAME"
+          git add "scrapers/$CATEGORY/$SCRAPER_NAME.py" "services/enrichment.py" || true
+          git commit -m "Fix $SCRAPER_NAME scraper (auto-generated)"
+          git push -u origin "$BRANCH_NAME"
+          
+          # Create PR
+          gh pr create \
+            --title "Fix $SCRAPER_NAME scraper (auto-generated)" \
+            --body "This PR was automatically generated by the fix-scrapers workflow.
+
+          **Scraper:** \`$SCRAPER_NAME\`
+          **Category:** \`$CATEGORY\`
+
+          Please review the changes carefully before merging.
+
+          ---
+          *Generated by fix-scrapers workflow*" \
+            --label "auto-fix"
