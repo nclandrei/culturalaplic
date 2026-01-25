@@ -1,7 +1,7 @@
 "use client";
 
 import { Event } from "@/types/event";
-import { Component, ReactNode, useState } from "react";
+import { Component, ReactNode, useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 
 const categoryColors: Record<string, string> = {
@@ -51,7 +51,47 @@ interface EventDetailModalProps {
 
 function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">) {
   const [imageError, setImageError] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
   const eventDate = new Date(event.date);
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      onClose();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusableElements = modalRef.current?.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusableElements || focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey && document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      } else if (!e.shiftKey && document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  }, [onClose]);
+
+  useEffect(() => {
+    previousActiveElement.current = document.activeElement as HTMLElement;
+    document.addEventListener('keydown', handleKeyDown);
+    
+    const closeButton = modalRef.current?.querySelector<HTMLButtonElement>('button[aria-label="Închide"]');
+    closeButton?.focus();
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      previousActiveElement.current?.focus();
+    };
+  }, [handleKeyDown]);
   const dateString = eventDate.toLocaleDateString("ro-RO", {
     weekday: "long",
     day: "numeric",
@@ -69,12 +109,19 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
   const hasDescription = !!event.description;
   const isAiGenerated = event.descriptionSource === "ai";
 
+  const modalId = `modal-title-${event.title.replace(/\s+/g, '-').toLowerCase()}`;
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
       onClick={onClose}
+      role="presentation"
     >
       <div
+        ref={modalRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={modalId}
         className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-secondary-background border-4 border-border rounded-base shadow-shadow"
         onClick={(e) => e.stopPropagation()}
       >
@@ -92,6 +139,7 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
+            aria-hidden="true"
           >
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
@@ -105,6 +153,7 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
               className="w-full h-full border-b-4 border-border"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              title={`Video pentru ${event.title}`}
             />
           </div>
         ) : event.imageUrl && !imageError ? (
@@ -133,11 +182,11 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
             </span>
           </div>
           <p className="text-sm font-medium text-foreground/80 mb-2">
-            📍 {event.venue}
+            <span aria-hidden="true">📍</span> {event.venue}
           </p>
 
           {/* Title */}
-          <h2 className="text-xl font-bold mb-3">{event.title}</h2>
+          <h2 id={modalId} className="text-xl font-bold mb-3">{event.title}</h2>
 
           {/* Artist if present */}
           {event.artist && (

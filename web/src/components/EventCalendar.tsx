@@ -60,7 +60,7 @@ export function EventCalendar({
   }, [eventCountByDate]);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col items-center gap-3">
       <Calendar
         mode="single"
         selected={selectedDate}
@@ -80,6 +80,28 @@ export function EventCalendar({
         }}
         className="!rounded-base"
       />
+      <div 
+        className="flex items-center gap-4 text-xs text-foreground/70"
+        role="img"
+        aria-label="Legendă: culorile indică numărul de evenimente - portocaliu deschis: 1-3, portocaliu mediu: 4-7, portocaliu închis: 8-12, portocaliu intens: peste 12 evenimente"
+      >
+        <span className="flex items-center gap-1">
+          <span className="w-4 h-4 bg-orange-200 border border-border rounded-sm" aria-hidden="true" />
+          <span>1-3</span>
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="w-4 h-4 bg-orange-400 border border-border rounded-sm" aria-hidden="true" />
+          <span>4-7</span>
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="w-4 h-4 bg-orange-500 border border-border rounded-sm" aria-hidden="true" />
+          <span>8-12</span>
+        </span>
+        <span className="flex items-center gap-1">
+          <span className="w-4 h-4 bg-orange-600 border border-border rounded-sm" aria-hidden="true" />
+          <span>12+</span>
+        </span>
+      </div>
     </div>
   );
 }

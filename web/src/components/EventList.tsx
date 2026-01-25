@@ -63,7 +63,11 @@ export function EventList({ events, selectedDate }: EventListProps) {
       <h2 className="text-xl font-bold mb-4 capitalize">{formattedDate}</h2>
       
       {eventsForDate.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div 
+          className="flex flex-wrap gap-2 mb-4"
+          role="group"
+          aria-label="Filtrează evenimente după categorie"
+        >
           {(Object.keys(CATEGORY_CONFIG) as CategoryFilter[]).map((category) => {
             const { label, emoji } = CATEGORY_CONFIG[category];
             const count = categoryCounts[category];
@@ -78,13 +82,18 @@ export function EventList({ events, selectedDate }: EventListProps) {
                 variant={isActive ? "reverse" : "neutral"}
                 size="sm"
                 className="gap-1.5"
+                aria-pressed={isActive}
+                aria-label={`${label} - ${count} ${count === 1 ? 'eveniment' : 'evenimente'}`}
               >
-                <span>{emoji}</span>
+                <span aria-hidden="true">{emoji}</span>
                 <span>{label}</span>
-                <span className={`
-                  px-1.5 py-0.5 text-xs rounded-base
-                  ${isActive ? "bg-main-foreground/20" : "bg-foreground/10"}
-                `}>
+                <span 
+                  className={`
+                    px-1.5 py-0.5 text-xs rounded-base
+                    ${isActive ? "bg-main-foreground/20" : "bg-foreground/10"}
+                  `}
+                  aria-hidden="true"
+                >
                   {count}
                 </span>
               </Button>
@@ -93,21 +102,27 @@ export function EventList({ events, selectedDate }: EventListProps) {
         </div>
       )}
 
-      {filteredEvents.length === 0 ? (
-        <div className="rounded-base border-2 border-border bg-secondary-background p-8 text-center shadow-shadow">
-          <p className="text-foreground/70">
-            {eventsForDate.length === 0
-              ? "Nu sunt evenimente programate pentru această zi."
-              : `Nu sunt evenimente de ${CATEGORY_CONFIG[categoryFilter].label.toLowerCase()} în această zi.`}
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-3">
-          {filteredEvents.map((event, index) => (
-            <EventCard key={`${event.url}-${index}`} event={event} />
-          ))}
-        </div>
-      )}
+      <div aria-live="polite" aria-atomic="true">
+        {filteredEvents.length === 0 ? (
+          <div className="rounded-base border-2 border-border bg-secondary-background p-8 text-center shadow-shadow">
+            <p className="text-foreground/70">
+              {eventsForDate.length === 0
+                ? "Nu sunt evenimente programate pentru această zi."
+                : `Nu sunt evenimente de ${CATEGORY_CONFIG[categoryFilter].label.toLowerCase()} în această zi.`}
+            </p>
+          </div>
+        ) : (
+          <div 
+            className="space-y-3"
+            role="feed"
+            aria-label={`${filteredEvents.length} ${filteredEvents.length === 1 ? 'eveniment' : 'evenimente'} pentru ${formattedDate}`}
+          >
+            {filteredEvents.map((event, index) => (
+              <EventCard key={`${event.url}-${index}`} event={event} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

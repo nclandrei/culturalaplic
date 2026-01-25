@@ -66,6 +66,22 @@
     @apply bg-background text-foreground;
     font-family: var(--font-dm-sans), system-ui, sans-serif;
   }
+  
+  /* Accessible focus indicators */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-border;
+  }
+  
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 /* Neobrutalism utility classes */
