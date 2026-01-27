@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 const sources = {
   music: [
     { name: "Ateneul Român", url: "https://filarmonicaenescu.ro" },
+    { name: "Bikers For Humanity Rock Fest", url: "https://bikersforhumanity.ro" },
     { name: "Control Club", url: "https://control-club.ro" },
     { name: "Expirat", url: "https://expirat.org" },
     { name: "Festivalul George Enescu", url: "https://festivalenescu.ro" },
