@@ -14,7 +14,7 @@ from types import ModuleType
 from models import Event
 from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
-from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, jazzinthepark, jazzx, jfr, operanb, quantic
+from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
 from scrapers.theatre import bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
@@ -24,7 +24,7 @@ DATA_DIR = Path(__file__).parent / "web" / "public" / "data"
 EVENTS_FILE = DATA_DIR / "events.json"
 ARTIFACTS_DIR = Path(__file__).parent / "artifacts"
 ERRORS_FILE = ARTIFACTS_DIR / "scraper_errors.json"
-FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr}
+FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 
 
 def should_run_festival_scrapers() -> bool:
@@ -68,7 +68,7 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
 def run_music_scrapers() -> list[Event]:
     """Run all music scrapers and collect events."""
     events: list[Event] = []
-    all_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx]
+    all_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
     run_festivals = should_run_festival_scrapers()
     
     for scraper in all_scrapers:

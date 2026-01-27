@@ -19,6 +19,7 @@ const sources = {
     { name: "JAZZx Festival", url: "https://plai.ro/jazz" },
     { name: "Opera Națională București", url: "https://operanb.ro" },
     { name: "Quantic", url: "https://quantic.ro" },
+    { name: "Rockstadt Extreme Fest", url: "https://rockstadtextremefest.ro" },
   ],
   theatre: [
     { name: "Cuibul Artiștilor", url: "https://cuibul.ro" },
