@@ -7,6 +7,7 @@ import { EventList } from "@/components/EventList";
 import { EventListSkeleton } from "@/components/EventCardSkeleton";
 import { Event } from "@/types/event";
 import { Skeleton } from "@/components/ui/skeleton";
+import { findEventById } from "@/lib/eventId";
 
 interface EventsViewProps {
   events: Event[];
@@ -37,6 +38,7 @@ function CalendarSkeleton() {
 export function EventsView({ events }: EventsViewProps) {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [initialOpenEventId, setInitialOpenEventId] = useState<string | null>(null);
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -44,6 +46,7 @@ export function EventsView({ events }: EventsViewProps) {
     const year = searchParams.get("year");
     const month = searchParams.get("month");
     const day = searchParams.get("day");
+    const eventId = searchParams.get("eventId");
 
     if (year && month && day) {
       const dateFromUrl = new Date(
@@ -53,13 +56,23 @@ export function EventsView({ events }: EventsViewProps) {
       );
       if (!isNaN(dateFromUrl.getTime())) {
         setSelectedDate(dateFromUrl);
+        if (eventId) {
+          const foundEvent = findEventById(events, eventId);
+          if (foundEvent) {
+            setInitialOpenEventId(eventId);
+          }
+        }
         setIsHydrated(true);
         return;
       }
     }
     setSelectedDate(new Date());
     setIsHydrated(true);
-  }, [searchParams]);
+  }, [searchParams, events]);
+
+  const handleEventModalOpened = useCallback(() => {
+    setInitialOpenEventId(null);
+  }, []);
 
   const handleSelectDate = useCallback(
     (date: Date | undefined) => {
@@ -91,7 +104,12 @@ export function EventsView({ events }: EventsViewProps) {
         selectedDate={selectedDate}
         onSelectDate={handleSelectDate}
       />
-      <EventList events={events} selectedDate={selectedDate} />
+      <EventList
+        events={events}
+        selectedDate={selectedDate}
+        initialOpenEventId={initialOpenEventId}
+        onEventModalOpened={handleEventModalOpened}
+      />
     </>
   );
 }
