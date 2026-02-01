@@ -3,6 +3,7 @@
 import { Event } from "@/types/event";
 import { Component, ReactNode, useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { generateEventId } from "@/lib/eventId";
 
 const categoryColors: Record<string, string> = {
   music: "bg-[#0EA5E9]",
@@ -49,11 +50,60 @@ interface EventDetailModalProps {
   onClose: () => void;
 }
 
+type ShareStatus = "idle" | "copied" | "error";
+
 function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">) {
   const [imageError, setImageError] = useState(false);
+  const [shareStatus, setShareStatus] = useState<ShareStatus>("idle");
   const modalRef = useRef<HTMLDivElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
   const eventDate = new Date(event.date);
+
+  const generateShareUrl = useCallback(() => {
+    const eventId = generateEventId(event);
+    const params = new URLSearchParams();
+    params.set("year", eventDate.getFullYear().toString());
+    params.set("month", (eventDate.getMonth() + 1).toString());
+    params.set("day", eventDate.getDate().toString());
+    params.set("eventId", eventId);
+    return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+  }, [event, eventDate]);
+
+  const handleShare = useCallback(async () => {
+    const shareUrl = generateShareUrl();
+    const shareData = {
+      title: event.title,
+      text: `${event.title} - ${event.venue}`,
+      url: shareUrl,
+    };
+
+    if (navigator.share && navigator.canShare?.(shareData)) {
+      try {
+        await navigator.share(shareData);
+        setShareStatus("idle");
+      } catch (err) {
+        if ((err as Error).name !== "AbortError") {
+          try {
+            await navigator.clipboard.writeText(shareUrl);
+            setShareStatus("copied");
+            setTimeout(() => setShareStatus("idle"), 2000);
+          } catch {
+            setShareStatus("error");
+            setTimeout(() => setShareStatus("idle"), 2000);
+          }
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        setShareStatus("copied");
+        setTimeout(() => setShareStatus("idle"), 2000);
+      } catch {
+        setShareStatus("error");
+        setTimeout(() => setShareStatus("idle"), 2000);
+      }
+    }
+  }, [generateShareUrl, event.title, event.venue]);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -125,25 +175,81 @@ function ModalContent({ event, onClose }: Omit<EventDetailModalProps, "isOpen">)
         className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-secondary-background border-4 border-border rounded-base shadow-shadow"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-8 h-8 flex items-center justify-center bg-main border-2 border-border rounded-base hover:bg-main/80 transition-colors"
-          aria-label="Închide"
-        >
-          <svg
-            className="w-4 h-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
+        {/* Action buttons */}
+        <div className="absolute top-3 right-3 z-10 flex gap-2">
+          {/* Share button */}
+          <button
+            onClick={handleShare}
+            className="w-8 h-8 flex items-center justify-center bg-main border-2 border-border rounded-base hover:bg-main/80 transition-colors"
+            aria-label="Distribuie"
           >
-            <path d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
+            {shareStatus === "idle" && (
+              <svg
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98" />
+              </svg>
+            )}
+            {shareStatus === "copied" && (
+              <svg
+                className="w-4 h-4 text-green-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            )}
+            {shareStatus === "error" && (
+              <svg
+                className="w-4 h-4 text-red-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            )}
+          </button>
+
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="w-8 h-8 flex items-center justify-center bg-main border-2 border-border rounded-base hover:bg-main/80 transition-colors"
+            aria-label="Închide"
+          >
+            <svg
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
         {/* Image/Video section */}
         {event.videoUrl ? (
