@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Event, Category } from "@/types/event";
 import { EventDetailModal, hasEnrichmentData } from "./EventDetailModal";
+import { generateEventId } from "@/lib/eventId";
 
 const categoryColors: Record<Category, string> = {
   music: "bg-[#0EA5E9]",
@@ -31,6 +32,30 @@ export function EventCard({ event, isInitiallyOpen, onModalOpened }: EventCardPr
       onModalOpened?.();
     }
   }, [isInitiallyOpen, onModalOpened]);
+
+  const updateUrlWithEventId = (open: boolean) => {
+    const url = new URL(window.location.href);
+    if (open) {
+      const eventDate = new Date(event.date);
+      url.searchParams.set("year", eventDate.getFullYear().toString());
+      url.searchParams.set("month", (eventDate.getMonth() + 1).toString());
+      url.searchParams.set("day", eventDate.getDate().toString());
+      url.searchParams.set("eventId", generateEventId(event));
+    } else {
+      url.searchParams.delete("eventId");
+    }
+    window.history.replaceState({}, "", url.toString());
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    updateUrlWithEventId(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    updateUrlWithEventId(false);
+  };
   
   const showDetaliiButton =
     (event.category === "theatre" || event.category === "culture") &&
@@ -98,7 +123,7 @@ export function EventCard({ event, isInitiallyOpen, onModalOpened }: EventCardPr
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  setIsModalOpen(true);
+                  handleOpenModal();
                 }}
                 className="flex items-center gap-1 text-xs text-[#EC4899] font-bold hover:underline focus:outline-none focus:ring-2 focus:ring-[#EC4899] focus:ring-offset-1 rounded"
                 aria-label={`Vezi detalii pentru ${event.title}`}
@@ -149,7 +174,7 @@ export function EventCard({ event, isInitiallyOpen, onModalOpened }: EventCardPr
       <EventDetailModal
         event={event}
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={handleCloseModal}
       />
     </article>
   );
