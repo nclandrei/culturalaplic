@@ -4,6 +4,7 @@ import { Event, Category } from "@/types/event";
 import { EventCard } from "./EventCard";
 import { Button } from "./ui/button";
 import { useMemo, useState } from "react";
+import { generateEventId } from "@/lib/eventId";
 
 type CategoryFilter = Category | "all";
 
@@ -17,9 +18,11 @@ const CATEGORY_CONFIG: Record<CategoryFilter, { label: string; emoji: string }> 
 interface EventListProps {
   events: Event[];
   selectedDate: Date | undefined;
+  initialOpenEventId?: string | null;
+  onEventModalOpened?: () => void;
 }
 
-export function EventList({ events, selectedDate }: EventListProps) {
+export function EventList({ events, selectedDate, initialOpenEventId, onEventModalOpened }: EventListProps) {
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>("all");
 
   const eventsForDate = useMemo(() => {
@@ -117,9 +120,18 @@ export function EventList({ events, selectedDate }: EventListProps) {
             role="feed"
             aria-label={`${filteredEvents.length} ${filteredEvents.length === 1 ? 'eveniment' : 'evenimente'} pentru ${formattedDate}`}
           >
-            {filteredEvents.map((event, index) => (
-              <EventCard key={`${event.url}-${index}`} event={event} />
-            ))}
+            {filteredEvents.map((event, index) => {
+              const eventId = generateEventId(event);
+              const isInitiallyOpen = eventId === initialOpenEventId;
+              return (
+                <EventCard
+                  key={`${event.url}-${index}`}
+                  event={event}
+                  isInitiallyOpen={isInitiallyOpen}
+                  onModalOpened={isInitiallyOpen ? onEventModalOpened : undefined}
+                />
+              );
+            })}
           </div>
         )}
       </div>
