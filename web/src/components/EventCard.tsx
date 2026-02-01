@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Event, Category } from "@/types/event";
 import { EventDetailModal, hasEnrichmentData } from "./EventDetailModal";
 
@@ -18,10 +18,19 @@ const categoryLabels: Record<Category, string> = {
 
 interface EventCardProps {
   event: Event;
+  isInitiallyOpen?: boolean;
+  onModalOpened?: () => void;
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event, isInitiallyOpen, onModalOpened }: EventCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isInitiallyOpen) {
+      setIsModalOpen(true);
+      onModalOpened?.();
+    }
+  }, [isInitiallyOpen, onModalOpened]);
   
   const showDetaliiButton =
     (event.category === "theatre" || event.category === "culture") &&
