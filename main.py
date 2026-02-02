@@ -44,14 +44,7 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
     try:
         events = scraper.scrape()
         if len(events) == 0:
-            print(f"⚠️  Scraper '{scraper_name}' returned 0 events")
-            scraper_errors.append(ScraperError(
-                scraper_name=scraper_name,
-                error_message="Scraper returned 0 events",
-                traceback="",
-                category=category,
-                events_url=events_url,
-            ))
+            print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
         return events
     except Exception as e:
         print(f"⚠️  Scraper '{scraper_name}' failed: {e}")
