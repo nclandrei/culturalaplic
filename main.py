@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Cultură la plic: Weekly event aggregator for Bucharest cultural events."""
 
+import argparse
 import json
 import os
 
@@ -25,6 +26,22 @@ EVENTS_FILE = DATA_DIR / "events.json"
 ARTIFACTS_DIR = Path(__file__).parent / "artifacts"
 ERRORS_FILE = ARTIFACTS_DIR / "scraper_errors.json"
 FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
+
+# Scraper groups for parallel execution (split to avoid 45min timeout)
+# Group 1: Heavy scrapers = ateneul (50 scrolls), enescu (20 clicks)
+# Group 2: Heavy scrapers = operanb (4 pages), tnb (2 pages)
+SCRAPER_GROUPS = {
+    1: {
+        "music": [ateneul, enescu, control, jazzx],
+        "theatre": [bulandra, cuibul, godot, grivita53],
+        "culture": [arcub, mare, mnac],
+    },
+    2: {
+        "music": [operanb, expirat, quantic],
+        "theatre": [metropolis, nottara, teatrulmic, tnb],
+        "culture": [elvirepopescu, improteca],
+    },
+}
 
 
 def should_run_festival_scrapers() -> bool:
@@ -58,34 +75,70 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
         return []
 
 
-def run_music_scrapers() -> list[Event]:
-    """Run all music scrapers and collect events."""
+def run_music_scrapers(group: int | None = None) -> list[Event]:
+    """Run music scrapers and collect events.
+
+    Args:
+        group: If specified (1 or 2), only run scrapers from that group.
+               If None, run all scrapers.
+    """
     events: list[Event] = []
-    all_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
     run_festivals = should_run_festival_scrapers()
-    
-    for scraper in all_scrapers:
+
+    if group is not None:
+        # Run only scrapers from the specified group
+        scrapers = SCRAPER_GROUPS[group]["music"]
+        # Add festival scrapers to group 1 only (if it's the 1st of month)
+        if group == 1 and run_festivals:
+            scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
+    else:
+        # Run all scrapers
+        scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+
+    for scraper in scrapers:
         if scraper in FESTIVAL_SCRAPERS and not run_festivals:
             continue
         events.extend(run_scraper_safely(scraper))
-    
+
     if not run_festivals:
         print("  (skipping festival scrapers - only run on 1st of month)")
     return events
 
 
-def run_theatre_scrapers() -> list[Event]:
-    """Run all theatre scrapers and collect events."""
+def run_theatre_scrapers(group: int | None = None) -> list[Event]:
+    """Run theatre scrapers and collect events.
+
+    Args:
+        group: If specified (1 or 2), only run scrapers from that group.
+               If None, run all scrapers.
+    """
     events: list[Event] = []
-    for scraper in [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]:
+
+    if group is not None:
+        scrapers = SCRAPER_GROUPS[group]["theatre"]
+    else:
+        scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+
+    for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
     return events
 
 
-def run_culture_scrapers() -> list[Event]:
-    """Run all culture scrapers and collect events."""
+def run_culture_scrapers(group: int | None = None) -> list[Event]:
+    """Run culture scrapers and collect events.
+
+    Args:
+        group: If specified (1 or 2), only run scrapers from that group.
+               If None, run all scrapers.
+    """
     events: list[Event] = []
-    for scraper in [arcub, elvirepopescu, improteca, mare, mnac]:
+
+    if group is not None:
+        scrapers = SCRAPER_GROUPS[group]["culture"]
+    else:
+        scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
+
+    for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
     return events
 
@@ -180,14 +233,39 @@ def save_results(
     theatre_events: list[Event],
     culture_events: list[Event],
     existing_events: dict[str, list[dict]],
+    group: int | None = None,
 ) -> None:
-    """Merge new events with existing and save to events.json."""
+    """Merge new events with existing and save to events.json.
+
+    Args:
+        group: If specified, save to artifacts/events_group_{N}.json without merging.
+               Used for parallel execution where merge happens in a separate step.
+    """
+    if group is not None:
+        # Save to group-specific artifact file (no merge with existing)
+        ARTIFACTS_DIR.mkdir(exist_ok=True)
+        output_file = ARTIFACTS_DIR / f"events_group_{group}.json"
+
+        data = {
+            "scraped_at": datetime.now().isoformat(),
+            "group": group,
+            "music_events": [asdict(e) for e in music_events],
+            "theatre_events": [asdict(e) for e in theatre_events],
+            "culture_events": [asdict(e) for e in culture_events],
+        }
+
+        with open(output_file, "w") as f:
+            json.dump(data, f, indent=2, default=str)
+        print(f"Saved group {group} events to {output_file}")
+        return
+
+    # Normal flow: merge with existing events
     DATA_DIR.mkdir(exist_ok=True)
-    
+
     merged_music = merge_events(existing_events["music_events"], music_events)
     merged_theatre = merge_events(existing_events["theatre_events"], theatre_events)
     merged_culture = merge_events(existing_events["culture_events"], culture_events)
-    
+
     merged_music = cleanup_past_events(merged_music)
     merged_theatre = cleanup_past_events(merged_theatre)
     merged_culture = cleanup_past_events(merged_culture)
@@ -218,6 +296,78 @@ def get_new_events(
     return new_events
 
 
+def merge_group_artifacts() -> None:
+    """Merge events from group artifact files into the main events.json.
+
+    This is called after parallel scraper jobs complete to combine their results.
+    """
+    print("Merging group artifacts...")
+
+    # Load existing events
+    existing_events = load_existing_events()
+    print(f"Loaded {sum(len(v) for v in existing_events.values())} existing events")
+
+    all_music: list[dict] = list(existing_events["music_events"])
+    all_theatre: list[dict] = list(existing_events["theatre_events"])
+    all_culture: list[dict] = list(existing_events["culture_events"])
+
+    # Load and merge each group file
+    for group_num in [1, 2]:
+        group_file = ARTIFACTS_DIR / f"events_group_{group_num}.json"
+        if not group_file.exists():
+            print(f"Warning: {group_file} not found, skipping")
+            continue
+
+        with open(group_file) as f:
+            group_data = json.load(f)
+
+        music_count = len(group_data.get("music_events", []))
+        theatre_count = len(group_data.get("theatre_events", []))
+        culture_count = len(group_data.get("culture_events", []))
+        print(f"Group {group_num}: {music_count} music, {theatre_count} theatre, {culture_count} culture events")
+
+        # Add group events (they're already dicts from the artifact)
+        all_music.extend(group_data.get("music_events", []))
+        all_theatre.extend(group_data.get("theatre_events", []))
+        all_culture.extend(group_data.get("culture_events", []))
+
+    # Deduplicate by key
+    def dedup_by_key(events: list[dict]) -> list[dict]:
+        seen: set[str] = set()
+        result: list[dict] = []
+        for event in events:
+            key = get_event_key(event)
+            if key not in seen:
+                seen.add(key)
+                result.append(event)
+        return result
+
+    all_music = dedup_by_key(all_music)
+    all_theatre = dedup_by_key(all_theatre)
+    all_culture = dedup_by_key(all_culture)
+
+    # Clean up past events
+    all_music = cleanup_past_events(all_music)
+    all_theatre = cleanup_past_events(all_theatre)
+    all_culture = cleanup_past_events(all_culture)
+
+    print(f"After merge and dedup: {len(all_music)} music, {len(all_theatre)} theatre, {len(all_culture)} culture")
+
+    # Save merged results
+    DATA_DIR.mkdir(exist_ok=True)
+    data = {
+        "scraped_at": datetime.now().isoformat(),
+        "music_events": all_music,
+        "theatre_events": all_theatre,
+        "culture_events": all_culture,
+    }
+
+    with open(EVENTS_FILE, "w") as f:
+        json.dump(data, f, indent=2, default=str)
+
+    print(f"Saved merged events to {EVENTS_FILE}")
+
+
 def save_scraper_errors(errors: list[ScraperError]) -> None:
     """Save scraper errors to JSON for the fix-scrapers workflow."""
     from dataclasses import asdict
@@ -233,21 +383,87 @@ def save_scraper_errors(errors: list[ScraperError]) -> None:
 
 def main() -> None:
     """Main orchestrator."""
+    parser = argparse.ArgumentParser(description="Scrape cultural events")
+    parser.add_argument(
+        "--group",
+        type=int,
+        choices=[1, 2],
+        help="Run only scrapers from the specified group (1 or 2) for parallel execution",
+    )
+    parser.add_argument(
+        "--merge",
+        action="store_true",
+        help="Merge group artifact files into the main events.json (run after parallel scraping)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Show what scrapers would run without actually running them",
+    )
+    args = parser.parse_args()
+
+    if args.merge:
+        merge_group_artifacts()
+        return
+
+    group = args.group
+
+    if args.dry_run:
+        print("=== DRY RUN - showing what would run ===\n")
+        run_festivals = should_run_festival_scrapers()
+
+        if group:
+            print(f"Group {group} scrapers:")
+            music_scrapers = SCRAPER_GROUPS[group]["music"]
+            if group == 1 and run_festivals:
+                music_scrapers = music_scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
+            theatre_scrapers = SCRAPER_GROUPS[group]["theatre"]
+            culture_scrapers = SCRAPER_GROUPS[group]["culture"]
+        else:
+            print("All scrapers (no group specified):")
+            music_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+            theatre_scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+            culture_scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
+
+        # Filter out festivals if not running
+        if not run_festivals:
+            music_scrapers = [s for s in music_scrapers if s not in FESTIVAL_SCRAPERS]
+
+        print(f"\nMusic ({len(music_scrapers)}):")
+        for s in music_scrapers:
+            print(f"  - {s.__name__.split('.')[-1]}")
+
+        print(f"\nTheatre ({len(theatre_scrapers)}):")
+        for s in theatre_scrapers:
+            print(f"  - {s.__name__.split('.')[-1]}")
+
+        print(f"\nCulture ({len(culture_scrapers)}):")
+        for s in culture_scrapers:
+            print(f"  - {s.__name__.split('.')[-1]}")
+
+        print(f"\nTotal: {len(music_scrapers) + len(theatre_scrapers) + len(culture_scrapers)} scrapers")
+        if not run_festivals:
+            print("(festival scrapers skipped - only run on 1st of month)")
+        return
+
+    if group:
+        print(f"Running scraper group {group}...")
+
     print("Loading existing events...")
     existing_events = load_existing_events()
     previous_keys = load_previous_event_keys(existing_events)
     print(f"Loaded {len(previous_keys)} existing events")
 
     print("Running music scrapers...")
-    music_events = run_music_scrapers()
+    music_events = run_music_scrapers(group)
     print(f"Found {len(music_events)} music events")
 
     print("Running theatre scrapers...")
-    theatre_events = run_theatre_scrapers()
+    theatre_events = run_theatre_scrapers(group)
     print(f"Found {len(theatre_events)} theatre events")
 
     print("Running culture scrapers...")
-    culture_events = run_culture_scrapers()
+    culture_events = run_culture_scrapers(group)
     print(f"Found {len(culture_events)} culture events")
 
     print("Deduplicating events...")
@@ -274,8 +490,11 @@ def main() -> None:
     new_culture = get_new_events(deduped_culture, previous_keys)
     print(f"New events: {len(new_music)} music, {len(new_theatre)} theatre, {len(new_culture)} culture")
 
-    print("Saving results (merging new events and removing past events)...")
-    save_results(deduped_music, deduped_theatre, deduped_culture, existing_events)
+    if group:
+        print(f"Saving group {group} results to artifact...")
+    else:
+        print("Saving results (merging new events and removing past events)...")
+    save_results(deduped_music, deduped_theatre, deduped_culture, existing_events, group)
 
     if scraper_errors:
         print(f"\n⚠️  {len(scraper_errors)} scraper(s) had issues:")
