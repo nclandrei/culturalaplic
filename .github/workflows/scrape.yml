@@ -49,8 +49,8 @@ jobs:
       - name: Commit data changes
         if: steps.scrape.outcome == 'success'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Andrei-Mihai Nicolae"
+          git config user.email "andrei@nicolaeandrei.com"
           git add web/public/data/events.json
           git diff --staged --quiet || git commit -m "Update event data $(date +%Y-%m-%d)"
           git push

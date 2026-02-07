@@ -153,8 +153,8 @@ jobs:
           fi
           
           # Configure git
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Andrei-Mihai Nicolae"
+          git config user.email "andrei@nicolaeandrei.com"
           
           # Create branch and commit
           git checkout -b "$BRANCH_NAME"
