@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-02-12T10:11:16.192783",
+  "scraped_at": "2026-02-13T10:02:52.838518",
   "music_events": [
-    {
-      "title": "Concert simfonic",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://oveit.com/hub/event/concert-simfonic-jz6ZGazw",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "Concert simfonic",
       "artist": null,
@@ -812,21 +797,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl LIVE: Vega Trails [UK]",
-      "artist": "Vega Trails [UK]",
-      "venue": "Control Club - ROOM 1",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-live-vega-trails-uk",
-      "source": "control",
-      "category": "music",
-      "price": "from 70 lei",
-      "spotify_url": "https://open.spotify.com/artist/0gbsttCxz1wkYMjN64WCgR",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: Mint Field [MX] & Avishag Cohen Rodrigues [USA]",
       "artist": "Mint Field [MX] & Avishag Cohen Rodrigues [USA]",
       "venue": "Control Club - ROOM 1",
@@ -1151,21 +1121,6 @@
       "category": "music",
       "price": null,
       "spotify_url": "https://open.spotify.com/artist/1o4xLcugkCtDDOw7POAMha",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Corsarul(Le Corsaire)",
-      "artist": "Balet",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-02-12 18:30:00",
-      "url": "https://operanb.ro/spectacol/corsarul-le-corsaire/#120220260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/3pIytlvnyXjoxi1JMOcHPJ",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1598,21 +1553,6 @@
       "date": "2026-03-22 18:30:00",
       "url": "https://operanb.ro/spectacol/madama-butterfly/#220320260",
       "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Hybrid Riot Tour \u2013 Emo Reunion | notparamore | Shadows of the Park",
-      "artist": "Hybrid Riot Tour",
-      "venue": "Quantic",
-      "date": "2026-02-12 00:00:00",
-      "url": "https://quantic.pub/eveniment/hybrid-riot-tour-emo-reunion-notparamore-shadows-of-the-park/",
-      "source": "quantic",
       "category": "music",
       "price": null,
       "spotify_url": null,
@@ -2177,21 +2117,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl LIVE: Vega Trails [UK], 7th Sense [RO]",
-      "artist": "Vega Trails [UK], 7th Sense [RO]",
-      "venue": "Control Club - ROOM 1",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-live-vega-trails-uk",
-      "source": "control",
-      "category": "music",
-      "price": "90.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/0gbsttCxz1wkYMjN64WCgR",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Kollektiv Turmstrasse [DE], Ro\u0219ieanu, Gemini Brothers, Phil Cocks & Meelouna",
       "artist": "Kollektiv Turmstrasse [DE], Ro\u0219ieanu, Gemini Brothers, Phil Cocks & Meelouna",
       "venue": "Control Club - ROOM 1",
@@ -2552,21 +2477,6 @@
       "video_url": null
     },
     {
-      "title": "Vlad Bretan & Georj",
-      "artist": "Vlad Bretan & Georj",
-      "venue": "Control Club - Front Room",
-      "date": "2026-02-12 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=vlad-bretan-georj",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/6c6EC0JFOBPfCLEAzghDTy",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl BRUTUS LIVE: Second Wave",
       "artist": "ctrl BRUTUS LIVE: Second Wave",
       "venue": "Control Club - Berlin Room",
@@ -2610,24 +2520,24 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "ctrl LIVE: Smag Pa Dig Selv [DK]",
+      "artist": "Smag Pa Dig Selv [DK]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-04-26 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ctrl-live-smag-pa-dig-selv",
+      "source": "control",
+      "category": "music",
+      "price": "70.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/23pTWRPhfqdtCB8N1FGIeC",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
-    {
-      "title": "OBICEIURI NECURATE",
-      "artist": "Tom Smith",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.bulandra.ro/obiceiuri-necurate-2023/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Comedie de situa\u0163ie construit\u0103 ca o veritabil\u0103 fars\u0103 shakespearian\u0103,Obiceiuri necuratereprezint\u0103 o incursiune \u00eentr-un univers monahal distorsionat. \u00cenl\u0103n\u0163uirea de situa\u0163ii tragi-comice \u00eempinse uneori p\u00e2n\u0103 la limita absurdului creeaz\u0103 o poveste care are ca scop prezentarea \u015fi demascarea ipocriziei clericale. Miz\u00e2nd pe fascina\u0163ia exercitat\u0103 de c\u0103tre universul monahal asupra lumii profane, textul se adreseaz\u0103 unei palete c\u00e2t mai largi de spectatori, \u00eendemn\u00e2ndu-i s\u0103 participe at\u00e2t pe cei deschi\u015fi...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2023/09/Obiceiuri-necurate-2023-foto-Andrei-Gindac-15.jpg",
-      "video_url": null
-    },
     {
       "title": "TACHE, IANKE \u0218I CAD\u00c2R",
       "artist": "Victor Ion Popa",
@@ -2869,21 +2779,6 @@
       "video_url": null
     },
     {
-      "title": "Thrill Me",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-02-12 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/thrill-me-povestea-lui-leopold-si-a-lui-loeb/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un musical de camer\u0103 \u00een dou\u0103 personaje, bazat pe o \u00eent\u00e2mplare adev\u0103rat\u0103 care a zguduit Chicago-ul anilor 1920 \u0219i a inspirat mai multe piese de teatru \u0219i produc\u021bii cinematografice.",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/02/Design-fara-titlu-4.jpg",
-      "video_url": "https://www.youtube.com/embed/N4mV7t2SM4o"
-    },
-    {
       "title": "Secretul fericirii",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -3122,36 +3017,6 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/5.jpg",
       "video_url": null
-    },
-    {
-      "title": "Ultima or\u0103",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://nottara.ro/spectacol/ultima-ora/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O poveste demn\u0103 de un scenariu hollywoodian \u2013 o eroare de tipografie na\u0219te o serie de \u00eencurc\u0103turi, lupte de putere, dar \u0219i o mare iubire. Personaje memorabile \u00eentr-o aventur\u0103 cu final fericit! O comedie excelent\u0103, nota \u00een\u00a0Jurnalul\u00a0s\u0103u Mihail Sebastian.\u00a0Ultima or\u0103\u00a0\u2013 poveste demn\u0103 de un scenariu hollywoodian \u2013 se construie\u0219te \u00een jurul unei erori de tipografie [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/ultima-ora-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/fYCgoIOAr3Y"
-    },
-    {
-      "title": "Ora\u0219ul Luminii",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-02-12 19:30:00",
-      "url": "https://nottara.ro/spectacol/orasul-luminii/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol fascinant despre vin\u0103 \u0219i iubire. O terapie ca o spovedanie, \u00eentre doi b\u0103rba\u021bi, unul terapeut, cel\u0103lalt \u2013 pacient. O confesiune ce le va schimba via\u021ba celor doi. Ian, un fost preot devenit terapeut, prime\u0219te un nou pacient, John, un b\u0103rbat care \u0219i-a pierdut recent so\u021bia \u00eentr-un accident de ma\u0219in\u0103 \u0219i care nu mai [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/Orasul-luminii-homepage-1280x853-px-e1731964293348.jpg",
-      "video_url": "https://www.youtube.com/embed/OW3sXCmCThg"
     },
     {
       "title": "Cumetrele",
@@ -3616,51 +3481,6 @@
       "description": "\u201d este un one woman show care are la baz\u0103 un scenariu adaptat dup\u0103 volumele de memorialistic\u0103 \u201eMaria, Regina Rom\u00e2niei- jurnal de r\u0103zboi\u201d, edi\u021biile \u00eengrijite de istoricul Lucian Boia, ap\u0103rute la editura Humanitas. \u201eRegina Maria- jurnal de r\u0103zboi\u201d este un spectacol pornit din emo\u021bia pe care am sim\u021bit-o atunci c\u00e2nd am citit jurnalul de r\u0103zboi al Reginei Maria. Ne-am dorit s\u0103 realiz\u0103m un spectacol-m\u0103r",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/11/afis-REGINA-MARIA-1-720x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Proorocul Ilie",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.tnb.ro/ro/proorocul-ilie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "La TNB, \u00een intimitatea S\u0103lii Studio, \"Proorocul Ilie\" se anun\u021b\u0103 a fi o c\u0103l\u0103torie teatral\u0103 ce te va purta prin complexitatea fiin\u021bei umane. Descoper\u0103 o poveste cu rezonan\u021be profunde, pus\u0103 \u00een scen\u0103 \u00eentr-un spa\u021biu ce promite o experien\u021b\u0103 visceral\u0103 \u0219i captivant\u0103. Preg\u0103te\u0219te-te pentru o sear\u0103 de reflec\u021bie \u0219i emo\u021bie pur\u0103.",
-      "description_source": "ai",
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1096/1407/large_prooroc_ilie_AFIS.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Casa curat\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.tnb.ro/ro/casa-curata",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "La TNB, Sala Pictura, \"Casa Curat\u0103\" promite o incursiune electrizant\u0103 \u00een straturile complexe ale rela\u021biilor umane \u0219i ale compromisurilor cotidiene. Preg\u0103ti\u021bi-v\u0103 pentru un spectacol care v\u0103 va tulbura lini\u0219tea \u0219i v\u0103 va l\u0103sa cu \u00eentreb\u0103ri esen\u021biale despre deciziile pe care le lu\u0103m.",
-      "description_source": "ai",
-      "image_url": "https://www.tnb.ro/uploads/spectacles/916/1136/large_IMG_6806.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Incognito",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.tnb.ro/ro/incognito",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Incognito\" la Sala Atelier a TNB deschide u\u0219a c\u0103tre universuri ascunse, acolo unde identit\u0103\u021bile se joac\u0103 \u0219i adev\u0103rurile prind contururi nea\u0219teptate. Preg\u0103ti\u021bi-v\u0103 pentru o explorare fascinant\u0103 a subtilit\u0103\u021bilor umane, \u00eentr-o produc\u021bie care promite s\u0103 v\u0103 \u021bin\u0103 cu sufletul la gur\u0103 de la \u00eenceput p\u00e2n\u0103 la sf\u00e2r\u0219it.",
-      "description_source": "ai",
-      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
       "video_url": null
     },
     {
@@ -4729,21 +4549,6 @@
       "video_url": null
     },
     {
-      "title": "Hedwig and the Angry Inch",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://teatrulstelapopescu.ro/spectacol/hedwig-and-the-angry-inch-la-teatrul-metropolis-12-02-2026/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "de John Cameron Mitchell \u2016 Muzica \u0219i versurile: Stephen Trask \u2016 Regia, coregrafia, costumele: R\u0103zvan Mazilu \u2016 Decorul: Adriana Grand \u2016 Distribu\u021bia: Lucian Ionescu, Crina Matei, Irina C\u0103r\u0103mizaru, Cristina Danu",
-      "description_source": "scraped",
-      "image_url": "https://teatrulstelapopescu.ro/wp-content/uploads/2025/08/Afis-Hedwig-2025-logo-parteneri-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "Omul pern\u0103",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mic\u0103",
@@ -4787,21 +4592,6 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
       "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
-    },
-    {
-      "title": "NE CEREM SCUZE PENTRU DISCONFORTUL CREAT",
-      "artist": "de Radu Iacoban",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/ne-cerem-scuze-pentru-disconfortul-creat/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": ", o nunt\u0103 devine o experien\u021b\u0103 imersiv\u0103 inedit\u0103, pe care spectatorii o vor urm\u0103ri pas cu pas. Spectacolul propune o form\u0103 de expresie scenic\u0103 aparte, care se \u00eendep\u0103rteaz\u0103 de structura dramatic\u0103 tradi\u021bional\u0103. De\u0219i cadrul principal de desf\u0103\u0219urare al ac\u021biunii este nunta unui cuplu de tineri afla\u021bi la \u00eenceput de drum, povestea se multiplic\u0103 constant prin intermediul celor unsprezece personaje, fiecare ",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/04/NeCeremScz-70x100cm-717x1024.jpg",
-      "video_url": null
     },
     {
       "title": "EX",
@@ -6832,21 +6622,6 @@
       "title": "Vizite ghidate la Muzeu",
       "artist": null,
       "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-02-12 15:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
       "date": "2026-02-13 12:00:00",
       "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
       "source": "tnb",
@@ -8162,6 +7937,81 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1197/1561/large_banner.jpg",
       "video_url": null
+    },
+    {
+      "title": "ACTHARSIS prezint\u0103: PIANUL CU POEME",
+      "artist": "muzic\u0103 \u0219i poezie",
+      "venue": "Teatrul Bulandra - Liviu Ciulei",
+      "date": "2026-03-21 19:00:00",
+      "url": "https://www.bulandra.ro/program/pianul-cu-poeme/?wcs_timestamp=1774119600",
+      "source": "bulandra",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u2022 Recital de muzic\u0103 \u0219i poezie \u2022 Distribu\u021bie: Daniela Nane \u0219i Alexandru Burc\u0103 \u00a0 March 21 @ 19:00 19:00 \u2014 20:00 (1h) Liviu Ciulei (Schitu M\u0103gureanu nr. 1)",
+      "description_source": "scraped",
+      "image_url": "https://www.bulandra.ro/wp-content/uploads/2020/09/iabilet.jpeg",
+      "video_url": null
+    },
+    {
+      "title": "Nepotul meu se crede poet",
+      "artist": null,
+      "venue": "Teatrul Godot",
+      "date": "2026-03-01 19:00:00",
+      "url": "https://www.teatrulgodot.ro/spectacole/nepotul-meu-se-crede-poet-3/",
+      "source": "godot",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Regia: Magda Catone Cu: Magda Catone, Rares Prisacariu, Anda S\u00e2rbei, Alexandru Dunaev Ora: 7:00 pm \u201dNEPOTUL MEU SE CREDE POET!\u201d o pies\u0103 de C\u0103lin-Liviu Georgescu CUMP\u0102R\u0102 BILET \u201dNEPOTUL MEU SE CREDE POET!\u201d Spectacol de teatru de C\u0103lin-Liviu Georgescu Regia: Magda Catone Cu: Magda Catone, copilul Rare\u0219 Prisacariu, Alecsandru Dunaev, Anda S\u00e2rbei \u0219i pianistul Petru Cioac\u0103 Edi\u0163ie special\u0103 de M\u0103r\u0163i\u015for \u2013 ",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-16-at-19.41.27.jpeg",
+      "video_url": null
+    },
+    {
+      "title": "NE CEREM SCUZE PENTRU DISCONFORTUL CREAT",
+      "artist": "de Radu Iacoban",
+      "venue": "Teatrul Mic - Sala Studio",
+      "date": "2026-03-11 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/ne-cerem-scuze-pentru-disconfortul-creat/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": ", o nunt\u0103 devine o experien\u021b\u0103 imersiv\u0103 inedit\u0103, pe care spectatorii o vor urm\u0103ri pas cu pas. Spectacolul propune o form\u0103 de expresie scenic\u0103 aparte, care se \u00eendep\u0103rteaz\u0103 de structura dramatic\u0103 tradi\u021bional\u0103. De\u0219i cadrul principal de desf\u0103\u0219urare al ac\u021biunii este nunta unui cuplu de tineri afla\u021bi la \u00eenceput de drum, povestea se multiplic\u0103 constant prin intermediul celor unsprezece personaje, fiecare ",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/04/NeCeremScz-70x100cm-717x1024.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Regi, Regine, Fluturi\u2026",
+      "artist": null,
+      "venue": "TNB - Sala Media",
+      "date": "2026-03-24 19:00:00",
+      "url": "https://www.tnb.ro/ro/regi-regine-fluturi",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1205/1573/large_afis_regi.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Dineu cu pro\u015fti",
+      "artist": null,
+      "venue": "TNB - Sala \"Ion Caramitru\"",
+      "date": "2026-03-30 18:00:00",
+      "url": "https://www.tnb.ro/ro/dineu-cu-prosti-uniter",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/924/1141/large_dineu_final.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -8179,21 +8029,6 @@
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
-    },
-    {
-      "title": "ANATOMIE D'UNE CHUTE / ANATOMIA UNEI PR\u0102BU\u0218IRI",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-02-12 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-anatomie-d-une-chute-anatomia-unei-prabusiri-film-therapy-film-club-ftfc",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Cast:Sandra H\u00fcller, Swann Arlaud, Samuel Theis, Milo Machado GranerGenre:Crim\u0103, dram\u0103, thrillerDuration:2h 31mCountry:Fran\u021baLanguage:FR, ENYear:2023 Filmul \u00eei urm\u0103re\u0219te pe Sandra, Samuel \u0219i pe fiul lor cu deficien\u021be de vedere, Daniel, care locuiesc de un an \u00eentr-o zon\u0103 montan\u0103 izolat\u0103. C\u00e2nd Samuel este g\u0103sit mort \u00een fa\u021ba casei, \u00eencepe o anchet\u0103 pentru a investiga moartea lui petrecut\u0103 \u00een circumstan\u021be suspecte. Sandra este imediat pus\u0103 sub acuzare, \u00een ciuda \u00eentreb\u0103rii r\u0103mase f\u0103r\u0103 r\u0103spuns: A fost ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/12/bilete-anatomie-d-une-chute-anatomia-unei-prabusiri-film-therapy-film-club-ftfc-xBg.webp",
-      "video_url": "https://www.youtube.com/embed/TZcJ_orEPG0"
     },
     {
       "title": "PROSPEC\u021aIE \u00ceN PALESTINA PENTRU \u201eEVANGHELIA DUP\u0102 MATEI\u201d / SOPRALLUOGHI IN PALESTINA PER IL VANGELO SECONDO MATTEO + OEDIPUS RE:DUX",
@@ -8721,21 +8556,6 @@
       "video_url": null
     },
     {
-      "title": "TAG EDU | O \u00eent\u00e2lnire cu Robert \u0218imon - de la concept art pentru jocuri video \u0219i film la pictur\u0103 clasic\u0103",
-      "artist": null,
-      "venue": "ARCUB - Sala Mare",
-      "date": "2026-02-12 19:00:00",
-      "url": "https://arcub.ro/eveniment/tag-edu-o-intalnire-cu-robert-simon-de-la-concept-art-pentru-jocuri-video-si-film-la-pictura-clasica",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Robert \u0218imon, concept artist pentruGod of War,Ryse: Son of Rome\u0219iKillzone: Shadow Fall, dar \u0219i c\u00e2\u0219tig\u0103tor al unuiPrimetime Emmy Award for Outstanding Special and Visual Effects (2014)pentruGame of Thrones, vine la Bucure\u0219ti, laTAG EDU, pe12.02. Expus \u00een sala dedicat\u0103 creatorilor rom\u00e2ni la TAG, Robert are o experien\u021b\u0103 solid\u0103 at\u00e2t \u00een industria jocurilor video, c\u00e2t \u0219i \u00een cinema. \u00cel vom descoperi \u0219i dincolo de mediul digital: ca pictor \u00een tehnici tradi\u021bionale. Discu\u021bia va aborda parcursul s\u0103u art...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "Cineva are s\u0103 vin\u0103",
       "artist": null,
       "venue": "ARCUB - Sala Mare",
@@ -8928,21 +8748,6 @@
       "description": "Spectacolul \u201eGaviota\u201d se joac\u0103 \u00een cadrul Stagiunii Interna\u021bionale de Teatru ARCUB 2026, proiect lansat \u00een 2025, dedicat \u00eent\u00e2lnirii publicului din Rom\u00e2nia cu produc\u021bii semnate de creatori interna\u021bionali ai teatrului contemporan. \u201eGaviota\u201d, \u00een regia argentinianului Guillermo Cacace, propune o adaptare liber\u0103 \u0219i contemporan\u0103 a piesei \u201ePesc\u0103ru\u0219ul\u201d de A.P. Cehov, transformat\u0103 \u00eentr-o experien\u021b\u0103 teatral\u0103 de proximitate, \u00een care publicul devine parte din acela\u0219i spa\u021biu intim cu interpretele. Cinci ac...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "\u00cen ritmul lumii",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-02-12 11:00:00",
-      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
       "video_url": null
     },
     {
@@ -9244,6 +9049,51 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-raliul-de-la-paris-la-piramide-cJm.webp",
       "video_url": "https://www.youtube.com/embed/kXicRRXz5t8"
+    },
+    {
+      "title": "Gaviota | Pesc\u0103ru\u0219ul \u00een cadrul Stagiunii Interna\u021bionale de Teatru",
+      "artist": null,
+      "venue": "ARCUB - Sala Mare",
+      "date": "2026-03-08 19:00:00",
+      "url": "https://arcub.ro/eveniment/gaviota-pescarusul-in-cadrul-stagiunii-internationale-de-teatru",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Spectacolul \u201eGaviota\u201d se joac\u0103 \u00een cadrul Stagiunii Interna\u021bionale de Teatru ARCUB 2026, proiect lansat \u00een 2025, dedicat \u00eent\u00e2lnirii publicului din Rom\u00e2nia cu produc\u021bii semnate de creatori interna\u021bionali ai teatrului contemporan. \u201eGaviota\u201d, \u00een regia argentinianului Guillermo Cacace, propune o adaptare liber\u0103 \u0219i contemporan\u0103 a piesei \u201ePesc\u0103ru\u0219ul\u201d de A.P. Cehov, transformat\u0103 \u00eentr-o experien\u021b\u0103 teatral\u0103 de proximitate, \u00een care publicul devine parte din acela\u0219i spa\u021biu intim cu interpretele. Cinci ac...",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
+      "title": "\u00cen ritmul lumii",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-02-13 11:00:00",
+      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Vernisaj Bo\u00eete, Box, Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-02-19 16:30:44.607000",
+      "url": "https://www.mnac.ro/event/1354/Vernisaj%20Bo%C3%AEte,%20Box,%20Br%C3%A2ncu%C8%99i/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Vernisaj",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
+      "video_url": null
     }
   ]
 }
