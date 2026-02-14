@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { PostHogProvider } from "./providers";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -29,7 +30,7 @@ export default function RootLayout({
         >
           Salt la conținut
         </a>
-        {children}
+        <PostHogProvider>{children}</PostHogProvider>
         <SpeedInsights />
         <Analytics />
       </body>
