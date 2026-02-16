@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-02-15T09:53:11.314143",
+  "scraped_at": "2026-02-16T09:50:02.414370",
   "music_events": [
     {
       "title": "Mo\u0219tenitorii Rom\u00e2niei Muzicale",
@@ -1097,21 +1097,6 @@
       "video_url": null
     },
     {
-      "title": "Otello",
-      "artist": "Oper\u0103",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-02-15 18:30:00",
-      "url": "https://operanb.ro/spectacol/otello/#150220260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Madama Butterfly",
       "artist": "Oper\u0103",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -1802,21 +1787,6 @@
       "video_url": null
     },
     {
-      "title": "Apolodor / Ada Milea, Dorina Chiriac, Radu B\u00e2nzaru \u0219i Alex Neagu",
-      "artist": "Apolodor / Ada Milea, Dorina Chiriac, Radu B\u00e2nzaru \u0219i Alex Neagu",
-      "venue": "Quantic",
-      "date": "2026-02-15 00:00:00",
-      "url": "https://quantic.pub/eveniment/apolodor-ada-milea-dorina-chiriac-radu-banzaru-si-alex-neagu-5/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/4OsSoh6WgmHLL6v2p34L6b",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Funking With The 90s",
       "artist": "Funking With The 90s",
       "venue": "Quantic",
@@ -2490,39 +2460,24 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Supermono & Dar Adal, .c.c",
+      "artist": "Supermono & Dar Adal, .c.c",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-02-17 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-supermono-dar-adal-c-c",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/5vazMuFGOr8BED6x7T2caJ",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
-    {
-      "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
-      "artist": "Hanoch Levin",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.bulandra.ro/mestesugul-vietii/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Me\u015fte\u015fugul Vie\u0163ii, una dintre cele mai apreciate piese ale marelui dramaturg israelian Hanoch Levin, examineaz\u0103 via\u0163a din perspectiva unui cuplu: speran\u0163e pierdute, via\u0163\u0103 irosit\u0103, m\u00e2nie, violen\u0163\u0103, regrete, dificult\u0103\u0163i de comunicare. Lupta dulce-am\u0103ruie \u015fi disperat\u0103 dintre cei doi reflect\u0103 \u00eentreb\u0103ri universale. C\u00e2t de ridicol\u0103 \u015fi terifiant\u0103 poate fi trecerea noastr\u0103 prin via\u0163\u0103? C\u00e2t de tare ne p\u0103c\u0103lim pe noi \u00een\u015fine, \u00een multe momente, pentru a putea tr\u0103i, aparent lini\u015fti\u0163i \u015fi mul\u0163umi\u0163i, mai depa...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Mestesugul-vietii-2011-foto-Cosmin-Ardeleanu-06-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/ObCzGHHLUG8"
-    },
-    {
-      "title": "M\u0102SC\u0102RICIUL",
-      "artist": "A.P.Cehov",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.bulandra.ro/mascariciul/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un actor r\u0103mas \u00een teatru doar cu sufleurul \u00ee\u015fi retr\u0103ie\u015fte rolurile \u015fi amintirea succesului. O via\u0163\u0103 tr\u0103it\u0103 \u00eentre r\u00e2s \u015fi pl\u00e2ns, m\u0103rturia unui actor pe scen\u0103 \u015fi \u00een afara scenei sunt subiecte bune pentru o noapte alb\u0103 \u00eendestulat\u0103 cu vodc\u0103 \u015fi bucate iluzorii. Dou\u0103 recitaluri actorice\u015fti care nu trebuie ratate.",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2022/03/Mascariciul-2005-foto-Cosmin-Ardeleanu-09.jpg",
-      "video_url": "https://www.youtube.com/embed/_G2lU_QPd7U"
-    },
     {
       "title": "TEROARE",
       "artist": "Ferdinand Von Schirach",
@@ -2701,21 +2656,6 @@
       "description": "Pre\u021b Bilet: 1000 lei Ora: 9:00 am Programul este de Luni 16.02.26 pana Duminica 22.02.26 intre orele 9 si 14 . Pentru inscrieri trimiteti un mail la contact@teatrulgodot.ro Pret: 1000 ron Early Bird Discount . Rezerva-ti locul la workshop pana pe 31.12.2025 si primesti 25% discount Mai jos gasiti o scrisoare din partea lui Andriy Zholdak si programul pe zile al workshopului. A letter from Andriy: ",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2025/12/a-happy-meeting-or-a-possible-divorce.jpg",
-      "video_url": null
-    },
-    {
-      "title": "HENRY JOHNSON",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/henry-johnson/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Henry Johnson este o poveste despre manipulare, despre cum se poate \u00eentoarce \u00eempotriva noastr\u0103 faptul c\u0103 acord\u0103m \u00eencredere cuiva. Construit\u0103 ca un thriller existen\u021bialist, balada lui Henry Johnson ne conduce \u00een jos, \u00een spirala dezastruoaselor lui decizii, p\u00e2n\u0103 la inevitabilul sf\u00e2r\u0219it. \u00cen scurtul s\u0103u drum spre fundul pr\u0103pastiei, Henry Johnson comite multe crime, dar cea [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/01/Design-fara-titlu-1024x576.png",
       "video_url": null
     },
     {
@@ -2911,36 +2851,6 @@
       "description": "\u00cemi vin \u00een minte toate nenorocirile de pe glob: r\u0103zboiul, foametea, SIDA. Dar tot la poza cu mine m\u0103 opresc cu adev\u0103rat, \u00een care se vede c\u0103 m-am \u00eengr\u0103\u0219at.",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/5.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Don Juan",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://nottara.ro/spectacol/don-juan/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Povestea celui mai celebru cuceritor din istorie, Don Juan, str\u0103bate secolele cu aceea\u0219i prospe\u021bime \u0219i fascina\u021bie, \u00eentr-unul dintre cele mai provocatoare spectacole de teatru din Bucure\u0219ti. Veni\u021bi s\u0103 r\u00e2de\u021bi \u0219i s\u0103 v\u0103 emo\u021biona\u021bi, veni\u021bi s\u0103 descoperi\u021bi un Don Juan surprinz\u0103tor, atipic, un Don Juan care-\u0219i poart\u0103 mitul pe umeri, un Don Juan r\u0103t\u0103cit \u00een secolul [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/Don-Juan-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/S_be44SGPfw"
-    },
-    {
-      "title": "Thailanda",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-02-15 19:30:00",
-      "url": "https://nottara.ro/spectacol/thailanda/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Trei prietene de-o via\u021b\u0103, vacan\u021ba visurilor lor, multe speran\u021be, \u00eentr-o comedie cu trei actri\u021be seduc\u0103toare. \u00cen Kifisi\u00e1, un cartier \u00eenst\u0103rit al Atenei, trei femei discut\u0103 despre iubire \u0219i, \u00een special, despre b\u0103rba\u021bii din via\u021ba lor. Preg\u0103tite s\u0103 porneasc\u0103 \u00eentr-o c\u0103l\u0103torie \u00een Thailanda, pentru a se elibera \u0219i a deschide un nou drum \u00een via\u021b\u0103, Aleka, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/thailanda-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -3271,21 +3181,6 @@
       "description": "\u201d este un one woman show care are la baz\u0103 un scenariu adaptat dup\u0103 volumele de memorialistic\u0103 \u201eMaria, Regina Rom\u00e2niei- jurnal de r\u0103zboi\u201d, edi\u021biile \u00eengrijite de istoricul Lucian Boia, ap\u0103rute la editura Humanitas. \u201eRegina Maria- jurnal de r\u0103zboi\u201d este un spectacol pornit din emo\u021bia pe care am sim\u021bit-o atunci c\u00e2nd am citit jurnalul de r\u0103zboi al Reginei Maria. Ne-am dorit s\u0103 realiz\u0103m un spectacol-m\u0103r",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/11/afis-REGINA-MARIA-1-720x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-02-15 11:00:00",
-      "url": "https://www.tnb.ro/ro/teatrul-naional-pentru-copii-abracadabra-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Magia prinde via\u021b\u0103 pe scena Teatrului Na\u021bional! Teatrul Na\u021bional pentru Copii Abracadabra te invit\u0103 la o c\u0103l\u0103torie plin\u0103 de fantezie \u0219i emo\u021bie, un spectacol unde r\u00e2sul \u0219i povestea se \u00eempletesc armonios. Preg\u0103ti\u021bi-v\u0103 s\u0103 fi\u021bi fermeca\u021bi de inocen\u021ba \u0219i ingeniozitatea scenei, \u00eentr-un col\u021b de univers dedicat celor mici \u0219i celor mari deopotriv\u0103.",
-      "description_source": "ai",
-      "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
       "video_url": null
     },
     {
@@ -4322,36 +4217,6 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
       "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
-    },
-    {
-      "title": "VICTIMELE DATORIEI",
-      "artist": "de Eug\u00e8ne Ionesco",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/victimele-datoriei/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "readuce universul ionescian \u00een prim-plan, printr-o construc\u021bie care articuleaz\u0103 absurdul, metafizicul \u0219i poezia, propun\u00e2nd spectatorilor o experien\u021b\u0103 teatral\u0103 unic\u0103. ocup\u0103 un loc central \u00een dramaturgia absurdului, fiind una dintre piesele \u00een care autorul \u00ee\u0219i formuleaz\u0103 \u00een modul cel mai direct rela\u021bia cu actul crea\u021biei \u0219i cu propria identitate. Conceput\u0103 ca o reflec\u021bie asupra raportului dintre indi",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/03-Victimele-Datoriei-Site-724x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "EU SUNT PROPRIA MEA SO\u021aIE",
-      "artist": "de Doug Wright",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/charlotte/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "care prezint\u0103 o poveste plin\u0103 de amintiri, nuan\u021be \u0219i emo\u021bii puternice ale lui Charlotte von Mahlsdorf, un personaj cu multiple straturi \u0219i secrete, din renumitul text, bazat pe o poveste real\u0103. Spectacolul exploreaz\u0103 complexitatea identit\u0103\u021bii \u0219i lupta pentru autenticitate, reu\u0219ind s\u0103 \u00eembine umorul, dramatismul \u0219i introspec\u021bia \u00eentr-o poveste tulbur\u0103toare despre identitate \u0219i autodescoperire.",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
     },
     {
       "title": "CHARLIE CHAPLIN \u2013 The X-Ray of his soul",
@@ -5542,21 +5407,6 @@
       "title": "L\u2019imb\u00e9cile",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
-      "date": "2026-02-15 16:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/occurence/2955",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un om important, un plan bine pus la punct \u0219i un invitat ales \u201estrategic\u201d: un imbecil simpatic, adus ca surs\u0103 de distrac\u021bie la o serat\u0103  \u00eentre oameni sofistica\u021bi. Dar lucrurile nu merg deloc cum se a\u0219tepta gazda, iar noaptea se transform\u0103 \u00eentr-un carusel de situa\u021bii comice, \u00eencurc\u0103turi \u0219i revela\u021bii nea\u0219teptate.\nDincolo de r\u00e2s, r\u0103m\u00e2ne o \u00eentrebare: de ce ne place at\u00e2t de mult s\u0103 ne sim\u021bim superiori? Spectacolul arunc\u0103 o privire amuzat\u0103 \u0219i fin\u0103 asupra orgoliilor umane, asupra felului \u00een care eti...",
-      "description_source": "scraped",
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/Limbecile portret.png",
-      "video_url": null
-    },
-    {
-      "title": "L\u2019imb\u00e9cile",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
       "date": "2026-02-16 17:00:00",
       "url": "https://www.rezervari.cuibulartistilor.ro/occurence/2957",
       "source": "cuibul",
@@ -5671,21 +5521,6 @@
       "description": "Un om important, un plan bine pus la punct \u0219i un invitat ales \u201estrategic\u201d: un imbecil simpatic, adus ca surs\u0103 de distrac\u021bie la o serat\u0103  \u00eentre oameni sofistica\u021bi. Dar lucrurile nu merg deloc cum se a\u0219tepta gazda, iar noaptea se transform\u0103 \u00eentr-un carusel de situa\u021bii comice, \u00eencurc\u0103turi \u0219i revela\u021bii nea\u0219teptate.\nDincolo de r\u00e2s, r\u0103m\u00e2ne o \u00eentrebare: de ce ne place at\u00e2t de mult s\u0103 ne sim\u021bim superiori? Spectacolul arunc\u0103 o privire amuzat\u0103 \u0219i fin\u0103 asupra orgoliilor umane, asupra felului \u00een care eti...",
       "description_source": "scraped",
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/Limbecile portret.png",
-      "video_url": null
-    },
-    {
-      "title": "5+3=9",
-      "artist": "Concept \u0219i coregrafie: \u0218tefan Lupu",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.grivita53.ro/539",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Visul \u00een care au crezut peste 14.000 de ctitori a devenit realitate, demersul Grivi\u021ba 53 s-a transformat \u00een Teatrul Grivi\u021ba 53, un loc dedicat crea\u021biei independente, experimentului \u0219i colabor\u0103rii, un spa\u021biu deschis arti\u0219tilor care caut\u0103 libertate \u00een expresie \u0219i publicului care \u00ee\u0219i dore\u0219te s\u0103 descopere o nou\u0103 form\u0103 de experien\u021b\u0103 cultural\u0103. Deschiderea oficial\u0103 a fost marcat\u0103 de premiera \"5+3=9\", un spectacol creat de \u0218tefan Lupu, inspirat din povestea nespus\u0103 a Teatrului Grivi\u021ba 53, de la prim...",
-      "description_source": "scraped",
-      "image_url": "https://www.grivita53.ro/images/5plus3egal9-poster.jpg",
       "video_url": null
     },
     {
@@ -6289,21 +6124,6 @@
       "video_url": null
     },
     {
-      "title": "Pesc\u0103ru\u0219ul",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://www.tnb.ro/ro/pescarusul-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/786/975/large_Afis_cu_logo.jpg",
-      "video_url": null
-    },
-    {
       "title": "You Say Tomato",
       "artist": null,
       "venue": "TNB - Sala Mic\u0103",
@@ -6406,21 +6226,6 @@
       "description": "s\u0103 creeze o confesiune teatral\u0103 tulbur\u0103toare, un spectacol despre identitate, memorie \u0219i fragilitatea trecerii timpului, \u00een care trei v\u00e2rste, o singur\u0103 via\u021b\u0103 \u0219i trei voci se \u00eent\u00e2lnesc pentru a se contopi \u00eentr-o singur\u0103 con\u0219tiin\u021b\u0103. \u00een anul 1991, piesa a fost distins\u0103 cu prestigiosul Premiu Pulitzer pentru dramaturgie \u00een 1994, iar \u00een prezent continu\u0103 s\u0103 fie montat\u0103 pe scene importante din \u00eentreaga l",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/07/AFIS-FINAL-TREI-FEMEI-INALTE-731x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-02-15 15:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
       "video_url": null
     },
     {
@@ -7971,21 +7776,6 @@
       "video_url": null
     },
     {
-      "title": "MISS MOXY",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-02-15 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-miss-moxy",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Vincent Bal, Wip VernooijCast:Barbara Sarafian, Pieter Embrechts, Sarah Bannier, Frank FocketijnGenre:Anima\u021bie, Aventur\u0103, ComedieDuration:1h 35mCountry:Olanda, BelgiaYear:2025 Miss Moxy, o pisic\u0103 aventuroas\u0103 plecat\u0103 \u00een vacan\u021b\u0103, se r\u0103t\u0103ce\u0219te prin sudul Europei \u0219i trebuie s\u0103 treac\u0103 printr-o serie de aventuri pentru a g\u0103si drumul spre cas\u0103. Partenerii de drum nu sunt cei pe care \u0219i i-ar fi dorit, dar la final ajunge s\u0103-\u0219i schimbe p\u0103rerea despre c\u00e2inele caraghios \u0219i pas\u0103rea b\u0103tr\u00e2n\u0103 \u0219i \u00een\u021bel",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/01/bilete-miss-moxy-GvB.webp",
-      "video_url": "https://www.youtube.com/embed/Ad07JRC3gsU"
-    },
-    {
       "title": "C\u00c2MP DE MACI",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -8466,21 +8256,6 @@
       "video_url": null
     },
     {
-      "title": "Cineva are s\u0103 vin\u0103",
-      "artist": null,
-      "venue": "ARCUB - Sala Mare",
-      "date": "2026-02-15 19:00:00",
-      "url": "https://arcub.ro/eveniment/cineva-are-sa-vina-314",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O dram\u0103 psihologic\u0103 scris\u0103 de Jon Fosse, autorul norvegian care a c\u00e2\u0219tigat Premiul Nobel pentru Literatur\u0103 2023, spectacolul CINEVA ARE S\u0102 VIN\u0102 \u00eei aduce pe scen\u0103 pe Ofelia Popii, actri\u021ba distins\u0103 de trei ori cu Premiul UNITER, \u0219i pe Ciprian Scurtea, actor al Teatrului Na\u021bional \u201eRadu Stanca\u201d din Sibiu. Produc\u021bia regizat\u0103 de\u00a0Chris Simion-Mercurian\u00a0spune povestea unui cuplu aflat \u00een impas \u00een \u00eencercarea lor de a se reconecta.\u00a0El \u0219i Ea \u2013 un cuplu ca oricare altul, cu visuri, idealuri, nesiguran\u021be ...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "PRIVE\u0218TE \u00ceNAPOI CU M\u00c2NIE",
       "artist": null,
       "venue": "Teatrul Improteca Str. Comanita nr.9",
@@ -8946,10 +8721,25 @@
       "video_url": null
     },
     {
+      "title": "Cineva are s\u0103 vin\u0103",
+      "artist": null,
+      "venue": "ARCUB",
+      "date": "2026-03-29 19:00:00",
+      "url": "https://arcub.ro/eveniment/cineva-are-sa-vina-323",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O dram\u0103 psihologic\u0103 scris\u0103 de Jon Fosse, autorul norvegian nominalizat la Premiul Nobel pentru Literatur\u0103, spectacolul \u201eCineva are s\u0103 vin\u0103\u201d, \u00een regia lui Chris Simion-Mercurian, \u015fi \u00eei aduce pe scen\u0103 pe Ofelia Popii, actri\u0163a distins\u0103 de trei ori cu Premiul UNITER, \u015fi pe Ciprian Scurtea, actor al Teatrului Na\u0163ional Radu Stanca din Sibiu.",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-02-15 11:00:00",
+      "date": "2026-02-16 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
