@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-02-22T09:50:04.821150",
+  "scraped_at": "2026-02-23T10:12:51.160712",
   "music_events": [
-    {
-      "title": "Turneul Na\u021bional Melodie, Dor, Magie - edi\u021bia a doua",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://oveit.com/hub/event/turneul-national-melodie-dor-magie-editia-a-doua-8nQwwLzm",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 60 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "Concert vocal-simfonic",
       "artist": null,
@@ -986,21 +971,6 @@
       "category": "music",
       "price": null,
       "spotify_url": "https://open.spotify.com/artist/1o4xLcugkCtDDOw7POAMha",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Cenu\u0219\u0103reasa",
-      "artist": "Balet",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-02-22 18:30:00",
-      "url": "https://operanb.ro/spectacol/cenusareasa/#220220260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/3pIytlvnyXjoxi1JMOcHPJ",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2252,21 +2222,6 @@
       "video_url": null
     },
     {
-      "title": "CASUAL CHESS + RAPID TOURNAMENT BY PEONO CHESS CLUB",
-      "artist": "CASUAL CHESS + RAPID TOURNAMENT BY PEONO CHESS CLUB",
-      "venue": "Control Club - Front Room",
-      "date": "2026-02-22 14:00:00",
-      "url": "https://www.control-club.ro/event/?slug=casual-chess-rapid-tournament-by-peono-chess-club",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "MARR\u00d8N [NL], Walentin Pauer, Jijian, Cheiyale & Nek",
       "artist": "MARR\u00d8N [NL], Walentin Pauer, Jijian, Cheiyale & Nek",
       "venue": "Control Club - Berlin Room & Front Room",
@@ -2914,36 +2869,6 @@
   ],
   "theatre_events": [
     {
-      "title": "ART\u0102",
-      "artist": "Yasmina Reza",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://www.bulandra.ro/arta/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Oare cum ar reac\u0163iona cineva dac\u0103 prietenul s\u0103u cel mai bun ar face brusc o prostie at\u00e2t de colosal\u0103 \u00eenc\u00e2t ar pune sub semnul \u00eentreb\u0103rii \u00eensu\u015fi fundamentul rela\u0163iei lor de amici\u0163ie? Atunci c\u00e2nd un iubitor de art\u0103 cump\u0103r\u0103 ceea ce este la urma urmei un simplu tablou alb pentru o sum\u0103 exorbitant\u0103, cel mai bun prieten al s\u0103u o ia razna. Un al treilea prieten se g\u0103se\u015fte prins la mijloc \u00eentre cei doi, \u00eentr-un spectacol care uime\u015fte prin luciditate \u015fi umor. \u00cencercarea de a \u00een\u0163elege strania art\u0103 mode...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Arta-2010-foto-Andrei-Gindac-12-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/tolVYSw9lK0"
-    },
-    {
-      "title": "SCAUNELE",
-      "artist": "Eugene Ionesco",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://www.bulandra.ro/scaunele/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scaunele\u2013 poate cea mai metafizic\u0103 dintre piesele lui Ionesco, continu\u0103 s\u0103 ne r\u0103scoleasc\u0103 existen\u0163a, pe care o credem sau vrem cu disperare s\u0103 o credem, plin\u0103 de sens \u015fi de evenimente importante. Ionesco ne arat\u0103, f\u0103r\u0103 menajamente, golul \u00een care ne zbatem, o imagine a omenirii \u00een c\u0103utarea propriei identit\u0103\u0163i \u015fi a unui scop care s\u0103 ne justifice via\u0163a. Doi b\u0103tr\u00e2ni \u00ee\u015fi analizeaz\u0103 cu melancolie via\u0163a. Vorbesc, se agit\u0103 \u015fi a\u015fteapt\u0103, alint\u00e2ndu-se cu amintiri ratate. O analiz\u0103 a ceea ce a fost feric...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2020/01/Scaunele6.jpg",
-      "video_url": null
-    },
-    {
       "title": "CIN\u0102 CU PRIETENI",
       "artist": "Donald Margulies",
       "venue": "Teatrul Bulandra - Liviu Ciulei",
@@ -3016,21 +2941,6 @@
       "description": "Regizorul Alexandru Dabija revine la Bulandra cu provocatoarea comedie poli\u021bist\u0103Azilul de moartede Georges Contamin, montat\u0103 \u00een premier\u0103 na\u021bional\u0103. Un spectacol plin de suspans, care aminte\u0219te \u00eentruc\u00e2tva de piesa lui Gorki, doar c\u0103 de data asta abandona\u021bii lumii nu accept\u0103 s\u0103 mearg\u0103 bl\u00e2nd spre \u201enoapte\u201c, ca-n poemul lui Dylan Thomas, ci se bucur\u0103 zgomotos de via\u021b\u0103. P\u00e2n\u0103 \u00eentr-o zi c\u00e2nd, \u00een azilul plin de personaje efervescente \u0219i de pove\u0219ti fascinante, \u00eencep s\u0103 se petreac\u0103 tot felul de lucruri ...",
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2023/10/Azilul-de-moarte-2023-foto-Anastasia-Atanasoska-19-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "ULTIMII",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/ultimii/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Aici, fiecare an care trece, trece degeaba. Nici m\u0103car la fel nu e de la un an la altul, e din ce \u00een ce mai r\u0103u.",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/3V7A7572.jpg",
       "video_url": null
     },
     {
@@ -3121,36 +3031,6 @@
       "description": "\u00cemi vin \u00een minte toate nenorocirile de pe glob: r\u0103zboiul, foametea, SIDA. Dar tot la poza cu mine m\u0103 opresc cu adev\u0103rat, \u00een care se vede c\u0103 m-am \u00eengr\u0103\u0219at.",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/5.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Comedia erorilor",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-02-22 12:00:00",
-      "url": "https://nottara.ro/spectacol/comedia-erorilor/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Comedia erorilor \u2013 o poveste savuroas\u0103, cu aventuri, iubire \u0219i umor de calitate, unul dintre cele mai iubite spectacole din Bucure\u0219ti. Una dintre piesele timpurii ale lui William Shakespeare, \u201eComedia erorilor\u201d este o poveste plin\u0103 de \u00eent\u00e2mpl\u0103ri neprev\u0103zute, qui-pro-quo-uri savuroase, iubire \u0219i aventur\u0103. Este, \u00een acela\u0219i timp, o c\u0103l\u0103torie de descoperire de sine, de asumare [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
-    },
-    {
-      "title": "Praf de stele",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-02-22 19:30:00",
-      "url": "https://nottara.ro/spectacol/praf-de-stele/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O comedie dulce-amar\u0103 a vie\u021bii de zi cu zi, marca celui mai important dramaturg canadian. Ac\u0163iunea se petrece pe balcoanele al\u0103turate ale unui bloc dintr-un mare ora\u015f. Protagonistul, John Cummings, interac\u0163ioneaz\u0103 cu trei femei: Fay, Angel \u015fi Gwen, care \u00eei devin vecine timp de trei ani. John e ziarist \u015fi \u00eencearc\u0103 s\u0103 scrie un nou [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/Praf-de-stele-homepage-1280x853-px-e1731964074931.jpg",
       "video_url": null
     },
     {
@@ -3274,21 +3154,6 @@
       "video_url": null
     },
     {
-      "title": "LOCOTENENTUL DIN INISHMORE",
-      "artist": "de Martin McDonagh",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/locotenentul-din-inishmore-de-martin-mcdonagh/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen centrul ac\u021biunii se afl\u0103 Padraic, un locotenent nebun din insula Inishmore, liderul unui grup scindat din Armata de Eliberare Na\u021bional\u0103 a Irlandei, care porne\u015fte o adev\u0103rat\u0103 lupt\u0103 de r\u0103zbunare pentru a afla cine este responsabil de moartea motanului Thomas M\u00e2\u021b\u00e2\u021belu, singura fiin\u021b\u0103 pentru care a sim\u021bit vreodat\u0103 afec\u021biune. a lui Martin McDonagh e o comedie neagr\u0103. E at\u00e2t de neagr\u0103 \u00eenc\u00e2t rog since",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2022/10/afis_final-1-724x1024.jpg",
-      "video_url": null
-    },
-    {
       "title": "BIGAMUL\u2026dup\u0103 20 de ani (Prins \u00een plas\u0103)",
       "artist": "de Ray Cooney",
       "venue": "Teatrul Mic - Sala Atelier",
@@ -3331,21 +3196,6 @@
       "description": "\u201d este un one woman show care are la baz\u0103 un scenariu adaptat dup\u0103 volumele de memorialistic\u0103 \u201eMaria, Regina Rom\u00e2niei- jurnal de r\u0103zboi\u201d, edi\u021biile \u00eengrijite de istoricul Lucian Boia, ap\u0103rute la editura Humanitas. \u201eRegina Maria- jurnal de r\u0103zboi\u201d este un spectacol pornit din emo\u021bia pe care am sim\u021bit-o atunci c\u00e2nd am citit jurnalul de r\u0103zboi al Reginei Maria. Ne-am dorit s\u0103 realiz\u0103m un spectacol-m\u0103r",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/11/afis-REGINA-MARIA-1-720x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-02-22 11:00:00",
-      "url": "https://www.tnb.ro/ro/teatrul-naional-pentru-copii-abracadabra-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Preg\u0103ti\u021bi-v\u0103 pentru o c\u0103l\u0103torie magic\u0103 al\u0103turi de Teatrul Na\u0163ional pentru Copii Abracadabra, un spectacol ce promite s\u0103 aduc\u0103 z\u00e2mbete pe chipul celor mici \u0219i nostalgie \u00een sufletele celor mari. Pe scena S\u0103lii Media a Teatrului Na\u0163ional Bucure\u015fti, pove\u0219tile prind via\u021b\u0103 \u00eentr-un carusel de emo\u021bii, fantezie \u0219i umor, garant\u00e2nd o experien\u021b\u0103 teatral\u0103 de neuitat pentru \u00eentreaga familie.",
-      "description_source": "ai",
-      "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
       "video_url": null
     },
     {
@@ -3947,21 +3797,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2023/09/Richard-3-2019-foto-Andrei-Gindac-15-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/XHUMVoD7r5U?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Frichard-al-3-lea%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "Brancoveanu \u2013 O Istorie Rock",
-      "artist": null,
-      "venue": "Teatrul Godot",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://www.teatrulgodot.ro/spectacole/brancoveanu-o-istorie-rock/",
-      "source": "godot",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Regia: Mike Savuica Cu: Solisti: Dan HELCIUG, Victor Apetrei, Dana Florian, Antonio Morariu, Alexandru Arn\u0103utu Vraciu, Gabriel Bucur. Instrumentisti: Lyuben Gordievski (Pian), Elena Albu-M (Vioar\u0103), Claudiu Purc\u0103rin-Na\u0219u (Tobe), Vlady S\u0103teanu (Chitar\u0103 bas), Alexandru Panfilov (Chitar\u0103) Ora: 7:00 pm Brancoveanu \u2013 O istorie Rock Concept regizoral: Mike Savuica Muzica si versurile: Cezar Giosan CUMP\u0102",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-26-at-15.12.22.jpeg",
-      "video_url": null
     },
     {
       "title": "",
@@ -5152,21 +4987,6 @@
       "title": "L\u2019imb\u00e9cile",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
-      "date": "2026-02-22 16:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/occurence/2961",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un om important, un plan bine pus la punct \u0219i un invitat ales \u201estrategic\u201d: un imbecil simpatic, adus ca surs\u0103 de distrac\u021bie la o serat\u0103  \u00eentre oameni sofistica\u021bi. Dar lucrurile nu merg deloc cum se a\u0219tepta gazda, iar noaptea se transform\u0103 \u00eentr-un carusel de situa\u021bii comice, \u00eencurc\u0103turi \u0219i revela\u021bii nea\u0219teptate.\nDincolo de r\u00e2s, r\u0103m\u00e2ne o \u00eentrebare: de ce ne place at\u00e2t de mult s\u0103 ne sim\u021bim superiori? Spectacolul arunc\u0103 o privire amuzat\u0103 \u0219i fin\u0103 asupra orgoliilor umane, asupra felului \u00een care eti...",
-      "description_source": "scraped",
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/Limbecile portret.png",
-      "video_url": null
-    },
-    {
-      "title": "L\u2019imb\u00e9cile",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
       "date": "2026-02-23 17:00:00",
       "url": "https://www.rezervari.cuibulartistilor.ro/occurence/2963",
       "source": "cuibul",
@@ -5176,21 +4996,6 @@
       "description": "Un om important, un plan bine pus la punct \u0219i un invitat ales \u201estrategic\u201d: un imbecil simpatic, adus ca surs\u0103 de distrac\u021bie la o serat\u0103  \u00eentre oameni sofistica\u021bi. Dar lucrurile nu merg deloc cum se a\u0219tepta gazda, iar noaptea se transform\u0103 \u00eentr-un carusel de situa\u021bii comice, \u00eencurc\u0103turi \u0219i revela\u021bii nea\u0219teptate.\nDincolo de r\u00e2s, r\u0103m\u00e2ne o \u00eentrebare: de ce ne place at\u00e2t de mult s\u0103 ne sim\u021bim superiori? Spectacolul arunc\u0103 o privire amuzat\u0103 \u0219i fin\u0103 asupra orgoliilor umane, asupra felului \u00een care eti...",
       "description_source": "scraped",
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/Limbecile portret.png",
-      "video_url": null
-    },
-    {
-      "title": "5+3=9",
-      "artist": "Concept \u0219i coregrafie: \u0218tefan Lupu",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-02-22 19:00:00",
-      "url": "https://www.grivita53.ro/539",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Visul \u00een care au crezut peste 14.000 de ctitori a devenit realitate, demersul Grivi\u021ba 53 s-a transformat \u00een Teatrul Grivi\u021ba 53, un loc dedicat crea\u021biei independente, experimentului \u0219i colabor\u0103rii, un spa\u021biu deschis arti\u0219tilor care caut\u0103 libertate \u00een expresie \u0219i publicului care \u00ee\u0219i dore\u0219te s\u0103 descopere o nou\u0103 form\u0103 de experien\u021b\u0103 cultural\u0103. Deschiderea oficial\u0103 a fost marcat\u0103 de premiera \"5+3=9\", un spectacol creat de \u0218tefan Lupu, inspirat din povestea nespus\u0103 a Teatrului Grivi\u021ba 53, de la prim...",
-      "description_source": "scraped",
-      "image_url": "https://www.grivita53.ro/images/5plus3egal9-poster.jpg",
       "video_url": null
     },
     {
@@ -7982,6 +7787,21 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1117/1443/large_contractii_web.jpg",
       "video_url": null
+    },
+    {
+      "title": "LOCOTENENTUL DIN INISHMORE",
+      "artist": "de Martin McDonagh",
+      "venue": "Teatrul Mic - Sala Atelier",
+      "date": "2026-03-15 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/locotenentul-din-inishmore-de-martin-mcdonagh/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u00cen centrul ac\u021biunii se afl\u0103 Padraic, un locotenent nebun din insula Inishmore, liderul unui grup scindat din Armata de Eliberare Na\u021bional\u0103 a Irlandei, care porne\u015fte o adev\u0103rat\u0103 lupt\u0103 de r\u0103zbunare pentru a afla cine este responsabil de moartea motanului Thomas M\u00e2\u021b\u00e2\u021belu, singura fiin\u021b\u0103 pentru care a sim\u021bit vreodat\u0103 afec\u021biune. a lui Martin McDonagh e o comedie neagr\u0103. E at\u00e2t de neagr\u0103 \u00eenc\u00e2t rog since",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2022/10/afis_final-1-724x1024.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -8586,21 +8406,6 @@
       "video_url": null
     },
     {
-      "title": "RALLY - FROM PARIS TO THE PYRAMIDS / RALIUL DE LA PARIS LA PIRAMIDEAG",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-02-22 10:30:00",
-      "url": "https://eventbook.ro/film/bilete-raliul-de-la-paris-la-piramide",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Rasmus A. SivertsenCast:Pia Borgli, Trond Espen Seim, \u00d8yvind Brandtz\u00e6g, Paul-Ottar Haga, Mari MaurstadGenre:Anima\u0163ie, ComedieDuration:1h 22mCountry:NorvegiaYear:2026 Trei prieteni f\u0103r\u0103 prea multe \u00een comun \u00eencearc\u0103 s\u0103 c\u00e2\u0219tige legendarul raliu de la Paris la piramidele din Egipt. Inven\u021biile celor trei aduc mai multe probleme dec\u00e2t solu\u021bii, de aceea primarul i-a alungat din s\u0103tucul lor, Fl\u00e5klypa. Ca s\u0103 arate c\u0103 merit\u0103 o \u0219ans\u0103, ei trebuie s\u0103 c\u00e2\u0219tige competi\u021bia conduc\u00e2nd Il Tempo Gigante, o ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-raliul-de-la-paris-la-piramide-cJm.webp",
-      "video_url": "https://www.youtube.com/embed/kXicRRXz5t8"
-    },
-    {
       "title": "LA BATAILLE DE SOLF\u00c9RINO / B\u0102T\u0102LIA DE PE SOLFERINO + VILAINE FILLE, MAUVAIS GAR\u00c7ON / DOU\u0102 VAPOARE \u00ceN NOAPTE",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -8841,10 +8646,25 @@
       "video_url": null
     },
     {
+      "title": "Switch & Change \ud83e\udeb8 Long-Form Improv Comedy by Neverending Improv",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-02-21 20:00:00",
+      "url": "https://improteca.ro/2026/02/16/switch-change-the-long-form-improv-edition-neverending-improv-21februarie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Switch & Change \u2013 o serie de spectacole de\u00a0 improv comedy & unscripted theater care \u00ee\u0219i au inspira\u021bia din via\u021ba de zi cu zi a publicului, unde distribu\u021bia actorilor nu este niciodat\u0103 aceea\u0219i de la o edi\u021bie la alta. Alex C\u0103t\u0103noiu, Alexandra B\u0103jan, Miky Georgescu, Dan Miron & Sonia Neagoe. S\u00e2mb\u0103t\u0103, 21 Februarie, de la ora 20:00",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-02-22 11:00:00",
+      "date": "2026-02-23 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -8856,16 +8676,16 @@
       "video_url": null
     },
     {
-      "title": "Switch & Change \ud83e\udeb8 Long-Form Improv Comedy by Neverending Improv",
+      "title": "The singing",
       "artist": null,
       "venue": "Improteca",
-      "date": "2027-02-21 20:00:00",
-      "url": "https://improteca.ro/2026/02/16/switch-change-the-long-form-improv-edition-neverending-improv-21februarie/",
+      "date": "2026-03-22 18:00:00",
+      "url": "https://improteca.ro/2026/02/22/the-singing/",
       "source": "improteca",
       "category": "culture",
       "price": null,
       "spotify_url": null,
-      "description": "Switch & Change \u2013 o serie de spectacole de\u00a0 improv comedy & unscripted theater care \u00ee\u0219i au inspira\u021bia din via\u021ba de zi cu zi a publicului, unde distribu\u021bia actorilor nu este niciodat\u0103 aceea\u0219i de la o edi\u021bie la alta. Alex C\u0103t\u0103noiu, Alexandra B\u0103jan, Miky Georgescu, Dan Miron & Sonia Neagoe. S\u00e2mb\u0103t\u0103, 21 Februarie, de la ora 20:00",
+      "description": "\ud83c\udfb6 Musical Improv Show \ud83c\udfb9 spectacol muzical improvizat de fantome obi\u0219nuite \ud83c\udff7\ufe0f Showul te costa cat crezi ca merita si achiti la final, ca donatie \ud83d\udcf1 Rezervari la numarul de telefon: 0727 554 875 (Andrei) sau prin mesaj pe pagina Improteca",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
