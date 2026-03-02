@@ -171,7 +171,7 @@ def parse_event(article: BeautifulSoup) -> Event | None:
     
     venue = "Improteca"
     venue_match = re.search(
-        r"(?:📍|🗺️|📌|🎤)\s*(.+?)(?=(?:📅|📆|🗓|⏰|🏷️|☎️|$))",
+        r"(?:📍|🗺️|📌)\s*(.+?)(?=(?:📅|📆|🗓|⏰|🏷️|☎️|$))",
         excerpt_text,
     )
     if venue_match:
@@ -179,6 +179,9 @@ def parse_event(article: BeautifulSoup) -> Event | None:
         venue_text = re.sub(r"Locație:\s*", "", venue_text, flags=re.IGNORECASE)
         venue_text = re.sub(r"Unde:\s*", "", venue_text, flags=re.IGNORECASE)
         venue_text = re.sub(r"^\s*La\s+", "", venue_text, flags=re.IGNORECASE)
+        # Ignore time-like captures (e.g. "20:00 - Karaoke time!") if marker parsing drifts.
+        if re.match(r"^\d{1,2}[:.]\d{2}\b", venue_text):
+            venue_text = ""
         if venue_text:
             venue = venue_text.split(",")[0].strip()
     
