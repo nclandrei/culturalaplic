@@ -19,10 +19,10 @@
 
 ## Architecture
 - **main.py**: Orchestrator - runs scrapers, matches artists, deduplicates, sends emails
-- **models.py**: `Event` dataclass (title, artist, venue, date, url, source, category, price)
+- **models.py**: `Event` dataclass (core fields plus `spotify_url`, `description`, `description_source`, `image_url`, `video_url`)
 - **scrapers/**: Site-specific scrapers returning `list[Event]`
   - `music/`, `theatre/`, `culture/` subdirectories by category
-- **services/**: Shared utilities (http, spotify, dedup, email)
+- **services/**: Shared utilities (http, spotify, dedup, email, enrichment)
 - **data/**: JSON output files (retains events from 1st of current month onwards)
 - **tmp/**: Test data, screenshots, debug output (gitignored)
 - **web/**: Next.js frontend ("Cultură la plic")
