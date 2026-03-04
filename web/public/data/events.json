@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-03T10:12:04.785506",
+  "scraped_at": "2026-03-04T10:10:04.711453",
   "music_events": [
     {
       "title": "Concert vocal-simfonic",
@@ -2552,21 +2552,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl BRUTUS LIVE: Cosmos \u00een Buzunar",
-      "artist": "ctrl BRUTUS LIVE: Cosmos \u00een Buzunar",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-03-03 21:00:00",
-      "url": "https://www.control-club.ro/event/?slug=cosmos-in-buzunar-1",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Ana Satana & Nitchji Oh Szperantza",
       "artist": "Ana Satana & Nitchji Oh Szperantza",
       "venue": "Control Club - Front Room",
@@ -2801,21 +2786,6 @@
       "category": "music",
       "price": "de la 45 lei",
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "BRUTUS NIGHTS: Baron P. & Guy from Downstairs, Ground Control w/ Leo",
-      "artist": "Baron P. & Guy from Downstairs, Ground Control w/ Leo",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-03-03 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=brutus-nights-baron-p-guy-from-downstairs-ground-control-w-leo",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/52Ej84Lva6zx0Fu2nyMkEb",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4620,6 +4590,96 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "MidWeek Tapes w/ Iulian Morar",
+      "artist": "Iulian Morar",
+      "venue": "Control Club - Front Room",
+      "date": "2026-03-04 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-26",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "corp.: Admina, Chlorys & von B\u00fclove",
+      "artist": "corp.: Admina, Chlorys & von B\u00fclove",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-03-08 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=admina-chlorys-von-buelove",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ctrl LIVE: Bel Cobain [UK]",
+      "artist": "Bel Cobain [UK]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-03-09 20:30:00",
+      "url": "https://www.control-club.ro/event/?slug=bel-cobain",
+      "source": "control",
+      "category": "music",
+      "price": "50.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/6JvEcv04PhUKWrUYZJrj1F",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "MidWeek Tapes w/ Iulian Morar",
+      "artist": "Iulian Morar",
+      "venue": "Control Club - Front Room",
+      "date": "2026-03-11 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-27",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "MidWeek Tapes w/ Iulian Morar",
+      "artist": "Iulian Morar",
+      "venue": "Control Club - Front Room",
+      "date": "2026-03-18 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-28",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "MidWeek Tapes w/ Iulian Morar",
+      "artist": "Iulian Morar",
+      "venue": "Control Club - Front Room",
+      "date": "2026-03-25 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-29",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -5071,36 +5131,6 @@
       "description": ", dramaturg, prozator, romancier \u0219i regizor de film contemporan franco\u2013belgian, a dob\u00e2ndit de-a lungul carierei sale peste 20 de premii \u0219i distinc\u021bii literare, \u00een 2001 primind titlul de \u201eChevalier des Arts et des Lettres\u201d. Lucr\u0103rile lui Schmitt sunt traduse \u00een peste 40 de limbi \u0219i jucate \u00een peste 50 de \u021b\u0103ri. Textele sale se remarc\u0103 printr-o analiz\u0103 introspectiv\u0103 riguroas\u0103 asupra condi\u021biei umane, c",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/12/70x100-MICI-CRIME-CONJUGALE-FINAL.pdf-717x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Opera de trei parale",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-03-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/opera-de-trei-parale",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/941/1433/large_Afis_Opera_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Amintiri din copil\u0103rie",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-03-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/amintiri-din-copilarie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/997/1252/large_amintiri.jpg",
       "video_url": null
     },
     {
@@ -6002,21 +6032,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/12/26f70f12-bb21-4480-acc9-663c125d24ef-665x1024.jpeg",
       "video_url": "https://www.youtube.com/embed/zskEoAx2oDM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Orchestra Titanic",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-03-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/orchestra-titanic",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/533/548/large_Afis_Orchestra_Titanic.jpg",
-      "video_url": null
     },
     {
       "title": "Amintiri din copil\u0103rie",
@@ -7444,36 +7459,6 @@
       "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "Musc\u0103, paie \u0219i b\u0103taie",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-03-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/musca-paie-si-bataie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/854/1046/large_poster_musca.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Extraordinara via\u021b\u0103 la Constan\u021ba",
-      "artist": null,
-      "venue": "TNB - -",
-      "date": "2026-03-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/extraordinara-viata-la-constanta",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Freak Show vol. 2",
       "artist": null,
       "venue": "TNB - Sala Pictura",
@@ -8434,21 +8419,6 @@
       "video_url": null
     },
     {
-      "title": "Varia\u021biuni op. 2",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
-      "date": "2026-03-03 17:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/occurence/2995",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O pianin\u0103 care viseaz\u0103 s\u0103 devin\u0103 acordeon. O vioar\u0103 care se metamorfozeaz\u0103 \u00eentr-o glum\u0103. Dou\u0103 prezen\u021be actorice\u0219ti care jongleaz\u0103 cu muzica \u0219i teatrul ca \u0219i cum ar fi una \u0219i aceea\u0219i materie vie. \u201eVaria\u021biuni la Inven\u021biuni Opus. 2\u201d nu este doar un spectacol, ci o fantasm\u0103 juc\u0103u\u0219\u0103 unde comedia \u0219i sunetul se topesc una \u00een cealalt\u0103, cre\u00e2nd imagini sonore ce par pictate de Dal\u00ed, dar care pulseaz\u0103 cu energia lui Chaplin, Buster Keaton \u0219i Victor Borge. De la solemnitatea lui Beethoven p\u00e2n\u0103 la ritmuri...",
-      "description_source": "scraped",
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/variatiuni-op2.jpeg",
-      "video_url": null
-    },
-    {
       "title": "Ubuntu",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
@@ -8927,21 +8897,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
       "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-03-03 13:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -10922,6 +10877,66 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
       "video_url": null
+    },
+    {
+      "title": "De paz\u0103 la Taj Mahal",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala George Constantin",
+      "date": "2026-04-15 19:30:00",
+      "url": "https://nottara.ro/spectacol/de-paza-la-taj-mahal/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "De paz\u0103 la Taj Mahal\u00a0de Rajiv Joseph, unul dintre cei mai aprecia\u021bi autori americani contemporani, este un spectacol-parabol\u0103 \u00een regia provocatoare a S\u00e2nzianei Stoican, explor\u00e2nd at\u00e2t rela\u021bia omului de r\u00e2nd cu puterea \u00eentr-un univers autoritar, c\u00e2t \u0219i eterna chestiune a rostului artei.\u00a0 Povestea este a unei lungi nop\u021bi \u0219i a zilei ce \u00eei urmeaz\u0103 \u00een [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/Taj-ma-guards_lectura_foto_victor_diaconu-75.jpg",
+      "video_url": null
+    },
+    {
+      "title": "De paz\u0103 la Taj Mahal",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala George Constantin",
+      "date": "2026-04-16 19:30:00",
+      "url": "https://nottara.ro/spectacol/de-paza-la-taj-mahal/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "De paz\u0103 la Taj Mahal\u00a0de Rajiv Joseph, unul dintre cei mai aprecia\u021bi autori americani contemporani, este un spectacol-parabol\u0103 \u00een regia provocatoare a S\u00e2nzianei Stoican, explor\u00e2nd at\u00e2t rela\u021bia omului de r\u00e2nd cu puterea \u00eentr-un univers autoritar, c\u00e2t \u0219i eterna chestiune a rostului artei.\u00a0 Povestea este a unei lungi nop\u021bi \u0219i a zilei ce \u00eei urmeaz\u0103 \u00een [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/Taj-ma-guards_lectura_foto_victor_diaconu-75.jpg",
+      "video_url": null
+    },
+    {
+      "title": "De paz\u0103 la Taj Mahal",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala George Constantin",
+      "date": "2026-04-26 19:30:00",
+      "url": "https://nottara.ro/spectacol/de-paza-la-taj-mahal/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "De paz\u0103 la Taj Mahal\u00a0de Rajiv Joseph, unul dintre cei mai aprecia\u021bi autori americani contemporani, este un spectacol-parabol\u0103 \u00een regia provocatoare a S\u00e2nzianei Stoican, explor\u00e2nd at\u00e2t rela\u021bia omului de r\u00e2nd cu puterea \u00eentr-un univers autoritar, c\u00e2t \u0219i eterna chestiune a rostului artei.\u00a0 Povestea este a unei lungi nop\u021bi \u0219i a zilei ce \u00eei urmeaz\u0103 \u00een [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/Taj-ma-guards_lectura_foto_victor_diaconu-75.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Gr\u0103dina cu priviri, picturi de \u0218tefania...",
+      "artist": null,
+      "venue": "TNB - -",
+      "date": "2026-03-04 18:00:00",
+      "url": "https://www.tnb.ro/ro/gradina-cu-priviri-picturi-de-stefania-micsunescu",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -10999,21 +11014,6 @@
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
-    },
-    {
-      "title": "SENTIMENTAL VALUE / VALOARE SENTIMENTAL\u0102",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-03-03 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-film-sentimental-value",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Joachim TrierCast:Renate Reinsve, Stellan Skarsg\u00e5rd, Inga Ibsdotter Lilleaas, Elle FanningGenre:dram\u0103Duration:2h 1mCountry:Norvegia, Germania, Danemarca, Fran\u021ba, SuediaLanguage:NO, EN, FRYear:2025 Surorile Nora \u0219i Agnes se reunesc dup\u0103 mul\u021bi ani cu tat\u0103l lor Gustav, un regizor c\u00e2ndva renumit, care \u00eei ofer\u0103 Norei un rol \u00een cel mai nou film al s\u0103u, \u00eens\u0103 ea \u00eel refuz\u0103. A\u0219a ajunge Gustav la Rachel Kemp, o actri\u021b\u0103 celebr\u0103 de la Hollywood, pe care o aduce \u00een mijlocul acestei \u00eentruniri personal",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/12/bilete-film-sentimental-value-frQ.webp",
-      "video_url": "https://www.youtube.com/embed/4KBwqc454oY"
     },
     {
       "title": "ROMER\u00cdA",
@@ -11134,21 +11134,6 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-10-ani-in-60-de-minute-CxG.webp",
       "video_url": "https://www.youtube.com/embed/x5t5-zkg8m4"
-    },
-    {
-      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-03-03 11:00:00",
-      "url": "https://improteca.ro/2024/02/27/teatru-participativ-cei-mici-5-8-ani-2/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
     },
     {
       "title": "Spring Jam la Improteca \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 6 martie 2026",
@@ -12351,21 +12336,6 @@
       "video_url": null
     },
     {
-      "title": "\u00cen ritmul lumii",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-03-03 11:00:00",
-      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
-      "video_url": null
-    },
-    {
       "title": "Prezen\u021be feminine \u2013 atelier \u0219i tur ghidat cu Liliana Basarab",
       "artist": null,
       "venue": "MNAC",
@@ -12393,6 +12363,51 @@
       "description": null,
       "description_source": null,
       "image_url": "/assets/Logo_RO_MNAC.png",
+      "video_url": null
+    },
+    {
+      "title": "\u00cen ritmul lumii",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-03-04 11:00:00",
+      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
+      "video_url": null
+    },
+    {
+      "title": "OUT 1: SPECTRE",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-03-15 18:30:00",
+      "url": "https://eventbook.ro/film/bilete-warm-up-fff-2026-out-1-spectre",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Jacques RivetteCast:Pierre Baillot, Gilette Barbier, Jean-Pierre BastidGenre:Dram\u0103, ComedieDuration:4h 20mCountry:Fran\u021baYear:1971 Pornind de la romanul lui Balzac \u0219i de la un poem de Lewis Carroll, Colin \u00eencearc\u0103 s\u0103-i descopere pe cei treisprezece membri ai unui complot. \u00centre timp, dou\u0103 trupe de teatru repet\u0103 o tragedie greceasc\u0103. Aceasta este varianta scurt\u0103 a filmului OUT 1 : NOLI ME TANGERE (Jacques Rivette, Suzanne Schiffman).",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-warm-up-fff-2026-out-1-spectre-Y0d.webp",
+      "video_url": "https://www.youtube.com/embed/aBQi2Wx2Nx0"
+    },
+    {
+      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-03-03 11:00:00",
+      "url": "https://improteca.ro/2024/02/27/teatru-participativ-cei-mici-5-8-ani-2/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "\ud83c\udf8f Adu-i pe cei mici la un show pentru copii cu totul si cu totul special: \ud83e\uddd2 Teatru participativ pentru cei mici \ud83d\ude80 sau teatru improvizat pentru copii. La Improteca am pregatit un spectacol de teatru improvizat pentru copii la care cei mici participa activ. Spectacolul a fost jucat in multiple gradinite din Bucuresti. \ud83d\udcb8 Bilete pe iabilet.ro:\u00a0 https://www.iabilet.ro/bilete-teatru-participativ-pentru-cei-mici-5-8-ani-96003/",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
