@@ -2,12 +2,16 @@
 
 ## Commands
 - **Run**: `python3 main.py`
+- **Run scraper group**: `python3 main.py --group 1` (or `--group 2`)
+- **Merge group artifacts**: `python3 main.py --merge`
+- **Dry run (list scheduled scrapers)**: `python3 main.py --dry-run`
 - **Install deps**: `pip3 install -r requirements.txt`
 - **Playwright setup**: `python3 -m playwright install chromium`
 - **Unit tests**: `python3 -m pytest tests/`
 - **Integration test**: `python3 scripts/test_full_flow.py`
 - **Integration test + alert**: `python3 scripts/test_full_flow.py --alert`
 - **Test alert only**: `python3 scripts/test_full_flow.py --alert-only`
+- **Test auto-fix workflow**: `python3 scripts/test_auto_fix.py --list`
 - **Test single scraper**: `python3 -c "from scrapers.music.foo import scrape; print(scrape())"`
 
 **Note**: Always use `python3` not `python` - no virtualenv is activated by default.
