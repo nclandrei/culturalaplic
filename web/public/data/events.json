@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-08T09:53:22.542255",
+  "scraped_at": "2026-03-09T10:17:27.170758",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -1097,21 +1097,6 @@
       "video_url": null
     },
     {
-      "title": "Lacul Lebedelor",
-      "artist": "Balet",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-03-08 18:30:00",
-      "url": "https://operanb.ro/spectacol/lacul-lebedelor-3/#080320260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "B\u0102RBIERUL DIN SEVILLA",
       "artist": "PREMIER\u0102",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -1136,21 +1121,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Ana Coman \u2013 lansare de album: Reac\u021bii adverse",
-      "artist": "Ana Coman",
-      "venue": "Quantic",
-      "date": "2026-03-08 00:00:00",
-      "url": "https://quantic.pub/eveniment/ana-coman-lansare-de-album-reactii-adverse/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/4j9MwaZCANMjIyYLAC4pAW",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2486,21 +2456,6 @@
       "category": "music",
       "price": "de la 45 lei",
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "LIVE: She's in Control - Andra Andriuca & Valeria Stoica",
-      "artist": "She's in Control - Andra Andriuca & Valeria Stoica",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-03-08 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=live-she-s-in-control-andra-andriuca-valeria-stoica",
-      "source": "control",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/1U0dn9EFyhTfKS4xvFrUSR",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4247,21 +4202,6 @@
       "video_url": null
     },
     {
-      "title": "corp.: Admina, Chlorys & von B\u00fclove",
-      "artist": "corp.: Admina, Chlorys & von B\u00fclove",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-03-08 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=admina-chlorys-von-buelove",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: Bel Cobain [UK]",
       "artist": "Bel Cobain [UK]",
       "venue": "Control Club - Berlin Room",
@@ -4487,36 +4427,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/11/afis-REGINA-MARIA-1-720x1024.jpg",
       "video_url": null
-    },
-    {
-      "title": "CUM V\u0102 PLACE",
-      "artist": "William Shakespeare",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-03-08 18:30:00",
-      "url": "https://www.bulandra.ro/cum-va-place/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen viziunea regizoral\u0103 a Andreei Lucaci \u0219i scenografia Dianei Nistor, cea mai fermec\u0103toare pies\u0103 despre iubire a lui William Shakespeare devine, \u00een traducerea ludic\u0103 a lui Adrian Nicolae, o joac\u0103 de\u0219teapt\u0103 \u0219i duioas\u0103 de-a teatrul \u0219i o s\u0103rb\u0103toare a iubirii, \u00een toate formele sale. O poveste despre prietenie, melancolie \u0219i speran\u021b\u0103, dar \u0219i o satir\u0103 social\u0103, istea\u021b\u0103 \u0219i tandr\u0103, care ne \u00eentoarce la esen\u021ba teatrului, prin ruperea conven\u021biei care separ\u0103 sala de scen\u0103, spectatorii de actori.Cum v\u0103 pla...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/09/Cum-va-place-2025-foto-Two-Bugs-19.jpg",
-      "video_url": null
-    },
-    {
-      "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
-      "artist": "Hanoch Levin",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-03-08 19:00:00",
-      "url": "https://www.bulandra.ro/mestesugul-vietii/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Me\u015fte\u015fugul Vie\u0163ii, una dintre cele mai apreciate piese ale marelui dramaturg israelian Hanoch Levin, examineaz\u0103 via\u0163a din perspectiva unui cuplu: speran\u0163e pierdute, via\u0163\u0103 irosit\u0103, m\u00e2nie, violen\u0163\u0103, regrete, dificult\u0103\u0163i de comunicare. Lupta dulce-am\u0103ruie \u015fi disperat\u0103 dintre cei doi reflect\u0103 \u00eentreb\u0103ri universale. C\u00e2t de ridicol\u0103 \u015fi terifiant\u0103 poate fi trecerea noastr\u0103 prin via\u0163\u0103? C\u00e2t de tare ne p\u0103c\u0103lim pe noi \u00een\u015fine, \u00een multe momente, pentru a putea tr\u0103i, aparent lini\u015fti\u0163i \u015fi mul\u0163umi\u0163i, mai depa...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Mestesugul-vietii-2011-foto-Cosmin-Ardeleanu-06-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/ObCzGHHLUG8"
     },
     {
       "title": "ART\u0102",
@@ -4831,21 +4741,6 @@
       "description": ", dramaturg, prozator, romancier \u0219i regizor de film contemporan franco\u2013belgian, a dob\u00e2ndit de-a lungul carierei sale peste 20 de premii \u0219i distinc\u021bii literare, \u00een 2001 primind titlul de \u201eChevalier des Arts et des Lettres\u201d. Lucr\u0103rile lui Schmitt sunt traduse \u00een peste 40 de limbi \u0219i jucate \u00een peste 50 de \u021b\u0103ri. Textele sale se remarc\u0103 printr-o analiz\u0103 introspectiv\u0103 riguroas\u0103 asupra condi\u021biei umane, c",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/12/70x100-MICI-CRIME-CONJUGALE-FINAL.pdf-717x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-03-08 11:00:00",
-      "url": "https://www.tnb.ro/ro/teatrul-naional-pentru-copii-abracadabra-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
       "video_url": null
     },
     {
@@ -6049,21 +5944,6 @@
       "video_url": null
     },
     {
-      "title": "TREI FEMEI \u00ceNALTE",
-      "artist": "de Edward Albee",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-03-08 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/trei-femei-inalte/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "s\u0103 creeze o confesiune teatral\u0103 tulbur\u0103toare, un spectacol despre identitate, memorie \u0219i fragilitatea trecerii timpului, \u00een care trei v\u00e2rste, o singur\u0103 via\u021b\u0103 \u0219i trei voci se \u00eent\u00e2lnesc pentru a se contopi \u00eentr-o singur\u0103 con\u0219tiin\u021b\u0103. \u00een anul 1991, piesa a fost distins\u0103 cu prestigiosul Premiu Pulitzer pentru dramaturgie \u00een 1994, iar \u00een prezent continu\u0103 s\u0103 fie montat\u0103 pe scene importante din \u00eentreaga l",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/07/AFIS-FINAL-TREI-FEMEI-INALTE-731x1024.jpg",
-      "video_url": null
-    },
-    {
       "title": "Dineu cu pro\u015fti",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -6121,21 +6001,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/351/654/large_ALLEGRO_distributie_completa_variabila_2019.jpg",
-      "video_url": null
-    },
-    {
-      "title": "THE THRILLING VIOLINISTS",
-      "artist": "Cu: Antonia Cioaza, Jakob Nielsen \u2022 Regia: Sergio Bustric (Odin Teatret)",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-03-08 11:00:00",
-      "url": "https://www.grivita53.ro/the-thrilling-violinists",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "The Thrilling Violinists spune povestea a doi violoni\u0219ti care \u00ee\u0219i doresc s\u0103 devin\u0103 clovni \u0219i ajung, ghida\u021bi de imagina\u021bie, \u00eentr-o c\u0103l\u0103torie prin lumea teatrului. Banane, fluturi, bule de s\u0103pun \u0219i nori de ploaie devin parteneri de joc, iar muzica transform\u0103 obiectele \u00een prezen\u021be vii. Spectacolul exploreaz\u0103 rela\u021bia dintre imagina\u021bie, corp \u0219i obiect, \u00eentr-o form\u0103 accesibil\u0103 publicului t\u00e2n\u0103r (copii, adolescen\u021bi \u00eentre 6-18 ani) \u0219i familiilor acestora.",
-      "description_source": "scraped",
-      "image_url": "https://www.grivita53.ro/images/thrilling-violinists-poster.png",
       "video_url": null
     },
     {
@@ -6422,21 +6287,6 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/08/Balena-154.jpg",
       "video_url": "https://www.youtube.com/embed/6eY-BpcsBlY"
-    },
-    {
-      "title": "Cloaca",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-03-08 19:30:00",
-      "url": "https://nottara.ro/spectacol/cloaca/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2mplare nea\u0219teptat\u0103 aduce din nou \u00eempreun\u0103 patru prieteni \u0219i le pune la \u00eencercare loialitatea. Montarea cu\u00a0Cloaca\u00a0de la\u00a0Nottara\u00a0e a doua \u00eentr-un \u0219ir de propuneri \u00een jurul raportului feminin-masculin (dup\u0103\u00a0Villa Dolorosa, la T\u00e2rgu Mure\u0219), un raport ce-mi pare intrat \u00eentr-o zon\u0103 de \u201etransform\u0103ri climatice\u201d a c\u0103ror natur\u0103 m\u0103 str\u0103duiesc s\u0103 o \u00een\u021beleg. Avem patru b\u0103rba\u021bi bloca\u021bi [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/cloaca-1-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/hgp-Fw6ZKQE"
     },
     {
       "title": "Mama",
@@ -6922,21 +6772,6 @@
       "title": "Atelier",
       "artist": "Cu Antonia Cioaza & Jakob Nielsen",
       "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-03-08 14:00:00",
-      "url": "https://www.grivita53.ro/spectacol/atelier",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Atelier \u00een cadrul microstagiunii BARBA 90 \u201cImagining with the body-mind\u201d \u00cen cadrul microstagiunii dedicate lui Eugenio Barba, Teatrul Grivi\u021ba 53 organizeaz\u0103 atelierul - antrenament \u201eImagining with the body-mind\u201d, sus\u021binut de Antonia Cezara Cioaza \u0219i Jakob Nielsen, actori ai Odin Teatret.",
-      "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Atelier",
-      "artist": "Cu Antonia Cioaza & Jakob Nielsen",
-      "venue": "Teatrul Grivi\u021ba 53",
       "date": "2026-03-09 14:00:00",
       "url": "https://www.grivita53.ro/spectacol/atelier",
       "source": "grivita53",
@@ -7246,21 +7081,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Bestiar",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-03-08 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/bestiar/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Spectacol produs de Vanner Collective Co-produs de Teatrul Metropolis \u00a0 Aten\u021bie! Spectacolul con\u021bine efecte stroboscopice \u0219i de lumin\u0103 care pot afecta persoanele care sufer\u0103 de epilepsie fotosensibil\u0103 sau care au alte fotosensibilit\u0103\u021bi. \u00a0 \u00a0 \u00a0 \u00a0",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/03/Design-fara-titlu-2-1-1024x576.png",
       "video_url": null
     },
     {
@@ -7741,21 +7561,6 @@
       "description": null,
       "description_source": null,
       "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "ANNA KARENINA",
-      "artist": "dup\u0103 Lev Tolstoi",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-03-08 18:30:00",
-      "url": "https://www.teatrulmic.ro/spectacol/anna-karenina/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201d aduce \u00een scen\u0103 elemente \u0219i accente contemporane vizuale \u0219i coregrafice care completeaz\u0103 povestea clasic\u0103 a rela\u021biilor dintre personaje, invit\u00e2nd publicul \u00eentr-un cadru intim \u0219i atemporal, creionat cu delicate\u021be de regizorul \u201eTimpul \u00een care tr\u0103im \u0219i estetica teatral\u0103 modern\u0103 predispun spre o relectur\u0103 scenic\u0103 a textului clasic. P\u0103str\u00e2nd esen\u021ba romanului, am corelat con\u021binutul acestuia cu starea d",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/06/afis-anna-karenina-717x1024.png",
       "video_url": null
     },
     {
@@ -8596,21 +8401,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/471/451/large_fetita_soldat_web.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Ubuntu",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor - Facultatea de Inginerie a Instala\u021biilor, Bucure\u0219ti",
-      "date": "2026-03-08 16:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/occurence/3001",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol la grani\u021ba dintre teatru \u0219i cinematografie, unde emo\u021bia devine limbaj, iar vulnerabilitatea \u2014 o form\u0103 de curaj.Un actor pe scen\u0103.Un film pe fundal.Dou\u0103 realit\u0103\u021bi care se privesc, se ciocnesc, se completeaz\u0103.\u201eUbuntu: Anatomia emo\u021biilor\u201d este o experien\u021b\u0103 performativ\u0103 hibrid\u0103, \u00een care teatrul devine viu prin prezen\u021ba actorului, iar imaginea cinematografic\u0103 devine con\u0219tiin\u021ba lui vizual\u0103.Pe ecran se desf\u0103\u0219oar\u0103 o suit\u0103 de tablouri poetice \u2014 fragmente de via\u021b\u0103 interioar\u0103, proiec\u021bii ale...",
-      "description_source": "scraped",
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ubuntu.jpeg",
       "video_url": null
     },
     {
@@ -10532,6 +10322,81 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/01/cover-site-spectacol-CLUB-27-pt-site-la-dimensiune-02-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/nAyZGRLB3dI"
+    },
+    {
+      "title": "TREI FEMEI \u00ceNALTE",
+      "artist": "de Edward Albee",
+      "venue": "Teatrul Mic - Sala Studio",
+      "date": "2026-03-15 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/trei-femei-inalte/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "s\u0103 creeze o confesiune teatral\u0103 tulbur\u0103toare, un spectacol despre identitate, memorie \u0219i fragilitatea trecerii timpului, \u00een care trei v\u00e2rste, o singur\u0103 via\u021b\u0103 \u0219i trei voci se \u00eent\u00e2lnesc pentru a se contopi \u00eentr-o singur\u0103 con\u0219tiin\u021b\u0103. \u00een anul 1991, piesa a fost distins\u0103 cu prestigiosul Premiu Pulitzer pentru dramaturgie \u00een 1994, iar \u00een prezent continu\u0103 s\u0103 fie montat\u0103 pe scene importante din \u00eentreaga l",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/07/AFIS-FINAL-TREI-FEMEI-INALTE-731x1024.jpg",
+      "video_url": null
+    },
+    {
+      "title": "ANNA KARENINA",
+      "artist": "dup\u0103 Lev Tolstoi",
+      "venue": "Teatrul Mic - Sala Atelier",
+      "date": "2026-04-03 18:30:00",
+      "url": "https://www.teatrulmic.ro/spectacol/anna-karenina/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u201d aduce \u00een scen\u0103 elemente \u0219i accente contemporane vizuale \u0219i coregrafice care completeaz\u0103 povestea clasic\u0103 a rela\u021biilor dintre personaje, invit\u00e2nd publicul \u00eentr-un cadru intim \u0219i atemporal, creionat cu delicate\u021be de regizorul \u201eTimpul \u00een care tr\u0103im \u0219i estetica teatral\u0103 modern\u0103 predispun spre o relectur\u0103 scenic\u0103 a textului clasic. P\u0103str\u00e2nd esen\u021ba romanului, am corelat con\u021binutul acestuia cu starea d",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/06/afis-anna-karenina-717x1024.png",
+      "video_url": null
+    },
+    {
+      "title": "C\u00c2ND PLOAIA SE VA OPRI",
+      "artist": "de Andrew Bovell",
+      "venue": "Teatrul Mic - Sala Studio",
+      "date": "2026-04-22 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/cand-ploaia-se-ve-opri/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Spectacolul prezint\u0103 o serie de pove\u0219ti interconectate din vie\u021bile a \u0219apte personaje care se confrunt\u0103 cu misterele trecutului lor pentru a-\u0219i \u00een\u021belege viitorul, dezv\u0103luind, astfel, modul prin care sunt transmise de la o genera\u021bie la alta, tiparele de iubire, abandon, speran\u021b\u0103 \u0219i iertare. e genul \u0103la de text care place de la prima lectur\u0103. Place \u00een prim\u0103 instan\u021b\u0103 ca cititor, si mai apoi te provoac",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/03/rsz_afis_cand_ploaia_se_va_opri_banda_noua-731x1024.jpg",
+      "video_url": "https://www.youtube.com/embed/RWJwJovVcgU?rel=0&controls=0&showinfo=0"
+    },
+    {
+      "title": "VINOVAT. NEVINOVAT.",
+      "artist": "de Gelu Colceag \u0219i Vlad Corbeanu",
+      "venue": "Teatrul Mic - Sala Atelier",
+      "date": "2026-06-11 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/vinovat-nevinovat/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Spectacolul aduce \u00een prim plan ideea de asumare a deciziilor \u0219i a responsabilit\u0103\u021bilor cu care ne confrunt\u0103m, \u00een contextul politic, social \u0219i cultural actual, marcat de incoeren\u021b\u0103. Condu\u0219i de prejudec\u0103\u021bi \u0219i sentimente personale, uneori contradictorii, cu greu ne putem obiectiva \u0219i lua atitudine pentru a discerne \u00eentre bine \u0219i r\u0103u. \u00een raport cu cel\u0103lalt? Este doar una dintre interoga\u021biile pe care pr",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2020/01/IMG-20220311-WA0007-716x1024.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Hedda Gabler",
+      "artist": null,
+      "venue": "TNB - Sala \"Ion Caramitru\"",
+      "date": "2026-04-30 19:00:00",
+      "url": "https://www.tnb.ro/ro/hedda-gabler",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/996/1264/large_Afis_Hedda_3.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -10579,36 +10444,6 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/12/bilete-l-evenement-evenimentul-film-therapy-film-club-ftfc-6q9.webp",
       "video_url": "https://www.youtube.com/embed/xQaNEWUqAZA"
-    },
-    {
-      "title": "RALLY - FROM PARIS TO THE PYRAMIDS / RALIUL DE LA PARIS LA PIRAMIDEAG",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-03-08 10:30:00",
-      "url": "https://eventbook.ro/film/bilete-raliul-de-la-paris-la-piramide",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Rasmus A. SivertsenCast:Pia Borgli, Trond Espen Seim, \u00d8yvind Brandtz\u00e6g, Paul-Ottar Haga, Mari MaurstadGenre:Anima\u0163ie, ComedieDuration:1h 22mCountry:NorvegiaYear:2026 Trei prieteni f\u0103r\u0103 prea multe \u00een comun \u00eencearc\u0103 s\u0103 c\u00e2\u0219tige legendarul raliu de la Paris la piramidele din Egipt. Inven\u021biile celor trei aduc mai multe probleme dec\u00e2t solu\u021bii, de aceea primarul i-a alungat din s\u0103tucul lor, Fl\u00e5klypa. Ca s\u0103 arate c\u0103 merit\u0103 o \u0219ans\u0103, ei trebuie s\u0103 c\u00e2\u0219tige competi\u021bia conduc\u00e2nd Il Tempo Gigante, o ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-raliul-de-la-paris-la-piramide-cJm.webp",
-      "video_url": "https://www.youtube.com/embed/kXicRRXz5t8"
-    },
-    {
-      "title": "Gaviota | Pesc\u0103ru\u0219ul \u00een cadrul Stagiunii Interna\u021bionale de Teatru",
-      "artist": null,
-      "venue": "ARCUB - Sala Mare",
-      "date": "2026-03-08 19:00:00",
-      "url": "https://arcub.ro/eveniment/gaviota-pescarusul-in-cadrul-stagiunii-internationale-de-teatru",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Spectacolul \u201eGaviota\u201d se joac\u0103 \u00een cadrul Stagiunii Interna\u021bionale de Teatru ARCUB 2026, proiect lansat \u00een 2025, dedicat \u00eent\u00e2lnirii publicului din Rom\u00e2nia cu produc\u021bii semnate de creatori interna\u021bionali ai teatrului contemporan. \u201eGaviota\u201d, \u00een regia argentinianului Guillermo Cacace, propune o adaptare liber\u0103 \u0219i contemporan\u0103 a piesei \u201ePesc\u0103ru\u0219ul\u201d de A.P. Cehov, transformat\u0103 \u00eentr-o experien\u021b\u0103 teatral\u0103 de proximitate, \u00een care publicul devine parte din acela\u0219i spa\u021biu intim cu interpretele. Cinci ac...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
     },
     {
       "title": "Cineva are s\u0103 vin\u0103",
@@ -11811,21 +11646,6 @@
       "video_url": null
     },
     {
-      "title": "Prezen\u021be feminine \u2013 atelier \u0219i tur ghidat cu Liliana Basarab",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-03-08 12:00:05.937000",
-      "url": "https://www.mnac.ro/event/1357/Prezen%C8%9Be%20feminine%20%E2%80%93%20atelier%20%C8%99i%20tur%20ghidat%20cu%20Liliana%20Basarab/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Tur ghidat",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
-    },
-    {
       "title": "Lansarea catalogului \u201ePULS 22\u201d",
       "artist": null,
       "venue": "MNAC",
@@ -12126,21 +11946,6 @@
       "video_url": "https://www.youtube.com/embed/qjrNKvs_Ppg"
     },
     {
-      "title": "\u00cen ritmul lumii",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-03-08 11:00:00",
-      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
-      "video_url": null
-    },
-    {
       "title": "Short form cu iz de primavar\u0103 | Trupa Improga\u021bii",
       "artist": null,
       "venue": "Improteca",
@@ -12153,6 +11958,21 @@
       "description": "\ud83c\udf38 Show de improviza\u021bie short form Un show de improviza\u021bie \u00een care lucrurile se \u00eent\u00e2mpl\u0103 pe loc: publicul ne d\u0103 ideile, iar noi le transform\u0103m \u00een scene \u00een timp real. Nimic repetat, nimic \u201epentru c\u0103 a\u0219a trebuie\u201d. Doar deschiderea de a ne juca cu orice idee propusa de tine.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "\u00cen ritmul lumii",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-03-09 11:00:00",
+      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
       "video_url": null
     }
   ]
