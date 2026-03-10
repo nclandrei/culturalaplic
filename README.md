@@ -42,7 +42,7 @@ python main.py
 
 ## Automation
 
-A GitHub Actions workflow runs every Monday at 9am UTC. Configure the secrets listed above in your repository settings.
+A GitHub Actions workflow runs daily at 9am UTC. Configure the secrets listed above in your repository settings.
 
 ## Project Structure
 

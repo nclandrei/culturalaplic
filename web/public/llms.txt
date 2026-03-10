@@ -1,0 +1,18 @@
+# Cultură la plic
+> Cultură la plic is a Romanian-language calendar of upcoming music, theatre, and cultural events in Bucharest.
+
+Content on this site is primarily in Romanian. Start with the homepage and about page, then use the JSON feeds if you need structured upcoming events.
+
+The site aggregates event data from venue and ticketing websites listed on the about page and links back to the original event pages. It currently exposes HTML pages and JSON feeds; it does not publish Markdown mirrors.
+
+## Main Pages
+- [Homepage](https://www.culturalaplic.ro/): Main calendar and list of upcoming events in Bucharest.
+- [Despre](https://www.culturalaplic.ro/despre): What the site is, source websites by category, daily update cadence, and contact details.
+
+## Public Data
+- [Upcoming events API](https://www.culturalaplic.ro/api/events): Flat JSON array of future events; supports `category`, `from`, `to`, and `limit` query parameters.
+- [Music events example](https://www.culturalaplic.ro/api/events?category=music&limit=20): Filtered JSON example for one category.
+- [Raw grouped dataset](https://www.culturalaplic.ro/data/events.json): Daily scrape output grouped into `music_events`, `theatre_events`, and `culture_events`.
+
+## Optional
+- [Contact](mailto:andrei@nicolaeandrei.com): Direct contact email published on the site.
