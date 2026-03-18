@@ -1,0 +1,49 @@
+# AGENTS.md
+
+## Commands
+- **Run**: `python3 main.py`
+- **Run scraper group**: `python3 main.py --group 1` (or `--group 2`)
+- **Merge group artifacts**: `python3 main.py --merge`
+- **Dry run (list scheduled scrapers)**: `python3 main.py --dry-run`
+- **Install deps**: `pip3 install -r requirements.txt`
+- **Playwright setup**: `python3 -m playwright install chromium`
+- **Unit tests**: `python3 -m pytest tests/`
+- **Integration test**: `python3 scripts/test_full_flow.py`
+- **Integration test + alert**: `python3 scripts/test_full_flow.py --alert`
+- **Test alert only**: `python3 scripts/test_full_flow.py --alert-only`
+- **Test auto-fix workflow**: `python3 scripts/test_auto_fix.py --list`
+- **Test single scraper**: `python3 -c "from scrapers.music.foo import scrape; print(scrape())"`
+
+**Note**: Always use `python3` not `python` - no virtualenv is activated by default.
+
+### Web (Next.js)
+- **Dev server**: `cd web && pnpm dev`
+- **Build**: `cd web && pnpm build`
+- **Install deps**: `cd web && pnpm install`
+
+## Architecture
+- **main.py**: Orchestrator - runs scrapers, matches artists, deduplicates, sends emails
+- **models.py**: `Event` dataclass (core fields plus `spotify_url`, `description`, `description_source`, `image_url`, `video_url`)
+- **scrapers/**: Site-specific scrapers returning `list[Event]`
+  - `music/`, `theatre/`, `culture/` subdirectories by category
+- **services/**: Shared utilities (http, spotify, dedup, email, enrichment)
+- **data/**: JSON output files (retains events from 1st of current month onwards)
+- **tmp/**: Test data, screenshots, debug output (gitignored)
+- **web/**: Next.js frontend ("Cultură la plic")
+  - `src/app/`: App router pages and layout
+  - `src/components/`: React components (EventCard, EventCalendar, EventList, Header)
+  - `src/components/ui/`: neobrutalism.dev UI components
+  - `src/types/`: TypeScript types (Event)
+  - `src/data/`: Sample JSON data for development
+
+## Code Style
+- Python 3.11+ with type hints (`str | None`, `list[Event]`)
+- Dataclasses for models, absolute imports from project root
+- Each scraper exposes a `scrape() -> list[Event]` function
+- Use `services/http.fetch_page(url, needs_js=bool)` for HTTP requests
+- Env vars: `SPOTIFY_*`, `GEMINI_API_KEY`, `RESEND_API_KEY`, `NOTIFY_EMAIL`
+
+## Scraper Development
+- **Page inspection**: Use Chrome DevTools MCP (`mcp__chrome_devtools__*`) for analyzing page structure - more reliable than Playwright for development
+- **Runtime scraping**: Use `services/http.fetch_page()` with Playwright for JS-rendered pages
+- **Skill**: Load `generating-scrapers` skill for full workflow
