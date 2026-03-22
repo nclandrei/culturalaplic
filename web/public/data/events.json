@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-21T09:52:45.858991",
+  "scraped_at": "2026-03-22T09:52:11.784080",
   "music_events": [
     {
       "title": "Recital cameral",
@@ -677,21 +677,6 @@
       "video_url": null
     },
     {
-      "title": "Don Carlo",
-      "artist": "Oper\u0103",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-03-21 18:30:00",
-      "url": "https://operanb.ro/spectacol/don-carlo/#210320260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Prim\u0103vara pe portativ",
       "artist": "Evenimente",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -797,21 +782,6 @@
       "video_url": null
     },
     {
-      "title": "Dora Gaitanovici \u2022 \u201cArcanum Bazar\u201d \u2013 Lansare de album",
-      "artist": "Dora Gaitanovici \u2022 \u201cArcanum Bazar\u201d",
-      "venue": "Quantic",
-      "date": "2026-03-21 00:00:00",
-      "url": "https://quantic.pub/eveniment/dora-gaitanovici-arcanum-bazar-lansare-de-album/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "byron",
       "artist": "byron",
       "venue": "Quantic",
@@ -866,21 +836,6 @@
       "category": "music",
       "price": null,
       "spotify_url": "https://open.spotify.com/artist/4YGXSFiOaglXLDO92EDVeU",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Repere Sonore \u2013 Recital de arii \u0219i lieduri",
-      "artist": null,
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-03-21 12:00:00",
-      "url": "https://operanb.ro/spectacol/repere-sonore-recital-de-arii-si-lieduri/#210320260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -956,21 +911,6 @@
       "category": "music",
       "price": "de la 60 lei",
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Acid Arab [FR]",
-      "artist": "Acid Arab [FR]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-03-21 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=acid-arab-fr",
-      "source": "control",
-      "category": "music",
-      "price": "50.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/3ShO8tPKqXUUpOA0urOWW7",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3602,21 +3542,6 @@
       "video_url": null
     },
     {
-      "title": "Concert vocal-simfonic",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-03-21 11:00:00",
-      "url": "https://oveit.com/hub/event/concert-vocalsimfonic-ezlBkWnP",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 60 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Gala Premiilor UCIMR",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
@@ -3641,21 +3566,6 @@
       "category": "music",
       "price": "de la 45 lei",
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Acid Arab [FR], Nek & Walentin Pauer, Drago\u0219 Rusu, Baron P. + Corvin",
-      "artist": "Acid Arab [FR], Nek & Walentin Pauer, Drago\u0219 Rusu, Baron P. + Corvin",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-03-21 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=acid-arab-fr",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/3ShO8tPKqXUUpOA0urOWW7",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4097,36 +4007,6 @@
       "video_url": null
     },
     {
-      "title": "LIVE: Doomnezeu / Bossferatu / Dronisie R\u0103s\u0103riteanul [RO]",
-      "artist": "Doomnezeu / Bossferatu / Dronisie R\u0103s\u0103riteanul [RO]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=live-doomnezeu-bossferatu-dronisie-rasariteanul-ro",
-      "source": "control",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Paradis Paradis Records Fair",
-      "artist": "Paradis Paradis Records Fair",
-      "venue": "Control Club - Front Room",
-      "date": "2026-03-21 12:00:00",
-      "url": "https://www.control-club.ro/event/?slug=paradis-paradis-record-fair",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Paradis Paradis Records Fair",
       "artist": "Paradis Paradis Records Fair",
       "venue": "Control Club - Front Room",
@@ -4263,21 +4143,6 @@
     }
   ],
   "theatre_events": [
-    {
-      "title": "TEROARE",
-      "artist": "Ferdinand Von Schirach",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.bulandra.ro/teroare/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Maiorul Lars Koch, pilot al unui avion de v\u00e2n\u0103toare tip Eurofighter al avia\u021biei germane, se afl\u0103 \u00een fa\u021ba verdictului: a ac\u021bionat corect sau nu \u00een ziua \u00een care a primit ordinul de a devia de la curs un avion Airbus apar\u021bin\u00e2nd companiei Lufthansa deturnat de terori\u0219ti? La bordul zborului LH 2047, cu plecare de pe aeroportul Tegel din Berlin c\u0103tre M\u00fcnchen, se afl\u0103 164 de persoane, iar aeronava se \u00eendreapt\u0103 spre Allianz Arena. Chiar \u00een acea sear\u0103 are loc meciul interna\u021bional Germania contra Angli...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/TEROARE-snur-17-dec-foto-Andrei-Gindac-Two-BugsCL1A2602-scaled.jpg",
-      "video_url": null
-    },
     {
       "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
       "artist": "Hanoch Levin",
@@ -4426,36 +4291,6 @@
       "description": "\u201eGoodbye, Lenin! este despre genera\u021bia mea, genera\u021bia revolu\u021biei, a schimb\u0103rii. 1989. Momentul istoric pentru teritoriul est-european. C\u0103derea zidului Berlinului. Libertatea ca un nou suflu. Capitalismul e acum la putere. Suntem \u00een democra\u021bie. Aceast\u0103 nou\u0103 paradigm\u0103 este tr\u0103it\u0103 pe de-o parte cu entuziasm de unii \u0219i cu temere de al\u021bii. (\u2026) Mi-am dorit de mult\u0103 vreme [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/04/Goodbye-Lenin-20-mai-foto-Andrei-Gindac-Two-Bugs_CL1A4388-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Casa de la \u021bar\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/casa-de-la-tara",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/784/964/large_Afis_final_bun37.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cursa de \u0219oareci",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/cursa-de-soareci",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/534/1242/large_Cursa_nou_2024.jpg",
       "video_url": null
     },
     {
@@ -4744,21 +4579,6 @@
       "video_url": null
     },
     {
-      "title": "Incognito",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/incognito",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
-      "video_url": null
-    },
-    {
       "title": "C\u0103l\u0103toria",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -4831,21 +4651,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "(the) Woman",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-03-21 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/the-woman/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201e(the) Woman porne\u0219te de la maternitate, dar vorbe\u0219te despre ceva mult mai larg: despre ce se \u00eent\u00e2mpl\u0103 c\u00e2nd rolurile pe care le juc\u0103m \u2013 de femeie, de b\u0103rbat, de partener, de artist, de p\u0103rinte, de \u201eadult func\u021bional\u201d \u2013 \u00eencep s\u0103 se ciocneasc\u0103 \u00eentre ele. Despre presiunea de a face totul \u00abcorect\u00bb. Despre oboseal\u0103, dorin\u021b\u0103, vin\u0103, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
       "video_url": null
     },
     {
@@ -5104,36 +4909,6 @@
       "video_url": "https://www.youtube.com/embed/6eY-BpcsBlY"
     },
     {
-      "title": "Lapte Negru",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-03-21 18:00:00",
-      "url": "https://nottara.ro/spectacol/lapte-negru/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eLapte negru\u201d aduce o perspectiv\u0103 sincer\u0103, curajoas\u0103, autentic\u0103 despre feminitate, maternitate, depresie postnatal\u0103 \u0219i pasiunea pentru scris, \u00eentr-o societate \u00een care femeile \u00eenc\u0103 se lupt\u0103 cu standarde duble \u0219i cu tipare mentalitare conservatoare. O poveste inspirat\u0103 din experien\u021ba renumitei scriitoare turce Elif Shafak, confruntat\u0103 cu dificultatea g\u0103sirii unui echilibru \u00eentre activitatea scrisului \u0219i via\u021ba de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/Valentin-Gheorghiu-in-Lapte-negru-Teatrul-Nottara.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Mama",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-03-21 19:30:00",
-      "url": "https://nottara.ro/spectacol/mama/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol de neratat din programul teatrelor din Bucure\u0219ti despre singur\u0103tatea care na\u0219te mon\u0219tri. O fars\u0103 neagr\u0103, cu mult umor de limbaj, ce \u00eenv\u0103luie o dram\u0103 psihologic\u0103 nuan\u021bat\u0103,\u00a0Mama\u00a0este o poveste tulbur\u0103toare \u0219i intens\u0103 despre singur\u0103tate, familie, nevoia de afec\u021biune. Dup\u0103 o via\u021b\u0103 \u00eentreag\u0103 \u00een care s-a dedicat familiei, Anne \u00ee\u0219i d\u0103 seama c\u0103 nimeni nu [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/mama-2-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/jR5q31MTzgU"
-    },
-    {
       "title": "B\u0103d\u0103ranii",
       "artist": null,
       "venue": "Teatrul Nottara - Sala Horia Lovinescu",
@@ -5311,21 +5086,6 @@
       "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "ACTHARSIS prezint\u0103: PIANUL CU POEME",
-      "artist": "muzic\u0103 \u0219i poezie",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.bulandra.ro/program/pianul-cu-poeme/?wcs_timestamp=1774119600",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u2022 Recital de muzic\u0103 \u0219i poezie \u2022 Distribu\u021bie: Daniela Nane \u0219i Alexandru Burc\u0103 \u00a0 March 21 @ 19:00 19:00 \u2014 20:00 (1h) Liviu Ciulei (Schitu M\u0103gureanu nr. 1)",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2020/09/iabilet.jpeg",
       "video_url": null
     },
     {
@@ -5566,21 +5326,6 @@
       "description": "Dac\u0103 durerea mea st\u00e2rne\u0219te r\u00e2sul, e bine. Dar niciodat\u0103 n-a\u0219 vrea ca r\u00e2sul meu s\u0103 st\u00e2rneasc\u0103 durerea cuiva. a profunzimilor suflete\u0219ti ale unuia dinte geniile cinematografiei mondiale. Departe de a fi un demers facil, el se adreseaz\u0103 tuturor oamenilor, oric\u0103rui segment de public \u0219i face un apel la re-umanizarea fiin\u021bei omene\u0219ti, at\u00e2t de bulversat\u0103 spiritual de avalan\u0219a informa\u021bional\u0103 \u0219i mediatic\u0103 ",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/IMG_1241-724x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Adio, domnule Haffmann",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/adio-domnule-haffmann",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/710/831/large_afis_Adio_dl_Haffmann.jpg",
       "video_url": null
     },
     {
@@ -7654,36 +7399,6 @@
       "video_url": null
     },
     {
-      "title": "Profu\u2019",
-      "artist": null,
-      "venue": "Teatrul Godot",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.teatrulgodot.ro/spectacole/profu-11/",
-      "source": "godot",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Regia: _ Cu: R\u0103zvan Vasilescu Ora: 7:00 pm PROFU\u2019 de Jean-Pierre Dopagne CUMP\u0102R\u0102 BILET PROFU\u2019 de Jean-Pierre Dopagne Un spectacol de R\u0103zvan Vasilescu \u201eMergem la teatru uneori s\u0103 auzim adev\u0103rul. Un adev\u0103r pe care \u015fi noi \u00eel g\u00e2ndim, dar nu avem curajul s\u0103-l rostim\u201d (Jean-Pierre Dopagne, Profu` ) Despre adev\u0103r ne \u00eenva\u021b\u0103 R\u0103zvan Vasilescu \u00eentr-un spectacol\u2013confesiune ce relateaz\u0103 drama unui profesor de ",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2025/12/Razvan_Vasilescu_Profu.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-03-21 15:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
-      "video_url": null
-    },
-    {
       "title": "Turul ghidat al TNB",
       "artist": null,
       "venue": "TNB - foaier Sala \"Ion Caramitru\"",
@@ -8824,21 +8539,6 @@
       "video_url": null
     },
     {
-      "title": "Fiesta",
-      "artist": "",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-03-21 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/fiesta",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Regizorul Eugenio Barba \u00eemp\u0103rt\u0103\u0219e\u0219te viziunea sa despre teatru cu t\u00e2n\u0103ra genera\u021bie \u0219i le preg\u0103te\u0219te spectatorilor bucure\u0219teni o \"Fiesta\", demonstra\u021bia vie a ceea ce consider\u0103 esen\u021bial \u00een rela\u021bia cu publicul s\u0103u: \"spectatorii nu sunt decor, ci parteneri invizibili cu a c\u0103ror energie se lucreaz\u0103\". Teatrul Grivi\u021ba 53 \u0219i Odin Teatret v\u0103 invit\u0103 s\u0103 s\u0103rb\u0103torim pe 21 martie, ora 19 \u00eenchiderea stagiunii BARBA 90 din cadrul programului \"Personalit\u0103\u021bi iconice\", care a \u00eenceput pe 7 martie \u0219i care s-a buc...",
-      "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "CEA MAI BUN\u0102 ZI DIN AN",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -9393,36 +9093,6 @@
       "description": "O dram\u0103 psihologic\u0103 scris\u0103 de Jon Fosse, autorul norvegian nominalizat la Premiul Nobel pentru Literatur\u0103, spectacolul \u201eCineva are s\u0103 vin\u0103\u201d, \u00een regia lui Chris Simion-Mercurian, \u015fi \u00eei aduce pe scen\u0103 pe Ofelia Popii, actri\u0163a distins\u0103 de trei ori cu Premiul UNITER, \u015fi pe Ciprian Scurtea, actor al Teatrului Na\u0163ional Radu Stanca din Sibiu.",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "PRIVE\u0218TE \u00ceNAPOI CU M\u00c2NIE",
-      "artist": null,
-      "venue": "Teatrul Improteca Str. Comanita nr.9",
-      "date": "2026-03-21 18:00:00",
-      "url": "https://improteca.ro/2026/02/24/priveste-inapoi-cu-manie-21-martie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "TAB\u0102RA \u2013 O experien\u021b\u0103 improvizat\u0103 unic\u0103!",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-03-21 20:00:00",
-      "url": "https://improteca.ro/2025/03/14/tabara-o-experienta-improvizata-unica/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "A\u021bi fost vreodat\u0103 \u00eentr-o tab\u0103r\u0103 care v-a schimbat via\u021ba? Sau poate \u00eentr-una din care a\u021bi vrut s\u0103 fugi\u021bi imediat? Ei bine, la TAB\u0102RA, voi decide\u021bi unde ne ducem! \u00cen fiecare spectacol, publicul alege tema: va fi o tab\u0103r\u0103 de bootcamp cu antrenori nemilo\u0219i? O tab\u0103r\u0103 spiritual\u0103 de constela\u021bii familiale? Un retreat misterios, unde nimeni nu \u0219tie cine sunt organizatorii? Ori poate o tab\u0103r\u0103 de supravie\u021buire \u00een s\u0103lb\u0103ticie, unde ghidul se pierde primul? Showul te costa cat crezi ca merita si achiti la ...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     },
     {
@@ -10476,21 +10146,6 @@
       "video_url": null
     },
     {
-      "title": "LOVE ME TENDER",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-03-21 12:00:00",
-      "url": "https://eventbook.ro/film/bilete-cinema-fara-bariere-love-me-tender",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "0 LEI",
-      "spotify_url": null,
-      "description": "Distribu\u021bie: Vicky Krieps, Antoine Reinartz, Viggo Ferreira-Redier, Monia Chokri Subtitrare: rom\u00e2n\u0103 - Subtitluri descriptive \u00een rom\u00e2n\u0103",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-cinema-fara-bariere-love-me-tender-mS1.webp",
-      "video_url": null
-    },
-    {
       "title": "LE CHANT DES FOR\u00caTS / \u0218OAPTE \u00ceN P\u0102DURE",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -10776,10 +10431,25 @@
       "video_url": null
     },
     {
+      "title": "Urban Impro Show Long-form edition \ud83e\udd29 improviza\u021bie marca ImproHub",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-03-28 18:00:00",
+      "url": "https://improteca.ro/2026/03/20/urban-impro-show-long-form-edition-improvizatie-marca-improhub/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Pe 28 martie, la doar o zi dup\u0103 Ziua Mondial\u0103 a Teatrului, ne adun\u0103m s\u0103 \u00eel celebr\u0103m pe fratele lui mai rebel: teatrul de improviza\u021bie long-form. F\u0103r\u0103 scenariu. F\u0103r\u0103 plas\u0103 de siguran\u021b\u0103. Doar un spectacol de comedie unic, intens \u0219i complet imprevizibil, ce porne\u0219te de la o discu\u021bie scurt\u0103 cu publicul \u0219i \u021bine vreo or\u0103 bun\u0103",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-03-21 11:00:00",
+      "date": "2026-03-22 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -10791,16 +10461,31 @@
       "video_url": null
     },
     {
-      "title": "Urban Impro Show Long-form edition \ud83e\udd29 improviza\u021bie marca ImproHub",
+      "title": "PRIVE\u0218TE \u00ceNAPOI CU M\u00c2NIE",
       "artist": null,
-      "venue": "Improteca",
-      "date": "2026-03-28 18:00:00",
-      "url": "https://improteca.ro/2026/03/20/urban-impro-show-long-form-edition-improvizatie-marca-improhub/",
+      "venue": "Teatrul Improteca Str. Comanita nr.9",
+      "date": "2027-03-21 18:00:00",
+      "url": "https://improteca.ro/2026/03/10/priveste-inapoi-cu-manie-21-martie/",
       "source": "improteca",
       "category": "culture",
       "price": null,
       "spotify_url": null,
-      "description": "Pe 28 martie, la doar o zi dup\u0103 Ziua Mondial\u0103 a Teatrului, ne adun\u0103m s\u0103 \u00eel celebr\u0103m pe fratele lui mai rebel: teatrul de improviza\u021bie long-form. F\u0103r\u0103 scenariu. F\u0103r\u0103 plas\u0103 de siguran\u021b\u0103. Doar un spectacol de comedie unic, intens \u0219i complet imprevizibil, ce porne\u0219te de la o discu\u021bie scurt\u0103 cu publicul \u0219i \u021bine vreo or\u0103 bun\u0103",
+      "description": "Spectacol de absolvire \u2013 Modul Teatru Clasic, grupa Avansa\u021bi Coordonatori: R\u0103zvan Bratu & Bogdan Costea \ud83c\udff7\ufe0f Show-ul te costa cat crezi ca merita si achiti la final, ca donatie",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "TAB\u0102RA \u2013 O experien\u021b\u0103 improvizat\u0103 unic\u0103!",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-03-21 20:00:00",
+      "url": "https://improteca.ro/2025/03/14/tabara-o-experienta-improvizata-unica/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "A\u021bi fost vreodat\u0103 \u00eentr-o tab\u0103r\u0103 care v-a schimbat via\u021ba? Sau poate \u00eentr-una din care a\u021bi vrut s\u0103 fugi\u021bi imediat? Ei bine, la TAB\u0102RA, voi decide\u021bi unde ne ducem! \u00cen fiecare spectacol, publicul alege tema: va fi o tab\u0103r\u0103 de bootcamp cu antrenori nemilo\u0219i? O tab\u0103r\u0103 spiritual\u0103 de constela\u021bii familiale? Un retreat misterios, unde nimeni nu \u0219tie cine sunt organizatorii? Ori poate o tab\u0103r\u0103 de supravie\u021buire \u00een s\u0103lb\u0103ticie, unde ghidul se pierde primul? Showul te costa cat crezi ca merita si achiti la ...",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
