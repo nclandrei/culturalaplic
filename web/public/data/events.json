@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-06T10:41:13.053044",
+  "scraped_at": "2026-04-07T10:32:17.565316",
   "music_events": [
     {
       "title": "Concert vocal-simfonic",
@@ -3227,21 +3227,6 @@
       "video_url": null
     },
     {
-      "title": "Stagiunea de jazz",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-04-06 19:00:00",
-      "url": "https://oveit.com/hub/event/stagiunea-de-jazz-PzXWyA7J",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: Tramhaus [NL], Getchoo [RO]",
       "artist": "Tramhaus [NL], Getchoo [RO]",
       "venue": "Control Club - Berlin Room",
@@ -4020,6 +4005,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "[Alt Jazz] Tereza Catarov Quintet [RO/UK]",
+      "artist": "[Alt Jazz] Tereza Catarov Quintet [RO/UK]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-05-18 19:30:00",
+      "url": "https://www.control-club.ro/event/?slug=alt-jazz-tereza-catarov-quintet-ro-uk",
+      "source": "control",
+      "category": "music",
+      "price": "50.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Omen",
+      "artist": "Omen",
+      "venue": "Quantic",
+      "date": "2026-05-27 00:00:00",
+      "url": "https://quantic.pub/eveniment/omen/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -4741,66 +4756,6 @@
       "description": "este una dintre personalit\u0103\u021bile marcante ale teatrului contemporan, aflat \u00een prezent la al doilea mandat ca director artistic al prestigiosului Festival d\u2019Avignon. De-a lungul carierei sale profesionale de peste 25 de ani, crea\u021biile sale au fost recunoscute pentru abilitatea de a dizolva grani\u021bele dintre teatru \u0219i diverse realit\u0103\u021bi, provoc\u00e2nd permanent percep\u021bia publicului asupra fenomenului istor",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/11/TRISTETE-SI-BUCURIE-IN-VIATA-GIRAFELOR-717x1024.png",
-      "video_url": null
-    },
-    {
-      "title": "Regina Mam\u0103",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-04-06 17:00:00",
-      "url": "https://www.tnb.ro/ro/regina-mama-2025",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1103/1551/large_REGINA_MAMA.jpg",
-      "video_url": null
-    },
-    {
-      "title": "DesFacerea lumii sau Spectacol \u00een aer Liber",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-04-06 18:30:00",
-      "url": "https://www.tnb.ro/ro/desfacerea-lumii-sau-spectacol-in-aer-liber",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1201/1567/large_Afis31.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Frumoasa c\u0103l\u0103torie a ur\u0219ilor panda...",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-04-06 18:30:00",
-      "url": "https://www.tnb.ro/ro/frumoasa-calatorie-a-ursilor-panda-povestita-de-un-saxofonist-care-avea-o-iubita-la-frankfurt",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1088/1406/large_Panda_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Tache, Ianke \u0219i Cad\u00e2r",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-04-06 20:00:00",
-      "url": "https://www.tnb.ro/ro/tache-ianke-si-cadar-23",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/793/972/large_TACHE-IANKE-SI-CADAR-turneu-2021-Raflo.jpg",
       "video_url": null
     },
     {
@@ -5629,21 +5584,6 @@
       "video_url": null
     },
     {
-      "title": "Iubire \u00een chirie \u2013 indispensabilii bucluca\u0219i",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-04-06 18:30:00",
-      "url": "https://www.tnb.ro/ro/iubire-in-chirie-indispensabilii-buclucasi",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/354/1578/large_Iubire_n_Chirie_-_Afi_Portret_Teatru_La_Musta.jpg",
-      "video_url": null
-    },
-    {
       "title": "Incognito",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -5972,21 +5912,6 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/Taj-ma-guards_lectura_foto_victor_diaconu-75.jpg",
       "video_url": null
-    },
-    {
-      "title": "P\u0103rin\u021bi",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-04-06 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/parinti/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201e",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/03/Design-fara-titlu-1024x576.png",
-      "video_url": "https://www.youtube.com/embed/1EUEofnZZ-U"
     },
     {
       "title": "P\u0103rin\u021bi",
@@ -9662,6 +9587,21 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1206/1672/large_afis_yen.jpg",
       "video_url": null
+    },
+    {
+      "title": "La c\u00e2\u021biva oameni distan\u021b\u0103 de tine",
+      "artist": null,
+      "venue": "TNB - Sala Studio",
+      "date": "2026-05-08 19:00:00",
+      "url": "https://www.tnb.ro/ro/la-cativa-oameni-distanta-de-tine",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -10896,21 +10836,6 @@
       "video_url": null
     },
     {
-      "title": "EAGLES OF THE REPUBLIC / VULTURII REPUBLICII",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-04-06 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-eagles-of-the-republic-vulturii-republicii",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Tarik SalehCast:Fares Fares, Lyna Khoudri, Cherien Dabis, Amr Waked, Zineb TrikiGenre:Dram\u0103, ThrillerDuration:2h 9mCountry:Suedia, Fran\u021ba, Danemarca, FinlandaLanguage:ARYear:2025 George Fahmy, cel mai iubit actor al Egiptului, este constr\u00e2ns s\u0103 accepte rolul principal \u00eentr-un film comandat de regim. Dincolo de lumina reflectoarelor, p\u0103\u0219e\u0219te \u00eentr-o lume a puterii \u0219i a intrigilor, unde fiecare z\u00e2mbet ascunde o capcan\u0103. Iar atrac\u021bia sa fa\u021b\u0103 de so\u021bia enigmatic\u0103 a generalului care supervizea",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-eagles-of-the-republic-vulturii-republicii-f4l.webp",
-      "video_url": "https://www.youtube.com/embed/pLowjUjAyms"
-    },
-    {
       "title": "CALIU: NICIDECUM ALTCEVA, CE S\u0102 FAC ALTCEVA?",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -11301,10 +11226,25 @@
       "video_url": null
     },
     {
+      "title": "Dou\u0103 tururi ghidate cu Lia \u0219i Dan Perjovschi | 9 aprilie | orele 16:00 & 18:00",
+      "artist": null,
+      "venue": "ARCUB - Hanul Gabroveni",
+      "date": "2026-04-09 19:00:00",
+      "url": "https://arcub.ro/eveniment/doua-tururi-ghidate-cu-lia-si-dan-perjovschi-9-aprilie-orele-16-00-and-18-00",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "V\u0103 inform\u0103m c\u0103 locurile disponibile pentru tururile ghidate programate joi, 9 aprilie, la orele 16:00 \u0219i 18:00 au fost ocupate. Vestea bun\u0103 este c\u0103, pe parcursul perioadei de vizitare a expozi\u021biei, vor fi organizate \u0219i alte tururi ghidate sus\u021binute de Lia \u0219i Dan Perjovschi. V\u0103 \u00eencuraj\u0103m s\u0103 ne urm\u0103ri\u021bi \u00een continuare pentru a beneficia de informa\u021bii despre programul tururilor ghidate. V\u0103 mul\u021bumim pentru \u00een\u021belegere \u0219i sper\u0103m s\u0103 ne \u00eent\u00e2lnim \u00een cur\u00e2nd la sesiunile viitoare.",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-04-06 11:00:00",
+      "date": "2026-04-07 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -11313,6 +11253,21 @@
       "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
       "description_source": "scraped",
       "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Workshop de storytelling \u0219i tur ghidat \u00een expozi\u021bia \u201ePLECAT\u201d",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-04-19 13:00:59.651000",
+      "url": "https://www.mnac.ro/event/1359/Workshop%20de%20storytelling%20%C8%99i%20tur%20ghidat%20%C3%AEn%20expozi%C8%9Bia%20%E2%80%9EPLECAT%E2%80%9D/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Atelier pentru adul\u021bi",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     }
   ]
