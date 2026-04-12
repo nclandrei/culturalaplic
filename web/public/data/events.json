@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-11T09:40:18.097349",
+  "scraped_at": "2026-04-12T10:12:12.896688",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -3662,21 +3662,6 @@
       "video_url": null
     },
     {
-      "title": "New Disorder",
-      "artist": "New Disorder",
-      "venue": "Control Club - Front Room",
-      "date": "2026-04-11 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=new-disorder-2",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "future.666 [DE]",
       "artist": "future.666 [DE]",
       "venue": "Control Club - Berlin Room",
@@ -3836,21 +3821,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Dirty Disco w/ Eugen R\u0103descu",
-      "artist": "Dirty Disco w/ Eugen R\u0103descu",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-04-11 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-5",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -11376,21 +11346,6 @@
       "video_url": null
     },
     {
-      "title": "\u00cen ritmul lumii",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-04-11 11:00:00",
-      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
-      "video_url": null
-    },
-    {
       "title": "SECRET SCREENING",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -11403,6 +11358,21 @@
       "description": "Director:una dintre cele mai interesante voci ale genului \u00een prezentCast:\u00eel \u0219ti\u021bi din The Good Place, Severance, The Aviator sau Big Little LiesGenre:HorrorDuration:1h 41mCountry:Irlanda, SUAYear:2026 If you don't already have an account, click the button below to create one",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-secret-screening-9e6.webp",
+      "video_url": null
+    },
+    {
+      "title": "\u00cen ritmul lumii",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-04-12 11:00:00",
+      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
       "video_url": null
     }
   ]
