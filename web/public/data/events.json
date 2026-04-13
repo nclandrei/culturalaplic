@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-12T10:12:12.896688",
+  "scraped_at": "2026-04-13T11:00:19.081389",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -4095,6 +4095,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Ground Control w/Leo",
+      "artist": "Ground Control w/Leo",
+      "venue": "Control Club - Front Room",
+      "date": "2026-04-16 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ground-control-w-leo-9",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -4786,21 +4801,6 @@
       "description": "este una dintre personalit\u0103\u021bile marcante ale teatrului contemporan, aflat \u00een prezent la al doilea mandat ca director artistic al prestigiosului Festival d\u2019Avignon. De-a lungul carierei sale profesionale de peste 25 de ani, crea\u021biile sale au fost recunoscute pentru abilitatea de a dizolva grani\u021bele dintre teatru \u0219i diverse realit\u0103\u021bi, provoc\u00e2nd permanent percep\u021bia publicului asupra fenomenului istor",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/11/TRISTETE-SI-BUCURIE-IN-VIATA-GIRAFELOR-717x1024.png",
-      "video_url": null
-    },
-    {
-      "title": "O noapte furtunoas\u0103",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-04-12 18:00:00",
-      "url": "https://www.tnb.ro/ro/o-noapte-furtunoasa-225",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1042/1552/large_O_NOAPTE_FURTUNOASA.jpg",
       "video_url": null
     },
     {
@@ -9801,21 +9801,6 @@
       "video_url": "https://www.youtube.com/embed/xQaNEWUqAZA"
     },
     {
-      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-04-12 11:00:00",
-      "url": "https://improteca.ro/2025/03/26/teatru-participativ-pentru-cei-mici-5-8-ani-12-aprilie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\ud83c\udf8f Adu-i pe cei mici la un show pentru copii cu totul si cu totul special: \ud83e\uddd2 Teatru participativ pentru cei mici \ud83d\ude80 sau teatru improvizat pentru copii. La Improteca am pregatit un spectacol de teatru improvizat pentru copii la care cei mici participa activ. Spectacolul a fost jucat in multiple gradinite din Bucuresti. PROMO fiecare familie care achizi\u021bioneaz\u0103 bilete la acest spectacol Improteca va primi o invita\u021bie pentru dou\u0103 persoane (adult + copil sau adult + adult) pentru o \u0219edin\u021b\u0103 de salin...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Laptic \ud83d\udc31 sketch comedy",
       "artist": null,
       "venue": "Improteca",
@@ -11364,7 +11349,7 @@
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-04-12 11:00:00",
+      "date": "2026-04-13 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -11373,6 +11358,21 @@
       "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
       "description_source": "scraped",
       "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-04-12 11:00:00",
+      "url": "https://improteca.ro/2025/03/26/teatru-participativ-pentru-cei-mici-5-8-ani-12-aprilie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "\ud83c\udf8f Adu-i pe cei mici la un show pentru copii cu totul si cu totul special: \ud83e\uddd2 Teatru participativ pentru cei mici \ud83d\ude80 sau teatru improvizat pentru copii. La Improteca am pregatit un spectacol de teatru improvizat pentru copii la care cei mici participa activ. Spectacolul a fost jucat in multiple gradinite din Bucuresti. PROMO fiecare familie care achizi\u021bioneaz\u0103 bilete la acest spectacol Improteca va primi o invita\u021bie pentru dou\u0103 persoane (adult + copil sau adult + adult) pentru o \u0219edin\u021b\u0103 de salin...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
