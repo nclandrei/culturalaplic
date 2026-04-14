@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-13T11:00:19.081389",
+  "scraped_at": "2026-04-14T10:41:00.631756",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -4110,6 +4110,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Recital cameral",
+      "artist": null,
+      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
+      "date": "2026-04-22 19:00:00",
+      "url": "https://oveit.com/hub/event/recital-cameral-5zwdpO3B",
+      "source": "Ateneul Rom\u00e2n",
+      "category": "music",
+      "price": "de la 45 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -4804,51 +4819,6 @@
       "video_url": null
     },
     {
-      "title": "Raskolnikov, dup\u0103 Crim\u0103 \u0219i pedeaps\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-04-13 18:00:00",
-      "url": "https://www.tnb.ro/ro/raskolnikov-dupa-crima-si-pedeapsa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1200/1566/large_Raskolnikov_A4_TNB.jpg",
-      "video_url": null
-    },
-    {
-      "title": "B\u0103rba\u0163ii la 40, femeile la 43",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-04-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/barbaii-la-40-femeile-la-43",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1199/1565/large_Afis_barbatii.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Ziua mea norocoas\u0103",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-04-13 20:00:00",
-      "url": "https://www.tnb.ro/ro/ziua-mea-norocoasa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1192/1555/large_Afis_ziua.jpg",
-      "video_url": null
-    },
-    {
       "title": "Dineu cu pro\u015fti",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -5506,21 +5476,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1107/1575/large_afis_angajare.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Ceasu` \u0219i c\u0103ma\u0219a miresii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-04-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/ceasu-si-camasa-miresii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -9244,21 +9199,6 @@
       "video_url": null
     },
     {
-      "title": "Musc\u0103, paie \u0219i b\u0103taie",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-04-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/musca-paie-si-bataie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/854/1046/large_poster_musca.jpg",
-      "video_url": null
-    },
-    {
       "title": "Vizite ghidate la Muzeu",
       "artist": null,
       "venue": "TNB - Muzeul Teatrului Na\u0163ional",
@@ -11301,21 +11241,6 @@
       "video_url": null
     },
     {
-      "title": "Tur ghidat cu Lia \u0219i Dan Perjovschi | 13 aprilie | orele 15:00 & 17:00",
-      "artist": null,
-      "venue": "ARCUB - Hanul Gabroveni",
-      "date": "2026-04-13 19:00:00",
-      "url": "https://arcub.ro/eveniment/tur-ghidat-cu-lia-si-dan-perjovschi-13-aprilie-orele-15-00-and-17-00",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Lia \u0219i Dan Perjovschi v\u0103 invit\u0103 la o nou\u0103 serie de tururi ghidate ce se vor desf\u0103\u0219ura luni, 13 aprilie, de la ora 15:00 \u0219i 17:00, \u00een cadrul expozi\u021biei \u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201d deschis\u0103 p\u00e2n\u0103 pe 26 iulie, la ARCUB - Hanul Gabroveni. Participan\u021bii vor putea afla cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile celor doi mari arti\u0219ti \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Pentru participarea la turul ghidat este ne...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "MNAC AfterHours | Zadiel",
       "artist": null,
       "venue": "MNAC",
@@ -11346,10 +11271,25 @@
       "video_url": null
     },
     {
+      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-04-12 11:00:00",
+      "url": "https://improteca.ro/2025/03/26/teatru-participativ-pentru-cei-mici-5-8-ani-12-aprilie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "\ud83c\udf8f Adu-i pe cei mici la un show pentru copii cu totul si cu totul special: \ud83e\uddd2 Teatru participativ pentru cei mici \ud83d\ude80 sau teatru improvizat pentru copii. La Improteca am pregatit un spectacol de teatru improvizat pentru copii la care cei mici participa activ. Spectacolul a fost jucat in multiple gradinite din Bucuresti. PROMO fiecare familie care achizi\u021bioneaz\u0103 bilete la acest spectacol Improteca va primi o invita\u021bie pentru dou\u0103 persoane (adult + copil sau adult + adult) pentru o \u0219edin\u021b\u0103 de salin...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-04-13 11:00:00",
+      "date": "2026-04-14 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -11361,16 +11301,16 @@
       "video_url": null
     },
     {
-      "title": "Teatru participativ pentru cei mici \ud83d\ude80 \u2013 5-8 ani",
+      "title": "Improtecari in ac\u021biune \ud83d\udc69\u200d\ud83c\udfeb spectacol absolvire \u2013 clasa Ian. 2026 \u2013 modul 2 improv",
       "artist": null,
       "venue": "Improteca",
-      "date": "2027-04-12 11:00:00",
-      "url": "https://improteca.ro/2025/03/26/teatru-participativ-pentru-cei-mici-5-8-ani-12-aprilie/",
+      "date": "2026-04-26 20:00:00",
+      "url": "https://improteca.ro/2026/04/14/improtecari-in-actiune-spectacol-absolvire-clasa-ianuarie-2026/",
       "source": "improteca",
       "category": "culture",
       "price": null,
       "spotify_url": null,
-      "description": "\ud83c\udf8f Adu-i pe cei mici la un show pentru copii cu totul si cu totul special: \ud83e\uddd2 Teatru participativ pentru cei mici \ud83d\ude80 sau teatru improvizat pentru copii. La Improteca am pregatit un spectacol de teatru improvizat pentru copii la care cei mici participa activ. Spectacolul a fost jucat in multiple gradinite din Bucuresti. PROMO fiecare familie care achizi\u021bioneaz\u0103 bilete la acest spectacol Improteca va primi o invita\u021bie pentru dou\u0103 persoane (adult + copil sau adult + adult) pentru o \u0219edin\u021b\u0103 de salin...",
+      "description": "Hai \u0219i tu la un show de comedie creat pe loc si bucura-te alaturi de cursantii nostri, c-au scapat cu bine si de modulul\u00a0 2 de improvizatie. Improvincialii,\u00a0 au acum\u00a0 show-ul de absolvire. \ud83c\udff7\ufe0f Show-ul te costa cat crezi ca merita si achiti la final, ca donatie \ud83d\udcf1 Rezervari la numarul de telefon: 0727 554 875 sau prin mesaj pe pagina Improteca",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
