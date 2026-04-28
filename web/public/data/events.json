@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-27T11:27:30.852595",
+  "scraped_at": "2026-04-28T11:23:55.240754",
   "music_events": [
     {
       "title": "Concert vocal-simfonic",
@@ -2567,21 +2567,6 @@
       "video_url": null
     },
     {
-      "title": "Stagiunea de jazz",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://oveit.com/hub/event/stagiunea-de-jazz-e7VWgdz4",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Recital cameral",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
@@ -2996,21 +2981,6 @@
       "category": "music",
       "price": "40.00 lei",
       "spotify_url": "https://open.spotify.com/artist/6da8OOYjq640zH3b4e4wci",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "LIVE: Oig\u0103n - Album Launch [RO]",
-      "artist": "Oig\u0103n - Album Launch [RO]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=live-oigan-album-launch-ro",
-      "source": "control",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3795,6 +3765,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Buniku & Corvin",
+      "artist": "Buniku & Corvin",
+      "venue": "Control Club - Front Room",
+      "date": "2026-05-07 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=buniku-corvin-1",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/3K40SMapVhc8PxyYFofHff",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Objekt [DE]",
+      "artist": "Objekt [DE]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-05-21 23:00:00",
+      "url": "https://www.control-club.ro/event/?slug=objekt-de",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/44z1nVVXZE8d4njcQmQLWc",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -4054,51 +4054,6 @@
       "video_url": null
     },
     {
-      "title": "Remember me",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-04-27 18:30:00",
-      "url": "https://www.tnb.ro/ro/remember-me",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/988/1259/large_afis_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Secundar",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://www.tnb.ro/ro/secundar",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1098/1416/large_afis_final.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Eu nu contez",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-04-27 20:30:00",
-      "url": "https://www.tnb.ro/ro/eu-nu-contez-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/489/960/large_afis_eu_nu.jpg",
-      "video_url": null
-    },
-    {
       "title": "Titanic vals",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -4324,36 +4279,6 @@
       "video_url": null
     },
     {
-      "title": "Pre\u0219ul",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://www.tnb.ro/ro/presul",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
-      "video_url": null
-    },
-    {
-      "title": "\u00cen largul m\u0103rii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://www.tnb.ro/ro/in-largul-marii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1081/1389/large_Afis_final.jpg",
-      "video_url": null
-    },
-    {
       "title": "Evadarea t\u0103cut\u0103",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -4381,21 +4306,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
-      "video_url": null
-    },
-    {
-      "title": "LUMEA LUI FRANK",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/lumea-lui-frank/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "C\u00e2nd mi-am dat seama c\u0103 nu se poate \u00eentoarce \u00een lumea noastr\u0103, am ales s\u0103 intru eu \u00een a lui.",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/Lumea-lui-Frank-04-mai-foto-Andrei-Gindac_11.jpg",
       "video_url": null
     },
     {
@@ -5911,21 +5821,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/710/831/large_afis_Adio_dl_Haffmann.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Ziua Trupei As",
-      "artist": "teatru AS &#8211; Colegiul Na\u021bional &#8221;Gheorghe Laz\u0103r&#8221;",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-04-27 15:00:00",
-      "url": "https://www.bulandra.ro/program/zilele-trupei-de-teatru-as-2-2/?wcs_timestamp=1777302000",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Trupa de teatru AS \u2013 Colegiul Na\u021bional \u201dGheorghe Laz\u0103r\u201d Intrare Liber\u0103 \u00a0 \u00a0 April 27 @ 15:00 15:00 \u2014 20:00 (5h) Liviu Ciulei (Schitu M\u0103gureanu nr. 1)",
-      "description_source": "scraped",
-      "image_url": null,
       "video_url": null
     },
     {
@@ -8256,21 +8151,6 @@
       "video_url": null
     },
     {
-      "title": "O Inspec\u021bie Neanun\u021bat\u0103",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-04-27 19:00:00",
-      "url": "https://improteca.ro/2025/04/25/o-inspectie-neanuntata/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Copyright \u00a9 2022 IMPROTECA. All rights reserved. Powered byTECHTONIKA MEDIA",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Switch & Change \ud83e\udeb8 de Neverending Improv",
       "artist": null,
       "venue": "Improteca",
@@ -9411,21 +9291,6 @@
       "video_url": null
     },
     {
-      "title": "MASTERCLASS JOHAN GRIMONPREZ - \u00ceN FIECARE ZI DISPAR CUVINTE / EVERY DAY WORDS DISAPPEAR",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-04-27 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-masterclass-johan-grimonprez-in-fiecare-zi-dispar-cuvinte-one-world-romania-19",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Hosted by Johan Grimonprez, \u201cEvery Day Words Disappear\u201d is an indispensable masterclass for exploring the theories and practices that lie at the heart of his films. Defined by a multi-layered and complex de/re/construction of language and the audio-visual medium, these works become pedagogical tools for understanding the intricate ways in which narrative and ideology become inter-defined and codified as Historical memory. Prefacing the masterclass, Johan Grimonprez writes:",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-masterclass-johan-grimonprez-in-fiecare-zi-dispar-cuvinte-one-world-romania-19-hdY.webp",
-      "video_url": null
-    },
-    {
       "title": "ULTIMELE SCRISORI ALE BUNICII / LAST LETTERS FROM MY GRANDMA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -9909,7 +9774,7 @@
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-04-27 11:00:00",
+      "date": "2026-04-28 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
@@ -9918,6 +9783,21 @@
       "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
       "description_source": "scraped",
       "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
+      "video_url": null
+    },
+    {
+      "title": "O Inspec\u021bie Neanun\u021bat\u0103",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-04-27 19:00:00",
+      "url": "https://improteca.ro/2025/04/25/o-inspectie-neanuntata/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Copyright \u00a9 2022 IMPROTECA. All rights reserved. Powered byTECHTONIKA MEDIA",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
