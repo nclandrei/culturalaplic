@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-01T10:47:11.283347",
+  "scraped_at": "2026-05-02T10:25:05.631123",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -611,21 +611,6 @@
       "category": "music",
       "price": "80.00 lei",
       "spotify_url": "https://open.spotify.com/artist/1MDw0zSUU0XtI9D5JgEZH5",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "CALLAS \u2013 OANA PELLEA",
-      "artist": "Evenimente",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-01 19:30:00",
-      "url": "https://operanb.ro/spectacol/callas/#010520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2402,21 +2387,6 @@
       "video_url": null
     },
     {
-      "title": "Timpuri Noi-1 Mai muncitoresc",
-      "artist": "Timpuri Noi-1 Mai muncitoresc",
-      "venue": "Quantic",
-      "date": "2026-05-01 00:00:00",
-      "url": "https://quantic.pub/eveniment/timpuri-noi-1-mai-muncitoresc/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "CARMEN",
       "artist": "Oper\u0103",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -3115,21 +3085,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Stela Enache [LIVE], Discotec\u0103 DJs COOP, Leo",
-      "artist": "Stela Enache [LIVE], Discotec\u0103 DJs COOP, Leo",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-05-01 14:00:00",
-      "url": "https://www.control-club.ro/event/?slug=stela-enache-live-discoteca-djs-coop-leo",
-      "source": "control",
-      "category": "music",
-      "price": "...",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3840,6 +3795,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Fantastic Twins [FR/DE] [LIVE], Khidja, Marius Georgescu, Lamina: Safiye [UK] & Andr\u00e9 Pahl [DE]",
+      "artist": "Fantastic Twins [FR/DE] [LIVE], Khidja, Marius Georgescu, Lamina: Safiye [UK] & Andr\u00e9 Pahl [DE]",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-05-15 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=fantastic-twins-fr-de",
+      "source": "control",
+      "category": "music",
+      "price": "40.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/3F5IStbZ3xP51h3oXexjKY",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -3934,21 +3904,6 @@
       "video_url": null
     },
     {
-      "title": "TACHE, IANKE \u0218I CAD\u00c2R",
-      "artist": "Victor Ion Popa",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-05-01 19:00:00",
-      "url": "https://www.bulandra.ro/tache-ianke-cadar/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 \u00een 1932, piesaTache, Ianke \u015fi Cad\u00e2ra trecut proba timpului \u015fi a devenit unul dintre cele mai populare \u015fi mai montate texte interbelice din literatura dramatic\u0103 rom\u00e2neasc\u0103. Povestea celor trei mici negustori \u2013 un rom\u00e2n, un evreu \u015fi un turc \u2013 a c\u0103ror tihn\u0103 monoton\u0103 e tulburat\u0103 de o dilem\u0103 de ordin personal, redefine\u015fte rela\u0163iile interetnice \u015fi, \u00een profunzime, cele interumane.Tache, Ianke \u015fi Cad\u00e2rformuleaz\u0103 \u00eentreb\u0103ri \u015fi propune r\u0103spunsuri actuale \u00eentr-o manier\u0103 plin\u0103 de umor, \u00een care sl\u0103b...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2022/04/Tache-Ianke-si-Cadar-2021-foto-Madalina-Sinoae-18.jpg",
-      "video_url": "https://www.youtube.com/embed/4LWtR15M2mA"
-    },
-    {
       "title": "TEROARE",
       "artist": "Ferdinand Von Schirach",
       "venue": "Teatrul Bulandra - Toma Caragiu",
@@ -4007,36 +3962,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
       "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Hedda Gabler",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-01 19:00:00",
-      "url": "https://www.tnb.ro/ro/hedda-gabler",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/996/1264/large_Afis_Hedda_3.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Micul infern",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-01 19:00:00",
-      "url": "https://www.tnb.ro/ro/micul-infern",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/304/1577/large_afis_litera.jpg",
-      "video_url": null
     },
     {
       "title": "Dineu cu pro\u015fti",
@@ -4111,21 +4036,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1107/1575/large_afis_angajare.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Evadarea t\u0103cut\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-01 19:00:00",
-      "url": "https://www.tnb.ro/ro/evadarea-tacuta",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/918/1140/large_evadarea_tacuta.jpg",
       "video_url": null
     },
     {
@@ -4246,36 +4156,6 @@
       "description": "\u201eMeciul de handbal\u00a0combin\u0103 trei dintre lucrurile pe care le iubesc cel mai mult: teatrul, muzica, sportul \u2013 activit\u0103\u021bi de care via\u021ba mea s-a legat cam de c\u00e2nd m\u0103 \u0219tiu. Este un proiect la care s-a muncit cu mult\u0103 pasiune \u0219i care sper s\u0103 aduc\u0103 pe scen\u0103 aceea\u0219i pasiune din lumea celor pentru care sportul e [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/11/Meciul-de-handbal_Andrei-Gindac-1-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Lapte Negru",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-05-01 19:00:00",
-      "url": "https://nottara.ro/spectacol/lapte-negru/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eLapte negru\u201d aduce o perspectiv\u0103 sincer\u0103, curajoas\u0103, autentic\u0103 despre feminitate, maternitate, depresie postnatal\u0103 \u0219i pasiunea pentru scris, \u00eentr-o societate \u00een care femeile \u00eenc\u0103 se lupt\u0103 cu standarde duble \u0219i cu tipare mentalitare conservatoare. O poveste inspirat\u0103 din experien\u021ba renumitei scriitoare turce Elif Shafak, confruntat\u0103 cu dificultatea g\u0103sirii unui echilibru \u00eentre activitatea scrisului \u0219i via\u021ba de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/Valentin-Gheorghiu-in-Lapte-negru-Teatrul-Nottara.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Sonat\u0103 de toamn\u0103",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-05-01 19:30:00",
-      "url": "https://nottara.ro/spectacol/sonata-de-toamna/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol ce surprinde cu fine\u021be nuan\u021bele dramei din celebra poveste a lui Ingmar Bergman, vulnerabilitatea \u0219i curajul asum\u0103rii gre\u0219elilor sunt cheia care armonizeaz\u0103 dou\u0103 suflete r\u0103t\u0103cite. Dup\u0103 mul\u021bi ani, Charlotte, o pianist\u0103 celebr\u0103 \u0219i aplaudat\u0103 \u00een toat\u0103 lumea, \u00ee\u0219i viziteaz\u0103 fiica, undeva, \u00eentr-un sat pierdut de lume, la casa parohial\u0103 unde locuie\u0219te al\u0103turi de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -5131,21 +5011,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
-      "video_url": null
-    },
-    {
-      "title": "(the) Woman",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-05-01 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/the-woman/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201e(the) Woman porne\u0219te de la maternitate, dar vorbe\u0219te despre ceva mult mai larg: despre ce se \u00eent\u00e2mpl\u0103 c\u00e2nd rolurile pe care le juc\u0103m \u2013 de femeie, de b\u0103rbat, de partener, de artist, de p\u0103rinte, de \u201eadult func\u021bional\u201d \u2013 \u00eencep s\u0103 se ciocneasc\u0103 \u00eentre ele. Despre presiunea de a face totul \u00abcorect\u00bb. Despre oboseal\u0103, dorin\u021b\u0103, vin\u0103, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
       "video_url": null
     },
     {
@@ -7012,21 +6877,6 @@
       "title": "Club 27",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-01 15:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/club-27/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eSunt momente \u00een via\u021b\u0103 c\u00e2nd o m\u00e2n\u0103 uria\u0219\u0103, invizibil\u0103, te ia de unde e\u0219ti \u0219i te poart\u0103 c\u0103tre un loc mai bun. A\u0219a m\u0103 simt \u0219i eu cu acest spectacol. Bucuria pe care o simt \u00een facerea lui, sper c\u0103 va fi contagioas\u0103 \u0219i pentru public. Este un manifest pentru iubire, pentru dor, pentru prietenie, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/01/cover-site-spectacol-CLUB-27-pt-site-la-dimensiune-02-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/nAyZGRLB3dI"
-    },
-    {
-      "title": "Club 27",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
       "date": "2026-05-11 19:00:00",
       "url": "https://teatrulmetropolis.ro/spectacol/club-27/",
       "source": "metropolis",
@@ -8537,6 +8387,21 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/968/1201/large_Scapa-ma_de_nevasta-mea_TNB.jpg",
       "video_url": null
+    },
+    {
+      "title": "(the) Woman",
+      "artist": null,
+      "venue": "Teatrul Metropolis - Sala Mic\u0103",
+      "date": "2026-06-07 19:30:00",
+      "url": "https://teatrulmetropolis.ro/spectacol/the-woman/",
+      "source": "metropolis",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u201e(the) Woman porne\u0219te de la maternitate, dar vorbe\u0219te despre ceva mult mai larg: despre ce se \u00eent\u00e2mpl\u0103 c\u00e2nd rolurile pe care le juc\u0103m \u2013 de femeie, de b\u0103rbat, de partener, de artist, de p\u0103rinte, de \u201eadult func\u021bional\u201d \u2013 \u00eencep s\u0103 se ciocneasc\u0103 \u00eentre ele. Despre presiunea de a face totul \u00abcorect\u00bb. Despre oboseal\u0103, dorin\u021b\u0103, vin\u0103, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -9741,21 +9606,6 @@
       "video_url": "https://www.youtube.com/embed/emg4V8EiHOM?si=0TC6YaFjysyY_3_h"
     },
     {
-      "title": "MONSIEUR AZNAVOUR / DL. AZNAVOUR",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-01 16:00:00",
-      "url": "https://eventbook.ro/film/bilete-monsieur-aznavour-gopo-2026",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Title:MONSIEUR AZNAVOURDirector:Grand Corps Malade, Mehdi IdirCast:Tahar Rahim, Bastien Bouillon, Marie-Julie Baup, Camille MoutawakilGenre:Film biografic, dram\u0103, film muzicalDuration:2h 14mCountry:Fran\u021baLanguage:FRYear:2024 Fiul unor refugia\u021bi armeni, mic de statur\u0103, s\u0103rac \u0219i cu o voce considerat\u0103 atipic\u0103 \u2013 mul\u021bi credeau c\u0103 Charles Aznavour nu va reu\u0219i niciodat\u0103. Dar, prin munc\u0103 asidu\u0103, ambi\u021bie \u0219i o voin\u021b\u0103 de neclintit, a devenit un simbol al muzicii \u0219i al culturii franceze.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/03/bilete-monsieur-aznavour-OxS.webp",
-      "video_url": "https://www.youtube.com/embed/j8oW2hzA_q0"
-    },
-    {
       "title": "FLOW - O PISIC\u0102 F\u0102R\u0102 FRIC\u0102A.G.",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -10176,21 +10026,6 @@
       "video_url": null
     },
     {
-      "title": "The Menagerie testam impreuna jocuri inventate sau mai putin cunoscute",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-05-01 20:00:00",
-      "url": "https://improteca.ro/2026/04/23/the-menagerie-testam-impreuna-jocuri-inventate-sau-mai-putin-cunoscute-1-mai/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\ud83e\udd98 The Menagerie \ud83e\udebf este un eveniment experimental de improvizatie in care improvizatorii urca pe scena si propun: \ud83d\udc28 jocuri de short form mai putin jucate sau; \ud83d\udc3c jocuri de short form modificate sau;",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Improtecari in ac\u021biune \ud83d\udc69\u200d\ud83c\udfeb spectacol absolvire \u2013 clasa Ian. 2026 \u2013 modul 2 improv #3",
       "artist": null,
       "venue": "Improteca",
@@ -10254,7 +10089,7 @@
       "title": "\u00cen ritmul lumii",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-05-01 11:00:00",
+      "date": "2026-05-02 11:00:00",
       "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
       "source": "mare",
       "category": "culture",
