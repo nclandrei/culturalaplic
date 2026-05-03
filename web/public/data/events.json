@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-02T10:25:05.631123",
+  "scraped_at": "2026-05-03T10:29:38.264616",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -341,36 +341,6 @@
       "category": "music",
       "price": "95.00 lei",
       "spotify_url": "https://open.spotify.com/artist/2AK3F4tVjxYuqSGefozy52",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Enescu 70 pe \u00een\u021belesul tuturor",
-      "artist": "Evenimente",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-02 11:00:00",
-      "url": "https://operanb.ro/spectacol/enescu-70-pe-intelesul-tuturor/#020520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Don Giovanni",
-      "artist": "Oper\u0103",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-02 18:30:00",
-      "url": "https://operanb.ro/spectacol/don-giovanni-2-2/#020520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2372,21 +2342,6 @@
       "video_url": null
     },
     {
-      "title": "ALTAR XXXV YEARS TOUR | QUANTIC",
-      "artist": "ALTAR XXXV YEARS TOUR",
-      "venue": "Quantic",
-      "date": "2026-05-02 00:00:00",
-      "url": "https://quantic.pub/eveniment/altar-xxxv-years-tour-quantic/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "CARMEN",
       "artist": "Oper\u0103",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -3467,21 +3422,6 @@
       "video_url": null
     },
     {
-      "title": "Dirty Disco w/ Eugen R\u0103descu, Moss Farai & Emil Doesn\u2019t Drive [BG]",
-      "artist": "Dirty Disco w/ Eugen R\u0103descu, Moss Farai & Emil Doesn\u2019t Drive [BG]",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-05-02 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-moss-farai-emil-doesn-t-drive-bg",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/6SNUkfgPuhUkxuGzdYczyb",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Red Axes [IL]",
       "artist": "Red Axes [IL]",
       "venue": "Control Club - Berlin Room",
@@ -3904,21 +3844,6 @@
       "video_url": null
     },
     {
-      "title": "TEROARE",
-      "artist": "Ferdinand Von Schirach",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://www.bulandra.ro/teroare/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Maiorul Lars Koch, pilot al unui avion de v\u00e2n\u0103toare tip Eurofighter al avia\u021biei germane, se afl\u0103 \u00een fa\u021ba verdictului: a ac\u021bionat corect sau nu \u00een ziua \u00een care a primit ordinul de a devia de la curs un avion Airbus apar\u021bin\u00e2nd companiei Lufthansa deturnat de terori\u0219ti? La bordul zborului LH 2047, cu plecare de pe aeroportul Tegel din Berlin c\u0103tre M\u00fcnchen, se afl\u0103 164 de persoane, iar aeronava se \u00eendreapt\u0103 spre Allianz Arena. Chiar \u00een acea sear\u0103 are loc meciul interna\u021bional Germania contra Angli...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/TEROARE-snur-17-dec-foto-Andrei-Gindac-Two-BugsCL1A2602-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
       "artist": "Hanoch Levin",
       "venue": "Teatrul Bulandra - Liviu Ciulei",
@@ -3962,36 +3887,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
       "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Dineu cu pro\u015fti",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://www.tnb.ro/ro/dineu-cu-prosti-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Pre\u0219ul",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://www.tnb.ro/ro/presul",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
-      "video_url": null
     },
     {
       "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
@@ -4039,21 +3934,6 @@
       "video_url": null
     },
     {
-      "title": "Vivien Leigh: Ultima conferin\u021b\u0103 de pres\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://www.tnb.ro/ro/vivien-leigh-ultima-conferinta-de-presa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
-      "video_url": null
-    },
-    {
       "title": "A DOU\u0102SPREZECEA NOAPTE",
       "artist": "de William Shakespeare",
       "venue": "Teatrul Mic - Sala Atelier",
@@ -4066,21 +3946,6 @@
       "description": "Dac\u0103 muzica e hrana dragostei, c\u00e2nta\u021bi-mi\u2026\u201d spune Orsino, la debutul piesei lui Shakespeare. Ce se \u00eent\u00e2mpl\u0103 atunci c\u00e2nd te \u00eendr\u0103goste\u0219ti de persoana nepotrivit\u0103? Naufragiat\u0103 \u00een Iliria \u00eempreun\u0103 cu fratele ei, de care este separat\u0103, Viola, travestit\u0103 \u00een b\u0103iat, \u00eel iube\u0219te \u00een tain\u0103 pe Orsino, cel \u00eenamorat f\u0103r\u0103 speran\u021b\u0103 de Olivia, care se \u00eendr\u0103goste\u0219te instant de Viola-b\u0103iat. devine aproape lichid \u00eentr",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2021/02/IMG-20220329-WA0000-682x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "\u00cen largul m\u0103rii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://www.tnb.ro/ro/in-largul-marii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1081/1389/large_Afis_final.jpg",
       "video_url": null
     },
     {
@@ -4156,36 +4021,6 @@
       "description": "\u201eMeciul de handbal\u00a0combin\u0103 trei dintre lucrurile pe care le iubesc cel mai mult: teatrul, muzica, sportul \u2013 activit\u0103\u021bi de care via\u021ba mea s-a legat cam de c\u00e2nd m\u0103 \u0219tiu. Este un proiect la care s-a muncit cu mult\u0103 pasiune \u0219i care sper s\u0103 aduc\u0103 pe scen\u0103 aceea\u0219i pasiune din lumea celor pentru care sportul e [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/11/Meciul-de-handbal_Andrei-Gindac-1-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Comedia erorilor",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-05-02 19:00:00",
-      "url": "https://nottara.ro/spectacol/comedia-erorilor/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Comedia erorilor \u2013 o poveste savuroas\u0103, cu aventuri, iubire \u0219i umor de calitate, unul dintre cele mai iubite spectacole din Bucure\u0219ti. Una dintre piesele timpurii ale lui William Shakespeare, \u201eComedia erorilor\u201d este o poveste plin\u0103 de \u00eent\u00e2mpl\u0103ri neprev\u0103zute, qui-pro-quo-uri savuroase, iubire \u0219i aventur\u0103. Este, \u00een acela\u0219i timp, o c\u0103l\u0103torie de descoperire de sine, de asumare [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
-    },
-    {
-      "title": "Iona",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-05-02 19:30:00",
-      "url": "https://nottara.ro/spectacol/iona/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00a0 Universul lui Iona, celebrul personaj biblic \u00eenghi\u021bit de un pe\u0219te uria\u0219, este absurd \u0219i tragic. A\u0219a cum fiecare dintre noi am sim\u021bit m\u0103car o dat\u0103 c\u0103 este via\u021ba. Adev\u0103rata provocare este s\u0103 ne c\u00e2\u0219tig\u0103m libertatea interioar\u0103. S\u0103 \u00eencerci s\u0103 evadezi dintr-un univers \u0219i s\u0103 te treze\u0219ti la infinit prizonier \u00een altul\u2026 Povestea celebrului personaj [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/Iona-1.jpg",
       "video_url": null
     },
     {
@@ -5011,21 +4846,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
-      "video_url": null
-    },
-    {
-      "title": "(the) Woman",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-05-02 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/the-woman/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201e(the) Woman porne\u0219te de la maternitate, dar vorbe\u0219te despre ceva mult mai larg: despre ce se \u00eent\u00e2mpl\u0103 c\u00e2nd rolurile pe care le juc\u0103m \u2013 de femeie, de b\u0103rbat, de partener, de artist, de p\u0103rinte, de \u201eadult func\u021bional\u201d \u2013 \u00eencep s\u0103 se ciocneasc\u0103 \u00eentre ele. Despre presiunea de a face totul \u00abcorect\u00bb. Despre oboseal\u0103, dorin\u021b\u0103, vin\u0103, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
       "video_url": null
     },
     {
@@ -8402,6 +8222,66 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
       "video_url": null
+    },
+    {
+      "title": "Vizite ghidate la Muzeu",
+      "artist": null,
+      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
+      "date": "2026-05-05 14:00:00",
+      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Yen",
+      "artist": null,
+      "venue": "TNB - Sala Mic\u0103",
+      "date": "2026-05-20 19:00:00",
+      "url": "https://www.tnb.ro/ro/yen",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1206/1694/large_afis_yen.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Incognito",
+      "artist": null,
+      "venue": "TNB - Sala Atelier",
+      "date": "2026-05-22 19:00:00",
+      "url": "https://www.tnb.ro/ro/incognito",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Anonimul vene\u021bian",
+      "artist": null,
+      "venue": "TNB - Sala Atelier",
+      "date": "2026-05-31 19:00:00",
+      "url": "https://www.tnb.ro/ro/anonimul-venetian",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/322/1265/large_anonim_afis_2024.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -9606,21 +9486,6 @@
       "video_url": "https://www.youtube.com/embed/emg4V8EiHOM?si=0TC6YaFjysyY_3_h"
     },
     {
-      "title": "FLOW - O PISIC\u0102 F\u0102R\u0102 FRIC\u0102A.G.",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-02 10:30:00",
-      "url": "https://eventbook.ro/film/bilete-flow-gopo-2026",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Title:FLOWDirector:Gints ZilbalodisGenre:Anima\u021bieDuration:1h 24mCountry:Belgia, Letonia, Fran\u021baYear:2024 Lumea pare s\u0103-\u0219i fi g\u0103sit sf\u00e2r\u0219itul, l\u0103s\u00e2nd \u00een urm\u0103 doar vestigii ale prezen\u021bei umane. Cat este un animal solitar, dar, atunci c\u00e2nd c\u0103minul \u00eei este distrus de o inunda\u021bie devastatoare, se refugiaz\u0103 pe o barc\u0103 al\u0103turi de alte animale, din specii diferite, cu care fi nevoit s\u0103 fac\u0103 echip\u0103 \u00een pofida diferen\u021belor. Pe barca singuratic\u0103 care \u00eenainteaz\u0103 printr-un peisaj mistic acoperit de ape, perso",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/03/bilete-film-flow-26F.webp",
-      "video_url": "https://www.youtube.com/embed/6I3KMRyrfjc"
-    },
-    {
       "title": "HEIDI - RESCUE OF THE LYNX / HEIDI - LEGENDA R\u00c2SULUI DIN ALPIA.G.",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -10026,21 +9891,6 @@
       "video_url": null
     },
     {
-      "title": "Improtecari in ac\u021biune \ud83d\udc69\u200d\ud83c\udfeb spectacol absolvire \u2013 clasa Ian. 2026 \u2013 modul 2 improv #3",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-05-02 18:00:00",
-      "url": "https://improteca.ro/2026/04/23/improtecari-in-actiune-spectacol-absolvire-clasa-ianuarie-2026-3/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\ud83d\udeb8 Improtecari in actiune \ud83d\udc69\u200d\ud83c\udfeb spectacol absolvire \u2013 clasa Feb. 2026 \u2013 modul 4 improv Hai \u0219i tu la un show de comedie creat pe loc si bucura-te alaturi de cursantii nostri, c-au scapat cu bine si de modulul\u00a0 4 de improvizatie si acum au show-ul de absolvire. \ud83c\udff7\ufe0f Show-ul te costa cat crezi ca merita si achiti la final, ca donatie",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Tur ghidat cu Lia \u0219i Dan Perjovschi | orele 15:00 \u0219i 17:00",
       "artist": null,
       "venue": "ARCUB - Hanul Gabroveni",
@@ -10083,21 +9933,6 @@
       "description": "Lia \u0219i Dan Perjovschi v\u0103 invit\u0103 la o nou\u0103 serie de tururi ghidate, duminic\u0103, 24 mai, de la orele 15:00 \u0219i 17:00, \u00een cadrul expozi\u021biei \u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201d deschis\u0103 p\u00e2n\u0103 pe 26 iulie, la ARCUB - Hanul Gabroveni. Participan\u021bii vor descoperi direct de la cei doi arti\u0219ti cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile lor \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Participarea la tururile ghidate se face pe baz\u0103 de...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "\u00cen ritmul lumii",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-05-02 11:00:00",
-      "url": "https://mare.ro/exhibition/in-ritmul-lumii/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O \u00eent\u00e2lnire cu opera unui artist care a privit lumea cu sensibilitate \u0219i rigoare \u0219i a transformat observa\u021bia zilnic\u0103 \u00een art\u0103. De la experimentele despre echilibru \u0219i cre\u0219tere, la lucr\u0103rile din anii de izolare, expozi\u021bia vorbe\u0219te despre c\u0103utarea sensului f\u0103r\u0103 emfaz\u0103. Expozi\u021bia \u0218tefan Bertalan este curatoriat\u0103 de Bernard Blist\u00e8ne, Director onorific al Centrului Pompidou \u2013 Muzeul Na\u021bional de Art\u0103 Modern\u0103 \u0219i beneficiaz\u0103 de colaborarea Iunei \u0218erban, curator la MARe. \u0218tefan Bertalan a explorat leg\u0103tur",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/01/web-v1-1024x556.jpg",
       "video_url": null
     }
   ]
