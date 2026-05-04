@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-03T10:29:38.264616",
+  "scraped_at": "2026-05-04T11:27:45.819087",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -341,21 +341,6 @@
       "category": "music",
       "price": "95.00 lei",
       "spotify_url": "https://open.spotify.com/artist/2AK3F4tVjxYuqSGefozy52",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Lacul Lebedelor",
-      "artist": "Balet",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-03 18:30:00",
-      "url": "https://operanb.ro/spectacol/lacul-lebedelor-3/#030520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2912,21 +2897,6 @@
       "video_url": null
     },
     {
-      "title": "Concert extraordinar",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://oveit.com/hub/event/concert-extraordinar-w7rGQmzV",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 65 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Recital cameral",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
@@ -3844,36 +3814,6 @@
       "video_url": null
     },
     {
-      "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
-      "artist": "Hanoch Levin",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.bulandra.ro/mestesugul-vietii/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Me\u015fte\u015fugul Vie\u0163ii, una dintre cele mai apreciate piese ale marelui dramaturg israelian Hanoch Levin, examineaz\u0103 via\u0163a din perspectiva unui cuplu: speran\u0163e pierdute, via\u0163\u0103 irosit\u0103, m\u00e2nie, violen\u0163\u0103, regrete, dificult\u0103\u0163i de comunicare. Lupta dulce-am\u0103ruie \u015fi disperat\u0103 dintre cei doi reflect\u0103 \u00eentreb\u0103ri universale. C\u00e2t de ridicol\u0103 \u015fi terifiant\u0103 poate fi trecerea noastr\u0103 prin via\u0163\u0103? C\u00e2t de tare ne p\u0103c\u0103lim pe noi \u00een\u015fine, \u00een multe momente, pentru a putea tr\u0103i, aparent lini\u015fti\u0163i \u015fi mul\u0163umi\u0163i, mai depa...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Mestesugul-vietii-2011-foto-Cosmin-Ardeleanu-06-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/ObCzGHHLUG8"
-    },
-    {
-      "title": "TEROARE",
-      "artist": "Ferdinand Von Schirach",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.bulandra.ro/teroare/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Maiorul Lars Koch, pilot al unui avion de v\u00e2n\u0103toare tip Eurofighter al avia\u021biei germane, se afl\u0103 \u00een fa\u021ba verdictului: a ac\u021bionat corect sau nu \u00een ziua \u00een care a primit ordinul de a devia de la curs un avion Airbus apar\u021bin\u00e2nd companiei Lufthansa deturnat de terori\u0219ti? La bordul zborului LH 2047, cu plecare de pe aeroportul Tegel din Berlin c\u0103tre M\u00fcnchen, se afl\u0103 164 de persoane, iar aeronava se \u00eendreapt\u0103 spre Allianz Arena. Chiar \u00een acea sear\u0103 are loc meciul interna\u021bional Germania contra Angli...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/TEROARE-snur-17-dec-foto-Andrei-Gindac-Two-BugsCL1A2602-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "EU SUNT PROPRIA MEA SO\u021aIE",
       "artist": "de Doug Wright",
       "venue": "Teatrul Mic - Sala Studio",
@@ -3887,21 +3827,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
       "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-05-03 11:00:00",
-      "url": "https://www.tnb.ro/ro/teatrul-naional-pentru-copii-abracadabra-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
-      "video_url": null
     },
     {
       "title": "Du\u0219i cu pluta",
@@ -4021,36 +3946,6 @@
       "description": "\u201eMeciul de handbal\u00a0combin\u0103 trei dintre lucrurile pe care le iubesc cel mai mult: teatrul, muzica, sportul \u2013 activit\u0103\u021bi de care via\u021ba mea s-a legat cam de c\u00e2nd m\u0103 \u0219tiu. Este un proiect la care s-a muncit cu mult\u0103 pasiune \u0219i care sper s\u0103 aduc\u0103 pe scen\u0103 aceea\u0219i pasiune din lumea celor pentru care sportul e [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/11/Meciul-de-handbal_Andrei-Gindac-1-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cumetrele",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://nottara.ro/spectacol/cumetrele/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un eveniment fericit \u2013 c\u00e2\u0219tigul la bingo al unei femei \u2013 aduce \u00eempreun\u0103 personaje \u0219i personalit\u0103\u021bi extrem de diferite. De la casnic\u0103 la stripteuz\u0103, cele 11 prietene formeaz\u0103 un micro-univers exploziv, \u00een care, \u00een spatele aparentei superficialit\u0103\u021bi, se ascund situa\u021bii dure de via\u021b\u0103. Un text \u00een aceea\u0219i m\u0103sur\u0103 comic \u0219i dramatic, un text de un [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/cumetrele-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/ITY0GYM94EU"
-    },
-    {
-      "title": "Perspective grandioase",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-05-03 19:30:00",
-      "url": "https://nottara.ro/spectacol/perspective-grandioase/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -4846,21 +4741,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
-      "video_url": null
-    },
-    {
-      "title": "30+",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/30/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "C\u00e2nd aveam \u0219apte ani, m-am g\u00e2ndit: \u201eLa 18 ani o s\u0103 m\u0103 c\u0103s\u0103toresc \u0219i o s\u0103 fac copii.\u201d N-am reu\u0219it niciodat\u0103 s\u0103 g\u0103sesc ce aveau p\u0103rin\u021bii mei. [\u2026] Ar trebui s\u0103 fug afar\u0103 \u0219i s\u0103 \u00een\u0219fac prima persoan\u0103 pe care pot s\u0103 o suport? \u201eCred c\u0103 un spectacol de teatru este reu\u0219it \u00een m\u0103sura \u00een [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/02/Design-fara-titlu-1-1-1024x576.png",
       "video_url": null
     },
     {
@@ -6754,36 +6634,6 @@
       "video_url": "https://www.youtube.com/embed/nAyZGRLB3dI"
     },
     {
-      "title": "Pre\u0219ul",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/presul",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Secundar",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/secundar",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1098/1416/large_afis_final.jpg",
-      "video_url": null
-    },
-    {
       "title": "Yen",
       "artist": null,
       "venue": "TNB - Sala Mic\u0103",
@@ -7156,36 +7006,6 @@
       "description": "propune o perspectiv\u0103 proasp\u0103t\u0103, profund\u0103 \u0219i actual\u0103 asupra modului \u00een care ne raport\u0103m la cei din jur \u0219i la noi \u00een\u0219ine. Spectacolul devine o introspec\u021bie lucid\u0103, traversat\u0103 de ironie fin\u0103, care pune sub semnul \u00eentreb\u0103rii grani\u021ba fragil\u0103 dintre ceea ce este acceptabil \u0219i uman \u0219i ceea ce dep\u0103\u0219e\u0219te limitele conven\u021bionale. surprinde o reuniune aparent banal\u0103 \u00een Delta Dun\u0103rii, a unei familii extinse, ",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/09/189bf454-20dd-464f-8d05-de7167b07e13-717x1024.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "\u00cen largul m\u0103rii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/in-largul-marii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1081/1389/large_Afis_final.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vivien Leigh: Ultima conferin\u021b\u0103 de pres\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://www.tnb.ro/ro/vivien-leigh-ultima-conferinta-de-presa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
       "video_url": null
     },
     {
@@ -8281,6 +8101,81 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/322/1265/large_anonim_afis_2024.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Perspective grandioase",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala George Constantin",
+      "date": "2026-06-17 19:30:00",
+      "url": "https://nottara.ro/spectacol/perspective-grandioase/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Cel mai bun copil din lume",
+      "artist": null,
+      "venue": "TNB - Sala Mic\u0103",
+      "date": "2026-05-21 19:00:00",
+      "url": "https://www.tnb.ro/ro/cel-mai-bun-copil-din-lume",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/759/936/large_Afi_final.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Poveste de iarn\u0103",
+      "artist": null,
+      "venue": "TNB - Sala Mic\u0103",
+      "date": "2026-05-22 19:00:00",
+      "url": "https://www.tnb.ro/ro/poveste-de-iarna",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1269/1705/large_Poveste_de_iarna-afis_4.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Proorocul Ilie",
+      "artist": null,
+      "venue": "TNB - Sala Studio",
+      "date": "2026-05-31 19:00:00",
+      "url": "https://www.tnb.ro/ro/proorocul-ilie",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1096/1407/large_prooroc_ilie_AFIS.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Cerere \u00een c\u0103s\u0103torie",
+      "artist": null,
+      "venue": "TNB - Sala Atelier",
+      "date": "2026-06-01 17:30:00",
+      "url": "https://www.tnb.ro/ro/cerere-in-casatorie",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/982/1262/large_Cerere_5x7_SM.jpg",
       "video_url": null
     }
   ],
@@ -9486,21 +9381,6 @@
       "video_url": "https://www.youtube.com/embed/emg4V8EiHOM?si=0TC6YaFjysyY_3_h"
     },
     {
-      "title": "HEIDI - RESCUE OF THE LYNX / HEIDI - LEGENDA R\u00c2SULUI DIN ALPIA.G.",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-03 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-heidi-legenda-rasului-din-alpi",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Aizea Roca Berridi, Toby SchwarzCast:Michael McCown, Tom Zahner, Lilly Graffam, Leonardo LuceroGenre:Anima\u021bie, FamilieDuration:1h 19mCountry:Germania, Spania, BelgiaYear:2025 C\u00e2nd Heidi, o feti\u021b\u0103 plin\u0103 de energie \u00een v\u00e2rst\u0103 de opt ani, salveaz\u0103 un pui de r\u00e2s c\u0103ruia l\u0103comia unui om de afaceri \u00eei amenin\u021b\u0103 existen\u021ba, copila descoper\u0103 trecutul secret al bunicului ei \u0219i \u00ee\u0219i d\u0103 seama c\u0103 are de ap\u0103rat nu numai familia, ci \u0219i natura pe care aceasta o consider\u0103 acas\u0103.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-heidi-legenda-rasului-din-alpi-XVY.webp",
-      "video_url": "https://www.youtube.com/embed/nwhRDWIeT1g"
-    },
-    {
       "title": "SILENT FRIEND / PRIETEN T\u0102CUT",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -9846,21 +9726,6 @@
       "video_url": null
     },
     {
-      "title": "MNAC AfterHours | Ashpot",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-05-03 15:30:00.308000",
-      "url": "https://www.mnac.ro/event/1362/MNAC%20AfterHours%20%7C%20Ashpot/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Muzic\u0103",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
-    },
-    {
       "title": "Switch & Change \ud83e\udeb8 de Neverending Improv",
       "artist": null,
       "venue": "Improteca",
@@ -9873,21 +9738,6 @@
       "description": "\ud83d\udd03 Switch & Change \ud83e\udeb8 este o serie de spectacole-experiment, dedicate cursan\u021bilor. Un mod de a aduce pe scen\u0103, ceea ce se experimenteaz\u0103 la curs. Duminic\u0103, 28 aprilie, Ana Rotariu & Alexandru Laz\u0103r vin \u00een fa\u021ba publicului cu un spectacol long-form care porne\u0219te de la sugestia ta \u0219i continu\u0103 cu experien\u021bele \u0219i pove\u0219tile lor. \u0218i cum oric\u0103rui spectacol \u00eei st\u0103 bine cu sala plin\u0103, f\u0103-\u021bi rezervare c\u0103 locurile sunt limitate. Al\u0103turi de ei vin Alexandra B\u0103jan & Dan Miron.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #2 I 2-3 mai",
-      "artist": null,
-      "venue": "Calea Victoriei",
-      "date": "2026-05-03 19:00:00",
-      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-2-i-2-3-mai",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "10:00\u201314:00,Debarcader Pia\u021ba Na\u021biunilor Unite:Plimb\u0103ri pe D\u00e2mbovi\u021ba, flotila DAD (D\u00e2mbovi\u021ba Ap\u0103 Dulce) + Kayak Champions 14:00\u201316:00,traseu itinerant: Ateneul Rom\u00e2n \u2192\u00a0Splaiul Independen\u021bei, Tur ghidat \u201eDe la Podul Mogo\u0219oaiei la Calea Victoriei \u2013 istoria unui bulevard celebru\u201d, cu: Ovidiu Neac\u0219u.Participarea este gratuit\u0103,\u00een limita locurilor disponibile, pebaz\u0103 de \u00eenscriere,aici.Num\u0103r maxim de participan\u021bi:50 persoane/tur. 16:00\u201320:00,Debarcader Pia\u021ba Na\u021biunilor Unite:Plimb\u0103ri pe D\u00e2mbovi\u021ba flo...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     },
     {
