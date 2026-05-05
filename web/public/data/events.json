@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-04T11:27:45.819087",
+  "scraped_at": "2026-05-05T10:59:32.619967",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -3182,21 +3182,6 @@
       "video_url": null
     },
     {
-      "title": "Recital cameral",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-05-04 19:00:00",
-      "url": "https://oveit.com/hub/event/recital-cameral-5zwdpO3B",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Recitalul laurea\u021bilor",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
@@ -3720,6 +3705,96 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Muzica pe \u00cen\u021belesul Tuturor",
+      "artist": null,
+      "venue": "Ateneul Rom\u00e2n - Sala Mare",
+      "date": "2026-05-24 11:00:00",
+      "url": "https://oveit.com/hub/event/muzica-pe-intelesul-tuturor-QzvNQrzk",
+      "source": "Ateneul Rom\u00e2n",
+      "category": "music",
+      "price": "de la 30 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: GAAP, Gheordu & von B\u00fclove",
+      "artist": "GAAP, Gheordu & von B\u00fclove",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-05-05 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-gaap-gheordu-von-buelove",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "SWORDS - Spoken Word Sessions - S4E4",
+      "artist": "SWORDS - Spoken Word Sessions - S4E4",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-05-10 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=swords-spoken-word-sessions-s4e4",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Black Rhino Radio 5 Year Anniversary",
+      "artist": "Black Rhino Radio 5 Year Anniversary",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-05-16 21:00:00",
+      "url": "https://www.control-club.ro/event/?slug=black-rhino-5-year-anniversary",
+      "source": "control",
+      "category": "music",
+      "price": "50.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ctrl BRUTUS LIVE: Bastien",
+      "artist": "ctrl BRUTUS LIVE: Bastien",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-05-19 21:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ctrl-brutus-live-bastien",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "BROTHER CULTURE & DJ SISTAH VIBES",
+      "artist": "BROTHER CULTURE & DJ SISTAH VIBES",
+      "venue": "Quantic",
+      "date": "2026-07-04 00:00:00",
+      "url": "https://quantic.pub/eveniment/brother-culture-dj-sistah-vibes/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": "https://open.spotify.com/artist/7vIqeUrMmLq6ULjRPZTKna",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -3829,36 +3904,6 @@
       "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "Du\u0219i cu pluta",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-05-04 18:00:00",
-      "url": "https://www.tnb.ro/ro/dusi-cu-pluta",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1024/1301/large_Dusi_cu_pluta_A3_TNB.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Angajare de clovn",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-05-04 18:30:00",
-      "url": "https://www.tnb.ro/ro/angajare-de-clovn-2025",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1107/1575/large_afis_angajare.jpg",
-      "video_url": null
-    },
-    {
       "title": "A DOU\u0102SPREZECEA NOAPTE",
       "artist": "de William Shakespeare",
       "venue": "Teatrul Mic - Sala Atelier",
@@ -3871,21 +3916,6 @@
       "description": "Dac\u0103 muzica e hrana dragostei, c\u00e2nta\u021bi-mi\u2026\u201d spune Orsino, la debutul piesei lui Shakespeare. Ce se \u00eent\u00e2mpl\u0103 atunci c\u00e2nd te \u00eendr\u0103goste\u0219ti de persoana nepotrivit\u0103? Naufragiat\u0103 \u00een Iliria \u00eempreun\u0103 cu fratele ei, de care este separat\u0103, Viola, travestit\u0103 \u00een b\u0103iat, \u00eel iube\u0219te \u00een tain\u0103 pe Orsino, cel \u00eenamorat f\u0103r\u0103 speran\u021b\u0103 de Olivia, care se \u00eendr\u0103goste\u0219te instant de Viola-b\u0103iat. devine aproape lichid \u00eentr",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2021/02/IMG-20220329-WA0000-682x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Visul unei nop\u021bi de var\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-04 19:30:00",
-      "url": "https://www.tnb.ro/ro/visul-unei-nopti-de-vara-2025",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1140/1467/large_VISUL.jpg",
       "video_url": null
     },
     {
@@ -3962,21 +3992,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/01/afis-tinutul-724x1024.jpg",
       "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Amintiri din copil\u0103rie",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-04 19:00:00",
-      "url": "https://www.tnb.ro/ro/amintiri-din-copilarie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/997/1252/large_amintiri.jpg",
-      "video_url": null
     },
     {
       "title": "Nimic nu e \u00eent\u00e2mpl\u0103tor",
@@ -4111,21 +4126,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cursa de \u0219oareci",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-04 19:00:00",
-      "url": "https://www.tnb.ro/ro/cursa-de-soareci",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/534/1242/large_Cursa_nou_2024.jpg",
       "video_url": null
     },
     {
@@ -4741,21 +4741,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
-      "video_url": null
-    },
-    {
-      "title": "DUMNEZEUL DE A DOUA ZI",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-05-04 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/dumnezeul-de-a-doua-zi/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Singura regul\u0103 la acest joc, de-a via\u021ba pe p\u0103m\u00e2nt, este c\u0103, la sf\u00e2r\u0219it, trebuie s\u0103 mori singur.",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/IMG_9733.jpg",
       "video_url": null
     },
     {
@@ -7519,21 +7504,6 @@
       "video_url": "https://www.youtube.com/embed/RWJwJovVcgU?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "Expozi\u021bie Rom\u00e2nia \u00een acuarel\u0103",
-      "artist": null,
-      "venue": "TNB - -",
-      "date": "2026-05-04 18:00:00",
-      "url": "https://www.tnb.ro/ro/expozitie-romania-in-acuarela",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Bestiar",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mic\u0103",
@@ -8176,6 +8146,36 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/982/1262/large_Cerere_5x7_SM.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Vara \u00een care am disp\u0103rut",
+      "artist": null,
+      "venue": "TNB - Sala Atelier",
+      "date": "2026-06-29 18:00:00",
+      "url": "https://www.tnb.ro/ro/vara-in-care-am-disparut",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1273/1710/large_Vara_in_care_am_disparut.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Dragi p\u0103rin\u021bi",
+      "artist": null,
+      "venue": "TNB - Sala \"Ion Caramitru\"",
+      "date": "2026-06-30 20:00:00",
+      "url": "https://www.tnb.ro/ro/dragi-parinti-",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1139/1707/large_Afis-DRAGI-PARINTI-nou.jpg",
       "video_url": null
     }
   ],
@@ -9381,21 +9381,6 @@
       "video_url": "https://www.youtube.com/embed/emg4V8EiHOM?si=0TC6YaFjysyY_3_h"
     },
     {
-      "title": "SILENT FRIEND / PRIETEN T\u0102CUT",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-04 17:30:00",
-      "url": "https://eventbook.ro/film/bilete-silent-friend-prieten-tacut",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Ildik\u00f3 EnyediCast:Tony Leung Chiu Wai, Luna Wedler, L\u00e9a Seydoux, Sylvester Groth, Enzo BrummGenre:Biografic, Dram\u0103, IstoricDuration:2h 27mCountry:Fran\u021ba, Ungaria, Germania, ChinaLanguage:DE, ENYear:2025 \u00cen inima unei gr\u0103dini botanice dintr-un vechi ora\u0219 universitar german se \u00eenal\u021b\u0103 un arbore maiestuos de ginkgo biloba. Timp de un secol, acest martor t\u0103cut a \u00eenso\u021bit, din umbr\u0103, transform\u0103rile vie\u021bii umane. \u00cen trei momente distincte ale secolelor XX \u0219i XXI, trei oameni \u2014 fiecare cu propri",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-silent-friend-prieten-tacut-lxz.webp",
-      "video_url": "https://www.youtube.com/embed/AqoGHHIvcUc?si=1EPSOCTWWQV0Wqlm"
-    },
-    {
       "title": "MARIA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -9606,21 +9591,6 @@
       "video_url": null
     },
     {
-      "title": "IHNWTWT Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 3 aprilie 2026",
-      "artist": null,
-      "venue": "Where: Improteca \u2013 Comanita nr. 9",
-      "date": "2026-05-04 20:00:00",
-      "url": "https://improteca.ro/2026/04/20/ihnwtwt-jam-improv-jam-3-aprilie-2026/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Come join us for the \ud83c\udf89 Festival Jam \u26f9\ufe0f \u2014 the opening night of Improteca \u2013 The Festival 2026! Have you ever asked yourself any of the following? \u2753 Do you want to practice your improv skills, but never get enough stage time?",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Corbul \u0219i vulpea \ud83d\udc26\u200d\u2b1b teatru pentru copii",
       "artist": null,
       "venue": "Improteca",
@@ -9783,6 +9753,36 @@
       "description": "Lia \u0219i Dan Perjovschi v\u0103 invit\u0103 la o nou\u0103 serie de tururi ghidate, duminic\u0103, 24 mai, de la orele 15:00 \u0219i 17:00, \u00een cadrul expozi\u021biei \u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201d deschis\u0103 p\u00e2n\u0103 pe 26 iulie, la ARCUB - Hanul Gabroveni. Participan\u021bii vor descoperi direct de la cei doi arti\u0219ti cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile lor \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Participarea la tururile ghidate se face pe baz\u0103 de...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
+      "title": "MNAC AfterHours | Gheordu",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-05-10 15:30:32.086000",
+      "url": "https://www.mnac.ro/event/1363/MNAC%20AfterHours%20%7C%20Gheordu/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Muzic\u0103",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
+      "video_url": null
+    },
+    {
+      "title": "Teoria r\u00e2sului \u00een familie",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-05-23 18:00:00",
+      "url": "https://improteca.ro/2026/05/04/teoria-rasului-in-familie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Rela\u021biile de familie pot fi complicate, dar \u015fi eliberatoare \u015fi pline de empatie. Sau pur \u015fi simplu\u2026 absurde, chiar comice. Spectacolul Teoria R\u00e2sului \u00een Familie le surprinde \u00een toat\u0103 splendoarea \u015fi\u00a0 autenticitatea lor. Umorul se \u00eembin\u0103 cu filosofia lui Bergson \u00eentr-o comedie despre o mam\u0103, dou\u0103 fiice, un invitat cu anxietate social\u0103, un curier care are un secret \u015fi un psihoterapeut atipic. Cum spunea Bergson, \u201cr\u00e2sul are drept scop s\u0103 reduc\u0103 orice tendin\u021b\u0103 separatist\u0103\u201d.",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
