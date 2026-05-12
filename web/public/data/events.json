@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-11T12:27:29.277082",
+  "scraped_at": "2026-05-12T11:45:07.078938",
   "music_events": [
     {
       "title": "Labirinturi \u00een noapte",
@@ -2282,21 +2282,6 @@
       "video_url": null
     },
     {
-      "title": "Stagiunea de jazz",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-05-11 19:00:00",
-      "url": "https://oveit.com/hub/event/stagiunea-de-jazz-QzvNePzk",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Recital de pian",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
@@ -2320,21 +2305,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 60 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "[Alt Jazz] Kassa Overall",
-      "artist": "[Alt Jazz] Kassa Overall",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-11 20:30:00",
-      "url": "https://www.control-club.ro/event/?slug=alt-jazz-kassa-overall",
-      "source": "control",
-      "category": "music",
-      "price": "60.00 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3570,6 +3540,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "New Disorder",
+      "artist": "New Disorder",
+      "venue": "Control Club - Front Room",
+      "date": "2026-05-22 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=new-disorder-3",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -4579,66 +4564,6 @@
       "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
     },
     {
-      "title": "Raskolnikov, dup\u0103 Crim\u0103 \u0219i pedeaps\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-11 18:00:00",
-      "url": "https://www.tnb.ro/ro/raskolnikov-dupa-crima-si-pedeapsa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1200/1566/large_Raskolnikov_A4_TNB.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Via\u021ba b\u0103rba\u021bilor pe \u00een\u021belesul femeilor",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-05-11 18:30:00",
-      "url": "https://www.tnb.ro/ro/viata-barbatilor-pe-intelesul-femeilor",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1097/1393/large_Afis34.jpg",
-      "video_url": null
-    },
-    {
-      "title": "D-ale carnavalului",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-11 19:00:00",
-      "url": "https://www.tnb.ro/ro/d-ale-carnavalului-2021",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/711/839/large_Afis_D_ale.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Fierarii",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-11 20:00:00",
-      "url": "https://www.tnb.ro/ro/fierarii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/541/1213/large_FIERARII.jpg",
-      "video_url": null
-    },
-    {
       "title": "Secundar",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -5269,21 +5194,6 @@
       "video_url": null
     },
     {
-      "title": "Parfum de femeie",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-05-11 19:00:00",
-      "url": "https://www.tnb.ro/ro/parfum-de-femeie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1196/1669/large_afis_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "Opera de trei parale",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -5702,21 +5612,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/01/rsz_afis_tartuffe_br-717x1024.jpg",
       "video_url": null
-    },
-    {
-      "title": "Club 27",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-11 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/club-27/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eSunt momente \u00een via\u021b\u0103 c\u00e2nd o m\u00e2n\u0103 uria\u0219\u0103, invizibil\u0103, te ia de unde e\u0219ti \u0219i te poart\u0103 c\u0103tre un loc mai bun. A\u0219a m\u0103 simt \u0219i eu cu acest spectacol. Bucuria pe care o simt \u00een facerea lui, sper c\u0103 va fi contagioas\u0103 \u0219i pentru public. Este un manifest pentru iubire, pentru dor, pentru prietenie, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/01/cover-site-spectacol-CLUB-27-pt-site-la-dimensiune-02-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/nAyZGRLB3dI"
     },
     {
       "title": "OFELIA. Afterlife",
@@ -8567,6 +8462,21 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
       "video_url": null
+    },
+    {
+      "title": "DOMNUL IBRAHIM \u0218I FLORILE DIN CORAN",
+      "artist": null,
+      "venue": "Teatrul Metropolis - Sala Mic\u0103",
+      "date": "2026-06-15 19:30:00",
+      "url": "https://teatrulmetropolis.ro/spectacol/domnul-ibrahim-si-florile-din-coran/",
+      "source": "metropolis",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Gre\u0219eala noastr\u0103 e s\u0103 credem c\u0103 z\u00e2mbetul este pentru cei ferici\u021bi. [...] Z\u00e2mbetul e cel care \u00eel face pe om fericit.",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/ibrahim-30x50-1.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -8583,21 +8493,6 @@
       "description": "The Art of the Game (TAG)este primul eveniment cultural de amploare din Rom\u00e2nia dedicat jocurilor video \u0219i artelor conexe, organizat de ARCUB la Hanul Gabroveni, \u00een perioada8 noiembrie 2025 \u2013 1 martie 2026. G\u00e2ndit\u0103 ca oexperien\u021b\u0103 curatorial\u0103, TAG invit\u0103 publicul s\u0103 priveasc\u0103 jocurile videodincolo de divertisment, ca pe unlimbaj artistic, uninstrument educa\u021bionalcu aplica\u021bii reale \u00een \u00eenv\u0103\u021bare \u0219i unspa\u021biu social\u00een care comunit\u0103\u021bile se formeaz\u0103 \u0219i colaboreaz\u0103. Parcursul reune\u0219tearte vizuale, muz...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "\u23f0 100 de scene in 60 de minute \ud83c\udfac long form improv",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-05-11 18:00:00",
-      "url": "https://improteca.ro/2024/05/02/100-scene-60-minute-long-form-improv/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -9756,21 +9651,6 @@
       "video_url": "https://www.youtube.com/embed/emg4V8EiHOM?si=0TC6YaFjysyY_3_h"
     },
     {
-      "title": "Program de scurtmetraje britanice / BAFTA Shorts 2025",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-11 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-program-de-scurtmetraje-britanice-festivalul-filmului-european-2026",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "O relatare tulbur\u0103toare despre degradarea unui tat\u0103 singur care se lupt\u0103 cu \u201esindromul cuibului gol\u201d, o suferin\u021b\u0103 care \u00eencepe s\u0103 se manifeste fizic. Sim\u021bindu-se invizibil \u0219i \u00eencerc\u00e2nd s\u0103 se adapteze la via\u021ba de unul singur, acesta trece printr-o transformare fizic\u0103 nelini\u0219titoare c\u00e2nd descoper\u0103 c\u0103 ceva cre\u0219te \u00een interiorul lui. Mary, Billybud \u0219i Fumbleton sunt trei omule\u021bi care joac\u0103 \u00eentr-un serial TV pentru copii numitWander to Wonder. Dup\u0103 moartea creatorului lor, ace\u0219tia r\u0103m\u00e2n singuri \u00een stud",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-program-de-scurtmetraje-britanice-festivalul-filmului-european-2026-x1p.webp",
-      "video_url": null
-    },
-    {
       "title": "Doi la unu / Two to one / Zwei zu eins",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -10384,6 +10264,21 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-a-new-dawn-rasarit-verde-smarald-cK6.webp",
       "video_url": "https://www.youtube.com/embed/8a_or4LwPBA"
+    },
+    {
+      "title": "\u23f0 100 de scene in 60 de minute \ud83c\udfac long form improv",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-05-11 18:00:00",
+      "url": "https://improteca.ro/2024/05/02/100-scene-60-minute-long-form-improv/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u23f0 100 de scene in 60 de minute \ud83c\udfac e un spectacol de improviza\u021bie contra timp. Imagina\u021bi-v\u0103 un grup de cursan\u021bi improvizatori care se arunc\u0103 \u00eentr-un v\u00e2rtej de situa\u021bii nebune\u0219ti, f\u0103r\u0103 niciun plan sau replic\u0103 memorat\u0103. De la r\u00e2s garantat la momente de tensiune \u0219i surprize totale, fiecare minut aduce ceva nou \u0219i nea\u0219teptat. E un spectacol \u00een care fiecare secund\u0103 conteaz\u0103 \u0219i unde nu ai cum s\u0103 te bazezi dec\u00e2t pe spontaneitate \u0219i partenerul de scen\u0103! Showul te costa cat crezi ca merita si achiti la ...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
     }
   ]
 }
