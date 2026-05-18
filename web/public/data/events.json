@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-17T10:43:12.990359",
+  "scraped_at": "2026-05-18T12:52:50.567532",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -251,21 +251,6 @@
       "category": "music",
       "price": "95.00 lei",
       "spotify_url": "https://open.spotify.com/artist/2AK3F4tVjxYuqSGefozy52",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Otello",
-      "artist": "Oper\u0103",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-17 18:30:00",
-      "url": "https://operanb.ro/spectacol/otello/#170520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2192,21 +2177,6 @@
       "video_url": null
     },
     {
-      "title": "Recital vocal",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://oveit.com/hub/event/recital-vocal-mzyd987d",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia) @ G\u0103r\u00e2na Jazz Festival",
       "artist": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia)",
       "venue": "G\u0103r\u00e2na Jazz Festival",
@@ -2306,21 +2276,6 @@
       "category": "music",
       "price": null,
       "spotify_url": "https://open.spotify.com/artist/0lFiKrJUofJpnrAJnMsnQ3",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "AMENRA",
-      "artist": "AMENRA",
-      "venue": "Quantic",
-      "date": "2026-05-17 00:00:00",
-      "url": "https://quantic.pub/eveniment/amenra/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/0N1jE1EIrhZjvQSfuLupUu",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3390,6 +3345,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Supermono & Kosta, Moss Farai & Ludo",
+      "artist": "Supermono & Kosta, Moss Farai & Ludo",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-05-19 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-supermono-kosta-moss-farai-ludo",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/5vazMuFGOr8BED6x7T2caJ",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "[Musical Theatre] Rostopasca",
+      "artist": "[Musical Theatre] Rostopasca",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-06-10 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=musical-theatre-rostopasca",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -3587,36 +3572,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/01/afis-tinutul-724x1024.jpg",
       "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Lapte Negru",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://nottara.ro/spectacol/lapte-negru/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eLapte negru\u201d este un spectacol care vorbe\u0219te cu mult umor despre feminitate, maternitate, depresie postnatal\u0103 \u0219i pasiunea pentru scris, \u00eentr-o societate \u00een care femeile \u00eenc\u0103 se lupt\u0103 cu standarde duble \u0219i cu tipare mentalitare conservatoare. O poveste inspirat\u0103 din experien\u021ba renumitei scriitoare turce Elif Shafak, confruntat\u0103 cu dificultatea g\u0103sirii unui echilibru \u00eentre activitatea scrisului \u0219i [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/lapte-negru-EBS-2.jpg.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Ora\u0219ul Luminii",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-05-17 19:30:00",
-      "url": "https://nottara.ro/spectacol/orasul-luminii/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol fascinant despre vin\u0103 \u0219i iubire. O terapie ca o spovedanie, \u00eentre doi b\u0103rba\u021bi, unul terapeut, cel\u0103lalt \u2013 pacient. O confesiune ce le va schimba via\u021ba celor doi. Ian, un fost preot devenit terapeut, prime\u0219te un nou pacient, John, un b\u0103rbat care \u0219i-a pierdut recent so\u021bia \u00eentr-un accident de ma\u0219in\u0103 \u0219i care nu mai [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/Orasul-luminii-homepage-1280x853-px-e1731964293348.jpg",
-      "video_url": "https://www.youtube.com/embed/OW3sXCmCThg"
     },
     {
       "title": "Zbor deasupra unui cuib de cuci",
@@ -3844,21 +3799,6 @@
       "video_url": "https://www.youtube.com/embed/JaeghOuu9Aw"
     },
     {
-      "title": "Happy end",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/happy-end/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/04/10-scaled-e1727259247470.jpg",
-      "video_url": null
-    },
-    {
       "title": "Goodbye, Lenin!",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -3962,36 +3902,6 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/02/WhatsApp-Image-2025-03-03-at-17.50.36_14a0ed38-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/HSTcefdlXfc"
-    },
-    {
-      "title": "CIN\u0102 CU PRIETENI",
-      "artist": "Donald Margulies",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://www.bulandra.ro/cina-cu-prieteni/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "C\u00e2\u0219tig\u0103toare a premiului Pulitzer pentru dramaturgie \u00een 2000,Cin\u0103 cu prietenieste o capodoper\u0103 modern\u0103 care analizeaz\u0103 vie\u021bile a dou\u0103 cupluri \u0219i implica\u021biile pe care un divor\u021b le va avea asupra prieteniei dintre cei patru protagoni\u0219ti. Margulies este un fin observator al lucrurilor obi\u0219nuite ale vie\u021bii, cu sl\u0103biciunile ei \u2013 lucruri ce devin inedite, gra\u021bie modului remarcabil \u00een care sunt prezentate de autor. Textul, plin de umor, c\u0103ldur\u0103 \u0219i \u00een\u021belepciune, atrage prin limbajul impecabil \u2013 folos...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Cina-cu-prieteni-2022-foto-Cosmin-Ardeleanu-15.jpg",
-      "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "RABBIT HOLE",
-      "artist": "David Lindsay-Abaire",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://www.bulandra.ro/rabbit-hole",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 de dramaturgul american David Lindsay-Abaire,Rabbit Holeeste o dram\u0103 psihologic\u0103 apreciat\u0103 care i-a adus autorului s\u0103u Premiul Pulitzer \u00een 2007. Piesa exploreaz\u0103 teme profunde precum durerea, pierderea, recunoa\u0219terea \u0219i capacitatea de supravie\u021buire a spiritului uman dup\u0103 o tragedie cumplit\u0103. Piesa se concentreaz\u0103 asupra cuplului Becca \u0219i Howie Corbett, a c\u0103ror via\u021b\u0103 perfect\u0103 este spulberat\u0103 dup\u0103 ce singurul lor fiu, Danny, \u00een v\u00e2rst\u0103 de patru ani, moare \u00eentr-un accident stupid.Rabbit Ho...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/Rabbit-Hole-2026-foto-Two-Bugs-01-scaled.jpg",
-      "video_url": null
     },
     {
       "title": "TACHE, IANKE \u0218I CAD\u00c2R",
@@ -4157,21 +4067,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Cina-cu-prieteni-2022-foto-Cosmin-Ardeleanu-15.jpg",
       "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-05-17 11:00:00",
-      "url": "https://www.tnb.ro/ro/teatrul-naional-pentru-copii-abracadabra-",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
-      "video_url": null
     },
     {
       "title": "DesFacerea lumii sau Spectacol \u00een aer Liber",
@@ -8421,21 +8316,6 @@
       "video_url": null
     },
     {
-      "title": "O Inspec\u021bie Neanun\u021bat\u0103",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://improteca.ro/2025/05/09/o-inspectie-neanuntata-17-mai/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Te a\u0219tept\u0103m sambata, 17 mai, ora 19:00, la Teatrul Improteca, pentru o or\u0103 de teatru care \u00eembin\u0103 umorul savuros cu o privire sincer\u0103 (\u0219i amar de comic\u0103) asupra realit\u0103\u021bii din \u00eenv\u0103\u021b\u0103m\u00e2ntul rom\u00e2nesc. Doi elevi de azi. Un profesor din ce pare din alt\u0103 er\u0103. O posibil\u0103 iubire..sau nu? Un conflict inevitabil. \u0218i\u2026 o inspec\u021bie-surpriz\u0103 de la minister, urmat\u0103 de o alt\u0103 vizit\u0103 surpriz\u0103 care schimb\u0103 tot\u2026 \u201eO Inspec\u021bie Neanun\u021bat\u0103\u201d e o comedie inteligent\u0103 care satirizeaz\u0103 cu umor \u0219i luciditate sistemul edu...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Babilon \ud83d\udde8\ufe0f show de improvizatie in gramelot",
       "artist": null,
       "venue": "Improteca",
@@ -9576,21 +9456,6 @@
       "video_url": null
     },
     {
-      "title": "SELEC\u021aIE DE SCURTMETRAJE FRANCEZE PENTRU PUBLICUL T\u00c2N\u0102R",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-17 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-selectie-de-scurtmetraje-franceze-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Selec\u021bia de scurtmetraje franceze f\u0103r\u0103 dialog reune\u0219te stiluri de anima\u021bie diferite \u0219i pove\u0219ti captivante. Fiecare film propune un univers aparte, accesibil tuturor v\u00e2rstelor \u0219i g\u00e2ndit \u00een special pentru publicul t\u00e2n\u0103r. Este o invita\u021bie de a descoperi lumi noi, de a sim\u021bi \u0219i a interpreta fiecare poveste dup\u0103 propriul ritm. Un elev sose\u0219te pentru prima dat\u0103 \u00een clasa sa nou\u0103. Nu e ca ceilal\u021bi colegi\u2026 este o broasc\u0103 \u00eentr-o clas\u0103 de iepuri.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-selectie-de-scurtmetraje-franceze-pentru-publicul-tanar-UiQ.webp",
-      "video_url": null
-    },
-    {
       "title": "Corbul \u0219i vulpea \ud83d\udc26\u200d\u2b1b teatru pentru copii",
       "artist": null,
       "venue": "Improteca",
@@ -9648,21 +9513,6 @@
       "description": "\ud83d\udd03 Switch & Change \ud83e\udeb8 este o serie de spectacole-experiment, dedicate cursan\u021bilor. Un mod de a aduce pe scen\u0103, ceea ce se experimenteaz\u0103 la curs. Duminic\u0103, 28 aprilie, Ana Rotariu & Alexandru Laz\u0103r vin \u00een fa\u021ba publicului cu un spectacol long-form care porne\u0219te de la sugestia ta \u0219i continu\u0103 cu experien\u021bele \u0219i pove\u0219tile lor. \u0218i cum oric\u0103rui spectacol \u00eei st\u0103 bine cu sala plin\u0103, f\u0103-\u021bi rezervare c\u0103 locurile sunt limitate. Al\u0103turi de ei vin Alexandra B\u0103jan & Dan Miron.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Tur ghidat cu Lia \u0219i Dan Perjovschi | orele 15:00 \u0219i 17:00",
-      "artist": null,
-      "venue": "ARCUB - Hanul Gabroveni",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://arcub.ro/eveniment/tur-ghidat-cu-lia-si-dan-perjovschi-orele-15-00-si-17-00",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Lia \u0219i Dan Perjovschi v\u0103 invit\u0103 la o nou\u0103 serie de tururi ghidate, duminic\u0103, 17 mai, de la orele 15:00 \u0219i 17:00, \u00een cadrul expozi\u021biei \u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201d deschis\u0103 p\u00e2n\u0103 pe 26 iulie, la ARCUB - Hanul Gabroveni. Participan\u021bii vor descoperi direct de la cei doi arti\u0219ti cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile lor \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Participarea la tururile ghidate se face pe baz\u0103 de...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     },
     {
@@ -10161,21 +10011,6 @@
       "video_url": null
     },
     {
-      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #4 I 16-17 mai",
-      "artist": null,
-      "venue": "Calea Victoriei",
-      "date": "2026-05-17 19:00:00",
-      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-4-i-16-17-mai",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Tema weekendului:Pia\u021ba Revolu\u021biei \u2013 Comunitate pentru To\u021bi 11:00 \u2013 13:00,Pia\u021ba Revolu\u021biei -Ini\u021biere \u00een skateboarding pentru copii \u0219i adolescen\u021bi, cu SPOT Skateboard Club 12:00 \u201321:00,Calea Victoriei, zona Parcului Kretzulescu -Pictur\u0103 \u00een aer liber, Asocia\u021bia Arti\u0219tilor Plastici 14:00 \u2013 16:00,Pia\u021ba Revolu\u021biei -Atelier de cro\u0219etat cu \u201eNiciodat\u0103 Singur\u201d, Asocia\u021bia Str\u0103zi pentru Oameni",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "I Swear",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -10246,6 +10081,36 @@
       "price": null,
       "spotify_url": null,
       "description": "Hai si tu la \ud83c\udfad Actori fara text \ud83d\ude02 improv comedy show. Un grup de 7 actori profesioni\u0219ti cu experien\u021b\u0103 pe scen\u0103 \u00een teatrul clasic, cu text fix, auzind de teatrul de improviza\u021bie, dar neav\u00e2nd \u00eenc\u0103 ocazia de a-i \u00eenv\u0103\u021ba principiile \u0219i de a juca \u00eentr-un astfel de spectacol, au hot\u0103r\u00e2t s\u0103 treac\u0103 prin experien\u021ba spectacolului de teatru f\u0103r\u0103 text scris, \u00een prim\u0103 instan\u021b\u0103 de short form \u2013 jocuri teatrale sub form\u0103 de scene de comedie spontane, care pornesc de la sugestiile publicului. Showul te costa c...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Prim\u0103ria Deschis\u0103 |  Noaptea European\u0103 a Muzeelor",
+      "artist": null,
+      "venue": "Prim\u0103ria Municipiului Bucure\u0219ti",
+      "date": "2026-05-23 19:00:00",
+      "url": "https://arcub.ro/eveniment/primaria-deschisa-noaptea-europeana-a-muzeelor",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Pentru al \u0219aselea an consecutiv, cl\u0103direa istoric\u0103 ce g\u0103zduie\u0219te Prim\u0103ria Municipiului Bucure\u0219ti va putea fi vizitat\u0103gratuit,s\u00e2mb\u0103t\u0103, 23 mai,\u00een cadrul evenimentului\u201ePrim\u0103ria Deschis\u0103\u201d #6, organizat dePrim\u0103ria Capitalei, prinARCUB \u2013 Centrul Cultural al Municipiului Bucure\u0219ti, cu ocaziaNop\u021bii Europene a Muzeelor. \u201ePrim\u0103ria Deschis\u0103\u201d #6propune publicului o experien\u021b\u0103 cultural\u0103 complex\u0103, care aduce \u00eempreun\u0103 patrimoniul arhitectural, memoria ora\u0219ului \u0219i dialogul despre Bucure\u0219tiul prezent \u0219i viito...",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
+      "title": "Improtecari in ac\u021biune \ud83d\udc69\u200d\ud83c\udfeb spectacol absolvire \u2013 clasa Feb. 2026 \u2013",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-05-17 18:00:00",
+      "url": "https://improteca.ro/2026/05/13/improtecari-in-actiune-spectacol-absolvire-clasa-feb-2026-3/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Hai \u0219i tu la un show de comedie creat pe loc si bucura-te alaturi de cursantii nostri, c-au absolvit modulul de improvizatie avansati si acum au show. Duminica, 17 mai, de la ora 18:00 La Improteca, in Bucuresti, pe Comanita 9",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
