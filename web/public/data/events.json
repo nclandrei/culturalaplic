@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-05-21T12:24:44.941335",
+  "scraped_at": "2026-05-22T11:45:03.646376",
   "music_events": [
-    {
-      "title": "Concert simfonic",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://oveit.com/hub/event/concert-simfonic-PzXWLj7J",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "Concert simfonic",
       "artist": null,
@@ -2117,21 +2102,6 @@
       "video_url": null
     },
     {
-      "title": "Contrabasul \u2013 \u00cent\u00e2lniri sonore",
-      "artist": null,
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://operanb.ro/spectacol/contrabasul-intalniri-sonore/#210520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Revulu\u021bia",
       "artist": null,
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -2365,21 +2335,6 @@
       "source": "control",
       "category": "music",
       "price": "...",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Phunk B | lansare de A L B U M \u2013 \u201cDiagnostic Sunet Suflet Minte 5\u201d",
-      "artist": "Phunk B | lansare de A L B U M",
-      "venue": "Quantic",
-      "date": "2026-05-21 00:00:00",
-      "url": "https://quantic.pub/eveniment/phunk-b-lansare-de-a-l-b-u-m-diagnostic-sunet-suflet-minte-5/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -2702,21 +2657,6 @@
       "video_url": null
     },
     {
-      "title": "Objekt [DE]",
-      "artist": "Objekt [DE]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-21 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=objekt-de",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/44z1nVVXZE8d4njcQmQLWc",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "VASILE SEICARU  in PREMIERA la  Quantic",
       "artist": "VASILE SEICARU  in PREMIERA la  Quantic",
       "venue": "Quantic",
@@ -3017,21 +2957,6 @@
       "video_url": null
     },
     {
-      "title": "aim+wall presents: Objekt [DE], Admina",
-      "artist": "Objekt [DE], Admina",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-21 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=objekt-de",
-      "source": "control",
-      "category": "music",
-      "price": "40.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/44z1nVVXZE8d4njcQmQLWc",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "New Disorder",
       "artist": "New Disorder",
       "venue": "Control Club - Front Room",
@@ -3040,21 +2965,6 @@
       "source": "control",
       "category": "music",
       "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "DokStation, Music Documentary Film Festival: Amadou & Mariam \u2013 The Blind Couple From Mali",
-      "artist": "DokStation, Music Documentary Film Festival: Amadou & Mariam \u2013 The Blind Couple From Mali",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-21 20:00:00",
-      "url": "https://www.control-club.ro/event/?slug=dokstation-music-documentary-film-festival-amadou-mariam-the-blind-couple-from-mali",
-      "source": "control",
-      "category": "music",
-      "price": "35 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3235,21 +3145,6 @@
       "source": "control",
       "category": "music",
       "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Mitici & Nitchji Oh Szperantza",
-      "artist": "Mitici & Nitchji Oh Szperantza",
-      "venue": "Control Club - Front Room",
-      "date": "2026-05-21 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=mitici-nitchji-oh-szperantza",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3559,21 +3454,6 @@
       "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "Zbor deasupra unui cuib de cuci",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-05-21 18:30:00",
-      "url": "https://nottara.ro/spectacol/zbor-deasupra-unui-cuib-de-cuci/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol fascinant despre putere \u0219i fric\u0103, despre limitele normalit\u0103\u021bii, despre lupta cu sistemul \u0219i despre frumuse\u021bea \u201enebuniei\u201d. O poveste despre libertate. Unde \u00eencepe \u0219i unde se sf\u00e2r\u0219e\u0219te libertatea? Unde se sf\u00e2r\u0219e\u0219te normalitatea \u0219i unde \u00eencepe nebunia? \u201eZbor deasupra unui cuib de cuci\u201d, cunoscutul text al lui Dale Wasserman, dup\u0103 romanul lui Ken Kesey, chestioneaz\u0103 [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/ZDUCC-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
       "title": "A dou\u0103sprezecea noapte sau noaptea magilor",
       "artist": null,
       "venue": "Teatrul Nottara - Sala Horia Lovinescu",
@@ -3754,21 +3634,6 @@
       "video_url": "https://www.youtube.com/embed/JaeghOuu9Aw"
     },
     {
-      "title": "Aer",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-05-21 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/aer/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eAer invit\u0103 spectatorii la povestea prieteniei str\u00e2nse dintre Dora \u0219i Persefona. Este povestea a dou\u0103 femei care se salveaz\u0103 reciproc prin puterea imagina\u021biei, a ludicului \u0219i, mai ales, prin grija pe care fiecare i-o poart\u0103 celeilalte. Totodat\u0103, Aer este \u0219i o rememorare a istoriei, de care avem mare nevoie, pentru a evita s\u0103 o repet\u0103m.\u201d [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/03/DSC02934-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "HENRY JOHNSON",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -3842,21 +3707,6 @@
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/02/WhatsApp-Image-2025-03-03-at-17.50.36_14a0ed38-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/HSTcefdlXfc"
-    },
-    {
-      "title": "TEROARE",
-      "artist": "Ferdinand Von Schirach",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://www.bulandra.ro/teroare/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Maiorul Lars Koch, pilot al unui avion de v\u00e2n\u0103toare tip Eurofighter al avia\u021biei germane, se afl\u0103 \u00een fa\u021ba verdictului: a ac\u021bionat corect sau nu \u00een ziua \u00een care a primit ordinul de a devia de la curs un avion Airbus apar\u021bin\u00e2nd companiei Lufthansa deturnat de terori\u0219ti? La bordul zborului LH 2047, cu plecare de pe aeroportul Tegel din Berlin c\u0103tre M\u00fcnchen, se afl\u0103 164 de persoane, iar aeronava se \u00eendreapt\u0103 spre Allianz Arena. Chiar \u00een acea sear\u0103 are loc meciul interna\u021bional Germania contra Angli...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/TEROARE-snur-17-dec-foto-Andrei-Gindac-Two-BugsCL1A2602-scaled.jpg",
-      "video_url": null
     },
     {
       "title": "TEROARE",
@@ -3992,36 +3842,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Cina-cu-prieteni-2022-foto-Cosmin-Ardeleanu-15.jpg",
       "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "Procesul lui Eichmann",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/procesul-lui-eichmann",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/989/1329/large_afis_bun.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Trei surori",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/trei-surori-2019",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/675/761/large_Afis-Trei-surori-final.jpg",
-      "video_url": null
     },
     {
       "title": "P\u0103rin\u021bi \u0219i copii",
@@ -4339,21 +4159,6 @@
       "video_url": null
     },
     {
-      "title": "Dineu cu pro\u015fti",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/dineu-cu-prosti-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "Evadarea t\u0103cut\u0103",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -4591,21 +4396,6 @@
       "description": "de Moli\u00e8re este considerat\u0103 una dintre cele mai puternice comedii de caracter din literatura mondial\u0103, scris\u0103 cu scopul de a denun\u021ba fanatismul religios \u015fi ipocrizia practicat\u0103 de nobilii \u015fi marii burghezi \u00een secolul al XVII-lea. Prima variant\u0103 a piesei scris\u0103 \u00een anul 1664, prezentat\u0103 \u00een fa\u021ba regelui Ludovic al XIV-lea, a fost contestat\u0103 \u015fi interzis\u0103. Trei ani mai tarziu textul a st\u00e2rnit din nou c",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/01/rsz_afis_tartuffe_br-717x1024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "OFELIA. Afterlife",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/ofelia-afterlife/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eConstruit ca o fuziune \u00eentre arte, spectacolul \u00abOfelia.Afterlife\u00bb\u00a0aduce \u00eempreun\u0103 teatrul, muzica, mi\u0219carea \u0219i arta vizual\u0103 \u00eentr-un singur organism scenic. \u00cempreun\u0103, aceste componente creeaz\u0103 un spectacol multisenzorial, care \u00eembin\u0103 realismul cu suprarealismul pentru a aduce o perspectiv\u0103 profund\u0103 at\u00e2t asupra condi\u021biei feminine \u0219i a complexit\u0103\u021bii ei emo\u021bionale, c\u00e2t \u0219i asupra condi\u021biei omului care nu seam\u0103n\u0103 cu [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/10/DSC01124-Enhanced-NR-scaled.jpg",
       "video_url": null
     },
     {
@@ -5791,21 +5581,6 @@
       "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cel mai bun copil din lume",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-05-21 19:00:00",
-      "url": "https://www.tnb.ro/ro/cel-mai-bun-copil-din-lume",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/759/936/large_Afi_final.jpg",
       "video_url": null
     },
     {
@@ -7267,21 +7042,6 @@
       "title": "Turul ghidat al TNB",
       "artist": null,
       "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-05-21 17:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
       "date": "2026-05-22 15:00:00",
       "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
       "source": "tnb",
@@ -7486,21 +7246,6 @@
       "description": "\u201eVremurile de demult \u0219i vremurile de acum nu sunt capete opuse ale aceluia\u0219i drum. Sunt poteci \u00eencurcate, hotarul dintre ele e neclar \u0219i, f\u0103c\u00e2nd un pas gre\u0219it, te treze\u0219ti \u00een alte timpuri, pe care le credeai apuse. Acum dou\u0103-trei genera\u021bii, \u00eentr-o societate \u00een care femeile nu de\u021bineau putere social\u0103, for\u021ba lor se manifesta \u00een spa\u021biul [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/08/Ratacirea-Metropolis-foto-Andrei-Gindac-Two-BugsCL1A5738-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-05-21 17:30:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
       "video_url": null
     },
     {
@@ -9339,21 +9084,6 @@
       "title": "THE DRAMA / DRAMA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-21 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-the-drama",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Title:The DramaDirector:Kristoffer BorgliCast:Robert Pattinson, Zendaya, Alana HaimGenre:Comedie, Romantic, DragosteDuration:1h 38mCountry:SUAYear:2026 Comedia romantic\u0103 DRAMA urm\u0103re\u0219te povestea de dragoste dintre Emma (Zendaya) \u0219i Charlie (Robert Pattinson). Cei doi formeaz\u0103 un cuplu c\u00e2t se poate de fericit, \u00eens\u0103 viitorul rela\u021biei lor este subit pus \u00een pericol atunci c\u00e2nd un secret tulbur\u0103tor iese la iveal\u0103 cu doar c\u00e2teva zile \u00eenainte de nunta lor. Cu umor \u0219i ironie, filmul exploreaz\u0103 sensul ex",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-the-drama-kr7.webp",
-      "video_url": "https://www.youtube.com/embed/UJ6fvg67xTE"
-    },
-    {
-      "title": "THE DRAMA / DRAMA",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
       "date": "2026-05-22 15:30:00",
       "url": "https://eventbook.ro/film/bilete-the-drama",
       "source": "elvirepopescu",
@@ -9679,21 +9409,6 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-l-enfant-du-desert-film-pentru-publicul-tanar-wFx.webp",
       "video_url": "https://www.youtube.com/embed/AT8z3SEDi1k"
-    },
-    {
-      "title": "Curs de improvizatie muzicala \ud83c\udfb6 cu Vlad Pasencu",
-      "artist": null,
-      "venue": "Cursul se va tine la Improteca",
-      "date": "2026-05-21 18:00:00",
-      "url": "https://improteca.ro/2026/05/13/curs-de-improvizatie-muzicala-cu-vlad-pasencu/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\ud83d\udc68\u200d\ud83c\udfa4\ud83c\udf99\ufe0f Hai la cursul de improviza\u021bie muzicala! Scenele de improviza\u021bie muzicala aduc muzica in scenele de improviza\u021bie\u2026 Mai aduc si ritm. \ud83c\udfac Primele sedinte vor avea loc pe 14 si 21 mai 2026",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
     },
     {
       "title": "Aproape normal  \ud83c\udfadComedie/Dram\u0103 \u2013 g\u0103zduit de Improteca",
