@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-30T11:07:40.189463",
+  "scraped_at": "2026-05-31T11:17:34.229806",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -161,21 +161,6 @@
       "category": "music",
       "price": "95.00 lei",
       "spotify_url": "https://open.spotify.com/artist/2AK3F4tVjxYuqSGefozy52",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "NUNTA LUI FIGARO",
-      "artist": "Oper\u0103",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-05-30 18:30:00",
-      "url": "https://operanb.ro/spectacol/nunta-lui-figaro-bucharest-opera-festival/#300520260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2237,21 +2222,6 @@
       "video_url": null
     },
     {
-      "title": "VASILE SEICARU  in PREMIERA la  Quantic",
-      "artist": "VASILE SEICARU  in PREMIERA la  Quantic",
-      "venue": "Quantic",
-      "date": "2026-05-30 00:00:00",
-      "url": "https://quantic.pub/eveniment/vasile-seicaru-in-premiera-la-quantic/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "LIVE: Opening Theory [RO] - ISCM World New Music Days Festival",
       "artist": "Opening Theory [RO] - ISCM World New Music Days Festival",
       "venue": "Control Club - Berlin Room",
@@ -2615,21 +2585,6 @@
       "title": "Paradis Paradis Records Fair",
       "artist": "Paradis Paradis Records Fair",
       "venue": "Control Club - Front Room",
-      "date": "2026-05-30 12:00:00",
-      "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-14",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Paradis Paradis Records Fair",
-      "artist": "Paradis Paradis Records Fair",
-      "venue": "Control Club - Front Room",
       "date": "2026-05-31 12:00:00",
       "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-15",
       "source": "control",
@@ -2695,51 +2650,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 200 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "[BALLROOM] THE SPARK: Water Edition Kiki Function",
-      "artist": "[BALLROOM] THE SPARK: Water Edition Kiki Function",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-30 16:00:00",
-      "url": "https://www.control-club.ro/event/?slug=the-spark-water-edition-kiki-function",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "FIGURES: Dreams",
-      "artist": "FIGURES: Dreams",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-05-30 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=figures-dreams",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Buniku & 0vE",
-      "artist": "Buniku & 0vE",
-      "venue": "Control Club - Front Room",
-      "date": "2026-05-30 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=buniku-0ve",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3049,21 +2959,6 @@
       "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "Praf de stele",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-05-30 19:30:00",
-      "url": "https://nottara.ro/spectacol/praf-de-stele/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O comedie dulce-amar\u0103 a vie\u021bii de zi cu zi, marca celui mai important dramaturg canadian. Ac\u0163iunea se petrece pe balcoanele al\u0103turate ale unui bloc dintr-un mare ora\u015f. Protagonistul, John Cummings, interac\u0163ioneaz\u0103 cu trei femei: Fay, Angel \u015fi Gwen, care \u00eei devin vecine timp de trei ani. John e ziarist \u015fi \u00eencearc\u0103 s\u0103 scrie un nou [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/Praf-de-stele-homepage-1280x853-px-e1731964074931.jpg",
-      "video_url": null
-    },
-    {
       "title": "Canc\u00fan",
       "artist": null,
       "venue": "Teatrul Nottara - Sala George Constantin",
@@ -3077,21 +2972,6 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/cancun-1-EBS-1280x853-px.jpg",
       "video_url": "https://www.youtube.com/embed/JaeghOuu9Aw"
-    },
-    {
-      "title": "Aici nu moare nimeni niciodat\u0103",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/aici-nu-moare-nimeni-niciodata/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00a0 \u201eAici nu moare nimeni niciodat\u0103 este un text alimentat de multe dintre fricile ultimilor ani. Frica de oligarhi, pentru c\u0103 pot s\u0103 v\u0103d \u00een jurul meu, \u00een lume \u0219i \u00een Rom\u00e2nia, oameni care au acumulat averi enorme \u0219i sunt ni\u0219te sociopa\u0163i. Frica de viitorul pe care vor s\u0103 \u00eel construiasc\u0103, \u00een care banii sunt [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/02/WhatsApp-Image-2025-03-03-at-17.50.36_14a0ed38-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/HSTcefdlXfc"
     },
     {
       "title": "V\u00c2N\u0102TOAREA",
@@ -3122,21 +3002,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Cina-cu-prieteni-2022-foto-Cosmin-Ardeleanu-15.jpg",
       "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "Secretul familiei Posket",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://www.tnb.ro/ro/secretul-familiei-posket",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/915/1142/large_afis-mic.jpg",
-      "video_url": null
     },
     {
       "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
@@ -3181,36 +3046,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1183/1534/large_cum_sa_distrugi.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Evadarea t\u0103cut\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://www.tnb.ro/ro/evadarea-tacuta",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/918/1140/large_evadarea_tacuta.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Freak Show vol. 2",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://www.tnb.ro/ro/freak-show-vol-2",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
     },
     {
@@ -3274,21 +3109,6 @@
       "video_url": null
     },
     {
-      "title": "Proorocul Ilie",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://www.tnb.ro/ro/proorocul-ilie",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1096/1407/large_prooroc_ilie_AFIS.jpg",
-      "video_url": null
-    },
-    {
       "title": "DOAMNE FERE\u0218TE!",
       "artist": "de Lia Bugnar",
       "venue": "Teatrul Mic - Sala Studio",
@@ -3332,21 +3152,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
       "video_url": null
-    },
-    {
-      "title": "CERERE \u00ceN C\u0102S\u0102TORIE",
-      "artist": null,
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-05-30 19:00:00",
-      "url": "https://teatrulstelapopescu.ro/spectacol/cerere-in-casatorie-la-teatrul-bulandra-30-05-2026/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Regia \u0219i scenografia: Alexandru Grecu \u2016 Asistent scenografie: Delia Ghizd\u0103ve\u021b \u2016 \u00a0Distribu\u021bia: Sorin Aurel Sandu, Ana \u2013 Maria Ivan, Cristi Neac\u0219u, Manuela H\u0103r\u0103bor, Viorel P\u0103unescu, Daniel Filipescu",
-      "description_source": "scraped",
-      "image_url": "https://teatrulstelapopescu.ro/wp-content/uploads/2025/08/Cerere-in-casatorie-2025-parteneri-1-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/_ySIjgegkKs"
     },
     {
       "title": "ELLEN BABI\u0106",
@@ -6442,21 +6247,6 @@
       "title": "Turul ghidat al TNB",
       "artist": null,
       "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-05-30 13:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
       "date": "2026-05-31 13:00:00",
       "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
       "source": "tnb",
@@ -6948,21 +6738,6 @@
       "description": "The Art of the Game (TAG)este primul eveniment cultural de amploare din Rom\u00e2nia dedicat jocurilor video \u0219i artelor conexe, organizat de ARCUB la Hanul Gabroveni, \u00een perioada8 noiembrie 2025 \u2013 1 martie 2026. G\u00e2ndit\u0103 ca oexperien\u021b\u0103 curatorial\u0103, TAG invit\u0103 publicul s\u0103 priveasc\u0103 jocurile videodincolo de divertisment, ca pe unlimbaj artistic, uninstrument educa\u021bionalcu aplica\u021bii reale \u00een \u00eenv\u0103\u021bare \u0219i unspa\u021biu social\u00een care comunit\u0103\u021bile se formeaz\u0103 \u0219i colaboreaz\u0103. Parcursul reune\u0219tearte vizuale, muz...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "Switch & Change \ud83e\udeb8 Long-Form Improv Comedy by Neverending Improv",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-05-30 20:00:00",
-      "url": "https://improteca.ro/2025/05/28/switch-change-the-long-form-improv-edition-neverending-improv-30-mai/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "O serie de spectacole de\u00a0 improv comedy & unscripted theater care \u00ee\u0219i au inspira\u021bia din via\u021ba de zi cu zi a publicului, unde distribu\u021bia actorilor nu este niciodat\u0103 aceea\u0219i de la o edi\u021bie la alta. A\u0219adar, la cererea publicului \u0219i a comunit\u0103\u021bii, urc\u0103 pe scen\u0103: Alexandra B\u0103jan, Doina Antohi, Dan Miron, Cristian Petre \u0219i\u00a0 Bogdan Until\u0103.",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     },
     {
@@ -8136,21 +7911,6 @@
       "video_url": null
     },
     {
-      "title": "SIROCCO ET LE ROYAUME DES COURANTS D\u2019AIR",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-05-30 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-sirocco-et-le-royaume-des-courants-d-air-film-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Beno\u00eet ChieuxCast:Maryne Bertieaux, Aur\u00e9lie Konat\u00e9, Pierre Lognay, Lo\u00efse CharpentierGenre:Anima\u021bie, Aventuri, FantasticDuration:1h 20mCountry:Fran\u021baLanguage:FRYear:2023 Juliette \u0219i Carmen, dou\u0103 surori curajoase de 4 \u0219i 8 ani, deschid, \u00eentr-un moment de plictiseal\u0103, un portal c\u0103tre universul c\u0103r\u021bii lor preferate,Regatul Curen\u021bilor de Aer. Transformate \u00een pisici, feti\u021bele ajung captive \u00een acest t\u0103r\u00e2m fantastic, dup\u0103 o mic\u0103 neaten\u021bie a Juliettei, \u0219i intr\u0103 \u00een conflict cu conduc\u0103toarea locul",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-sirocco-et-le-royaume-des-courants-d-air-film-pentru-publicul-tanar-rqT.webp",
-      "video_url": "https://www.youtube.com/embed/OSL0lCAsiac?si=iiipJc4lWSDcDWad"
-    },
-    {
       "title": "LASSIE - O NOU\u0102 AVENTUR\u0102",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -8451,21 +8211,6 @@
       "video_url": null
     },
     {
-      "title": "MNAC AfterHours | r\u00e2supl\u00e2nsu",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-05-30 15:30:08.184000",
-      "url": "https://www.mnac.ro/event/1365/MNAC%20AfterHours%20%7C%20r%C3%A2supl%C3%A2nsu/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Muzic\u0103",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
-    },
-    {
       "title": "PRIVE\u0218TE \u00ceNAPOI CU M\u00c2NIE",
       "artist": null,
       "venue": "Teatrul Improteca Str. Comanita nr.9",
@@ -8658,6 +8403,21 @@
       "description": "Lia Perjovschipropune, \u00een luna iunie, o nou\u0103 serie de tururi ghidate \u00een cadrul expozi\u021biei\u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201dde la ARCUB - Hanul Gabroveni. Participan\u021bii vor putea afla cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile celor doi mari arti\u0219ti \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Expozi\u021bia este deschis\u0103 publicului p\u00e2n\u0103 la data de 26 iulie \u0219i activeaz\u0103toate spa\u021biile Hanului Gabroveni.\u201eDRAFT pentru o retrospec...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
+      "title": "Switch & Change \ud83e\udeb8 Long-Form Improv Comedy by Neverending Improv",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-05-30 20:00:00",
+      "url": "https://improteca.ro/2025/05/28/switch-change-the-long-form-improv-edition-neverending-improv-30-mai/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "O serie de spectacole de\u00a0 improv comedy & unscripted theater care \u00ee\u0219i au inspira\u021bia din via\u021ba de zi cu zi a publicului, unde distribu\u021bia actorilor nu este niciodat\u0103 aceea\u0219i de la o edi\u021bie la alta. A\u0219adar, la cererea publicului \u0219i a comunit\u0103\u021bii, urc\u0103 pe scen\u0103: Alexandra B\u0103jan, Doina Antohi, Dan Miron, Cristian Petre \u0219i\u00a0 Bogdan Until\u0103.",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
