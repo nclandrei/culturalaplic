@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-06-05T12:19:59.996300",
+  "scraped_at": "2026-06-06T10:53:00.677440",
   "music_events": [
-    {
-      "title": "Concert simfonic",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://oveit.com/hub/event/concert-simfonic-j3YWwl7v",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "Concert simfonic",
       "artist": null,
@@ -2027,21 +2012,6 @@
       "video_url": null
     },
     {
-      "title": "CALLAS \u2013 OANA PELLEA",
-      "artist": "Evenimente",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-06-05 19:30:00",
-      "url": "https://operanb.ro/spectacol/callas/#050620260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Motanul \u00cenc\u0103l\u021bat",
       "artist": "OPER\u0102 ONLINE",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -2111,21 +2081,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Odyssey, Aura \u015eova & Destin",
-      "artist": "Odyssey, Aura \u015eova & Destin",
-      "venue": "Quantic",
-      "date": "2026-06-05 00:00:00",
-      "url": "https://quantic.pub/eveniment/odyssey-aura-sova-destin/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/5b4SvpTqll0LSqJWPpXya5",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3002,21 +2957,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl x ACCEPT: Queer\u2764Night \u2022 Bucharest PRIDE 2026",
-      "artist": "Queer\u2764Night \u2022 Bucharest PRIDE 2026",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-06-05 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-x-accept-queer-night-bucharest-pride-2026",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Corina Sucarov & Diana Sar",
       "artist": "Corina Sucarov & Diana Sar",
       "venue": "Control Club - Front Room",
@@ -3180,6 +3120,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Ana Satana & B0b, Cheiyale & Vast Solo",
+      "artist": "Ana Satana & B0b, Cheiyale & Vast Solo",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-06-09 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-ana-satana-b0b-cheiyale-vast-solo",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/1Myz22sFr910mKHuKN7TgI",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ctrl LIVE: Rolando Bruno [AG]",
+      "artist": "Rolando Bruno [AG]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-07-03 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ctrl-live-rolando-bruno-ag",
+      "source": "control",
+      "category": "music",
+      "price": "50.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/6lxsLBQooRKATCql5xjXfP",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -3317,21 +3287,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2020/01/IMG-20220311-WA0007-716x1024.jpg",
       "video_url": null
-    },
-    {
-      "title": "\u021aINUTUL DIN MIEZUL VERII",
-      "artist": "de Tracy Letts",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-06-05 18:30:00",
-      "url": "https://www.teatrulmic.ro/spectacol/tinutul-din-miezul-verii/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Trei surori se \u00eentorc acas\u0103 \u00een momentul \u00een care tat\u0103l lor dispare \u00eentr-un mod neprev\u0103zut. Nici moartea lui \u0219i nici \u00eenmorm\u00e2ntarea nu o \u00eenfr\u00e2neaz\u0103 pe mam\u0103 s\u0103 fie ceea ce a ajuns, un om crud, ironic \u0219i acid, care devoreaz\u0103 f\u0103r\u0103 oprire absolut tot ce prinde, antidepresive, vie\u021bile fiicelor ei \u0219i minciunile ascunse, departe \u00een trecut. piesa care st\u0103 la baza spectacolului a fost distins\u0103, \u00een 2008, cu Pr",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2018/01/afis-tinutul-724x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/vFwb7K5eF4k?rel=0&controls=0&showinfo=0"
     },
     {
       "title": "BIGAMUL\u2026 dup\u0103 20 de ani (Prins \u00een plas\u0103)",
@@ -3484,21 +3439,6 @@
       "video_url": "https://www.youtube.com/embed/jx2dkHoqacE?feature=shared?rel=0&controls=0&showinfo=0"
     },
     {
-      "title": "M\u0102CEL",
-      "artist": "de Yasmina Reza",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/macel-dupa-zeul-masacrului-de-yazmina-reza/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dou\u0103 realit\u0103\u021bi aparent paralele, f\u0103r\u0103 un posibil punct de congruen\u021b\u0103. Dou\u0103 cupluri din lumi diferite obligate s\u0103 se intersecteze \u00een urma unui \u201eaccident\u201d produs de un conflict \u00eentre copii. Un caz minor de ne\u00een\u021belegere ce escaladeaz\u0103 \u00eentr-o lupta de putere \u00eentre p\u0103rin\u021bi. O comedie cu accente dramatice care ridic\u0103 \u00eentrebarea: Cine este de fapt victima \u0219i cine este c\u0103l\u0103ul? Sau, cine este p\u0103rintele \u0219i ",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2022/09/rsz_afis_macel_a4-1-717x1024.jpg",
-      "video_url": null
-    },
-    {
       "title": "DELTA",
       "artist": "de Leta Popescu",
       "venue": "Teatrul Mic - Sala Atelier",
@@ -3571,36 +3511,6 @@
       "description": "readuce universul ionescian \u00een prim-plan, printr-o construc\u021bie care articuleaz\u0103 absurdul, metafizicul \u0219i poezia, propun\u00e2nd spectatorilor o experien\u021b\u0103 teatral\u0103 unic\u0103. ocup\u0103 un loc central \u00een dramaturgia absurdului, fiind una dintre piesele \u00een care autorul \u00ee\u0219i formuleaz\u0103 \u00een modul cel mai direct rela\u021bia cu actul crea\u021biei \u0219i cu propria identitate. Conceput\u0103 ca o reflec\u021bie asupra raportului dintre indi",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/IMG_6589-717x1024.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Zbor deasupra unui cuib de cuci",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-06-05 18:30:00",
-      "url": "https://nottara.ro/spectacol/zbor-deasupra-unui-cuib-de-cuci/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol fascinant despre putere \u0219i fric\u0103, despre limitele normalit\u0103\u021bii, despre lupta cu sistemul \u0219i despre frumuse\u021bea \u201enebuniei\u201d. O poveste despre libertate. Unde \u00eencepe \u0219i unde se sf\u00e2r\u0219e\u0219te libertatea? Unde se sf\u00e2r\u0219e\u0219te normalitatea \u0219i unde \u00eencepe nebunia? \u201eZbor deasupra unui cuib de cuci\u201d, cunoscutul text al lui Dale Wasserman, dup\u0103 romanul lui Ken Kesey, chestioneaz\u0103 [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/ZDUCC-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vizitatorul",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-06-05 19:30:00",
-      "url": "https://nottara.ro/spectacol/vizitatorul/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Maestrul Alexandru Repan \u00een cel mai longeviv spectacol al Teatrului Nottara. \u00a0 1938 \u2013 Al Treilea Reich este \u00een ascensiune. Persecu\u0163iile \u00eempotriva evreilor se \u00eenmul\u0163esc \u015fi devin din ce \u00een ce mai agresive. Molima urii cuprinde lini\u015ftitele ora\u015fe europene \u015fi \u00eemboln\u0103ve\u015fte de nesiguran\u0163\u0103 lumea \u00eentreag\u0103. Austria este \u015fi ea cuprins\u0103 de teroare, dar celebrul psihanalist [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/vizitatorul-1-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -4534,51 +4444,6 @@
       "video_url": null
     },
     {
-      "title": "Cursa de \u0219oareci",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.tnb.ro/ro/cursa-de-soareci",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/534/1242/large_Cursa_nou_2024.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cei drep\u021bi",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.tnb.ro/ro/cei-drepti",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/829/1044/large_Afis_CEI_DREPTI.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Mary Stuart",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.tnb.ro/ro/mary-stuart",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1073/1368/large_Afis_MARY_STUART_-_WEB.jpg",
-      "video_url": null
-    },
-    {
       "title": "Mary Stuart",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -5194,21 +5059,6 @@
       "video_url": "https://www.youtube.com/embed/_KSIg4Ug9no?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Foedip%2F&aoriginsup=1&vf=1"
     },
     {
-      "title": "Matilda \u0219i groparii",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.tnb.ro/ro/matilda-si-groparii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/676/764/large_153AD4EE-98B9-4CED-BAEC-DDE158F474F5.jpeg",
-      "video_url": null
-    },
-    {
       "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
       "artist": null,
       "venue": "TNB - Sala Media",
@@ -5734,36 +5584,6 @@
       "video_url": null
     },
     {
-      "title": "ART\u0102",
-      "artist": "Yasmina Reza",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.bulandra.ro/arta/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Oare cum ar reac\u0163iona cineva dac\u0103 prietenul s\u0103u cel mai bun ar face brusc o prostie at\u00e2t de colosal\u0103 \u00eenc\u00e2t ar pune sub semnul \u00eentreb\u0103rii \u00eensu\u015fi fundamentul rela\u0163iei lor de amici\u0163ie? Atunci c\u00e2nd un iubitor de art\u0103 cump\u0103r\u0103 ceea ce este la urma urmei un simplu tablou alb pentru o sum\u0103 exorbitant\u0103, cel mai bun prieten al s\u0103u o ia razna. Un al treilea prieten se g\u0103se\u015fte prins la mijloc \u00eentre cei doi, \u00eentr-un spectacol care uime\u015fte prin luciditate \u015fi umor. \u00cencercarea de a \u00een\u0163elege strania art\u0103 mode...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Arta-2010-foto-Andrei-Gindac-12-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/tolVYSw9lK0"
-    },
-    {
-      "title": "AZILUL DE MOARTE",
-      "artist": "Georges Contamin",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-05 19:00:00",
-      "url": "https://www.bulandra.ro/azilul-de-moarte/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Regizorul Alexandru Dabija revine la Bulandra cu provocatoarea comedie poli\u021bist\u0103Azilul de moartede Georges Contamin, montat\u0103 \u00een premier\u0103 na\u021bional\u0103. Un spectacol plin de suspans, care aminte\u0219te \u00eentruc\u00e2tva de piesa lui Gorki, doar c\u0103 de data asta abandona\u021bii lumii nu accept\u0103 s\u0103 mearg\u0103 bl\u00e2nd spre \u201enoapte\u201c, ca-n poemul lui Dylan Thomas, ci se bucur\u0103 zgomotos de via\u021b\u0103. P\u00e2n\u0103 \u00eentr-o zi c\u00e2nd, \u00een azilul plin de personaje efervescente \u0219i de pove\u0219ti fascinante, \u00eencep s\u0103 se petreac\u0103 tot felul de lucruri ...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2023/10/Azilul-de-moarte-2023-foto-Anastasia-Atanasoska-19-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "AZILUL DE MOARTE",
       "artist": "Georges Contamin",
       "venue": "Teatrul Bulandra - Toma Caragiu",
@@ -6124,21 +5944,6 @@
       "video_url": null
     },
     {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-05 12:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
-    },
-    {
       "title": "Cei drep\u021bi",
       "artist": null,
       "venue": "TNB - Sala Pictura",
@@ -6331,21 +6136,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/710/831/large_afis_Adio_dl_Haffmann.jpg",
-      "video_url": null
-    },
-    {
-      "title": "F\u0103r\u0103 semnal",
-      "artist": null,
-      "venue": "TNB - Sala Media",
-      "date": "2026-06-05 11:00:00",
-      "url": "https://www.tnb.ro/ro/fara-semnal",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1295/1750/large_Diana_Amitroaie2.jpg",
       "video_url": null
     },
     {
@@ -7744,21 +7534,6 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
-    },
-    {
-      "title": "THAT TIME I GOT REINCARNATED AS A SLIME THE MOVIE: TEARS OF THE AZURE SEA",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-05 16:00:00",
-      "url": "https://eventbook.ro/film/bilete-that-time-i-got-reincarnated-as-a-slime-the-movie-tears-of-the-azure-sea",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Yasuhito KikuchiGenre:Anima\u021bie, FantasticDuration:1h 44mCountry:JaponiaLanguage:JAYear:2026 Rimuru \u0219i prietenii s\u0103i viziteaz\u0103 insula-resort a \u00cemp\u0103ratului Celest Hermesia dup\u0103 ceremonia de deschidere a Tempest. \u00cen timpul vacan\u021bei, ei \u00eent\u00e2lnesc o femeie misterioas\u0103 pe nume Yura, ceea ce duce la un nou incident l\u00e2ng\u0103 marea azurie.",
-      "description_source": "scraped",
-      "image_url": "https://cinema-timisoara.ro/media/original_images/That_Time_I_Got_Reincarnated_afis.webp",
-      "video_url": "https://www.youtube.com/embed/migwns-E5-E"
     },
     {
       "title": "C\u00c2ND MUMBO JUMBO S-A F\u0102CUT URIA\u0218",
