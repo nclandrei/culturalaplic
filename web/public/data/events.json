@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-08T13:19:52.064315",
+  "scraped_at": "2026-06-09T12:02:05.056736",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -3769,36 +3769,6 @@
       "video_url": null
     },
     {
-      "title": "Via\u021ba femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-08 18:00:00",
-      "url": "https://www.tnb.ro/ro/viata-femeilor-pe-intelesul-barbatilor-1",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1252/1681/large_afis.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Nelson",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-08 20:00:00",
-      "url": "https://www.tnb.ro/ro/nelson",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1184/1576/large_Afis_-_NELSON_-_portret_2_reprezentatii.jpg",
-      "video_url": null
-    },
-    {
       "title": "\u00cenTrecere",
       "artist": null,
       "venue": "TNB - Sala Mic\u0103",
@@ -4217,21 +4187,6 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1274/1711/large_afis_Romeo.jpg",
       "video_url": null
-    },
-    {
-      "title": "P\u0103rin\u021bi",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-06-08 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/parinti/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201e",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/03/Design-fara-titlu-1024x576.png",
-      "video_url": "https://www.youtube.com/embed/1EUEofnZZ-U"
     },
     {
       "title": "Meciul de handbal",
@@ -4849,36 +4804,6 @@
       "video_url": "https://www.youtube.com/embed/_KSIg4Ug9no?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Foedip%2F&aoriginsup=1&vf=1"
     },
     {
-      "title": "Cuv\u00e2ntul progres rostit de mama suna teribil...",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-08 19:00:00",
-      "url": "https://www.tnb.ro/ro/cuvantul-progres-rostit-de-mama-suna-teribil-de-fals",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/909/1124/large_Afis_final_bun37.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Zorro",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-08 19:00:00",
-      "url": "https://www.tnb.ro/ro/zorro",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/884/1100/large_Afis_final.jpg",
-      "video_url": null
-    },
-    {
       "title": "Titanic vals",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -5266,21 +5191,6 @@
       "description": "\u201eVremurile de demult \u0219i vremurile de acum nu sunt capete opuse ale aceluia\u0219i drum. Sunt poteci \u00eencurcate, hotarul dintre ele e neclar \u0219i, f\u0103c\u00e2nd un pas gre\u0219it, te treze\u0219ti \u00een alte timpuri, pe care le credeai apuse. Acum dou\u0103-trei genera\u021bii, \u00eentr-o societate \u00een care femeile nu de\u021bineau putere social\u0103, for\u021ba lor se manifesta \u00een spa\u021biul [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/08/Ratacirea-Metropolis-foto-Andrei-Gindac-Two-BugsCL1A5738-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "A\u0219tept\u00e2ndu-l pe Ulise",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-06-08 19:00:00",
-      "url": "https://www.tnb.ro/ro/asteptandu-l-pe-ulise",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1119/1445/large_Ulise_afis.jpg",
       "video_url": null
     },
     {
@@ -7368,21 +7278,6 @@
       "description": "Bun venit \u00een \u201cIdealis\u201d, cartierul t\u0103u perfect, unde fiecare zi aduce cu ea noi b\u0103rfe, ini\u021biative \u0219i secrete. Te invit\u0103m s\u0103 te al\u0103turi nou\u0103 \u00eentr-o c\u0103l\u0103torie improviza\u021bional\u0103 prin acest mic univers suburban, unde vecin\u0103t\u0103\u021bile se transform\u0103 \u00een scene. \u00cen spectacolul nostru vei descoperi cum comunitatea \u00ee\u0219i tese pove\u0219tile \u00een fa\u021ba ta, \u00eentr-un format plin de umor \u0219i spontaneitate.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "I Swear",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-08 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-i-swear-american-independent-film-festival-10",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "25 LEI",
-      "spotify_url": null,
-      "description": "A true story about John Davidson. Diagnosed with Tourette syndrome at the age of 15 and considered \u201ccrazy\u201d by his peers, he struggled with a condition few had ever witnessed. As an adult, he became an advocate for Tourette syndrome and received a Master\u2019s degree in engineering from the Queen in 2019. Producers \u2013 Kirk Jones, Georgia Bayliff, and Piers Tempest",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-i-swear-american-independent-film-festival-10-Jp7.webp",
       "video_url": null
     },
     {
