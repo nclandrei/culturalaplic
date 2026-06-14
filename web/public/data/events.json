@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-13T11:30:52.607938",
+  "scraped_at": "2026-06-14T11:42:45.861438",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -1682,21 +1682,6 @@
       "video_url": null
     },
     {
-      "title": "Vocea Uman\u0103 \u2013 Bucharest Opera Festival",
-      "artist": "BOF",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://operanb.ro/spectacol/vocea-umana-bucharest-opera-festival/#130620260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Ib\u00e9rica \u2013 Bucharest Opera Festival",
       "artist": "BOF",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -1967,21 +1952,6 @@
       "video_url": null
     },
     {
-      "title": "Clasic e fantastic. Istoria muzicii in pasi de dans",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-13 11:00:00",
-      "url": "https://oveit.com/hub/event/clasic-e-fantastic-istoria-muzicii-in-pasi-de-dans-mzyd5Q7d",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 30 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Recycle Bin \u2013 lansare videoclip | Ska-nk | Silence is Violence",
       "artist": "Recycle Bin",
       "venue": "Quantic",
@@ -2125,21 +2095,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 60 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Bucharest Pride 2026 Afterparty: Dirty Disco w/ Eugen R\u0103descu",
-      "artist": "Bucharest Pride 2026 Afterparty: Dirty Disco w/ Eugen R\u0103descu",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-13 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=bucharest-pride-2026-afterparty-dirty-disco-w-eugen-radescu",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -2807,21 +2762,6 @@
       "video_url": null
     },
     {
-      "title": "Public Possession x Bar Ton x Control w/\u00a0Bell Towers [AU/DE], Courtney Bailey [JP/DE], DJ City [SE/DE]",
-      "artist": "Public Possession x Bar Ton x Control w/\u00a0Bell Towers [AU/DE], Courtney Bailey [JP/DE], DJ City [SE/DE]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-06-13 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=public-possession-x-bar-ton-x-control-w-%C2%A0bell-towers-au-de-courtney-bailey-jp-de-dj-city-se-de",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/3F3cotbIlLpnz40GObI8QM",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Lansarea volumului \u201eAnaliza repertoriului standard \u0219i tehnicile de preg\u0103tire a concursurilor pentru post \u00een partida de oboi \u2013 METODOLOGIA ALCOR\u201d Autor: Ludovic Armin Cora, PhD",
       "artist": "Evenimente",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -2875,21 +2815,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 45 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Bucharest Pride 2026 Afterparty: Dirty Disco w/ Eugen R\u0103descu & ART\u00c9MIS",
-      "artist": "Bucharest Pride 2026 Afterparty: Dirty Disco w/ Eugen R\u0103descu & ART\u00c9MIS",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-13 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=bucharest-pride-2026-afterparty-dirty-disco-w-eugen-radescu",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3199,21 +3124,6 @@
       "video_url": null
     },
     {
-      "title": "CHARLIE CHAPLIN \u2013 The X-Ray of his soul",
-      "artist": "dup\u0103 piesa \u201eCharlie Chaplin\u201d de Angelina Ro\u0219ca",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/charlie-chaplin-the-x-ray-of-his-soul/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dac\u0103 durerea mea st\u00e2rne\u0219te r\u00e2sul, e bine. Dar niciodat\u0103 n-a\u0219 vrea ca r\u00e2sul meu s\u0103 st\u00e2rneasc\u0103 durerea cuiva. a profunzimilor suflete\u0219ti ale unuia dinte geniile cinematografiei mondiale. Departe de a fi un demers facil, el se adreseaz\u0103 tuturor oamenilor, oric\u0103rui segment de public \u0219i face un apel la re-umanizarea fiin\u021bei omene\u0219ti, at\u00e2t de bulversat\u0103 spiritual de avalan\u0219a informa\u021bional\u0103 \u0219i mediatic\u0103 ",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/IMG_1241-724x1024.jpg",
-      "video_url": null
-    },
-    {
       "title": "EX",
       "artist": "de Marius von Mayenburg",
       "venue": "Teatrul Mic - Sala Studio",
@@ -3287,36 +3197,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/IMG_6589-717x1024.jpeg",
       "video_url": null
-    },
-    {
-      "title": "Patimile sexului frumos \u00een Epoca de Aur",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://nottara.ro/spectacol/patimile-sexului-frumos-in-epoca-de-aur/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Spectacolul\u00a0\u201ePatimile sexului frumos \u00een epoca de aur (a\u0219a cum le vedem la televizor)\u201d (text \u0219i dramaturgie de Selma Drago\u0219, regie \u0219i dramaturgie: Elena Morar) \u00ee\u0219i propune s\u0103 demonteze imaginea idealizat\u0103 despre cum erau tinere\u021bea \u0219i iubirea \u201e\u00eenainte\u201d. Construit sub forma unei emisiuni de televiziune contemporane, spectacolul exploreaz\u0103 modul \u00een care societatea de azi prive\u0219te \u0219i [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/05/PSFiEdA-EBS-1280x853-px-2.jpg",
-      "video_url": "https://www.youtube.com/embed/DRutfabAEYc"
-    },
-    {
-      "title": "Comedia erorilor",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://nottara.ro/spectacol/comedia-erorilor/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Comedia erorilor \u2013 o poveste savuroas\u0103, cu aventuri, iubire \u0219i umor de calitate, unul dintre cele mai iubite spectacole din Bucure\u0219ti. Una dintre piesele timpurii ale lui William Shakespeare, \u201eComedia erorilor\u201d este o poveste plin\u0103 de \u00eent\u00e2mpl\u0103ri neprev\u0103zute, qui-pro-quo-uri savuroase, iubire \u0219i aventur\u0103. Este, \u00een acela\u0219i timp, o c\u0103l\u0103torie de descoperire de sine, de asumare [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
     },
     {
       "title": "Ultima or\u0103",
@@ -3482,36 +3362,6 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
       "video_url": null
-    },
-    {
-      "title": "Wet dreams",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/wet-dreams/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eAm \u00eenceput construc\u021bia acestui spectacol analiz\u00e2nd cum anumite dinamici dintre mam\u0103 \u0219i fiu pot influen\u021ba viitoarele c\u0103l\u0103torii romantice din via\u021ba unui b\u0103rbat. C\u00e2nd am descoperit Teoria Ata\u0219amentului formulat\u0103 de John Bowlby, am fost inspirat\u0103 s\u0103 construiesc trei personaje masculine individualizate prin felul \u00een care ofer\u0103 \u0219i doresc s\u0103 primeasc\u0103 iubire. Deta\u0219area de mam\u0103. Separarea de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/10/ziua-1-Fringe-54-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "C\u00c2ND PLOAIA SE VA OPRI",
-      "artist": "de Andrew Bovell",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/cand-ploaia-se-ve-opri/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Spectacolul prezint\u0103 o serie de pove\u0219ti interconectate din vie\u021bile a \u0219apte personaje care se confrunt\u0103 cu misterele trecutului lor pentru a-\u0219i \u00een\u021belege viitorul, dezv\u0103luind, astfel, modul prin care sunt transmise de la o genera\u021bie la alta, tiparele de iubire, abandon, speran\u021b\u0103 \u0219i iertare. e genul \u0103la de text care place de la prima lectur\u0103. Place \u00een prim\u0103 instan\u021b\u0103 ca cititor, si mai apoi te provoac",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/03/rsz_afis_cand_ploaia_se_va_opri_banda_noua-731x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/RWJwJovVcgU?rel=0&controls=0&showinfo=0"
     },
     {
       "title": "D\u2019ALE CARNAVALULUI",
@@ -3964,36 +3814,6 @@
       "video_url": null
     },
     {
-      "title": "A fost odat\u0103 \u00een Rom\u00e2nia",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/a-fost-odata-in-romania",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/581/625/large_A_FOST_ODATA_IN_ROMANIA_resize.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Cuv\u00e2ntul progres rostit de mama suna teribil...",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/cuvantul-progres-rostit-de-mama-suna-teribil-de-fals",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/909/1124/large_Afis_final_bun37.jpg",
-      "video_url": null
-    },
-    {
       "title": "P\u0103rin\u021bi \u0219i copii",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -4384,36 +4204,6 @@
       "video_url": null
     },
     {
-      "title": "OEDIP",
-      "artist": "Sofocle",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-13 14:00:00",
-      "url": "https://www.bulandra.ro/oedip/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Andrei \u0218erban revine la Bulandra cu tulbur\u0103torul spectacolOedip, o montare a vremurilor noastre, \u00een care miturile antice se transform\u0103 \u00een breaking news. Tragedia lui Sofocle este curajos reinterpretat\u0103 de multipremiatul regizor \u0219i dramaturg britanic Robert Icke, \u00eentr-o versiune proasp\u0103t\u0103 \u0219i modern\u0103, care p\u0103streaz\u0103 temele esen\u021biale: cunoa\u0219terea de sine, adev\u0103r, vin\u0103, destin, liber arbitru \u0219i arogan\u021ba de a crede c\u0103 \u0219tim tot \u0219i de a promite ce nu \u0219tim. Toate acestea sunt aduse \u00een contextul oamen...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Oedip-2023-foto-Andrei-si-Maria-Gindac-TwoBugs-18-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/_KSIg4Ug9no?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Foedip%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "20 de ani \u00een Siberia",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.tnb.ro/ro/20-de-ani-in-siberia",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/355/1235/large_Afis_nou_2024_-_20_de_ani.jpg",
-      "video_url": null
-    },
-    {
       "title": "Teatrul Na\u0163ional pentru copii Abracadabra",
       "artist": null,
       "venue": "TNB - Sala Media",
@@ -4742,21 +4532,6 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
-    },
-    {
-      "title": "ME\u0218TE\u0218UGUL VIE\u021aII",
-      "artist": "Hanoch Levin",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://www.bulandra.ro/mestesugul-vietii/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Me\u015fte\u015fugul Vie\u0163ii, una dintre cele mai apreciate piese ale marelui dramaturg israelian Hanoch Levin, examineaz\u0103 via\u0163a din perspectiva unui cuplu: speran\u0163e pierdute, via\u0163\u0103 irosit\u0103, m\u00e2nie, violen\u0163\u0103, regrete, dificult\u0103\u0163i de comunicare. Lupta dulce-am\u0103ruie \u015fi disperat\u0103 dintre cei doi reflect\u0103 \u00eentreb\u0103ri universale. C\u00e2t de ridicol\u0103 \u015fi terifiant\u0103 poate fi trecerea noastr\u0103 prin via\u0163\u0103? C\u00e2t de tare ne p\u0103c\u0103lim pe noi \u00een\u015fine, \u00een multe momente, pentru a putea tr\u0103i, aparent lini\u015fti\u0163i \u015fi mul\u0163umi\u0163i, mai depa...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Mestesugul-vietii-2011-foto-Cosmin-Ardeleanu-06-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/ObCzGHHLUG8"
     },
     {
       "title": "OEDIP",
@@ -5134,21 +4909,6 @@
       "video_url": "https://www.youtube.com/embed/96JJ9LsF6KA"
     },
     {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-06-13 15:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
-      "video_url": null
-    },
-    {
       "title": "Noaptea lui Helver",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -5386,21 +5146,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Doar o dat\u0103",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Nocturne",
-      "date": "2026-06-13 18:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/doar-o-data/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": ",,Piesa aleas\u0103 a fost scris\u0103 \u00eentr-un context socio-politic \u00een care Spania \u00eencerca s\u0103 se \u00abvindece\u00bb \u00een mod juridic de cazurile de violen\u021b\u0103 domestic\u0103, descoperind c\u0103 anumite mentalit\u0103\u021bi sunt mult mai greu de schimbat dec\u00e2t o modificare legislativ\u0103 necesar\u0103. \u00ab\u00cen \u021bara asta, acum ceva ani, s\u0103 ba\u021bi o femeie era v\u0103zut ca fiind ceva normal\u00bb, ne [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/06/Copie-a-fisierului-DSC07253-scaled.jpg",
       "video_url": null
     },
     {
@@ -6681,21 +6426,6 @@
       "video_url": null
     },
     {
-      "title": "A NEW DAWN / R\u0102S\u0102RIT VERDE SMARALD",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-13 10:00:00",
-      "url": "https://eventbook.ro/film/bilete-a-new-dawn-rasarit-verde-smarald-film-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Yoshitoshi ShinomiyaCast:Riku Hagiwara, Kotone Furukawa, Miyu Irino, Takashi OkabeGenre:Anima\u021bieDuration:1h 16mCountry:Japonia, Fran\u021baLanguage:JAYear:2025 Keitar\u00f4 locuie\u0219te singur \u00eentr-o fost\u0103 fabric\u0103 de artificii. Au trecut patru ani de c\u00e2nd lucreaz\u0103 la perfec\u021bionarea artificiilor \u201eShuhari\u201d, un proiect original \u0219i ambi\u021bios abandonat de tat\u0103l s\u0103u, acum disp\u0103rut. \u00cens\u0103 c\u0103minul s\u0103u risc\u0103 s\u0103 fie evacuat cu for\u021ba de c\u0103tre autorit\u0103\u021bi. \u00cenainte de demolarea fabricii, Keitar\u00f4 se reune\u0219te cu un b",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-a-new-dawn-rasarit-verde-smarald-cK6.webp",
-      "video_url": "https://www.youtube.com/embed/8a_or4LwPBA"
-    },
-    {
       "title": "\u23f0 100 de scene in 60 de minute \ud83c\udfac long form improv",
       "artist": null,
       "venue": "Improteca",
@@ -6766,21 +6496,6 @@
       "price": null,
       "spotify_url": null,
       "description": "Hai \u0219i tu la un show de comedie creat pe loc si bucura-te alaturi de cursantii nostri, c-au absolvit modulul de improvizatie avansati si acum au show. Duminica, 17 mai, de la ora 18:00 La Improteca, in Bucuresti, pe Comanita 9",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "M-ai lovit la corpora\u021bie \ud83c\udfe2 sketch comedy muzical Improteca",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-06-13 20:00:00",
-      "url": "https://improteca.ro/2026/05/19/m-ai-lovit-la-corporatie-sketch-comedy-muzical-improteca-13-iunie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Veni\u021bi s\u0103 r\u00e2dem \u0219i s\u0103 ne recunoa\u0219tem \u00een scenele inspirate din via\u021ba de zi cu zi a unei corpora\u021bii! La Teatrul Improteca, am creat un spectacol de sketch comedy muzical care v\u0103 va lua pe un rollercoaster de umor, ironie \u0219i adev\u0103r. Actorii no\u0219tri au improvizat \u0219i au creat un scenariu plin de c\u00e2ntece \u0219i energie exploziv\u0103, inspirat din pove\u0219ti adev\u0103rate. Nu te l\u0103sa lovit la corporatie! Vino s\u0103 r\u00e2dem \u00eempreun\u0103! \ud83d\ude02",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
@@ -7206,21 +6921,6 @@
       "video_url": null
     },
     {
-      "title": "Parcul Carol - 120 de ani",
-      "artist": null,
-      "venue": "Parcul Carol I",
-      "date": "2026-06-13 19:00:00",
-      "url": "https://arcub.ro/eveniment/parcul-carol-120-de-ani",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "S\u00e2mb\u0103t\u0103, 13 iunie 2026, Parcul Carol Idevine gazda unei serii de activit\u0103\u021bi culturale dedicate anivers\u0103rii a120 de ani de la inaugurarea sa, invit\u00e2nd publicul s\u0103 redescopere istoria, patrimoniul \u0219i semnifica\u021biile unuia dintre cele mai importante spa\u021bii publice ale Bucure\u0219tiului. Evenimentul\u201eParcul Carol \u2013 120 de ani\u201deste organizat dePrim\u0103ria Capitalei, prinARCUB \u2013 Centrul Cultural al Municipiului Bucure\u0219ti\u0219i reprezint\u0103 o ini\u021biativ\u0103 cultural\u0103 dedicat\u0103 valorific\u0103rii patrimoniului istoric, cultu...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "Tururi ghidate cu Lia \u0219i Dan Perjovschi | 17 iunie | orele 15:00 & 18:00",
       "artist": null,
       "venue": "ARCUB - Hanul Gabroveni",
@@ -7279,6 +6979,36 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-god-will-not-help-dumnezeu-nu-ne-va-ajuta-women-in-frame-o6O.webp",
       "video_url": "https://www.youtube.com/embed/ZtQcEyow818"
+    },
+    {
+      "title": "MOANA / VAIANA",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-07-11 11:00:00",
+      "url": "https://eventbook.ro/film/bilete-moana-vaiana-film-pentru-publicul-tanar",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "35 LEI",
+      "spotify_url": null,
+      "description": "Director:Thomas KailCast:Dwayne Johnson, Frankie Adams, Rena Owen, John Tui, Catherine Laga'aiaGenre:Aventuri, Comedie, Familie, Fantastic, MuzicalDuration:2h 00mCountry:SUALanguage:ENYear:2026 Sinopsis:Dincolo de recif , \u00eentunericul r\u0103u st\u0103 la p\u00e2nd\u0103. Oceanul a ales-o pe Vaiana. Insula ei, poporul ei, nu vor supravie\u021bui dac\u0103 nu reu\u0219e\u0219te. Trebuie s\u0103-l g\u0103seasc\u0103 pe Maui \u0219i s\u0103-i redea inima lui Te Fiti.",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-moana-vaiana-film-pentru-publicul-tanar-8bF.webp",
+      "video_url": "https://www.youtube.com/embed/OJ6R9u39_9I?si=UUips_9umVSt9bxn"
+    },
+    {
+      "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-07-12 11:30:00",
+      "url": "https://eventbook.ro/film/bilete-toy-story-5-povestea-jucariilor-5-film-pentru-publicul-tanar",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "35 LEI",
+      "spotify_url": null,
+      "description": "Director:Andrew StantonCast:Tom Hanks, Greta Lee, Tim Allen, Ernie Hudson, Joan CusackGenre:Anima\u021bie, Aventuri, Comedie, Dram\u0103, FamilieDuration:1h 30mCountry:SUA, JaponiaLanguage:ENYear:2026 Woody, Buzz Lightyear, Jessie \u0219i restul g\u0103\u0219tii \u00ee\u0219i v\u0103d rolurile puse la \u00eencercare atunci c\u00e2nd se confrunt\u0103 cu Lilypad, o tablet\u0103 smart, complet nou\u0103, care vine cu propriile idei inovatoare despre ce este mai bine pentru copilul lor, Bonnie.",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-toy-story-5-povestea-jucariilor-5-film-pentru-publicul-tanar-Cvf.webp",
+      "video_url": "https://www.youtube.com/embed/11Fzn5eB4CU?si=IznibnYsT-u6xTNX"
     }
   ]
 }
