@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-17T13:03:07.308518",
+  "scraped_at": "2026-06-18T12:33:12.114772",
   "music_events": [
     {
       "title": "Concert simfonic",
@@ -1682,21 +1682,6 @@
       "video_url": null
     },
     {
-      "title": "Bucharest Opera Festival",
-      "artist": "BOF",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://operanb.ro/spectacol/bucharest-opera-festival-14/#170620260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Faust \u2013 Bucharest Opera Festival",
       "artist": "BOF",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -1940,21 +1925,6 @@
       "title": "Athenaeum Summer Festival",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://oveit.com/hub/event/athenaeum-summer-festival-6zqO8Lnl",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 65 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Athenaeum Summer Festival",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
       "date": "2026-06-24 19:00:00",
       "url": "https://oveit.com/hub/event/athenaeum-summer-festival-439ZGYnv",
       "source": "Ateneul Rom\u00e2n",
@@ -2050,21 +2020,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 60 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Recital de muzic\u0103 \u0219i poezie",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mic\u0103",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://oveit.com/hub/event/recital-de-muzica-si-poezie-d3MwdB7K",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 45 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -2552,21 +2507,6 @@
       "video_url": null
     },
     {
-      "title": "MidWeek Tapes w/ Iulian Morar",
-      "artist": "Iulian Morar",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-17 20:00:00",
-      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-35",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl BRUTUS LIVE: Taxawal",
       "artist": "ctrl BRUTUS LIVE: Taxawal",
       "venue": "Control Club - Berlin Room",
@@ -3015,6 +2955,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Dirty Disco w/ Eugen R\u0103descu",
+      "artist": "Dirty Disco w/ Eugen R\u0103descu",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-06-27 23:00:00",
+      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-6",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -3211,21 +3166,6 @@
       "description": "propune o perspectiv\u0103 proasp\u0103t\u0103, profund\u0103 \u0219i actual\u0103 asupra modului \u00een care ne raport\u0103m la cei din jur \u0219i la noi \u00een\u0219ine. Spectacolul devine o introspec\u021bie lucid\u0103, traversat\u0103 de ironie fin\u0103, care pune sub semnul \u00eentreb\u0103rii grani\u021ba fragil\u0103 dintre ceea ce este acceptabil \u0219i uman \u0219i ceea ce dep\u0103\u0219e\u0219te limitele conven\u021bionale. surprinde o reuniune aparent banal\u0103 \u00een Delta Dun\u0103rii, a unei familii extinse, ",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/09/189bf454-20dd-464f-8d05-de7167b07e13-717x1024.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "TRISTE\u021aE \u0218I BUCURIE \u00ceN VIA\u021aA GIRAFELOR",
-      "artist": "de Tiago Rodrigues",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/tristete-si-bucurie-in-viata-girafelor/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "este una dintre personalit\u0103\u021bile marcante ale teatrului contemporan, aflat \u00een prezent la al doilea mandat ca director artistic al prestigiosului Festival d\u2019Avignon. De-a lungul carierei sale profesionale de peste 25 de ani, crea\u021biile sale au fost recunoscute pentru abilitatea de a dizolva grani\u021bele dintre teatru \u0219i diverse realit\u0103\u021bi, provoc\u00e2nd permanent percep\u021bia publicului asupra fenomenului istor",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/11/TRISTETE-SI-BUCURIE-IN-VIATA-GIRAFELOR-717x1024.png",
       "video_url": null
     },
     {
@@ -3664,21 +3604,6 @@
       "video_url": null
     },
     {
-      "title": "Perspective grandioase",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-06-17 19:30:00",
-      "url": "https://nottara.ro/spectacol/perspective-grandioase/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
       "title": "Vara \u00een care am disp\u0103rut",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -3736,36 +3661,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1274/1711/large_afis_Romeo.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Bolta cereasc\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.tnb.ro/ro/bolta-cereasca",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/792/981/large_Afis_bolta_web.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Adio, domnule Haffmann",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.tnb.ro/ro/adio-domnule-haffmann",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/710/831/large_afis_Adio_dl_Haffmann.jpg",
       "video_url": null
     },
     {
@@ -4084,21 +3979,6 @@
       "video_url": null
     },
     {
-      "title": "Dineu cu pro\u015fti",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.tnb.ro/ro/dineu-cu-prosti-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "La c\u00e2\u021biva oameni distan\u021b\u0103 de tine",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -4219,21 +4099,6 @@
       "video_url": null
     },
     {
-      "title": "La c\u00e2\u021biva oameni distan\u021b\u0103 de tine",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.tnb.ro/ro/la-cativa-oameni-distanta-de-tine",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
-      "video_url": null
-    },
-    {
       "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -4261,21 +4126,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "IULIA",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mic\u0103",
-      "date": "2026-06-17 19:30:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/iulia/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eLa vremea ei \u0219i mult dup\u0103 ce a fost scris\u0103, Domni\u0219oara Iulia, de August Strindberg, \u0219i-a \u0219ocat spectatorii: textul vorbe\u0219te despre oameni care \u00ee\u0219i acord\u0103 libertatea de a face ceva nepermis de societate. Ne-am dorit s\u0103 o aducem pe Domni\u0219oara Iulia \u00een prezent, pentru a-i renegocia profunzimile \u0219i veridicitatea. Ne-am \u00eentrebat ce ar mai putea [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/02/Design-fara-titlu-1-1024x576.png",
       "video_url": null
     },
     {
@@ -4322,21 +4172,6 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
-    },
-    {
-      "title": "OEDIP",
-      "artist": "Sofocle",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.bulandra.ro/oedip/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Andrei \u0218erban revine la Bulandra cu tulbur\u0103torul spectacolOedip, o montare a vremurilor noastre, \u00een care miturile antice se transform\u0103 \u00een breaking news. Tragedia lui Sofocle este curajos reinterpretat\u0103 de multipremiatul regizor \u0219i dramaturg britanic Robert Icke, \u00eentr-o versiune proasp\u0103t\u0103 \u0219i modern\u0103, care p\u0103streaz\u0103 temele esen\u021biale: cunoa\u0219terea de sine, adev\u0103r, vin\u0103, destin, liber arbitru \u0219i arogan\u021ba de a crede c\u0103 \u0219tim tot \u0219i de a promite ce nu \u0219tim. Toate acestea sunt aduse \u00een contextul oamen...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Oedip-2023-foto-Andrei-si-Maria-Gindac-TwoBugs-18-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/_KSIg4Ug9no?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Foedip%2F&aoriginsup=1&vf=1"
     },
     {
       "title": "TACHE, IANKE \u0218I CAD\u00c2R",
@@ -4487,21 +4322,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2025/04/Arta-2010-foto-Andrei-Gindac-12-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/tolVYSw9lK0"
-    },
-    {
-      "title": "ANATOMIA UNUI CLI\u0218EU (spectacol g\u0103zduit \u2013 Teatrul Stela Popescu)",
-      "artist": "adaptare dup\u0103 un text de Alexandru Doru Sp\u0103taru",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/anatomia-unui-cliseu-spectacol-gazduit-teatrul-stela-popescu/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": ", exploreaz\u0103 acel moment dureros de banal, dar devastator. O femeie se treze\u0219te \u00eentr-un scenariu \u201cmie nu mi se poate \u00eent\u00e2mpla a\u0219a ceva\u201d, adic\u0103 \u00eentr-un triunghi amoros. Oamenii se \u00eent\u00e2lnesc, se iubesc \u0219i se despart pentru c\u0103 au f\u0103cut impruden\u021ba de a se cunoa\u0219te prea bine. C\u00e2nd e\u0219ti tr\u0103dat de cei mai apropia\u021bi oameni, instinctul \u00ee\u021bi dicteaz\u0103 r\u0103zbunarea. Dar ce ar fi s\u0103 alegi \u00een\u021belegerea? S\u0103 accep\u021bi ",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2026/01/Anatomia-unui-cliseu-2026-afis-732x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/e4nsLfKR7ec?si=BM3H-_Igk5QJSBCe?rel=0&controls=0&showinfo=0"
     },
     {
       "title": "Allegro, ma non troppo",
@@ -4747,21 +4567,6 @@
       "title": "Vizite ghidate la Muzeu",
       "artist": null,
       "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-17 15:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
       "date": "2026-06-18 14:00:00",
       "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
       "source": "tnb",
@@ -4984,21 +4789,6 @@
       "video_url": null
     },
     {
-      "title": "VIRGIL OG\u0102\u0218ANU - O VIA\u021a\u0102 DEDICAT\u0102 SCENEI",
-      "artist": "via\u021b\u0103, pe care marele actor \u00eei va s\u0103rb\u0103tori pe scen\u0103, al\u0103turi de publicul s\u0103u.",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://docs.google.com/forms/d/e/1FAIpQLSdgZeIAWmxc-oxzGC1vWEJrl29rLt8rl6AcDTp_kKnfpgI5lA/viewform",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Virgil Og\u0103\u0219anu, O via\u021b\u0103 dedicat\u0103 scenei- LIST\u0102 DE A\u0218TEPTARE\nMiercuri, 17 iunie, ora 19:00, Sala Liviu Ciulei\n\nAten\u021bie! \u00cen cazul \u00een care se va elibera loc, ve\u021bi primi confirmarea rezerv\u0103rii pe adresa de e-mail.",
-      "description_source": "scraped",
-      "image_url": "https://lh3.googleusercontent.com/0LuX4JWy_Mvq_Yc0u5en2wE1H3EfzXslrZsVcVeCYlT-VEUIUlqvQcN2P40BXHavxTp7da2r36GBUyg=w1200-h630-p",
-      "video_url": null
-    },
-    {
       "title": "FUNNY GAMES",
       "artist": "Regia: Botond Nagy",
       "venue": "Teatrul Grivi\u021ba 53",
@@ -5146,6 +4936,21 @@
       "description": null,
       "description_source": null,
       "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "TRISTE\u021aE \u0218I BUCURIE \u00ceN VIA\u021aA GIRAFELOR",
+      "artist": "de Tiago Rodrigues",
+      "venue": "Teatrul Mic - Sala Studio",
+      "date": "2026-06-21 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/tristete-si-bucurie-in-viata-girafelor/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "este una dintre personalit\u0103\u021bile marcante ale teatrului contemporan, aflat \u00een prezent la al doilea mandat ca director artistic al prestigiosului Festival d\u2019Avignon. De-a lungul carierei sale profesionale de peste 25 de ani, crea\u021biile sale au fost recunoscute pentru abilitatea de a dizolva grani\u021bele dintre teatru \u0219i diverse realit\u0103\u021bi, provoc\u00e2nd permanent percep\u021bia publicului asupra fenomenului istor",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/11/TRISTETE-SI-BUCURIE-IN-VIATA-GIRAFELOR-717x1024.png",
       "video_url": null
     }
   ],
@@ -6531,21 +6336,6 @@
       "video_url": null
     },
     {
-      "title": "PRODIGIEUSES / MISTERUL GEMENELOR",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-17 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-prodigieuses-misterul-gemenelor",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Fr\u00e9d\u00e9ric Potier, Valentin PotierCast:Camille Small, M\u00e9lanie Robert, Franck Dubosc, Isabelle Carr\u00e9, August WittgensteinGenre:Biografic, Dram\u0103, Muzic\u0103Duration:1h 48mCountry:Fran\u021baLanguage:EN, FR, DEYear:2024 Sinopsis:Gemenele Claire \u0219i Jeanne, pasionate pianiste, \u00eencep \u00eencrez\u0103toare cursurile prestigiosului Conservator din Karlsruhe, dup\u0103 o preg\u0103tire spartan\u0103, coordonat\u0103 cu insisten\u021b\u0103 de ambi\u021biosul lor tat\u0103. \u00cen timpul repeti\u021biilor pentru un concert hot\u0103r\u00e2tor \u00een cariera lor, Claire \u0219i apoi ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-prodigieuses-misterul-gemenelor-0mJ.webp",
-      "video_url": "https://www.youtube.com/embed/Aok-hIvp8Ac?si=JGR229VeaeB4pxPa"
-    },
-    {
       "title": "LA GRAZIA / GRA\u021aIEREA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -6723,21 +6513,6 @@
       "description": "ENTRE DEUX S\u0152URS\u2014 Cl\u00e9ment C\u00e9ard and Anne-Sophie Gousset, 2022, 7min LOLA ET LE PIANO \u00c0 BRUITS\u2014 Augusto Zanovello, 2024, 26min",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-calup-animat-pentru-copii-familii-desenate-program-curatorial-special-unatc-fara-contur-pfI.webp",
-      "video_url": null
-    },
-    {
-      "title": "Tururi ghidate cu Lia \u0219i Dan Perjovschi | 17 iunie | orele 15:00 & 18:00",
-      "artist": null,
-      "venue": "ARCUB - Hanul Gabroveni",
-      "date": "2026-06-17 19:00:00",
-      "url": "https://arcub.ro/eveniment/tururi-ghidate-cu-lia-si-dan-perjovschi-17-iunie-orele-15-00-and-18-00",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Participan\u021bii vor putea afla cum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile celor doi mari arti\u0219ti \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani. Expozi\u021bia este deschis\u0103 publicului p\u00e2n\u0103 la data de 26 iulie \u0219i activeaz\u0103toate spa\u021biile Hanului Gabroveni.\u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201d pune \u00een dialog practicile celor doi arti\u0219ti: de la desenele \u0219i interven\u021biile murale incisive ale lui Dan Perjovschi, inspirate de actualitatea p...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     },
     {
