@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-06-19T12:58:19.531042",
+  "scraped_at": "2026-06-20T11:11:02.549814",
   "music_events": [
-    {
-      "title": "Concert simfonic",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://oveit.com/hub/event/concert-simfonic-dz0LvJz5",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
       "artist": null,
@@ -77,21 +62,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl LIVE: Deki Alem [SE], Andradonna [DE/RO]",
-      "artist": "Deki Alem [SE], Andradonna [DE/RO]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-live-deki-alem-se",
-      "source": "control",
-      "category": "music",
-      "price": "95.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/2AK3F4tVjxYuqSGefozy52",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: The Veils [UK]",
       "artist": "The Veils [UK]",
       "venue": "Control Club - Berlin Room",
@@ -116,81 +86,6 @@
       "category": "music",
       "price": "80.00 lei",
       "spotify_url": "https://open.spotify.com/artist/1MDw0zSUU0XtI9D5JgEZH5",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "ALEXANDRA C\u0102PIT\u0102NESCU @ Bikers For Humanity Rock Fest",
-      "artist": "ALEXANDRA C\u0102PIT\u0102NESCU",
-      "venue": "Bikers For Humanity Rock Fest, Brezoi",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://bikersforhumanity.ro/en/bikers-for-humanity-rock-fest-v-2/",
-      "source": "bfh",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/6C2GlsTc6EVC7uKar8F1G0",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "BUCOVINA @ Bikers For Humanity Rock Fest",
-      "artist": "BUCOVINA",
-      "venue": "Bikers For Humanity Rock Fest, Brezoi",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://bikersforhumanity.ro/en/bikers-for-humanity-rock-fest-v-2/",
-      "source": "bfh",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/2Z912EMB8D91VQT4rFUEX1",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "LOVEBITE @ Bikers For Humanity Rock Fest",
-      "artist": "LOVEBITE",
-      "venue": "Bikers For Humanity Rock Fest, Brezoi",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://bikersforhumanity.ro/en/bikers-for-humanity-rock-fest-v-2/",
-      "source": "bfh",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/4H1S8RTYv4vN3SiM5uSZSa",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "TIMPURI NOI @ Bikers For Humanity Rock Fest",
-      "artist": "TIMPURI NOI",
-      "venue": "Bikers For Humanity Rock Fest, Brezoi",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://bikersforhumanity.ro/en/bikers-for-humanity-rock-fest-v-2/",
-      "source": "bfh",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/0D3KNqpUuvpixxHHX1cUWe",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "TROOPER @ Bikers For Humanity Rock Fest",
-      "artist": "TROOPER",
-      "venue": "Bikers For Humanity Rock Fest, Brezoi",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://bikersforhumanity.ro/en/bikers-for-humanity-rock-fest-v-2/",
-      "source": "bfh",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/2bT4eELLlSuDTtZWV2Z3jN",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1577,21 +1472,6 @@
       "video_url": null
     },
     {
-      "title": "Bucharest Opera Festival",
-      "artist": "BOF",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://operanb.ro/spectacol/bucharest-opera-festival-15/#190620260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Carmen \u2013 Bucharest Opera Festival",
       "artist": "BOF",
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
@@ -2447,21 +2327,6 @@
       "video_url": null
     },
     {
-      "title": "ANA COMAN \u2013 FEATURAMA  2",
-      "artist": "ANA COMAN",
-      "venue": "Quantic",
-      "date": "2026-06-19 00:00:00",
-      "url": "https://quantic.pub/eveniment/ana-coman-featurama-2/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/4j9MwaZCANMjIyYLAC4pAW",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "JUNGLE ROT \u2013 RATS OF GOMORRAH \u2013 CRIMENA",
       "artist": "JUNGLE ROT",
       "venue": "Quantic",
@@ -2702,21 +2567,6 @@
       "video_url": null
     },
     {
-      "title": "Buniku & 0vE",
-      "artist": "Buniku & 0vE",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-19 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=buniku-0ve-1",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Paradis Paradis Records Fair",
       "artist": "Paradis Paradis Records Fair",
       "venue": "Control Club - Front Room",
@@ -2835,6 +2685,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "New Disorder",
+      "artist": "New Disorder",
+      "venue": "Control Club - Front Room",
+      "date": "2026-06-27 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=new-disorder-4",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2929,36 +2794,6 @@
       "video_url": null
     },
     {
-      "title": "EU SUNT PROPRIA MEA SO\u021aIE",
-      "artist": "de Doug Wright",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/charlotte/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "care prezint\u0103 o poveste plin\u0103 de amintiri, nuan\u021be \u0219i emo\u021bii puternice ale lui Charlotte von Mahlsdorf, un personaj cu multiple straturi \u0219i secrete, din renumitul text, bazat pe o poveste real\u0103. Spectacolul exploreaz\u0103 complexitatea identit\u0103\u021bii \u0219i lupta pentru autenticitate, reu\u0219ind s\u0103 \u00eembine umorul, dramatismul \u0219i introspec\u021bia \u00eentr-o poveste tulbur\u0103toare despre identitate \u0219i autodescoperire.",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/01/Afis-Charlotte-copy-716x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/42P3d6OeMGM?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "CEA MAI BUN\u0102 ZI DIN AN",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://teatrulmetropolis.ro/spectacol/cea-mai-buna-zi-din-an/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201cSepararea a fost un fenomen foarte prezent \u00een via\u021ba mea \u00eencep\u00e2nd cu anul trecut. Aici nu vorbesc doar de persoane. Vorbesc de locuri, contexte, experien\u021be. Cred c\u0103 avem mult mai multe de c\u00e2\u0219tigat dac\u0103 nu mai \u00eencerc\u0103m s\u0103 \u021binem cu noi ceva ce timpul inevitabil ne va lua. Acest spectacol este un \u00eendemn pentru mine, [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/03/pancarte-site-cea-mai-buna-ziu-25-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "CEA MAI BUN\u0102 ZI DIN AN",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -3001,21 +2836,6 @@
       "description": "propune o perspectiv\u0103 proasp\u0103t\u0103, profund\u0103 \u0219i actual\u0103 asupra modului \u00een care ne raport\u0103m la cei din jur \u0219i la noi \u00een\u0219ine. Spectacolul devine o introspec\u021bie lucid\u0103, traversat\u0103 de ironie fin\u0103, care pune sub semnul \u00eentreb\u0103rii grani\u021ba fragil\u0103 dintre ceea ce este acceptabil \u0219i uman \u0219i ceea ce dep\u0103\u0219e\u0219te limitele conven\u021bionale. surprinde o reuniune aparent banal\u0103 \u00een Delta Dun\u0103rii, a unei familii extinse, ",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/09/189bf454-20dd-464f-8d05-de7167b07e13-717x1024.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Perspective grandioase",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-06-19 19:30:00",
-      "url": "https://nottara.ro/spectacol/perspective-grandioase/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O pies\u0103 inteligent\u0103, profund\u0103 \u0219i provocatoare, dulce-amar\u0103, despre comunicare \u0219i iubire \u00een c\u0103snicie, despre nevoia de a te sim\u021bi viu \u0219i la b\u0103tr\u00e2ne\u021be, \u201ePerspective grandioase\u201d interogheaz\u0103 cine suntem dincolo de rolurile sociale \u0219i familiale asumate. Un cuplu de seniori, stabilit undeva \u00een Statele Unite, la resortul pentru v\u00e2rstnici \u201ePerspective grandioase\u201d, se preg\u0103te\u0219te \u00een lini\u0219te de [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2025/02/perspective-grandioase-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -3484,21 +3304,6 @@
       "video_url": null
     },
     {
-      "title": "Gertrude",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.tnb.ro/ro/gertrude",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/940/1194/large_Afis_final.jpg",
-      "video_url": null
-    },
-    {
       "title": "Dineu cu pro\u015fti",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -3904,21 +3709,6 @@
       "video_url": null
     },
     {
-      "title": "Contrac\u021bii",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.tnb.ro/ro/contractii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1117/1443/large_contractii_web.jpg",
-      "video_url": null
-    },
-    {
       "title": "Freak Show vol. 2",
       "artist": null,
       "venue": "TNB - Sala Pictura",
@@ -4069,21 +3859,6 @@
       "video_url": "https://www.youtube.com/embed/tolVYSw9lK0"
     },
     {
-      "title": "Allegro, ma non troppo",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.tnb.ro/ro/allegro-ma-non-troppo",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/351/654/large_ALLEGRO_distributie_completa_variabila_2019.jpg",
-      "video_url": null
-    },
-    {
       "title": "Despre oameni, doctori \u0219i rinoceri",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -4111,21 +3886,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/312/356/large_BARFE_AFIS_final.jpg",
-      "video_url": null
-    },
-    {
-      "title": "FURTUNA",
-      "artist": "William Shakespeare",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.bulandra.ro/furtuna/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00centr-o versiune muzical\u0103 a celebrului text shakespearian, spectatorul e invitat \u00een \u201cinsula de sunete\u201d construit\u0103 de Ariel unde poate urm\u0103ri cum realitatea personajelor se schimb\u0103 p\u00e2n\u0103 c\u00e2nd acestea \u201cnu \u00ee\u015fi mai dau seama ce e vis \u015fi ce nu\u201d. \u00cen jungla de microfoane, cabluri, instrumente \u015fi proiec\u0163ii video, unii actori joac\u0103 mai multe roluri: Caliban devine Antonio, apoi se transform\u0103 \u00een Ferdinand, iar Regele e, de fapt, un Prospero urm\u0103rit de acela\u015fi cu\u0163it criminal.",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2022/09/Furtuna-2021-foto-Cristian-Ivanciu-09-scaled.jpg",
       "video_url": null
     },
     {
@@ -4189,21 +3949,6 @@
       "video_url": "https://www.youtube.com/embed/96JJ9LsF6KA"
     },
     {
-      "title": "Noaptea lui Helver",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.tnb.ro/ro/noaptea-lui-helver-2021",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/762/921/large_afis_Noapte_lui_Helver.JPG",
-      "video_url": null
-    },
-    {
       "title": "Turul ghidat al TNB",
       "artist": null,
       "venue": "TNB - foaier Sala \"Ion Caramitru\"",
@@ -4262,36 +4007,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
       "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Dineu cu pro\u015fti",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-19 19:00:00",
-      "url": "https://www.tnb.ro/ro/dineu-cu-prosti-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-19 12:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -6036,21 +5751,6 @@
       "video_url": null
     },
     {
-      "title": "PARTIR UN JOUR / RE\u021aETA FERICIRII",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-19 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-partir-un-jour-intr-o-zi-vei-pleca",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Am\u00e9lie BonninCast:Juliette Armanet, Bastien Bouillon, Fran\u00e7ois RollinGenre:Comedie, Dram\u0103Duration:1h 38mCountry:Fran\u021baLanguage:FRYear:2025 Sinopsis:\u00cen timp ce C\u00e9cile se preg\u0103te\u0219te s\u0103-\u0219i deschid\u0103 propriul restaurant \u0219i s\u0103-\u0219i \u00eemplineasc\u0103 visul, trebuie s\u0103 se \u00eentoarc\u0103 de urgen\u021b\u0103 \u00een satul natal, dup\u0103 infarctul tat\u0103lui s\u0103u. Departe de agita\u021bia vie\u021bii pariziene, \u00eent\u00e2lne\u0219te din \u00eent\u00e2mplare iubirea din copil\u0103rie; amintirile revin, iar certitudinile ei \u00eencep s\u0103 se clatine\u2026",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-partir-un-jour-intr-o-zi-vei-pleca-mNM.webp",
-      "video_url": "https://www.youtube.com/embed/mexHkipeRbA?si=M_PoGxVoAvgoNY2x"
-    },
-    {
       "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -6351,21 +6051,6 @@
       "video_url": null
     },
     {
-      "title": "The Menagerie testam impreuna jocuri inventate sau mai putin cunoscute",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-06-19 20:00:00",
-      "url": "https://improteca.ro/2026/06/17/the-menagerie-testam-impreuna-jocuri-inventate-sau-mai-putin-cunoscute-19-iunie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\ud83e\udd98 The Menagerie \ud83e\udebf este un eveniment experimental de improvizatie in care improvizatorii urca pe scena si propun: \ud83d\udc28 jocuri de short form mai putin jucate sau; \ud83d\udc3c jocuri de short form modificate sau;",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "\ufe0f IMPROTECA SUMMER SCHOOL with Miki",
       "artist": null,
       "venue": "Where: Improteca Theatre",
@@ -6423,6 +6108,21 @@
       "description": "Haide si tu la \ud83c\udf52 Cherry Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 26 iunie 2026. De ce? Pentru ca suntem in luna Cire\u0219ar. Ti-ai pus vreodata una din urmatoarele intrebari:\u2753 Vrei sa-ti mai exersezi abilitatile de improvizator, dar n-ai destul timp pe scena?\u2753 Vrei sa incerci niste jocuri de improvizatie cu un numar cat mai diferit de improvizatori?\u2753 Te-ai saturat de colegii de trupa si ai vrea sa incerci ceva nou, dar ti-e frica de angajamente?\u2753 Vrei sa incerci improvizatia inainte sa te inscrii la un curs de 3 lun...",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Tur ghidat \u00een expozi\u021bia Cruci \u00eendoite",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-06-26 14:00:20.449000",
+      "url": "https://www.mnac.ro/event/1376/Tur%20ghidat%20%C3%AEn%20expozi%C8%9Bia%20Cruci%20%C3%AEndoite/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Tur ghidat",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     }
   ]
