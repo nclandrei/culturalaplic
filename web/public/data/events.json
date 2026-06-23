@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-22T14:38:42.302947",
+  "scraped_at": "2026-06-23T12:06:09.886790",
   "music_events": [
     {
       "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
@@ -1322,21 +1322,6 @@
       "video_url": null
     },
     {
-      "title": "Noh in Resonance \u2013 Kiyotsune \u2013 Bucharest Opera Festival",
-      "artist": "BOF",
-      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
-      "date": "2026-06-22 19:00:00",
-      "url": "https://operanb.ro/spectacol/noh-in-resonance-kiyotsune-bucharest-opera-festival/#220620260",
-      "source": "operanb",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia) @ G\u0103r\u00e2na Jazz Festival",
       "artist": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia)",
       "venue": "G\u0103r\u00e2na Jazz Festival",
@@ -2415,6 +2400,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: GAAP, Moss Farai & Nipple's Delight",
+      "artist": "GAAP, Moss Farai & Nipple's Delight",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-06-23 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=moss-farai-nipple-s-delight",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/01JZqfEqR2iECPpP2uQcUV",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Ground Control w/ Leo",
+      "artist": "Ground Control w/ Leo",
+      "venue": "Control Club - Front Room",
+      "date": "2026-06-25 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ground-control-w-leo-11",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2551,66 +2566,6 @@
       "description": "Un spectacol ce surprinde cu fine\u021be nuan\u021bele dramei din celebra poveste a lui Ingmar Bergman, vulnerabilitatea \u0219i curajul asum\u0103rii gre\u0219elilor sunt cheia care armonizeaz\u0103 dou\u0103 suflete r\u0103t\u0103cite. Dup\u0103 mul\u021bi ani, Charlotte, o pianist\u0103 celebr\u0103 \u0219i aplaudat\u0103 \u00een toat\u0103 lumea, \u00ee\u0219i viziteaz\u0103 fiica, undeva, \u00eentr-un sat pierdut de lume, la casa parohial\u0103 unde locuie\u0219te al\u0103turi de [\u2026]",
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Melodie var\u0219ovian\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-06-22 18:00:00",
-      "url": "https://www.tnb.ro/ro/melodie-varsoviana",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1101/1404/large_Afis_melodie.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Colec\u021bionarul",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-22 18:00:00",
-      "url": "https://www.tnb.ro/ro/colectionarul",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1011/1276/large_Colectionarul_TNB.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Frumoasa c\u0103l\u0103torie a ur\u0219ilor panda...",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-22 18:30:00",
-      "url": "https://www.tnb.ro/ro/frumoasa-calatorie-a-ursilor-panda-povestita-de-un-saxofonist-care-avea-o-iubita-la-frankfurt",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1088/1406/large_Panda_nou.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Gai\u021bele",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-22 20:00:00",
-      "url": "https://www.tnb.ro/ro/gaitele-23",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/923/1139/large_gaitele_startickets_image118732.jpg",
       "video_url": null
     },
     {
@@ -3319,21 +3274,6 @@
       "video_url": "https://www.youtube.com/embed/tolVYSw9lK0"
     },
     {
-      "title": "Despre oameni, doctori \u0219i rinoceri",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-22 19:00:00",
-      "url": "https://www.tnb.ro/ro/despre-oameni-doctori-si-rinoceri",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1190/1581/large_doctori_bun.jpg",
-      "video_url": null
-    },
-    {
       "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -3619,21 +3559,6 @@
       "video_url": null
     },
     {
-      "title": "FUNNY GAMES",
-      "artist": "Regia: Botond Nagy",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-06-22 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/funny-games-",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
-      "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "5+3=9",
       "artist": "Concept \u0219i coregrafie: \u0218tefan Lupu",
       "venue": "Teatrul Grivi\u021ba 53",
@@ -3720,21 +3645,6 @@
       "spotify_url": null,
       "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
       "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Mai e vreun candidat?",
-      "artist": null,
-      "venue": "TNB - Amfiteatru",
-      "date": "2026-06-22 21:30:00",
-      "url": "https://www.tnb.ro/ro/mai-e-vreun-candidat",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
       "image_url": null,
       "video_url": null
     },
@@ -5301,21 +5211,6 @@
       "video_url": null
     },
     {
-      "title": "TUNER / TUNER - SUNETUL PERFECT ARE UN PRE\u021a",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-22 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-tuner-tuner-sunetul-perfect-are-un-pret",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Daniel RoherCast:Leo Woodall, Dustin Hoffman, Havana Rose Liu, Lior Raz, Tovah FeldshuhGenre:dram\u0103, crim\u0103, thriller, romanticDuration:1h 49mCountry:SUALanguage:ENYear:2026 Sinopsis:Tuner este primul lungmetraj narativ al regizorului premiat cu Oscar, Daniel Roher, \u0219i spune povestea lui Leo Woodall, un talentat acordor de piane, al c\u0103rui sim\u021b ascu\u021bit al auzului atrage aten\u021bia infractorilor, auzul lui fiind util at\u00e2t pentru acordarea unui Steinway, c\u00e2t \u0219i pentru deschiderea seifurilor. Od",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-tuner-tuner-sunetul-perfect-are-un-pret-BO8.webp",
-      "video_url": "https://www.youtube.com/embed/pm6Il49FzGI?si=rvc_UsFVdxpkWjVt"
-    },
-    {
       "title": "ORPHAN / ORFAN",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -5704,6 +5599,36 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
+    },
+    {
+      "title": "UN AMOUR DE SWANN / O IUBIRE A LUI SWANN",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-07-09 18:00:00",
+      "url": "https://eventbook.ro/film/bilete-un-amour-de-swann-o-iubire-a-lui-swann-retrospectiva-tiff-25",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Volker Schl\u00f6ndorffCast:Jeremy Irons, Ornella Muti, Alain DelonGenre:Dram\u0103Duration:1h 50mCountry:Fran\u021baLanguage:FRYear:1984 Sinopsis:O zi din via\u0163a lui Charles Swann, un t\u00e2n\u0103r admirat \u00een \u00eenalta societate pentru rafinamentul s\u0103u artistic. Marea pasiune a vie\u0163ii sale este Odette de Cr\u00e9cy, c\u0103reia ar vrea s\u0103-i pun\u0103 \u00eentreg Parisul la picioare.",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-un-amour-de-swann-o-iubire-a-lui-swann-retrospectiva-tiff-25-E5L.webp",
+      "video_url": "https://www.youtube.com/embed/eoJtAzv9sn4"
+    },
+    {
+      "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-07-10 18:00:00",
+      "url": "https://eventbook.ro/film/bilete-my-father-s-shadow-umbra-tatalui-meu-retrospectiva-tiff-25",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Akinola DaviesCast:Sope Dirisu, Godwin Egbo, Chibuike Marvelous Egbo, Ef\u00f2n Wini, Adesina McCoy BabalolaGenre:Dram\u0103Duration:1h 34mCountry:Nigeria, Marea BritanieLanguage:EN, YOYear:2025 Sinopsis:Nigeria, 1993. O na\u021biune \u00eentreag\u0103 a\u0219teapt\u0103 cu sufletul la gur\u0103 rezultatele unor alegeri preziden\u021biale care vor hot\u0103r\u00ee soarta democra\u021biei. Prin toat\u0103 agita\u021bia, un tat\u0103 ia \u021bara la pas \u00eempreun\u0103 cu copiii s\u0103i, \u00een \u00eencercarea de a recupera ni\u0219te salarii nepl\u0103tite. \u00cen furtuna politic\u0103 a momentului, \u00eens\u0103",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-retrospectiva-tiff-25-8vE.webp",
+      "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
     }
   ]
 }
