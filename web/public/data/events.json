@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-23T12:06:09.886790",
+  "scraped_at": "2026-06-24T11:51:32.747861",
   "music_events": [
     {
       "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
@@ -1505,21 +1505,6 @@
       "title": "Athenaeum Summer Festival",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-23 19:00:00",
-      "url": "https://oveit.com/hub/event/athenaeum-summer-festival-439ZGYnv",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 65 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Athenaeum Summer Festival",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
       "date": "2026-06-27 19:00:00",
       "url": "https://oveit.com/hub/event/athenaeum-summer-festival-w7rGwxzV",
       "source": "Ateneul Rom\u00e2n",
@@ -2057,21 +2042,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl BRUTUS LIVE: Taxawal",
-      "artist": "ctrl BRUTUS LIVE: Taxawal",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-06-23 21:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-brutus-live-taxawal",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "MidWeek Tapes w/ Iulian Morar",
       "artist": "Iulian Morar",
       "venue": "Control Club - Front Room",
@@ -2372,21 +2342,6 @@
       "video_url": null
     },
     {
-      "title": "BRUTUS NIGHTS: Moss Farai & Nipple's Delight",
-      "artist": "Moss Farai & Nipple's Delight",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-23 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=moss-farai-nipple-s-delight",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "New Disorder",
       "artist": "New Disorder",
       "venue": "Control Club - Front Room",
@@ -2402,21 +2357,6 @@
       "video_url": null
     },
     {
-      "title": "BRUTUS NIGHTS: GAAP, Moss Farai & Nipple's Delight",
-      "artist": "GAAP, Moss Farai & Nipple's Delight",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-06-23 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=moss-farai-nipple-s-delight",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/01JZqfEqR2iECPpP2uQcUV",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Ground Control w/ Leo",
       "artist": "Ground Control w/ Leo",
       "venue": "Control Club - Front Room",
@@ -2426,6 +2366,36 @@
       "category": "music",
       "price": "30.00 lei",
       "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Corp.Cast w/ Tabideee, Madame 8, von B\u00fclove",
+      "artist": "Corp.Cast w/ Tabideee, Madame 8, von B\u00fclove",
+      "venue": "Control Club - Front Room",
+      "date": "2026-06-28 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=corp-cast-w-tabideee-madame-8-von-buelove",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/1vgQksyJ0IVz8y9XerEOy3",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Drago\u0219 Rusu, Cliza, Scoromide",
+      "artist": "Drago\u0219 Rusu, Cliza, Scoromide",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-03 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=drago%C8%99-rusu-cliza-scoromide",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": "https://open.spotify.com/artist/5nRE1ooCXZf1QTsalc6vH4",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2854,36 +2824,6 @@
       "video_url": null
     },
     {
-      "title": "Procesul lui Eichmann",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-23 19:00:00",
-      "url": "https://www.tnb.ro/ro/procesul-lui-eichmann",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/989/1329/large_afis_bun.jpg",
-      "video_url": null
-    },
-    {
-      "title": "P\u0103durea sp\u00e2nzura\u0163ilor",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-23 19:00:00",
-      "url": "https://www.tnb.ro/ro/padurea-spanzuratilor",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/584/635/large_Afis_final_bun_Padurea.jpg",
-      "video_url": null
-    },
-    {
       "title": "Frumos e \u00een septembrie la Vene\u021bia",
       "artist": null,
       "venue": "TNB - Sala Pictura",
@@ -3094,21 +3034,6 @@
       "video_url": null
     },
     {
-      "title": "Ceasu` \u0219i c\u0103ma\u0219a miresii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-23 19:00:00",
-      "url": "https://www.tnb.ro/ro/ceasu-si-camasa-miresii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -3166,21 +3091,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
-      "video_url": null
-    },
-    {
-      "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-23 19:00:00",
-      "url": "https://www.tnb.ro/ro/barfe-zvonuri-si-minciuni",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/312/356/large_BARFE_AFIS_final.jpg",
       "video_url": null
     },
     {
@@ -3362,21 +3272,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
       "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-23 15:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -5059,21 +4954,6 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
-    },
-    {
-      "title": "PORTRAIT DE LA JEUNE FILLE EN FEU / PORTRETUL UNEI FEMEI \u00ceN FL\u0102C\u0102RI",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-23 20:30:00",
-      "url": "https://eventbook.ro/film/bilete-portrait-de-la-jeune-fille-en-feu-portretul-unei-femei-in-flacari-women-in-frame",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:C\u00e9line SciammaCast:No\u00e9mie Merlant, Ad\u00e8le Haenel, Lu\u00e0na BajramiGenre:Dram\u0103, Romantic, DragosteDuration:2h 01mCountry:Fran\u021baLanguage:FRYear:2019 Sinopsis:Marianne este o pictori\u021b\u0103 angajat\u0103 s\u0103 picteze potretul lui H\u00e9lo\u00efse, o t\u00e2n\u0103r\u0103 aristocrat\u0103 \u00eentoars\u0103 de cur\u00e2nd de la m\u0103n\u0103stire, pe care o a\u0219teapt\u0103 un mariaj nedorit. H\u00e9lo\u00efse se opune destinului \u0219i refuz\u0103 s\u0103 pozeze. De aceea, Marianne va fi nevoit\u0103 s\u0103 o picteze \u00een secret. Introdus\u0103 \u00een cercul ei ca \u00eenso\u021bitoare, ea o prive\u0219te.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-portrait-de-la-jeune-fille-en-feu-portretul-unei-femei-in-flacari-women-in-frame-CbC.webp",
-      "video_url": "https://www.youtube.com/embed/nlJe8i0AlXg?si=VKHPQU-5CcZzDW5R"
     },
     {
       "title": "FOUR DAUGHTERS / PATRU FIICE",
