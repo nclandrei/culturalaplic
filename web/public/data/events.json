@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-24T11:51:32.747861",
+  "scraped_at": "2026-06-25T11:47:01.714264",
   "music_events": [
     {
       "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
@@ -1490,21 +1490,6 @@
       "title": "Athenaeum Summer Festival",
       "artist": null,
       "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://oveit.com/hub/event/athenaeum-summer-festival-439ZGYnv",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 65 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Athenaeum Summer Festival",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
       "date": "2026-06-27 19:00:00",
       "url": "https://oveit.com/hub/event/athenaeum-summer-festival-w7rGwxzV",
       "source": "Ateneul Rom\u00e2n",
@@ -2042,21 +2027,6 @@
       "video_url": null
     },
     {
-      "title": "MidWeek Tapes w/ Iulian Morar",
-      "artist": "Iulian Morar",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-24 20:00:00",
-      "url": "https://www.control-club.ro/event/?slug=midweek-tapes-w-iulian-morar-36",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Vara mea cu HARA",
       "artist": "Vara mea cu HARA",
       "venue": "Quantic",
@@ -2400,6 +2370,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "EVE+POL [LIVE], OKTAI, BBUBU, Corvin & Baron P.",
+      "artist": "EVE+POL [LIVE], OKTAI, BBUBU, Corvin & Baron P.",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-06-26 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=eve-pol-live-oktai-bbubu-corvin-baron-p",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/3sdRSlUhQZIGrk8AUJJCQE",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2536,21 +2521,6 @@
       "description": "Un spectacol ce surprinde cu fine\u021be nuan\u021bele dramei din celebra poveste a lui Ingmar Bergman, vulnerabilitatea \u0219i curajul asum\u0103rii gre\u0219elilor sunt cheia care armonizeaz\u0103 dou\u0103 suflete r\u0103t\u0103cite. Dup\u0103 mul\u021bi ani, Charlotte, o pianist\u0103 celebr\u0103 \u0219i aplaudat\u0103 \u00een toat\u0103 lumea, \u00ee\u0219i viziteaz\u0103 fiica, undeva, \u00eentr-un sat pierdut de lume, la casa parohial\u0103 unde locuie\u0219te al\u0103turi de [\u2026]",
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Notte Morricone, un spectacol...",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-24 19:30:00",
-      "url": "https://www.tnb.ro/ro/notte-morricone-un-spectacol-transcendental-muzica-lui-morricone-de-la-film-la-dans",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -2824,36 +2794,6 @@
       "video_url": null
     },
     {
-      "title": "Frumos e \u00een septembrie la Vene\u021bia",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://www.tnb.ro/ro/frumos-e-in-septembrie-la-venetia",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/608/757/large_frumos_TNB_web_mic.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Nicio pastil\u0103 magic\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://www.tnb.ro/ro/nicio-pastila-magica",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1115/1526/large_Afis-NICIO-PASTILA-jpeg-WEB_2.jpg",
-      "video_url": null
-    },
-    {
       "title": "Despre oameni, doctori \u0219i rinoceri",
       "artist": null,
       "venue": "TNB - Sala Studio",
@@ -3034,21 +2974,6 @@
       "video_url": null
     },
     {
-      "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://www.tnb.ro/ro/barfe-zvonuri-si-minciuni",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/312/356/large_BARFE_AFIS_final.jpg",
-      "video_url": null
-    },
-    {
       "title": "P\u0103durea sp\u00e2nzura\u0163ilor",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -3199,36 +3124,6 @@
       "video_url": null
     },
     {
-      "title": "RABBIT HOLE",
-      "artist": "David Lindsay-Abaire",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://www.bulandra.ro/rabbit-hole",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 de dramaturgul american David Lindsay-Abaire,Rabbit Holeeste o dram\u0103 psihologic\u0103 apreciat\u0103 care i-a adus autorului s\u0103u Premiul Pulitzer \u00een 2007. Piesa exploreaz\u0103 teme profunde precum durerea, pierderea, recunoa\u0219terea \u0219i capacitatea de supravie\u021buire a spiritului uman dup\u0103 o tragedie cumplit\u0103. Piesa se concentreaz\u0103 asupra cuplului Becca \u0219i Howie Corbett, a c\u0103ror via\u021b\u0103 perfect\u0103 este spulberat\u0103 dup\u0103 ce singurul lor fiu, Danny, \u00een v\u00e2rst\u0103 de patru ani, moare \u00eentr-un accident stupid.Rabbit Ho...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/Rabbit-Hole-2026-foto-Two-Bugs-01-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Hedwig and the Angry Inch",
-      "artist": null,
-      "venue": "Teatrul Metropolis - Sala Mare",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://teatrulstelapopescu.ro/spectacol/hedwig-and-the-angry-inch-la-teatrul-metropolis-24-06-2026/",
-      "source": "metropolis",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "de John Cameron Mitchell \u2016 Muzica \u0219i versurile: Stephen Trask \u2016 Regia, coregrafia, costumele: R\u0103zvan Mazilu \u2016 Decorul: Adriana Grand \u2016 Distribu\u021bia: Tudor Cucu \u2013 Dumitrescu, Crina Matei, Irina C\u0103r\u0103mizaru, Cristina Danu",
-      "description_source": "scraped",
-      "image_url": "https://teatrulstelapopescu.ro/wp-content/uploads/2025/08/Afis-Hedwig-2025-logo-parteneri-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "Moarte la Teatrul de Revist\u0103",
       "artist": null,
       "venue": "Teatrul Metropolis - Sala Mare",
@@ -3272,21 +3167,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
       "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-24 15:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -3451,21 +3331,6 @@
       "description": "\u201d aduce \u00een scen\u0103 elemente \u0219i accente contemporane vizuale \u0219i coregrafice care completeaz\u0103 povestea clasic\u0103 a rela\u021biilor dintre personaje, invit\u00e2nd publicul \u00eentr-un cadru intim \u0219i atemporal, creionat cu delicate\u021be de regizorul \u201eTimpul \u00een care tr\u0103im \u0219i estetica teatral\u0103 modern\u0103 predispun spre o relectur\u0103 scenic\u0103 a textului clasic. P\u0103str\u00e2nd esen\u021ba romanului, am corelat con\u021binutul acestuia cu starea d",
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/06/afis-anna-karenina-717x1024.png",
-      "video_url": null
-    },
-    {
-      "title": "5+3=9",
-      "artist": "Concept \u0219i coregrafie: \u0218tefan Lupu",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-06-24 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/539",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Visul \u00een care au crezut peste 14.000 de ctitori a devenit realitate, demersul Grivi\u021ba 53 s-a transformat \u00een Teatrul Grivi\u021ba 53, un loc dedicat crea\u021biei independente, experimentului \u0219i colabor\u0103rii, un spa\u021biu deschis arti\u0219tilor care caut\u0103 libertate \u00een expresie \u0219i publicului care \u00ee\u0219i dore\u0219te s\u0103 descopere o nou\u0103 form\u0103 de experien\u021b\u0103 cultural\u0103. Deschiderea oficial\u0103 a fost marcat\u0103 de premiera \"5+3=9\", un spectacol creat de \u0218tefan Lupu, inspirat din povestea nespus\u0103 a Teatrului Grivi\u021ba 53, de la prim...",
-      "description_source": "scraped",
-      "image_url": null,
       "video_url": null
     },
     {
@@ -4956,21 +4821,6 @@
       "video_url": null
     },
     {
-      "title": "FOUR DAUGHTERS / PATRU FIICE",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-24 17:30:00",
-      "url": "https://eventbook.ro/film/bilete-four-daughters-patru-fiice-women-in-frame",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Kaouther Ben HaniaCast:Olfa Hamrouni, Eya Chikhaoui, Tayssir ChikhaouiGenre:DocumentarDuration:1h 47mCountry:Fran\u021ba, Arabia Saudit\u0103, Germania, TunisiaLanguage:AR, FR, ENYear:2023 Sinopsis:\u00centre lumin\u0103 \u0219i \u00eentuneric st\u0103 Olfa, o femeie din Tunis, mam\u0103 a patru fiice. Pe cele dou\u0103 mai mari le pierde pentru totdeauna. \u00cen 2016, devine celebr\u0103 dup\u0103 ce critic\u0103 guvernul tunisian pentru c\u0103 nu a f\u0103cut nimic pentru a opri fetele s\u0103 se al\u0103ture ISIS. \u00cen via\u021ba privat\u0103, \u00ee\u0219i caut\u0103 propria vin\u0103.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-four-daughters-patru-fiice-women-in-frame-t6R.webp",
-      "video_url": "https://www.youtube.com/embed/a7CT62FPavI?si=5YOV3H7ge5EgI-Ig"
-    },
-    {
       "title": "POUR DON CARLOS / PENTRU DON CARLOS",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -5509,6 +5359,36 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-retrospectiva-tiff-25-8vE.webp",
       "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
+    },
+    {
+      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #9 I 28 iunie",
+      "artist": null,
+      "venue": "Calea Victoriei",
+      "date": "2026-06-28 19:00:00",
+      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-9-i-28-iunie",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "PROGRAM STR\u0102ZI DESCHISE \u2013 BUCURE\u0218TI 11:00 \u2013 12:30: Traseu itinerant: Statuia Ecvestr\u0103 a Regelui Carol I \u2192 Muzeul Na\u021bional de Istorie a Rom\u00e2niei,Tur ghidat \u201eExploreaz\u0103 Bucure\u0219tiul la pas pe Calea Victoriei\u201d, cu: Anita Sterea (ghid cultural \u0219i istoric); Participarea la turul ghidat este gratuit\u0103, pe baz\u0103 de \u00eenscriere prealabil\u0103,aici. 17:00 \u2013 18:30: Pia\u021ba Revolu\u021biei,Dezbatere: \u201eReducerea riscului seismic \u2013 un efort comun\u201d, Moderator: R\u0103zvan Munteanu, Invita\u021bi:\u00a0Drago\u015f Marcu,\u00a0Beatrice B\u0103lu\u021b\u0103 Sicli...",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
+      "title": "Cursuri de var\u0103 pentru copii la Improteca",
+      "artist": null,
+      "venue": "Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
+      "date": "2026-06-29 19:00:00",
+      "url": "https://improteca.ro/2026/06/24/cursuri-de-vara-pentru-copii-la-improteca/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vara aceasta \u00eei invit\u0103m pe cei mici s\u0103 descopere teatrul \u0219i improviza\u021bia prin joc, creativitate \u0219i mult\u0103 voie bun\u0103. Prin exerci\u021bii de teatru, dic\u021bie \u0219i improviza\u021bie, copiii \u00ee\u0219i dezvolt\u0103 \u00eencrederea \u00een sine, creativitatea, comunicarea \u0219i capacitatea de a lucra \u00een echip\u0103, \u00eentr-un mediu sigur \u0219i prietenos. \ud83d\udc67\ud83e\uddd2 Grupe de v\u00e2rst\u0103: 5\u20137 ani, 8\u201312 ani \u0219i 13\u201317 ani\u23f0 Luni\u2013vineri, 09:00\u201311:00\ud83d\udccd Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
     }
   ]
 }
