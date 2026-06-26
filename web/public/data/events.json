@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-06-25T11:47:01.714264",
+  "scraped_at": "2026-06-26T11:42:38.737891",
   "music_events": [
-    {
-      "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-25 19:00:00",
-      "url": "https://oveit.com/hub/event/inchiderea-stagiunii-2025-2026-4341Q9ng",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
       "artist": null,
@@ -2327,21 +2312,6 @@
       "video_url": null
     },
     {
-      "title": "Ground Control w/ Leo",
-      "artist": "Ground Control w/ Leo",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-25 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ground-control-w-leo-11",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Corp.Cast w/ Tabideee, Madame 8, von B\u00fclove",
       "artist": "Corp.Cast w/ Tabideee, Madame 8, von B\u00fclove",
       "venue": "Control Club - Front Room",
@@ -2381,6 +2351,51 @@
       "category": "music",
       "price": "...",
       "spotify_url": "https://open.spotify.com/artist/3sdRSlUhQZIGrk8AUJJCQE",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Walentin Pauer & Nek, C\u0103lin & Eusebio Digital",
+      "artist": "Walentin Pauer & Nek, C\u0103lin & Eusebio Digital",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-06-30 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-walentin-pauer-nek-calin-eusebio-digital",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/0A9NlTa240Nk1XXWIat8Na",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Cinema Esperanto #1: Blind Willow, Sleeping Woman \u2013 screening supported by the French Institute in Romania",
+      "artist": "Cinema Esperanto #1: Blind Willow, Sleeping Woman \u2013 screening supported by the French Institute in Romania",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-07-01 19:30:00",
+      "url": "https://www.control-club.ro/event/?slug=cinema-esperanto-1-blind-willow-sleeping-woman-screening-supported-by-the-french-institute-in-romania",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Drago\u0219 Rusu, Cliza, Scoro",
+      "artist": "Drago\u0219 Rusu, Cliza, Scoro",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-03 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=drago%C8%99-rusu-cliza-scoro",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": "https://open.spotify.com/artist/5nRE1ooCXZf1QTsalc6vH4",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2521,21 +2536,6 @@
       "description": "Un spectacol ce surprinde cu fine\u021be nuan\u021bele dramei din celebra poveste a lui Ingmar Bergman, vulnerabilitatea \u0219i curajul asum\u0103rii gre\u0219elilor sunt cheia care armonizeaz\u0103 dou\u0103 suflete r\u0103t\u0103cite. Dup\u0103 mul\u021bi ani, Charlotte, o pianist\u0103 celebr\u0103 \u0219i aplaudat\u0103 \u00een toat\u0103 lumea, \u00ee\u0219i viziteaz\u0103 fiica, undeva, \u00eentr-un sat pierdut de lume, la casa parohial\u0103 unde locuie\u0219te al\u0103turi de [\u2026]",
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Notte Morricone, un spectacol...",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-25 19:30:00",
-      "url": "https://www.tnb.ro/ro/notte-morricone-un-spectacol-transcendental-muzica-lui-morricone-de-la-film-la-dans",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -2794,36 +2794,6 @@
       "video_url": null
     },
     {
-      "title": "Despre oameni, doctori \u0219i rinoceri",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-25 19:00:00",
-      "url": "https://www.tnb.ro/ro/despre-oameni-doctori-si-rinoceri",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1190/1581/large_doctori_bun.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Incognito",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-25 19:00:00",
-      "url": "https://www.tnb.ro/ro/incognito",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
-      "video_url": null
-    },
-    {
       "title": "E vina ta!",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -3034,21 +3004,6 @@
       "video_url": null
     },
     {
-      "title": "RABBIT HOLE",
-      "artist": "David Lindsay-Abaire",
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-06-25 19:00:00",
-      "url": "https://www.bulandra.ro/rabbit-hole",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 de dramaturgul american David Lindsay-Abaire,Rabbit Holeeste o dram\u0103 psihologic\u0103 apreciat\u0103 care i-a adus autorului s\u0103u Premiul Pulitzer \u00een 2007. Piesa exploreaz\u0103 teme profunde precum durerea, pierderea, recunoa\u0219terea \u0219i capacitatea de supravie\u021buire a spiritului uman dup\u0103 o tragedie cumplit\u0103. Piesa se concentreaz\u0103 asupra cuplului Becca \u0219i Howie Corbett, a c\u0103ror via\u021b\u0103 perfect\u0103 este spulberat\u0103 dup\u0103 ce singurul lor fiu, Danny, \u00een v\u00e2rst\u0103 de patru ani, moare \u00eentr-un accident stupid.Rabbit Ho...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/Rabbit-Hole-2026-foto-Two-Bugs-01-scaled.jpg",
-      "video_url": null
-    },
-    {
       "title": "RICHARD 3",
       "artist": "William Shakespeare",
       "venue": "Teatrul Bulandra - Liviu Ciulei",
@@ -3139,21 +3094,6 @@
       "video_url": "https://www.youtube.com/embed/96JJ9LsF6KA"
     },
     {
-      "title": "Ceasu` \u0219i c\u0103ma\u0219a miresii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-25 19:00:00",
-      "url": "https://www.tnb.ro/ro/ceasu-si-camasa-miresii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "FERMA ANIMALELOR",
       "artist": "Scenariu teatral de Andrei Hu\u021buleac dup\u0103 \u201eFerma Animalelor\u201d de George Orwell",
       "venue": "Teatrul Mic - Sala Atelier",
@@ -3167,21 +3107,6 @@
       "description_source": "scraped",
       "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
       "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-25 12:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -3316,21 +3241,6 @@
       "description": "Vino Veritas de David McGregor Vino Veritas de David MacGregor Regia: Daniel Popa Coloana sonor\u0103: Valeriu Borco\u0219 (K not K) Scenografia: Maria Ordean Traducerea \u0219i adaptarea: George Reme\u0219 Este noaptea de Halloween, dar toate m\u0103\u0219tile cad. C\u00e2nd dou\u0103 cupluri beau \u00eempreun\u0103 un ciudat vin albastru, secretele \u00eencep s\u0103 ias\u0103 la iveal\u0103, dezv\u0103luind adev\u0103ra\u021bii mon\u0219tri. \u201cCe mai \u00eenseamn\u0103 s\u0103 fii un partener bun z",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
-      "video_url": null
-    },
-    {
-      "title": "ANNA KARENINA",
-      "artist": "dup\u0103 Lev Tolstoi",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-06-25 18:30:00",
-      "url": "https://www.teatrulmic.ro/spectacol/anna-karenina/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201d aduce \u00een scen\u0103 elemente \u0219i accente contemporane vizuale \u0219i coregrafice care completeaz\u0103 povestea clasic\u0103 a rela\u021biilor dintre personaje, invit\u00e2nd publicul \u00eentr-un cadru intim \u0219i atemporal, creionat cu delicate\u021be de regizorul \u201eTimpul \u00een care tr\u0103im \u0219i estetica teatral\u0103 modern\u0103 predispun spre o relectur\u0103 scenic\u0103 a textului clasic. P\u0103str\u00e2nd esen\u021ba romanului, am corelat con\u021binutul acestuia cu starea d",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2024/06/afis-anna-karenina-717x1024.png",
       "video_url": null
     },
     {
@@ -3571,21 +3481,6 @@
       "description": ",,Piesa aleas\u0103 a fost scris\u0103 \u00eentr-un context socio-politic \u00een care Spania \u00eencerca s\u0103 se \u00abvindece\u00bb \u00een mod juridic de cazurile de violen\u021b\u0103 domestic\u0103, descoperind c\u0103 anumite mentalit\u0103\u021bi sunt mult mai greu de schimbat dec\u00e2t o modificare legislativ\u0103 necesar\u0103. \u00ab\u00cen \u021bara asta, acum ceva ani, s\u0103 ba\u021bi o femeie era v\u0103zut ca fiind ceva normal\u00bb, ne [\u2026]",
       "description_source": "scraped",
       "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/06/Copie-a-fisierului-DSC07253-scaled.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-06-25 17:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
       "video_url": null
     },
     {
@@ -4821,21 +4716,6 @@
       "video_url": null
     },
     {
-      "title": "POUR DON CARLOS / PENTRU DON CARLOS",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-25 15:30:00",
-      "url": "https://eventbook.ro/film/bilete-pour-don-carlos-pentru-don-carlos-women-in-frame",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Mussidora, Jacques LasseyeneCast:Musidora, Stephen Weber, Abel TarrideGenre:Dram\u0103Duration:1h 30mCountry:Fran\u021ba, SpaniaLanguage:FRYear:1921 Sinopsis:Sud-vestul Fran\u021bei, 1875. Un t\u00e2n\u0103r subprefect, implicat \u00een rivalit\u0103\u021bile dintre puterea conduc\u0103toare \u0219i sus\u021bin\u0103torii pretendentului la tronul Spaniei, cade \u00eentr-o capcan\u0103 \u00eentins\u0103 de muza insurec\u021biei carliste, \u00eenainte de a se al\u0103tura cauzei al\u0103turi de aceasta. Bazat pe romanul lui Pierre Benoit.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-pour-don-carlos-pentru-don-carlos-women-in-frame-vGA.webp",
-      "video_url": null
-    },
-    {
       "title": "LES ANN\u00c9ES SUPER-8 / ANII SUPER-8",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -5163,21 +5043,6 @@
       "description": "Hai \u0219i tu la spectacolul de improviza\u021bie \ud83d\udc91 Couples Retreat \ud83d\udc91 cu trupa ImproHub! Uneori, s\u0103 pleci \u00eentr-o vacan\u021b\u0103 e ca \u0219i cum ai da un \u201cshuffle\u201d \u00een via\u021ba ta de cuplu. Nu \u0219tii ce melodie vine: o balad\u0103 romantic\u0103, un rock exploziv sau un jazz pe care nu-l \u00een\u021belege nimeni. Unele vacan\u021be te relaxeaz\u0103, altele te scot din s\u0103rite, iar altele te iau pe sus \u0219i nu te mai las\u0103 la locul t\u0103u ini\u021bial.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "C\u00e2ini vs. Uranus",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-06-25 16:30:07.410000",
-      "url": "https://www.mnac.ro/event/1239/C%C3%A2ini%20vs.%20Uranus/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Spectacol de teatru",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     },
     {
