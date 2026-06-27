@@ -1,21 +1,6 @@
 {
-  "scraped_at": "2026-06-26T11:42:38.737891",
+  "scraped_at": "2026-06-27T11:05:18.688698",
   "music_events": [
-    {
-      "title": "\u00cenchiderea stagiunii 2025 \u2013 2026",
-      "artist": null,
-      "venue": "Ateneul Rom\u00e2n - Sala Mare",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://oveit.com/hub/event/inchiderea-stagiunii-2025-2026-43ggxa3e",
-      "source": "Ateneul Rom\u00e2n",
-      "category": "music",
-      "price": "de la 140 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
       "artist": "Holy Fuck [CA]",
@@ -1442,21 +1427,6 @@
       "video_url": null
     },
     {
-      "title": "Recycle Bin \u2013 lansare videoclip | Ska-nk | Silence is Violence",
-      "artist": "Recycle Bin",
-      "venue": "Quantic",
-      "date": "2026-06-26 00:00:00",
-      "url": "https://quantic.pub/eveniment/recycle-bin-lansare-videoclip-ska-nk-silence-is-violence/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/1qB8BJOcuJuNQw0cPy5RZ2",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Black Caravan \u2013 a tribute to BLACK SABBATH",
       "artist": "Black Caravan",
       "venue": "Quantic",
@@ -2237,21 +2207,6 @@
       "video_url": null
     },
     {
-      "title": "Corvin & Baron P.",
-      "artist": "Corvin & Baron P.",
-      "venue": "Control Club - Front Room",
-      "date": "2026-06-26 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=corvin-baron-p",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/3K40SMapVhc8PxyYFofHff",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: Arab Strap [UK]",
       "artist": "Arab Strap [UK]",
       "venue": "Control Club - Berlin Room",
@@ -2342,21 +2297,6 @@
       "video_url": null
     },
     {
-      "title": "EVE+POL [LIVE], OKTAI, BBUBU, Corvin & Baron P.",
-      "artist": "EVE+POL [LIVE], OKTAI, BBUBU, Corvin & Baron P.",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-06-26 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=eve-pol-live-oktai-bbubu-corvin-baron-p",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/3sdRSlUhQZIGrk8AUJJCQE",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "BRUTUS NIGHTS: Walentin Pauer & Nek, C\u0103lin & Eusebio Digital",
       "artist": "Walentin Pauer & Nek, C\u0103lin & Eusebio Digital",
       "venue": "Control Club - Berlin Room & Front Room",
@@ -2396,6 +2336,21 @@
       "category": "music",
       "price": "Door ticket",
       "spotify_url": "https://open.spotify.com/artist/5nRE1ooCXZf1QTsalc6vH4",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "CMR-A [UK] + Baron P., Dirty Disco w/ Eugen R\u0103descu",
+      "artist": "CMR-A [UK] + Baron P., Dirty Disco w/ Eugen R\u0103descu",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-11 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=cmr-a-uk-baron-p-dirty-disco-w-eugen-radescu",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2491,21 +2446,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "De paz\u0103 la Taj Mahal",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-06-26 19:30:00",
-      "url": "https://nottara.ro/spectacol/de-paza-la-taj-mahal/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u201eDe paz\u0103 la Taj Mahal\u201d este o comedie sensibil\u0103 despre prietenie, \u00een care doi solda\u021bi \u00ee\u0219i testeaz\u0103 loialitatea unul fa\u021b\u0103 de cel\u0103lalt pe fundalul celebrei legende despre Taj Mahal.\u00a0 Dup\u0103 succesul spectacolelor \u201eAgnes, aleasa lui Dumnezeu\u201d, \u201eDincolo de tandre\u021be\u201d \u0219i \u201eComedia erorilor\u201d, regizoarea S\u00e2nziana Stoican semneaz\u0103 al patrulea spectacol la Teatrul Nottara, \u00eentr-un proiect ce [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/De-paza-la-Taj-Mahal-regia-Sanziana-Stoican-foto-Victor-Diaconu.jpg",
       "video_url": null
     },
     {
@@ -2794,36 +2734,6 @@
       "video_url": null
     },
     {
-      "title": "E vina ta!",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.tnb.ro/ro/e-vina-ta",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/983/1238/large_Afis_final_bun52.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Ceasu` \u0219i c\u0103ma\u0219a miresii",
-      "artist": null,
-      "venue": "TNB - Sala Pictura",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.tnb.ro/ro/ceasu-si-camasa-miresii",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
-      "video_url": null
-    },
-    {
       "title": "P\u0103durea sp\u00e2nzura\u0163ilor",
       "artist": null,
       "venue": "TNB - Sala \"Ion Caramitru\"",
@@ -2944,21 +2854,6 @@
       "video_url": null
     },
     {
-      "title": "P\u0103durea sp\u00e2nzura\u0163ilor",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.tnb.ro/ro/padurea-spanzuratilor",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/584/635/large_Afis_final_bun_Padurea.jpg",
-      "video_url": null
-    },
-    {
       "title": "20 de ani \u00een Siberia",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -3002,21 +2897,6 @@
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
       "video_url": null
-    },
-    {
-      "title": "RICHARD 3",
-      "artist": "William Shakespeare",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.bulandra.ro/richard-al-3-lea/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Cea mai jucat\u0103 pies\u0103 shakespearian\u0103,Richard al III-leaeste o crea\u0163ie ce ilustreaz\u0103 ambi\u0163ia \u015fi setea de putere a personajului principal \u015fi traseul s\u00e2ngeros \u015fi brutal prin care acesta \u00ee\u015fi croie\u015fte drum spre tronul Angliei. Asemenea celorlalte personaje shakespeariene de prim-plan, Richard este o figur\u0103 complex\u0103, ale c\u0103rei ac\u0163iuni sunt determinate de nenum\u0103rate resorturi externe \u015fi interne, inspir\u00e2nd concomitent repulsie \u015fi fascina\u0163ie. Ca orice politician viclean, \u00een clipa \u00een care ia puterea, Ri...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2023/09/Richard-3-2019-foto-Andrei-Gindac-15-scaled.jpg",
-      "video_url": "https://www.youtube.com/embed/XHUMVoD7r5U?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Frichard-al-3-lea%2F&aoriginsup=1&vf=1"
     },
     {
       "title": "TEROARE",
@@ -3092,51 +2972,6 @@
       "description_source": "scraped",
       "image_url": "https://teatrulstelapopescu.ro/wp-content/uploads/2024/12/MOARTE-LA-TEATRUL-DE-REVISTA-cu-logo-parteneri-scaled.jpg",
       "video_url": "https://www.youtube.com/embed/96JJ9LsF6KA"
-    },
-    {
-      "title": "FERMA ANIMALELOR",
-      "artist": "Scenariu teatral de Andrei Hu\u021buleac dup\u0103 \u201eFerma Animalelor\u201d de George Orwell",
-      "venue": "Teatrul Mic - Sala Atelier",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/ferma-animalelor/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": ". \u00cenainte de a se dedica scrisului, Orwell a fost comentator radio pentru postul BBC, editorialist, reporter \u0219i s-a oferit voluntar pentru a lupta \u00een R\u0103zboiul Civil din Spania. De\u0219i \u00een materie de tendin\u021be politice a manifestat o simpatie pentru cei de centru-st\u00e2nga, Orwell a avut o mare luciditate \u0219i a realizat pericolele comunismului mai devreme dec\u00e2t al\u021bi contemporani ai s\u0103i. C\u0103r\u021bile sale",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
-      "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
-    },
-    {
-      "title": "Vizite ghidate la Muzeu",
-      "artist": null,
-      "venue": "TNB - Muzeul Teatrului Na\u0163ional",
-      "date": "2026-06-26 12:00:00",
-      "url": "https://www.tnb.ro/ro/vizite-ghidate-la-muzeu",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/919/1519/large_TNB_afis_cu_logo_format_A3.jpg",
-      "video_url": null
-    },
-    {
-      "title": "B\u00e2rfe, zvonuri \u0219i minciuni",
-      "artist": null,
-      "venue": "TNB - Sala Studio",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.tnb.ro/ro/barfe-zvonuri-si-minciuni",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/312/356/large_BARFE_AFIS_final.jpg",
-      "video_url": null
     },
     {
       "title": "Vizite ghidate la Muzeu",
@@ -3319,21 +3154,6 @@
       "video_url": null
     },
     {
-      "title": "EX",
-      "artist": "de Marius von Mayenburg",
-      "venue": "Teatrul Mic - Sala Studio",
-      "date": "2026-06-26 19:00:00",
-      "url": "https://www.teatrulmic.ro/spectacol/ex/",
-      "source": "teatrulmic",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "ne invit\u0103 \u00een mijlocul intimit\u0103\u021bii unei rela\u021bii de cuplu care, privit\u0103 de la distan\u021b\u0103, ar putea trece ca perfect\u0103. Ea este medic, el arhitect, au doi copii \u0219i o cas\u0103 modern\u0103. \u00cens\u0103 echilibrul vie\u021bii lor de familie este pus serios la \u00eencercare c\u00e2nd, \u00een miezul nop\u021bii, apare la u\u0219\u0103 fosta iubit\u0103 a arhitectului. a fost scris\u0103 \u0219i pus\u0103 \u00een scen\u0103 la Teatrul Riksteatern din Suedia, de c\u0103tre Marius von Mayenbu",
-      "description_source": "scraped",
-      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/07/WhatsApp-Image-2023-10-03-at-14.28.21-717x1024.jpeg",
-      "video_url": "https://www.youtube.com/embed/jx2dkHoqacE?feature=shared?rel=0&controls=0&showinfo=0"
-    },
-    {
       "title": "CIN\u0102 CU PRIETENI",
       "artist": "Donald Margulies",
       "venue": "Teatrul Bulandra - Liviu Ciulei",
@@ -3487,7 +3307,7 @@
       "title": "Turul ghidat al TNB",
       "artist": null,
       "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-06-26 17:00:00",
+      "date": "2026-06-27 15:00:00",
       "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
       "source": "tnb",
       "category": "theatre",
@@ -3499,19 +3319,34 @@
       "video_url": null
     },
     {
-      "title": "Turul ghidat al TNB",
-      "artist": null,
-      "venue": "TNB - foaier Sala \"Ion Caramitru\"",
-      "date": "2026-06-27 15:00:00",
-      "url": "https://www.tnb.ro/ro/turul-ghidat-al-tnb",
-      "source": "tnb",
+      "title": "FERMA ANIMALELOR",
+      "artist": "Scenariu teatral de Andrei Hu\u021buleac dup\u0103 \u201eFerma Animalelor\u201d de George Orwell",
+      "venue": "Teatrul Mic - Sala Atelier",
+      "date": "2026-06-27 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/ferma-animalelor/",
+      "source": "teatrulmic",
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/409/1246/large_tur_ghidat_2024.jpg",
-      "video_url": null
+      "description": ". \u00cenainte de a se dedica scrisului, Orwell a fost comentator radio pentru postul BBC, editorialist, reporter \u0219i s-a oferit voluntar pentru a lupta \u00een R\u0103zboiul Civil din Spania. De\u0219i \u00een materie de tendin\u021be politice a manifestat o simpatie pentru cei de centru-st\u00e2nga, Orwell a avut o mare luciditate \u0219i a realizat pericolele comunismului mai devreme dec\u00e2t al\u021bi contemporani ai s\u0103i. C\u0103r\u021bile sale",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2025/01/Afis_FERMA-ANIMALELOR-717x1024.jpg",
+      "video_url": "https://www.youtube.com/embed/l0OPBAR4Z0w?si=ovlVPAEto1OywdV2?rel=0&controls=0&showinfo=0"
+    },
+    {
+      "title": "EX",
+      "artist": "de Marius von Mayenburg",
+      "venue": "Teatrul Mic - Sala Studio",
+      "date": "2026-06-27 19:00:00",
+      "url": "https://www.teatrulmic.ro/spectacol/ex/",
+      "source": "teatrulmic",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "ne invit\u0103 \u00een mijlocul intimit\u0103\u021bii unei rela\u021bii de cuplu care, privit\u0103 de la distan\u021b\u0103, ar putea trece ca perfect\u0103. Ea este medic, el arhitect, au doi copii \u0219i o cas\u0103 modern\u0103. \u00cens\u0103 echilibrul vie\u021bii lor de familie este pus serios la \u00eencercare c\u00e2nd, \u00een miezul nop\u021bii, apare la u\u0219\u0103 fosta iubit\u0103 a arhitectului. a fost scris\u0103 \u0219i pus\u0103 \u00een scen\u0103 la Teatrul Riksteatern din Suedia, de c\u0103tre Marius von Mayenbu",
+      "description_source": "scraped",
+      "image_url": "https://www.teatrulmic.ro/wp-content/uploads/2023/07/WhatsApp-Image-2023-10-03-at-14.28.21-717x1024.jpeg",
+      "video_url": "https://www.youtube.com/embed/jx2dkHoqacE?feature=shared?rel=0&controls=0&showinfo=0"
     }
   ],
   "culture_events": [
@@ -4716,21 +4551,6 @@
       "video_url": null
     },
     {
-      "title": "LES ANN\u00c9ES SUPER-8 / ANII SUPER-8",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-06-26 16:30:00",
-      "url": "https://eventbook.ro/film/bilete-les-annees-super-8-anii-super-8-women-in-frame",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Annie Ernaux, David Ernaux-BriotCast:Blanche Madeleine, Dumenil Duchesne, Annie Ernaux, Dominique ErnauxGenre:Dram\u0103Duration:1h 02mCountry:Croa\u021bia, Italia, Rom\u00e2nia, Grecia, Fran\u021ba, SloveniaLanguage:FRYear:2022 Sinopsis:\u201eRev\u0103z\u00e2nd filmele noastre pe Super 8 realizate \u00eentre 1972 \u0219i 1981, mi-am dat seama c\u0103 ele constituie nu doar o arhiv\u0103 de familie, ci \u0219i o m\u0103rturie despre timpul liber, stilul de via\u021b\u0103 \u0219i aspira\u021biile unei clase sociale \u00een deceniul care a urmat anului 1968. Mi-am dorit s\u0103 in",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-les-annees-super-8-anii-super-8-women-in-frame-8iL.webp",
-      "video_url": "https://www.youtube.com/embed/BGff07BoAcs?si=vBLKPjkbqgl2DK5c"
-    },
-    {
       "title": "CL\u00c9O DE 5 \u00c0 7 / CL\u00c9O DE LA 5 LA 7",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -5046,36 +4866,6 @@
       "video_url": null
     },
     {
-      "title": "Cherry Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 26 iunie 2026",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-06-26 20:00:00",
-      "url": "https://improteca.ro/2026/06/17/cherry-jam-improv-jam-26-iunie-2026/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Haide si tu la \ud83c\udf52 Cherry Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 26 iunie 2026. De ce? Pentru ca suntem in luna Cire\u0219ar. Ti-ai pus vreodata una din urmatoarele intrebari:\u2753 Vrei sa-ti mai exersezi abilitatile de improvizator, dar n-ai destul timp pe scena?\u2753 Vrei sa incerci niste jocuri de improvizatie cu un numar cat mai diferit de improvizatori?\u2753 Te-ai saturat de colegii de trupa si ai vrea sa incerci ceva nou, dar ti-e frica de angajamente?\u2753 Vrei sa incerci improvizatia inainte sa te inscrii la un curs de 3 lun...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Tur ghidat \u00een expozi\u021bia Cruci \u00eendoite",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-06-26 14:00:20.449000",
-      "url": "https://www.mnac.ro/event/1376/Tur%20ghidat%20%C3%AEn%20expozi%C8%9Bia%20Cruci%20%C3%AEndoite/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Tur ghidat",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
-    },
-    {
       "title": "\ufe0f IMPROTECA SUMMER SCHOOL with Miki",
       "artist": null,
       "venue": "Where: Improteca Theatre",
@@ -5253,6 +5043,21 @@
       "description": "Vara aceasta \u00eei invit\u0103m pe cei mici s\u0103 descopere teatrul \u0219i improviza\u021bia prin joc, creativitate \u0219i mult\u0103 voie bun\u0103. Prin exerci\u021bii de teatru, dic\u021bie \u0219i improviza\u021bie, copiii \u00ee\u0219i dezvolt\u0103 \u00eencrederea \u00een sine, creativitatea, comunicarea \u0219i capacitatea de a lucra \u00een echip\u0103, \u00eentr-un mediu sigur \u0219i prietenos. \ud83d\udc67\ud83e\uddd2 Grupe de v\u00e2rst\u0103: 5\u20137 ani, 8\u201312 ani \u0219i 13\u201317 ani\u23f0 Luni\u2013vineri, 09:00\u201311:00\ud83d\udccd Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "C\u00e2ini vs. Uranus",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-07-05 16:30:54.516000",
+      "url": "https://www.mnac.ro/event/1375/C%C3%A2ini%20vs.%20Uranus/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Spectacol de teatru",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     }
   ]
