@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-04T10:51:46.076255",
+  "scraped_at": "2026-07-05T11:11:11.920668",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1397,21 +1397,6 @@
       "video_url": null
     },
     {
-      "title": "BROTHER CULTURE & DJ SISTAH VIBES",
-      "artist": "BROTHER CULTURE & DJ SISTAH VIBES",
-      "venue": "Quantic",
-      "date": "2026-07-04 00:00:00",
-      "url": "https://quantic.pub/eveniment/brother-culture-dj-sistah-vibes/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/7vIqeUrMmLq6ULjRPZTKna",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Black Caravan \u2013 a tribute to BLACK SABBATH",
       "artist": "Black Caravan",
       "venue": "Quantic",
@@ -2117,21 +2102,6 @@
       "video_url": null
     },
     {
-      "title": "ctrl x Ellen Recordings w/ Cobe, Gheordu, Sour & Tia, Ground Control w/ Leo",
-      "artist": "ctrl x Ellen Recordings w/ Cobe, Gheordu, Sour & Tia, Ground Control w/ Leo",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-04 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ctrl-x-ellen-recordings-w-cobe-gheordu-sour-tia-ground-control-w-leo",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/79npQdzzJqEv2efNQTR3F3",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Claudia & Chlorys",
       "artist": "Claudia & Chlorys",
       "venue": "Control Club - Front Room",
@@ -2295,6 +2265,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "LIVE: City of the Sun [USA]",
+      "artist": "City of the Sun [USA]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-09-26 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=live-city-of-the-sun",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": "https://open.spotify.com/artist/4DkYxtaASIKQnk4Gj0TB7k",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2386,21 +2371,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Gai\u021bele",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-07-04 20:00:00",
-      "url": "https://www.tnb.ro/ro/gaitele-23",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/923/1139/large_gaitele_startickets_image118732.jpg",
       "video_url": null
     },
     {
@@ -2599,21 +2569,6 @@
       "video_url": null
     },
     {
-      "title": "La doi pa\u0219i de Mullingar",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-07-04 19:30:00",
-      "url": "https://nottara.ro/spectacol/la-doi-pasi-de-mullingar/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Povestea se petrece \u00een Irlanda zilelor noastre, \u00een satul Killukan, aflat la 15 kilometri de Mullingar; un loc prozaic, care nu este celebru pentru nimic. Se afl\u0103 chiar la doi pa\u0219i de via\u021b\u0103\u2026 Tony este un b\u0103tr\u00e2n \u00een jur de \u0219aptezeci de ani, care tr\u0103ie\u0219te cu fiul s\u0103u, Anthony, trecut de patruzeci de ani, iar [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/la-doi-pasi-de-mullingar-EBS-1280x853-px.jpg",
-      "video_url": null
-    },
-    {
       "title": "Canc\u00fan",
       "artist": null,
       "venue": "Teatrul Nottara - Sala George Constantin",
@@ -2702,21 +2657,6 @@
       "description_source": "scraped",
       "image_url": null,
       "video_url": null
-    },
-    {
-      "title": "TACHE, IANKE \u0218I CAD\u00c2R",
-      "artist": "Victor Ion Popa",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-07-04 19:00:00",
-      "url": "https://www.bulandra.ro/tache-ianke-cadar/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 \u00een 1932, piesaTache, Ianke \u015fi Cad\u00e2ra trecut proba timpului \u015fi a devenit unul dintre cele mai populare \u015fi mai montate texte interbelice din literatura dramatic\u0103 rom\u00e2neasc\u0103. Povestea celor trei mici negustori \u2013 un rom\u00e2n, un evreu \u015fi un turc \u2013 a c\u0103ror tihn\u0103 monoton\u0103 e tulburat\u0103 de o dilem\u0103 de ordin personal, redefine\u015fte rela\u0163iile interetnice \u015fi, \u00een profunzime, cele interumane.Tache, Ianke \u015fi Cad\u00e2rformuleaz\u0103 \u00eentreb\u0103ri \u015fi propune r\u0103spunsuri actuale \u00eentr-o manier\u0103 plin\u0103 de umor, \u00een care sl\u0103b...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2022/04/Tache-Ianke-si-Cadar-2021-foto-Madalina-Sinoae-18.jpg",
-      "video_url": "https://www.youtube.com/embed/4LWtR15M2mA"
     },
     {
       "title": "TACHE, IANKE \u0218I CAD\u00c2R",
@@ -2819,6 +2759,36 @@
       "price": null,
       "spotify_url": null,
       "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
+      "artist": "",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-07-06 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
+      "artist": "",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-07-07 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
       "description_source": "scraped",
       "image_url": null,
       "video_url": null
@@ -4056,21 +4026,6 @@
       "video_url": null
     },
     {
-      "title": "CALUP ANIMAT PENTRU COPII: \u00ceNOT \u00ceNARIPAT",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-04 10:30:00",
-      "url": "https://eventbook.ro/film/bilete-calup-animat-pentru-copii-inot-inaripat-program-curatorial-special-unatc-fara-contur",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "LE MOINE ET LE POISSON \u2014Michael Dudok De Wit,1994, 6 min VA-T\u2019EN ALFRED \u2014C\u00e9lia Tisserant, Arnaud Demuynck, 2023, 11min",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-calup-animat-pentru-copii-inot-inaripat-program-curatorial-special-unatc-fara-contur-JTI.webp",
-      "video_url": null
-    },
-    {
       "title": "CALUP ANIMAT PENTRU COPII: FAMILII DESENATE",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4714,6 +4669,51 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-film-the-carpenter-s-son-bQ7.webp",
       "video_url": "https://www.youtube.com/embed/DeON55tj9EY?si=ltxsqM3cLkhh92Cn"
+    },
+    {
+      "title": "POVESTEA PE\u0218TELUI POSAC / THE POUT-POUT FISH",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-22 11:00:00",
+      "url": "https://eventbook.ro/film/bilete-povestea-pestelui-posac-the-pout-pout-fish-filme-pentru-intreaga-familie",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "35 LEI",
+      "spotify_url": null,
+      "description": "Cast:Nick Offerman, Miranda Otto, Amy Sedaris, Remy HiiGenre:Anima\u021bie, Comedie, Fantastic, Aventur\u0103Duration:1h 32mCountry:Australia, SUAYear:2026 Sinopsis:Domnul Fish tr\u0103ie\u0219te pe o epav\u0103 veche, p\u00e2n\u0103 c\u00e2nd \u00eel surprinde pe Pip, un t\u00e2n\u0103r dragon de mare hiperactiv, fur\u00e2ndu-i lucrurile dup\u0103 ce \u00eei confundase casa cu un depozit de vechituri. Dup\u0103 o ceart\u0103 care le distruge am\u00e2ndurora locuin\u021bele, cei doi pornesc \u00eentr-o aventur\u0103 pentru a g\u0103si legendarul \u201eShimmer\u201d, capabil s\u0103 \u00eendeplineasc\u0103 dorin\u021be. Problema",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-povestea-pestelui-posac-the-pout-pout-fish-filme-pentru-intreaga-familie-GjL.webp",
+      "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
+    },
+    {
+      "title": "Improv la P\u0103trat 1.1",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-07-11 20:00:00",
+      "url": "https://improteca.ro/2026/07/03/improv-la-patrat-1-1/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Primul team-up din seria Improv la P\u0103trat aduce fa\u021b\u0103 \u00een fa\u021b\u0103, dar mai ales \u00eempreun\u0103, trupele Trupa Durii \u0219i Improfly.Ce se \u00eent\u00e2mpl\u0103 la un team-up?Un show de comedie pe loc, pornind de la sugestiile voastre, \u00een care membrii celor dou\u0103 trupe \u00eempart scena \u0219i joac\u0103 \u00eempreun\u0103 unele dintre cele mai \u00eendr\u0103gite jocuri de short form improv.La final, vor fi acordate c\u00e2teva premii speciale, complet necompetitive \u0219i posibil absurde. Publicul va avea \u0219i el un cuv\u00e2nt de spus, dar totul r\u0103m\u00e2ne \u00een spirit de jo...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Improteca Summer School III. Propuneri beton",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-07-20 12:00:00",
+      "url": "https://improteca.ro/2026/07/03/improteca-summer-school-iii-propuneri-beton/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vara aceasta lans\u0103m o serie de workshopuri intensive de dou\u0103 zile, dedicate unor teme specifice de improviza\u021bie care rareori primesc timpul \u0219i aten\u021bia pe care le merit\u0103 \u00een cadrul cursurilor s\u0103pt\u0103m\u00e2nale.Fiecare workshop este conceput pentru a oferi participan\u021bilor ocazia de a aprofunda, experimenta \u0219i \u00eenv\u0103\u021ba al\u0103turi de traineri \u0219i improvizatori cu experien\u021b\u0103.Continu\u0103m cu:\ud83c\udfad Propuneri BetonTehnici pentru propuneri care dau via\u021b\u0103 scenelorTe-ai trezit vreodat\u0103 pe scen\u0103 f\u0103r\u0103 s\u0103 \u0219tii cu ce s\u0103 \u00eencepi...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
     }
   ]
 }
