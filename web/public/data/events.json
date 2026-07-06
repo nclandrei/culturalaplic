@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-05T11:11:11.920668",
+  "scraped_at": "2026-07-06T12:48:41.121429",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1397,21 +1397,6 @@
       "video_url": null
     },
     {
-      "title": "Black Caravan \u2013 a tribute to BLACK SABBATH",
-      "artist": "Black Caravan",
-      "venue": "Quantic",
-      "date": "2026-07-05 00:00:00",
-      "url": "https://quantic.pub/eveniment/black-caravan-a-tribute-to-black-sabbath/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/2aroRNJEz7gmcVnO2zl1U7",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: past self [US]",
       "artist": "past self [US]",
       "venue": "Control Club - Berlin Room",
@@ -2102,21 +2087,6 @@
       "video_url": null
     },
     {
-      "title": "Claudia & Chlorys",
-      "artist": "Claudia & Chlorys",
-      "venue": "Control Club - Front Room",
-      "date": "2026-07-05 19:00:00",
-      "url": "https://www.control-club.ro/event/?slug=claudia-chlorys",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Cinema Esperanto #2: The Dreamed Ones (AT) \u2013 screening supported by the Austrian Cultural Forum in Romania",
       "artist": "Cinema Esperanto #2: The Dreamed Ones (AT) \u2013 screening supported by the Austrian Cultural Forum in Romania",
       "venue": "Control Club - Berlin Room",
@@ -2280,6 +2250,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Casual Chess by Peono Chess Club",
+      "artist": "Casual Chess by Peono Chess Club",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-12 14:00:00",
+      "url": "https://www.control-club.ro/event/?slug=casual-chess-by-peono-chess-club-2",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2371,21 +2356,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "O noapte furtunoas\u0103",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-07-05 20:00:00",
-      "url": "https://www.tnb.ro/ro/o-noapte-furtunoasa-225",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1042/1552/large_O_NOAPTE_FURTUNOASA.jpg",
       "video_url": null
     },
     {
@@ -2569,21 +2539,6 @@
       "video_url": null
     },
     {
-      "title": "Canc\u00fan",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala George Constantin",
-      "date": "2026-07-05 19:30:00",
-      "url": "https://nottara.ro/spectacol/cancun/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Un spectacol inedit despre prietenie \u0219i a doua \u0219ans\u0103, despre c\u00e2t de pu\u021bin este nevoie ca tot ce ai construit o via\u021b\u0103 \u00eentreag\u0103 s\u0103 se destrame ca \u00eentr-un vis. Ceea ce trebuia s\u0103 fie o vacan\u021b\u0103 relaxant\u0103 \u00een faimoasa sta\u021biune Cancun se transform\u0103 pentru cuplurile Reme \u2013 Vicente \u0219i Laura \u2013 Pablo, c\u0103s\u0103tori\u021bi \u0219i prieteni [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/cancun-1-EBS-1280x853-px.jpg",
-      "video_url": "https://www.youtube.com/embed/JaeghOuu9Aw"
-    },
-    {
       "title": "Jake \u0219i femeile lui",
       "artist": null,
       "venue": "Teatrul Nottara - Sala Horia Lovinescu",
@@ -2657,21 +2612,6 @@
       "description_source": "scraped",
       "image_url": null,
       "video_url": null
-    },
-    {
-      "title": "TACHE, IANKE \u0218I CAD\u00c2R",
-      "artist": "Victor Ion Popa",
-      "venue": "Teatrul Bulandra - Liviu Ciulei",
-      "date": "2026-07-05 19:00:00",
-      "url": "https://www.bulandra.ro/tache-ianke-cadar/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Scris\u0103 \u00een 1932, piesaTache, Ianke \u015fi Cad\u00e2ra trecut proba timpului \u015fi a devenit unul dintre cele mai populare \u015fi mai montate texte interbelice din literatura dramatic\u0103 rom\u00e2neasc\u0103. Povestea celor trei mici negustori \u2013 un rom\u00e2n, un evreu \u015fi un turc \u2013 a c\u0103ror tihn\u0103 monoton\u0103 e tulburat\u0103 de o dilem\u0103 de ordin personal, redefine\u015fte rela\u0163iile interetnice \u015fi, \u00een profunzime, cele interumane.Tache, Ianke \u015fi Cad\u00e2rformuleaz\u0103 \u00eentreb\u0103ri \u015fi propune r\u0103spunsuri actuale \u00eentr-o manier\u0103 plin\u0103 de umor, \u00een care sl\u0103b...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2022/04/Tache-Ianke-si-Cadar-2021-foto-Madalina-Sinoae-18.jpg",
-      "video_url": "https://www.youtube.com/embed/4LWtR15M2mA"
     },
     {
       "title": "ART\u0102",
@@ -2808,21 +2748,6 @@
       "description": "The Art of the Game (TAG)este primul eveniment cultural de amploare din Rom\u00e2nia dedicat jocurilor video \u0219i artelor conexe, organizat de ARCUB la Hanul Gabroveni, \u00een perioada8 noiembrie 2025 \u2013 1 martie 2026. G\u00e2ndit\u0103 ca oexperien\u021b\u0103 curatorial\u0103, TAG invit\u0103 publicul s\u0103 priveasc\u0103 jocurile videodincolo de divertisment, ca pe unlimbaj artistic, uninstrument educa\u021bionalcu aplica\u021bii reale \u00een \u00eenv\u0103\u021bare \u0219i unspa\u021biu social\u00een care comunit\u0103\u021bile se formeaz\u0103 \u0219i colaboreaz\u0103. Parcursul reune\u0219tearte vizuale, muz...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "Scoala de vara de improvizatie \u2600\ufe0f adolescenti 13-17 ani \ud83c\udfad 1 sau 8 iulie",
-      "artist": null,
-      "venue": "Cursul se va tine la Improteca",
-      "date": "2026-07-05 17:00:00",
-      "url": "https://improteca.ro/2024/06/10/curs-dezvoltare-personala-prin-teatru-de-improvizatie-adolescenti-1-8-iulie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -4026,21 +3951,6 @@
       "video_url": null
     },
     {
-      "title": "CALUP ANIMAT PENTRU COPII: FAMILII DESENATE",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-05 11:30:00",
-      "url": "https://eventbook.ro/film/bilete-calup-animat-pentru-copii-familii-desenate-program-curatorial-special-unatc-fara-contur",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "ENTRE DEUX S\u0152URS\u2014 Cl\u00e9ment C\u00e9ard and Anne-Sophie Gousset, 2022, 7min LOLA ET LE PIANO \u00c0 BRUITS\u2014 Augusto Zanovello, 2024, 26min",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-calup-animat-pentru-copii-familii-desenate-program-curatorial-special-unatc-fara-contur-pfI.webp",
-      "video_url": null
-    },
-    {
       "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4179,21 +4089,6 @@
       "title": "Tur ghidat cu Dan Perjovschi | ora 17:00",
       "artist": null,
       "venue": "ARCUB - Hanul Gabroveni",
-      "date": "2026-07-05 19:00:00",
-      "url": "https://arcub.ro/eveniment/tur-ghidat-cu-dan-perjovschi-ora-17-00-2",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dan Perjovschipropune publicului o nou\u0103 serie de tururi ghidate, desf\u0103\u0219urate \u00een cadrul expozi\u021biei\u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201dde laARCUB - Hanul Gabroveni. \u00cen fiecare zi de duminic\u0103 alunii iulie, de la ora 17:00,participan\u021bii vor beneficia de o experien\u021b\u0103 complet\u0103. Vor putea afla de la artistulDan Perjovschicum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile celor doi mari arti\u0219ti \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani....",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "Tur ghidat cu Dan Perjovschi | ora 17:00",
-      "artist": null,
-      "venue": "ARCUB - Hanul Gabroveni",
       "date": "2026-07-12 19:00:00",
       "url": "https://arcub.ro/eveniment/tur-ghidat-cu-dan-perjovschi-ora-17-00-3",
       "source": "arcub",
@@ -4281,21 +4176,6 @@
       "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
     },
     {
-      "title": "C\u00e2ini vs. Uranus",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-07-05 16:30:54.516000",
-      "url": "https://www.mnac.ro/event/1375/C%C3%A2ini%20vs.%20Uranus/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Spectacol de teatru",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
-    },
-    {
       "title": "Actori F\u0103r\u0103 Text \ud83d\ude02 improv comedy show",
       "artist": null,
       "venue": "Improteca",
@@ -4353,21 +4233,6 @@
       "description": "Vara aceasta \u00eei invit\u0103m pe cei mici s\u0103 descopere teatrul \u0219i improviza\u021bia prin joc, creativitate \u0219i mult\u0103 voie bun\u0103. Prin exerci\u021bii de teatru, dic\u021bie \u0219i improviza\u021bie, copiii \u00ee\u0219i dezvolt\u0103 \u00eencrederea \u00een sine, creativitatea, comunicarea \u0219i capacitatea de a lucra \u00een echip\u0103, \u00eentr-un mediu sigur \u0219i prietenos. \ud83d\udc67\ud83e\uddd2 Grupe de v\u00e2rst\u0103: 5\u20137 ani, 8\u201312 ani \u0219i 13\u201317 ani\u23f0 Luni\u2013vineri, 09:00\u201311:00\ud83d\udccd Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #10 I 4-5 iulie",
-      "artist": null,
-      "venue": "Calea Victoriei",
-      "date": "2026-07-05 19:00:00",
-      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-10-i-4-5-iulie",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Tema weekendului:Bucure\u0219ti retro: istorie, art\u0103 \u0219i automobile de colec\u021bie 12:00 \u2013 17:00: Calea Victoriei, tronsonul cuprins \u00eentre Biserica Kretzulescu \u0219i Str. Ion C\u00e2mpineanu,Pro Vehiculum Urbi \u2013 Expozi\u021bie tematic\u0103 dedicat\u0103 sec\u021biei Trabant cu aproximativ 25 de vehicule fabricate din materiale reciclate \u00een DDR: \u201eLa plimbare cu Trabantul\u201d, organizat\u0103 \u00een colaborare cuAsocia\u021bia Retromobil Club Rom\u00e2nia 10:00 \u2013 11:30: Traseu itinerant: Palatul CEC \u2192 Ateneul Rom\u00e2n,Tur ghidat \u201eDe la Br\u00e2ncoveanu la Car...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     },
     {
@@ -4711,6 +4576,36 @@
       "price": null,
       "spotify_url": null,
       "description": "Vara aceasta lans\u0103m o serie de workshopuri intensive de dou\u0103 zile, dedicate unor teme specifice de improviza\u021bie care rareori primesc timpul \u0219i aten\u021bia pe care le merit\u0103 \u00een cadrul cursurilor s\u0103pt\u0103m\u00e2nale.Fiecare workshop este conceput pentru a oferi participan\u021bilor ocazia de a aprofunda, experimenta \u0219i \u00eenv\u0103\u021ba al\u0103turi de traineri \u0219i improvizatori cu experien\u021b\u0103.Continu\u0103m cu:\ud83c\udfad Propuneri BetonTehnici pentru propuneri care dau via\u021b\u0103 scenelorTe-ai trezit vreodat\u0103 pe scen\u0103 f\u0103r\u0103 s\u0103 \u0219tii cu ce s\u0103 \u00eencepi...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: FILMUL CU DINOZAURI / PAW PATROL: THE DINO MOVIE",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-23 11:00:00",
+      "url": "https://eventbook.ro/film/bilete-patrula-catelusilor-filmul-cu-dinozauri-paw-patrol-the-dino-movie-filme-pentru-intreaga-familie",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "35 LEI",
+      "spotify_url": null,
+      "description": "Director:Cal BrunkerCast:Mckenna Grace, Jameela Jamil, Terry Crews, Fortune Feimster, Jennifer HudsonGenre:Anima\u021bie, Ac\u021biune, Aventuri, Comedie, Familie, SFDuration:1h 29mCountry:Canada, SUAYear:2026 Sinopsis:Dup\u0103 o furtun\u0103 uria\u0219\u0103, Patrula c\u0103\u021belu\u0219ilor ajunge pe o insul\u0103 misterioas\u0103 populat\u0103 de dinozauri, unde \u00eel \u00eent\u00e2lnesc pe Rex, un c\u0103\u021belu\u0219 e\u0219uat acolo. C\u00e2nd activitatea minier\u0103 nes\u0103buit\u0103 a lui Humdinger declan\u0219eaz\u0103 o erup\u021bie vulcanic\u0103, echipa se confrunt\u0103 cu cea mai dificil\u0103 misiune de p\u00e2n\u0103 acum",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-patrula-catelusilor-filmul-cu-dinozauri-paw-patrol-the-dino-movie-filme-pentru-intreaga-familie-dKo.webp",
+      "video_url": "https://www.youtube.com/embed/LRMTr2VZcr8?si=SSch_fjsWDgbbO11"
+    },
+    {
+      "title": "Scoala de vara de improvizatie \u2600\ufe0f adolescenti 13-17 ani \ud83c\udfad 1 sau 8 iulie",
+      "artist": null,
+      "venue": "Cursul se va tine la Improteca",
+      "date": "2027-07-05 17:00:00",
+      "url": "https://improteca.ro/2024/06/10/curs-dezvoltare-personala-prin-teatru-de-improvizatie-adolescenti-1-8-iulie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Copyright \u00a9 2022 IMPROTECA. All rights reserved. Powered byTECHTONIKA MEDIA",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
