@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-06T12:48:41.121429",
+  "scraped_at": "2026-07-07T11:49:03.450936",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -2265,6 +2265,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Facets [USA], Eirwud Mudwasser, Daniel & Fahed",
+      "artist": "Facets [USA], Eirwud Mudwasser, Daniel & Fahed",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-10 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=facets-usa-eirwud-mudwasser-daniel-fahed",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/54UJUsxJLdMPTBtBuEFXRS",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "LIVE: Valerinne + Special Guests: Ordinul Negru [RO]",
+      "artist": "Valerinne + Special Guests: Ordinul Negru [RO]",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-10-21 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=live-valerinne-special-guests-ordinul-negru-ro",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2356,36 +2386,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "O noapte furtunoas\u0103",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-07-06 19:30:00",
-      "url": "https://www.tnb.ro/ro/o-noapte-furtunoasa-2022",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/897/1097/large_Afis_nout.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Dragoste pe-un fir de a\u021b\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-07-06 20:30:00",
-      "url": "https://www.tnb.ro/ro/dragoste-pe-un-fir-de-ata",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1143/1473/large_Dragoste_gazduit_TNB_1.jpg",
       "video_url": null
     },
     {
@@ -2494,21 +2494,6 @@
       "video_url": null
     },
     {
-      "title": "Fluturii sunt liberi",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-07-06 20:00:00",
-      "url": "https://www.tnb.ro/ro/fluturii-sunt-liberi",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1034/1312/large_fluturii.jpg",
-      "video_url": null
-    },
-    {
       "title": "Via\u021ba femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
       "artist": null,
       "venue": "TNB - Sala Mic\u0103",
@@ -2581,21 +2566,6 @@
       "description": "Vino Veritas de David McGregor Vino Veritas de David MacGregor Regia: Daniel Popa Coloana sonor\u0103: Valeriu Borco\u0219 (K not K) Scenografia: Maria Ordean Traducerea \u0219i adaptarea: George Reme\u0219 Este noaptea de Halloween, dar toate m\u0103\u0219tile cad. C\u00e2nd dou\u0103 cupluri beau \u00eempreun\u0103 un ciudat vin albastru, secretele \u00eencep s\u0103 ias\u0103 la iveal\u0103, dezv\u0103luind adev\u0103ra\u021bii mon\u0219tri. \u201cCe mai \u00eenseamn\u0103 s\u0103 fii un partener bun z",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
-      "video_url": null
-    },
-    {
-      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
-      "artist": "REGIA: CHRIS SIMION-MERCURIAN",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-07-06 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
-      "description_source": "scraped",
-      "image_url": null,
       "video_url": null
     },
     {
@@ -2699,21 +2669,6 @@
       "price": null,
       "spotify_url": null,
       "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
-      "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
-      "artist": "",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-07-06 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
       "description_source": "scraped",
       "image_url": null,
       "video_url": null
@@ -3951,21 +3906,6 @@
       "video_url": null
     },
     {
-      "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-06 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-my-father-s-shadow-umbra-tatalui-meu",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Akinola DaviesCast:Sope Dirisu, Godwin Egbo, Chibuike Marvelous Egbo, Ef\u00f2n Wini, Adesina McCoy BabalolaGenre:Dram\u0103Duration:1h 34mCountry:Nigeria, Marea BritanieLanguage:EN, YOYear:2025 Sinopsis:Nigeria, 1993. O na\u021biune \u00eentreag\u0103 a\u0219teapt\u0103 cu sufletul la gur\u0103 rezultatele unor alegeri preziden\u021biale care vor hot\u0103r\u00ee soarta democra\u021biei. Prin toat\u0103 agita\u021bia, un tat\u0103 ia \u021bara la pas \u00eempreun\u0103 cu copiii s\u0103i, \u00een \u00eencercarea de a recupera ni\u0219te salarii nepl\u0103tite. \u00cen furtuna politic\u0103 a momentului, \u00eens\u0103",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-sTG.webp",
-      "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
-    },
-    {
       "title": "ORPHAN / ORFAN",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4204,21 +4144,6 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-film-y-1OX.webp",
       "video_url": "https://www.youtube.com/embed/dHF9m3m7puI?si=iqCJE7HcZz0R0U4R"
-    },
-    {
-      "title": "\u0218coal\u0103 de var\u0103 de poezie experimental\u0103",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-07-06 06:30:33.421000",
-      "url": "https://www.mnac.ro/event/1378/%C8%98coal%C4%83%20de%20var%C4%83%20de%20poezie%20experimental%C4%83/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Evenimente partenere",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
-      "video_url": null
     },
     {
       "title": "Cursuri de var\u0103 pentru copii la Improteca",
@@ -4608,6 +4533,21 @@
       "description": "Copyright \u00a9 2022 IMPROTECA. All rights reserved. Powered byTECHTONIKA MEDIA",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Synaesthetic \u2013 International Travelling Festival of Experimental Art & Poetry",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-07-09 15:00:10.229000",
+      "url": "https://www.mnac.ro/event/1379/Synaesthetic%20%E2%80%93%20International%20Travelling%20Festival%20of%20Experimental%20Art%20&%20Poetry/all",
+      "source": "mnac",
+      "category": "culture",
+      "price": "Muzic\u0103",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     }
   ]
