@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-08T11:06:29.171615",
+  "scraped_at": "2026-07-09T11:56:00.261697",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1847,21 +1847,6 @@
       "video_url": null
     },
     {
-      "title": "Dimitri\u2019s Bats | miau.wav | Fata-n Iarb\u0103",
-      "artist": "Dimitri\u2019s Bats",
-      "venue": "Quantic",
-      "date": "2026-07-08 00:00:00",
-      "url": "https://quantic.pub/eveniment/dimitris-bats-miau-wav-fata-n-iarba/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/3KsiqBSJ0KWQ8dFNRmMUpA",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "LOS FASTIDIOS / SARMALELE RECI",
       "artist": "LOS FASTIDIOS / SARMALELE RECI",
       "venue": "Quantic",
@@ -2057,21 +2042,6 @@
       "video_url": null
     },
     {
-      "title": "Cinema Esperanto #2: The Dreamed Ones (AT) \u2013 screening supported by the Austrian Cultural Forum in Romania",
-      "artist": "Cinema Esperanto #2: The Dreamed Ones (AT) \u2013 screening supported by the Austrian Cultural Forum in Romania",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-07-08 19:30:00",
-      "url": "https://www.control-club.ro/event/?slug=cinema-esperanto-2-the-dreamed-ones-at",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Odotte",
       "artist": "Odotte",
       "venue": "Control Club - Front Room",
@@ -2250,6 +2220,36 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Corp.Cast w/ Admina, Gheordu & von B\u00fclove",
+      "artist": "Corp.Cast w/ Admina, Gheordu & von B\u00fclove",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-19 19:00:00",
+      "url": "https://www.control-club.ro/event/?slug=corp-cast-w-admina-gheordu-von-buelove",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/7m0SyCFxU0Q2T4rFDqubxq",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Robin and the Backstabbers",
+      "artist": "Concert Robin and the Backstabbers",
+      "venue": "Quantic",
+      "date": "2026-08-12 00:00:00",
+      "url": "https://quantic.pub/eveniment/concert-robin-and-the-backstabers/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2344,21 +2344,6 @@
       "video_url": null
     },
     {
-      "title": "Inferno",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-07-08 20:00:00",
-      "url": "https://www.tnb.ro/ro/inferno",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/971/1204/large_Inferno_TNB.jpg",
-      "video_url": null
-    },
-    {
       "title": "Pache, col\u021b cu M\u0103t\u0103sari...",
       "artist": null,
       "venue": "TNB - Sala Atelier",
@@ -2401,36 +2386,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/968/1201/large_Scapa-ma_de_nevasta-mea_TNB.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Romeo \u0219i Julieta",
-      "artist": null,
-      "venue": "TNB - Sala \"Ion Caramitru\"",
-      "date": "2026-07-08 19:00:00",
-      "url": "https://www.tnb.ro/ro/romeo-si-julieta-2026",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1274/1711/large_afis_Romeo.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Via\u021ba femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
-      "artist": null,
-      "venue": "TNB - Sala Mic\u0103",
-      "date": "2026-07-08 18:00:00",
-      "url": "https://www.tnb.ro/ro/viata-femeilor-pe-intelesul-barbatilor-1",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1252/1681/large_afis.jpg",
       "video_url": null
     },
     {
@@ -3801,21 +3756,6 @@
       "video_url": null
     },
     {
-      "title": "GOD WILL NOT HELP / DUMNEZEU NU NE VA AJUTA",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-08 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-god-will-not-help-dumnezeu-nu-ne-va-ajuta",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Hana Ju\u0161i\u0107Cast:Manuela Martelli, Filip Djuric, Mauro Ercegovic Gracin, Ana Marija VeselcicGenre:Dram\u0103Duration:2h 17mCountry:Croa\u021bia, Italia, Rom\u00e2nia, Grecia, Fran\u021ba, SloveniaLanguage:HRYear:2026 Sinopsis:Filmul spune povestea Teresei, o chilian\u0103 care p\u0103trunde \u00eentr-o comunitate montan\u0103 din Croa\u021bia, compus\u0103 din ciobani, rigid organizat\u0103. Pretinz\u00e2nd c\u0103 e v\u0103duva unui membru al comunit\u0103\u021bii, Teresa tulbur\u0103 echilibrul existent \u0219i declan\u0219eaz\u0103 schimb\u0103ri profunde \u00een rela\u021biile dintre localnici. Te",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-god-will-not-help-dumnezeu-nu-ne-va-ajuta-women-in-frame-o6O.webp",
-      "video_url": "https://www.youtube.com/embed/ZtQcEyow818"
-    },
-    {
       "title": "MOANA / VAIANA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4459,6 +4399,21 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-orphan-orfan-nts.webp",
       "video_url": "https://www.youtube.com/embed/HEk9dFwCk70?si=molr_Sc-bzIz34Sa"
+    },
+    {
+      "title": "Y",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-25 18:00:00",
+      "url": "https://eventbook.ro/film/bilete-film-y",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Alexandru Baciu, Maria Popista\u0219uCast:Victoria R\u0103ileanu, Maria Popista\u0219u, Nicoleta H\u00e2ncu, Ionel Mih\u0103ilescu, Lucre\u021bia M\u00e2ndricGenre:Dram\u0103Duration:1h 38mCountry:Romania, GreciaYear:2026 Sinopsis:Olga, tat\u0103l ei \u0219i cele dou\u0103 surori ale ei duc o via\u021b\u0103 f\u0103r\u0103 griji datorit\u0103 averii bunicii sale, Ileana, fost\u0103 avocat\u0103. Moartea ei subit\u0103 perturb\u0103 echilibrul familiei. Cea mai afectat\u0103 este Olga, care poart\u0103 povara unei m\u0103rturisiri pe patul de moarte pe care i-a f\u0103cut-o bunica ei: dosarele de adop\u021bie ",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-film-y-1OX.webp",
+      "video_url": "https://www.youtube.com/embed/dHF9m3m7puI?si=iqCJE7HcZz0R0U4R"
     }
   ]
 }
