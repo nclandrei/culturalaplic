@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-10T11:56:16.688421",
+  "scraped_at": "2026-07-11T10:23:29.469142",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -56,96 +56,6 @@
       "category": "music",
       "price": "80.00 lei",
       "spotify_url": "https://open.spotify.com/artist/1MDw0zSUU0XtI9D5JgEZH5",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Evi Filippou & Robert Lucaciu (Grecia / Germania) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Evi Filippou & Robert Lucaciu (Grecia / Germania)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 11:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/evi-filippou-robert-lucaciu-grecia-germania/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/1X55HECqrmTKtR94uWnEG2",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Radu V\u00e2lcu Quintet (Romania) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Radu V\u00e2lcu Quintet (Romania)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 12:30:00",
-      "url": "https://garana-jazz.ro/gjf-2026/radu-valcu-quintet-romania/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Joanna Duda Trio (Polonia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Joanna Duda Trio (Polonia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 18:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/joanna-duda-trio-polonia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Bang/Henriksen/Zach/Aarset/\u00d8stensj\u00f8 \u2013 \u201cAfter the Wildfire\u201d (Norvegia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Bang/Henriksen/Zach/Aarset/\u00d8stensj\u00f8 \u2013 \u201cAfter the Wildfire\u201d (Norvegia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 19:30:00",
-      "url": "https://garana-jazz.ro/gjf-2026/bang-henriksen-zach-aarset-ostensjo-after-the-wildfire-norvegia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "The Fusion Experience Quartet featuring Dave Weckl, Richard Bona, Mica Lecoq, Ciro Manna (S.U.A. / Fran\u021ba / Italia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "The Fusion Experience Quartet featuring Dave Weckl, Richard Bona, Mica Lecoq, Ciro Manna (S.U.A. / Fran\u021ba / Italia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 21:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/the-fusion-experience-quartet-featuring-dave-weckl-richard-bona-mica-lecoq-ciro-manna-s-u-a-franta-italia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/70wm2qxYZ4i2KqcyyH2GyT",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Bushman\u2019s Revenge (Norvegia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Bushman\u2019s Revenge (Norvegia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 22:30:00",
-      "url": "https://garana-jazz.ro/gjf-2026/bushmans-revenge-norvegia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1247,21 +1157,6 @@
       "video_url": null
     },
     {
-      "title": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "OK World: Bugge Wesseltoft, Shri, Sanskriti Shrestha & Carolina Kat\u00fan \n(Norvegia, India, Nepal, Elve\u021bia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-10 18:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/ok-world-bugge-wesseltoft-shri-sanskriti-shrestha-carolina-katun-norvegia-india-nepal-elvetia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/53WWphw1pE9SBpsjRgU9tC",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Joanna Duda Trio (Polonia) @ G\u0103r\u00e2na Jazz Festival",
       "artist": "Joanna Duda Trio (Polonia)",
       "venue": "G\u0103r\u00e2na Jazz Festival",
@@ -1787,21 +1682,6 @@
       "video_url": null
     },
     {
-      "title": "LOS FASTIDIOS / SARMALELE RECI",
-      "artist": "LOS FASTIDIOS / SARMALELE RECI",
-      "venue": "Quantic",
-      "date": "2026-07-10 00:00:00",
-      "url": "https://quantic.pub/eveniment/los-fastidios-sarmalele-reci/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Kadjavsi & Plant",
       "artist": "Kadjavsi & Plant",
       "venue": "Quantic",
@@ -2117,21 +1997,6 @@
       "video_url": null
     },
     {
-      "title": "Facets [USA], Eirwud Mudwasser, Daniel & Fahed",
-      "artist": "Facets [USA], Eirwud Mudwasser, Daniel & Fahed",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-10 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=facets-usa-eirwud-mudwasser-daniel-fahed",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/54UJUsxJLdMPTBtBuEFXRS",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "LIVE: Valerinne + Special Guests: Ordinul Negru [RO]",
       "artist": "Valerinne + Special Guests: Ordinul Negru [RO]",
       "venue": "Control Club - Berlin Room",
@@ -2171,6 +2036,21 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Sheina & Zina, Moss Farai & DeNada",
+      "artist": "Sheina & Zina, Moss Farai & DeNada",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-14 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-sheina-zina-moss-farai-denada",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/4ijPUcta3Ks5H1YWFaguJF",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2266,21 +2146,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Raskolnikov, dup\u0103 Crim\u0103 \u0219i pedeaps\u0103",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-07-10 18:00:00",
-      "url": "https://www.tnb.ro/ro/raskolnikov-dupa-crima-si-pedeapsa",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/1200/1566/large_Raskolnikov_A4_TNB.jpg",
       "video_url": null
     },
     {
@@ -3951,21 +3816,6 @@
       "video_url": null
     },
     {
-      "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-10 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-my-father-s-shadow-umbra-tatalui-meu-retrospectiva-tiff-25",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Akinola DaviesCast:Sope Dirisu, Godwin Egbo, Chibuike Marvelous Egbo, Ef\u00f2n Wini, Adesina McCoy BabalolaGenre:Dram\u0103Duration:1h 34mCountry:Nigeria, Marea BritanieLanguage:EN, YOYear:2025 Sinopsis:Nigeria, 1993. O na\u021biune \u00eentreag\u0103 a\u0219teapt\u0103 cu sufletul la gur\u0103 rezultatele unor alegeri preziden\u021biale care vor hot\u0103r\u00ee soarta democra\u021biei. Prin toat\u0103 agita\u021bia, un tat\u0103 ia \u021bara la pas \u00eempreun\u0103 cu copiii s\u0103i, \u00een \u00eencercarea de a recupera ni\u0219te salarii nepl\u0103tite. \u00cen furtuna politic\u0103 a momentului, \u00eens\u0103",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-retrospectiva-tiff-25-8vE.webp",
-      "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
-    },
-    {
       "title": "Actori F\u0103r\u0103 Text \ud83d\ude02 improv comedy show",
       "artist": null,
       "venue": "Improteca",
@@ -4459,6 +4309,21 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-malul-vanat-a-river-s-gaze-nEQ.webp",
       "video_url": "https://www.youtube.com/embed/vlIWPrEPJYw?si=CZmERxo8kIfxnCkb"
+    },
+    {
+      "title": "HER PRIVATE HELL",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-27 18:00:00",
+      "url": "https://eventbook.ro/film/bilete-her-private-hell",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Nicolas Winding RefnCast:Charles Melton, Sophie Thatcher, Havana Rose Liu, Dougray ScottGenre:Crim\u0103, Dram\u0103, SF, ThrillerDuration:1h 49mCountry:Danemarca, SUAYear:2026 Prin cea\u021ba misterioas\u0103 ce pune st\u0103p\u00e2nire pe o metropol\u0103 futurist\u0103, dezl\u0103n\u021buind o entitate enigmatic\u0103 \u0219i mortal\u0103, o t\u00e2n\u0103r\u0103 tulburat\u0103 \u00ee\u0219i caut\u0103 tat\u0103l. Drumul ei se intersecteaz\u0103 cu cel al unui soldat american pornit \u00eentr-o odisee cutremur\u0103toare pentru a-\u0219i salva fiica din Iad.",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-her-private-hell-SJH.webp",
+      "video_url": "https://www.youtube.com/embed/WrK_XdlWN6A?si=Y-FVbDxKukCcKSjU"
     }
   ]
 }
