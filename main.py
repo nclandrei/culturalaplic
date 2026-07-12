@@ -15,7 +15,7 @@ from types import ModuleType
 from models import Event
 from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
-from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
+from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, hardrock, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
 from scrapers.theatre import bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
@@ -32,7 +32,7 @@ FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 # Group 2: Heavy scrapers = operanb (4 pages), tnb (2 pages)
 SCRAPER_GROUPS = {
     1: {
-        "music": [ateneul, enescu, control, jazzx],
+        "music": [ateneul, enescu, control, hardrock, jazzx],
         "theatre": [bulandra, cuibul, godot, grivita53],
         "culture": [arcub, mare, mnac],
     },
@@ -93,7 +93,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
             scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
     else:
         # Run all scrapers
-        scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+        scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
 
     for scraper in scrapers:
         if scraper in FESTIVAL_SCRAPERS and not run_festivals:
