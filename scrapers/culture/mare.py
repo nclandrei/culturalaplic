@@ -13,6 +13,8 @@ ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
+    "ian": 1, "feb": 2, "mar": 3, "apr": 4, "iun": 6, "iul": 7,
+    "aug": 8, "sep": 9, "oct": 10, "noi": 11, "dec": 12,
 }
 
 
@@ -67,9 +69,9 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     now = datetime.now()
     
-    current_grid = soup.select_one(".current__grid")
-    if current_grid:
-        for item in current_grid.select("a.current__item"):
+    exhibition_items = soup.select("a.current__item")
+    if exhibition_items:
+        for item in exhibition_items:
             href = item.get("href", "")
             if not href or "/exhibition/" not in href:
                 continue
@@ -78,14 +80,14 @@ def scrape() -> list[Event]:
                 continue
             seen.add(href)
             
-            title_elem = item.select_one("h2")
+            title_elem = item.select_one("h2, h4")
             if not title_elem:
                 continue
             title = title_elem.get_text(strip=True)
             if not title:
                 continue
             
-            date_elem = item.select_one(".hero__date")
+            date_elem = item.select_one(".hero__date, .card-meta--period")
             start_date, end_date = None, None
             if date_elem:
                 start_date, end_date = parse_date_range(date_elem.get_text())
