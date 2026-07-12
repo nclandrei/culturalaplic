@@ -1,5 +1,7 @@
 """Unit tests for HTTP retry logic."""
 
+from unittest.mock import patch
+
 import httpx
 import pytest
 import respx
@@ -84,3 +86,21 @@ class TestHttpRetry:
 
         assert result == "Connected"
         assert respx.calls.call_count == 2
+
+    def test_js_fetch_waits_for_requested_selector(self):
+        """Should wait for asynchronous page content before reading the HTML."""
+        with patch("services.http.sync_playwright") as mock_playwright:
+            playwright = mock_playwright.return_value.__enter__.return_value
+            page = playwright.chromium.launch.return_value.new_page.return_value
+            page.content.return_value = "<div class='events-list-view'></div>"
+
+            result = fetch_page(
+                "https://example.com/events",
+                needs_js=True,
+                wait_selector=".events-list-view",
+            )
+
+        assert result == "<div class='events-list-view'></div>"
+        page.wait_for_selector.assert_called_once_with(
+            ".events-list-view", timeout=30000
+        )
