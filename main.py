@@ -437,8 +437,8 @@ def main() -> None:
             culture_scrapers = SCRAPER_GROUPS[group]["culture"]
         else:
             print("All scrapers (no group specified):")
-            music_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
-            theatre_scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+            music_scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+            theatre_scrapers = [bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
             culture_scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
 
         # Filter out festivals if not running
