@@ -24,6 +24,7 @@ const sources = {
   ],
   theatre: [
     { name: "Cuibul Artiștilor", url: "https://cuibul.ro" },
+    { name: "Eventbook București", url: "https://eventbook.ro/city/bucuresti" },
     { name: "Godot Cafe Teatru", url: "https://godotcafe.ro" },
     { name: "Grivița 53", url: "https://grivita53.ro" },
     { name: "Teatrul Bulandra", url: "https://bulandra.ro" },

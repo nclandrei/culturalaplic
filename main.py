@@ -16,7 +16,7 @@ from models import Event
 from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
 from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, hardrock, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
-from scrapers.theatre import bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb
+from scrapers.theatre import bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
 from services.spotify import search_artist
@@ -33,7 +33,7 @@ FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 SCRAPER_GROUPS = {
     1: {
         "music": [ateneul, enescu, control, hardrock, jazzx],
-        "theatre": [bulandra, cuibul, godot, grivita53],
+        "theatre": [bulandra, cuibul, eventbook, godot, grivita53],
         "culture": [arcub, mare, mnac],
     },
     2: {
@@ -117,7 +117,7 @@ def run_theatre_scrapers(group: int | None = None) -> list[Event]:
     if group is not None:
         scrapers = SCRAPER_GROUPS[group]["theatre"]
     else:
-        scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+        scrapers = [bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
 
     for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
