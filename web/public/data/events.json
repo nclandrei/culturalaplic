@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-11T10:23:29.469142",
+  "scraped_at": "2026-07-12T10:31:42.377170",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -56,51 +56,6 @@
       "category": "music",
       "price": "80.00 lei",
       "spotify_url": "https://open.spotify.com/artist/1MDw0zSUU0XtI9D5JgEZH5",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Jair-R\u00f4hm Parker Wells / Resonance: Exploring the Legacy of Eberhard Weber (S.U.A.) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Jair-R\u00f4hm Parker Wells / Resonance: Exploring the Legacy of Eberhard Weber (S.U.A.)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-11 15:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/jair-rohm-parker-wells-resonance-exploring-the-legacy-of-eberhard-weber-s-u-a/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Oz Noy Trio (S.U.A.) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Oz Noy Trio (S.U.A.)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-11 21:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/oz-noy-trio-s-u-a/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Why Kai (Norvegia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Why Kai (Norvegia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-11 22:30:00",
-      "url": "https://garana-jazz.ro/gjf-2026/why-kai-norvegia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1157,21 +1112,6 @@
       "video_url": null
     },
     {
-      "title": "Joanna Duda Trio (Polonia) @ G\u0103r\u00e2na Jazz Festival",
-      "artist": "Joanna Duda Trio (Polonia)",
-      "venue": "G\u0103r\u00e2na Jazz Festival",
-      "date": "2026-07-11 18:00:00",
-      "url": "https://garana-jazz.ro/gjf-2026/joanna-duda-trio-polonia/",
-      "source": "garana",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Airbourne @ Rockstadt Extreme Fest",
       "artist": "Airbourne",
       "venue": "Rockstadt Extreme Fest, Ghimbav",
@@ -1847,21 +1787,6 @@
       "video_url": null
     },
     {
-      "title": "CMR-A [UK] + Baron P., Dirty Disco w/ Eugen R\u0103descu",
-      "artist": "CMR-A [UK] + Baron P., Dirty Disco w/ Eugen R\u0103descu",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-11 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=cmr-a-uk-baron-p-dirty-disco-w-eugen-radescu",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert EIVOR",
       "artist": "Concert EIVOR",
       "venue": "Quantic",
@@ -2149,21 +2074,6 @@
       "video_url": null
     },
     {
-      "title": "Scap\u0103-m\u0103 de nevast\u0103-mea",
-      "artist": null,
-      "venue": "TNB - Sala Atelier",
-      "date": "2026-07-11 16:00:00",
-      "url": "https://www.tnb.ro/ro/scapa-ma-de-nevasta-mea",
-      "source": "tnb",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://www.tnb.ro/uploads/spectacles/968/1201/large_Scapa-ma_de_nevasta-mea_TNB.jpg",
-      "video_url": null
-    },
-    {
       "title": "Jake \u0219i femeile lui",
       "artist": null,
       "venue": "Teatrul Nottara - Sala Horia Lovinescu",
@@ -2206,21 +2116,6 @@
       "description": "Vino Veritas de David McGregor Vino Veritas de David MacGregor Regia: Daniel Popa Coloana sonor\u0103: Valeriu Borco\u0219 (K not K) Scenografia: Maria Ordean Traducerea \u0219i adaptarea: George Reme\u0219 Este noaptea de Halloween, dar toate m\u0103\u0219tile cad. C\u00e2nd dou\u0103 cupluri beau \u00eempreun\u0103 un ciudat vin albastru, secretele \u00eencep s\u0103 ias\u0103 la iveal\u0103, dezv\u0103luind adev\u0103ra\u021bii mon\u0219tri. \u201cCe mai \u00eenseamn\u0103 s\u0103 fii un partener bun z",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
-      "video_url": null
-    },
-    {
-      "title": "CONSTRUCTORUL SOLNESS",
-      "artist": null,
-      "venue": "Teatrul Bulandra - Toma Caragiu",
-      "date": "2026-07-11 19:00:00",
-      "url": "https://www.bulandra.ro/colonelul-solness/",
-      "source": "bulandra",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "Halvard Solness este cel mai important arhitect al genera\u021biei sale. \u0218i-a cl\u0103dit cariera pe ruinele vie\u021bii\u00a0 personale, iar acum c\u0103snicia i se clatin\u0103, noua genera\u021bie \u00eei amenin\u021b\u0103 statutul, iar p\u0103catele trecutului sap\u0103 la temelia soclului pe care \u0219i l-a \u00een\u0103l\u021bat. \u00cens\u0103 \u00een via\u021ba lui totul se schimb\u0103 odat\u0103 cu apari\u021bia lui Hilde, o t\u00e2n\u0103r\u0103 misterioas\u0103, care-l poart\u0103 pe culmi ame\u021bitoare, unde doar castelele din cer pot s\u0103 dureze. Dram\u0103 psihologic\u0103, thriller modern, povestea unei iubiri interzise \u0219i tra...",
-      "description_source": "scraped",
-      "image_url": "https://www.bulandra.ro/wp-content/uploads/2026/01/TEROARE-snur-17-dec-foto-Andrei-Gindac-Two-BugsCL1A2602-scaled.jpg",
       "video_url": null
     },
     {
@@ -3666,21 +3561,6 @@
       "video_url": null
     },
     {
-      "title": "MOANA / VAIANA",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-11 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-moana-vaiana-film-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Thomas KailCast:Dwayne Johnson, Frankie Adams, Rena Owen, John Tui, Catherine Laga'aiaGenre:Aventuri, Comedie, Familie, Fantastic, MuzicalDuration:2h 00mCountry:SUALanguage:ENYear:2026 Sinopsis:Dincolo de recif , \u00eentunericul r\u0103u st\u0103 la p\u00e2nd\u0103. Oceanul a ales-o pe Vaiana. Insula ei, poporul ei, nu vor supravie\u021bui dac\u0103 nu reu\u0219e\u0219te. Trebuie s\u0103-l g\u0103seasc\u0103 pe Maui \u0219i s\u0103-i redea inima lui Te Fiti.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-moana-vaiana-film-pentru-publicul-tanar-8bF.webp",
-      "video_url": "https://www.youtube.com/embed/OJ6R9u39_9I?si=UUips_9umVSt9bxn"
-    },
-    {
       "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -3858,21 +3738,6 @@
       "description": "Vara aceasta \u00eei invit\u0103m pe cei mici s\u0103 descopere teatrul \u0219i improviza\u021bia prin joc, creativitate \u0219i mult\u0103 voie bun\u0103. Prin exerci\u021bii de teatru, dic\u021bie \u0219i improviza\u021bie, copiii \u00ee\u0219i dezvolt\u0103 \u00eencrederea \u00een sine, creativitatea, comunicarea \u0219i capacitatea de a lucra \u00een echip\u0103, \u00eentr-un mediu sigur \u0219i prietenos. \ud83d\udc67\ud83e\uddd2 Grupe de v\u00e2rst\u0103: 5\u20137 ani, 8\u201312 ani \u0219i 13\u201317 ani\u23f0 Luni\u2013vineri, 09:00\u201311:00\ud83d\udccd Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Concert aniversar Corul Pro Arte al Universit\u0103\u021bii din Bucure\u0219ti - 50 de ani de activitate",
-      "artist": null,
-      "venue": "ARCUB - Sala Mare",
-      "date": "2026-07-11 19:00:00",
-      "url": "https://arcub.ro/eveniment/concert-aniversar-corul-pro-arte-al-universitatii-din-bucuresti-50-de-ani-de-activitate",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Corul Universit\u0103\u021bii din Bucure\u0219ti,devenit ulteriorcorul Pro Arte al Universit\u0103\u021bii Bucure\u0219ti,s\u0103rb\u0103tore\u0219te semicentenarul existen\u021bei sale printr-un concert aniversar extraordinar ce va avea locs\u00e2mb\u0103t\u0103, 11 iulie 2026, de la ora 18:00, \u00een Sala Mare ARCUB(str. Lipscani nr. 84\u201390). Evenimentul marcheaz\u010350 de ani de activitate artistic\u0103desf\u0103\u0219urat\u0103 sub conducerea ne\u00eentrerupt\u0103 a dirijoareiLigia Balica Vascan, personalitate remarcabil\u0103 a vie\u021bii muzicale rom\u00e2ne\u0219ti \u0219i interna\u021bionale. Organizat cu sprijin...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     },
     {
@@ -4176,21 +4041,6 @@
       "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "Improv la P\u0103trat 1.1",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-11 20:00:00",
-      "url": "https://improteca.ro/2026/07/03/improv-la-patrat-1-1/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Primul team-up din seria Improv la P\u0103trat aduce fa\u021b\u0103 \u00een fa\u021b\u0103, dar mai ales \u00eempreun\u0103, trupele Trupa Durii \u0219i Improfly.Ce se \u00eent\u00e2mpl\u0103 la un team-up?Un show de comedie pe loc, pornind de la sugestiile voastre, \u00een care membrii celor dou\u0103 trupe \u00eempart scena \u0219i joac\u0103 \u00eempreun\u0103 unele dintre cele mai \u00eendr\u0103gite jocuri de short form improv.La final, vor fi acordate c\u00e2teva premii speciale, complet necompetitive \u0219i posibil absurde. Publicul va avea \u0219i el un cuv\u00e2nt de spus, dar totul r\u0103m\u00e2ne \u00een spirit de jo...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Improteca Summer School III. Propuneri beton",
       "artist": null,
       "venue": "Improteca",
@@ -4324,6 +4174,51 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-her-private-hell-SJH.webp",
       "video_url": "https://www.youtube.com/embed/WrK_XdlWN6A?si=Y-FVbDxKukCcKSjU"
+    },
+    {
+      "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-28 18:00:00",
+      "url": "https://eventbook.ro/film/bilete-my-father-s-shadow-umbra-tatalui-meu",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "27 LEI",
+      "spotify_url": null,
+      "description": "Director:Akinola DaviesCast:Sope Dirisu, Godwin Egbo, Chibuike Marvelous Egbo, Ef\u00f2n Wini, Adesina McCoy BabalolaGenre:Dram\u0103Duration:1h 34mCountry:Nigeria, Marea BritanieLanguage:EN, YOYear:2025 Sinopsis:Nigeria, 1993. O na\u021biune \u00eentreag\u0103 a\u0219teapt\u0103 cu sufletul la gur\u0103 rezultatele unor alegeri preziden\u021biale care vor hot\u0103r\u00ee soarta democra\u021biei. Prin toat\u0103 agita\u021bia, un tat\u0103 ia \u021bara la pas \u00eempreun\u0103 cu copiii s\u0103i, \u00een \u00eencercarea de a recupera ni\u0219te salarii nepl\u0103tite. \u00cen furtuna politic\u0103 a momentului, \u00eens\u0103",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-sTG.webp",
+      "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
+    },
+    {
+      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: FILMUL CU DINOZAURI / PAW PATROL: THE DINO MOVIE",
+      "artist": null,
+      "venue": "Cinema Elvire Popesco",
+      "date": "2026-08-29 12:00:00",
+      "url": "https://eventbook.ro/film/bilete-patrula-catelusilor-filmul-cu-dinozauri-paw-patrol-the-dino-movie-filme-pentru-intreaga-familie",
+      "source": "elvirepopescu",
+      "category": "culture",
+      "price": "35 LEI",
+      "spotify_url": null,
+      "description": "Director:Cal BrunkerCast:Mckenna Grace, Jameela Jamil, Terry Crews, Fortune Feimster, Jennifer HudsonGenre:Anima\u021bie, Ac\u021biune, Aventuri, Comedie, Familie, SFDuration:1h 29mCountry:Canada, SUAYear:2026 Sinopsis:Dup\u0103 o furtun\u0103 uria\u0219\u0103, Patrula c\u0103\u021belu\u0219ilor ajunge pe o insul\u0103 misterioas\u0103 populat\u0103 de dinozauri, unde \u00eel \u00eent\u00e2lnesc pe Rex, un c\u0103\u021belu\u0219 e\u0219uat acolo. C\u00e2nd activitatea minier\u0103 nes\u0103buit\u0103 a lui Humdinger declan\u0219eaz\u0103 o erup\u021bie vulcanic\u0103, echipa se confrunt\u0103 cu cea mai dificil\u0103 misiune de p\u00e2n\u0103 acum",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-patrula-catelusilor-filmul-cu-dinozauri-paw-patrol-the-dino-movie-filme-pentru-intreaga-familie-dKo.webp",
+      "video_url": "https://www.youtube.com/embed/LRMTr2VZcr8?si=SSch_fjsWDgbbO11"
+    },
+    {
+      "title": "Improv la P\u0103trat 1.1",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-07-11 20:00:00",
+      "url": "https://improteca.ro/2026/07/03/improv-la-patrat-1-1/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Primul team-up din seria Improv la P\u0103trat aduce fa\u021b\u0103 \u00een fa\u021b\u0103, dar mai ales \u00eempreun\u0103, trupele Trupa Durii \u0219i Improfly.Ce se \u00eent\u00e2mpl\u0103 la un team-up?Un show de comedie pe loc, pornind de la sugestiile voastre, \u00een care membrii celor dou\u0103 trupe \u00eempart scena \u0219i joac\u0103 \u00eempreun\u0103 unele dintre cele mai \u00eendr\u0103gite jocuri de short form improv.La final, vor fi acordate c\u00e2teva premii speciale, complet necompetitive \u0219i posibil absurde. Publicul va avea \u0219i el un cuv\u00e2nt de spus, dar totul r\u0103m\u00e2ne \u00een spirit de jo...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
     }
   ]
 }
