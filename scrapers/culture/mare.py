@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://mare.ro"
 EXHIBITIONS_URL = f"{BASE_URL}/exhibitions-2/"
+MIN_EXPECTED_EVENTS = 1
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,

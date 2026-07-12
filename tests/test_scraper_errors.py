@@ -67,6 +67,23 @@ class TestScraperErrorCollection:
         names = [e.scraper_name for e in scraper_errors]
         assert names == ["scraper_a", "scraper_b", "scraper_c"]
 
+    def test_unexpected_zero_events_are_recorded(self):
+        """Should flag empty output for scrapers with a minimum contract."""
+        from main import run_scraper_safely, scraper_errors
+
+        scraper_errors.clear()
+
+        mock_scraper = make_mock_scraper("scrapers.music.always_active")
+        mock_scraper.MIN_EXPECTED_EVENTS = 1
+        mock_scraper.scrape.return_value = []
+
+        result = run_scraper_safely(mock_scraper)
+
+        assert result == []
+        assert len(scraper_errors) == 1
+        assert scraper_errors[0].scraper_name == "always_active"
+        assert "expected at least 1" in scraper_errors[0].error_message
+
 
 class TestScraperAlertEmail:
     """Test scraper alert email formatting and sending."""

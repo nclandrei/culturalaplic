@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.control-club.ro"
 EVENTS_URL = f"{BASE_URL}/events/"
+MIN_EXPECTED_EVENTS = 1
 
 
 def parse_date_header(header_text: str) -> datetime | None:

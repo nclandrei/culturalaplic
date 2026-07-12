@@ -61,7 +61,23 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
     try:
         events = scraper.scrape()
         if len(events) == 0:
-            print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
+            min_expected = getattr(scraper, "MIN_EXPECTED_EVENTS", 0)
+            if not isinstance(min_expected, int):
+                min_expected = 0
+            if min_expected > 0:
+                message = (
+                    f"Scraper returned 0 events; expected at least {min_expected}"
+                )
+                print(f"⚠️  Scraper '{scraper_name}' failed: {message}")
+                scraper_errors.append(ScraperError(
+                    scraper_name=scraper_name,
+                    error_message=message,
+                    traceback=message,
+                    category=category,
+                    events_url=events_url,
+                ))
+            else:
+                print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
         return events
     except Exception as e:
         print(f"⚠️  Scraper '{scraper_name}' failed: {e}")
