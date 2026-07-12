@@ -4,6 +4,7 @@ from unittest.mock import patch
 from main import SCRAPER_GROUPS, main, run_music_scrapers, run_theatre_scrapers
 from scrapers.music import hardrock
 from scrapers.theatre import eventbook
+from scripts.test_full_flow import SCRAPERS as INTEGRATION_SCRAPERS
 
 
 def test_hardrock_is_registered_for_scheduled_and_local_runs():
@@ -39,3 +40,12 @@ def test_dry_run_lists_newly_registered_scrapers(capsys):
     output = capsys.readouterr().out
     assert "  - hardrock" in output
     assert "  - eventbook" in output
+
+
+def test_full_flow_uses_scheduler_registry():
+    for category in ("music", "theatre", "culture"):
+        registered = {
+            *SCRAPER_GROUPS[1][category],
+            *SCRAPER_GROUPS[2][category],
+        }
+        assert registered.issubset(set(INTEGRATION_SCRAPERS[category]))

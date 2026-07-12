@@ -11,6 +11,7 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from types import ModuleType
 
 from dotenv import load_dotenv
 
@@ -19,16 +20,21 @@ load_dotenv(Path(__file__).parent.parent / ".env")
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from models import Event
-from scrapers.culture import arcub, mnac
-from scrapers.music import control, expirat, iabilet, jfr, quantic
-from scrapers.theatre import bulandra
+from main import FESTIVAL_SCRAPERS, SCRAPER_GROUPS
 from services.email import ScraperError, send_scraper_alert
 
 
+def registered_scrapers(category: str) -> list[ModuleType]:
+    """Return each scheduled scraper once, preserving group order."""
+    scrapers = SCRAPER_GROUPS[1][category] + SCRAPER_GROUPS[2][category]
+    if category == "music":
+        scrapers += sorted(FESTIVAL_SCRAPERS, key=lambda scraper: scraper.__name__)
+    return list(dict.fromkeys(scrapers))
+
+
 SCRAPERS = {
-    "music": [iabilet, control, expirat, quantic, jfr],
-    "theatre": [bulandra],
-    "culture": [arcub, mnac],
+    category: registered_scrapers(category)
+    for category in ("music", "theatre", "culture")
 }
 
 
