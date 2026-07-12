@@ -21,7 +21,11 @@ def parse_date(date_str: str) -> datetime | None:
     if date_str.lower().startswith("valabil") or date_str.lower().startswith("colectia"):
         return None
     
-    match = re.match(r"(\d{1,2})\s+(\w+)\s+(\d{4})(\d{2}:\d{2})?", date_str)
+    time_text = None
+    match = re.match(
+        r"(\d{1,2})\s+(\w+)\s+(\d{4})(?:\s*(\d{2}:\d{2}))?",
+        date_str,
+    )
     if not match:
         match = re.match(r"(\w+),\s+(\d{1,2})\s+(\w+)\s+(\d{2})", date_str)
         if match:
@@ -34,6 +38,7 @@ def parse_date(date_str: str) -> datetime | None:
         day = int(match.group(1))
         month_str = match.group(2)
         year = int(match.group(3))
+        time_text = match.group(4)
     
     months = {
         "jan": 1, "january": 1, "feb": 2, "february": 2, "mar": 3, "march": 3,
@@ -49,7 +54,10 @@ def parse_date(date_str: str) -> datetime | None:
         return None
     
     try:
-        return datetime(year, month, day)
+        hour, minute = (0, 0)
+        if time_text:
+            hour, minute = map(int, time_text.split(":"))
+        return datetime(year, month, day, hour, minute)
     except ValueError:
         return None
 
