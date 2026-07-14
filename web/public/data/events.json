@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-13T12:03:10.698690",
+  "scraped_at": "2026-07-14T10:42:03.158032",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1890,6 +1890,66 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "AC Lovers",
+      "artist": "AC Lovers",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-16 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ac-lovers",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Ground Control w/ Leo",
+      "artist": "Ground Control w/ Leo",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-17 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=groung-control-w-leo",
+      "source": "control",
+      "category": "music",
+      "price": "50.00 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Paradis Paradis Records Fair",
+      "artist": "Paradis Paradis Records Fair",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-18 12:00:00",
+      "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-18",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Paradis Paradis Records Fair",
+      "artist": "Paradis Paradis Records Fair",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-19 12:00:00",
+      "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-19",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2026,21 +2086,6 @@
       "description": "Vino Veritas de David McGregor Vino Veritas de David MacGregor Regia: Daniel Popa Coloana sonor\u0103: Valeriu Borco\u0219 (K not K) Scenografia: Maria Ordean Traducerea \u0219i adaptarea: George Reme\u0219 Este noaptea de Halloween, dar toate m\u0103\u0219tile cad. C\u00e2nd dou\u0103 cupluri beau \u00eempreun\u0103 un ciudat vin albastru, secretele \u00eencep s\u0103 ias\u0103 la iveal\u0103, dezv\u0103luind adev\u0103ra\u021bii mon\u0219tri. \u201cCe mai \u00eenseamn\u0103 s\u0103 fii un partener bun z",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
-      "video_url": null
-    },
-    {
-      "title": "FUNNY GAMES",
-      "artist": "Regia: Botond Nagy",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-07-13 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/funny-games-",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
-      "description_source": "scraped",
-      "image_url": null,
       "video_url": null
     },
     {
@@ -3589,21 +3634,6 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
-    },
-    {
-      "title": "THE LAST VIKING / ULTIMUL VIKING",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-13 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-the-last-viking-ultimul-viking",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Anders Thomas JensenCast:Mads Mikkelsen, Nikolaj Lie Kaas, Sofie Gr\u00e5b\u00f8l, Lars RantheGenre:Comedie, Crim\u0103, Dram\u0103Duration:1h 56mCountry:Danemarca, SuediaLanguage:DA, SVYear:2025 Sinopsis:Proasp\u0103t ie\u0219it din \u00eenchisoare dup\u0103 20 de ani, Anker tocmai vrea s\u0103 recupereze banii pe care i-a furat. \u00cens\u0103 fratele \u0219i complicele s\u0103u Manfred (Mads Mikkelsen), sufer\u0103 de o tulburare de identitate disociativ\u0103: acum se crede John Lennon, iar John \u0219i nu-\u0219i aduce aminte locul unde Manfred a \u00eengropat banii.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-the-last-viking-ultimul-viking-rdp.webp",
-      "video_url": "https://www.youtube.com/embed/jjkcVQIkJI4?si=w37pJzMmqulpqwF_"
     },
     {
       "title": "QUE LA B\u00caTE MEURE / S\u0102 MOAR\u0102 FIARA!",
