@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-14T10:42:03.158032",
+  "scraped_at": "2026-07-15T10:56:26.464454",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1517,21 +1517,6 @@
       "video_url": null
     },
     {
-      "title": "The Wailers",
-      "artist": "The Wailers",
-      "venue": "Quantic",
-      "date": "2026-07-14 00:00:00",
-      "url": "https://quantic.pub/eveniment/the-wailers/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/6uSKeCyQEhvPC2NODgiqFE",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "EMERIC IMRE TRIO | Quantic 17.07.2026",
       "artist": "EMERIC IMRE TRIO",
       "venue": "Quantic",
@@ -1877,21 +1862,6 @@
       "video_url": null
     },
     {
-      "title": "BRUTUS NIGHTS: Sheina & Zina, Moss Farai & DeNada",
-      "artist": "Sheina & Zina, Moss Farai & DeNada",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-14 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=brutus-nights-sheina-zina-moss-farai-denada",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/4ijPUcta3Ks5H1YWFaguJF",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "AC Lovers",
       "artist": "AC Lovers",
       "venue": "Control Club - Front Room",
@@ -1945,6 +1915,21 @@
       "source": "control",
       "category": "music",
       "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Gala Ballet Summer Camp 2026",
+      "artist": "Balet",
+      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
+      "date": "2026-07-19 18:00:00",
+      "url": "https://operanb.ro/spectacol/gala-ballet-summer-camp-2026/#190720260",
+      "source": "operanb",
+      "category": "music",
+      "price": null,
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -2086,21 +2071,6 @@
       "description": "Vino Veritas de David McGregor Vino Veritas de David MacGregor Regia: Daniel Popa Coloana sonor\u0103: Valeriu Borco\u0219 (K not K) Scenografia: Maria Ordean Traducerea \u0219i adaptarea: George Reme\u0219 Este noaptea de Halloween, dar toate m\u0103\u0219tile cad. C\u00e2nd dou\u0103 cupluri beau \u00eempreun\u0103 un ciudat vin albastru, secretele \u00eencep s\u0103 ias\u0103 la iveal\u0103, dezv\u0103luind adev\u0103ra\u021bii mon\u0219tri. \u201cCe mai \u00eenseamn\u0103 s\u0103 fii un partener bun z",
       "description_source": "scraped",
       "image_url": "https://www.teatrulgodot.ro/wp-content/uploads/2024/09/vino-veritas-cover.jpg",
-      "video_url": null
-    },
-    {
-      "title": "FUNNY GAMES",
-      "artist": "Regia: Botond Nagy",
-      "venue": "Teatrul Grivi\u021ba 53",
-      "date": "2026-07-14 19:00:00",
-      "url": "https://www.grivita53.ro/spectacol/funny-games-",
-      "source": "grivita53",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
-      "description_source": "scraped",
-      "image_url": null,
       "video_url": null
     },
     {
@@ -2283,21 +2253,6 @@
       "description": "The Art of the Game (TAG)este primul eveniment cultural de amploare din Rom\u00e2nia dedicat jocurilor video \u0219i artelor conexe, organizat de ARCUB la Hanul Gabroveni, \u00een perioada8 noiembrie 2025 \u2013 1 martie 2026. G\u00e2ndit\u0103 ca oexperien\u021b\u0103 curatorial\u0103, TAG invit\u0103 publicul s\u0103 priveasc\u0103 jocurile videodincolo de divertisment, ca pe unlimbaj artistic, uninstrument educa\u021bionalcu aplica\u021bii reale \u00een \u00eenv\u0103\u021bare \u0219i unspa\u021biu social\u00een care comunit\u0103\u021bile se formeaz\u0103 \u0219i colaboreaz\u0103. Parcursul reune\u0219tearte vizuale, muz...",
       "description_source": "scraped",
       "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "\ufe0f Impro show pe plaj\u0103 \u00een Vam\u0103 \ud83c\udfd6\ufe0f Improteca la Siam Beach Vama Veche",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-14 23:00:00",
-      "url": "https://improteca.ro/2024/06/28/impro-show-plaja-vama-improteca-siam-beach-vama-veche/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
       "video_url": null
     },
     {
@@ -3636,21 +3591,6 @@
       "video_url": null
     },
     {
-      "title": "QUE LA B\u00caTE MEURE / S\u0102 MOAR\u0102 FIARA!",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-14 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-que-la-bete-meure-sa-moar-fiara-focus-claude-chabrol",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Claude ChabrolCast:Jean Yanne, Marc Di NapoliGenre:Crim\u0103, Dram\u0103, ThrillerDuration:1h 50mCountry:Fran\u021baLanguage:FRYear:1969 Sinopsis:\u00cen timp ce se \u00eentorcea de la pescuit, pe malul m\u0103rii, un copil este lovit mortal de o ma\u0219in\u0103. \u0218oferul nu opre\u0219te \u0219i dispare la ie\u0219irea din sat. Tat\u0103l copilului, un scriitor, nu mai are dec\u00e2t un singur scop: r\u0103zbunarea. Cum poli\u021bia nu reu\u0219e\u0219te s\u0103-l identifice pe vinovat, el porne\u0219te propria anchet\u0103.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-que-la-bete-meure-sa-moar-fiara-focus-claude-chabrol-AaP.webp",
-      "video_url": "https://www.youtube.com/embed/0vJ0aN5BZUk&t=48s"
-    },
-    {
       "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4141,6 +4081,21 @@
       "price": null,
       "spotify_url": null,
       "description": "Duminica asta, absolven\u021bii Modulului I de la Improteca urc\u0103 pe scen\u0103 pentru primul lor show de improviza\u021bie \u0219i au nevoie de un singur ingredient: sugestiile voastre. \ud83c\udfad Show de final de Modul I\ud83d\udcc5 Duminic\u0103, 12 iulie, ora 18:00\ud83d\udccd Improteca Traineri: Bogdan Nechifor & Alexandra Stroe",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "\ufe0f Impro show pe plaj\u0103 \u00een Vam\u0103 \ud83c\udfd6\ufe0f Improteca la Siam Beach Vama Veche",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-07-14 23:00:00",
+      "url": "https://improteca.ro/2024/06/28/impro-show-plaja-vama-improteca-siam-beach-vama-veche/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vino la un show de comedie pe plaj\u0103! Tu dai sugestii, noi improviz\u0103m pornind de la ele.\u00a0 Improteca v\u0103 invit\u0103 la Vama Veche pentru un weekend de impro pe plaj\u0103. Dup\u0103 apusul soarelui, ne vedem la Siam Beach (fix pe plaj\u0103) unde ne vom sim\u021bi bine cu dou\u0103 show-uri pe sear\u0103. \u23f0 Un show \u00eencepe la 22:00 \u0219i altul la 23:00 \ud83e\udd19 Noi suntem pe plaj\u0103. Te a\u0219tept\u0103m.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
