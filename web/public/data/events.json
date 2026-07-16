@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-15T10:56:26.464454",
+  "scraped_at": "2026-07-16T11:01:20.772606",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -2032,21 +2032,6 @@
       "title": "Jake \u0219i femeile lui",
       "artist": null,
       "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-07-15 19:00:00",
-      "url": "https://nottara.ro/spectacol/jake-si-femeile-lui/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O comedie emo\u021bionant\u0103, \u00een care grani\u021ba dintre realitate \u0219i imagina\u021bie este pulverizat\u0103! O poveste tandr\u0103 \u0219i dulce-amar\u0103 despre iubire \u0219i demonii ei! Un scriitor de succes este prins \u00een v\u00e2rtejul unui carusel de rela\u021bii complicate. Universul lui este populat de femei care i-au marcat \u0219i \u00eenc\u0103 \u00eei marcheaz\u0103 via\u021ba, care apar \u0219i dispar, care devin [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/jake-si-femeile-lui.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Jake \u0219i femeile lui",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
       "date": "2026-07-16 19:00:00",
       "url": "https://nottara.ro/spectacol/jake-si-femeile-lui/",
       "source": "nottara",
@@ -3546,21 +3531,6 @@
       "video_url": null
     },
     {
-      "title": "Y",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-15 20:30:00",
-      "url": "https://eventbook.ro/film/bilete-film-y",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Alexandru Baciu, Maria Popista\u0219uCast:Victoria R\u0103ileanu, Maria Popista\u0219u, Nicoleta H\u00e2ncu, Ionel Mih\u0103ilescu, Lucre\u021bia M\u00e2ndricGenre:Dram\u0103Duration:1h 38mCountry:Romania, GreciaYear:2026 Sinopsis:Olga, tat\u0103l ei \u0219i cele dou\u0103 surori ale ei duc o via\u021b\u0103 f\u0103r\u0103 griji datorit\u0103 averii bunicii sale, Ileana, fost\u0103 avocat\u0103. Moartea ei subit\u0103 perturb\u0103 echilibrul familiei. Cea mai afectat\u0103 este Olga, care poart\u0103 povara unei m\u0103rturisiri pe patul de moarte pe care i-a f\u0103cut-o bunica ei: dosarele de adop\u021bie ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-film-y-1OX.webp",
-      "video_url": "https://www.youtube.com/embed/dHF9m3m7puI?si=iqCJE7HcZz0R0U4R"
-    },
-    {
       "title": "Cursuri de var\u0103 pentru copii la Improteca",
       "artist": null,
       "venue": "Improteca \u2013 Com\u0103ni\u021ba nr. 9 / Negustori nr. 25",
@@ -4098,6 +4068,21 @@
       "description": "Vino la un show de comedie pe plaj\u0103! Tu dai sugestii, noi improviz\u0103m pornind de la ele.\u00a0 Improteca v\u0103 invit\u0103 la Vama Veche pentru un weekend de impro pe plaj\u0103. Dup\u0103 apusul soarelui, ne vedem la Siam Beach (fix pe plaj\u0103) unde ne vom sim\u021bi bine cu dou\u0103 show-uri pe sear\u0103. \u23f0 Un show \u00eencepe la 22:00 \u0219i altul la 23:00 \ud83e\udd19 Noi suntem pe plaj\u0103. Te a\u0219tept\u0103m.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #12 I 18-19 iulie",
+      "artist": null,
+      "venue": "Calea Victoriei",
+      "date": "2026-07-19 19:00:00",
+      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-12-i-18-19-iulie",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "16:00 \u2013 20:00,Magazinul Muzica:Expozi\u021biaBMW Classicreune\u0219te aproximativ 25 de automobile BMW clasice fabricate \u00een perioada 1960\u20131990. Expozi\u021bie organizat\u0103 \u00een colaborare cuAsocia\u021bia Retromobil Club Rom\u00e2nia 10:00-21:00,Calea Victoriei zon\u0103 exclusiv pietonal.",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
       "video_url": null
     }
   ]
