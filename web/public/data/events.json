@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-16T11:01:20.772606",
+  "scraped_at": "2026-07-17T10:44:00.514574",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1697,21 +1697,6 @@
       "video_url": null
     },
     {
-      "title": "Conexiuni, live pe terasa Quantic",
-      "artist": "Conexiuni, live pe terasa Quantic",
-      "venue": "Quantic",
-      "date": "2026-07-16 00:00:00",
-      "url": "https://quantic.pub/eveniment/conexiuni-live-pe-terasa-quantic/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert EIVOR",
       "artist": "Concert EIVOR",
       "venue": "Quantic",
@@ -1862,21 +1847,6 @@
       "video_url": null
     },
     {
-      "title": "AC Lovers",
-      "artist": "AC Lovers",
-      "venue": "Control Club - Front Room",
-      "date": "2026-07-16 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=ac-lovers",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Ground Control w/ Leo",
       "artist": "Ground Control w/ Leo",
       "venue": "Control Club - Front Room",
@@ -1928,6 +1898,21 @@
       "date": "2026-07-19 18:00:00",
       "url": "https://operanb.ro/spectacol/gala-ballet-summer-camp-2026/#190720260",
       "source": "operanb",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Timpuri Noi-Hituri la Quantic",
+      "artist": "Timpuri Noi-Hituri la Quantic",
+      "venue": "Quantic",
+      "date": "2026-08-07 00:00:00",
+      "url": "https://quantic.pub/eveniment/timpuri-noi-hituri-la-quantic/",
+      "source": "quantic",
       "category": "music",
       "price": null,
       "spotify_url": null,
@@ -2026,21 +2011,6 @@
       "description": "Teatrul Grivi\u021ba 53 \u00ee\u0219i continu\u0103 parcursul artistic \u0219i inaugureaz\u0103 Sala Studio, cu premiera \"Fade to Grey\" \u0219i totodat\u0103 deschide programul \"Reziden\u021be interna\u021bionale\". \u201eFade to Grey\" se simte, nu se gandeste, se traieste, nu are nevoie de explicatii. Datorit\u0103 colabor\u0103rii cu un artist din str\u0103in\u0103tate, spectacolul va putea fi vizionat \u00eentr-un calup compact de reprezenta\u021bii.",
       "description_source": "scraped",
       "image_url": "https://www.grivita53.ro/images/fade-to-grey-poster.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Jake \u0219i femeile lui",
-      "artist": null,
-      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
-      "date": "2026-07-16 19:00:00",
-      "url": "https://nottara.ro/spectacol/jake-si-femeile-lui/",
-      "source": "nottara",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": "O comedie emo\u021bionant\u0103, \u00een care grani\u021ba dintre realitate \u0219i imagina\u021bie este pulverizat\u0103! O poveste tandr\u0103 \u0219i dulce-amar\u0103 despre iubire \u0219i demonii ei! Un scriitor de succes este prins \u00een v\u00e2rtejul unui carusel de rela\u021bii complicate. Universul lui este populat de femei care i-au marcat \u0219i \u00eenc\u0103 \u00eei marcheaz\u0103 via\u021ba, care apar \u0219i dispar, care devin [\u2026]",
-      "description_source": "scraped",
-      "image_url": "https://nottara.ro/wp-content/uploads/jake-si-femeile-lui.jpg",
       "video_url": null
     },
     {
@@ -3559,21 +3529,6 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
-    },
-    {
-      "title": "MY FATHER'S SHADOW / UMBRA TAT\u0102LUI MEU",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-16 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-my-father-s-shadow-umbra-tatalui-meu",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Akinola DaviesCast:Sope Dirisu, Godwin Egbo, Chibuike Marvelous Egbo, Ef\u00f2n Wini, Adesina McCoy BabalolaGenre:Dram\u0103Duration:1h 34mCountry:Nigeria, Marea BritanieLanguage:EN, YOYear:2025 Sinopsis:Nigeria, 1993. O na\u021biune \u00eentreag\u0103 a\u0219teapt\u0103 cu sufletul la gur\u0103 rezultatele unor alegeri preziden\u021biale care vor hot\u0103r\u00ee soarta democra\u021biei. Prin toat\u0103 agita\u021bia, un tat\u0103 ia \u021bara la pas \u00eempreun\u0103 cu copiii s\u0103i, \u00een \u00eencercarea de a recupera ni\u0219te salarii nepl\u0103tite. \u00cen furtuna politic\u0103 a momentului, \u00eens\u0103",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-my-father-s-shadow-umbra-tatalui-meu-sTG.webp",
-      "video_url": "https://www.youtube.com/embed/kH_Abc0a5ls?si=TJ_7B_rBPVp_qyqI"
     },
     {
       "title": "FRANZ",
