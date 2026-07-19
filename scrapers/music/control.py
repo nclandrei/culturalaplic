@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.control-club.ro"
 EVENTS_URL = f"{BASE_URL}/events/"
+MIN_EXPECTED_EVENTS = 1
 
 
 def parse_date_header(header_text: str) -> datetime | None:
@@ -135,7 +136,11 @@ def scrape() -> list[Event]:
     seen_urls: set[str] = set()
     
     try:
-        html = fetch_page(EVENTS_URL, needs_js=True)
+        html = fetch_page(
+            EVENTS_URL,
+            needs_js=True,
+            wait_selector=".events-list-view",
+        )
     except Exception as e:
         print(f"Failed to fetch Control Club events: {e}")
         return events

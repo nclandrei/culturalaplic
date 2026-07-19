@@ -7,7 +7,7 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://www.rezervari.cuibulartistilor.ro"
-EVENTS_URL = BASE_URL + "/"
+EVENTS_URL = BASE_URL + "/program"
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -79,6 +79,46 @@ def parse_event(card: BeautifulSoup) -> Event | None:
     )
 
 
+def parse_program_event(card: BeautifulSoup, date_text: str) -> Event | None:
+    """Parse an event from the current date-grouped program markup."""
+    title_link = card.select_one("h2 a[href^='/spectacol/']")
+    if not title_link:
+        return None
+
+    time_button = card.select_one("button[data-testid^='time-slot-']")
+    if not time_button:
+        return None
+    time_match = re.search(r"(\d{1,2}:\d{2})", time_button.get_text(" ", strip=True))
+    if not time_match:
+        return None
+
+    event_date = parse_date(f"{date_text} la {time_match.group(1)}")
+    if not event_date:
+        return None
+
+    title = title_link.get_text(strip=True)
+    href = title_link.get("href", "")
+    url = BASE_URL + href if href.startswith("/") else href
+
+    venue = "Cuibul Artiștilor"
+    for span in card.select("span"):
+        text = span.get_text(" ", strip=True)
+        if text.startswith("Cuibul Artiștilor"):
+            venue = text
+            break
+
+    return Event(
+        title=title,
+        artist=None,
+        venue=venue,
+        date=event_date,
+        url=url,
+        source="cuibul",
+        category="theatre",
+        price=None,
+    )
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming events from Cuibul Artistilor."""
     events: list[Event] = []
@@ -92,8 +132,20 @@ def scrape() -> list[Event]:
     
     soup = BeautifulSoup(html, "html.parser")
     
-    for card in soup.select("div.v-card.occurence"):
-        event = parse_event(card)
+    old_cards = soup.select("div.v-card.occurence")
+    parsed_events = [parse_event(card) for card in old_cards]
+
+    if not old_cards:
+        parsed_events = []
+        for day_section in soup.select("div.mb-8"):
+            date_header = day_section.select_one("div.mx-6")
+            if not date_header:
+                continue
+            date_text = date_header.get_text(" ", strip=True)
+            for card in day_section.select("div.group.relative.z-10.mb-16"):
+                parsed_events.append(parse_program_event(card, date_text))
+
+    for event in parsed_events:
         if event:
             key = (event.title, event.date.isoformat())
             if key not in seen:

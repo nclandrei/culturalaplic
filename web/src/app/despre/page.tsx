@@ -14,6 +14,7 @@ const sources = {
     { name: "Expirat", url: "https://expirat.org" },
     { name: "Festivalul George Enescu", url: "https://festivalenescu.ro" },
     { name: "Gărâna Jazz Festival", url: "https://garana-jazz.ro" },
+    { name: "Hard Rock Cafe Bucharest", url: "https://cafe.hardrock.com/bucharest" },
     { name: "Jazz Fan Rising", url: "https://eventbook.ro/program/jazz-fan-rising" },
     { name: "Jazz in the Park", url: "https://jazzinthepark.ro" },
     { name: "JAZZx Festival", url: "https://plai.ro/jazz" },
@@ -23,6 +24,7 @@ const sources = {
   ],
   theatre: [
     { name: "Cuibul Artiștilor", url: "https://cuibul.ro" },
+    { name: "Eventbook București", url: "https://eventbook.ro/city/bucuresti" },
     { name: "Godot Cafe Teatru", url: "https://godotcafe.ro" },
     { name: "Grivița 53", url: "https://grivita53.ro" },
     { name: "Teatrul Bulandra", url: "https://bulandra.ro" },

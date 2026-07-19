@@ -15,8 +15,8 @@ from types import ModuleType
 from models import Event
 from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
-from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
-from scrapers.theatre import bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb
+from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, hardrock, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
+from scrapers.theatre import bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
 from services.spotify import search_artist
@@ -32,8 +32,8 @@ FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 # Group 2: Heavy scrapers = operanb (4 pages), tnb (2 pages)
 SCRAPER_GROUPS = {
     1: {
-        "music": [ateneul, enescu, control, jazzx],
-        "theatre": [bulandra, cuibul, godot, grivita53],
+        "music": [ateneul, enescu, control, hardrock, jazzx],
+        "theatre": [bulandra, cuibul, eventbook, godot, grivita53],
         "culture": [arcub, mare, mnac],
     },
     2: {
@@ -61,7 +61,23 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
     try:
         events = scraper.scrape()
         if len(events) == 0:
-            print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
+            min_expected = getattr(scraper, "MIN_EXPECTED_EVENTS", 0)
+            if not isinstance(min_expected, int):
+                min_expected = 0
+            if min_expected > 0:
+                message = (
+                    f"Scraper returned 0 events; expected at least {min_expected}"
+                )
+                print(f"⚠️  Scraper '{scraper_name}' failed: {message}")
+                scraper_errors.append(ScraperError(
+                    scraper_name=scraper_name,
+                    error_message=message,
+                    traceback=message,
+                    category=category,
+                    events_url=events_url,
+                ))
+            else:
+                print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
         return events
     except Exception as e:
         print(f"⚠️  Scraper '{scraper_name}' failed: {e}")
@@ -93,7 +109,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
             scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
     else:
         # Run all scrapers
-        scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+        scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
 
     for scraper in scrapers:
         if scraper in FESTIVAL_SCRAPERS and not run_festivals:
@@ -117,7 +133,7 @@ def run_theatre_scrapers(group: int | None = None) -> list[Event]:
     if group is not None:
         scrapers = SCRAPER_GROUPS[group]["theatre"]
     else:
-        scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+        scrapers = [bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
 
     for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
@@ -421,8 +437,8 @@ def main() -> None:
             culture_scrapers = SCRAPER_GROUPS[group]["culture"]
         else:
             print("All scrapers (no group specified):")
-            music_scrapers = [ateneul, bfh, control, enescu, expirat, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
-            theatre_scrapers = [bulandra, cuibul, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+            music_scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+            theatre_scrapers = [bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
             culture_scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
 
         # Filter out festivals if not running

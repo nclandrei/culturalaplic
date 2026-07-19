@@ -64,6 +64,11 @@ def parse_price(event_div: BeautifulSoup) -> str | None:
 
 def parse_event(event_div: BeautifulSoup) -> Event | None:
     """Parse a single event from HTML."""
+    category_elem = event_div.select_one(".calListDayEventCategory")
+    category_text = category_elem.get_text(strip=True) if category_elem else ""
+    if category_text.lower() != "live events":
+        return None
+
     title_elem = event_div.select_one(".calListDayEventTitle")
     if not title_elem:
         return None
@@ -84,10 +89,6 @@ def parse_event(event_div: BeautifulSoup) -> Event | None:
     artist = extract_artist_from_title(title)
     price = parse_price(event_div)
     
-    category_elem = event_div.select_one(".calListDayEventCategory")
-    category_text = category_elem.get_text(strip=True) if category_elem else ""
-    event_category = "music" if "live" in category_text.lower() else "music"
-    
     return Event(
         title=title,
         artist=artist,
@@ -95,7 +96,7 @@ def parse_event(event_div: BeautifulSoup) -> Event | None:
         date=event_date,
         url=url,
         source="hardrock",
-        category=event_category,
+        category="music",
         price=price,
     )
 

@@ -55,6 +55,7 @@ def _fetch_http(url: str) -> str:
 def _fetch_js(
     url: str,
     timeout: int,
+    wait_selector: str | None = None,
     click_selector: str | None = None,
     click_count: int = 0,
     scroll_count: int = 0,
@@ -65,6 +66,7 @@ def _fetch_js(
     Args:
         url: Page URL to fetch
         timeout: Timeout in milliseconds
+        wait_selector: Optional selector to wait for before reading the HTML
         click_selector: Optional selector for a "load more" button to click
         click_count: Number of times to click the button (0 = don't click)
         scroll_count: Number of times to scroll (for infinite scroll pages)
@@ -74,7 +76,10 @@ def _fetch_js(
         browser = p.chromium.launch()
         page = browser.new_page()
         page.goto(url, timeout=timeout, wait_until="domcontentloaded")
-        page.wait_for_timeout(3000)
+        if wait_selector:
+            page.wait_for_selector(wait_selector, timeout=timeout)
+        else:
+            page.wait_for_timeout(3000)
 
         if click_selector and click_count > 0:
             for _ in range(click_count):
@@ -125,6 +130,7 @@ def fetch_page(
     url: str,
     needs_js: bool = False,
     timeout: int = 30000,
+    wait_selector: str | None = None,
     click_selector: str | None = None,
     click_count: int = 0,
     scroll_count: int = 0,
@@ -139,6 +145,7 @@ def fetch_page(
         url: Page URL to fetch
         needs_js: Whether to use Playwright for JS-rendered pages
         timeout: Timeout in milliseconds
+        wait_selector: Optional selector to wait for before reading the HTML
         click_selector: Optional selector for a "load more" button to click
         click_count: Number of times to click the button (0 = don't click)
         scroll_count: Number of times to scroll (for infinite scroll pages)
@@ -147,7 +154,13 @@ def fetch_page(
     if needs_js:
         try:
             return _fetch_js(
-                url, timeout, click_selector, click_count, scroll_count, scroll_item_selector
+                url,
+                timeout,
+                wait_selector,
+                click_selector,
+                click_count,
+                scroll_count,
+                scroll_item_selector,
             )
         except Exception as e:
             raise HttpError(f"Failed to fetch {url}: {e}") from e
