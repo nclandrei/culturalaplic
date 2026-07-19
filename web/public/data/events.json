@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-18T10:22:12.635336",
+  "scraped_at": "2026-07-19T10:21:27.217838",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1517,21 +1517,6 @@
       "video_url": null
     },
     {
-      "title": "Funking With The 90s @Quantic",
-      "artist": "Funking With The 90s @Quantic",
-      "venue": "Quantic",
-      "date": "2026-07-18 00:00:00",
-      "url": "https://quantic.pub/eveniment/funking-with-the-90s-quantic-2/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Kadjavsi & Plant",
       "artist": "Kadjavsi & Plant",
       "venue": "Quantic",
@@ -1835,21 +1820,6 @@
       "title": "Paradis Paradis Records Fair",
       "artist": "Paradis Paradis Records Fair",
       "venue": "Control Club - Front Room",
-      "date": "2026-07-18 12:00:00",
-      "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-18",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Paradis Paradis Records Fair",
-      "artist": "Paradis Paradis Records Fair",
-      "venue": "Control Club - Front Room",
       "date": "2026-07-19 12:00:00",
       "url": "https://www.control-club.ro/event/?slug=paradis-paradis-records-fair-19",
       "source": "control",
@@ -1886,21 +1856,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Walentin Pauer & Nek",
-      "artist": "Walentin Pauer & Nek",
-      "venue": "Control Club - Front Room",
-      "date": "2026-07-18 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=walentin-pauer-nek",
-      "source": "control",
-      "category": "music",
-      "price": "50.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/0A9NlTa240Nk1XXWIat8Na",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3606,21 +3561,6 @@
       "video_url": null
     },
     {
-      "title": "MOANA / VAIANA",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-18 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-moana-vaiana-film-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Title:MoanaDirector:Thomas KailCast:Catherine Laga\u02bbaia, Dwayne Johnson, Rena Owen, John Tui, Frankie AdamsGenre:Family, Fantasy, Comedy, AdventureDuration:1h 55mCountry:United StatesLanguage:enYear:2026 Sinopsis:Dincolo de recif , \u00eentunericul r\u0103u st\u0103 la p\u00e2nd\u0103. Oceanul a ales-o pe Vaiana. Insula ei, poporul ei, nu vor supravie\u021bui dac\u0103 nu reu\u0219e\u0219te. Trebuie s\u0103-l g\u0103seasc\u0103 pe Maui \u0219i s\u0103-i redea inima lui Te Fiti.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-moana-vaiana-film-pentru-publicul-tanar-8bF.webp",
-      "video_url": "https://www.youtube.com/embed/OJ6R9u39_9I?si=UUips_9umVSt9bxn"
-    },
-    {
       "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -3873,21 +3813,6 @@
       "description": "Copyright \u00a9 2022 IMPROTECA. All rights reserved. Powered byTECHTONIKA MEDIA",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Ateliere deschise de Street Art | Terasa MNAC",
-      "artist": null,
-      "venue": "MNAC",
-      "date": "2026-07-18 15:00:32.207000",
-      "url": "https://www.mnac.ro/event/1380/Ateliere%20deschise%20de%20Street%20Art%20%7C%20Terasa%20MNAC/all",
-      "source": "mnac",
-      "category": "culture",
-      "price": "Atelier pentru adul\u021bi",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "/assets/Logo_RO_MNAC.png",
       "video_url": null
     },
     {
