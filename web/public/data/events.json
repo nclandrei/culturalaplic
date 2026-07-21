@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-20T11:48:21.180865",
+  "scraped_at": "2026-07-21T11:09:29.943232",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -2010,6 +2010,66 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
+      "artist": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-07-24 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=alberto-it-walentin-pauer-nek-ctrl-x-plan-babescu-silishteanu-cristiian",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/0A9NlTa240Nk1XXWIat8Na",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
+      "artist": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-25 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-joji-chissu-norbert-duvall",
+      "source": "control",
+      "category": "music",
+      "price": "Door ticket",
+      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "OM LA LUN\u0102 (Electro Acoustic) / GOLDEN HOUR @ QUANTIC TERRACE.",
+      "artist": "OM LA LUN\u0102 (Electro Acoustic) / GOLDEN HOUR",
+      "venue": "Quantic",
+      "date": "2026-08-05 00:00:00",
+      "url": "https://quantic.pub/eveniment/om-la-luna-electro-acoustic-golden-hour-quantic-terrace/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "JURJAK (Acoustic) / GOLDEN HOUR @ QUANTIC TERRACE",
+      "artist": "JURJAK (Acoustic) / GOLDEN HOUR",
+      "venue": "Quantic",
+      "date": "2026-08-14 00:00:00",
+      "url": "https://quantic.pub/eveniment/jurjak-acoustic-golden-hour-quantic-terrace/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2434,36 +2494,6 @@
       "video_url": null
     },
     {
-      "title": "\u00centre noi nu e nimic",
-      "artist": "\u00centre noi nu e nimic",
-      "venue": "Teatrul Actorilor",
-      "date": "2026-07-20 19:00:00",
-      "url": "https://eventbook.ro/theater/bilete-ntre-noi-nu-e-nimic-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "56 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la \u00centre noi nu e nimic",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-ntre-noi-nu-e-nimic-inlight-theatre-festival-l1s.webp",
-      "video_url": null
-    },
-    {
-      "title": "Prin ochii mei",
-      "artist": "Prin ochii mei",
-      "venue": "Teatrul UnTeatru",
-      "date": "2026-07-20 20:00:00",
-      "url": "https://eventbook.ro/theater/bilete-prin-ochii-mei-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "40 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Prin ochii mei",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-prin-ochii-mei-inlight-theatre-festival-NAU.webp",
-      "video_url": null
-    },
-    {
       "title": "\u0218i nu ne-a m\u00e2ntuit nimeni",
       "artist": "\u0218i nu ne-a m\u00e2ntuit nimeni",
       "venue": "Teatrul Actorilor",
@@ -2746,6 +2776,21 @@
       "description": "Cump\u0103r\u0103 bilete la Jocul accidentelor",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/05/bilete-jocul-accidentelor-Foj.webp",
+      "video_url": null
+    },
+    {
+      "title": "Viata femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
+      "artist": "Viata femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
+      "venue": "Teatrul Amzei",
+      "date": "2026-08-04 20:30:00",
+      "url": "https://eventbook.ro/theater/bilete-viata-femeilor-pe-intelesul-barbatilor",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "70 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Viata femeilor pe \u00een\u021belesul b\u0103rba\u021bilor",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-viata-femeilor-pe-intelesul-barbatilor-4T4.webp",
       "video_url": null
     }
   ],
@@ -4071,21 +4116,6 @@
       "video_url": null
     },
     {
-      "title": "Y",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-20 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-film-y",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Alexandru Baciu, Maria Popista\u0219uCast:Victoria R\u0103ileanu, Maria Popista\u0219u, Nicoleta H\u00e2ncu, Ionel Mih\u0103ilescu, Lucre\u021bia M\u00e2ndricGenre:Dram\u0103Duration:1h 38mCountry:Romania, GreciaYear:2026 Sinopsis:Olga, tat\u0103l ei \u0219i cele dou\u0103 surori ale ei duc o via\u021b\u0103 f\u0103r\u0103 griji datorit\u0103 averii bunicii sale, Ileana, fost\u0103 avocat\u0103. Moartea ei subit\u0103 perturb\u0103 echilibrul familiei. Cea mai afectat\u0103 este Olga, care poart\u0103 povara unei m\u0103rturisiri pe patul de moarte pe care i-a f\u0103cut-o bunica ei: dosarele de adop\u021bie ",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-film-y-1OX.webp",
-      "video_url": "https://www.youtube.com/embed/dHF9m3m7puI?si=iqCJE7HcZz0R0U4R"
-    },
-    {
       "title": "FRANZ",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4264,21 +4294,6 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-povestea-pestelui-posac-the-pout-pout-fish-filme-pentru-intreaga-familie-GjL.webp",
       "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
-    },
-    {
-      "title": "Improteca Summer School III. Propuneri beton",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-20 12:00:00",
-      "url": "https://improteca.ro/2026/07/03/improteca-summer-school-iii-propuneri-beton/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Vara aceasta lans\u0103m o serie de workshopuri intensive de dou\u0103 zile, dedicate unor teme specifice de improviza\u021bie care rareori primesc timpul \u0219i aten\u021bia pe care le merit\u0103 \u00een cadrul cursurilor s\u0103pt\u0103m\u00e2nale.Fiecare workshop este conceput pentru a oferi participan\u021bilor ocazia de a aprofunda, experimenta \u0219i \u00eenv\u0103\u021ba al\u0103turi de traineri \u0219i improvizatori cu experien\u021b\u0103.Continu\u0103m cu:\ud83c\udfad Propuneri BetonTehnici pentru propuneri care dau via\u021b\u0103 scenelorTe-ai trezit vreodat\u0103 pe scen\u0103 f\u0103r\u0103 s\u0103 \u0219tii cu ce s\u0103 \u00eencepi...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
     },
     {
       "title": "PATRULA C\u0102\u021aELU\u0218ILOR: FILMUL CU DINOZAURI / PAW PATROL: THE DINO MOVIE",
@@ -4506,21 +4521,6 @@
       "video_url": null
     },
     {
-      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-20 11:00:00",
-      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
-      "video_url": null
-    },
-    {
       "title": "FUORI",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4534,6 +4534,81 @@
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-fuori-2Iz.webp",
       "video_url": "https://www.youtube.com/embed/v1FlEyHn5dQ?si=BIWTFZFJwAnoCyWk"
+    },
+    {
+      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-07-21 11:00:00",
+      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Ursul \u015fi Ursoaica",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-07-25 19:00:00",
+      "url": "https://improteca.ro/2026/07/21/ursul-si-ursoaica/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Ursul \u015fi Ursoaica este o comedie efervescent\u0103 pe o tem\u0103 veche de c\u00e2nd lumea: r\u0103zboiul dintre sexe. O lupt\u0103 aprig\u0103 care se \u00eencheie de multe ori cu\u2026 pace, pasiune \u015fi iubire. Spectacolul este o adaptare a farsei Ursul, de Anton Pavlovici Cehov. \u015ei surprinde, cu umor \u015fi sensibilitate, evolu\u021bia cuplului din anul 1880 p\u00e2n\u0103 \u00een anul 2026. C\u00e2t de mult s-a schimbat dinamica dintre b\u0103rbat \u015fi femeie \u00een 150 de ani? Distribu\u021bie: Radu UrecheIrina MunteanuRegie colectiv\u0103.Bilete:AICISpectacol gazduit de Impro...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Improteca Summer School \u2013 Workshopul 4 \u2013   Nu inventa povestea. Tr\u0103ie\u015fte-o.",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2026-07-26 19:00:00",
+      "url": "https://improteca.ro/2026/07/21/improteca-summer-school-cu-miki-georgescu/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Improteca Summer School \u2013 Workshopul 4 \u2013 Nu inventa povestea. Tr\u0103ie\u015fte-o. Nivel: Intermediar / Avansat\u00cen acest workshop vom \u00eenv\u0103\u021ba s\u0103 sc\u0103p\u0103m de instinctul de a inventa o poveste. Povestea exist\u0103 deja \u015fi noi suntem protagoni\u015ftii. Vom descoperi cum fiecare detaliu este un indiciu iar scena se construie\u015fte natural, dac\u0103 nu ne \u00eempotrivim. De ce s\u0103 pierdem timpul invent\u00e2nd \u201cdespre ce e vorba\u201d c\u00e2nd noi \u015ftim deja.Ai v\u0103zut vreodat\u0103 scene de impro care p\u0103reau scrise dinainte? Acum po\u021bi s\u0103 afli pe piel...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Improteca Summer School \u2013 Workshopul 5 \u2013   \u00cenainte de replic\u0103",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-02-01 12:00:00",
+      "url": "https://improteca.ro/2026/07/21/improteca-summer-school-workshopul-5-inainte-de-replica-cu-valentin-hurdubaie/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Improteca Summer School \u2013 Workshopul 5 \u2013 \u00cenainte de replic\u0103 \u2013 Nivel: Intermediar / Avansat Ce apare prima dat\u0103 \u00eentr-o scen\u0103 memorabil\u0103: emo\u021bia sau replica? De cele mai multe ori, replica cap\u0103t\u0103 sens doar atunci c\u00e2nd este sus\u021binut\u0103 de o emo\u021bie autentic\u0103. \u00cenainte ca un personaj s\u0103 spun\u0103 ceva, el simte ceva. Iar acel \u201eceva\u201d este cel care d\u0103 via\u021b\u0103 rela\u021biilor, creeaz\u0103 miza \u0219i face ca povestea s\u0103 fie credibil\u0103. \u00cen acest workshop de 6 ore vom explora cum s\u0103 folosim emo\u021biile ca motor al improviza\u021biei...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Improteca Summer School III. Propuneri beton",
+      "artist": null,
+      "venue": "Improteca",
+      "date": "2027-07-20 12:00:00",
+      "url": "https://improteca.ro/2026/07/03/improteca-summer-school-iii-propuneri-beton/",
+      "source": "improteca",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vara aceasta lans\u0103m o serie de workshopuri intensive de dou\u0103 zile, dedicate unor teme specifice de improviza\u021bie care rareori primesc timpul \u0219i aten\u021bia pe care le merit\u0103 \u00een cadrul cursurilor s\u0103pt\u0103m\u00e2nale.Fiecare workshop este conceput pentru a oferi participan\u021bilor ocazia de a aprofunda, experimenta \u0219i \u00eenv\u0103\u021ba al\u0103turi de traineri \u0219i improvizatori cu experien\u021b\u0103.Continu\u0103m cu:\ud83c\udfad Propuneri BetonTehnici pentru propuneri care dau via\u021b\u0103 scenelorTe-ai trezit vreodat\u0103 pe scen\u0103 f\u0103r\u0103 s\u0103 \u0219tii cu ce s\u0103 \u00eencepi...",
+      "description_source": "scraped",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
     }
   ]
 }
