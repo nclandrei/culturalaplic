@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-22T11:10:59.718310",
+  "scraped_at": "2026-07-23T11:08:34.283170",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1637,21 +1637,6 @@
       "video_url": null
     },
     {
-      "title": "DUCU BERTZI & FRIENDS",
-      "artist": "DUCU BERTZI & FRIENDS",
-      "venue": "Quantic",
-      "date": "2026-07-22 00:00:00",
-      "url": "https://quantic.pub/eveniment/ducu-bertzi-friends/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/6M0A6t14k0DICSbcYBvyqf",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "ctrl LIVE: Arab Strap [UK]",
       "artist": "Arab Strap [UK]",
       "venue": "Control Club - Berlin Room",
@@ -1892,21 +1877,6 @@
       "video_url": null
     },
     {
-      "title": "Claudiu Mirea Acoustic on our terrace",
-      "artist": "Claudiu Mirea Acoustic on our terrace",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-07-22 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=7/22/2026&display=event&eventid=2559923",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "artist": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "venue": "Hard Rock Cafe Bucharest",
@@ -2096,6 +2066,36 @@
       "category": "music",
       "price": "...",
       "spotify_url": "https://open.spotify.com/artist/4g3sHIRJ8uTKA7IHkKrQet",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Corp.Cast w/ Boivoid, Chlorys, Von B\u00fclove & Admina",
+      "artist": "Corp.Cast w/ Boivoid, Chlorys, Von B\u00fclove & Admina",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-07-26 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=corp-cast-w-boivoid-chlorys-von-buelove-admina",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Moss Farai & Euggn",
+      "artist": "Moss Farai & Euggn",
+      "venue": "Control Club - Front Room",
+      "date": "2026-07-30 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=moss-farai-euggn",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2374,21 +2374,6 @@
       "video_url": null
     },
     {
-      "title": "Hysteresis II - Moon",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-22 17:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/hysteresis-ii-moon",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/hysteresis-II.png",
-      "video_url": null
-    },
-    {
       "title": "ATARAXIA",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor",
@@ -2506,36 +2491,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Zece",
-      "artist": "Zece",
-      "venue": "Teatrul Actorilor",
-      "date": "2026-07-22 18:00:00",
-      "url": "https://eventbook.ro/theater/bilete-zece-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "40 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Zece",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-zece-inlight-theatre-festival-iwv.webp",
-      "video_url": null
-    },
-    {
-      "title": "Orgiile Otiliei",
-      "artist": "Orgiile Otiliei",
-      "venue": "Teatrul Infinit",
-      "date": "2026-07-22 19:30:00",
-      "url": "https://eventbook.ro/theater/bilete-orgiile-otiliei",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "69 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Orgiile Otiliei",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-orgiile-otiliei-rGa.webp",
       "video_url": null
     },
     {
@@ -2794,21 +2749,6 @@
       "video_url": null
     },
     {
-      "title": "\u0218i nu ne-a m\u00e2ntuit nimeni",
-      "artist": "\u0218i nu ne-a m\u00e2ntuit nimeni",
-      "venue": "Teatrul Actorilor",
-      "date": "2026-07-22 19:30:00",
-      "url": "https://eventbook.ro/theater/bilete-i-nu-ne-a-m-ntuit-nimeni-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "56 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la \u0218i nu ne-a m\u00e2ntuit nimeni",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-i-nu-ne-a-m-ntuit-nimeni-inlight-theatre-festival-3lf.webp",
-      "video_url": null
-    },
-    {
       "title": "Frumosul \u0219i Bestiile",
       "artist": "Frumosul \u0219i Bestiile",
       "venue": "FF Theatre-Centru Vechi",
@@ -3002,6 +2942,66 @@
       "description_source": "scraped",
       "image_url": "https://nottara.ro/wp-content/uploads/mama-2-EBS-1280x853-px.jpg",
       "video_url": "https://www.youtube.com/embed/jR5q31MTzgU"
+    },
+    {
+      "title": "FUNNY GAMES",
+      "artist": "Regia: Botond Nagy",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-08-31 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/funny-games-",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "FUNNY GAMES",
+      "artist": "Regia: Botond Nagy",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-09-07 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/funny-games-",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u00cen Funny Games, dup\u0103 filmul lui Michael Haneke, \u00een regia lui Botond Nagy la Teatrul Grivi\u021ba 53, violen\u021ba apare ca un musafir politicos. Cere ou\u0103. Z\u00e2mbe\u0219te. A\u0219teapt\u0103 s\u0103 fie invitat\u0103 la cafea. O familie ajunge \u00eentr-o cas\u0103 de vacan\u021b\u0103 unde totul pare familiar: obiecte, ritualuri, t\u0103ceri, promisiunea unei lini\u0219ti pe care o confund\u0103m prea u\u0219or cu siguran\u021ba. Dar c\u00e2t dureaz\u0103 normalitatea? \u0218i \u00een ce secund\u0103 exact\u0103 lumea \u00eenceteaz\u0103 s\u0103 mai fie lumea pe care o cunoa\u0219tem?",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
+      "artist": "",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-09-09 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "5+3=9",
+      "artist": "Concept \u0219i coregrafie: \u0218tefan Lupu",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-09-14 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/539",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Visul \u00een care au crezut peste 14.000 de ctitori a devenit realitate, demersul Grivi\u021ba 53 s-a transformat \u00een Teatrul Grivi\u021ba 53, un loc dedicat crea\u021biei independente, experimentului \u0219i colabor\u0103rii, un spa\u021biu deschis arti\u0219tilor care caut\u0103 libertate \u00een expresie \u0219i publicului care \u00ee\u0219i dore\u0219te s\u0103 descopere o nou\u0103 form\u0103 de experien\u021b\u0103 cultural\u0103. Deschiderea oficial\u0103 a fost marcat\u0103 de premiera \"5+3=9\", un spectacol creat de \u0218tefan Lupu, inspirat din povestea nespus\u0103 a Teatrului Grivi\u021ba 53, de la prim...",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -4326,21 +4326,6 @@
       "video_url": null
     },
     {
-      "title": "BRANCUSI, LES M\u00c9TAMORPHOSES DE LA SCULPTURE",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-22 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-brancusi-les-metamorphoses-de-la-sculpture",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "0 LEI",
-      "spotify_url": null,
-      "description": "BRANCUSI, LES M\u00c9TAMORPHOSES DE LA SCULPTURE\u00a0este un documentar semnat de regizorul Alain Fleischer, coprodus de ARTE France, Artline Films, Le Fresnoy \u0219i Centrul Pompidou, cu sprijinul Institutului Cultural Rom\u00e2n din Paris. Filmul urm\u0103re\u0219te parcursul lui Br\u00e2ncu\u0219i \u00eendeaproape, prin intermediul operelor sale, \u00eentre Paris \u0219i Rom\u00e2nia, unde artistul a realizat ansambluri monumentale, precum extraordinara Coloan\u0103 f\u0103r\u0103 sf\u00e2r\u0219it.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-brancusi-les-metamorphoses-de-la-sculpture-2a7.webp",
-      "video_url": null
-    },
-    {
       "title": "GOD WILL NOT HELP / DUMNEZEU NU NE VA AJUTA",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4851,10 +4836,25 @@
       "video_url": null
     },
     {
+      "title": "Festivalului de book-trailere Boovie, edi\u021bia a XI-a",
+      "artist": null,
+      "venue": "Pia\u021ba George Enescu",
+      "date": "2026-07-26 19:00:00",
+      "url": "https://arcub.ro/eveniment/festivalului-de-book-trailere-boovie-editia-a-xi-a",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Festivalul interna\u021bional de book-trailere Boovieajunge anul acesta la aXI-a edi\u021bie\u0219i se desf\u0103\u0219oar\u0103 \u00een perioada23-26 iulie,\u00een mai multe loca\u021bii dinBucure\u0219ti. Punctul central al festivalului va fiPia\u021ba George Enescu, unde vor avea loc principalele evenimente ale edi\u021biei, prezentate cu sprijinulPrim\u0103riei Capitalei, prinARCUB \u2013 un brand cultural al Arte \u0219i Evenimente Urbane Bucure\u0219ti, \u0219i alUniversit\u0103\u021bii Na\u021bionale de \u0218tiin\u021b\u0103 \u0219i Tehnologie POLITEHNICA Bucure\u0219ti. \u00cen competi\u021bie s-au \u00eenscris563de echi...",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
       "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-22 11:00:00",
+      "date": "2026-07-23 11:00:00",
       "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
       "source": "mare",
       "category": "culture",
