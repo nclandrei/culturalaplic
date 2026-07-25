@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-24T11:08:20.230111",
+  "scraped_at": "2026-07-25T10:32:02.412151",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1517,21 +1517,6 @@
       "video_url": null
     },
     {
-      "title": "Anal Vomit | Rise Of Tyrants | Wr\u00e4thhammer",
-      "artist": "Anal Vomit",
-      "venue": "Quantic",
-      "date": "2026-07-24 00:00:00",
-      "url": "https://quantic.pub/eveniment/anal-vomit-rise-of-tyrants-wrathhammer/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/4FfU1o02H4X2bimEDNvtKY",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Stray Lights Festival 2026",
       "artist": "Stray Lights Festival 2026",
       "venue": "Control Club - Berlin Room",
@@ -1847,21 +1832,6 @@
       "video_url": null
     },
     {
-      "title": "THE MAGNIFICS Live Concert",
-      "artist": "THE MAGNIFICS",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-07-24 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=7/24/2026&display=event&eventid=2403293",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/3TwaH6h6rvgPfzAiDMj0OY",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Call me Jupiter Live Concert",
       "artist": "Call me Jupiter",
       "venue": "Hard Rock Cafe Bucharest",
@@ -1922,21 +1892,6 @@
       "video_url": null
     },
     {
-      "title": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
-      "artist": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-07-24 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=alberto-it-walentin-pauer-nek-ctrl-x-plan-babescu-silishteanu-cristiian",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/0A9NlTa240Nk1XXWIat8Na",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
       "artist": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
       "venue": "Control Club - Berlin Room & Front Room",
@@ -1976,21 +1931,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
-      "artist": "ALBERT\u00d8 [IT], Walentin Pauer, Nek, ctrl x PLAN: Babescu, Silishteanu, Cristiian",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-24 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=alberto-it-walentin-pauer-nek-ctrl-x-plan-babescu-silishteanu-cristiian",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": "https://open.spotify.com/artist/0A9NlTa240Nk1XXWIat8Na",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2051,6 +1991,51 @@
       "category": "music",
       "price": "...",
       "spotify_url": "https://open.spotify.com/artist/2dIFhJ8RkRS2rXeDefY3t1",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Stray Lights Festival 2026 - Day 1",
+      "artist": "Stray Lights Festival 2026 - Day 1",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-31 15:00:00",
+      "url": "https://www.control-club.ro/event/?slug=stray-lights-festival-2026",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Stray Lights Festival 2026 - Day 2",
+      "artist": "Stray Lights Festival 2026 - Day 2",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-08-01 14:00:00",
+      "url": "https://www.control-club.ro/event/?slug=stray-lights-festival-2026-1",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Stray Lights Festival 2026 - Day 3",
+      "artist": "Stray Lights Festival 2026 - Day 3",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-08-02 14:00:00",
+      "url": "https://www.control-club.ro/event/?slug=stray-lights-festival-2026-2",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2329,21 +2314,6 @@
       "video_url": null
     },
     {
-      "title": "ATARAXIA",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-24 16:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
       "title": "Hysteresis II - Moon",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor",
@@ -2431,51 +2401,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Dramma dell\u2019Infinito",
-      "artist": "Dramma dell\u2019Infinito",
-      "venue": "Teatrul UnTeatru",
-      "date": "2026-07-24 19:00:00",
-      "url": "https://eventbook.ro/theater/bilete-dramma-dell-infinito-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "56 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Dramma dell\u2019Infinito",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-dramma-dell-infinito-inlight-theatre-festival-UGr.webp",
-      "video_url": null
-    },
-    {
-      "title": "VENUS",
-      "artist": "VENUS",
-      "venue": "LINOTIP \u2013 Centru Independent Coregrafic",
-      "date": "2026-07-24 20:00:00",
-      "url": "https://eventbook.ro/theater/bilete-venus-alexandra-zavelea",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "80 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Venus",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-venus-de-alexandra-zavelea-giU.webp",
-      "video_url": null
-    },
-    {
-      "title": "Ultima zi",
-      "artist": "Ultima zi",
-      "venue": "Teatrul UnTeatru",
-      "date": "2026-07-24 20:30:00",
-      "url": "https://eventbook.ro/theater/bilete-ultima-zi-inlight-theatre-festival",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "56 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Ultima zi",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-ultima-zi-inlight-theatre-festival-CAx.webp",
       "video_url": null
     },
     {
@@ -2896,6 +2821,21 @@
       "description": "Visul \u00een care au crezut peste 14.000 de ctitori a devenit realitate, demersul Grivi\u021ba 53 s-a transformat \u00een Teatrul Grivi\u021ba 53, un loc dedicat crea\u021biei independente, experimentului \u0219i colabor\u0103rii, un spa\u021biu deschis arti\u0219tilor care caut\u0103 libertate \u00een expresie \u0219i publicului care \u00ee\u0219i dore\u0219te s\u0103 descopere o nou\u0103 form\u0103 de experien\u021b\u0103 cultural\u0103. Deschiderea oficial\u0103 a fost marcat\u0103 de premiera \"5+3=9\", un spectacol creat de \u0218tefan Lupu, inspirat din povestea nespus\u0103 a Teatrului Grivi\u021ba 53, de la prim...",
       "description_source": "scraped",
       "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "VENUS",
+      "artist": "VENUS",
+      "venue": "LINOTIP \u2013 Centru Independent Coregrafic",
+      "date": "2026-07-26 20:00:00",
+      "url": "https://eventbook.ro/theater/bilete-venus-alexandra-zavelea",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "80 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Venus",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-venus-de-alexandra-zavelea-giU.webp",
       "video_url": null
     }
   ],
@@ -4221,21 +4161,6 @@
       "video_url": null
     },
     {
-      "title": "HER PRIVATE HELL",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-24 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-her-private-hell",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "27 LEI",
-      "spotify_url": null,
-      "description": "Director:Nicolas Winding RefnCast:Charles Melton, Sophie Thatcher, Havana Rose Liu, Dougray ScottGenre:Crim\u0103, Dram\u0103, SF, ThrillerDuration:1h 49mCountry:Danemarca, SUAYear:2026 Prin cea\u021ba misterioas\u0103 ce pune st\u0103p\u00e2nire pe o metropol\u0103 futurist\u0103, dezl\u0103n\u021buind o entitate enigmatic\u0103 \u0219i mortal\u0103, o t\u00e2n\u0103r\u0103 tulburat\u0103 \u00ee\u0219i caut\u0103 tat\u0103l. Drumul ei se intersecteaz\u0103 cu cel al unui soldat american pornit \u00eentr-o odisee cutremur\u0103toare pentru a-\u0219i salva fiica din Iad.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-her-private-hell-SJH.webp",
-      "video_url": "https://www.youtube.com/embed/WrK_XdlWN6A?si=Y-FVbDxKukCcKSjU"
-    },
-    {
       "title": "POVESTEA PE\u0218TELUI POSAC / THE POUT-POUT FISH",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4506,21 +4431,6 @@
       "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "Return Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 24 iulie 2026",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-24 20:00:00",
-      "url": "https://improteca.ro/2026/07/13/return-jam-improv-jam-24-iulie-2026/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Haide si tu la \ud83c\udf0d Return Jam \u26f9\ufe0f\u200d\u2640\ufe0f Improv Jam 24 iulie 2026. De ce? Pentru c\u0103 e cald in Bucure\u0219ti. Sper\u0103m c\u0103 va rezista aerul condi\u021bionat. Ti-ai pus vreodata una din urmatoarele intrebari:\u2753 Vrei sa-ti mai exersezi abilitatile de improvizator, dar n-ai destul timp pe scena?\u2753 Vrei sa incerci niste jocuri de improvizatie cu un numar cat mai diferit de improvizatori?\u2753 Te-ai saturat de colegii de trupa si ai vrea sa incerci ceva nou, dar ti-e frica de angajamente?\u2753 Vrei sa incerci improvizatia inai...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "M-ai lovit la corpora\u021bie \ud83c\udfe2 sketch comedy muzical Improteca",
       "artist": null,
       "venue": "Improteca",
@@ -4746,10 +4656,25 @@
       "video_url": null
     },
     {
+      "title": "Expozi\u021bie | Ocolul P\u0103m\u00e2ntului \u00een 50 de misiuni",
+      "artist": null,
+      "venue": "Muzeul Copiilor",
+      "date": "2027-05-30 19:00:00",
+      "url": "https://arcub.ro/eveniment/expozitie-ocolul-pamantului-in-50-de-misiuni",
+      "source": "arcub",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "\u201eOcolul P\u0103m\u00e2ntului \u00een 50 de misiuni\u201deste o expozi\u021bie educativ\u0103 \u0219i interactiv\u0103 a Muzeului Copiilor, care \u00eei invit\u0103 pe cei mici \u00eentr-o c\u0103l\u0103torie de descoperire a celor \u0219apte continente prin joc, explorare \u0219i experien\u021be practice. Pe parcursul vizitei, copiii devin detectivi \u0219i pornesc \u00een misiunea de a recupera \u201eDosarele Continentelor\u201d \u2013 informa\u021bii despre civiliza\u021bii, animale, natur\u0103, monumente \u0219i culturi din \u00eentreaga lume. Expozi\u021bia \u00eencurajeaz\u0103 \u00eenv\u0103\u021barea prin participare activ\u0103, curiozitate \u0219i r...",
+      "description_source": "scraped",
+      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
+      "video_url": null
+    },
+    {
       "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-24 11:00:00",
+      "date": "2026-07-25 11:00:00",
       "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
       "source": "mare",
       "category": "culture",
