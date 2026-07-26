@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-25T10:32:02.412151",
+  "scraped_at": "2026-07-26T10:41:38.357751",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1832,21 +1832,6 @@
       "video_url": null
     },
     {
-      "title": "Call me Jupiter Live Concert",
-      "artist": "Call me Jupiter",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-07-25 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=7/25/2026&display=event&eventid=2140193",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Summer Vibes Live with Loredana Dorobantu",
       "artist": "Summer Vibes Live with Loredana Dorobantu",
       "venue": "Hard Rock Cafe Bucharest",
@@ -1886,21 +1871,6 @@
       "category": "music",
       "price": "Gratis",
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
-      "artist": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Norbert Duvall",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-25 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-joji-chissu-norbert-duvall",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2311,21 +2281,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Hysteresis II - Moon",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-25 17:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/hysteresis-ii-moon",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/hysteresis-II.png",
       "video_url": null
     },
     {
@@ -4161,21 +4116,6 @@
       "video_url": null
     },
     {
-      "title": "POVESTEA PE\u0218TELUI POSAC / THE POUT-POUT FISH",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-25 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-povestea-pestelui-posac-the-pout-pout-fish-filme-pentru-intreaga-familie",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Cast:Nick Offerman, Miranda Otto, Amy Sedaris, Remy HiiGenre:Anima\u021bie, Comedie, Fantastic, Aventur\u0103Duration:1h 32mCountry:Australia, SUAYear:2026 Sinopsis:Domnul Fish tr\u0103ie\u0219te pe o epav\u0103 veche, p\u00e2n\u0103 c\u00e2nd \u00eel surprinde pe Pip, un t\u00e2n\u0103r dragon de mare hiperactiv, fur\u00e2ndu-i lucrurile dup\u0103 ce \u00eei confundase casa cu un depozit de vechituri. Dup\u0103 o ceart\u0103 care le distruge am\u00e2ndurora locuin\u021bele, cei doi pornesc \u00eentr-o aventur\u0103 pentru a g\u0103si legendarul \u201eShimmer\u201d, capabil s\u0103 \u00eendeplineasc\u0103 dorin\u021be. Problema",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-povestea-pestelui-posac-the-pout-pout-fish-filme-pentru-intreaga-familie-GjL.webp",
-      "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
-    },
-    {
       "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
@@ -4506,21 +4446,6 @@
       "video_url": "https://www.youtube.com/embed/v1FlEyHn5dQ?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "Ursul \u015fi Ursoaica",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-25 19:00:00",
-      "url": "https://improteca.ro/2026/07/21/ursul-si-ursoaica/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Ursul \u015fi Ursoaica este o comedie efervescent\u0103 pe o tem\u0103 veche de c\u00e2nd lumea: r\u0103zboiul dintre sexe. O lupt\u0103 aprig\u0103 care se \u00eencheie de multe ori cu\u2026 pace, pasiune \u015fi iubire. Spectacolul este o adaptare a farsei Ursul, de Anton Pavlovici Cehov. \u015ei surprinde, cu umor \u015fi sensibilitate, evolu\u021bia cuplului din anul 1880 p\u00e2n\u0103 \u00een anul 2026. C\u00e2t de mult s-a schimbat dinamica dintre b\u0103rbat \u015fi femeie \u00een 150 de ani? Distribu\u021bie: Radu UrecheIrina MunteanuRegie colectiv\u0103.Bilete:AICISpectacol gazduit de Impro...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Improteca Summer School \u2013 Workshopul 4 \u2013   Nu inventa povestea. Tr\u0103ie\u015fte-o.",
       "artist": null,
       "venue": "Improteca",
@@ -4671,18 +4596,18 @@
       "video_url": null
     },
     {
-      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
+      "title": "Ursul \u015fi Ursoaica",
       "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-25 11:00:00",
-      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
-      "source": "mare",
+      "venue": "Improteca",
+      "date": "2027-07-25 19:00:00",
+      "url": "https://improteca.ro/2026/07/21/ursul-si-ursoaica/",
+      "source": "improteca",
       "category": "culture",
       "price": null,
       "spotify_url": null,
-      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
+      "description": "Ursul \u015fi Ursoaica este o comedie efervescent\u0103 pe o tem\u0103 veche de c\u00e2nd lumea: r\u0103zboiul dintre sexe. O lupt\u0103 aprig\u0103 care se \u00eencheie de multe ori cu\u2026 pace, pasiune \u015fi iubire. Spectacolul este o adaptare a farsei Ursul, de Anton Pavlovici Cehov. \u015ei surprinde, cu umor \u015fi sensibilitate, evolu\u021bia cuplului din anul 1880 p\u00e2n\u0103 \u00een anul 2026. C\u00e2t de mult s-a schimbat dinamica dintre b\u0103rbat \u015fi femeie \u00een 150 de ani? Distribu\u021bie: Radu UrecheIrina MunteanuRegie colectiv\u0103.Bilete:AICISpectacol gazduit de Impro...",
       "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
+      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
     }
   ]
