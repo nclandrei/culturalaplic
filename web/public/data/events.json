@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-26T10:41:38.357751",
+  "scraped_at": "2026-07-27T12:14:47.949015",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1922,21 +1922,6 @@
       "video_url": null
     },
     {
-      "title": "Corp.Cast w/ Boivoid, Chlorys, Von B\u00fclove & Admina",
-      "artist": "Corp.Cast w/ Boivoid, Chlorys, Von B\u00fclove & Admina",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-07-26 20:00:00",
-      "url": "https://www.control-club.ro/event/?slug=corp-cast-w-boivoid-chlorys-von-buelove-admina",
-      "source": "control",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Moss Farai & Euggn",
       "artist": "Moss Farai & Euggn",
       "venue": "Control Club - Front Room",
@@ -2006,6 +1991,21 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "BRUTUS NIGHTS: Ana Satana & Nitchji Oh Szperantza, Leo",
+      "artist": "Ana Satana & Nitchji Oh Szperantza, Leo",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-28 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=brutus-nights-ana-satana-nitchji-oh-szperantza-leo",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
+      "spotify_url": "https://open.spotify.com/artist/1Myz22sFr910mKHuKN7TgI",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2287,21 +2287,6 @@
       "title": "ATARAXIA",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-26 16:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "ATARAXIA",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
       "date": "2026-07-28 16:30:00",
       "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
       "source": "cuibul",
@@ -2356,21 +2341,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Caligula",
-      "artist": "Caligula",
-      "venue": "FF Theatre-Centru Vechi",
-      "date": "2026-07-26 20:00:00",
-      "url": "https://eventbook.ro/theater/bilete-caligula-ff",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "85 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Caligula",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-caligula-ff-x5X.webp",
       "video_url": null
     },
     {
@@ -2779,10 +2749,25 @@
       "video_url": null
     },
     {
+      "title": "Caligula",
+      "artist": "Caligula",
+      "venue": "FF Theatre-Centru Vechi",
+      "date": "2026-07-31 20:00:00",
+      "url": "https://eventbook.ro/theater/bilete-caligula-ff",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "85 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Caligula",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-caligula-ff-x5X.webp",
+      "video_url": null
+    },
+    {
       "title": "VENUS",
       "artist": "VENUS",
       "venue": "LINOTIP \u2013 Centru Independent Coregrafic",
-      "date": "2026-07-26 20:00:00",
+      "date": "2026-07-31 20:00:00",
       "url": "https://eventbook.ro/theater/bilete-venus-alexandra-zavelea",
       "source": "eventbook",
       "category": "theatre",
@@ -2791,6 +2776,36 @@
       "description": "Cump\u0103r\u0103 bilete la Venus",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-venus-de-alexandra-zavelea-giU.webp",
+      "video_url": null
+    },
+    {
+      "title": "Autopsia unor \u00eent\u00e2mpl\u0103ri nevinovate",
+      "artist": "Autopsia unor \u00eent\u00e2mpl\u0103ri nevinovate",
+      "venue": "FF Theatre-Centru Vechi",
+      "date": "2026-08-22 20:00:00",
+      "url": "https://eventbook.ro/theater/bilete-autopsia-unor-intamplari-nevinovate",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "70 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Autopsia unor \u00eent\u00e2mpl\u0103ri nevinovate",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-autopsia-unor-intamplari-nevinovate-iz1.webp",
+      "video_url": null
+    },
+    {
+      "title": "Orgiile Otiliei",
+      "artist": "Orgiile Otiliei",
+      "venue": "Teatrul Infinit",
+      "date": "2026-08-27 19:30:00",
+      "url": "https://eventbook.ro/theater/bilete-orgiile-otiliei",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "69 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Orgiile Otiliei",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-orgiile-otiliei-rGa.webp",
       "video_url": null
     }
   ],
@@ -4041,21 +4056,6 @@
       "video_url": null
     },
     {
-      "title": "Tur ghidat cu Dan Perjovschi | ora 17:00",
-      "artist": null,
-      "venue": "ARCUB - Hanul Gabroveni",
-      "date": "2026-07-26 19:00:00",
-      "url": "https://arcub.ro/eveniment/tur-ghidat-cu-dan-perjovschi-ora-17-00-360",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Dan Perjovschipropune publicului o nou\u0103 serie de tururi ghidate, desf\u0103\u0219urate \u00een cadrul expozi\u021biei\u201eDRAFT pentru o retrospectiv\u0103 comun\u0103\u201dde laARCUB - Hanul Gabroveni. \u00cen fiecare zi de duminic\u0103 alunii iulie, de la ora 17:00,participan\u021bii vor beneficia de o experien\u021b\u0103 complet\u0103. Vor putea afla de la artistulDan Perjovschicum a fost construit\u0103 expozi\u021bia, cum se \u00eent\u00e2lnesc lucr\u0103rile celor doi mari arti\u0219ti \u0219i care sunt ideile, pove\u0219tile \u0219i contextul din spatele acestui parcurs comun de peste 40 de ani....",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "\u200d\u2695\ufe0f Telenovela  \ud83d\udc89 spectacol spontan de comedie cu trupa Wednesday",
       "artist": null,
       "venue": "Improteca",
@@ -4114,21 +4114,6 @@
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
-    },
-    {
-      "title": "TOY STORY 5 / POVESTEA JUC\u0102RIILOR 5",
-      "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-07-26 11:00:00",
-      "url": "https://eventbook.ro/film/bilete-toy-story-5-povestea-jucariilor-5-film-pentru-publicul-tanar",
-      "source": "elvirepopescu",
-      "category": "culture",
-      "price": "35 LEI",
-      "spotify_url": null,
-      "description": "Director:Andrew StantonCast:Tom Hanks, Greta Lee, Tim Allen, Ernie Hudson, Joan CusackGenre:Anima\u021bie, Aventuri, Comedie, Dram\u0103, FamilieDuration:1h 30mCountry:SUA, JaponiaLanguage:ENYear:2026 Woody, Buzz Lightyear, Jessie \u0219i restul g\u0103\u0219tii \u00ee\u0219i v\u0103d rolurile puse la \u00eencercare atunci c\u00e2nd se confrunt\u0103 cu Lilypad, o tablet\u0103 smart, complet nou\u0103, care vine cu propriile idei inovatoare despre ce este mai bine pentru copilul lor, Bonnie.",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-toy-story-5-povestea-jucariilor-5-film-pentru-publicul-tanar-Cvf.webp",
-      "video_url": "https://www.youtube.com/embed/11Fzn5eB4CU?si=IznibnYsT-u6xTNX"
     },
     {
       "title": "COMATOGEN",
@@ -4446,21 +4431,6 @@
       "video_url": "https://www.youtube.com/embed/v1FlEyHn5dQ?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "Improteca Summer School \u2013 Workshopul 4 \u2013   Nu inventa povestea. Tr\u0103ie\u015fte-o.",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-26 19:00:00",
-      "url": "https://improteca.ro/2026/07/21/improteca-summer-school-cu-miki-georgescu/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Improteca Summer School \u2013 Workshopul 4 \u2013 Nu inventa povestea. Tr\u0103ie\u015fte-o. Nivel: Intermediar / Avansat\u00cen acest workshop vom \u00eenv\u0103\u021ba s\u0103 sc\u0103p\u0103m de instinctul de a inventa o poveste. Povestea exist\u0103 deja \u015fi noi suntem protagoni\u015ftii. Vom descoperi cum fiecare detaliu este un indiciu iar scena se construie\u015fte natural, dac\u0103 nu ne \u00eempotrivim. De ce s\u0103 pierdem timpul invent\u00e2nd \u201cdespre ce e vorba\u201d c\u00e2nd noi \u015ftim deja.Ai v\u0103zut vreodat\u0103 scene de impro care p\u0103reau scrise dinainte? Acum po\u021bi s\u0103 afli pe piel...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "Improteca Summer School \u2013 Workshopul 5 \u2013   \u00cenainte de replic\u0103",
       "artist": null,
       "venue": "Improteca",
@@ -4551,36 +4521,6 @@
       "video_url": null
     },
     {
-      "title": "Festivalului de book-trailere Boovie, edi\u021bia a XI-a",
-      "artist": null,
-      "venue": "Pia\u021ba George Enescu",
-      "date": "2026-07-26 19:00:00",
-      "url": "https://arcub.ro/eveniment/festivalului-de-book-trailere-boovie-editia-a-xi-a",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Festivalul interna\u021bional de book-trailere Boovieajunge anul acesta la aXI-a edi\u021bie\u0219i se desf\u0103\u0219oar\u0103 \u00een perioada23-26 iulie,\u00een mai multe loca\u021bii dinBucure\u0219ti. Punctul central al festivalului va fiPia\u021ba George Enescu, unde vor avea loc principalele evenimente ale edi\u021biei, prezentate cu sprijinulPrim\u0103riei Capitalei, prinARCUB \u2013 un brand cultural al Arte \u0219i Evenimente Urbane Bucure\u0219ti, \u0219i alUniversit\u0103\u021bii Na\u021bionale de \u0218tiin\u021b\u0103 \u0219i Tehnologie POLITEHNICA Bucure\u0219ti. \u00cen competi\u021bie s-au \u00eenscris563de echi...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
-      "title": "Program artistic \u2022 Str\u0103zi deschise \u2022 Weekend #13 I 25-26 iulie 2026",
-      "artist": null,
-      "venue": "Calea Victoriei",
-      "date": "2026-07-26 19:00:00",
-      "url": "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-13-i-25-26-iulie-2026",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen zilele de25\u201326 iulie,\u201eStr\u0103zi deschise \u2013 Bucure\u0219ti, Promenad\u0103 urban\u0103\u201dinvit\u0103 bucure\u0219tenii \u0219i turi\u0219tii pe Calea Victoriei, care devine pietonal\u0103 \u00eentre orele10:00 \u0219i 22:00, la un weekend dedicat \u00eentregii familii, comunit\u0103\u021bii \u0219i s\u0103n\u0103t\u0103\u021bii. Programul include un manifest artistic care promoveaz\u0103 conceptulBig Little Festival, precum \u0219i campania de informare\u201eFicatul t\u0103u conteaz\u0103!\u201d, organizat\u0103 cu ocazia Zilei Mondiale de Lupt\u0103 \u00eempotriva Hepatitelor. Un moment artistic despre joc, familie \u0219i comunita...",
-      "description_source": "scraped",
-      "image_url": "https://arcub.ro/img/aa956136-95fe-4c72-acd5-0e0639d08984/1200x630.jpg?fm=jpg&q=85&fit=crop&w=900&h=470&crop=%2C%2C%2C&s=e6dea77b832e80024c97d96e337a3b96",
-      "video_url": null
-    },
-    {
       "title": "Expozi\u021bie | Ocolul P\u0103m\u00e2ntului \u00een 50 de misiuni",
       "artist": null,
       "venue": "Muzeul Copiilor",
@@ -4608,6 +4548,21 @@
       "description": "Ursul \u015fi Ursoaica este o comedie efervescent\u0103 pe o tem\u0103 veche de c\u00e2nd lumea: r\u0103zboiul dintre sexe. O lupt\u0103 aprig\u0103 care se \u00eencheie de multe ori cu\u2026 pace, pasiune \u015fi iubire. Spectacolul este o adaptare a farsei Ursul, de Anton Pavlovici Cehov. \u015ei surprinde, cu umor \u015fi sensibilitate, evolu\u021bia cuplului din anul 1880 p\u00e2n\u0103 \u00een anul 2026. C\u00e2t de mult s-a schimbat dinamica dintre b\u0103rbat \u015fi femeie \u00een 150 de ani? Distribu\u021bie: Radu UrecheIrina MunteanuRegie colectiv\u0103.Bilete:AICISpectacol gazduit de Impro...",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-07-27 11:00:00",
+      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
       "video_url": null
     }
   ]
