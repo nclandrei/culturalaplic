@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-28T11:23:04.108226",
+  "scraped_at": "2026-07-29T11:26:18.360015",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -782,21 +782,6 @@
       "video_url": null
     },
     {
-      "title": "BRUTUS NIGHTS: Ana Satana & Nitchji Oh Szperantza, Leo",
-      "artist": "Ana Satana & Nitchji Oh Szperantza, Leo",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-07-28 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=brutus-nights-ana-satana-nitchji-oh-szperantza-leo",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/1Myz22sFr910mKHuKN7TgI",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Summer Vibes LIve with Claudiu Mirea",
       "artist": "Summer Vibes LIve with Claudiu Mirea",
       "venue": "Hard Rock Cafe Bucharest",
@@ -805,6 +790,51 @@
       "source": "hardrock",
       "category": "music",
       "price": "Gratis",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Jijian & Utopus, Phil Cocks & Meelouna",
+      "artist": "Jijian & Utopus, Phil Cocks & Meelouna",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-07-31 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=jijian-utopus-phil-cocks-meelouna",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": "https://open.spotify.com/artist/5M73Ia3xOrHPamj0Fvoo2h",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Cinema Esperanto #3: Cold War (PL/FR/UK)",
+      "artist": "Cinema Esperanto #3: Cold War (PL/FR/UK)",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-08-05 19:30:00",
+      "url": "https://www.control-club.ro/event/?slug=cinema-esperanto-5-cold-war-pl-fr-uk",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "RADU ALMASAN (BOSQUITO) acustic/electro acustic",
+      "artist": "RADU ALMASAN (BOSQUITO) acustic/electro acustic",
+      "venue": "Quantic",
+      "date": "2026-08-19 00:00:00",
+      "url": "https://quantic.pub/eveniment/radu-almasan-bosquito-acustic-electro-acustic/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -1087,21 +1117,6 @@
       "title": "ATARAXIA",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-28 16:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "ATARAXIA",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
       "date": "2026-07-29 16:30:00",
       "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
       "source": "cuibul",
@@ -1141,21 +1156,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "artist": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "venue": "Teatrul Amzei",
-      "date": "2026-07-28 20:30:00",
-      "url": "https://eventbook.ro/theater/bilete-calugarita-feminista-si-misoginul-modernist",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "70 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-calugarita-feminista-si-misoginul-modernist-QXq.webp",
       "video_url": null
     },
     {
@@ -1621,6 +1621,21 @@
       "description": "Cump\u0103r\u0103 bilete la Turing",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-turing-SyO.webp",
+      "video_url": null
+    },
+    {
+      "title": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
+      "artist": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
+      "venue": "Teatrul Amzei",
+      "date": "2026-08-05 20:30:00",
+      "url": "https://eventbook.ro/theater/bilete-calugarita-feminista-si-misoginul-modernist",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "70 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-calugarita-feminista-si-misoginul-modernist-QXq.webp",
       "video_url": null
     }
   ],
@@ -3366,21 +3381,6 @@
       "video_url": null
     },
     {
-      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-28 11:00:00",
-      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
-      "video_url": null
-    },
-    {
       "title": "Improteca Summer School \u2013 Workshopul 4 \u2013   Nu inventa povestea. Tr\u0103ie\u015fte-o.",
       "artist": null,
       "venue": "Improteca",
@@ -3393,6 +3393,21 @@
       "description": "Improteca Summer School \u2013 Workshopul 4 \u2013 Nu inventa povestea. Tr\u0103ie\u015fte-o. Nivel: Intermediar / Avansat\u00cen acest workshop vom \u00eenv\u0103\u021ba s\u0103 sc\u0103p\u0103m de instinctul de a inventa o poveste. Povestea exist\u0103 deja \u015fi noi suntem protagoni\u015ftii. Vom descoperi cum fiecare detaliu este un indiciu iar scena se construie\u015fte natural, dac\u0103 nu ne \u00eempotrivim. De ce s\u0103 pierdem timpul invent\u00e2nd \u201cdespre ce e vorba\u201d c\u00e2nd noi \u015ftim deja.Ai v\u0103zut vreodat\u0103 scene de impro care p\u0103reau scrise dinainte? Acum po\u021bi s\u0103 afli pe piel...",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
+      "video_url": null
+    },
+    {
+      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-07-29 11:00:00",
+      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
+      "description_source": "scraped",
+      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
       "video_url": null
     }
   ]
