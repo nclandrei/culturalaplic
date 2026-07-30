@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-29T11:26:18.360015",
+  "scraped_at": "2026-07-30T11:12:11.763506",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -617,21 +617,6 @@
       "video_url": null
     },
     {
-      "title": "Summer Vibes Live with Loredana Dorobantu",
-      "artist": "Summer Vibes Live with Loredana Dorobantu",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-07-29 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=7/29/2026&display=event&eventid=2579323",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "artist": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "venue": "Hard Rock Cafe Bucharest",
@@ -782,21 +767,6 @@
       "video_url": null
     },
     {
-      "title": "Summer Vibes LIve with Claudiu Mirea",
-      "artist": "Summer Vibes LIve with Claudiu Mirea",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-07-29 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=7/29/2026&display=event&eventid=2582959",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Jijian & Utopus, Phil Cocks & Meelouna",
       "artist": "Jijian & Utopus, Phil Cocks & Meelouna",
       "venue": "Control Club - Berlin Room & Front Room",
@@ -835,6 +805,36 @@
       "source": "quantic",
       "category": "music",
       "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "AYURI [Berlin/JP], Baron P., Rekabu & Sillyconductor",
+      "artist": "AYURI [Berlin/JP], Baron P., Rekabu & Sillyconductor",
+      "venue": "Control Club - Berlin Room & Front Room",
+      "date": "2026-08-01 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ayuri-berlin-jp-baron-p-rekabu-sillyconductor",
+      "source": "control",
+      "category": "music",
+      "price": "...",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Ground Control w/ Leo",
+      "artist": "Ground Control w/ Leo",
+      "venue": "Control Club - Front Room",
+      "date": "2026-08-06 22:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ground-control-w-leo-12",
+      "source": "control",
+      "category": "music",
+      "price": "30.00 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -1111,21 +1111,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
-      "video_url": null
-    },
-    {
-      "title": "ATARAXIA",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-07-29 16:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/ataraxia",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/ataraxia.jpeg",
       "video_url": null
     },
     {
@@ -1636,6 +1621,21 @@
       "description": "Cump\u0103r\u0103 bilete la C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-calugarita-feminista-si-misoginul-modernist-QXq.webp",
+      "video_url": null
+    },
+    {
+      "title": "DOAMNA PYLINSKA \u0218I SECRETUL LUI CHOPIN",
+      "artist": "",
+      "venue": "Teatrul Grivi\u021ba 53",
+      "date": "2026-09-10 19:00:00",
+      "url": "https://www.grivita53.ro/spectacol/doamna-pylinska-i-secretul-lui-chopin",
+      "source": "grivita53",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Dup\u0103 \u201cOscar \u0219i Tanti Roz\u201d, \u201cDomnul Ibrahim \u0219i Florile Coranului \u0219i \u201cCopilul lui Noe\u201d, regizoarea Chris Simion - Mercurian continu\u0103 textele ini\u021biatice ale lui Eric Emmanuel Schmitt cu \u201cDoamna  Pylinska \u0219i secretul lui Chopin\u201d. Nu trebuie s\u0103 cuno\u0219ti muzic\u0103 clasic\u0103 pentru a intra \u00een poveste. Povestea va atinge pe toat\u0103 lumea,dar, \u00een mod special pe cei care trec prin perioade de c\u0103utare personal\u0103, nevoie de sens\u2026pe oameni care nu au avut contact cu Chopin, dar au trecut sau trec prin perioade \u00een ...",
+      "description_source": "scraped",
+      "image_url": null,
       "video_url": null
     }
   ],
@@ -3186,21 +3186,6 @@
       "video_url": "https://www.youtube.com/embed/xPZZZcSu0-M?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "M-ai lovit la corpora\u021bie \ud83c\udfe2 sketch comedy muzical Improteca",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-07-29 20:00:00",
-      "url": "https://improteca.ro/2026/07/13/m-ai-lovit-la-corporatie-sketch-comedy-muzical-improteca-29-iulie/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "\u00cen corpora\u021bie, toat\u0103 lumea z\u00e2mbe\u0219te frumos.Toat\u0103 lumea r\u0103spunde la mailuri cu \u201emul\u021bumesc mult\u201d.Toat\u0103 lumea pare \u201ealiniat\u0103\u201d, \u201eproactiv\u0103\u201d \u0219i \u201eopen to feedback\u201d. Dar ce se ascunde, de fapt, sub masca angajatului model? \u201eM-ai lovit la corpora\u021bie\u201d este un spectacol de sketch comedy muzical despre via\u021ba de birou, despre \u0219edin\u021be interminabile, KPI-uri, polite\u021buri for\u021bate, team building-uri, deadline-uri \u0219i micile drame ascunse sub badge-ul de angajat model.",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
       "title": "B\u0102D\u0102RANII 20.26",
       "artist": null,
       "venue": "Improteca",
@@ -3399,7 +3384,7 @@
       "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
       "artist": null,
       "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-07-29 11:00:00",
+      "date": "2026-07-30 11:00:00",
       "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
       "source": "mare",
       "category": "culture",
