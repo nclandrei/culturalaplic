@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-03T12:32:14.658660",
+  "scraped_at": "2026-08-04T11:26:44.470043",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -5688,21 +5688,6 @@
       "description": "Apparatus 22 | Diana Cepleanu | Roberta Curc\u0103 | Adelina Ivan | Gili Mocanu | Giuliano Nardin | Marusa Sagadin| Kristin Wenzel | Madalina Zaharia. Curator: Larisa Sitar Apparatus 22 | Diana Cepleanu | Roberta Curc\u0103 | Adelina Ivan | Gili Mocanu | Giuliano Nardin | Marusa Sagadin| Kristin Wenzel | Madalina Zaharia",
       "description_source": "scraped",
       "image_url": "https://mare.ro/wp-content/uploads/2026/07/MARe_slider_LateSummer_2560x1389p-1024x556.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-08-03 11:00:00",
-      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Vintage Prints in Dialogue with Carl Andre, Marion Baruch, Evariste Richer Vintage Prints in Dialogue with Carl Andre, Marion Baruch, and Evariste Richer 22.05 \u2013 27.09.2026",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/05/CB230-image-2.jpg",
       "video_url": null
     }
   ]
