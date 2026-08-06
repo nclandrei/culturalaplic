@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-05T11:32:31.334574",
+  "scraped_at": "2026-08-06T11:33:46.844328",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -512,21 +512,6 @@
       "video_url": null
     },
     {
-      "title": "OM LA LUN\u0102 (Electro Acoustic) / GOLDEN HOUR @ QUANTIC TERRACE.",
-      "artist": "OM LA LUN\u0102 (Electro Acoustic) / GOLDEN HOUR",
-      "venue": "Quantic",
-      "date": "2026-08-05 00:00:00",
-      "url": "https://quantic.pub/eveniment/om-la-luna-electro-acoustic-golden-hour-quantic-terrace/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "JURJAK (Acoustic) / GOLDEN HOUR @ QUANTIC TERRACE",
       "artist": "JURJAK (Acoustic) / GOLDEN HOUR",
       "venue": "Quantic",
@@ -566,21 +551,6 @@
       "category": "music",
       "price": "...",
       "spotify_url": "https://open.spotify.com/artist/2dIFhJ8RkRS2rXeDefY3t1",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Cinema Esperanto #3: Cold War (PL/FR/UK)",
-      "artist": "Cinema Esperanto #3: Cold War (PL/FR/UK)",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-08-05 19:30:00",
-      "url": "https://www.control-club.ro/event/?slug=cinema-esperanto-5-cold-war-pl-fr-uk",
-      "source": "control",
-      "category": "music",
-      "price": "...",
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1727,21 +1697,6 @@
       "video_url": null
     },
     {
-      "title": "Andrada Live Concert on the Terrace",
-      "artist": "Andrada Live Concert on the Terrace",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-08-05 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=8/5/2026&display=event&eventid=2583982",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "artist": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
       "venue": "Hard Rock Cafe Bucharest",
@@ -1897,6 +1852,36 @@
       "venue": "Quantic",
       "date": "2026-09-24 00:00:00",
       "url": "https://quantic.pub/eveniment/narcisa-suciu-in-premiera-la-quantic/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Sinfonia do Brasil \u2013 Concert dedicat Zilei Independen\u021bei Braziliei",
+      "artist": "Evenimente",
+      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
+      "date": "2026-09-18 18:30:00",
+      "url": "https://operanb.ro/spectacol/chitara-braziliana/#180920260",
+      "source": "operanb",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "iubim 2ROTI \u2013 Editia IX \u2013 2026",
+      "artist": "iubim 2ROTI",
+      "venue": "Quantic",
+      "date": "2026-09-04 00:00:00",
+      "url": "https://quantic.pub/eveniment/iubim-2roti-editia-ix-2026/",
       "source": "quantic",
       "category": "music",
       "price": null,
@@ -2461,21 +2446,6 @@
       "description": "Cump\u0103r\u0103 bilete la Turing",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/05/bilete-turing-SyO.webp",
-      "video_url": null
-    },
-    {
-      "title": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "artist": "C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "venue": "Teatrul Amzei",
-      "date": "2026-08-05 20:30:00",
-      "url": "https://eventbook.ro/theater/bilete-calugarita-feminista-si-misoginul-modernist",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "70 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la C\u0102LUG\u0102RI\u021aA FEMINIST\u0102 \u0219i MISOGINUL MODERNIST",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/04/bilete-calugarita-feminista-si-misoginul-modernist-QXq.webp",
       "video_url": null
     },
     {
@@ -4411,6 +4381,21 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/31/1268/large_Afis_nou_copii.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Mai e vreun candidat? la Ia\u0219i",
+      "artist": null,
+      "venue": "TNB - -",
+      "date": "2026-10-05 19:00:00",
+      "url": "https://www.tnb.ro/ro/mai-e-vreun-candidat-la-iasi",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
       "video_url": null
     }
   ],
