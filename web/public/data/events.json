@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-08T09:49:37.300853",
+  "scraped_at": "2026-08-09T09:48:14.483955",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1607,21 +1607,6 @@
       "video_url": null
     },
     {
-      "title": "Dirty Disco w/ Eugen R\u0103descu, C\u0103lin & 0vE",
-      "artist": "Dirty Disco w/ Eugen R\u0103descu, C\u0103lin & 0vE",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-08-08 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=dirty-disco-w-eugen-radescu-calin-0ve",
-      "source": "control",
-      "category": "music",
-      "price": "Door ticket",
-      "spotify_url": "https://open.spotify.com/artist/49hFAk9HQUBn3vCdAqqb1Y",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Corp.Cast w/ Admina, von B\u00fclove & Xena",
       "artist": "Corp.Cast w/ Admina, von B\u00fclove & Xena",
       "venue": "Control Club - Front Room",
@@ -1631,21 +1616,6 @@
       "category": "music",
       "price": "Gratis",
       "spotify_url": "https://open.spotify.com/artist/1qcno2nxgaJ0IpqxXCF3MI",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "FUNHOUSE Live Concert on the terrace",
-      "artist": "FUNHOUSE Live Concert on the terrace",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-08-08 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=8/8/2026&display=event&eventid=2435859",
-      "source": "hardrock",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3722,21 +3692,6 @@
       "description_source": "scraped",
       "image_url": "https://www.bulandra.ro/wp-content/uploads/2024/07/Cina-cu-prieteni-2022-foto-Cosmin-Ardeleanu-15.jpg",
       "video_url": "https://www.youtube.com/embed/Oad6ItH22F8?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Fwww.bulandra.ro&widgetid=1&forigin=https%3A%2F%2Fwww.bulandra.ro%2Fcina-cu-prieteni%2F&aoriginsup=1&vf=1"
-    },
-    {
-      "title": "Funeralii fericite",
-      "artist": "Funeralii fericite",
-      "venue": "FF Theatre-Centru Vechi",
-      "date": "2026-08-08 20:00:00",
-      "url": "https://eventbook.ro/theater/bilete-funeralii-fericite",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "85 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Funeralii fericite",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/03/bilete-funeralii-fericite-Dbj.webp",
-      "video_url": null
     },
     {
       "title": "Caligula",
@@ -6136,21 +6091,6 @@
       "price": null,
       "spotify_url": null,
       "description": "Hai si tu la cursul de dezvoltare personala prin improviza\u021bie | Improv Level 1 Detalii tehnice:Cursurile au loc in fiecare JOI, de la 18:00 si dureaz\u0103 2 oreCursurile se vor tine la Improteca, Str. Comanita nr. 9 Primele cursuri vor fi pe 30 IULIE \u0219i 6 AUGUST 2026Traineri vor fi: Vlad Pasencu \u0219i Sonia NeagoePretul este de 600 RON/lunaModulul dureaza 3 luni, 12 sedinteREDUCERE la 500 RON/luna daca platesti modulul integral \u2013 adica 1500 RONHaide la primul curs si daca nu-ti place, nu esti obliga...",
-      "description_source": "scraped",
-      "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "\u201dLa joac\u0103 cu bunicii\u201d \ud83d\udc75\ud83c\udffb Spectacol interactiv cu p\u0103pu\u0219i",
-      "artist": null,
-      "venue": "Improteca",
-      "date": "2026-08-08 16:00:00",
-      "url": "https://improteca.ro/2026/07/31/la-joaca-cu-bunicii-spectacol-interactiv-cu-papusi-8-august/",
-      "source": "improteca",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Hai s\u0103 vezi \ud83e\ude81\u201dLa joac\u0103 cu bunicii\u201d \ud83d\udc75\ud83c\udffb Spectacol interactiv cu p\u0103pu\u0219i. \u2728 Prima lui \u00eent\u00e2lnire cu teatrul Nu va \u021bine minte decorul.Nu va \u021bine minte replicile.",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
       "video_url": null
