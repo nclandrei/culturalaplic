@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-10T10:29:23.147664",
+  "scraped_at": "2026-08-11T10:09:37.506077",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1807,6 +1807,51 @@
       "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
       "date": "2026-10-28 18:30:00",
       "url": "https://operanb.ro/spectacol/barbierul-din-sevilla/#281020260",
+      "source": "operanb",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Giselle",
+      "artist": "Balet",
+      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
+      "date": "2026-11-14 18:30:00",
+      "url": "https://operanb.ro/spectacol/giselle-2/#141120260",
+      "source": "operanb",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Giselle",
+      "artist": "Balet",
+      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
+      "date": "2026-11-15 18:30:00",
+      "url": "https://operanb.ro/spectacol/giselle-2/#151120260",
+      "source": "operanb",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Giselle",
+      "artist": "Balet",
+      "venue": "Opera Na\u021bional\u0103 Bucure\u0219ti",
+      "date": "2026-11-19 18:30:00",
+      "url": "https://operanb.ro/spectacol/giselle-2/#191120260",
       "source": "operanb",
       "category": "music",
       "price": null,
