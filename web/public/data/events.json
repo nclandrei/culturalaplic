@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-11T10:09:37.506077",
+  "scraped_at": "2026-08-12T10:13:45.887943",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -1860,6 +1860,21 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "WHITE MAHALA & Helda",
+      "artist": "WHITE MAHALA & Helda",
+      "venue": "Quantic",
+      "date": "2026-08-13 00:00:00",
+      "url": "https://quantic.pub/eveniment/white-mahala/",
+      "source": "quantic",
+      "category": "music",
+      "price": null,
+      "spotify_url": "https://open.spotify.com/artist/6yhgUEgzs3pQMeO6ZR50Iq",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
     }
   ],
   "theatre_events": [
@@ -2116,21 +2131,6 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
-      "video_url": null
-    },
-    {
-      "title": "Fluturii sunt Liberi",
-      "artist": "Fluturii sunt Liberi",
-      "venue": "Teatrul Amzei",
-      "date": "2026-08-11 20:30:00",
-      "url": "https://eventbook.ro/theater/bilete-fluturii-sunt-liberi-react",
-      "source": "eventbook",
-      "category": "theatre",
-      "price": "80 LEI",
-      "spotify_url": null,
-      "description": "Cump\u0103r\u0103 bilete la Fluturii sunt Liberi",
-      "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-fluturii-sunt-liberi-react-pyX.webp",
       "video_url": null
     },
     {
@@ -4381,6 +4381,21 @@
       "description": null,
       "description_source": null,
       "image_url": "https://www.tnb.ro/uploads/spectacles/884/1100/large_Afis_final.jpg",
+      "video_url": null
+    },
+    {
+      "title": "Mai e vreun candidat?",
+      "artist": null,
+      "venue": "TNB - Sala Pictura",
+      "date": "2026-10-07 19:00:00",
+      "url": "https://www.tnb.ro/ro/mai-e-vreun-candidat",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
       "video_url": null
     }
   ],
