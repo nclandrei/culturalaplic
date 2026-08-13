@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-12T10:13:45.887943",
+  "scraped_at": "2026-08-13T10:01:29.046681",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -362,21 +362,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Robin and the Backstabers",
-      "artist": "Concert Robin and the Backstabers",
-      "venue": "Quantic",
-      "date": "2026-08-12 00:00:00",
-      "url": "https://quantic.pub/eveniment/concert-robin-and-the-backstabers/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "WHITE MAHALA",
       "artist": "WHITE MAHALA",
       "venue": "Quantic",
@@ -443,21 +428,6 @@
       "date": "2026-10-21 20:00:00",
       "url": "https://www.control-club.ro/event/?slug=live-valerinne-special-guests-ordinul-negru-ro",
       "source": "control",
-      "category": "music",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Concert Robin and the Backstabbers",
-      "artist": "Concert Robin and the Backstabbers",
-      "venue": "Quantic",
-      "date": "2026-08-12 00:00:00",
-      "url": "https://quantic.pub/eveniment/concert-robin-and-the-backstabers/",
-      "source": "quantic",
       "category": "music",
       "price": null,
       "spotify_url": null,
@@ -1600,21 +1570,6 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 80 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Summer Vibes LIve with Claudiu Mirea",
-      "artist": "Summer Vibes LIve with Claudiu Mirea",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-08-12 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=8/12/2026&display=event&eventid=2582959",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
       "spotify_url": null,
       "description": null,
       "description_source": null,
