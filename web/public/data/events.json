@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-13T10:01:29.046681",
+  "scraped_at": "2026-08-14T10:14:53.281522",
   "music_events": [
     {
       "title": "ctrl LIVE: Holy Fuck [CA]",
@@ -356,21 +356,6 @@
       "category": "music",
       "price": "...",
       "spotify_url": "https://open.spotify.com/artist/6g8Jqb5JMfv92eB2r0awTN",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "WHITE MAHALA",
-      "artist": "WHITE MAHALA",
-      "venue": "Quantic",
-      "date": "2026-08-13 00:00:00",
-      "url": "https://quantic.pub/eveniment/white-mahala/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/6yhgUEgzs3pQMeO6ZR50Iq",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -1577,21 +1562,6 @@
       "video_url": null
     },
     {
-      "title": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
-      "artist": "Tiberiu Albu & Mirel Cump\u0103na\u0219 Live Concert on the terrace",
-      "venue": "Hard Rock Cafe Bucharest",
-      "date": "2026-08-13 00:00:00",
-      "url": "https://cafe.hardrock.com/bucharest/event-calendar.aspx?date=8/13/2026&display=event&eventid=2583985",
-      "source": "hardrock",
-      "category": "music",
-      "price": "Gratis",
-      "spotify_url": "https://open.spotify.com/artist/7mCQB731rVTC4uX9JUY0Cu",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "MOON BAND Live Concert",
       "artist": "MOON BAND",
       "venue": "Hard Rock Cafe Bucharest",
@@ -1811,21 +1781,6 @@
       "category": "music",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "WHITE MAHALA & Helda",
-      "artist": "WHITE MAHALA & Helda",
-      "venue": "Quantic",
-      "date": "2026-08-13 00:00:00",
-      "url": "https://quantic.pub/eveniment/white-mahala/",
-      "source": "quantic",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/6yhgUEgzs3pQMeO6ZR50Iq",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4352,6 +4307,51 @@
       "description_source": null,
       "image_url": null,
       "video_url": null
+    },
+    {
+      "title": "Amadeus",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
+      "date": "2026-09-19 19:00:00",
+      "url": "https://nottara.ro/spectacol/amadeus/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Celebra rivalitate dintre Mozart \u0219i Salieri, surprins\u0103 admirabil de Peter Shaffer \u00een piesa \u201eAmadeus\u201d \u0219i care a stat la baza unuia dintre filmele legendare ale secolului XX, regizat de Milo\u0161 Forman, va ajunge, din toamn\u0103, pe scena Teatrului Nottara, \u00een viziunea lui Vlad Cristache. Scenografia va fi semnat\u0103 de Oana Micu, iar distribu\u021bia va fi [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/amadeus-repetitii-EBS-1280x853-px.jpg.jpeg",
+      "video_url": null
+    },
+    {
+      "title": "Amadeus",
+      "artist": null,
+      "venue": "Teatrul Nottara - Sala Horia Lovinescu",
+      "date": "2026-09-20 19:00:00",
+      "url": "https://nottara.ro/spectacol/amadeus/",
+      "source": "nottara",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": "Celebra rivalitate dintre Mozart \u0219i Salieri, surprins\u0103 admirabil de Peter Shaffer \u00een piesa \u201eAmadeus\u201d \u0219i care a stat la baza unuia dintre filmele legendare ale secolului XX, regizat de Milo\u0161 Forman, va ajunge, din toamn\u0103, pe scena Teatrului Nottara, \u00een viziunea lui Vlad Cristache. Scenografia va fi semnat\u0103 de Oana Micu, iar distribu\u021bia va fi [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/amadeus-repetitii-EBS-1280x853-px.jpg.jpeg",
+      "video_url": null
+    },
+    {
+      "title": "Despre oameni, doctori \u0219i rinoceri",
+      "artist": null,
+      "venue": "TNB - Sala Studio",
+      "date": "2026-10-06 19:00:00",
+      "url": "https://www.tnb.ro/ro/despre-oameni-doctori-si-rinoceri",
+      "source": "tnb",
+      "category": "theatre",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1190/1779/large_Afis_despre_oameni_2026.jpg",
+      "video_url": null
     }
   ],
   "culture_events": [
@@ -6063,21 +6063,6 @@
       "description": "Hai si tu sa vezi un spectacol de comedie in care totul este improvizat. Se pleaca de la sugestiile publicului iar momentele comice pornesc pe drumuri construite pe loc de catre improvizatorii aflati pe scena. La acest spectacol vor juca: Valentin Hurdubaie, Serban Baicu, Oana Orjanu, Bogdan Obreja si Andrei Bratu. \ud83c\udff7\ufe0f Showul te costa cat crezi ca merita si achiti la final, ca donatie",
       "description_source": "scraped",
       "image_url": "https://improteca.ro/wp-content/uploads/2022/03/Group-8-1.png",
-      "video_url": null
-    },
-    {
-      "title": "Late Summer Spritz",
-      "artist": null,
-      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
-      "date": "2026-08-13 00:00:00",
-      "url": "https://mare.ro/exhibition/late-summer-spritz/",
-      "source": "mare",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Apparatus 22 | Diana Cepleanu | Roberta Curc\u0103 | Adelina Ivan | Gili Mocanu | Giuliano Nardin | Marusa Sagadin| Kristin Wenzel | Madalina Zaharia. Curator: Larisa Sitar Apparatus 22 | Diana Cepleanu | Roberta Curc\u0103 | Adelina Ivan | Gili Mocanu | Giuliano Nardin | Marusa Sagadin| Kristin Wenzel | Madalina Zaharia",
-      "description_source": "scraped",
-      "image_url": "https://mare.ro/wp-content/uploads/2026/07/MARe_slider_LateSummer_2560x1389p-1024x556.jpg",
       "video_url": null
     },
     {
