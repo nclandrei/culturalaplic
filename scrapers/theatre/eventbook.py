@@ -1,6 +1,6 @@
 from models import Event
 from scrapers.music.eventbook import BUCHAREST_URL as EVENTS_URL
-from scrapers.music.eventbook import scrape as scrape_eventbook
+from scrapers.music.eventbook import scrape_all as scrape_eventbook
 
 MIN_EXPECTED_EVENTS = 1
 

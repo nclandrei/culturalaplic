@@ -2,8 +2,9 @@ import sys
 from unittest.mock import patch
 
 from main import SCRAPER_GROUPS, main, run_music_scrapers, run_theatre_scrapers
+from scrapers.music import eventbook as eventbook_music
 from scrapers.music import hardrock, iabilet
-from scrapers.theatre import eventbook
+from scrapers.theatre import eventbook as eventbook_theatre
 from scripts.test_full_flow import SCRAPERS as INTEGRATION_SCRAPERS
 
 
@@ -34,13 +35,23 @@ def test_iabilet_music_feed_is_registered_for_scheduled_and_local_runs():
 
 
 def test_eventbook_is_registered_for_scheduled_and_local_runs():
-    assert eventbook in SCRAPER_GROUPS[1]["theatre"]
+    assert eventbook_music in SCRAPER_GROUPS[1]["music"]
+    assert eventbook_theatre in SCRAPER_GROUPS[1]["theatre"]
+
+    with (
+        patch("main.should_run_festival_scrapers", return_value=False),
+        patch("main.run_scraper_safely", return_value=[]) as run_scraper,
+    ):
+        run_music_scrapers()
+
+    scheduled_scrapers = [call.args[0] for call in run_scraper.call_args_list]
+    assert eventbook_music in scheduled_scrapers
 
     with patch("main.run_scraper_safely", return_value=[]) as run_scraper:
         run_theatre_scrapers()
 
     scheduled_scrapers = [call.args[0] for call in run_scraper.call_args_list]
-    assert eventbook in scheduled_scrapers
+    assert eventbook_theatre in scheduled_scrapers
 
 
 def test_dry_run_lists_newly_registered_scrapers(capsys):

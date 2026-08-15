@@ -10,37 +10,32 @@ BASE_URL = "https://eventbook.ro"
 BUCHAREST_URL = f"{BASE_URL}/city/bucuresti"
 MAX_PAGES = 50
 DATE_ICON_LABELS = {"calendar_month", "schedule"}
+MIN_EXPECTED_EVENTS = 1
 
 
 def parse_date(date_str: str) -> datetime | None:
-    """Parse eventbook date format (e.g., '19 Jan 202618:00')."""
+    """Parse an Eventbook performance date, preferring the final listed time."""
     if not date_str:
         return None
-    
-    date_str = date_str.strip()
-    
-    if date_str.lower().startswith("valabil") or date_str.lower().startswith("colectia"):
+
+    date_str = " ".join(date_str.split())
+    date_lower = date_str.lower()
+
+    if date_lower.startswith("valabil") or date_lower.startswith("colectia"):
         return None
-    
-    time_text = None
-    match = re.match(
-        r"(\d{1,2})\s+(\w+)\s+(\d{4})(?:\s*(\d{2}:\d{2}))?",
+
+    match = re.search(
+        r"(?:[^\W\d_]+,\s*)?(\d{1,2})\s+([^\W\d_]+)(?:\s+(\d{4}|\d{2}))?",
         date_str,
+        re.UNICODE,
     )
     if not match:
-        match = re.match(r"(\w+),\s+(\d{1,2})\s+(\w+)\s+(\d{2})", date_str)
-        if match:
-            day = int(match.group(2))
-            month_str = match.group(3)
-            year = 2000 + int(match.group(4))
-        else:
-            return None
-    else:
-        day = int(match.group(1))
-        month_str = match.group(2)
-        year = int(match.group(3))
-        time_text = match.group(4)
-    
+        return None
+
+    day = int(match.group(1))
+    month_str = match.group(2)
+    year_text = match.group(3)
+
     months = {
         "jan": 1, "january": 1, "feb": 2, "february": 2, "mar": 3, "march": 3,
         "apr": 4, "april": 4, "may": 5, "jun": 6, "june": 6,
@@ -49,16 +44,31 @@ def parse_date(date_str: str) -> datetime | None:
         "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4, "mai": 5, "iunie": 6,
         "iulie": 7, "august": 8, "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
     }
-    
+
     month = months.get(month_str.lower())
     if not month:
         return None
-    
+
+    now = datetime.now()
+    year = int(year_text) if year_text else now.year
+    if year < 100:
+        year += 2000
+
+    # Some cards show both doors and show times. The final value is the actual
+    # performance time; a simple card has only one value.
+    time_matches = re.findall(
+        r"(?<!\d)([01]?\d|2[0-3]):([0-5]\d)(?!\d)",
+        date_str[match.end():],
+    )
+    hour, minute = map(int, time_matches[-1]) if time_matches else (0, 0)
+
     try:
-        hour, minute = (0, 0)
-        if time_text:
-            hour, minute = map(int, time_text.split(":"))
-        return datetime(year, month, day, hour, minute)
+        event_date = datetime(year, month, day, hour, minute)
+        if not year_text and event_date < now.replace(
+            hour=0, minute=0, second=0, microsecond=0
+        ):
+            event_date = datetime(year + 1, month, day, hour, minute)
+        return event_date
     except ValueError:
         return None
 
@@ -138,10 +148,10 @@ def parse_event_card(event_row: BeautifulSoup) -> Event | None:
     )
 
 
-def scrape() -> list[Event]:
-    """Fetch upcoming events from Eventbook."""
+def scrape_all() -> list[Event]:
+    """Fetch upcoming music and theatre performances from Eventbook."""
     events: list[Event] = []
-    seen_urls: set[str] = set()
+    seen: set[tuple[str, datetime]] = set()
     
     for page in range(1, MAX_PAGES + 1):
         url = BUCHAREST_URL if page == 1 else f"{BUCHAREST_URL}?page={page}"
@@ -164,8 +174,13 @@ def scrape() -> list[Event]:
                 continue
             
             event = parse_event_card(event_row)
-            if event and event.url not in seen_urls:
-                seen_urls.add(event.url)
+            if event and (event.url, event.date) not in seen:
+                seen.add((event.url, event.date))
                 events.append(event)
-    
+
     return events
+
+
+def scrape() -> list[Event]:
+    """Fetch Bucharest music performances from Eventbook."""
+    return [event for event in scrape_all() if event.category == "music"]
