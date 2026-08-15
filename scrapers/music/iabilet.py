@@ -21,7 +21,6 @@ MUSIC_CATEGORIES = (
     "concerte-muzica-clasica",
     "concerte-alternative",
     "concerte-folk",
-    "festivaluri",
     "concerte-hip-hop",
     "concerte-pop-rock",
     "world-music",
@@ -53,7 +52,8 @@ EVENTS_URL = build_listing_url()
 
 ROMANIAN_MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
-    "iul": 7, "aug": 8, "sep": 9, "oct": 10, "noi": 11, "dec": 12,
+    "iul": 7, "aug": 8, "sep": 9, "oct": 10, "noi": 11, "nov": 11,
+    "dec": 12,
 }
 
 
@@ -63,9 +63,11 @@ def parse_date(
     year: str | None = None,
     *,
     now: datetime | None = None,
-) -> datetime:
+) -> datetime | None:
     """Parse Romanian date format (e.g., '17', 'ian', "'26")."""
-    month_num = ROMANIAN_MONTHS.get(month.lower(), 1)
+    month_num = ROMANIAN_MONTHS.get(month.lower())
+    if month_num is None:
+        return None
     
     if year:
         year_num = int(year.replace("'", "").strip())
@@ -131,6 +133,8 @@ def parse_event_card(card: BeautifulSoup) -> Event | None:
             month = month_elem.get_text(strip=True)
             year = year_elem.get_text(strip=True) if year_elem else None
             event_date = parse_date(day, month, year)
+            if event_date is None:
+                return None
             start_time = extract_card_time(card)
             if start_time:
                 event_date = event_date.replace(

@@ -33,12 +33,17 @@ def test_listing_url_requests_only_music_categories():
     assert query["filtersSubmitted"] == ["1"]
     assert "teatru" not in query["filters[category][]"]
     assert "workshop" not in query["filters[category][]"]
+    assert "festivaluri" not in query["filters[category][]"]
 
 
 def test_yearless_event_later_today_does_not_roll_into_next_year():
     parsed = parse_date("15", "aug", now=datetime(2026, 8, 15, 18, 0))
 
     assert parsed == datetime(2026, 8, 15)
+
+
+def test_unknown_month_is_rejected_instead_of_defaulting_to_january():
+    assert parse_date("15", "invalid", "'26") is None
 
 
 def test_bullet_title_extracts_artist_for_cross_source_deduplication():
@@ -68,6 +73,30 @@ def test_scrape_keeps_times_advertised_in_card_descriptions():
         datetime(2026, 9, 24, 17, 0),
         datetime(2026, 9, 24, 19, 30),
     ]
+
+
+def test_november_card_and_json_ld_are_one_occurrence():
+    html = card(
+        "Pink Floyd History",
+        "/music/pink-floyd-history",
+        1,
+    ).replace(">sep<", ">nov<") + """
+    <script type="application/ld+json">
+    {
+      "@type": "Event",
+      "name": "Pink Floyd History",
+      "url": "https://www.iabilet.ro/music/pink-floyd-history",
+      "startDate": "2026-11-01",
+      "location": {"name": "Sala Palatului"}
+    }
+    </script>
+    """
+
+    with patch("scrapers.music.iabilet.fetch_page", return_value=html):
+        events = scrape()
+
+    assert len(events) == 1
+    assert events[0].date == datetime(2026, 11, 1)
 
 
 def test_scrape_follows_filtered_next_page_link():
