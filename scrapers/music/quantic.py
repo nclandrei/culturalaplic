@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -129,7 +129,10 @@ def scrape_month(year: int, month: int) -> list[Event]:
     
     url = get_month_url(year, month)
     try:
-        html = fetch_page(url, needs_js=True)
+        html = fetch_page_with_reader_fallback(
+            url,
+            expected_text="tribe-events-calendar-month__calendar-event",
+        )
     except Exception as e:
         print(f"Failed to fetch Quantic {year}-{month:02d}: {e}")
         return events

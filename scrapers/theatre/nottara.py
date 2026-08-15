@@ -3,7 +3,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://nottara.ro"
 EVENTS_URL = f"{BASE_URL}/program/"
@@ -61,7 +61,11 @@ def scrape() -> list[Event]:
     seen: set[tuple[str, str]] = set()
     
     try:
-        html = fetch_page(EVENTS_URL, needs_js=True, timeout=60000)
+        html = fetch_page_with_reader_fallback(
+            EVENTS_URL,
+            expected_text="gr-show-item",
+            timeout=60000,
+        )
     except Exception as e:
         print(f"Failed to fetch Nottara events: {e}")
         return events

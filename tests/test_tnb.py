@@ -57,7 +57,7 @@ def test_scrape_month_uses_server_rendered_list_view(monkeypatch):
         requests.append((url, kwargs))
         return LIST_VIEW_HTML
 
-    monkeypatch.setattr(tnb, "fetch_page", fake_fetch_page)
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fake_fetch_page)
 
     events = tnb.scrape_month(2026, 9)
 
@@ -65,6 +65,6 @@ def test_scrape_month_uses_server_rendered_list_view(monkeypatch):
     assert requests == [
         (
             "https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
-            {"needs_js": False, "timeout": 60000},
+            {"expected_text": "right_items", "timeout": 60000},
         )
     ]

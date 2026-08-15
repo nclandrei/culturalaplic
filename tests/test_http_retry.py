@@ -5,6 +5,7 @@ from unittest.mock import patch
 import httpx
 import pytest
 import respx
+import services.http as http_service
 
 from services.http import (
     fetch_page,
@@ -124,3 +125,40 @@ class TestHttpRetry:
         page.wait_for_selector.assert_called_once_with(
             ".events-list-view", timeout=30000
         )
+
+    @respx.mock
+    def test_empty_success_page_uses_html_reader_fallback(self):
+        source_url = "https://example.com/events?year=2026&month=9"
+        reader_url = (
+            "https://r.jina.ai/https://example.com/events?year=2026&month=9"
+        )
+        respx.get(source_url).respond(200, text="<html>No event markup</html>")
+        respx.get(reader_url).respond(
+            200,
+            text="<div class='event-marker'>Concert</div>",
+        )
+
+        result = http_service.fetch_page_with_reader_fallback(
+            source_url,
+            expected_text="event-marker",
+        )
+
+        assert "event-marker" in result
+        assert respx.calls.call_count == 2
+        assert respx.calls.last.request.headers["X-Return-Format"] == "html"
+
+    @respx.mock
+    def test_expected_markup_does_not_use_html_reader(self):
+        source_url = "https://example.com/events"
+        respx.get(source_url).respond(
+            200,
+            text="<div class='event-marker'>Concert</div>",
+        )
+
+        result = http_service.fetch_page_with_reader_fallback(
+            source_url,
+            expected_text="event-marker",
+        )
+
+        assert "event-marker" in result
+        assert respx.calls.call_count == 1

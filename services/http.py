@@ -9,6 +9,8 @@ from tenacity import (
 
 RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 MAX_RETRIES = 3
+HTML_READER_BASE_URL = "https://r.jina.ai/"
+HTML_READER_HEADERS = {"X-Return-Format": "html"}
 _fetch_failures: list[str] = []
 
 
@@ -208,3 +210,21 @@ def fetch_page(
             message = f"Failed to fetch {url}: {e}"
             _record_fetch_failure(message)
             raise HttpError(message) from e
+
+
+def fetch_page_with_reader_fallback(
+    url: str,
+    expected_text: str,
+    needs_js: bool = False,
+    timeout: int = 30000,
+) -> str:
+    """Retry a 200 response missing expected markup through the HTML reader."""
+    html = fetch_page(url, needs_js=needs_js, timeout=timeout)
+    if expected_text in html:
+        return html
+
+    return fetch_page(
+        f"{HTML_READER_BASE_URL}{url}",
+        timeout=timeout,
+        headers=HTML_READER_HEADERS,
+    )
