@@ -45,3 +45,26 @@ def test_artistless_duplicate_title_has_the_same_key_for_dict_and_event():
     }
 
     assert get_event_key(event) == get_event_key(serialized)
+
+
+def test_event_keys_keep_separate_same_day_showtimes():
+    morning = Event(
+        title="Amintiri din copilărie",
+        artist=None,
+        venue="TNB",
+        date=datetime(2026, 9, 5, 11, 0),
+        url="https://tnb.ro/morning",
+        source="tnb",
+        category="theatre",
+    )
+    evening = Event(
+        title=morning.title,
+        artist=None,
+        venue=morning.venue,
+        date=datetime(2026, 9, 5, 19, 0),
+        url="https://tnb.ro/evening",
+        source="tnb",
+        category="theatre",
+    )
+
+    assert get_event_key(morning) != get_event_key(evening)

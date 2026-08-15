@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import datetime
 
 from google import genai
 from rapidfuzz import fuzz
@@ -47,8 +48,8 @@ def normalize_for_dedup(event: Event) -> str:
     """Create a normalized key for exact deduplication."""
     identity = (event.artist or event.title).lower().strip()
     venue = normalize_venue(event.venue)
-    date_str = event.date.strftime("%Y-%m-%d")
-    return f"{identity}|{date_str}|{venue}"
+    date_str = event.date.strftime("%Y-%m-%dT%H:%M")
+    return f"{event.source}|{identity}|{date_str}|{venue}"
 
 
 def stage1_dedup(events: list[Event]) -> list[Event]:
@@ -67,8 +68,21 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
         is_duplicate = False
         event_venue_norm = normalize_venue(event.venue)
         for existing in deduped:
-            if event.date.date() != existing.date.date():
-                continue
+            if event.source == existing.source:
+                if event.date != existing.date:
+                    continue
+            else:
+                if event.date.date() != existing.date.date():
+                    continue
+                event_time = event.date.time()
+                existing_time = existing.date.time()
+                midnight = datetime.min.time()
+                if (
+                    event_time != midnight
+                    and existing_time != midnight
+                    and event_time != existing_time
+                ):
+                    continue
 
             identity_ratio = fuzz.ratio(
                 (event.artist or event.title).lower(),

@@ -96,6 +96,48 @@ class TestStage1Dedup:
         result = stage1_dedup(events)
         assert len(result) == 2
 
+    def test_same_source_keeps_separate_same_day_showtimes(self):
+        events = [
+            make_event(
+                None,
+                "TNB",
+                datetime(2026, 9, 5, 11, 0),
+                source="tnb",
+                title="Amintiri din copilărie",
+            ),
+            make_event(
+                None,
+                "TNB",
+                datetime(2026, 9, 5, 19, 0),
+                source="tnb",
+                title="Amintiri din copilărie",
+            ),
+        ]
+
+        result = stage1_dedup(events)
+
+        assert [event.date.hour for event in result] == [11, 19]
+
+    def test_different_sources_still_merge_unknown_and_known_times(self):
+        events = [
+            make_event(
+                "byron",
+                "Expirat",
+                datetime(2026, 8, 19),
+                source="iabilet",
+                title="byron live",
+            ),
+            make_event(
+                "byron",
+                "Expirat Halele Carol",
+                datetime(2026, 8, 19, 21, 30),
+                source="expirat",
+                title="byron live",
+            ),
+        ]
+
+        assert len(stage1_dedup(events)) == 1
+
     def test_artistless_events_use_title_for_deduplication(self):
         events = [
             make_event(
