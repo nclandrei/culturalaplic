@@ -51,3 +51,12 @@ def test_auto_fix_workflow_handles_every_reported_scraper():
     assert "['errors'][0]" not in workflow
     assert "Fix every scraper listed below" in workflow
     assert 'git add scrapers/ services/enrichment.py' in workflow
+
+
+def test_auto_fix_workflow_uses_the_current_amp_cli():
+    workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
+
+    assert "npm install -g @ampcode/cli" in workflow
+    assert "@anthropic-ai/amp" not in workflow
+    assert '"amp.dangerouslyAllowAll": true' in workflow
+    assert "--dangerously-allow-all" not in workflow

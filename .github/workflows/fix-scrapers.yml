@@ -47,12 +47,14 @@ jobs:
           cat artifacts/scraper_errors.json
 
       - name: Install Amp CLI
-        run: npm install -g @anthropic-ai/amp
+        run: npm install -g @ampcode/cli
 
       - name: Run Amp to fix scrapers
         env:
           AMP_API_KEY: ${{ secrets.AMP_API_KEY }}
+          AMP_SETTINGS_FILE: ${{ runner.temp }}/amp-settings.json
         run: |
+          printf '%s\n' '{"amp.dangerouslyAllowAll": true}' > "$AMP_SETTINGS_FILE"
           ERRORS_JSON=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(json.dumps(d['errors'], ensure_ascii=False))")
           ERROR_COUNT=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(len(d['errors']))")
 
@@ -119,7 +121,7 @@ jobs:
           Do NOT commit any changes. Just fix the code and verify it works."
 
           # Run Amp with the prompt (execute mode, allow all tools)
-          echo "$PROMPT" | amp --execute --dangerously-allow-all
+          echo "$PROMPT" | amp --execute
 
       - name: Create fix branch and PR
         if: inputs.dry_run != true
