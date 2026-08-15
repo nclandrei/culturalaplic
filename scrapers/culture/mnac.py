@@ -1,5 +1,7 @@
+import json
 import re
 from datetime import datetime
+from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 
@@ -8,6 +10,11 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.mnac.ro"
 EVENTS_URL = f"{BASE_URL}/event-list/93/EVENIMENTE/67/events/1"
+CURRENT_EXHIBITIONS_URL = (
+    f"{BASE_URL}/public/event/getCurrentExhibitionEvent"
+    "?pageNumber=1&numberOfEventPerPage=100&year=&month=-1"
+)
+MIN_EXPECTED_EVENTS = 1
 
 
 def parse_timestamp(timestamp_ms: str) -> datetime | None:
@@ -70,8 +77,66 @@ def parse_event(container: BeautifulSoup) -> Event | None:
     )
 
 
+def parse_exhibition(data: dict, now: datetime | None = None) -> Event | None:
+    """Parse one current exhibition returned by MNAC's public API."""
+    title = data.get("nameRO") or data.get("nameEN")
+    event_id = data.get("rid")
+    if not title or event_id is None:
+        return None
+
+    now = now or datetime.now()
+    start_date = parse_timestamp(data.get("eventStartDate"))
+    end_date = parse_timestamp(data.get("eventEndDate"))
+    is_permanent = data.get("permanent") is True
+
+    if not is_permanent and (not end_date or end_date < now):
+        return None
+
+    if start_date and start_date > now:
+        event_date = start_date
+    else:
+        event_date = now.replace(hour=11, minute=0, second=0, microsecond=0)
+
+    event_url = f"{BASE_URL}/event/{event_id}/{quote(title, safe='')}"
+
+    return Event(
+        title=title,
+        artist=None,
+        venue="MNAC",
+        date=event_date,
+        url=event_url,
+        source="mnac",
+        category="culture",
+        price=None,
+    )
+
+
+def scrape_current_exhibitions() -> list[Event]:
+    """Fetch ongoing exhibitions from MNAC's public JSON API."""
+    try:
+        response_text = fetch_page(
+            CURRENT_EXHIBITIONS_URL,
+            needs_js=False,
+            timeout=30000,
+        )
+        response = json.loads(response_text)
+    except (json.JSONDecodeError, TypeError, ValueError) as e:
+        print(f"Failed to parse MNAC current exhibitions: {e}")
+        return []
+    except Exception as e:
+        print(f"Failed to fetch MNAC current exhibitions: {e}")
+        return []
+
+    events: list[Event] = []
+    for data in response.get("eventList") or []:
+        event = parse_exhibition(data)
+        if event:
+            events.append(event)
+    return events
+
+
 def scrape() -> list[Event]:
-    """Fetch upcoming events from MNAC."""
+    """Fetch upcoming events and current exhibitions from MNAC."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
 
@@ -79,22 +144,27 @@ def scrape() -> list[Event]:
         html = fetch_page(EVENTS_URL, needs_js=True, timeout=60000)
     except Exception as e:
         print(f"Failed to fetch MNAC events: {e}")
-        return events
+    else:
+        soup = BeautifulSoup(html, "html.parser")
 
-    soup = BeautifulSoup(html, "html.parser")
+        for section_id in ["#currentEvent", "#futureEvent"]:
+            section = soup.select_one(section_id)
+            if not section:
+                continue
 
-    for section_id in ["#currentEvent", "#futureEvent"]:
-        section = soup.select_one(section_id)
-        if not section:
-            continue
+            for container in section.select(".listEvents"):
+                event = parse_event(container)
+                if event:
+                    key = (event.title, event.date.isoformat())
+                    if key not in seen:
+                        seen.add(key)
+                        events.append(event)
 
-        for container in section.select(".listEvents"):
-            event = parse_event(container)
-            if event:
-                key = (event.title, event.date.isoformat())
-                if key not in seen:
-                    seen.add(key)
-                    events.append(event)
+    for event in scrape_current_exhibitions():
+        key = (event.title, event.date.isoformat())
+        if key not in seen:
+            seen.add(key)
+            events.append(event)
 
     events.sort(key=lambda e: e.date)
 
