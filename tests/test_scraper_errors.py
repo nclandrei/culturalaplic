@@ -121,6 +121,25 @@ class TestScraperErrorCollection:
         assert scraper_errors == []
         assert successful_scraper_sources["theatre"] == {"off_season"}
 
+    def test_known_active_feed_cannot_fail_silently(self):
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
+        from scrapers.culture import elvirepopescu
+
+        scraper_errors.clear()
+        successful_scraper_sources["culture"].clear()
+
+        with patch.object(elvirepopescu, "scrape", return_value=[]):
+            assert run_scraper_safely(elvirepopescu) == []
+
+        assert [error.scraper_name for error in scraper_errors] == [
+            "elvirepopescu"
+        ]
+        assert "elvirepopescu" not in successful_scraper_sources["culture"]
+
 
 class TestScraperAlertEmail:
     """Test scraper alert email formatting and sending."""
