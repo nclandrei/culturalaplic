@@ -8,7 +8,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from dataclasses import asdict, replace
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from types import ModuleType
 
@@ -25,6 +25,7 @@ DATA_DIR = Path(__file__).parent / "web" / "public" / "data"
 EVENTS_FILE = DATA_DIR / "events.json"
 ARTIFACTS_DIR = Path(__file__).parent / "artifacts"
 ERRORS_FILE = ARTIFACTS_DIR / "scraper_errors.json"
+MAX_EVENT_HORIZON_DAYS = 730
 FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 
 # Scraper groups for parallel execution (split to avoid 45min timeout)
@@ -266,8 +267,9 @@ def replace_source_events(
 
 
 def cleanup_past_events(events: list[dict]) -> list[dict]:
-    """Remove events with date < today."""
+    """Remove past, invalid, and implausibly distant events."""
     today = datetime.now().date()
+    latest_allowed_date = today + timedelta(days=MAX_EVENT_HORIZON_DAYS)
     future_events = []
     
     for event in events:
@@ -276,10 +278,15 @@ def cleanup_past_events(events: list[dict]) -> list[dict]:
             if isinstance(event_date_val, datetime):
                 event_date = event_date_val.date()
             elif isinstance(event_date_val, str):
-                event_date = datetime.strptime(event_date_val[:10], "%Y-%m-%d").date()
+                try:
+                    event_date = datetime.strptime(
+                        event_date_val[:10], "%Y-%m-%d"
+                    ).date()
+                except ValueError:
+                    continue
             else:
                 continue
-            if event_date >= today:
+            if today <= event_date <= latest_allowed_date:
                 future_events.append(event)
     
     return future_events

@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timedelta
 
 import pytest
 
@@ -34,7 +35,7 @@ def event(title: str, source: str, category: str = "culture") -> dict:
         "title": title,
         "artist": None,
         "venue": "Test venue",
-        "date": "2099-08-15T11:00:00",
+        "date": (datetime.now() + timedelta(days=30)).isoformat(),
         "url": f"https://example.com/{title.lower().replace(' ', '-')}",
         "source": source,
         "category": category,
