@@ -193,13 +193,15 @@ def load_existing_events() -> dict[str, list[dict]]:
 
 
 def get_event_key(event: dict | Event) -> str:
-    """Generate a unique key for an event (artist|date|venue)."""
+    """Generate a unique key for an event (artist-or-title|date|venue)."""
     if isinstance(event, Event):
         date_str = event.date.strftime("%Y-%m-%d")
-        return f"{event.artist}|{date_str}|{event.venue}"
+        identity = event.artist or event.title
+        return f"{identity}|{date_str}|{event.venue}"
     else:
         date_str = event["date"][:10] if event.get("date") else ""
-        return f"{event.get('artist')}|{date_str}|{event.get('venue')}"
+        identity = event.get("artist") or event.get("title")
+        return f"{identity}|{date_str}|{event.get('venue')}"
 
 
 def load_previous_event_keys(existing_events: dict[str, list[dict]]) -> set[str]:

@@ -45,10 +45,10 @@ def normalize_venue(venue: str) -> str:
 
 def normalize_for_dedup(event: Event) -> str:
     """Create a normalized key for exact deduplication."""
-    artist = (event.artist or "").lower().strip()
+    identity = (event.artist or event.title).lower().strip()
     venue = normalize_venue(event.venue)
     date_str = event.date.strftime("%Y-%m-%d")
-    return f"{artist}|{date_str}|{venue}"
+    return f"{identity}|{date_str}|{venue}"
 
 
 def stage1_dedup(events: list[Event]) -> list[Event]:
@@ -70,19 +70,20 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
             if event.date.date() != existing.date.date():
                 continue
 
-            artist_ratio = fuzz.ratio(
-                (event.artist or "").lower(), (existing.artist or "").lower()
+            identity_ratio = fuzz.ratio(
+                (event.artist or event.title).lower(),
+                (existing.artist or existing.title).lower(),
             )
             existing_venue_norm = normalize_venue(existing.venue)
 
             # If both resolve to same canonical venue, it's a match
-            if event_venue_norm == existing_venue_norm and artist_ratio > 85:
+            if event_venue_norm == existing_venue_norm and identity_ratio > 85:
                 is_duplicate = True
                 break
 
             # Otherwise fall back to fuzzy venue matching
             venue_ratio = fuzz.ratio(event_venue_norm, existing_venue_norm)
-            if artist_ratio > 85 and venue_ratio > 80:
+            if identity_ratio > 85 and venue_ratio > 80:
                 is_duplicate = True
                 break
 

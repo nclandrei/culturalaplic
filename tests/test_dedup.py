@@ -15,7 +15,7 @@ from services.dedup import (
 
 
 def make_event(
-    artist: str,
+    artist: str | None,
     venue: str,
     date: datetime,
     source: str = "test",
@@ -26,7 +26,7 @@ def make_event(
         artist=artist,
         venue=venue,
         date=date,
-        url=f"https://{source}.ro/{artist.lower().replace(' ', '-')}",
+        url=f"https://{source}.ro/{(artist or title or 'event').lower().replace(' ', '-')}",
         source=source,
         category="music",
     )
@@ -95,6 +95,36 @@ class TestStage1Dedup:
         ]
         result = stage1_dedup(events)
         assert len(result) == 2
+
+    def test_artistless_events_use_title_for_deduplication(self):
+        events = [
+            make_event(
+                None,
+                "MNAC",
+                datetime(2026, 8, 15),
+                title="Boite, Box, Brancusi",
+            ),
+            make_event(
+                None,
+                "MNAC",
+                datetime(2026, 8, 15),
+                title="Seeing History",
+            ),
+            make_event(
+                None,
+                "MNAC",
+                datetime(2026, 8, 15),
+                source="duplicate-feed",
+                title="Boite, Box, Brancusi",
+            ),
+        ]
+
+        result = stage1_dedup(events)
+
+        assert [event.title for event in result] == [
+            "Boite, Box, Brancusi",
+            "Seeing History",
+        ]
 
 
 class TestLLMDedup:
