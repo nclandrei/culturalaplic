@@ -46,6 +46,9 @@ def test_artistless_duplicate_title_has_the_same_key_for_dict_and_event():
 
     assert get_event_key(event) == get_event_key(serialized)
 
+    serialized["date"] = "2026-08-15 11:00:00"
+    assert get_event_key(event) == get_event_key(serialized)
+
 
 def test_event_keys_keep_separate_same_day_showtimes():
     morning = Event(

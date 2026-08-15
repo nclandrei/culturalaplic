@@ -256,7 +256,13 @@ def get_event_key(event: dict | Event) -> str:
         identity = event.artist or event.title
         return f"{identity}|{date_str}|{event.venue}"
     else:
-        date_str = event["date"][:16] if event.get("date") else ""
+        date_value = event.get("date")
+        if isinstance(date_value, datetime):
+            date_str = date_value.strftime("%Y-%m-%dT%H:%M")
+        elif isinstance(date_value, str):
+            date_str = date_value[:16].replace(" ", "T")
+        else:
+            date_str = ""
         identity = event.get("artist") or event.get("title")
         return f"{identity}|{date_str}|{event.get('venue')}"
 
