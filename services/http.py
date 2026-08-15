@@ -54,9 +54,14 @@ def _is_retryable_playwright(e: BaseException) -> bool:
     retry=retry_if_exception(_is_retryable_httpx),
     reraise=True,
 )
-def _fetch_http(url: str) -> str:
+def _fetch_http(url: str, headers: dict[str, str] | None = None) -> str:
     """Fetch page via HTTP with retry."""
-    response = httpx.get(url, follow_redirects=True, timeout=30.0)
+    response = httpx.get(
+        url,
+        headers=headers,
+        follow_redirects=True,
+        timeout=30.0,
+    )
     response.raise_for_status()
     return response.text
 
@@ -70,6 +75,7 @@ def _fetch_http(url: str) -> str:
 def _fetch_js(
     url: str,
     timeout: int,
+    headers: dict[str, str] | None = None,
     wait_selector: str | None = None,
     click_selector: str | None = None,
     click_count: int = 0,
@@ -89,7 +95,11 @@ def _fetch_js(
     """
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page()
+        page = (
+            browser.new_page(extra_http_headers=headers)
+            if headers
+            else browser.new_page()
+        )
         page.goto(url, timeout=timeout, wait_until="domcontentloaded")
         if wait_selector:
             page.wait_for_selector(wait_selector, timeout=timeout)
@@ -145,6 +155,7 @@ def fetch_page(
     url: str,
     needs_js: bool = False,
     timeout: int = 30000,
+    headers: dict[str, str] | None = None,
     wait_selector: str | None = None,
     click_selector: str | None = None,
     click_count: int = 0,
@@ -160,6 +171,7 @@ def fetch_page(
         url: Page URL to fetch
         needs_js: Whether to use Playwright for JS-rendered pages
         timeout: Timeout in milliseconds
+        headers: Optional request headers
         wait_selector: Optional selector to wait for before reading the HTML
         click_selector: Optional selector for a "load more" button to click
         click_count: Number of times to click the button (0 = don't click)
@@ -171,6 +183,7 @@ def fetch_page(
             return _fetch_js(
                 url,
                 timeout,
+                headers,
                 wait_selector,
                 click_selector,
                 click_count,
@@ -183,7 +196,7 @@ def fetch_page(
             raise HttpError(message) from e
     else:
         try:
-            return _fetch_http(url)
+            return _fetch_http(url, headers)
         except httpx.HTTPStatusError as e:
             message = f"HTTP {e.response.status_code} for {url}"
             _record_fetch_failure(message)

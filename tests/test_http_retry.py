@@ -28,6 +28,19 @@ class TestHttpRetry:
         assert respx.calls.call_count == 1
 
     @respx.mock
+    def test_http_fetch_forwards_custom_headers(self):
+        """Should support source-specific reader headers."""
+        respx.get("https://example.com").respond(200, text="Reader HTML")
+
+        result = fetch_page(
+            "https://example.com",
+            headers={"X-Return-Format": "html"},
+        )
+
+        assert result == "Reader HTML"
+        assert respx.calls.last.request.headers["X-Return-Format"] == "html"
+
+    @respx.mock
     def test_retry_on_429(self):
         """Should retry on 429 Too Many Requests."""
         route = respx.get("https://example.com")
