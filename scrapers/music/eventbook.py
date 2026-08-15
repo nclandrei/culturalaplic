@@ -8,7 +8,8 @@ from services.http import fetch_page
 
 BASE_URL = "https://eventbook.ro"
 BUCHAREST_URL = f"{BASE_URL}/city/bucuresti"
-MAX_PAGES = 15
+MAX_PAGES = 50
+DATE_ICON_LABELS = {"calendar_month", "schedule"}
 
 
 def parse_date(date_str: str) -> datetime | None:
@@ -99,7 +100,11 @@ def parse_event_card(event_row: BeautifulSoup) -> Event | None:
     if not date_elem:
         return None
     
-    date_text = date_elem.get_text(strip=True)
+    date_text = " ".join(
+        text
+        for text in date_elem.stripped_strings
+        if text not in DATE_ICON_LABELS
+    )
     event_date = parse_date(date_text)
     if not event_date:
         return None
