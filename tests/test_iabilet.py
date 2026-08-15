@@ -6,6 +6,7 @@ from scrapers.music.iabilet import (
     MUSIC_CATEGORIES,
     build_listing_url,
     extract_artist_from_title,
+    is_music_event_title,
     parse_date,
     scrape,
 )
@@ -33,7 +34,7 @@ def test_listing_url_requests_only_music_categories():
     assert query["filtersSubmitted"] == ["1"]
     assert "teatru" not in query["filters[category][]"]
     assert "workshop" not in query["filters[category][]"]
-    assert "festivaluri" not in query["filters[category][]"]
+    assert "festivaluri" in query["filters[category][]"]
 
 
 def test_yearless_event_later_today_does_not_roll_into_next_year():
@@ -51,6 +52,16 @@ def test_bullet_title_extracts_artist_for_cross_source_deduplication():
         extract_artist_from_title("byron • Triptic: Electric / Acustic / Improv")
         == "byron"
     )
+    assert extract_artist_from_title("Pinholes• Concert") == "Pinholes"
+    assert extract_artist_from_title("Faust x Live Band- Concert") == "Faust x Live Band"
+
+
+def test_obvious_non_music_festivals_are_filtered():
+    assert not is_music_event_title("Festivalul Copiilor")
+    assert not is_music_event_title("Slow Coffee Festival – Ediția #10")
+    assert not is_music_event_title("Bucharest Gaming Week 2026")
+    assert not is_music_event_title("Pasarela International Fashion Festival")
+    assert is_music_event_title("BalKaniK! Festival | Ediția a XIII-a")
 
 
 def test_scrape_keeps_times_advertised_in_card_descriptions():

@@ -21,6 +21,7 @@ MUSIC_CATEGORIES = (
     "concerte-muzica-clasica",
     "concerte-alternative",
     "concerte-folk",
+    "festivaluri",
     "concerte-hip-hop",
     "concerte-pop-rock",
     "world-music",
@@ -56,6 +57,13 @@ ROMANIAN_MONTHS = {
     "dec": 12,
 }
 
+NON_MUSIC_TITLE_TERMS = (
+    "festivalul copiilor",
+    "coffee festival",
+    "gaming week",
+    "fashion festival",
+)
+
 
 def parse_date(
     day: str,
@@ -85,11 +93,18 @@ def parse_date(
 
 def extract_artist_from_title(title: str) -> str | None:
     """Extract artist name from event title."""
-    separators = [" • ", " · ", " - ", " – ", " | ", " @ ", ": "]
-    for sep in separators:
-        if sep in title:
-            return title.split(sep)[0].strip()
-    return title
+    parts = re.split(
+        r"\s*[•·|]\s*|\s+[@–]\s+|\s+-\s*|\s*-\s+|:\s+",
+        title,
+        maxsplit=1,
+    )
+    return parts[0].strip()
+
+
+def is_music_event_title(title: str) -> bool:
+    """Exclude clearly non-music items from iaBilet's mixed festival bucket."""
+    normalized = " ".join(title.casefold().split())
+    return not any(term in normalized for term in NON_MUSIC_TITLE_TERMS)
 
 
 def extract_card_time(card: BeautifulSoup) -> tuple[int, int] | None:
@@ -109,7 +124,9 @@ def parse_event_card(card: BeautifulSoup) -> Event | None:
     title_elem = card.select_one(".title a span")
     if not title_elem:
         return None
-    title = title_elem.get_text(strip=True)
+    title = " ".join(title_elem.get_text(" ", strip=True).split())
+    if not is_music_event_title(title):
+        return None
     
     link_elem = card.select_one(".title a")
     if not link_elem:
@@ -187,6 +204,9 @@ def parse_json_ld_event(data: dict) -> Event | None:
     """Parse event from JSON-LD data."""
     try:
         title = data.get("name", "")
+        title = " ".join(title.split())
+        if not is_music_event_title(title):
+            return None
         url = data.get("url", "")
         
         location = data.get("location", {})
