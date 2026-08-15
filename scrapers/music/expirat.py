@@ -1,83 +1,16 @@
+import json
 import re
 from datetime import datetime
-from urllib.parse import unquote
+from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
 
 from models import Event
 from services.http import fetch_page
 
-BASE_URL = "https://expirat.org"
-SCHEDULE_URL = f"{BASE_URL}/schedule/events-live-act/"
-
-ROMANIAN_DAYS = {
-    "luni": 0, "marți": 1, "miercuri": 2, "joi": 3,
-    "vineri": 4, "sâmbătă": 5, "duminică": 6,
-}
-
-ROMANIAN_MONTHS = {
-    "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
-    "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
-    "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
-}
-
-
-def parse_date(date_str: str) -> datetime | None:
-    """Parse Romanian date format (e.g., 'miercuri 11 decembrie')."""
-    if not date_str:
-        return None
-    
-    match = re.match(r"(\w+)\s+(\d{1,2})\s+(\w+)", date_str.strip().lower())
-    if not match:
-        return None
-    
-    day_name, day, month_name = match.groups()
-    
-    month = ROMANIAN_MONTHS.get(month_name)
-    if not month:
-        return None
-    
-    year = datetime.now().year
-    try:
-        event_date = datetime(year, month, int(day))
-        if event_date < datetime.now():
-            event_date = datetime(year + 1, month, int(day))
-        return event_date
-    except ValueError:
-        return None
-
-
-def extract_event_url(article: BeautifulSoup) -> str | None:
-    """Extract event URL from sharing links."""
-    share_link = article.select_one('a.facebook[href*="sharer.php"]')
-    if share_link:
-        href = share_link.get("href", "")
-        match = re.search(r"[?&]u=([^&]+)", href)
-        if match:
-            return unquote(match.group(1))
-    
-    email_link = article.select_one('a.email[href^="mailto:"]')
-    if email_link:
-        href = email_link.get("href", "")
-        match = re.search(r"body=([^&]+)", href)
-        if match:
-            return unquote(match.group(1))
-    
-    return None
-
-
-def extract_tickets_url(article: BeautifulSoup) -> str | None:
-    """Extract tickets URL from custom data fields."""
-    tickets_link = article.select_one('.mec-event-data-field-item a[href*="iabilet"], .mec-event-data-field-item a[href*="eventbook"], .mec-event-data-field-item a[href*="rockstadt"]')
-    if tickets_link:
-        return tickets_link.get("href")
-    
-    for link in article.select('.mec-event-data-field-item a'):
-        text = link.get_text(strip=True).lower()
-        if "ticket" in text or "bilet" in text:
-            return link.get("href")
-    
-    return None
+BASE_URL = "https://expirat.iabilet.ro"
+SCHEDULE_URL = f"{BASE_URL}/"
+MIN_EXPECTED_EVENTS = 1
 
 
 def extract_artist_from_title(title: str) -> str | None:
@@ -91,44 +24,86 @@ def extract_artist_from_title(title: str) -> str | None:
     return title
 
 
-def parse_event_article(article: BeautifulSoup) -> Event | None:
-    """Parse a single MEC event article."""
-    title_elem = article.select_one("h4.mec-event-title")
-    if not title_elem:
+def normalize_url_path(url: str) -> str:
+    """Return a stable path for matching cards to their JSON-LD event."""
+    return urlparse(urljoin(BASE_URL, url)).path.rstrip("/")
+
+
+def extract_card_times(soup: BeautifulSoup) -> dict[str, tuple[int, int]]:
+    """Extract advertised start times from iaBilet event cards."""
+    times: dict[str, tuple[int, int]] = {}
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one("a[href]")
+        if not link:
+            continue
+        match = re.search(
+            r"\bora\s+(\d{1,2}):(\d{2})",
+            card.get_text(" ", strip=True),
+            re.IGNORECASE,
+        )
+        if match:
+            times[normalize_url_path(link.get("href", ""))] = (
+                int(match.group(1)),
+                int(match.group(2)),
+            )
+    return times
+
+
+def extract_json_ld_events(soup: BeautifulSoup) -> list[dict]:
+    """Extract event records embedded by iaBilet."""
+    records: list[dict] = []
+    for script in soup.select('script[type="application/ld+json"]'):
+        text = script.string
+        if not text:
+            continue
+        text = text.replace("/*<![CDATA[*/", "").replace("/*]]>*/", "").strip()
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(data, dict) and data.get("@type") == "Event":
+            records.append(data)
+    return records
+
+
+def parse_json_ld_event(
+    data: dict,
+    start_time: tuple[int, int] | None = None,
+) -> Event | None:
+    """Convert an iaBilet JSON-LD record into an Expirat event."""
+    title = data.get("name", "").strip()
+    url = data.get("url", "")
+    start_date = data.get("startDate", "")
+    if not title or not url or not start_date:
         return None
-    title = title_elem.get_text(strip=True)
-    
-    date_elem = article.select_one(".mec-start-date-label")
-    if not date_elem:
+
+    try:
+        event_date = datetime.fromisoformat(start_date.replace("Z", "+00:00"))
+    except ValueError:
         return None
-    event_date = parse_date(date_elem.get_text(strip=True))
-    if not event_date:
-        return None
-    
-    venue_elem = article.select_one(".mec-grid-event-location")
-    venue = "Expirat"
-    if venue_elem:
-        venue_text = venue_elem.get_text(strip=True)
-        if venue_text:
-            venue = venue_text.split(",")[0].strip()
-    
-    url = extract_event_url(article)
-    if not url:
-        return None
-    
-    tickets_url = extract_tickets_url(article)
-    
-    artist = extract_artist_from_title(title)
-    
+    event_date = event_date.replace(tzinfo=None)
+    if start_time:
+        event_date = event_date.replace(hour=start_time[0], minute=start_time[1])
+
+    location = data.get("location", {})
+    venue = location.get("name", "Expirat") if isinstance(location, dict) else "Expirat"
+
+    offers = data.get("offers", {})
+    if isinstance(offers, list):
+        offers = next((offer for offer in offers if isinstance(offer, dict)), {})
+    price = None
+    if isinstance(offers, dict) and offers.get("price") not in (None, ""):
+        price = f"{offers['price']} {offers.get('priceCurrency', 'RON')}"
+
     return Event(
         title=title,
-        artist=artist,
+        artist=extract_artist_from_title(title),
         venue=venue,
         date=event_date,
         url=url,
         source="expirat",
         category="music",
-        price=None,
+        price=price,
     )
 
 
@@ -138,18 +113,23 @@ def scrape() -> list[Event]:
     seen_urls: set[str] = set()
     
     try:
-        html = fetch_page(SCHEDULE_URL, needs_js=True)
+        html = fetch_page(SCHEDULE_URL, needs_js=False)
     except Exception as e:
         print(f"Failed to fetch Expirat schedule: {e}")
         return events
     
     soup = BeautifulSoup(html, "html.parser")
     
-    articles = soup.select(".mec-event-article")
-    for article in articles:
-        event = parse_event_article(article)
+    card_times = extract_card_times(soup)
+    for data in extract_json_ld_events(soup):
+        event_url = data.get("url", "")
+        event = parse_json_ld_event(
+            data,
+            card_times.get(normalize_url_path(event_url)),
+        )
         if event and event.url not in seen_urls:
             seen_urls.add(event.url)
             events.append(event)
-    
+
+    events.sort(key=lambda event: event.date)
     return events
