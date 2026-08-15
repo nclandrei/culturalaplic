@@ -1,6 +1,7 @@
 import re
 import unicodedata
 from datetime import datetime
+from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
 
@@ -42,10 +43,12 @@ ENGLISH_MONTHS = {
 
 MONTH_LOOKUP = {**ROMANIAN_MONTHS, **ENGLISH_MONTHS}
 MONTH_PATTERN = "|".join(sorted((re.escape(k) for k in MONTH_LOOKUP.keys()), key=len, reverse=True))
+PAST_ONLY_PAGE_LIMIT = 2
 
 
 def normalize_text(text: str) -> str:
     """Normalize text for robust regex parsing (remove diacritics, lowercase)."""
+    text = text.replace("–", "-").replace("—", "-").replace("−", "-")
     return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii").lower()
 
 
@@ -81,7 +84,31 @@ def parse_time(text: str) -> tuple[int, int]:
     return 19, 0
 
 
-def parse_date(text: str) -> datetime | None:
+def infer_year(day: int, month: int, reference_date: datetime) -> int:
+    """Infer the event year closest to the article publication date."""
+    candidates: list[datetime] = []
+    for year in range(reference_date.year - 1, reference_date.year + 2):
+        try:
+            candidates.append(datetime(year, month, day))
+        except ValueError:
+            continue
+    if not candidates:
+        return reference_date.year
+    return min(candidates, key=lambda candidate: abs(candidate - reference_date)).year
+
+
+def parse_publication_date(url: str) -> datetime | None:
+    """Extract a WordPress post publication date from its URL."""
+    match = re.search(r"/(\d{4})/(\d{1,2})/(\d{1,2})/", urlparse(url).path)
+    if not match:
+        return None
+    try:
+        return datetime(*(int(part) for part in match.groups()))
+    except ValueError:
+        return None
+
+
+def parse_date(text: str, reference_date: datetime | None = None) -> datetime | None:
     """Parse date from excerpt text containing emoji markers.
     
     Formats:
@@ -93,54 +120,79 @@ def parse_date(text: str) -> datetime | None:
     - 🕗 Ora: 20:00
     """
     text_normalized = normalize_text(text)
-    day: int | None = None
-    month: int | None = None
-    year_str: str | None = None
+    candidates: list[tuple[int, int, int, str | None]] = []
 
-    numeric_match = re.search(r"(?<!\d)(\d{1,2})[./-](\d{1,2})(?:[./-](\d{2,4}))?(?!\d)", text_normalized)
+    textual_range_match = re.search(
+        rf"(?<!\d)(\d{{1,2}})\s*-\s*\d{{1,2}}\s+(?:of\s+)?({MONTH_PATTERN})(?:\s+(\d{{4}}))?",
+        text_normalized,
+    )
+    if textual_range_match:
+        month = MONTH_LOOKUP.get(textual_range_match.group(2))
+        if month:
+            candidates.append((
+                textual_range_match.start(),
+                int(textual_range_match.group(1)),
+                month,
+                textual_range_match.group(3),
+            ))
+
+    textual_match = re.search(
+        rf"(?<!\d)(\d{{1,2}})(?:st|nd|rd|th)?\s+(?:of\s+)?({MONTH_PATTERN})(?:\s+(\d{{4}}))?",
+        text_normalized,
+    )
+    if textual_match:
+        month = MONTH_LOOKUP.get(textual_match.group(2))
+        if month:
+            candidates.append((
+                textual_match.start(),
+                int(textual_match.group(1)),
+                month,
+                textual_match.group(3),
+            ))
+
+    reverse_match = re.search(
+        rf"\b({MONTH_PATTERN})\s+(\d{{1,2}})(?:st|nd|rd|th)?(?:,?\s*(\d{{4}}))?",
+        text_normalized,
+    )
+    if reverse_match:
+        month = MONTH_LOOKUP.get(reverse_match.group(1))
+        if month:
+            candidates.append((
+                reverse_match.start(),
+                int(reverse_match.group(2)),
+                month,
+                reverse_match.group(3),
+            ))
+
+    numeric_match = re.search(
+        r"(?<!\d)(\d{1,2})([./])(\d{1,2})(?:\2(\d{2,4}))?(?!\d)",
+        text_normalized,
+    )
     if numeric_match:
         candidate_day = int(numeric_match.group(1))
-        candidate_month = int(numeric_match.group(2))
+        candidate_month = int(numeric_match.group(3))
         if 1 <= candidate_day <= 31 and 1 <= candidate_month <= 12:
-            day = candidate_day
-            month = candidate_month
-            year_str = numeric_match.group(3)
+            candidates.append((
+                numeric_match.start(),
+                candidate_day,
+                candidate_month,
+                numeric_match.group(4),
+            ))
 
-    if day is None or month is None:
-        textual_match = re.search(
-            rf"(?<!\d)(\d{{1,2}})(?:st|nd|rd|th)?\s+(?:of\s+)?({MONTH_PATTERN})(?:\s+(\d{{4}}))?",
-            text_normalized,
-        )
-        if textual_match:
-            day = int(textual_match.group(1))
-            month = MONTH_LOOKUP.get(textual_match.group(2))
-            year_str = textual_match.group(3)
-
-    if day is None or month is None:
-        reverse_match = re.search(
-            rf"\b({MONTH_PATTERN})\s+(\d{{1,2}})(?:st|nd|rd|th)?(?:,?\s*(\d{{4}}))?",
-            text_normalized,
-        )
-        if reverse_match:
-            month = MONTH_LOOKUP.get(reverse_match.group(1))
-            day = int(reverse_match.group(2))
-            year_str = reverse_match.group(3)
-
-    if day is None or month is None:
+    if not candidates:
         return None
 
-    now = datetime.now()
-    year = int(year_str) if year_str else now.year
+    _, day, month, year_str = min(candidates, key=lambda candidate: candidate[0])
+
+    reference_date = reference_date or datetime.now()
+    year = int(year_str) if year_str else infer_year(day, month, reference_date)
     if year < 100:
         year += 2000
 
     hour, minute = parse_time(text_normalized)
 
     try:
-        event_date = datetime(year, month, day, hour, minute)
-        if not year_str and event_date < now.replace(hour=0, minute=0, second=0, microsecond=0):
-            event_date = datetime(year + 1, month, day, hour, minute)
-        return event_date
+        return datetime(year, month, day, hour, minute)
     except ValueError:
         return None
 
@@ -165,7 +217,7 @@ def parse_event(article: BeautifulSoup) -> Event | None:
         return None
     
     excerpt_text = excerpt_elem.get_text(" ", strip=True)
-    event_date = parse_date(excerpt_text)
+    event_date = parse_date(excerpt_text, parse_publication_date(url))
     if not event_date:
         return None
     
@@ -205,6 +257,7 @@ def scrape() -> list[Event]:
     
     page = 1
     max_pages = 1
+    consecutive_past_pages = 0
     
     while page <= max_pages:
         url = EVENTS_URL if page == 1 else f"{EVENTS_URL}{page}/"
@@ -222,13 +275,22 @@ def scrape() -> list[Event]:
         if not articles:
             break
         
+        page_has_upcoming_events = False
         for article in articles:
             event = parse_event(article)
             if event and event.date >= today:
+                page_has_upcoming_events = True
                 key = (event.title, event.date.isoformat())
                 if key not in seen:
                     seen.add(key)
                     events.append(event)
+
+        if page_has_upcoming_events:
+            consecutive_past_pages = 0
+        else:
+            consecutive_past_pages += 1
+            if consecutive_past_pages >= PAST_ONLY_PAGE_LIMIT:
+                break
         
         pagination_anchor = soup.select_one(".e-load-more-anchor")
         if pagination_anchor:
