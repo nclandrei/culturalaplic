@@ -6,7 +6,12 @@ import httpx
 import pytest
 import respx
 
-from services.http import fetch_page, HttpError
+from services.http import (
+    fetch_page,
+    get_fetch_failures,
+    HttpError,
+    reset_fetch_failures,
+)
 
 
 class TestHttpRetry:
@@ -56,11 +61,13 @@ class TestHttpRetry:
         """Should not retry on 404 Not Found."""
         respx.get("https://example.com").respond(404, text="Not found")
 
+        reset_fetch_failures()
         with pytest.raises(HttpError) as exc_info:
             fetch_page("https://example.com")
 
         assert exc_info.value.status_code == 404
         assert respx.calls.call_count == 1
+        assert get_fetch_failures() == ["HTTP 404 for https://example.com"]
 
     @respx.mock
     def test_exhausted_retries(self):

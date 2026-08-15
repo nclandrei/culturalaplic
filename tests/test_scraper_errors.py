@@ -140,6 +140,39 @@ class TestScraperErrorCollection:
         ]
         assert "elvirepopescu" not in successful_scraper_sources["culture"]
 
+    def test_swallowed_fetch_failure_preserves_source_for_retry(self):
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
+
+        scraper_errors.clear()
+        successful_scraper_sources["music"].clear()
+        mock_scraper = make_mock_scraper("scrapers.music.partial_feed")
+        partial_event = Event(
+            title="Partial event",
+            artist="Artist",
+            venue="Venue",
+            date=datetime(2099, 8, 15),
+            url="https://example.com/partial",
+            source="partial_feed",
+            category="music",
+        )
+        mock_scraper.scrape.return_value = [partial_event]
+
+        with patch(
+            "main.get_fetch_failures",
+            return_value=["Failed to fetch page 2"],
+        ):
+            result = run_scraper_safely(mock_scraper)
+
+        assert result == [partial_event]
+        assert [error.scraper_name for error in scraper_errors] == [
+            "partial_feed"
+        ]
+        assert "partial_feed" not in successful_scraper_sources["music"]
+
 
 class TestScraperAlertEmail:
     """Test scraper alert email formatting and sending."""

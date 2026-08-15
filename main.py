@@ -19,6 +19,7 @@ from scrapers.music import ateneul, bfh, control, enescu, eventbook as eventbook
 from scrapers.theatre import bulandra, cuibul, eventbook as eventbook_theatre, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
+from services.http import get_fetch_failures, reset_fetch_failures
 from services.spotify import search_artist
 
 DATA_DIR = Path(__file__).parent / "web" / "public" / "data"
@@ -108,8 +109,24 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
     scraper_name = scraper.__name__.split(".")[-1]
     category = scraper.__name__.split(".")[1]  # e.g., "music" from "scrapers.music.control"
     events_url = getattr(scraper, "EVENTS_URL", None)
+    reset_fetch_failures()
     try:
         events = scraper.scrape()
+        fetch_failures = get_fetch_failures()
+        if fetch_failures:
+            message = (
+                f"Scrape output may be incomplete after "
+                f"{len(fetch_failures)} failed request(s): {fetch_failures[-1]}"
+            )
+            print(f"⚠️  Scraper '{scraper_name}' failed: {message}")
+            scraper_errors.append(ScraperError(
+                scraper_name=scraper_name,
+                error_message=message,
+                traceback="\n".join(fetch_failures),
+                category=category,
+                events_url=events_url,
+            ))
+            return events
         if len(events) == 0:
             default_minimum = 1 if scraper in ACTIVE_SCRAPERS_EXPECT_EVENTS else 0
             min_expected = getattr(

@@ -9,6 +9,21 @@ from tenacity import (
 
 RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 MAX_RETRIES = 3
+_fetch_failures: list[str] = []
+
+
+def reset_fetch_failures() -> None:
+    """Clear request failures before starting one scraper."""
+    _fetch_failures.clear()
+
+
+def get_fetch_failures() -> list[str]:
+    """Return request failures recorded during the current scraper run."""
+    return list(_fetch_failures)
+
+
+def _record_fetch_failure(message: str) -> None:
+    _fetch_failures.append(message)
 
 
 class HttpError(Exception):
@@ -163,14 +178,20 @@ def fetch_page(
                 scroll_item_selector,
             )
         except Exception as e:
-            raise HttpError(f"Failed to fetch {url}: {e}") from e
+            message = f"Failed to fetch {url}: {e}"
+            _record_fetch_failure(message)
+            raise HttpError(message) from e
     else:
         try:
             return _fetch_http(url)
         except httpx.HTTPStatusError as e:
+            message = f"HTTP {e.response.status_code} for {url}"
+            _record_fetch_failure(message)
             raise HttpError(
-                f"HTTP {e.response.status_code} for {url}",
+                message,
                 status_code=e.response.status_code,
             ) from e
         except Exception as e:
-            raise HttpError(f"Failed to fetch {url}: {e}") from e
+            message = f"Failed to fetch {url}: {e}"
+            _record_fetch_failure(message)
+            raise HttpError(message) from e
