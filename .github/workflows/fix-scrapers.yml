@@ -53,38 +53,32 @@ jobs:
         env:
           AMP_API_KEY: ${{ secrets.AMP_API_KEY }}
         run: |
-          # Extract first error from the errors file
-          SCRAPER_NAME=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['scraper_name'])")
-          CATEGORY=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['category'] or 'unknown')")
-          ERROR_MSG=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['error_message'])")
-          EVENTS_URL=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['events_url'] or 'unknown')")
-          
-          echo "Fixing scraper: $SCRAPER_NAME ($CATEGORY)"
-          echo "Error: $ERROR_MSG"
-          echo "URL: $EVENTS_URL"
+          ERRORS_JSON=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(json.dumps(d['errors'], ensure_ascii=False))")
+          ERROR_COUNT=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(len(d['errors']))")
+
+          echo "Fixing $ERROR_COUNT scraper(s)"
           
           # Create the prompt for Amp
-          PROMPT="You are fixing a broken scraper for the Cultură la plic event aggregator.
+          PROMPT="You are fixing broken scrapers for the Cultură la plic event aggregator.
 
-          SCRAPER: $SCRAPER_NAME
-          CATEGORY: $CATEGORY
-          FILE: scrapers/$CATEGORY/$SCRAPER_NAME.py
-          ERROR: $ERROR_MSG
-          EVENTS_URL: $EVENTS_URL
+          Fix every scraper listed below. Each object contains the scraper name,
+          category, failure message, and official events URL:
+
+          $ERRORS_JSON
 
           INSTRUCTIONS:
           1. First, load the generating-scrapers skill using the skill tool
-          2. Read the current scraper code to understand the existing selectors
+          2. For each failure, read scrapers/<category>/<scraper_name>.py
           3. Create tmp/ directory if needed: mkdir -p tmp
           
-          4. VISUAL INSPECTION (repeat as needed):
+          4. VISUAL INSPECTION (repeat for each failed source as needed):
              Take a screenshot and inspect the page structure using Playwright:
              python3 -c \"
              from playwright.sync_api import sync_playwright
              with sync_playwright() as p:
                  browser = p.chromium.launch()
                  page = browser.new_page()
-                 page.goto('$EVENTS_URL')
+                 page.goto('EVENTS_URL_FROM_THE_FAILURE')
                  page.wait_for_timeout(3000)
                  page.screenshot(path='tmp/page_screenshot.png', full_page=True)
                  # Get accessibility tree for structure
@@ -101,17 +95,17 @@ jobs:
              with sync_playwright() as p:
                  browser = p.chromium.launch()
                  page = browser.new_page()
-                 page.goto('$EVENTS_URL')
+                 page.goto('EVENTS_URL_FROM_THE_FAILURE')
                  page.wait_for_timeout(3000)
                  print(page.content())
                  browser.close()
              \" > tmp/page_content.html
              Then read tmp/page_content.html to find the correct CSS selectors.
           
-          6. Fix the scraper code based on what you found
+          6. Fix every failed scraper based on what you found
           
-          7. TEST THE FIX:
-             python3 -c \"from scrapers.$CATEGORY.$SCRAPER_NAME import scrape; events = scrape(); print(f'{len(events)} events found'); [print(f'  - {e.title}') for e in events[:3]]\"
+          7. Test each fixed scraper module, then run:
+             python3 -m pytest tests/
           
           8. ITERATE: If 0 events returned:
              - Take another screenshot to see current page state
@@ -120,7 +114,7 @@ jobs:
              - Fix and test again
              - Repeat until events are returned
           
-          9. Once working (events > 0), confirm the fix is complete
+          9. Once every listed scraper is working, confirm the fixes are complete
 
           Do NOT commit any changes. Just fix the code and verify it works."
 
@@ -132,15 +126,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          SCRAPER_NAME=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['scraper_name'])")
-          CATEGORY=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(d['errors'][0]['category'] or 'unknown')")
-          BRANCH_NAME="bot/fix-$SCRAPER_NAME-$(date +%Y%m%d)"
-          
-          # Check if there are any changes
-          if git diff --quiet; then
-            echo "No changes detected - scraper may not have been fixed"
-            exit 0
-          fi
+          ERROR_COUNT=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(len(d['errors']))")
+          ERROR_LIST=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print('\\n'.join('- **' + e['scraper_name'] + '** (' + (e.get('category') or 'unknown') + ')' for e in d['errors']))")
+          BRANCH_NAME="bot/fix-$ERROR_COUNT-scrapers-$(date +%Y%m%d)-${{ github.run_id }}"
           
           # Configure git
           git config user.name "Andrei-Mihai Nicolae"
@@ -148,17 +136,20 @@ jobs:
           
           # Create branch and commit
           git checkout -b "$BRANCH_NAME"
-          git add "scrapers/$CATEGORY/$SCRAPER_NAME.py" "services/enrichment.py" || true
-          git commit -m "Fix $SCRAPER_NAME scraper (auto-generated)"
+          git add scrapers/ services/enrichment.py services/http.py tests/
+          if git diff --staged --quiet; then
+            echo "No scraper changes were staged"
+            exit 0
+          fi
+          git commit -m "Fix $ERROR_COUNT scraper(s) (auto-generated)"
           git push -u origin "$BRANCH_NAME"
           
           # Create PR
           gh pr create \
-            --title "Fix $SCRAPER_NAME scraper (auto-generated)" \
+            --title "Fix $ERROR_COUNT scraper(s) (auto-generated)" \
             --body "This PR was automatically generated by the fix-scrapers workflow.
 
-          **Scraper:** \`$SCRAPER_NAME\`
-          **Category:** \`$CATEGORY\`
+          $ERROR_LIST
 
           Please review the changes carefully before merging.
 

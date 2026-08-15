@@ -43,3 +43,11 @@ def test_workflows_publish_and_require_the_same_combined_error_artifact():
     )[1].split("- name: Validate scraper errors artifact", 1)[0]
     assert "continue-on-error" not in download_step
     assert "test -s artifacts/scraper_errors.json" in fix_workflow
+
+
+def test_auto_fix_workflow_handles_every_reported_scraper():
+    workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
+
+    assert "['errors'][0]" not in workflow
+    assert "Fix every scraper listed below" in workflow
+    assert 'git add scrapers/ services/enrichment.py' in workflow
