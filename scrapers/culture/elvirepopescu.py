@@ -15,6 +15,7 @@ ENGLISH_MONTHS = {
 }
 
 EXCLUDED_TITLES = {"carnet de 10 billets", "carnet de 5 billets"}
+DATE_ICON_LABELS = {"calendar_month", "schedule"}
 
 
 def parse_date(date_text: str) -> datetime | None:
@@ -78,7 +79,11 @@ def parse_event(container: BeautifulSoup) -> Event | None:
     if not date_h5:
         return None
     
-    date_text = date_h5.get_text(strip=True)
+    date_text = " ".join(
+        text
+        for text in date_h5.stripped_strings
+        if text.lower() not in DATE_ICON_LABELS
+    )
     if "valabil" in date_text.lower():
         return None
     
