@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       run_id:
-        description: 'Run ID of the failed scrape workflow (optional - will use latest errors)'
-        required: false
+        description: 'Run ID of the scrape workflow containing scraper-errors'
+        required: true
         type: string
       dry_run:
         description: 'Dry run - do not create PR'
@@ -27,10 +27,10 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt
 
       - name: Install Playwright browsers
-        run: playwright install chromium
+        run: python3 -m playwright install chromium
 
       - name: Download scraper errors artifact
         if: github.event.client_payload.run_id || inputs.run_id
@@ -40,26 +40,16 @@ jobs:
           path: artifacts
           run-id: ${{ github.event.client_payload.run_id || inputs.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
 
-      - name: Check for errors file
-        id: check-errors
+      - name: Validate scraper errors artifact
         run: |
-          if [ -f "artifacts/scraper_errors.json" ]; then
-            echo "has_errors=true" >> $GITHUB_OUTPUT
-            echo "Errors found:"
-            cat artifacts/scraper_errors.json
-          else
-            echo "has_errors=false" >> $GITHUB_OUTPUT
-            echo "No errors file found"
-          fi
+          test -s artifacts/scraper_errors.json
+          cat artifacts/scraper_errors.json
 
       - name: Install Amp CLI
-        if: steps.check-errors.outputs.has_errors == 'true'
         run: npm install -g @anthropic-ai/amp
 
       - name: Run Amp to fix scrapers
-        if: steps.check-errors.outputs.has_errors == 'true'
         env:
           AMP_API_KEY: ${{ secrets.AMP_API_KEY }}
         run: |
@@ -138,7 +128,7 @@ jobs:
           echo "$PROMPT" | amp --execute --dangerously-allow-all
 
       - name: Create fix branch and PR
-        if: steps.check-errors.outputs.has_errors == 'true' && inputs.dry_run != true
+        if: inputs.dry_run != true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

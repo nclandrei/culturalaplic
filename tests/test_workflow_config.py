@@ -28,3 +28,18 @@ def test_scrape_workflow_requires_both_group_artifacts_before_merge():
     assert "continue-on-error" not in group_downloads
     assert "if ls artifacts/events_group_*.json" not in workflow
     assert "run: python3 main.py --merge" in workflow
+
+
+def test_workflows_publish_and_require_the_same_combined_error_artifact():
+    scrape_workflow = (ROOT / ".github/workflows/scrape.yml").read_text()
+    fix_workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
+
+    assert "merge-multiple: true" not in scrape_workflow
+    assert "python3 scripts/merge_scraper_errors.py" in scrape_workflow
+    assert "name: scraper-errors\n" in scrape_workflow
+    assert "name: scraper-errors\n" in fix_workflow
+    download_step = fix_workflow.split(
+        "- name: Download scraper errors artifact", 1
+    )[1].split("- name: Validate scraper errors artifact", 1)[0]
+    assert "continue-on-error" not in download_step
+    assert "test -s artifacts/scraper_errors.json" in fix_workflow
