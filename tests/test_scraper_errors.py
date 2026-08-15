@@ -1,5 +1,6 @@
 """Unit tests for scraper error collection and alerting."""
 
+from datetime import datetime
 import traceback
 from unittest.mock import MagicMock, patch
 
@@ -21,20 +22,33 @@ class TestScraperErrorCollection:
 
     def test_run_scraper_safely_success(self):
         """Should return events on successful scrape."""
-        from main import run_scraper_safely, scraper_errors
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
 
         scraper_errors.clear()
+        successful_scraper_sources["music"].clear()
 
         mock_scraper = make_mock_scraper("scrapers.music.test_scraper")
         mock_scraper.scrape.return_value = [
-            MagicMock(spec=Event),
-            MagicMock(spec=Event),
+            Event(
+                title="Test event",
+                artist="Test artist",
+                venue="Test venue",
+                date=datetime(2099, 8, 15),
+                url="https://example.com/test",
+                source="official-feed",
+                category="music",
+            )
         ]
 
         result = run_scraper_safely(mock_scraper)
 
-        assert len(result) == 2
+        assert len(result) == 1
         assert len(scraper_errors) == 0
+        assert successful_scraper_sources["music"] == {"official-feed"}
 
     def test_run_scraper_safely_failure(self):
         """Should catch exception and record error."""
@@ -69,9 +83,14 @@ class TestScraperErrorCollection:
 
     def test_unexpected_zero_events_are_recorded(self):
         """Should flag empty output for scrapers with a minimum contract."""
-        from main import run_scraper_safely, scraper_errors
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
 
         scraper_errors.clear()
+        successful_scraper_sources["music"].clear()
 
         mock_scraper = make_mock_scraper("scrapers.music.always_active")
         mock_scraper.MIN_EXPECTED_EVENTS = 1
@@ -83,6 +102,24 @@ class TestScraperErrorCollection:
         assert len(scraper_errors) == 1
         assert scraper_errors[0].scraper_name == "always_active"
         assert "expected at least 1" in scraper_errors[0].error_message
+        assert "always_active" not in successful_scraper_sources["music"]
+
+    def test_expected_empty_feed_is_marked_successful_for_stale_cleanup(self):
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
+
+        scraper_errors.clear()
+        successful_scraper_sources["theatre"].clear()
+        mock_scraper = make_mock_scraper("scrapers.theatre.off_season")
+        mock_scraper.scrape.return_value = []
+
+        assert run_scraper_safely(mock_scraper) == []
+
+        assert scraper_errors == []
+        assert successful_scraper_sources["theatre"] == {"off_season"}
 
 
 class TestScraperAlertEmail:

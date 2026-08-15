@@ -50,6 +50,29 @@ def should_run_festival_scrapers() -> bool:
 
 
 scraper_errors: list[ScraperError] = []
+successful_scraper_sources: dict[str, set[str]] = {
+    "music": set(),
+    "theatre": set(),
+    "culture": set(),
+}
+SCRAPER_SOURCE_OVERRIDES = {
+    "ateneul": "Ateneul Român",
+    "enescu": "Festivalul Enescu",
+    "jazzinthepark": "Jazz in the Park",
+}
+
+
+def get_scraper_sources(scraper: ModuleType, events: list[Event]) -> set[str]:
+    """Return persisted source names owned by a successful scraper run."""
+    event_sources = {event.source for event in events if event.source}
+    if event_sources:
+        return event_sources
+
+    scraper_name = scraper.__name__.split(".")[-1]
+    source = getattr(scraper, "SOURCE", None)
+    if not isinstance(source, str) or not source:
+        source = SCRAPER_SOURCE_OVERRIDES.get(scraper_name, scraper_name)
+    return {source}
 
 
 def run_scraper_safely(scraper: ModuleType) -> list[Event]:
@@ -76,8 +99,12 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
                     category=category,
                     events_url=events_url,
                 ))
+                return events
             else:
                 print(f"ℹ️  Scraper '{scraper_name}' returned 0 events (venue may have no upcoming events)")
+        successful_scraper_sources[category].update(
+            get_scraper_sources(scraper, events)
+        )
         return events
     except Exception as e:
         print(f"⚠️  Scraper '{scraper_name}' failed: {e}")
@@ -226,6 +253,18 @@ def merge_events(existing: list[dict], new_events: list[Event]) -> list[dict]:
     return merged
 
 
+def replace_source_events(
+    existing: list[dict],
+    new_events: list[Event],
+    successful_sources: set[str],
+) -> list[dict]:
+    """Replace stale rows for successful sources while preserving failed feeds."""
+    retained = [
+        event for event in existing if event.get("source") not in successful_sources
+    ]
+    return merge_events(retained, new_events)
+
+
 def cleanup_past_events(events: list[dict]) -> list[dict]:
     """Remove events with date < today."""
     today = datetime.now().date()
@@ -267,6 +306,10 @@ def save_results(
         data = {
             "scraped_at": datetime.now().isoformat(),
             "group": group,
+            "successful_sources": {
+                category: sorted(sources)
+                for category, sources in successful_scraper_sources.items()
+            },
             "music_events": [asdict(e) for e in music_events],
             "theatre_events": [asdict(e) for e in theatre_events],
             "culture_events": [asdict(e) for e in culture_events],
@@ -280,9 +323,21 @@ def save_results(
     # Normal flow: merge with existing events
     DATA_DIR.mkdir(exist_ok=True)
 
-    merged_music = merge_events(existing_events["music_events"], music_events)
-    merged_theatre = merge_events(existing_events["theatre_events"], theatre_events)
-    merged_culture = merge_events(existing_events["culture_events"], culture_events)
+    merged_music = replace_source_events(
+        existing_events["music_events"],
+        music_events,
+        successful_scraper_sources["music"],
+    )
+    merged_theatre = replace_source_events(
+        existing_events["theatre_events"],
+        theatre_events,
+        successful_scraper_sources["theatre"],
+    )
+    merged_culture = replace_source_events(
+        existing_events["culture_events"],
+        culture_events,
+        successful_scraper_sources["culture"],
+    )
 
     merged_music = cleanup_past_events(merged_music)
     merged_theatre = cleanup_past_events(merged_theatre)
@@ -336,24 +391,66 @@ def merge_group_artifacts() -> None:
     existing_events = load_existing_events()
     print(f"Loaded {sum(len(v) for v in existing_events.values())} existing events")
 
-    all_music: list[dict] = list(existing_events["music_events"])
-    all_theatre: list[dict] = list(existing_events["theatre_events"])
-    all_culture: list[dict] = list(existing_events["culture_events"])
+    existing_by_category = {
+        "music": list(existing_events["music_events"]),
+        "theatre": list(existing_events["theatre_events"]),
+        "culture": list(existing_events["culture_events"]),
+    }
+    fresh_by_category: dict[str, list[dict]] = {
+        "music": [],
+        "theatre": [],
+        "culture": [],
+    }
+    replacement_sources: dict[str, set[str]] = {
+        "music": set(),
+        "theatre": set(),
+        "culture": set(),
+    }
 
     # Load and merge each group file
     for group_num, group_file in group_files.items():
         with open(group_file) as f:
             group_data = json.load(f)
 
+        successful_sources = group_data.get("successful_sources")
+        if not isinstance(successful_sources, dict):
+            raise ValueError(
+                f"Group {group_num} artifact has no successful_sources metadata"
+            )
+
         music_count = len(group_data.get("music_events", []))
         theatre_count = len(group_data.get("theatre_events", []))
         culture_count = len(group_data.get("culture_events", []))
         print(f"Group {group_num}: {music_count} music, {theatre_count} theatre, {culture_count} culture events")
 
-        # Add group events (they're already dicts from the artifact)
-        all_music.extend(group_data.get("music_events", []))
-        all_theatre.extend(group_data.get("theatre_events", []))
-        all_culture.extend(group_data.get("culture_events", []))
+        for category in fresh_by_category:
+            sources = successful_sources.get(category, [])
+            if not isinstance(sources, list) or not all(
+                isinstance(source, str) for source in sources
+            ):
+                raise ValueError(
+                    f"Group {group_num} has invalid {category} source metadata"
+                )
+            replacement_sources[category].update(sources)
+            fresh_by_category[category].extend(
+                group_data.get(f"{category}_events", [])
+            )
+
+    all_music = [
+        event
+        for event in existing_by_category["music"]
+        if event.get("source") not in replacement_sources["music"]
+    ] + fresh_by_category["music"]
+    all_theatre = [
+        event
+        for event in existing_by_category["theatre"]
+        if event.get("source") not in replacement_sources["theatre"]
+    ] + fresh_by_category["theatre"]
+    all_culture = [
+        event
+        for event in existing_by_category["culture"]
+        if event.get("source") not in replacement_sources["culture"]
+    ] + fresh_by_category["culture"]
 
     # Deduplicate by key
     def dedup_by_key(events: list[dict]) -> list[dict]:
@@ -431,6 +528,10 @@ def main() -> None:
         return
 
     group = args.group
+
+    scraper_errors.clear()
+    for sources in successful_scraper_sources.values():
+        sources.clear()
 
     if args.dry_run:
         print("=== DRY RUN - showing what would run ===\n")
