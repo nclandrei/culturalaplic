@@ -86,6 +86,20 @@ def test_scrape_keeps_times_advertised_in_card_descriptions():
     ]
 
 
+def test_ticket_sale_time_is_not_used_as_show_time():
+    html = card(
+        "The Rumjacks la Hard Rock Cafe",
+        "/music/rumjacks",
+        7,
+        "Biletele se pun în vânzare pe 8 mai la ora 10:00.",
+    )
+
+    with patch("scrapers.music.iabilet.fetch_page", return_value=html):
+        events = scrape()
+
+    assert events[0].date == datetime(2026, 9, 7)
+
+
 def test_november_card_and_json_ld_are_one_occurrence():
     html = card(
         "Pink Floyd History",

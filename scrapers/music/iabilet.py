@@ -109,14 +109,21 @@ def is_music_event_title(title: str) -> bool:
 
 def extract_card_time(card: BeautifulSoup) -> tuple[int, int] | None:
     """Extract a start time advertised in an iaBilet card description."""
-    match = re.search(
+    text = card.get_text(" ", strip=True)
+    matches = re.finditer(
         r"\bora\s*[:\-]?\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b",
-        card.get_text(" ", strip=True),
+        text,
         re.IGNORECASE,
     )
-    if not match:
-        return None
-    return int(match.group(1)), int(match.group(2))
+    for match in matches:
+        context = text[max(0, match.start() - 140):match.start()].casefold()
+        if re.search(
+            r"(?:bilet|presale|pre-sale).{0,120}(?:v[aâ]nzare|sale|disponibil)",
+            context,
+        ):
+            continue
+        return int(match.group(1)), int(match.group(2))
+    return None
 
 
 def parse_event_card(card: BeautifulSoup) -> Event | None:
