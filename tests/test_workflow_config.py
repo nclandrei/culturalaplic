@@ -66,3 +66,11 @@ def test_auto_fix_workflow_can_push_and_open_pull_request():
     workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
 
     assert "permissions:\n  contents: write\n  pull-requests: write" in workflow
+
+
+def test_auto_fix_workflow_detects_amp_errors_with_zero_exit_status():
+    workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
+
+    assert "AMP_STATUS=${PIPESTATUS[1]}" in workflow
+    assert 'grep -qi "Error: Out of Credits"' in workflow
+    assert 'if [ "$DRY_RUN" != "true" ]; then' in workflow

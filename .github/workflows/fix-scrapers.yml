@@ -57,6 +57,7 @@ jobs:
         env:
           AMP_API_KEY: ${{ secrets.AMP_API_KEY }}
           AMP_SETTINGS_FILE: ${{ runner.temp }}/amp-settings.json
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
           printf '%s\n' '{"amp.dangerouslyAllowAll": true}' > "$AMP_SETTINGS_FILE"
           ERRORS_JSON=$(python3 -c "import json; d=json.load(open('artifacts/scraper_errors.json')); print(json.dumps(d['errors'], ensure_ascii=False))")
@@ -124,8 +125,23 @@ jobs:
 
           Do NOT commit any changes. Just fix the code and verify it works."
 
-          # Run Amp with the prompt (execute mode, allow all tools)
-          echo "$PROMPT" | amp --execute
+          # Amp may print an account error while exiting 0, so inspect both
+          # its process status and output before treating the run as healthy.
+          set +e
+          echo "$PROMPT" | amp --execute 2>&1 | tee "$RUNNER_TEMP/amp-output.log"
+          AMP_STATUS=${PIPESTATUS[1]}
+          set -e
+
+          if [ "$AMP_STATUS" -ne 0 ]; then
+            exit "$AMP_STATUS"
+          fi
+
+          if grep -qi "Error: Out of Credits" "$RUNNER_TEMP/amp-output.log"; then
+            echo "::warning::Amp is out of credits"
+            if [ "$DRY_RUN" != "true" ]; then
+              exit 1
+            fi
+          fi
 
       - name: Create fix branch and PR
         if: inputs.dry_run != true
