@@ -1,6 +1,7 @@
 import json
 import re
 from datetime import datetime
+from urllib.parse import urlencode, urljoin
 
 from bs4 import BeautifulSoup
 
@@ -9,7 +10,46 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.iabilet.ro"
 BUCHAREST_URL = f"{BASE_URL}/bilete-in-bucuresti/"
-MAX_PAGES = 10
+MAX_PAGES = 50
+MIN_EXPECTED_EVENTS = 1
+
+MUSIC_CATEGORIES = (
+    "concerte-pop",
+    "concerte-rock",
+    "concerte-metal",
+    "party",
+    "concerte-muzica-clasica",
+    "concerte-alternative",
+    "concerte-folk",
+    "festivaluri",
+    "concerte-hip-hop",
+    "concerte-pop-rock",
+    "world-music",
+    "concerte-jazz",
+    "muzica-lautareasca",
+    "colinde",
+    "concerte-populara",
+    "latino",
+    "concerte",
+    "concerte-electro",
+    "muzica-de-petrecere",
+    "blues",
+    "indie",
+    "k-pop",
+    "manele",
+)
+
+
+def build_listing_url() -> str:
+    """Build the iaBilet listing URL with its music taxonomy selected."""
+    params = [
+        ("filters[category][]", category) for category in MUSIC_CATEGORIES
+    ]
+    params.append(("filtersSubmitted", "1"))
+    return f"{BUCHAREST_URL}?{urlencode(params)}"
+
+
+EVENTS_URL = build_listing_url()
 
 ROMANIAN_MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
@@ -17,7 +57,13 @@ ROMANIAN_MONTHS = {
 }
 
 
-def parse_date(day: str, month: str, year: str | None = None) -> datetime:
+def parse_date(
+    day: str,
+    month: str,
+    year: str | None = None,
+    *,
+    now: datetime | None = None,
+) -> datetime:
     """Parse Romanian date format (e.g., '17', 'ian', "'26")."""
     month_num = ROMANIAN_MONTHS.get(month.lower(), 1)
     
@@ -26,9 +72,10 @@ def parse_date(day: str, month: str, year: str | None = None) -> datetime:
         if year_num < 100:
             year_num += 2000
     else:
-        year_num = datetime.now().year
+        reference = now or datetime.now()
+        year_num = reference.year
         test_date = datetime(year_num, month_num, int(day))
-        if test_date < datetime.now():
+        if test_date.date() < reference.date():
             year_num += 1
     
     return datetime(year_num, month_num, int(day))
@@ -152,13 +199,17 @@ def parse_json_ld_event(data: dict) -> Event | None:
 
 
 def scrape() -> list[Event]:
-    """Fetch upcoming events from iaBilet."""
+    """Fetch upcoming Bucharest music events from iaBilet."""
     events: list[Event] = []
-    seen_urls: set[str] = set()
-    
+    seen_events: set[tuple[str, datetime]] = set()
+    seen_pages: set[str] = set()
+    url: str | None = EVENTS_URL
+
     for page in range(1, MAX_PAGES + 1):
-        url = BUCHAREST_URL if page == 1 else f"{BUCHAREST_URL}?page={page}"
-        
+        if not url or url in seen_pages:
+            break
+        seen_pages.add(url)
+
         try:
             html = fetch_page(url)
         except Exception as e:
@@ -170,19 +221,23 @@ def scrape() -> list[Event]:
         json_ld_events = extract_json_ld_events(soup)
         for data in json_ld_events:
             event = parse_json_ld_event(data)
-            if event and event.url not in seen_urls:
-                seen_urls.add(event.url)
+            key = (event.url, event.date) if event else None
+            if event and key not in seen_events:
+                seen_events.add(key)
                 events.append(event)
         
         cards = soup.select('[data-event-list="item"]')
         for card in cards:
             event = parse_event_card(card)
-            if event and event.url not in seen_urls:
-                seen_urls.add(event.url)
+            key = (event.url, event.date) if event else None
+            if event and key not in seen_events:
+                seen_events.add(key)
                 events.append(event)
-        
+
         more_btn = soup.select_one('[data-event-list="more"] a')
         if not more_btn:
             break
+        next_href = more_btn.get("href")
+        url = urljoin(BASE_URL, next_href) if next_href else None
     
     return events

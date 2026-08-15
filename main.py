@@ -15,7 +15,7 @@ from types import ModuleType
 from models import Event
 from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
-from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, hardrock, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
+from scrapers.music import ateneul, bfh, control, enescu, expirat, garana, hardrock, iabilet, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
 from scrapers.theatre import bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb
 from services.dedup import llm_dedup, stage1_dedup
 from services.enrichment import enrich_events
@@ -37,7 +37,7 @@ SCRAPER_GROUPS = {
         "culture": [arcub, mare, mnac],
     },
     2: {
-        "music": [operanb, expirat, quantic],
+        "music": [operanb, expirat, quantic, iabilet],
         "theatre": [metropolis, nottara, teatrulmic, tnb],
         "culture": [elvirepopescu, improteca],
     },
@@ -136,7 +136,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
             scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
     else:
         # Run all scrapers
-        scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+        scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
 
     for scraper in scrapers:
         if scraper in FESTIVAL_SCRAPERS and not run_festivals:
@@ -546,7 +546,7 @@ def main() -> None:
             culture_scrapers = SCRAPER_GROUPS[group]["culture"]
         else:
             print("All scrapers (no group specified):")
-            music_scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+            music_scrapers = [ateneul, bfh, control, enescu, expirat, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
             theatre_scrapers = [bulandra, cuibul, eventbook, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
             culture_scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
 
