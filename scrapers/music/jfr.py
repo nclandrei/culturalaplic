@@ -14,6 +14,7 @@ MONTHS = {
     "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
     "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
 }
+DATE_ICON_LABELS = {"calendar_month", "schedule"}
 
 
 def parse_date(date_text: str) -> datetime | None:
@@ -28,6 +29,20 @@ def parse_date(date_text: str) -> datetime | None:
         return None
     
     return datetime(int(year), month, int(day), int(hour), int(minute))
+
+
+def parse_card_date(card: BeautifulSoup) -> datetime | None:
+    """Parse the first date heading, ignoring Eventbook's icon labels."""
+    for date_el in card.select("h4, h5.m-0"):
+        date_text = " ".join(
+            text
+            for text in date_el.stripped_strings
+            if text.casefold() not in DATE_ICON_LABELS
+        )
+        event_date = parse_date(date_text)
+        if event_date:
+            return event_date
+    return None
 
 
 def extract_artist(title: str) -> str | None:
@@ -72,9 +87,7 @@ def scrape() -> list[Event]:
         venue_link = card.select_one('a[href*="/hall/"]')
         venue = venue_link.get_text(strip=True) if venue_link else "Unknown"
         
-        date_el = card.select_one("h5.m-0") or card.select_one("h4")
-        date_text = date_el.get_text(strip=True) if date_el else ""
-        event_date = parse_date(date_text)
+        event_date = parse_card_date(card)
         
         if not event_date:
             continue
