@@ -7,7 +7,12 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://festivalenescu.ro"
-EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
+FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
+COMPETITION_EVENTS_URL = (
+    f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente"
+)
+EVENTS_URL = COMPETITION_EVENTS_URL
+EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -92,30 +97,26 @@ def parse_event(element: Tag) -> Event | None:
 
 
 def scrape() -> list[Event]:
-    """Fetch upcoming events from Festivalul George Enescu."""
+    """Fetch Festival and International Competition events."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
 
-    try:
-        html = fetch_page(
-            EVENTS_URL,
-            needs_js=True,
-            click_selector="button.inftabs-more",
-            click_count=20,
-        )
-    except Exception as e:
-        print(f"Failed to fetch Festivalul Enescu events: {e}")
-        return events
+    for events_url in EVENTS_URLS:
+        try:
+            html = fetch_page(events_url, needs_js=False, timeout=30000)
+        except Exception as e:
+            print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
+            continue
 
-    soup = BeautifulSoup(html, "html.parser")
+        soup = BeautifulSoup(html, "html.parser")
 
-    for item in soup.select(".item[itemprop='blogPost']"):
-        event = parse_event(item)
-        if event:
-            key = (event.title, event.date.isoformat())
-            if key not in seen:
-                seen.add(key)
-                events.append(event)
+        for item in soup.select(".item[itemprop='blogPost']"):
+            event = parse_event(item)
+            if event:
+                key = (event.title, event.date.isoformat())
+                if key not in seen:
+                    seen.add(key)
+                    events.append(event)
 
     events.sort(key=lambda e: e.date)
     return events
