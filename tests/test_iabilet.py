@@ -5,12 +5,13 @@ from unittest.mock import patch
 from scrapers.music.iabilet import (
     MUSIC_CATEGORIES,
     build_listing_url,
+    extract_artist_from_title,
     parse_date,
     scrape,
 )
 
 
-def card(title: str, href: str, day: int) -> str:
+def card(title: str, href: str, day: int, description: str = "") -> str:
     return f"""
     <div data-event-list="item">
       <div class="title"><a href="{href}"><span>{title}</span></a></div>
@@ -20,6 +21,7 @@ def card(title: str, href: str, day: int) -> str:
         <span class="date-month">sep</span>
         <span class="date-year">'26</span>
       </div>
+      <div class="description">{description}</div>
     </div>
     """
 
@@ -37,6 +39,35 @@ def test_yearless_event_later_today_does_not_roll_into_next_year():
     parsed = parse_date("15", "aug", now=datetime(2026, 8, 15, 18, 0))
 
     assert parsed == datetime(2026, 8, 15)
+
+
+def test_bullet_title_extracts_artist_for_cross_source_deduplication():
+    assert (
+        extract_artist_from_title("byron • Triptic: Electric / Acustic / Improv")
+        == "byron"
+    )
+
+
+def test_scrape_keeps_times_advertised_in_card_descriptions():
+    html = card(
+        "Concert Tribut ABBA",
+        "/music/abba-matinee",
+        24,
+        "Concertul începe de la ora 17:00.",
+    ) + card(
+        "Concert Tribut ABBA",
+        "/music/abba-evening",
+        24,
+        "A doua reprezentație începe la ora 19:30.",
+    )
+
+    with patch("scrapers.music.iabilet.fetch_page", return_value=html):
+        events = scrape()
+
+    assert [event.date for event in events] == [
+        datetime(2026, 9, 24, 17, 0),
+        datetime(2026, 9, 24, 19, 30),
+    ]
 
 
 def test_scrape_follows_filtered_next_page_link():

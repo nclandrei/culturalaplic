@@ -83,11 +83,23 @@ def parse_date(
 
 def extract_artist_from_title(title: str) -> str | None:
     """Extract artist name from event title."""
-    separators = [" - ", " – ", " | ", " @ ", ": "]
+    separators = [" • ", " · ", " - ", " – ", " | ", " @ ", ": "]
     for sep in separators:
         if sep in title:
             return title.split(sep)[0].strip()
     return title
+
+
+def extract_card_time(card: BeautifulSoup) -> tuple[int, int] | None:
+    """Extract a start time advertised in an iaBilet card description."""
+    match = re.search(
+        r"\bora\s*[:\-]?\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b",
+        card.get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    return int(match.group(1)), int(match.group(2))
 
 
 def parse_event_card(card: BeautifulSoup) -> Event | None:
@@ -119,6 +131,11 @@ def parse_event_card(card: BeautifulSoup) -> Event | None:
             month = month_elem.get_text(strip=True)
             year = year_elem.get_text(strip=True) if year_elem else None
             event_date = parse_date(day, month, year)
+            start_time = extract_card_time(card)
+            if start_time:
+                event_date = event_date.replace(
+                    hour=start_time[0], minute=start_time[1]
+                )
         else:
             return None
     else:
@@ -201,7 +218,7 @@ def parse_json_ld_event(data: dict) -> Event | None:
 def scrape() -> list[Event]:
     """Fetch upcoming Bucharest music events from iaBilet."""
     events: list[Event] = []
-    seen_events: set[tuple[str, datetime]] = set()
+    seen_events: set[tuple[str, str]] = set()
     seen_pages: set[str] = set()
     url: str | None = EVENTS_URL
 
@@ -218,18 +235,25 @@ def scrape() -> list[Event]:
         
         soup = BeautifulSoup(html, "html.parser")
         
-        json_ld_events = extract_json_ld_events(soup)
-        for data in json_ld_events:
-            event = parse_json_ld_event(data)
-            key = (event.url, event.date) if event else None
-            if event and key not in seen_events:
-                seen_events.add(key)
-                events.append(event)
-        
+        # Prefer cards because they can include a start time omitted by JSON-LD.
         cards = soup.select('[data-event-list="item"]')
         for card in cards:
             event = parse_event_card(card)
-            key = (event.url, event.date) if event else None
+            key = (
+                event.url.rstrip("/"),
+                event.date.strftime("%Y-%m-%d"),
+            ) if event else None
+            if event and key not in seen_events:
+                seen_events.add(key)
+                events.append(event)
+
+        json_ld_events = extract_json_ld_events(soup)
+        for data in json_ld_events:
+            event = parse_json_ld_event(data)
+            key = (
+                event.url.rstrip("/"),
+                event.date.strftime("%Y-%m-%d"),
+            ) if event else None
             if event and key not in seen_events:
                 seen_events.add(key)
                 events.append(event)
