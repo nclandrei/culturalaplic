@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://bikersforhumanity.ro"
 EVENTS_URL = f"{BASE_URL}/en/bikers-for-humanity-rock-fest-v-2/"
+ALLOW_EMPTY_RESULTS = True  # Annual festival; its next lineup may be unpublished.
 
 SKIP_DOMAINS = ["bikersforhumanity.ro", "instagram.com", "youtube.com", "ambilet.ro", "iabilet.ro"]
 

@@ -7,6 +7,7 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://garana-jazz.ro"
+ALLOW_EMPTY_RESULTS = True  # Annual festival; its next lineup may be unpublished.
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,

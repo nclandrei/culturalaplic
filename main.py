@@ -45,33 +45,6 @@ SCRAPER_GROUPS = {
     },
 }
 
-# These feeds currently publish rolling programs and should not silently turn
-# empty. Seasonal or explicitly empty feeds (Enescu, JazzX, Teatrul Mic, and
-# Improteca) are intentionally excluded.
-ACTIVE_SCRAPERS_EXPECT_EVENTS = {
-    ateneul,
-    control,
-    eventbook_music,
-    expirat,
-    hardrock,
-    iabilet,
-    operanb,
-    quantic,
-    bulandra,
-    cuibul,
-    eventbook_theatre,
-    godot,
-    grivita53,
-    metropolis,
-    nottara,
-    tnb,
-    arcub,
-    elvirepopescu,
-    mare,
-    mnac,
-}
-
-
 def should_run_festival_scrapers() -> bool:
     """Run festival scrapers only on the 1st of each month (annual events don't change often)."""
     return datetime.now().day == 1
@@ -128,12 +101,16 @@ def run_scraper_safely(scraper: ModuleType) -> list[Event]:
             ))
             return events
         if len(events) == 0:
-            default_minimum = 1 if scraper in ACTIVE_SCRAPERS_EXPECT_EVENTS else 0
-            min_expected = getattr(
-                scraper, "MIN_EXPECTED_EVENTS", default_minimum
+            allow_empty = getattr(scraper, "ALLOW_EMPTY_RESULTS", False) is True
+            default_minimum = 0 if allow_empty else 1
+            configured_minimum = getattr(scraper, "MIN_EXPECTED_EVENTS", None)
+            min_expected = (
+                configured_minimum
+                if isinstance(configured_minimum, int)
+                else default_minimum
             )
             if not isinstance(min_expected, int):
-                min_expected = 0
+                min_expected = default_minimum
             if min_expected > 0:
                 message = (
                     f"Scraper returned 0 events; expected at least {min_expected}"

@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://rockstadtextremefest.ro"
 EVENTS_URL = f"{BASE_URL}/line-up/"
+ALLOW_EMPTY_RESULTS = True  # Annual festival; its next lineup may be unpublished.
 
 FESTIVAL_START_DAY = 27
 FESTIVAL_MONTH = 7

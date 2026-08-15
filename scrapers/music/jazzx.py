@@ -7,6 +7,7 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://plai.ro/jazz"
+ALLOW_EMPTY_RESULTS = True  # The current festival program is already in the past.
 
 
 def get_program_url() -> str | None:

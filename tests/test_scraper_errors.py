@@ -114,12 +114,49 @@ class TestScraperErrorCollection:
         scraper_errors.clear()
         successful_scraper_sources["theatre"].clear()
         mock_scraper = make_mock_scraper("scrapers.theatre.off_season")
+        mock_scraper.ALLOW_EMPTY_RESULTS = True
         mock_scraper.scrape.return_value = []
 
         assert run_scraper_safely(mock_scraper) == []
 
         assert scraper_errors == []
         assert successful_scraper_sources["theatre"] == {"off_season"}
+
+    def test_uncontracted_empty_feed_is_preserved_for_retry(self):
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
+
+        scraper_errors.clear()
+        successful_scraper_sources["music"].clear()
+        mock_scraper = make_mock_scraper("scrapers.music.unknown_feed")
+        mock_scraper.scrape.return_value = []
+
+        assert run_scraper_safely(mock_scraper) == []
+
+        assert [error.scraper_name for error in scraper_errors] == [
+            "unknown_feed"
+        ]
+        assert "unknown_feed" not in successful_scraper_sources["music"]
+
+    def test_enescu_cannot_silently_delete_its_current_program(self):
+        from main import (
+            run_scraper_safely,
+            scraper_errors,
+            successful_scraper_sources,
+        )
+        from scrapers.music import enescu
+
+        scraper_errors.clear()
+        successful_scraper_sources["music"].clear()
+
+        with patch.object(enescu, "scrape", return_value=[]):
+            assert run_scraper_safely(enescu) == []
+
+        assert [error.scraper_name for error in scraper_errors] == ["enescu"]
+        assert "Festivalul Enescu" not in successful_scraper_sources["music"]
 
     def test_known_active_feed_cannot_fail_silently(self):
         from main import (

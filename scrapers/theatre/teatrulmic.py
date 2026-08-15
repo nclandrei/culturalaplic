@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.teatrulmic.ro"
 EVENTS_URL = f"{BASE_URL}/program-spectacole/"
+ALLOW_EMPTY_RESULTS = True  # The official calendar explicitly confirms no shows.
 
 ROMANIAN_MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "mart": 3, "apr": 4, "mai": 5, "iun": 6,

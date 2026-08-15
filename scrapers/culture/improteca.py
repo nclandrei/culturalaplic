@@ -10,6 +10,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://improteca.ro"
 EVENTS_URL = f"{BASE_URL}/calendar-evenimente/"
+ALLOW_EMPTY_RESULTS = True  # The official archive currently has no future events.
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "ian": 1,
