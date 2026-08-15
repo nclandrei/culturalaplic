@@ -24,15 +24,15 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt
 
       - name: Install Playwright browsers
-        run: playwright install chromium
+        run: python3 -m playwright install chromium
 
       - name: Run GigRadar (group ${{ matrix.group }})
         id: scrape
         continue-on-error: true
-        run: python main.py --group ${{ matrix.group }}
+        run: python3 main.py --group ${{ matrix.group }}
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
@@ -42,11 +42,12 @@ jobs:
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
 
       - name: Upload group events
-        if: steps.scrape.outcome == 'success'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: events-group-${{ matrix.group }}
           path: artifacts/events_group_${{ matrix.group }}.json
+          if-no-files-found: error
           retention-days: 1
 
       - name: Upload scraper errors
@@ -58,10 +59,9 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-      - name: Set scrape result
-        if: always()
-        run: echo "outcome=${{ steps.scrape.outcome }}" >> $GITHUB_OUTPUT
-        id: result
+      - name: Report scraper failure
+        if: steps.scrape.outcome == 'failure'
+        run: exit 1
 
   merge:
     runs-on: ubuntu-latest
@@ -76,38 +76,24 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt
 
       - name: Download group 1 events
         uses: actions/download-artifact@v4
         with:
           name: events-group-1
           path: artifacts/
-        continue-on-error: true
 
       - name: Download group 2 events
         uses: actions/download-artifact@v4
         with:
           name: events-group-2
           path: artifacts/
-        continue-on-error: true
-
-      - name: Check for artifacts
-        id: check
-        run: |
-          if ls artifacts/events_group_*.json 1> /dev/null 2>&1; then
-            echo "has_artifacts=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_artifacts=false" >> $GITHUB_OUTPUT
-            echo "No group artifacts found, skipping merge"
-          fi
 
       - name: Merge group results
-        if: steps.check.outputs.has_artifacts == 'true'
-        run: python main.py --merge
+        run: python3 main.py --merge
 
       - name: Commit data changes
-        if: steps.check.outputs.has_artifacts == 'true'
         run: |
           git config user.name "Andrei-Mihai Nicolae"
           git config user.email "andrei@nicolaeandrei.com"

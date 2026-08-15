@@ -319,6 +319,17 @@ def merge_group_artifacts() -> None:
     """
     print("Merging group artifacts...")
 
+    group_files = {
+        group_num: ARTIFACTS_DIR / f"events_group_{group_num}.json"
+        for group_num in [1, 2]
+    }
+    missing_files = [path for path in group_files.values() if not path.exists()]
+    if missing_files:
+        missing = ", ".join(path.name for path in missing_files)
+        raise FileNotFoundError(
+            f"Missing required group artifact(s): {missing}. Refusing partial merge."
+        )
+
     # Load existing events
     existing_events = load_existing_events()
     print(f"Loaded {sum(len(v) for v in existing_events.values())} existing events")
@@ -328,12 +339,7 @@ def merge_group_artifacts() -> None:
     all_culture: list[dict] = list(existing_events["culture_events"])
 
     # Load and merge each group file
-    for group_num in [1, 2]:
-        group_file = ARTIFACTS_DIR / f"events_group_{group_num}.json"
-        if not group_file.exists():
-            print(f"Warning: {group_file} not found, skipping")
-            continue
-
+    for group_num, group_file in group_files.items():
         with open(group_file) as f:
             group_data = json.load(f)
 
