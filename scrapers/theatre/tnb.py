@@ -9,10 +9,15 @@ from services.http import fetch_page
 BASE_URL = "https://www.tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
 
+MONTHS = {
+    "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
+    "iul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+
 
 def get_calendar_url(year: int, month: int) -> str:
     """Build calendar URL for given year and month."""
-    return f"{CALENDAR_URL}?year={year}&month={month}"
+    return f"{CALENDAR_URL}?year={year}&month={month}&view=list"
 
 
 def parse_time(time_text: str) -> tuple[int, int]:
@@ -24,12 +29,8 @@ def parse_time(time_text: str) -> tuple[int, int]:
 
 
 def parse_event(event_elem: BeautifulSoup, event_date: datetime) -> Event | None:
-    """Parse a single event from the calendar cell."""
-    tooltip = event_elem.select_one(".toltip_text")
-    if not tooltip:
-        return None
-    
-    title_elem = tooltip.select_one("h3")
+    """Parse a single event from an official list-view day."""
+    title_elem = event_elem.select_one("a.ev_title")
     if not title_elem:
         return None
     
@@ -37,22 +38,21 @@ def parse_event(event_elem: BeautifulSoup, event_date: datetime) -> Event | None
     if not title:
         return None
     
-    link_elem = tooltip.select_one("a[href]")
-    url = ""
-    if link_elem:
-        url = link_elem.get("href", "")
-        if url and not url.startswith("http"):
-            url = BASE_URL + url
+    url = title_elem.get("href", "")
+    if url and not url.startswith("http"):
+        url = BASE_URL + url
     
-    hour_elem = tooltip.select_one(".hour")
+    hour_elem = event_elem.select_one(".time")
     hour, minute = 19, 0
     if hour_elem:
         hour, minute = parse_time(hour_elem.get_text(strip=True))
     
     event_datetime = event_date.replace(hour=hour, minute=minute)
     
-    location_elem = tooltip.select_one(".location")
+    location_elem = event_elem.select_one(".location")
     hall = location_elem.get_text(strip=True) if location_elem else ""
+    if hall == "-":
+        hall = ""
     if hall.startswith("TNB - "):
         venue = hall
     elif hall:
@@ -72,54 +72,50 @@ def parse_event(event_elem: BeautifulSoup, event_date: datetime) -> Event | None
     )
 
 
+def parse_day(day_elem: BeautifulSoup) -> list[Event]:
+    """Parse all events nested under one list-view calendar day."""
+    day_number = day_elem.select_one(".left_date .number")
+    month_name = day_elem.select_one(".left_date .month")
+    year_number = day_elem.select_one(".left_date .year")
+    if not day_number or not month_name or not year_number:
+        return []
+
+    month = MONTHS.get(month_name.get_text(strip=True).lower()[:3])
+    if not month:
+        return []
+
+    try:
+        event_date = datetime(
+            int(year_number.get_text(strip=True)),
+            month,
+            int(day_number.get_text(strip=True)),
+        )
+    except ValueError:
+        return []
+
+    events: list[Event] = []
+    for event_elem in day_elem.select(".right_items .item"):
+        event = parse_event(event_elem, event_date)
+        if event:
+            events.append(event)
+    return events
+
+
 def scrape_month(year: int, month: int) -> list[Event]:
     """Scrape events for a specific month."""
     events: list[Event] = []
     
     url = get_calendar_url(year, month)
     try:
-        html = fetch_page(url, needs_js=True, timeout=60000)
+        html = fetch_page(url, needs_js=False, timeout=60000)
     except Exception as e:
         print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
         return events
     
     soup = BeautifulSoup(html, "html.parser")
     
-    for week_row in soup.select(".fc-week"):
-        day_cells = week_row.select("td[data-date]")
-        event_cells = week_row.select(".fc-content-skeleton td")
-        
-        date_to_events: dict[str, list[BeautifulSoup]] = {}
-        
-        for cell in week_row.select(".fc-content-skeleton tbody td"):
-            events_in_cell = cell.select(".fc-day-grid-event")
-            if events_in_cell:
-                parent_table = cell.find_parent("table")
-                if parent_table:
-                    thead = parent_table.select_one("thead tr")
-                    if thead:
-                        cell_idx = 0
-                        for sibling in cell.previous_siblings:
-                            if hasattr(sibling, 'name') and sibling.name == 'td':
-                                cell_idx += 1
-                        date_tds = thead.select("td[data-date]")
-                        if cell_idx < len(date_tds):
-                            date_str = date_tds[cell_idx].get("data-date", "")
-                            if date_str:
-                                if date_str not in date_to_events:
-                                    date_to_events[date_str] = []
-                                date_to_events[date_str].extend(events_in_cell)
-        
-        for date_str, event_elems in date_to_events.items():
-            try:
-                event_date = datetime.strptime(date_str, "%Y-%m-%d")
-            except ValueError:
-                continue
-            
-            for event_elem in event_elems:
-                event = parse_event(event_elem, event_date)
-                if event:
-                    events.append(event)
+    for day_elem in soup.select("div.day"):
+        events.extend(parse_day(day_elem))
     
     return events
 
