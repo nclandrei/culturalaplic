@@ -136,11 +136,7 @@ def scrape() -> list[Event]:
     seen_urls: set[str] = set()
     
     try:
-        html = fetch_page(
-            EVENTS_URL,
-            needs_js=True,
-            wait_selector=".events-list-view",
-        )
+        html = fetch_page(EVENTS_URL)
     except Exception as e:
         print(f"Failed to fetch Control Club events: {e}")
         return events
