@@ -11,6 +11,7 @@ from services.http import fetch_page
 BASE_URL = "https://www.iabilet.ro"
 BUCHAREST_URL = f"{BASE_URL}/bilete-in-bucuresti/"
 MAX_PAGES = 50
+MAX_PAGINATION_PASSES = 3
 MIN_EXPECTED_EVENTS = 1
 
 MUSIC_CATEGORIES = (
@@ -250,49 +251,60 @@ def scrape() -> list[Event]:
     """Fetch upcoming Bucharest music events from iaBilet."""
     events: list[Event] = []
     seen_events: set[tuple[str, str]] = set()
-    seen_pages: set[str] = set()
-    url: str | None = EVENTS_URL
+    # iaBilet's page ordering is unstable for events with equal sort values, so
+    # neighbouring pages can repeat some cards and omit others. Union a few
+    # bounded traversals, stopping once a complete repeat adds nothing.
+    for pass_number in range(MAX_PAGINATION_PASSES):
+        count_before_pass = len(events)
+        seen_pages: set[str] = set()
+        url: str | None = EVENTS_URL
 
-    for page in range(1, MAX_PAGES + 1):
-        if not url or url in seen_pages:
+        for page in range(1, MAX_PAGES + 1):
+            if not url or url in seen_pages:
+                break
+            seen_pages.add(url)
+
+            try:
+                html = fetch_page(url)
+            except Exception as e:
+                print(
+                    f"Failed to fetch iaBilet page {page} "
+                    f"on pass {pass_number + 1}: {e}"
+                )
+                break
+
+            soup = BeautifulSoup(html, "html.parser")
+
+            # Prefer cards because they can include a start time omitted by JSON-LD.
+            cards = soup.select('[data-event-list="item"]')
+            for card in cards:
+                event = parse_event_card(card)
+                key = (
+                    event.url.rstrip("/"),
+                    event.date.strftime("%Y-%m-%d"),
+                ) if event else None
+                if event and key not in seen_events:
+                    seen_events.add(key)
+                    events.append(event)
+
+            json_ld_events = extract_json_ld_events(soup)
+            for data in json_ld_events:
+                event = parse_json_ld_event(data)
+                key = (
+                    event.url.rstrip("/"),
+                    event.date.strftime("%Y-%m-%d"),
+                ) if event else None
+                if event and key not in seen_events:
+                    seen_events.add(key)
+                    events.append(event)
+
+            more_btn = soup.select_one('[data-event-list="more"] a')
+            if not more_btn:
+                break
+            next_href = more_btn.get("href")
+            url = urljoin(BASE_URL, next_href) if next_href else None
+
+        if pass_number >= 1 and len(events) == count_before_pass:
             break
-        seen_pages.add(url)
-
-        try:
-            html = fetch_page(url)
-        except Exception as e:
-            print(f"Failed to fetch iaBilet page {page}: {e}")
-            break
-        
-        soup = BeautifulSoup(html, "html.parser")
-        
-        # Prefer cards because they can include a start time omitted by JSON-LD.
-        cards = soup.select('[data-event-list="item"]')
-        for card in cards:
-            event = parse_event_card(card)
-            key = (
-                event.url.rstrip("/"),
-                event.date.strftime("%Y-%m-%d"),
-            ) if event else None
-            if event and key not in seen_events:
-                seen_events.add(key)
-                events.append(event)
-
-        json_ld_events = extract_json_ld_events(soup)
-        for data in json_ld_events:
-            event = parse_json_ld_event(data)
-            key = (
-                event.url.rstrip("/"),
-                event.date.strftime("%Y-%m-%d"),
-            ) if event else None
-            if event and key not in seen_events:
-                seen_events.add(key)
-                events.append(event)
-
-        more_btn = soup.select_one('[data-event-list="more"] a')
-        if not more_btn:
-            break
-        next_href = more_btn.get("href")
-        url = urljoin(BASE_URL, next_href) if next_href else None
     
     return events

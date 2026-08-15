@@ -139,7 +139,7 @@ def test_scrape_follows_filtered_next_page_link():
 
     with patch(
         "scrapers.music.iabilet.fetch_page",
-        side_effect=[page_one, page_two],
+        side_effect=lambda url: page_two if "page=2" in url else page_one,
     ) as fetch:
         events = scrape()
 
@@ -147,3 +147,38 @@ def test_scrape_follows_filtered_next_page_link():
     assert all(event.category == "music" for event in events)
     assert "filtersSubmitted=1" in fetch.call_args_list[1].args[0]
     assert "page=2" in fetch.call_args_list[1].args[0]
+
+
+def test_scrape_unions_events_across_unstable_pagination_passes():
+    page_one = (
+        card("First concert", "/music/first", 10)
+        + """
+        <div data-event-list="more">
+          <a href="/bilete-in-bucuresti?filtersSubmitted=1&amp;page=2">
+            mai mult
+          </a>
+        </div>
+        """
+    )
+    page_two_calls = 0
+
+    def fetch(url: str) -> str:
+        nonlocal page_two_calls
+        if "page=2" not in url:
+            return page_one
+        page_two_calls += 1
+        result = card("Second concert", "/music/second", 11)
+        if page_two_calls >= 2:
+            result += card("Boundary concert", "/music/boundary", 12)
+        return result
+
+    with patch("scrapers.music.iabilet.fetch_page", side_effect=fetch) as mocked_fetch:
+        events = scrape()
+
+    assert [event.title for event in events] == [
+        "First concert",
+        "Second concert",
+        "Boundary concert",
+    ]
+    assert page_two_calls == 3
+    assert mocked_fetch.call_count == 6
