@@ -26,7 +26,7 @@ def test_parse_event_skips_non_live_promotions():
     assert parse_event(event_div) is None
 
 
-def test_scrape_page_uses_the_official_detail_start_time(monkeypatch):
+def test_scrape_page_uses_the_start_time_embedded_in_the_listing(monkeypatch):
     list_html = """
     <div class="calListDayEvent">
       <h3 class="calListDay"
@@ -34,20 +34,20 @@ def test_scrape_page_uses_the_official_detail_start_time(monkeypatch):
           data-date-month-number="8"
           data-date-day-number="19"></h3>
       <div class="calListDayEventTitle">Andrada Live Concert on the Terrace</div>
+      <div class="calListDayEventTime">9:00 PM - 10:00 PM</div>
       <a class="calListDayEventLink"
          href="?date=8/19/2026&amp;display=event&amp;eventid=2583987"></a>
       <div class="calListDayEventCategory">Live Events</div>
       <div class="calListDayEventDescription">Free admission</div>
     </div>
     """
-    detail_html = """
-    <div class="calListDayEventTime">9:00 PM - 10:00 PM</div>
-    """
     calls = []
 
     def fake_fetch(url, **kwargs):
         calls.append((url, kwargs))
-        return detail_html if "display=event" in url else list_html
+        if "display=event" in url:
+            raise AssertionError("The listing already has the authoritative time")
+        return list_html
 
     monkeypatch.setattr("scrapers.music.hardrock.fetch_page", fake_fetch)
 
@@ -56,5 +56,4 @@ def test_scrape_page_uses_the_official_detail_start_time(monkeypatch):
     assert has_next is False
     assert len(events) == 1
     assert events[0].date == datetime(2026, 8, 19, 21, 0)
-    assert len(calls) == 2
-    assert calls[1][1] == {}
+    assert len(calls) == 1

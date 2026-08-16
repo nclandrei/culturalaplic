@@ -62,10 +62,9 @@ def parse_price(event_div: BeautifulSoup) -> str | None:
     return None
 
 
-def parse_detail_start_time(html: str) -> time | None:
-    """Parse the advertised start time from an event's detail page."""
-    soup = BeautifulSoup(html, "html.parser")
-    time_elem = soup.select_one(".calListDayEventTime")
+def parse_start_time(event_div: BeautifulSoup) -> time | None:
+    """Parse the advertised start time embedded in an event card."""
+    time_elem = event_div.select_one(".calListDayEventTime")
     if not time_elem:
         return None
 
@@ -106,6 +105,9 @@ def parse_event(event_div: BeautifulSoup) -> Event | None:
     event_date = parse_date(event_div)
     if not event_date:
         return None
+    start_time = parse_start_time(event_div)
+    if start_time:
+        event_date = datetime.combine(event_date.date(), start_time)
     
     artist = extract_artist_from_title(title)
     price = parse_price(event_div)
@@ -138,10 +140,6 @@ def scrape_page(page_num: int = 1) -> tuple[list[Event], bool]:
     for event_div in soup.select(".calListDayEvent"):
         event = parse_event(event_div)
         if event:
-            detail_html = fetch_page(event.url)
-            start_time = parse_detail_start_time(detail_html)
-            if start_time:
-                event.date = datetime.combine(event.date.date(), start_time)
             events.append(event)
     
     next_page_link = soup.select_one(".calPagingNextPage a")
