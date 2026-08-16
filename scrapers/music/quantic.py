@@ -2,9 +2,11 @@ import json
 import re
 from datetime import datetime
 from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
 from dateutil.relativedelta import relativedelta
 
 from bs4 import BeautifulSoup
+from rapidfuzz import fuzz
 
 from models import Event
 from services.http import fetch_page, fetch_page_with_reader_fallback
@@ -19,6 +21,7 @@ TICKET_HOSTS = (
     "ambilet.ro",
     "bilet.ro",
 )
+BUCHAREST_TZ = ZoneInfo("Europe/Bucharest")
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1,
@@ -73,11 +76,14 @@ def find_ticket_url(html: str) -> str | None:
     return None
 
 
-def _json_ld_event_start(soup: BeautifulSoup) -> datetime | None:
+def _json_ld_event(soup: BeautifulSoup) -> dict | None:
     def find_event(value):
         if isinstance(value, dict):
-            if value.get("@type") == "Event" and value.get("startDate"):
-                return value.get("startDate")
+            event_type = value.get("@type")
+            if event_type == "Event" or (
+                isinstance(event_type, list) and "Event" in event_type
+            ):
+                return value
             for child in value.values():
                 result = find_event(child)
                 if result:
@@ -93,17 +99,79 @@ def _json_ld_event_start(soup: BeautifulSoup) -> datetime | None:
         raw = script.string or script.get_text()
         raw = raw.replace("/*<![CDATA[*/", "").replace("/*]]>*/", "").strip()
         try:
-            start_value = find_event(json.loads(raw))
+            event_data = find_event(json.loads(raw))
         except (json.JSONDecodeError, TypeError):
             continue
-        if not start_value:
-            continue
-        try:
-            parsed = datetime.fromisoformat(str(start_value).replace("Z", "+00:00"))
-            return parsed.replace(tzinfo=None)
-        except ValueError:
-            continue
+        if event_data:
+            return event_data
     return None
+
+
+def _json_ld_event_start(soup: BeautifulSoup) -> datetime | None:
+    event_data = _json_ld_event(soup)
+    start_value = event_data.get("startDate") if event_data else None
+    if not start_value:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(start_value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is not None:
+        parsed = parsed.astimezone(BUCHAREST_TZ).replace(tzinfo=None)
+    return parsed
+
+
+def extract_ticket_title(html: str) -> str | None:
+    """Read the event identity used to validate a linked ticket override."""
+    soup = BeautifulSoup(html, "html.parser")
+    event_data = _json_ld_event(soup)
+    if event_data and event_data.get("name"):
+        return " ".join(str(event_data["name"]).split())
+    for selector, attribute in (
+        ("meta[property='og:title']", "content"),
+        ("h1", None),
+        ("title", None),
+    ):
+        element = soup.select_one(selector)
+        value = element.get(attribute, "") if element and attribute else (
+            element.get_text(" ", strip=True) if element else ""
+        )
+        if value:
+            return " ".join(value.split())
+    return None
+
+
+def ticket_title_matches(event_title: str, ticket_title: str) -> bool:
+    """Require a recognizable title match before changing an event datetime."""
+    def normalize(value: str) -> str:
+        value = value.casefold()
+        value = re.sub(r"\b(?:bilete|tickets?|quantic|bucurești|bucuresti|live)\b", " ", value)
+        value = re.sub(r"[^\w]+", " ", value, flags=re.UNICODE)
+        return " ".join(value.split())
+
+    source = normalize(event_title)
+    ticket = normalize(ticket_title)
+    if not source or not ticket:
+        return False
+    if len(source) >= 4 and source in ticket:
+        return True
+    if len(ticket) >= 4 and ticket in source:
+        return True
+    generic_tokens = {
+        "concert", "festival", "show", "tour", "the", "and", "with",
+        "la", "in", "în", "din", "live", "bucuresti", "bucurești",
+    }
+    source_identity = next(
+        (
+            token
+            for token in source.split()
+            if len(token) >= 4 and token not in generic_tokens
+        ),
+        None,
+    )
+    if source_identity and source_identity in set(ticket.split()):
+        return True
+    return fuzz.token_set_ratio(source, ticket) >= 65
 
 
 def parse_ticket_datetime(html: str, ticket_url: str) -> datetime | None:
@@ -118,7 +186,11 @@ def parse_ticket_datetime(html: str, ticket_url: str) -> datetime | None:
         try:
             event_date = datetime.fromisoformat(
                 raw_datetime.replace("Z", "+00:00")
-            ).replace(tzinfo=None)
+            )
+            if event_date.tzinfo is not None:
+                event_date = event_date.astimezone(BUCHAREST_TZ).replace(
+                    tzinfo=None
+                )
         except ValueError:
             event_date = None
 
@@ -166,6 +238,9 @@ def enrich_event_from_ticket(event: Event) -> None:
     if not ticket_url:
         return
     ticket_html = fetch_page(ticket_url)
+    ticket_title = extract_ticket_title(ticket_html)
+    if not ticket_title or not ticket_title_matches(event.title, ticket_title):
+        return
     ticket_datetime = parse_ticket_datetime(ticket_html, ticket_url)
     if ticket_datetime:
         event.date = ticket_datetime

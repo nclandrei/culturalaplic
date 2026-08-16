@@ -9,6 +9,7 @@ from scrapers.music.quantic import (
     parse_event,
     parse_multiday_event,
     parse_ticket_datetime,
+    ticket_title_matches,
 )
 
 
@@ -96,6 +97,11 @@ def test_iabilet_whitelabel_can_override_a_rescheduled_date():
         "https://bilete.quantic.pub/bilete-xzibit-126726/",
     ) == datetime(2026, 11, 12, 20, 0)
 
+    assert ticket_title_matches(
+        "XZIBIT Live in Bucharest",
+        "Xzibit - Kingmaker Tour 2026 - București",
+    )
+
 
 def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
     event = Event(
@@ -114,7 +120,8 @@ def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
     """
     ticket_html = """
     <script type="application/ld+json">
-      {"@type":"Event", "startDate":"2026-09-12"}
+      {"@type":"Event", "name":"Trio Mandili live in Bucharest",
+       "startDate":"2026-09-12"}
     </script>
     <div class="date-location">
       <p>12 septembrie, ora 21:00 acces de la 20:00</p>
@@ -130,3 +137,54 @@ def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
     enrich_event_from_ticket(event)
 
     assert event.date == datetime(2026, 9, 12, 21, 0)
+
+
+def test_ticket_json_ld_timezone_is_converted_to_bucharest():
+    html = """
+    <script type="application/ld+json">
+      {
+        "@type":"Event",
+        "name":"Green Carnation",
+        "startDate":"2026-09-25T18:00:00+00:00"
+      }
+    </script>
+    """
+
+    assert parse_ticket_datetime(
+        html,
+        "https://www.ambilet.ro/bilete/green-carnation/",
+    ) == datetime(2026, 9, 25, 21, 0)
+
+
+def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
+    event = Event(
+        title="NERVY live la Quantic",
+        artist="NERVY live la Quantic",
+        venue="Quantic",
+        date=datetime(2026, 9, 9, 19, 0),
+        url="https://quantic.pub/eveniment/nervy/",
+        source="quantic",
+        category="music",
+    )
+    detail_html = '<a href="https://ticketbox.ro/ro/event/other">Bilete</a>'
+    unrelated_ticket_html = """
+    <script type="application/ld+json">
+      {"@type":"Event", "name":"Completely Different Band",
+       "startDate":"2026-11-20"}
+    </script>
+    <p>START SHOW: 22:00</p>
+    """
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: detail_html,
+    )
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page",
+        lambda *args, **kwargs: unrelated_ticket_html,
+    )
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 9, 9, 19, 0)
