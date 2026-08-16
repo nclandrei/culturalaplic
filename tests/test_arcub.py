@@ -1,8 +1,16 @@
 from datetime import datetime
+from unittest.mock import Mock
 
 from bs4 import BeautifulSoup
+import pytest
 
-from scrapers.culture.arcub import parse_card_events, parse_date_range
+from scrapers.culture.arcub import (
+    HUB_DETECTIVES_URL,
+    fetch_ticket_schedule,
+    parse_card_events,
+    parse_date_range,
+)
+from services.http import HttpError
 
 
 NOW = datetime(2026, 8, 16, 12, 0)
@@ -152,3 +160,22 @@ def test_ticket_intervals_expand_only_through_the_arcub_range_end():
     assert [event.date for event in events] == [
         datetime(2026, 8, day, 10) for day in range(16, 23)
     ]
+
+
+def test_known_hub_ticket_block_uses_its_verified_opening_time():
+    fetcher = Mock(side_effect=HttpError("HTTP 403", status_code=403))
+
+    html = fetch_ticket_schedule(HUB_DETECTIVES_URL, fetcher=fetcher)
+
+    assert "Intervale: 10:00" in html
+    fetcher.assert_called_once_with(HUB_DETECTIVES_URL, record_failure=False)
+
+
+def test_unknown_ticket_block_still_fails_closed():
+    unknown_url = "https://bilete.hubproedus.ro/view/unknown.html"
+    fetcher = Mock(side_effect=HttpError("HTTP 403", status_code=403))
+
+    with pytest.raises(HttpError):
+        fetch_ticket_schedule(unknown_url, fetcher=fetcher)
+
+    fetcher.assert_called_once_with(unknown_url, record_failure=True)

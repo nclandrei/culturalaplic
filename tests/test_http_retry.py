@@ -84,6 +84,19 @@ class TestHttpRetry:
         assert get_fetch_failures() == ["HTTP 404 for https://example.com"]
 
     @respx.mock
+    def test_optional_http_failure_can_be_left_untracked(self):
+        respx.get("https://example.com/optional").respond(403, text="Blocked")
+
+        reset_fetch_failures()
+        with pytest.raises(HttpError):
+            fetch_page(
+                "https://example.com/optional",
+                record_failure=False,
+            )
+
+        assert get_fetch_failures() == []
+
+    @respx.mock
     def test_exhausted_retries(self):
         """Should raise HttpError after exhausting retries."""
         respx.get("https://example.com").respond(429, text="Rate limited")

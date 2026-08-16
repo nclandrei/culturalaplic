@@ -9,6 +9,15 @@ from services.http import fetch_page
 BASE_URL = "https://arcub.ro"
 AGENDA_URL = f"{BASE_URL}/agenda"
 MAX_RANGE_DAYS = 120
+HUB_DETECTIVES_URL = (
+    "https://bilete.hubproedus.ro/view/"
+    "detectivi-in-america-de-nord-si-america-de-sud.html"
+)
+VERIFIED_TICKET_OPENINGS = {
+    # Browser-verified 2026-08-16. The product advertises hourly intervals
+    # starting at 10:00, but Cloudflare intermittently blocks GitHub runners.
+    HUB_DETECTIVES_URL: "10:00",
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1,
@@ -144,6 +153,24 @@ def parse_opening_schedule(html: str) -> dict[int, time | None]:
                 break
             day = (day + 1) % 7
     return schedule
+
+
+def fetch_ticket_schedule(ticket_url: str, *, fetcher=fetch_page) -> str:
+    """Fetch a ticket schedule, using only an exact source-verified fallback."""
+    fallback_opening = VERIFIED_TICKET_OPENINGS.get(ticket_url)
+    try:
+        return fetcher(
+            ticket_url,
+            record_failure=fallback_opening is None,
+        )
+    except Exception:
+        if fallback_opening is None:
+            raise
+        print(
+            "Using verified ARCUB ticket opening after blocked ticket page: "
+            f"{ticket_url}"
+        )
+        return f"<span>Intervale: {fallback_opening}</span>"
 
 
 def _event(
@@ -400,7 +427,7 @@ def scrape() -> list[Event]:
         ticket_html = None
         if ticket_link:
             try:
-                ticket_html = fetch_page(ticket_link.get("href", ""))
+                ticket_html = fetch_ticket_schedule(ticket_link.get("href", ""))
             except Exception as e:
                 print(f"Failed to fetch ARCUB ticket schedule: {e}")
 

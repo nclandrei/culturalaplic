@@ -171,6 +171,7 @@ def fetch_page(
     click_count: int = 0,
     scroll_count: int = 0,
     scroll_item_selector: str | None = None,
+    record_failure: bool = True,
 ) -> str:
     """Fetch a page, using Playwright for JS-heavy sites.
 
@@ -187,6 +188,7 @@ def fetch_page(
         click_count: Number of times to click the button (0 = don't click)
         scroll_count: Number of times to scroll (for infinite scroll pages)
         scroll_item_selector: Optional selector to count items for scroll completion
+        record_failure: Whether a terminal failure should fail the owning scraper
     """
     if needs_js:
         try:
@@ -201,25 +203,29 @@ def fetch_page(
                 scroll_item_selector,
             )
         except HttpError as e:
-            _record_fetch_failure(str(e))
+            if record_failure:
+                _record_fetch_failure(str(e))
             raise
         except Exception as e:
             message = f"Failed to fetch {url}: {e}"
-            _record_fetch_failure(message)
+            if record_failure:
+                _record_fetch_failure(message)
             raise HttpError(message) from e
     else:
         try:
             return _fetch_http(url, headers)
         except httpx.HTTPStatusError as e:
             message = f"HTTP {e.response.status_code} for {url}"
-            _record_fetch_failure(message)
+            if record_failure:
+                _record_fetch_failure(message)
             raise HttpError(
                 message,
                 status_code=e.response.status_code,
             ) from e
         except Exception as e:
             message = f"Failed to fetch {url}: {e}"
-            _record_fetch_failure(message)
+            if record_failure:
+                _record_fetch_failure(message)
             raise HttpError(message) from e
 
 
