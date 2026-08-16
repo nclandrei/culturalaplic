@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  TZ: Europe/Bucharest
+
 jobs:
   scrape:
     runs-on: ubuntu-latest

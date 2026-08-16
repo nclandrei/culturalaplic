@@ -4,6 +4,12 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 
 
+def test_scrape_workflow_uses_bucharest_calendar_time():
+    workflow = (ROOT / ".github/workflows/scrape.yml").read_text()
+
+    assert "env:\n  TZ: Europe/Bucharest" in workflow
+
+
 def test_scrape_workflow_uploads_results_before_reporting_scraper_failure():
     workflow = (ROOT / ".github/workflows/scrape.yml").read_text()
 
