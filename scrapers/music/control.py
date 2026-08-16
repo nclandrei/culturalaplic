@@ -98,6 +98,8 @@ def parse_price(event_div: BeautifulSoup) -> str | None:
     if price_elem:
         price_text = price_elem.get_text(strip=True)
         price_text = re.sub(r"\s*\+\s*taxe", "", price_text)
+        if not price_text.strip(". …"):
+            return None
         return price_text
     
     if event_div.select_one(".tag.black"):

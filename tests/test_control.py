@@ -93,3 +93,27 @@ def test_scrape_skips_non_music_spoken_word_nights():
         events = control.scrape()
 
     assert events == []
+
+
+def test_loading_placeholder_is_not_published_as_a_price():
+    html = """
+    <div class="events-list-view">
+      <div class="date">
+        <div class="title"><p>Sunday, September 6, 2026</p></div>
+        <div class="room">
+          <p class="title">Berlin Room</p>
+          <div class="event" type="live" genre="garage_rock">
+            <a class="title hover" href="/event/?slug=king">King</a>
+            <span class="hour">20:00</span>
+            <span class="ticket-price price"><span class="loading">...</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    """
+
+    with patch("scrapers.music.control.fetch_page", return_value=html):
+        events = control.scrape()
+
+    assert len(events) == 1
+    assert events[0].price is None

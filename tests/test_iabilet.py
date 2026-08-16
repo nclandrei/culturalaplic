@@ -2,12 +2,15 @@ from datetime import datetime
 from urllib.parse import parse_qs, urlparse
 from unittest.mock import patch
 
+from bs4 import BeautifulSoup
+
 from scrapers.music.iabilet import (
     MUSIC_CATEGORIES,
     build_listing_url,
     extract_artist_from_title,
     is_music_event_title,
     parse_date,
+    parse_event_card,
     scrape,
 )
 
@@ -146,6 +149,21 @@ def test_november_card_and_json_ld_are_one_occurrence():
 
     assert len(events) == 1
     assert events[0].date == datetime(2026, 11, 1)
+
+
+def test_price_superscript_is_preserved_as_a_decimal():
+    html = card("Concert", "/music/concert", 24).replace(
+        "</div>\n    ",
+        '<div class="price">de la 26<sup>51</sup> lei</div></div>\n    ',
+        1,
+    )
+
+    event = parse_event_card(
+        BeautifulSoup(html, "html.parser").select_one('[data-event-list="item"]')
+    )
+
+    assert event is not None
+    assert event.price == "de la 26.51 lei"
 
 
 def test_scrape_follows_filtered_next_page_link():

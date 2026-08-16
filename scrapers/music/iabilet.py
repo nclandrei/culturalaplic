@@ -190,7 +190,12 @@ def parse_event_card(card: BeautifulSoup) -> Event | None:
     price_elem = card.select_one(".price")
     price = None
     if price_elem:
-        price_text = price_elem.get_text(strip=True)
+        price_copy = BeautifulSoup(str(price_elem), "html.parser")
+        for superscript in price_copy.select("sup"):
+            superscript.replace_with(f".{superscript.get_text(strip=True)}")
+        price_text = price_copy.get_text(" ", strip=True)
+        price_text = re.sub(r"\s*\.\s*", ".", price_text)
+        price_text = re.sub(r"\s*(lei|RON)\b", r" \1", price_text)
         if price_text:
             price = price_text
     
