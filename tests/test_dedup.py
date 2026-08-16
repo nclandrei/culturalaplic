@@ -128,6 +128,109 @@ class TestStage1Dedup:
 
         assert stage1_dedup([matinee, evening]) == [matinee, evening]
 
+    @pytest.mark.parametrize(
+        (
+            "eventbook_title",
+            "control_title",
+            "month",
+            "day",
+            "eventbook_time",
+            "control_time",
+        ),
+        [
+            (
+                "Kabinett [CO], Walentin Pauer, Nek, Duro Disco w/ Vast Solo & Kosta",
+                "Kabinett [CO], Walentin Pauer, Nek, Duro Disco w/ Vast Solo & Kosta",
+                8,
+                21,
+                (22, 0),
+                (22, 0),
+            ),
+            ("ctrl LIVE: King Automatic [FR]", "ctrl LIVE: King Automatic [FR]", 9, 6, (21, 0), (21, 0)),
+            ("ctrl LIVE: JazzyBIT & K-lu", "LIVE: JazzyBIT & K-lu [RO]", 9, 10, (21, 0), (21, 0)),
+            ("ctrl LIVE: past self [US]", "ctrl LIVE: past self [US]", 9, 16, (20, 0), (21, 0)),
+            ("City of the Sun (USA) | Live at Control | 26.09.2026", "LIVE: City of the Sun [USA]", 9, 26, (20, 0), (20, 0)),
+            ("ctrl LIVE: Holy Fuck [CA]", "ctrl LIVE: Holy Fuck [CA]", 10, 10, (20, 0), (20, 0)),
+            ("Valerinne Live + Special Guests Ordinul Negru", "LIVE: Valerinne + Special Guests: Ordinul Negru [RO]", 10, 21, (20, 0), (21, 0)),
+            ("The Underground Youth | Live at Control | 24.10.2026", "LIVE: The Underground Youth [UK/DE]", 10, 24, (20, 0), (20, 0)),
+            ("Jozef Van Wissem | Control Club | 29.10.2026", "LIVE: Jozef Van Wissem [NL]", 10, 29, (20, 0), (20, 0)),
+            ("Alt Jazz: Elijah Fox [USA]", "Alt Jazz: Elijah Fox [USA]", 11, 2, (19, 30), (19, 30)),
+            ("ctrl LIVE: The Veils", "ctrl LIVE: The Veils", 11, 6, (20, 0), (20, 0)),
+            ("ctrl LIVE: Imarhan [Algeria]", "ctrl LIVE: Imarhan [Algeria]", 11, 7, (19, 0), (20, 0)),
+            ("The Notwist (DE) | Live at Control | 21.11.2026", "LIVE: The Notwist [DE]", 11, 21, (20, 0), (20, 0)),
+            ("ctrl LIVE: Arab Strap [UK]", "ctrl LIVE: Arab Strap [UK]", 11, 26, (19, 0), (20, 0)),
+            ("ctrl LIVE: DELUXE [FR]", "ctrl LIVE: DELUXE [FR]", 11, 28, (19, 0), (20, 0)),
+        ],
+    )
+    def test_control_eventbook_overlap_prefers_first_party_occurrence(
+        self,
+        eventbook_title,
+        control_title,
+        month,
+        day,
+        eventbook_time,
+        control_time,
+    ):
+        eventbook = make_event(
+            None,
+            "Club Control",
+            datetime(2026, month, day, *eventbook_time),
+            source="eventbook",
+            title=eventbook_title,
+        )
+        control = make_event(
+            None,
+            "Control Club - Berlin Room",
+            datetime(2026, month, day, *control_time),
+            source="control",
+            title=control_title,
+        )
+
+        assert stage1_dedup([eventbook, control]) == [control]
+
+    def test_cross_source_day_match_preserves_ambiguous_multiple_performances(self):
+        eventbook = make_event(
+            None,
+            "Club Control",
+            datetime(2026, 9, 5, 20, 0),
+            source="eventbook",
+            title="Artist | Live at Control | 05.09.2026",
+        )
+        early = make_event(
+            None,
+            "Control Club - Front Room",
+            datetime(2026, 9, 5, 19, 0),
+            source="control",
+            title="LIVE: Artist",
+        )
+        late = make_event(
+            None,
+            "Control Club - Berlin Room",
+            datetime(2026, 9, 5, 21, 0),
+            source="control",
+            title="LIVE: Artist",
+        )
+
+        assert stage1_dedup([eventbook, early, late]) == [eventbook, early, late]
+
+    def test_cross_source_day_match_preserves_far_apart_performances(self):
+        matinee = make_event(
+            None,
+            "Club Control",
+            datetime(2026, 9, 5, 11, 0),
+            source="eventbook",
+            title="Artist | Live at Control | 05.09.2026",
+        )
+        evening = make_event(
+            None,
+            "Control Club - Berlin Room",
+            datetime(2026, 9, 5, 19, 0),
+            source="control",
+            title="LIVE: Artist",
+        )
+
+        assert stage1_dedup([matinee, evening]) == [matinee, evening]
+
     def test_venue_alias_detected(self):
         events = [
             make_event("The Cure", "Control", datetime(2026, 3, 15)),

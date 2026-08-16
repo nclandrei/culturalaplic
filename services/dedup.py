@@ -1,7 +1,8 @@
 import json
 import os
 import re
-from datetime import datetime
+from collections import Counter
+from datetime import date, datetime
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from google import genai
@@ -15,6 +16,9 @@ SOURCE_PRIORITY = {
     "control": 20,
 }
 TRACKING_QUERY_KEYS = {"fbclid", "gclid"}
+CONTROL_TICKET_SOURCES = frozenset({"control", "eventbook"})
+MAX_DOOR_SHOW_DELTA_SECONDS = 90 * 60
+ControlScheduleKey = tuple[str, date, str, str]
 
 # Canonical venue names -> list of known aliases/variations
 VENUE_ALIASES: dict[str, list[str]] = {
@@ -96,6 +100,80 @@ def source_priority(event: Event) -> int:
     return SOURCE_PRIORITY.get(event.source, 0)
 
 
+def normalize_control_title(title: str) -> str:
+    """Remove known Control/Eventbook packaging while retaining artist identity."""
+    title = re.sub(
+        r"\s*\|\s*(?:live at control|control club)\s*\|.*$",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = re.sub(
+        r"^\s*(?:ctrl\s+)?live\s*:\s*",
+        "",
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = re.sub(
+        r"\[(?:[A-Z]{2,3}(?:/[A-Z]{2,3})*|Algeria)\]",
+        " ",
+        title,
+    )
+    title = re.sub(r"\((?:[A-Z]{2,3}(?:/[A-Z]{2,3})*)\)", " ", title)
+    title = re.sub(
+        r"\blive(?=\s*\+\s*special guests\b)",
+        " ",
+        title,
+        flags=re.IGNORECASE,
+    )
+    title = re.sub(r"[^\w]+", " ", title.casefold(), flags=re.UNICODE)
+    return " ".join(title.split())
+
+
+def control_venue_family(venue: str) -> str:
+    """Map Control room-qualified names to the ticket feed's venue root."""
+    sanitized = sanitize_venue(venue)
+    if normalize_venue(venue) == "control" or sanitized.startswith("control club "):
+        return "control"
+    return normalize_venue(venue)
+
+
+def control_schedule_key(event: Event) -> ControlScheduleKey | None:
+    """Build the coarse key used only for the Control/Eventbook source pair."""
+    if event.source not in CONTROL_TICKET_SOURCES:
+        return None
+
+    title = normalize_control_title(event.title)
+    venue = control_venue_family(event.venue)
+    if not title or venue != "control":
+        return None
+    return event.source, event.date.date(), title, venue
+
+
+def is_unique_control_ticket_overlap(
+    event: Event,
+    existing: Event,
+    schedule_counts: Counter[ControlScheduleKey],
+) -> bool:
+    """Match a unique first-party/ticket pair without guessing among showtimes."""
+    if {event.source, existing.source} != CONTROL_TICKET_SOURCES:
+        return False
+    if event.date.date() != existing.date.date():
+        return False
+    if abs((event.date - existing.date).total_seconds()) > MAX_DOOR_SHOW_DELTA_SECONDS:
+        return False
+
+    event_key = control_schedule_key(event)
+    existing_key = control_schedule_key(existing)
+    if not event_key or not existing_key:
+        return False
+    if event_key[1:] != existing_key[1:]:
+        return False
+
+    # A coarse day-level match is safe only when both feeds have one candidate.
+    return schedule_counts[event_key] == schedule_counts[existing_key] == 1
+
+
 def stage1_dedup(events: list[Event]) -> list[Event]:
     """Deduplicate using exact match and Levenshtein similarity."""
     if not events:
@@ -103,6 +181,9 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
 
     seen_keys: set[str] = set()
     deduped: list[Event] = []
+    schedule_counts = Counter(
+        key for event in events if (key := control_schedule_key(event)) is not None
+    )
 
     for event in events:
         key = normalize_for_dedup(event)
@@ -117,6 +198,18 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
                 event.date == existing.date
                 and canonical_url
                 and canonical_url == canonicalize_url(existing.url)
+            ):
+                if source_priority(event) > source_priority(existing):
+                    seen_keys.discard(normalize_for_dedup(existing))
+                    deduped[existing_index] = event
+                    seen_keys.add(key)
+                is_duplicate = True
+                break
+
+            if is_unique_control_ticket_overlap(
+                event,
+                existing,
+                schedule_counts,
             ):
                 if source_priority(event) > source_priority(existing):
                     seen_keys.discard(normalize_for_dedup(existing))
