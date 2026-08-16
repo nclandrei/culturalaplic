@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+from datetime import datetime, time
 
 from bs4 import BeautifulSoup
 
@@ -62,6 +62,27 @@ def parse_price(event_div: BeautifulSoup) -> str | None:
     return None
 
 
+def parse_detail_start_time(html: str) -> time | None:
+    """Parse the advertised start time from an event's detail page."""
+    soup = BeautifulSoup(html, "html.parser")
+    time_elem = soup.select_one(".calListDayEventTime")
+    if not time_elem:
+        return None
+
+    match = re.search(
+        r"\b\d{1,2}:\d{2}\s*(?:AM|PM)\b",
+        time_elem.get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+
+    try:
+        return datetime.strptime(match.group(0).upper(), "%I:%M %p").time()
+    except ValueError:
+        return None
+
+
 def parse_event(event_div: BeautifulSoup) -> Event | None:
     """Parse a single event from HTML."""
     category_elem = event_div.select_one(".calListDayEventCategory")
@@ -117,6 +138,10 @@ def scrape_page(page_num: int = 1) -> tuple[list[Event], bool]:
     for event_div in soup.select(".calListDayEvent"):
         event = parse_event(event_div)
         if event:
+            detail_html = fetch_page(event.url)
+            start_time = parse_detail_start_time(detail_html)
+            if start_time:
+                event.date = datetime.combine(event.date.date(), start_time)
             events.append(event)
     
     next_page_link = soup.select_one(".calPagingNextPage a")
