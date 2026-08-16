@@ -47,7 +47,9 @@ def _is_retryable_httpx(e: BaseException) -> bool:
 
 def _is_retryable_playwright(e: BaseException) -> bool:
     """Check if playwright exception is retryable."""
-    return isinstance(e, (PlaywrightTimeout, TimeoutError))
+    return isinstance(e, (PlaywrightTimeout, TimeoutError)) or (
+        isinstance(e, HttpError) and e.status_code in RETRYABLE_STATUS_CODES
+    )
 
 
 @retry(

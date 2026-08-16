@@ -1,6 +1,6 @@
 """Unit tests for HTTP retry logic."""
 
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import httpx
 import pytest
@@ -152,6 +152,18 @@ class TestHttpRetry:
         assert get_fetch_failures() == [
             "HTTP 403 for https://example.com/events"
         ]
+
+    def test_js_fetch_retries_transient_http_statuses(self):
+        with patch("services.http.sync_playwright") as mock_playwright:
+            playwright = mock_playwright.return_value.__enter__.return_value
+            page = playwright.chromium.launch.return_value.new_page.return_value
+            page.goto.side_effect = [Mock(status=503), Mock(status=200)]
+            page.content.return_value = "<html>Recovered</html>"
+
+            result = fetch_page("https://example.com/events", needs_js=True)
+
+        assert result == "<html>Recovered</html>"
+        assert page.goto.call_count == 2
 
     @respx.mock
     def test_empty_success_page_uses_html_reader_fallback(self):
