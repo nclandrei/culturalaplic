@@ -38,6 +38,45 @@ def test_parse_exhibition_keeps_ongoing_and_permanent_exhibitions():
     assert permanent_event.date == datetime(2026, 8, 15, 11, 0)
 
 
+def test_exhibition_occurrences_respect_temporary_closures():
+    data = {
+        "rid": 1372,
+        "nameRO": "CECI N’EST PAS POP",
+        "eventStartDate": timestamp_ms(datetime(2026, 5, 23, 18, 0)),
+        "eventEndDate": timestamp_ms(datetime(2026, 10, 18, 18, 30)),
+        "permanent": False,
+        "descriptionRO": (
+            "[Această expoziție este închisă temporar "
+            "(12.08-06.09.2026).]"
+        ),
+    }
+
+    events = mnac.parse_exhibition_occurrences(
+        data,
+        now=datetime(2026, 8, 16, 12, 0),
+    )
+
+    assert [event.date for event in events] == [
+        datetime(2026, 9, day, 11, 0) for day in range(9, 14)
+    ]
+
+
+def test_undated_temporary_closure_suppresses_exhibition():
+    data = {
+        "rid": 1373,
+        "nameRO": "LAURENȚIU RUȚĂ",
+        "eventStartDate": timestamp_ms(datetime(2026, 5, 23, 18, 0)),
+        "eventEndDate": timestamp_ms(datetime(2026, 10, 18, 18, 30)),
+        "permanent": False,
+        "descriptionRO": "[Această expoziție este închisă temporar.]",
+    }
+
+    assert mnac.parse_exhibition_occurrences(
+        data,
+        now=datetime(2026, 8, 16, 12, 0),
+    ) == []
+
+
 def test_scrape_reads_current_exhibitions_from_api():
     api_response = {
         "errorCode": 0,
@@ -58,12 +97,16 @@ def test_scrape_reads_current_exhibitions_from_api():
             return "<div id='currentEvent'></div><div id='futureEvent'></div>"
         if url == mnac.CURRENT_EXHIBITIONS_URL:
             return json.dumps(api_response)
+        if url == mnac.VISITING_HOURS_URL:
+            return json.dumps(
+                {"textRO": "Muzeu: miercuri – duminică – 11:00-18:30"}
+            )
         raise AssertionError(f"Unexpected URL: {url}")
 
     with patch.object(mnac, "fetch_page", side_effect=fetch):
         events = mnac.scrape()
 
-    assert len(events) == 1
-    assert events[0].title == "CECI N’EST PAS POP"
-    assert events[0].category == "culture"
-    assert events[0].venue == "MNAC"
+    assert events
+    assert {event.title for event in events} == {"CECI N’EST PAS POP"}
+    assert {event.category for event in events} == {"culture"}
+    assert {event.venue for event in events} == {"MNAC"}

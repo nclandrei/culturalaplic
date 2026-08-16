@@ -1,5 +1,6 @@
+import json
 import re
-from datetime import datetime
+from datetime import datetime, time, timedelta
 
 from bs4 import BeautifulSoup
 
@@ -9,6 +10,17 @@ from services.http import fetch_page
 BASE_URL = "https://mare.ro"
 EXHIBITIONS_URL = f"{BASE_URL}/exhibitions-2/"
 MIN_EXPECTED_EVENTS = 1
+EXPANSION_DAYS = 30
+
+ENGLISH_WEEKDAYS = {
+    "monday": 0,
+    "tuesday": 1,
+    "wednesday": 2,
+    "thursday": 3,
+    "friday": 4,
+    "saturday": 5,
+    "sunday": 6,
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -56,6 +68,90 @@ def parse_date_range(date_text: str) -> tuple[datetime | None, datetime | None]:
     return None, None
 
 
+def parse_opening_hours(soup: BeautifulSoup) -> tuple[set[int], time] | None:
+    """Read MARe's machine-readable organization opening hours."""
+    def find_hours(value):
+        if isinstance(value, dict):
+            if value.get("openingHours"):
+                return value["openingHours"]
+            for child in value.values():
+                result = find_hours(child)
+                if result:
+                    return result
+        elif isinstance(value, list):
+            for child in value:
+                result = find_hours(child)
+                if result:
+                    return result
+        return None
+
+    for script in soup.select('script[type="application/ld+json"]'):
+        try:
+            hours = find_hours(json.loads(script.string or script.get_text()))
+        except (json.JSONDecodeError, TypeError):
+            continue
+        if not hours:
+            continue
+        entries = [hours] if isinstance(hours, str) else hours
+        for entry in entries:
+            match = re.fullmatch(
+                r"([A-Za-z,]+)\s+(\d{1,2}):(\d{2})-\d{1,2}:\d{2}",
+                entry.strip(),
+            )
+            if not match:
+                continue
+            weekdays = {
+                ENGLISH_WEEKDAYS[name.casefold()]
+                for name in match.group(1).split(",")
+                if name.casefold() in ENGLISH_WEEKDAYS
+            }
+            if weekdays:
+                return weekdays, time(int(match.group(2)), int(match.group(3)))
+    return None
+
+
+def expand_exhibition(
+    *,
+    title: str,
+    url: str,
+    start_date: datetime,
+    end_date: datetime,
+    opening_weekdays: set[int],
+    opening_time: time,
+    now: datetime,
+) -> list[Event]:
+    """Emit one source-grounded opening per open day in a rolling window."""
+    cursor = max(start_date.date(), now.date())
+    last = min(
+        end_date.date(),
+        now.date() + timedelta(days=EXPANSION_DAYS - 1),
+    )
+    description = (
+        f"Expoziție în desfășurare: "
+        f"{start_date:%d.%m.%Y}–{end_date:%d.%m.%Y}; "
+        f"deschidere la {opening_time:%H:%M}."
+    )
+    events: list[Event] = []
+    while cursor <= last:
+        if cursor.weekday() in opening_weekdays:
+            events.append(
+                Event(
+                    title=title,
+                    artist=None,
+                    venue="MARe - Muzeul de Artă Recentă",
+                    date=datetime.combine(cursor, opening_time),
+                    url=url,
+                    source="mare",
+                    category="culture",
+                    price=None,
+                    description=description,
+                    description_source="scraped",
+                )
+            )
+        cursor += timedelta(days=1)
+    return events
+
+
 def scrape() -> list[Event]:
     """Fetch current and upcoming exhibitions from MARe."""
     events: list[Event] = []
@@ -69,6 +165,11 @@ def scrape() -> list[Event]:
     
     soup = BeautifulSoup(html, "html.parser")
     now = datetime.now()
+    opening_hours = parse_opening_hours(soup)
+    if not opening_hours:
+        print("Could not find MARe opening hours")
+        return []
+    opening_weekdays, opening_time = opening_hours
     
     exhibition_items = soup.select("a.current__item")
     if exhibition_items:
@@ -93,21 +194,20 @@ def scrape() -> list[Event]:
             if date_elem:
                 start_date, end_date = parse_date_range(date_elem.get_text())
             
-            if not end_date or end_date < now:
+            if not start_date or not end_date or end_date.date() < now.date():
                 continue
-            
-            event_date = start_date if start_date and start_date > now else now.replace(hour=11, minute=0, second=0, microsecond=0)
-            
-            events.append(Event(
-                title=title,
-                artist=None,
-                venue="MARe - Muzeul de Artă Recentă",
-                date=event_date,
-                url=href,
-                source="mare",
-                category="culture",
-                price=None,
-            ))
+
+            events.extend(
+                expand_exhibition(
+                    title=title,
+                    url=href,
+                    start_date=start_date,
+                    end_date=end_date,
+                    opening_weekdays=opening_weekdays,
+                    opening_time=opening_time,
+                    now=now,
+                )
+            )
     
     events.sort(key=lambda e: e.date)
     return events
