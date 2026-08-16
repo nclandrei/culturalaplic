@@ -2,11 +2,19 @@ import json
 import os
 import re
 from datetime import datetime
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from google import genai
 from rapidfuzz import fuzz
 
 from models import Event
+
+SOURCE_PRIORITY = {
+    "eventbook": 10,
+    "jfr": 20,
+    "control": 20,
+}
+TRACKING_QUERY_KEYS = {"fbclid", "gclid"}
 
 # Canonical venue names -> list of known aliases/variations
 VENUE_ALIASES: dict[str, list[str]] = {
@@ -52,6 +60,42 @@ def normalize_for_dedup(event: Event) -> str:
     return f"{event.source}|{identity}|{date_str}|{venue}"
 
 
+def canonicalize_url(url: str) -> str:
+    """Normalize URL spelling without discarding identity-bearing query params."""
+    try:
+        parsed = urlsplit(url.strip())
+        hostname = parsed.hostname
+        if not hostname:
+            return url.strip()
+
+        hostname = hostname.casefold().removeprefix("www.")
+        port = parsed.port
+        if port and not (
+            (parsed.scheme.casefold() == "http" and port == 80)
+            or (parsed.scheme.casefold() == "https" and port == 443)
+        ):
+            hostname = f"{hostname}:{port}"
+
+        path = re.sub(r"/{2,}", "/", parsed.path or "/")
+        if path != "/":
+            path = path.rstrip("/")
+
+        query = urlencode(sorted(
+            (key, value)
+            for key, value in parse_qsl(parsed.query, keep_blank_values=True)
+            if not key.casefold().startswith("utm_")
+            and key.casefold() not in TRACKING_QUERY_KEYS
+        ))
+        return urlunsplit(("https", hostname, path, query, ""))
+    except ValueError:
+        return url.strip()
+
+
+def source_priority(event: Event) -> int:
+    """Prefer curated or first-party records over the generic ticket feed."""
+    return SOURCE_PRIORITY.get(event.source, 0)
+
+
 def stage1_dedup(events: list[Event]) -> list[Event]:
     """Deduplicate using exact match and Levenshtein similarity."""
     if not events:
@@ -67,7 +111,20 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
 
         is_duplicate = False
         event_venue_norm = normalize_venue(event.venue)
-        for existing in deduped:
+        canonical_url = canonicalize_url(event.url)
+        for existing_index, existing in enumerate(deduped):
+            if (
+                event.date == existing.date
+                and canonical_url
+                and canonical_url == canonicalize_url(existing.url)
+            ):
+                if source_priority(event) > source_priority(existing):
+                    seen_keys.discard(normalize_for_dedup(existing))
+                    deduped[existing_index] = event
+                    seen_keys.add(key)
+                is_duplicate = True
+                break
+
             if event.source == existing.source:
                 if event.date != existing.date:
                     continue

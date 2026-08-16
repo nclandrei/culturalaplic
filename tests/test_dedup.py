@@ -7,6 +7,7 @@ import pytest
 
 from models import Event
 from services.dedup import (
+    canonicalize_url,
     llm_dedup,
     normalize_venue,
     sanitize_venue,
@@ -51,6 +52,14 @@ class TestVenueNormalization:
         assert normalize_venue("Some Unknown Venue") == "some unknown venue"
 
 
+class TestUrlCanonicalization:
+    def test_identity_query_parameters_are_preserved(self):
+        first = canonicalize_url("https://control-club.ro/event/?slug=first")
+        second = canonicalize_url("https://control-club.ro/event/?slug=second")
+
+        assert first != second
+
+
 class TestStage1Dedup:
     def test_empty_list(self):
         assert stage1_dedup([]) == []
@@ -71,6 +80,53 @@ class TestStage1Dedup:
         result = stage1_dedup(events)
         assert len(result) == 1
         assert result[0].source == "iabilet"
+
+    def test_same_canonical_url_and_datetime_prefers_curated_source(self):
+        eventbook = make_event(
+            "Magnus ÖSTRÖM & Andrii POKAZ",
+            "Sala Dalles București",
+            datetime(2026, 9, 4, 19, 0),
+            source="eventbook",
+            title=(
+                "Magnus ÖSTRÖM & Andrii POKAZ / Sara ALDEN Trio / "
+                "JAZZAMBASSADEN la Jazz Fan Rising BUCUREȘTI"
+            ),
+        )
+        jfr = make_event(
+            "Magnus ÖSTRÖM & Andrii POKAZ / Sara ALDEN Trio / JAZZAMBASSADEN",
+            "Sala Dalles București",
+            datetime(2026, 9, 4, 19, 0),
+            source="jfr",
+            title=eventbook.title,
+        )
+        eventbook.url = (
+            "https://www.eventbook.ro/music/bilete-jazzamnassaden-jfr-bucuresti/"
+            "?utm_source=agenda#tickets"
+        )
+        jfr.url = "http://eventbook.ro/music/bilete-jazzamnassaden-jfr-bucuresti"
+
+        result = stage1_dedup([eventbook, jfr])
+
+        assert result == [jfr]
+
+    def test_same_url_keeps_separate_performance_times(self):
+        matinee = make_event(
+            "Company",
+            "TNB",
+            datetime(2026, 9, 5, 11, 0),
+            source="eventbook",
+            title="Two-show production",
+        )
+        evening = make_event(
+            "Company",
+            "TNB",
+            datetime(2026, 9, 5, 19, 0),
+            source="eventbook",
+            title=matinee.title,
+        )
+        evening.url = matinee.url
+
+        assert stage1_dedup([matinee, evening]) == [matinee, evening]
 
     def test_venue_alias_detected(self):
         events = [
