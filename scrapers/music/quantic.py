@@ -25,19 +25,43 @@ def extract_artist_from_title(title: str) -> str | None:
     return title
 
 
-def parse_datetime(time_elem: BeautifulSoup) -> datetime | None:
-    """Parse datetime from the time element in tooltip."""
+def parse_datetime(
+    time_elem: BeautifulSoup,
+    visible_start_elem: BeautifulSoup | None = None,
+) -> datetime | None:
+    """Combine the tooltip's calendar date with its explicit start time."""
     if not time_elem:
         return None
     
     datetime_attr = time_elem.get("datetime")
-    if datetime_attr:
+    if not datetime_attr:
+        return None
+
+    try:
+        event_date = datetime.strptime(datetime_attr, "%Y-%m-%d")
+    except ValueError:
+        return None
+
+    if visible_start_elem:
+        start_attr = visible_start_elem.get("datetime", "")
         try:
-            return datetime.strptime(datetime_attr, "%Y-%m-%d")
+            start_time = datetime.strptime(start_attr, "%H:%M").time()
+            return datetime.combine(event_date.date(), start_time)
         except ValueError:
             pass
-    
-    return None
+
+    match = re.search(
+        r"@\s*(\d{1,2}):(\d{2})\s*(am|pm)",
+        time_elem.get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if match:
+        hour = int(match.group(1)) % 12
+        if match.group(3).lower() == "pm":
+            hour += 12
+        return event_date.replace(hour=hour, minute=int(match.group(2)))
+
+    return event_date
 
 
 def parse_event(event_article: BeautifulSoup, soup: BeautifulSoup) -> Event | None:
@@ -62,7 +86,10 @@ def parse_event(event_article: BeautifulSoup, soup: BeautifulSoup) -> Event | No
         return None
     
     time_elem = tooltip.select_one("time[datetime]")
-    event_date = parse_datetime(time_elem)
+    visible_start_elem = event_article.select_one(
+        ".tribe-events-calendar-month__calendar-event-datetime time[datetime]"
+    )
+    event_date = parse_datetime(time_elem, visible_start_elem)
     if not event_date:
         return None
     
