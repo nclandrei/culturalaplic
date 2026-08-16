@@ -100,6 +100,30 @@ def test_ticket_sale_time_is_not_used_as_show_time():
     assert events[0].date == datetime(2026, 9, 7)
 
 
+def test_scrape_enriches_a_date_only_card_from_its_detail_page():
+    listing_html = card(
+        "Directia 5 - Dubla aniversare",
+        "/bilete-directia-5-127180/",
+        24,
+    )
+    detail_html = """
+    <div class="date">
+      joi, 24 septembrie, ora 20:00 acces de la 19:00
+    </div>
+    """
+
+    def fetch(url: str) -> str:
+        if url.endswith("/bilete-directia-5-127180/"):
+            return detail_html
+        return listing_html
+
+    with patch("scrapers.music.iabilet.fetch_page", side_effect=fetch):
+        events = scrape()
+
+    assert len(events) == 1
+    assert events[0].date == datetime(2026, 9, 24, 20, 0)
+
+
 def test_november_card_and_json_ld_are_one_occurrence():
     html = card(
         "Pink Floyd History",
@@ -181,4 +205,8 @@ def test_scrape_unions_events_across_unstable_pagination_passes():
         "Boundary concert",
     ]
     assert page_two_calls == 3
-    assert mocked_fetch.call_count == 6
+    listing_calls = [
+        call for call in mocked_fetch.call_args_list
+        if "filtersSubmitted=1" in call.args[0]
+    ]
+    assert len(listing_calls) == 6

@@ -127,6 +127,23 @@ def extract_card_time(card: BeautifulSoup) -> tuple[int, int] | None:
     return None
 
 
+def extract_detail_time(html: str) -> tuple[int, int] | None:
+    """Extract the show time (not access time) from an event detail page."""
+    soup = BeautifulSoup(html, "html.parser")
+    date_elem = soup.select_one(".date")
+    if not date_elem:
+        return None
+
+    match = re.search(
+        r"\bora\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b",
+        date_elem.get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    return int(match.group(1)), int(match.group(2))
+
+
 def parse_event_card(card: BeautifulSoup) -> Event | None:
     """Parse a single event card from the HTML."""
     title_elem = card.select_one(".title a span")
@@ -306,5 +323,19 @@ def scrape() -> list[Event]:
 
         if pass_number >= 1 and len(events) == count_before_pass:
             break
+
+    for event in events:
+        if event.date.hour != 0 or event.date.minute != 0:
+            continue
+        try:
+            detail_html = fetch_page(event.url)
+        except Exception as e:
+            print(f"Failed to fetch iaBilet detail {event.url}: {e}")
+            continue
+        start_time = extract_detail_time(detail_html)
+        if start_time:
+            event.date = event.date.replace(
+                hour=start_time[0], minute=start_time[1]
+            )
     
     return events
