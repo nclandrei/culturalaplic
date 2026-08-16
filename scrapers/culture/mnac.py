@@ -220,10 +220,10 @@ def scrape_current_exhibitions() -> list[Event]:
         response = json.loads(response_text)
     except (json.JSONDecodeError, TypeError, ValueError) as e:
         print(f"Failed to parse MNAC current exhibitions: {e}")
-        return []
+        raise
     except Exception as e:
         print(f"Failed to fetch MNAC current exhibitions: {e}")
-        return []
+        raise
 
     events: list[Event] = []
     for data in response.get("eventList") or []:

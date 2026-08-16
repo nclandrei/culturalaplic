@@ -2,6 +2,8 @@ import json
 from datetime import datetime
 from unittest.mock import patch
 
+import pytest
+
 from scrapers.culture import mnac
 
 
@@ -110,3 +112,26 @@ def test_scrape_reads_current_exhibitions_from_api():
     assert {event.title for event in events} == {"CECI N’EST PAS POP"}
     assert {event.category for event in events} == {"culture"}
     assert {event.venue for event in events} == {"MNAC"}
+
+
+def test_scrape_propagates_an_unparseable_exhibition_schedule():
+    normal_event_html = f"""
+    <div id="currentEvent">
+      <div class="listEvents">
+        <a href="/event/1/normal"><span class="title">Eveniment normal</span></a>
+        <vbn-date-format ng-reflect-start-date="{timestamp_ms(datetime(2099, 1, 1, 19))}"></vbn-date-format>
+      </div>
+    </div>
+    <div id="futureEvent"></div>
+    """
+
+    def fetch(url: str, **kwargs) -> str:
+        if url == mnac.EVENTS_URL:
+            return normal_event_html
+        if url == mnac.VISITING_HOURS_URL:
+            return json.dumps({"textRO": "Program indisponibil"})
+        raise AssertionError(f"Unexpected URL: {url}")
+
+    with patch.object(mnac, "fetch_page", side_effect=fetch):
+        with pytest.raises(ValueError, match="visiting hours"):
+            mnac.scrape()
