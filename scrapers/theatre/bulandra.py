@@ -7,6 +7,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.bulandra.ro"
 EVENTS_URL = f"{BASE_URL}/program/"
+BUCHAREST_ROOMS = {"Toma Caragiu", "Liviu Ciulei"}
 
 
 def extract_feed_data(html: str) -> list[dict]:
@@ -61,6 +62,9 @@ def parse_json_event(data: dict) -> Event | None:
             sala_name = re.sub(r'\s*\([^)]+\)', '', sala_name).strip()
         else:
             sala_name = "Unknown"
+
+        if sala_name not in BUCHAREST_ROOMS:
+            return None
         
         venue = f"Teatrul Bulandra - {sala_name}"
         
@@ -68,12 +72,16 @@ def parse_json_event(data: dict) -> Event | None:
         if isinstance(buttons, dict):
             main_btn = buttons.get("main", {})
             custom_url = main_btn.get("custom_url") if isinstance(main_btn, dict) else None
+            show_permalink = main_btn.get("permalink") if isinstance(main_btn, dict) else None
         else:
             custom_url = None
+            show_permalink = None
         permalink = data.get("permalink", "")
         
         if custom_url:
             url = custom_url
+        elif show_permalink:
+            url = show_permalink
         elif permalink:
             url = permalink
         else:
