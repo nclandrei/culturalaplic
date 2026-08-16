@@ -17,7 +17,11 @@ from services.email import ScraperError
 from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
 from scrapers.music import ateneul, bfh, control, enescu, eventbook as eventbook_music, expirat, garana, hardrock, iabilet, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
 from scrapers.theatre import bulandra, cuibul, eventbook as eventbook_theatre, godot, grivita53, metropolis, nottara, teatrulmic, tnb
-from services.dedup import llm_dedup, stage1_dedup
+from services.dedup import (
+    dedup_serialized_cross_source,
+    llm_dedup,
+    stage1_dedup,
+)
 from services.enrichment import enrich_events
 from services.http import get_fetch_failures, reset_fetch_failures
 from services.spotify import search_artist
@@ -375,6 +379,9 @@ def save_results(
         successful_scraper_sources["culture"],
     )
 
+    merged_music = dedup_serialized_cross_source(merged_music)
+    merged_theatre = dedup_serialized_cross_source(merged_theatre)
+    merged_culture = dedup_serialized_cross_source(merged_culture)
     merged_music = cleanup_past_events(merged_music)
     merged_theatre = cleanup_past_events(merged_theatre)
     merged_culture = cleanup_past_events(merged_culture)
@@ -502,9 +509,9 @@ def merge_group_artifacts() -> None:
                 result.append(event)
         return result
 
-    all_music = dedup_by_key(all_music)
-    all_theatre = dedup_by_key(all_theatre)
-    all_culture = dedup_by_key(all_culture)
+    all_music = dedup_by_key(dedup_serialized_cross_source(all_music))
+    all_theatre = dedup_by_key(dedup_serialized_cross_source(all_theatre))
+    all_culture = dedup_by_key(dedup_serialized_cross_source(all_culture))
 
     # Clean up past events
     all_music = cleanup_past_events(all_music)

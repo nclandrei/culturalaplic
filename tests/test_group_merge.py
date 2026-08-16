@@ -145,3 +145,76 @@ def test_merge_replaces_events_only_for_successfully_scraped_sources(
     merged = json.loads(events_file.read_text())
     titles = {item["title"] for item in merged["culture_events"]}
     assert titles == {"Current Improteca event", "Preserved failed feed"}
+
+
+def test_merge_deduplicates_retained_first_party_and_fresh_ticket_rows(
+    tmp_path, monkeypatch
+):
+    artifacts_dir = tmp_path / "artifacts"
+    data_dir = tmp_path / "data"
+    artifacts_dir.mkdir()
+    data_dir.mkdir()
+    events_file = data_dir / "events.json"
+
+    event_day = (datetime.now() + timedelta(days=30)).replace(
+        hour=19,
+        minute=0,
+        second=0,
+        microsecond=0,
+    )
+    jfr = {
+        **event("Jazz Fan Rising", "jfr", "music"),
+        "artist": "Magnus ÖSTRÖM / Sara ALDEN Trio / JAZZAMBASSADEN",
+        "venue": "Sala Dalles București",
+        "date": event_day.isoformat(),
+        "url": "https://eventbook.ro/music/bilete-jfr",
+    }
+    eventbook_jfr = {
+        **jfr,
+        "artist": "Magnus ÖSTRÖM",
+        "source": "eventbook",
+    }
+    control = {
+        **event("LIVE: Valerinne + Special Guests: Ordinul Negru [RO]", "control", "music"),
+        "venue": "Control Club - Berlin Room",
+        "date": event_day.replace(hour=20).isoformat(),
+    }
+    eventbook_control = {
+        **event("Valerinne Live + Special Guests Ordinul Negru", "eventbook", "music"),
+        "venue": "Club Control",
+        "date": event_day.isoformat(),
+    }
+
+    events_file.write_text(
+        json.dumps(
+            {
+                "scraped_at": "2026-08-14T09:00:00",
+                "music_events": [jfr, control],
+                "theatre_events": [],
+                "culture_events": [],
+            }
+        )
+    )
+    write_group_artifact(
+        artifacts_dir / "events_group_1.json",
+        group=1,
+        successful_sources={
+            "music": ["eventbook"],
+            "theatre": [],
+            "culture": [],
+        },
+        music_events=[eventbook_jfr, eventbook_control],
+    )
+    write_group_artifact(artifacts_dir / "events_group_2.json", group=2)
+
+    monkeypatch.setattr(main, "ARTIFACTS_DIR", artifacts_dir)
+    monkeypatch.setattr(main, "DATA_DIR", data_dir)
+    monkeypatch.setattr(main, "EVENTS_FILE", events_file)
+
+    main.merge_group_artifacts()
+
+    merged = json.loads(events_file.read_text())
+    assert [item["source"] for item in merged["music_events"]] == [
+        "jfr",
+        "control",
+    ]

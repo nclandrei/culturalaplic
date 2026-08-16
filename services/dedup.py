@@ -174,16 +174,102 @@ def is_unique_control_ticket_overlap(
     return schedule_counts[event_key] == schedule_counts[existing_key] == 1
 
 
+def dedup_preferred_cross_source(events: list[Event]) -> list[Event]:
+    """Apply deterministic cross-source rules and retain the preferred record."""
+    schedule_counts = Counter(
+        key for event in events if (key := control_schedule_key(event)) is not None
+    )
+    deduped: list[Event] = []
+
+    for event in events:
+        canonical_url = canonicalize_url(event.url)
+        is_duplicate = False
+        for existing_index, existing in enumerate(deduped):
+            same_canonical_occurrence = (
+                event.date == existing.date
+                and canonical_url
+                and canonical_url == canonicalize_url(existing.url)
+            )
+            if same_canonical_occurrence or is_unique_control_ticket_overlap(
+                event,
+                existing,
+                schedule_counts,
+            ):
+                if source_priority(event) > source_priority(existing):
+                    deduped[existing_index] = event
+                is_duplicate = True
+                break
+
+        if not is_duplicate:
+            deduped.append(event)
+
+    return deduped
+
+
+def event_from_serialized(record: dict) -> Event | None:
+    """Build a matching-only Event while leaving the serialized record intact."""
+    date_value = record.get("date")
+    try:
+        if isinstance(date_value, datetime):
+            event_date = date_value
+        elif isinstance(date_value, str):
+            event_date = datetime.fromisoformat(date_value.replace("Z", "+00:00"))
+        else:
+            return None
+    except ValueError:
+        return None
+    event_date = event_date.replace(tzinfo=None)
+
+    title = record.get("title")
+    venue = record.get("venue")
+    url = record.get("url")
+    source = record.get("source")
+    category = record.get("category")
+    artist = record.get("artist")
+    if not all(isinstance(value, str) for value in (title, venue, url, source)):
+        return None
+    if category not in {"music", "theatre", "culture"}:
+        return None
+    if artist is not None and not isinstance(artist, str):
+        return None
+
+    return Event(
+        title=title,
+        artist=artist,
+        venue=venue,
+        date=event_date,
+        url=url,
+        source=source,
+        category=category,
+    )
+
+
+def dedup_serialized_cross_source(records: list[dict]) -> list[dict]:
+    """Apply deterministic cross-source rules without losing serialized fields."""
+    events: list[Event] = []
+    records_by_event_id: dict[int, dict] = {}
+    unparsed_records: list[dict] = []
+
+    for record in records:
+        event = event_from_serialized(record)
+        if event is None:
+            unparsed_records.append(record)
+            continue
+        events.append(event)
+        records_by_event_id[id(event)] = record
+
+    preferred = dedup_preferred_cross_source(events)
+    return [records_by_event_id[id(event)] for event in preferred] + unparsed_records
+
+
 def stage1_dedup(events: list[Event]) -> list[Event]:
     """Deduplicate using exact match and Levenshtein similarity."""
     if not events:
         return []
 
+    events = dedup_preferred_cross_source(events)
     seen_keys: set[str] = set()
     deduped: list[Event] = []
-    schedule_counts = Counter(
-        key for event in events if (key := control_schedule_key(event)) is not None
-    )
 
     for event in events:
         key = normalize_for_dedup(event)
@@ -192,32 +278,7 @@ def stage1_dedup(events: list[Event]) -> list[Event]:
 
         is_duplicate = False
         event_venue_norm = normalize_venue(event.venue)
-        canonical_url = canonicalize_url(event.url)
-        for existing_index, existing in enumerate(deduped):
-            if (
-                event.date == existing.date
-                and canonical_url
-                and canonical_url == canonicalize_url(existing.url)
-            ):
-                if source_priority(event) > source_priority(existing):
-                    seen_keys.discard(normalize_for_dedup(existing))
-                    deduped[existing_index] = event
-                    seen_keys.add(key)
-                is_duplicate = True
-                break
-
-            if is_unique_control_ticket_overlap(
-                event,
-                existing,
-                schedule_counts,
-            ):
-                if source_priority(event) > source_priority(existing):
-                    seen_keys.discard(normalize_for_dedup(existing))
-                    deduped[existing_index] = event
-                    seen_keys.add(key)
-                is_duplicate = True
-                break
-
+        for existing in deduped:
             if event.source == existing.source:
                 if event.date != existing.date:
                     continue
