@@ -33,6 +33,18 @@ def parse_event_time(event_div: BeautifulSoup) -> tuple[int, int] | None:
     return None
 
 
+def parse_show_time(html: str) -> tuple[int, int] | None:
+    """Extract an explicit show time from the event detail copy."""
+    match = re.search(
+        r"\bShow\s*Time\s*:\s*([01]?\d|2[0-3]):([0-5]\d)\b",
+        BeautifulSoup(html, "html.parser").get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    return int(match.group(1)), int(match.group(2))
+
+
 def extract_artist_from_title(title: str) -> str | None:
     """Extract artist name from event title.
     
@@ -100,6 +112,15 @@ def parse_price(event_div: BeautifulSoup) -> str | None:
 
 def parse_event(event_div: BeautifulSoup, event_date: datetime, room: str) -> Event | None:
     """Parse a single event from HTML."""
+    event_type = (event_div.get("type") or "").casefold()
+    genres = {
+        genre.strip().casefold()
+        for genre in (event_div.get("genre") or "").split(",")
+        if genre.strip()
+    }
+    if event_type == "nights" and genres == {"spoken_word"}:
+        return None
+
     title_elem = event_div.select_one("a.title.hover")
     if not title_elem:
         return None
@@ -164,6 +185,16 @@ def scrape() -> list[Event]:
             for event_div in room_section.select(".event"):
                 event = parse_event(event_div, event_date, room)
                 if event and event.url not in seen_urls:
+                    try:
+                        detail_html = fetch_page(event.url)
+                    except Exception as e:
+                        print(f"Failed to fetch Control detail {event.url}: {e}")
+                    else:
+                        show_time = parse_show_time(detail_html)
+                        if show_time:
+                            event.date = event.date.replace(
+                                hour=show_time[0], minute=show_time[1]
+                            )
                     seen_urls.add(event.url)
                     events.append(event)
     
