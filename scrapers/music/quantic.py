@@ -1,14 +1,51 @@
+import json
 import re
 from datetime import datetime
+from urllib.parse import urlparse
 from dateutil.relativedelta import relativedelta
 
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page_with_reader_fallback
+from services.http import fetch_page, fetch_page_with_reader_fallback
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
+TICKET_HOSTS = (
+    "bilete.quantic.pub",
+    "iabilet.ro",
+    "ticketbox.ro",
+    "entertix.ro",
+    "ambilet.ro",
+    "bilet.ro",
+)
+
+ROMANIAN_MONTHS = {
+    "ianuarie": 1,
+    "februarie": 2,
+    "martie": 3,
+    "aprilie": 4,
+    "mai": 5,
+    "iunie": 6,
+    "iulie": 7,
+    "august": 8,
+    "septembrie": 9,
+    "octombrie": 10,
+    "noiembrie": 11,
+    "decembrie": 12,
+    "ian": 1,
+    "feb": 2,
+    "mar": 3,
+    "apr": 4,
+    "iun": 6,
+    "iul": 7,
+    "aug": 8,
+    "sep": 9,
+    "oct": 10,
+    "noi": 11,
+    "nov": 11,
+    "dec": 12,
+}
 
 
 def get_month_url(year: int, month: int) -> str:
@@ -23,6 +60,115 @@ def extract_artist_from_title(title: str) -> str | None:
         if sep in title:
             return title.split(sep)[0].strip()
     return title
+
+
+def find_ticket_url(html: str) -> str | None:
+    """Find the first recognized ticketing link on a Quantic detail page."""
+    soup = BeautifulSoup(html, "html.parser")
+    for link in soup.select("a[href]"):
+        href = link.get("href", "")
+        host = urlparse(href).hostname or ""
+        if any(host == suffix or host.endswith(f".{suffix}") for suffix in TICKET_HOSTS):
+            return href
+    return None
+
+
+def _json_ld_event_start(soup: BeautifulSoup) -> datetime | None:
+    def find_event(value):
+        if isinstance(value, dict):
+            if value.get("@type") == "Event" and value.get("startDate"):
+                return value.get("startDate")
+            for child in value.values():
+                result = find_event(child)
+                if result:
+                    return result
+        elif isinstance(value, list):
+            for child in value:
+                result = find_event(child)
+                if result:
+                    return result
+        return None
+
+    for script in soup.select('script[type="application/ld+json"]'):
+        raw = script.string or script.get_text()
+        raw = raw.replace("/*<![CDATA[*/", "").replace("/*]]>*/", "").strip()
+        try:
+            start_value = find_event(json.loads(raw))
+        except (json.JSONDecodeError, TypeError):
+            continue
+        if not start_value:
+            continue
+        try:
+            parsed = datetime.fromisoformat(str(start_value).replace("Z", "+00:00"))
+            return parsed.replace(tzinfo=None)
+        except ValueError:
+            continue
+    return None
+
+
+def parse_ticket_datetime(html: str, ticket_url: str) -> datetime | None:
+    """Parse only an unambiguous show datetime from a linked ticket page."""
+    soup = BeautifulSoup(html, "html.parser")
+    text = soup.get_text(" ", strip=True)
+    event_date = _json_ld_event_start(soup)
+
+    if event_date is None:
+        time_elem = soup.select_one("time[datetime]")
+        raw_datetime = time_elem.get("datetime", "") if time_elem else ""
+        try:
+            event_date = datetime.fromisoformat(
+                raw_datetime.replace("Z", "+00:00")
+            ).replace(tzinfo=None)
+        except ValueError:
+            event_date = None
+
+    if event_date is None:
+        date_match = re.search(
+            r"\b(\d{1,2})\s+([a-zăâîșț]+)(?:\s+(\d{4}))?\b",
+            text.casefold(),
+        )
+        if date_match:
+            month = ROMANIAN_MONTHS.get(date_match.group(2))
+            if month:
+                year = int(date_match.group(3) or datetime.now().year)
+                try:
+                    event_date = datetime(year, month, int(date_match.group(1)))
+                except ValueError:
+                    event_date = None
+
+    if event_date is None:
+        return None
+
+    show_patterns = (
+        r"\bSTART\s+SHOW\s*:\s*([01]?\d|2[0-3]):([0-5]\d)\b",
+        r"\bEvent\s+hour\s*:?\s*([01]?\d|2[0-3]):([0-5]\d)\b",
+        r"\bora\s*([01]?\d|2[0-3]):([0-5]\d)\b",
+    )
+    for pattern in show_patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return event_date.replace(
+                hour=int(match.group(1)), minute=int(match.group(2))
+            )
+
+    if event_date.hour or event_date.minute:
+        return event_date
+    return None
+
+
+def enrich_event_from_ticket(event: Event) -> None:
+    """Override a calendar access time when its ticket page states a show time."""
+    detail_html = fetch_page_with_reader_fallback(
+        event.url,
+        expected_text="tribe-events",
+    )
+    ticket_url = find_ticket_url(detail_html)
+    if not ticket_url:
+        return
+    ticket_html = fetch_page(ticket_url)
+    ticket_datetime = parse_ticket_datetime(ticket_html, ticket_url)
+    if ticket_datetime:
+        event.date = ticket_datetime
 
 
 def parse_datetime(
@@ -196,6 +342,12 @@ def scrape() -> list[Event]:
             if event.url not in seen_urls:
                 seen_urls.add(event.url)
                 events.append(event)
+
+    for event in events:
+        try:
+            enrich_event_from_ticket(event)
+        except Exception as e:
+            print(f"Failed to verify Quantic ticket time for {event.url}: {e}")
     
     events.sort(key=lambda e: e.date)
     

@@ -2,7 +2,14 @@ from datetime import datetime
 
 from bs4 import BeautifulSoup
 
-from scrapers.music.quantic import parse_event, parse_multiday_event
+from models import Event
+from scrapers.music import quantic
+from scrapers.music.quantic import (
+    enrich_event_from_ticket,
+    parse_event,
+    parse_multiday_event,
+    parse_ticket_datetime,
+)
 
 
 def test_parse_event_combines_calendar_date_with_visible_start_time():
@@ -57,3 +64,69 @@ def test_parse_multiday_event_uses_the_explicit_first_day_start_time():
 
     assert event is not None
     assert event.date == datetime(2026, 9, 4, 17, 0)
+
+
+def test_ticketbox_start_show_overrides_open_doors():
+    html = """
+    <time datetime="2026-09-09T20:00:00.000Z">9 Septembrie, 20:00</time>
+    <p>OPEN DOORS: 19:00 START SHOW: 20:00</p>
+    """
+
+    assert parse_ticket_datetime(html, "https://ticketbox.ro/ro/event/307") == (
+        datetime(2026, 9, 9, 20, 0)
+    )
+
+
+def test_iabilet_whitelabel_can_override_a_rescheduled_date():
+    html = """
+    <script type="application/ld+json">
+    {
+      "@type": "Event",
+      "name": "Xzibit",
+      "startDate": "2026-11-12"
+    }
+    </script>
+    <div class="date-location">
+      <p>joi, 12 noiembrie, ora 20:00 acces de la 19:00</p>
+    </div>
+    """
+
+    assert parse_ticket_datetime(
+        html,
+        "https://bilete.quantic.pub/bilete-xzibit-126726/",
+    ) == datetime(2026, 11, 12, 20, 0)
+
+
+def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
+    event = Event(
+        title="Trio Mandili live in Bucharest",
+        artist="Trio Mandili live in Bucharest",
+        venue="Quantic",
+        date=datetime(2026, 9, 12, 20, 0),
+        url="https://quantic.pub/eveniment/trio-mandili/",
+        source="quantic",
+        category="music",
+    )
+    detail_html = """
+    <a href="https://bilete.quantic.pub/bilete-trio-mandili-126954/">
+      Bilete
+    </a>
+    """
+    ticket_html = """
+    <script type="application/ld+json">
+      {"@type":"Event", "startDate":"2026-09-12"}
+    </script>
+    <div class="date-location">
+      <p>12 septembrie, ora 21:00 acces de la 20:00</p>
+    </div>
+    """
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: detail_html,
+    )
+    monkeypatch.setattr(quantic, "fetch_page", lambda *args, **kwargs: ticket_html)
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 9, 12, 21, 0)
