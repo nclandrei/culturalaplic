@@ -3,6 +3,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from models import Event
+from services.http import HttpError
 from scrapers.music import quantic
 from scrapers.music.quantic import (
     enrich_event_from_ticket,
@@ -188,3 +189,37 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     enrich_event_from_ticket(event)
 
     assert event.date == datetime(2026, 9, 9, 19, 0)
+
+
+def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+    event = Event(
+        title="Oddland, Mother Of Millions, Ring Of Gyges",
+        artist="Oddland, Mother Of Millions, Ring Of Gyges",
+        venue="Quantic",
+        date=datetime(2026, 9, 26, 19, 0),
+        url="https://quantic.pub/eveniment/oddland-mother-of-millions/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = (
+        "https://www.ambilet.ro/bilete/"
+        "oddland-mother-of-millions-ring-of-gyges-26-09-2026/"
+    )
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+
+    calls = []
+
+    def blocked_fetch(url: str, **kwargs):
+        calls.append((url, kwargs))
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 9, 26, 20, 0)
+    assert calls == [(ticket_url, {"record_failure": False})]

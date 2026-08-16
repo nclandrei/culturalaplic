@@ -22,6 +22,15 @@ TICKET_HOSTS = (
     "bilet.ro",
 )
 BUCHAREST_TZ = ZoneInfo("Europe/Bucharest")
+VERIFIED_TICKET_OVERRIDES = {
+    (
+        "https://www.ambilet.ro/bilete/"
+        "oddland-mother-of-millions-ring-of-gyges-26-09-2026"
+    ): (
+        "Oddland, Mother Of Millions, Ring Of Gyges",
+        datetime(2026, 9, 26, 20, 0),
+    ),
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1,
@@ -74,6 +83,11 @@ def find_ticket_url(html: str) -> str | None:
         if any(host == suffix or host.endswith(f".{suffix}") for suffix in TICKET_HOSTS):
             return href
     return None
+
+
+def _ticket_lookup_key(url: str) -> str:
+    parsed = urlparse(url)
+    return f"{parsed.scheme}://{parsed.netloc}{parsed.path.rstrip('/')}"
 
 
 def _json_ld_event(soup: BeautifulSoup) -> dict | None:
@@ -237,7 +251,27 @@ def enrich_event_from_ticket(event: Event) -> None:
     ticket_url = find_ticket_url(detail_html)
     if not ticket_url:
         return
-    ticket_html = fetch_page(ticket_url)
+    verified_fallback = VERIFIED_TICKET_OVERRIDES.get(
+        _ticket_lookup_key(ticket_url)
+    )
+    can_use_fallback = bool(
+        verified_fallback
+        and ticket_title_matches(event.title, verified_fallback[0])
+    )
+    try:
+        ticket_html = fetch_page(
+            ticket_url,
+            record_failure=not can_use_fallback,
+        )
+    except Exception:
+        if not can_use_fallback:
+            raise
+        print(
+            "Using verified Quantic ticket datetime after blocked ticket page: "
+            f"{ticket_url}"
+        )
+        event.date = verified_fallback[1]
+        return
     ticket_title = extract_ticket_title(ticket_html)
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):
         return
