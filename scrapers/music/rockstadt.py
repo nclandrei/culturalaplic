@@ -1,74 +1,79 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 
 from models import Event
 from services.http import fetch_page
 
-BASE_URL = "https://rockstadtextremefest.ro"
-EVENTS_URL = f"{BASE_URL}/line-up/"
+SCHEDULE_URL = (
+    "https://bilete.rockstadtextremefest.ro/"
+    "bilete-rockstadt-extreme-fest-2026-118254/?direct=true"
+)
 ALLOW_EMPTY_RESULTS = True  # Annual festival; its next lineup may be unpublished.
-
-FESTIVAL_START_DAY = 27
-FESTIVAL_MONTH = 7
-
-
-def get_festival_year() -> int:
-    """Get the festival year (current year or next if past July)."""
-    now = datetime.now()
-    if now.month > FESTIVAL_MONTH or (now.month == FESTIVAL_MONTH and now.day > 31):
-        return now.year + 1
-    return now.year
 
 
 def scrape() -> list[Event]:
-    """Fetch upcoming artists from Rockstadt Extreme Fest.
-    
-    Note: Day-by-day lineup is not yet available, so all artists are
-    assigned to the first day of the festival (July 27).
-    """
+    """Fetch explicitly scheduled Rockstadt Extreme Fest occurrences."""
     events: list[Event] = []
-    seen: set[str] = set()
+    seen: set[tuple[str, datetime, str]] = set()
     
     try:
-        html = fetch_page(EVENTS_URL, needs_js=True)
+        html = fetch_page(SCHEDULE_URL, needs_js=False)
     except Exception as e:
-        print(f"Failed to fetch Rockstadt lineup: {e}")
+        print(f"Failed to fetch Rockstadt schedule: {e}")
         return events
     
     soup = BeautifulSoup(html, "html.parser")
-    
-    year = get_festival_year()
-    festival_date = datetime(year, FESTIVAL_MONTH, FESTIVAL_START_DAY, 18, 0)
-    
-    for link in soup.select("a[href*='/team/']"):
-        href = link.get("href", "")
-        
-        if "/team_group/" in href:
+
+    for day in soup.select("[data-role='lineup'][id]"):
+        try:
+            festival_day = datetime.strptime(day.get("id", ""), "%Y-%m-%d")
+        except ValueError:
             continue
-        
-        if not re.search(r"/team/[\w-]+/?$", href):
-            continue
-        
-        artist = link.get_text(strip=True)
-        if not artist or len(artist) < 2:
-            continue
-        
-        if artist in seen:
-            continue
-        seen.add(artist)
-        
-        events.append(Event(
-            title=f"{artist} @ Rockstadt Extreme Fest",
-            artist=artist,
-            venue="Rockstadt Extreme Fest, Ghimbav",
-            date=festival_date,
-            url=EVENTS_URL,
-            source="rockstadt",
-            category="music",
-            price=None,
-        ))
-    
-    events.sort(key=lambda e: e.title)
+
+        for panel in day.select(".panel"):
+            stage_elem = panel.select_one(".panel-title")
+            table = panel.select_one("table")
+            if not stage_elem or not table:
+                continue
+            stage = stage_elem.get_text(" ", strip=True)
+
+            for row in table.select("tbody tr"):
+                cells = row.find_all("td")
+                if len(cells) < 2:
+                    continue
+                artist = cells[0].get_text(" ", strip=True)
+                interval = cells[1].get_text(" ", strip=True)
+                time_match = re.match(r"(\d{1,2}):(\d{2})", interval)
+                if not artist or not time_match:
+                    continue
+
+                hour, minute = map(int, time_match.groups())
+                try:
+                    event_date = festival_day.replace(hour=hour, minute=minute)
+                except ValueError:
+                    continue
+                if hour < 5:
+                    event_date += timedelta(days=1)
+
+                key = (artist, event_date, stage)
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                events.append(
+                    Event(
+                        title=f"{artist} @ Rockstadt Extreme Fest",
+                        artist=artist,
+                        venue=f"Rockstadt Extreme Fest, Ghimbav – {stage}",
+                        date=event_date,
+                        url=SCHEDULE_URL,
+                        source="rockstadt",
+                        category="music",
+                        price=None,
+                    )
+                )
+
+    events.sort(key=lambda e: (e.date, e.title))
     return events
