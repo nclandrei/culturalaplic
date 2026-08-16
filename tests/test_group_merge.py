@@ -123,6 +123,7 @@ def test_merge_replaces_events_only_for_successfully_scraped_sources(
         artifacts_dir / "events_group_1.json",
         group=1,
         successful_sources={"music": [], "theatre": [], "culture": []},
+        culture_events=[event("Partial failed MNAC refresh", "mnac")],
     )
     write_group_artifact(
         artifacts_dir / "events_group_2.json",

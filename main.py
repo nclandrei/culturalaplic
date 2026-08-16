@@ -467,9 +467,12 @@ def merge_group_artifacts() -> None:
                 raise ValueError(
                     f"Group {group_num} has invalid {category} source metadata"
                 )
-            replacement_sources[category].update(sources)
+            successful_source_set = set(sources)
+            replacement_sources[category].update(successful_source_set)
             fresh_by_category[category].extend(
-                group_data.get(f"{category}_events", [])
+                event
+                for event in group_data.get(f"{category}_events", [])
+                if event.get("source") in successful_source_set
             )
 
     all_music = [
