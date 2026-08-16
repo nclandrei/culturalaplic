@@ -98,9 +98,12 @@ def _fetch_js(
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = (
-            browser.new_page(extra_http_headers=headers)
+            browser.new_page(
+                extra_http_headers=headers,
+                timezone_id="Europe/Bucharest",
+            )
             if headers
-            else browser.new_page()
+            else browser.new_page(timezone_id="Europe/Bucharest")
         )
         page.goto(url, timeout=timeout, wait_until="domcontentloaded")
         if wait_selector:

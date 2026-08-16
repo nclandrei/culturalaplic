@@ -126,6 +126,18 @@ class TestHttpRetry:
             ".events-list-view", timeout=30000
         )
 
+    def test_js_fetch_renders_bucharest_local_times(self):
+        with patch("services.http.sync_playwright") as mock_playwright:
+            playwright = mock_playwright.return_value.__enter__.return_value
+            browser = playwright.chromium.launch.return_value
+            browser.new_page.return_value.content.return_value = "<html></html>"
+
+            fetch_page("https://example.com/events", needs_js=True)
+
+        browser.new_page.assert_called_once_with(
+            timezone_id="Europe/Bucharest",
+        )
+
     @respx.mock
     def test_empty_success_page_uses_html_reader_fallback(self):
         source_url = "https://example.com/events?year=2026&month=9"

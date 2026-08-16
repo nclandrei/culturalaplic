@@ -79,22 +79,11 @@ def parse_event(card: BeautifulSoup) -> Event | None:
     )
 
 
-def parse_program_event(card: BeautifulSoup, date_text: str) -> Event | None:
-    """Parse an event from the current date-grouped program markup."""
+def parse_program_events(card: BeautifulSoup, date_text: str) -> list[Event]:
+    """Parse every performance from a current date-grouped program card."""
     title_link = card.select_one("h2 a[href^='/spectacol/']")
     if not title_link:
-        return None
-
-    time_button = card.select_one("button[data-testid^='time-slot-']")
-    if not time_button:
-        return None
-    time_match = re.search(r"(\d{1,2}:\d{2})", time_button.get_text(" ", strip=True))
-    if not time_match:
-        return None
-
-    event_date = parse_date(f"{date_text} la {time_match.group(1)}")
-    if not event_date:
-        return None
+        return []
 
     title = title_link.get_text(strip=True)
     href = title_link.get("href", "")
@@ -107,16 +96,31 @@ def parse_program_event(card: BeautifulSoup, date_text: str) -> Event | None:
             venue = text
             break
 
-    return Event(
-        title=title,
-        artist=None,
-        venue=venue,
-        date=event_date,
-        url=url,
-        source="cuibul",
-        category="theatre",
-        price=None,
-    )
+    events: list[Event] = []
+    for time_button in card.select("button[data-testid^='time-slot-']"):
+        time_match = re.search(
+            r"(\d{1,2}:\d{2})",
+            time_button.get_text(" ", strip=True),
+        )
+        if not time_match:
+            continue
+
+        event_date = parse_date(f"{date_text} la {time_match.group(1)}")
+        if not event_date:
+            continue
+
+        events.append(Event(
+            title=title,
+            artist=None,
+            venue=venue,
+            date=event_date,
+            url=url,
+            source="cuibul",
+            category="theatre",
+            price=None,
+        ))
+
+    return events
 
 
 def scrape() -> list[Event]:
@@ -143,7 +147,7 @@ def scrape() -> list[Event]:
                 continue
             date_text = date_header.get_text(" ", strip=True)
             for card in day_section.select("div.group.relative.z-10.mb-16"):
-                parsed_events.append(parse_program_event(card, date_text))
+                parsed_events.extend(parse_program_events(card, date_text))
 
     for event in parsed_events:
         if event:
