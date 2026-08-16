@@ -46,7 +46,7 @@ def parse_date_info(info_text: str, year: int) -> tuple[datetime | None, str | N
         return None, None
     
     time_match = re.search(r"(\d{1,2})[.:h](\d{2})(?:\s*AM)?", info_text)
-    hour, minute = 20, 0  # Default evening time for festival
+    hour, minute = 0, 0  # Midnight represents a source date with no published time.
     if time_match:
         hour = int(time_match.group(1))
         minute = int(time_match.group(2))
@@ -135,7 +135,7 @@ def scrape() -> list[Event]:
         info_elem = columns[1].select_one(".ld-fh-element")
         if not info_elem:
             continue
-        info_text = info_elem.get_text(strip=True)
+        info_text = info_elem.get_text(" ", strip=True)
         
         link = section.select_one("a.elementor-button[href*='gjf-']")
         url = link.get("href", "") if link else ""
