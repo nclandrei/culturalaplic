@@ -127,6 +127,30 @@ def test_scrape_enriches_a_date_only_card_from_its_detail_page():
     assert events[0].date == datetime(2026, 9, 24, 20, 0)
 
 
+def test_scrape_does_not_treat_access_time_as_show_time():
+    listing_html = card(
+        "Access-only listing",
+        "/bilete-access-only-123/",
+        24,
+    )
+    detail_html = """
+    <div class="date">
+      joi, 24 septembrie, acces de la ora 19:00
+    </div>
+    """
+
+    def fetch(url: str) -> str:
+        if url.endswith("/bilete-access-only-123/"):
+            return detail_html
+        return listing_html
+
+    with patch("scrapers.music.iabilet.fetch_page", side_effect=fetch):
+        events = scrape()
+
+    assert len(events) == 1
+    assert events[0].date == datetime(2026, 9, 24)
+
+
 def test_november_card_and_json_ld_are_one_occurrence():
     html = card(
         "Pink Floyd History",

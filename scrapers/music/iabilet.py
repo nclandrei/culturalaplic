@@ -134,12 +134,16 @@ def extract_detail_time(html: str) -> tuple[int, int] | None:
     if not date_elem:
         return None
 
+    text = date_elem.get_text(" ", strip=True)
     match = re.search(
         r"\bora\s*([01]?\d|2[0-3])[:.]([0-5]\d)\b",
-        date_elem.get_text(" ", strip=True),
+        text,
         re.IGNORECASE,
     )
     if not match:
+        return None
+    context = text[max(0, match.start() - 60):match.start()].casefold()
+    if re.search(r"(?:acces|access|intrare|open\s+doors?|doors?)\D{0,35}$", context):
         return None
     return int(match.group(1)), int(match.group(2))
 
