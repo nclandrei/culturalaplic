@@ -85,16 +85,23 @@ def parse_date_range(
     if not start_month or not end_month:
         return None
 
+    crosses_year_boundary = start_month > end_month
     if end_year_raw:
         end_year = int(end_year_raw)
+    elif start_year_raw:
+        end_year = int(start_year_raw) + int(crosses_year_boundary)
     else:
         end_year = reference.year
-        try:
-            candidate_end = datetime(end_year, end_month, end_day)
-        except ValueError:
-            return None
-        if candidate_end.date() < today:
-            end_year += 1
+        # A yearless card is not evidence that an expired programme repeats next
+        # year. Only a genuine December-to-January style range can cross the
+        # boundary; ordinary past cards remain past and are discarded downstream.
+        if crosses_year_boundary:
+            try:
+                candidate_end = datetime(end_year, end_month, end_day)
+            except ValueError:
+                return None
+            if candidate_end.date() < today:
+                end_year += 1
 
     if start_year_raw:
         start_year = int(start_year_raw)

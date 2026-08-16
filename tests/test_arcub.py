@@ -31,6 +31,32 @@ def test_parse_date_range_keeps_an_active_cross_month_range_in_this_year():
     )
 
 
+def test_expired_yearless_ranges_are_not_rolled_into_next_year():
+    assert parse_date_range("1 - 5 august", now=NOW) == (
+        datetime(2026, 8, 1),
+        datetime(2026, 8, 5),
+    )
+    assert parse_date_range("3 aprilie - 30 iulie", now=NOW) == (
+        datetime(2026, 4, 3),
+        datetime(2026, 7, 30),
+    )
+    assert parse_card_events(
+        card("Program expirat", "1 - 5 august"),
+        "<p>zilnic: 10:00</p>",
+        now=NOW,
+    ) == []
+
+
+def test_december_to_january_range_uses_a_real_year_boundary():
+    assert parse_date_range(
+        "20 decembrie - 5 ianuarie",
+        now=datetime(2026, 12, 16),
+    ) == (
+        datetime(2026, 12, 20),
+        datetime(2027, 1, 5),
+    )
+
+
 def test_exhibition_range_expands_only_official_open_days_and_times():
     detail_html = """
     <div class="content">
