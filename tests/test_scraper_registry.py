@@ -1,11 +1,24 @@
 import sys
+from datetime import datetime
 from unittest.mock import patch
 
-from main import SCRAPER_GROUPS, main, run_music_scrapers, run_theatre_scrapers
+from main import (
+    SCRAPER_GROUPS,
+    main,
+    run_music_scrapers,
+    run_theatre_scrapers,
+    should_run_festival_scrapers,
+)
 from scrapers.music import eventbook as eventbook_music
 from scrapers.music import hardrock, iabilet
 from scrapers.theatre import eventbook as eventbook_theatre
 from scripts.test_full_flow import SCRAPERS as INTEGRATION_SCRAPERS
+
+
+def test_festival_scrapers_refresh_weekly_and_on_month_start():
+    assert should_run_festival_scrapers(datetime(2026, 8, 16))  # Sunday
+    assert should_run_festival_scrapers(datetime(2026, 9, 1))
+    assert not should_run_festival_scrapers(datetime(2026, 8, 17))
 
 
 def test_hardrock_is_registered_for_scheduled_and_local_runs():

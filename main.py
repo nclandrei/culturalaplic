@@ -49,9 +49,10 @@ SCRAPER_GROUPS = {
     },
 }
 
-def should_run_festival_scrapers() -> bool:
-    """Run festival scrapers only on the 1st of each month (annual events don't change often)."""
-    return datetime.now().day == 1
+def should_run_festival_scrapers(now: datetime | None = None) -> bool:
+    """Refresh annual festival programmes weekly and at each month start."""
+    reference = now or datetime.now()
+    return reference.day == 1 or reference.weekday() == 6
 
 
 scraper_errors: list[ScraperError] = []
@@ -159,7 +160,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
     if group is not None:
         # Run only scrapers from the specified group
         scrapers = SCRAPER_GROUPS[group]["music"]
-        # Add festival scrapers to group 1 only (if it's the 1st of month)
+        # Add festival scrapers to group 1 on their weekly/monthly refresh.
         if group == 1 and run_festivals:
             scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
     else:
@@ -172,7 +173,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
         events.extend(run_scraper_safely(scraper))
 
     if not run_festivals:
-        print("  (skipping festival scrapers - only run on 1st of month)")
+        print("  (skipping festival scrapers - refreshed Sundays and on the 1st)")
     return events
 
 
@@ -614,7 +615,7 @@ def main() -> None:
 
         print(f"\nTotal: {len(music_scrapers) + len(theatre_scrapers) + len(culture_scrapers)} scrapers")
         if not run_festivals:
-            print("(festival scrapers skipped - only run on 1st of month)")
+            print("(festival scrapers skipped - refreshed Sundays and on the 1st)")
         return
 
     if group:

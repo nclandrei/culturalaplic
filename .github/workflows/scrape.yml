@@ -2,7 +2,7 @@ name: Scrape Events
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Daily at 9am UTC (festivals only run on 1st of month via code logic)
+    - cron: '0 9 * * *'  # Daily at 9am UTC (festivals refresh Sundays and on the 1st)
   workflow_dispatch:       # Manual trigger
 
 permissions:
