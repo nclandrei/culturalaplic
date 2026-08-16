@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from bs4 import BeautifulSoup
 
@@ -104,6 +104,159 @@ def parse_showcase_events(text: str, year: int) -> list[Event]:
     return events
 
 
+def _parse_current_datetime(
+    date_text: str, time_text: str, *, after_midnight: bool = False
+) -> datetime | None:
+    date_match = re.fullmatch(r"(\d{1,2})\.(\d{1,2})\.(\d{4})", date_text.strip())
+    time_match = re.search(r"(\d{1,2}):(\d{2})", time_text)
+    if not date_match or not time_match:
+        return None
+
+    day, month, year = map(int, date_match.groups())
+    hour, minute = map(int, time_match.groups())
+    try:
+        event_date = datetime(year, month, day, hour, minute)
+    except ValueError:
+        return None
+
+    if after_midnight and hour == 0:
+        event_date += timedelta(days=1)
+    return event_date
+
+
+def _stage_details(stage) -> tuple[str, str, str | None]:
+    heading = stage.select_one(".jazzx-program__stage-name")
+    if not heading:
+        return "", "", None
+
+    direct_text = " ".join(
+        text.strip() for text in heading.find_all(string=True, recursive=False) if text.strip()
+    )
+    if direct_text:
+        stage_name = direct_text
+    else:
+        stage_name = ""
+        for child in heading.find_all(recursive=False):
+            if "jazzx-program__stage-venue" not in child.get("class", []):
+                stage_name = child.get_text(" ", strip=True)
+                break
+
+    venue_elem = heading.select_one(".jazzx-program__stage-venue")
+    hours_elem = heading.select_one(".jazzx-program__stage-hours")
+    hours = hours_elem.get_text(" ", strip=True) if hours_elem else None
+    venue = venue_elem.get_text(" ", strip=True) if venue_elem else ""
+    if hours:
+        venue = venue.replace(hours, "")
+    return stage_name, venue.strip(" ·"), hours
+
+
+def parse_current_layout(soup: BeautifulSoup, program_url: str) -> list[Event]:
+    """Parse the class-based program layout currently published by JAZZx."""
+    program = soup.select_one(".jazzx-program")
+    if not program:
+        return []
+
+    events: list[Event] = []
+    for block in program.find_all("section", class_="jazzx-program__block", recursive=False):
+        title_elem = block.select_one(".jazzx-program__title")
+        if not title_elem:
+            continue
+
+        section = title_elem.get_text(" ", strip=True)
+        section_key = section.casefold()
+        subtitle = block.select_one(".jazzx-program__subtitle")
+        section_venue = subtitle.get_text(" ", strip=True) if subtitle else ""
+
+        for day in block.find_all("article", class_="jazzx-program__day", recursive=False):
+            date_elem = day.select_one(".jazzx-program__date-heading")
+            if not date_elem:
+                continue
+            date_text = date_elem.get_text(" ", strip=True)
+
+            stages = day.find_all("div", class_="jazzx-program__stage", recursive=False)
+            if stages:
+                for stage in stages:
+                    stage_name, stage_venue, stage_hours = _stage_details(stage)
+                    venue_parts = [part for part in [stage_name, stage_venue] if part]
+                    venue = "JAZZx Festival"
+                    if venue_parts:
+                        venue += " – " + " – ".join(venue_parts)
+
+                    for item in stage.select("li"):
+                        artist_elem = item.select_one(".jazzx-program__artist")
+                        time_elem = item.select_one(".jazzx-program__time")
+                        time_text = (
+                            time_elem.get_text(" ", strip=True) if time_elem else stage_hours
+                        )
+                        if not artist_elem or not time_text:
+                            continue
+
+                        artist = artist_elem.get_text(" ", strip=True)
+                        event_date = _parse_current_datetime(
+                            date_text,
+                            time_text,
+                            after_midnight="nocturnal" in stage_name.casefold(),
+                        )
+                        if not artist or not event_date:
+                            continue
+
+                        events.append(
+                            Event(
+                                title=f"{artist} @ JAZZx Festival",
+                                artist=artist,
+                                venue=venue,
+                                date=event_date,
+                                url=program_url,
+                                source="jazzx",
+                                category="music",
+                                price=None,
+                            )
+                        )
+                continue
+
+            for item in day.select("li"):
+                artist_elem = item.select_one(".jazzx-program__artist")
+                time_elem = item.select_one(".jazzx-program__time")
+                if not artist_elem or not time_elem:
+                    continue
+
+                artist = artist_elem.get_text(" ", strip=True)
+                event_date = _parse_current_datetime(
+                    date_text, time_elem.get_text(" ", strip=True)
+                )
+                if not artist or not event_date:
+                    continue
+
+                if section_key == "jamzz":
+                    label = "JAZZx JAMzz"
+                    venue_elem = item.select_one(".jazzx-program__venue")
+                    item_venue = venue_elem.get_text(" ", strip=True) if venue_elem else ""
+                elif section_key == "jazzx now":
+                    label = "JAZZx NOW"
+                    item_venue = section_venue
+                else:
+                    label = section
+                    item_venue = section_venue
+
+                venue = label
+                if item_venue:
+                    venue += f" – {item_venue}"
+                events.append(
+                    Event(
+                        title=f"{artist} @ {label}",
+                        artist=artist,
+                        venue=venue,
+                        date=event_date,
+                        url=program_url,
+                        source="jazzx",
+                        category="music",
+                        price=None,
+                    )
+                )
+
+    return events
+
+
 def parse_festival_section(soup: BeautifulSoup, year: int) -> list[Event]:
     """Parse the main festival section with days, stages, and artists."""
     events = []
@@ -201,6 +354,12 @@ def scrape() -> list[Event]:
         return events
     
     full_text = content.get_text("\n", strip=True)
+
+    for event in parse_current_layout(soup, program_url):
+        key = f"{event.artist}:{event.date.isoformat()}"
+        if key not in seen:
+            seen.add(key)
+            events.append(event)
     
     for line in full_text.split("\n"):
         if re.match(r"\d{1,2}\.\d{2}\s*\|\s*\d{1,2}:\d{2}\s*[–-]", line):
