@@ -105,7 +105,10 @@ def _fetch_js(
             if headers
             else browser.new_page(timezone_id="Europe/Bucharest")
         )
-        page.goto(url, timeout=timeout, wait_until="domcontentloaded")
+        response = page.goto(url, timeout=timeout, wait_until="domcontentloaded")
+        status = getattr(response, "status", None)
+        if isinstance(status, int) and status >= 400:
+            raise HttpError(f"HTTP {status} for {url}", status_code=status)
         if wait_selector:
             page.wait_for_selector(wait_selector, timeout=timeout)
         else:
@@ -195,6 +198,9 @@ def fetch_page(
                 scroll_count,
                 scroll_item_selector,
             )
+        except HttpError as e:
+            _record_fetch_failure(str(e))
+            raise
         except Exception as e:
             message = f"Failed to fetch {url}: {e}"
             _record_fetch_failure(message)

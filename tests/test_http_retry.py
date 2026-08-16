@@ -138,6 +138,21 @@ class TestHttpRetry:
             timezone_id="Europe/Bucharest",
         )
 
+    def test_js_fetch_rejects_http_error_pages(self):
+        with patch("services.http.sync_playwright") as mock_playwright:
+            playwright = mock_playwright.return_value.__enter__.return_value
+            page = playwright.chromium.launch.return_value.new_page.return_value
+            page.goto.return_value.status = 403
+
+            reset_fetch_failures()
+            with pytest.raises(HttpError) as exc_info:
+                fetch_page("https://example.com/events", needs_js=True)
+
+        assert exc_info.value.status_code == 403
+        assert get_fetch_failures() == [
+            "HTTP 403 for https://example.com/events"
+        ]
+
     @respx.mock
     def test_empty_success_page_uses_html_reader_fallback(self):
         source_url = "https://example.com/events?year=2026&month=9"
