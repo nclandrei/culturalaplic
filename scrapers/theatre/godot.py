@@ -1,10 +1,10 @@
 import re
-from datetime import datetime
+from datetime import datetime, time
 
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import HTML_READER_BASE_URL, HTML_READER_HEADERS, fetch_page
 
 BASE_URL = "https://www.teatrulgodot.ro"
 EVENTS_URL = f"{BASE_URL}/spectacole/"
@@ -14,6 +14,10 @@ ROMANIAN_MONTHS = {
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
 }
+
+
+def reader_url(url: str) -> str:
+    return f"{HTML_READER_BASE_URL}{url}"
 
 
 def parse_date(day_text: str, month_text: str, year_text: str) -> datetime | None:
@@ -34,9 +38,36 @@ def parse_date(day_text: str, month_text: str, year_text: str) -> datetime | Non
         year = datetime.now().year
     
     try:
-        return datetime(year, month, day, 19, 0)
+        return datetime(year, month, day)
     except ValueError:
         return None
+
+
+def parse_detail_time(html: str) -> time | None:
+    """Parse the explicit ``Ora:`` value from a performance detail page."""
+    soup = BeautifulSoup(html, "html.parser")
+    info_box = soup.select_one(".show-info-box, .item-spectacol-details")
+    if not info_box:
+        return None
+
+    match = re.search(
+        r"Ora:\s*(\d{1,2})(?::([0-5]\d))?\s*(am|pm)?",
+        info_box.get_text(" ", strip=True),
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+
+    hour = int(match.group(1))
+    minute = int(match.group(2) or 0)
+    meridiem = (match.group(3) or "").lower()
+    if meridiem:
+        hour %= 12
+        if meridiem == "pm":
+            hour += 12
+    if hour > 23:
+        return None
+    return time(hour, minute)
 
 
 def parse_event(card: BeautifulSoup) -> Event | None:
@@ -106,7 +137,11 @@ def scrape() -> list[Event]:
         url = EVENTS_URL if page == 1 else f"{EVENTS_URL}page/{page}/"
         
         try:
-            html = fetch_page(url, needs_js=True, timeout=60000)
+            html = fetch_page(
+                reader_url(url),
+                headers=HTML_READER_HEADERS,
+                timeout=60000,
+            )
         except Exception as e:
             print(f"Failed to fetch Teatrul Godot page {page}: {e}")
             break
@@ -120,8 +155,19 @@ def scrape() -> list[Event]:
         for card in cards:
             event = parse_event(card)
             if event and event.date >= today:
-                key = (event.title, event.date.isoformat())
+                key = (event.title, event.date.date().isoformat())
                 if key not in seen:
+                    detail_html = fetch_page(
+                        reader_url(event.url),
+                        headers=HTML_READER_HEADERS,
+                        timeout=60000,
+                    )
+                    start_time = parse_detail_time(detail_html)
+                    if not start_time:
+                        raise ValueError(
+                            f"Missing Godot performance time: {event.url}"
+                        )
+                    event.date = datetime.combine(event.date.date(), start_time)
                     seen.add(key)
                     events.append(event)
         
