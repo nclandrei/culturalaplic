@@ -37,7 +37,7 @@ def scrape() -> list[Event]:
         
         try:
             day = int("".join(c for c in text if c.isdigit()))
-            current_date = datetime(year, 6, day, 20, 0)
+            current_date = datetime(year, 6, day)
         except ValueError:
             continue
         
