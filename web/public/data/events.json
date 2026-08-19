@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-18T12:37:52.681810",
+  "scraped_at": "2026-08-19T12:44:00.294540",
   "music_events": [
     {
       "title": "Magnus \u00d6STR\u00d6M & Andrii POKAZ / Sara ALDEN Trio / JAZZAMBASSADEN la Jazz Fan Rising BUCURE\u0218TI",
@@ -145,6 +145,21 @@
       "source": "Ateneul Rom\u00e2n",
       "category": "music",
       "price": "de la 70 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Clasic e fantastic. Lec\u021bia de jazz",
+      "artist": null,
+      "venue": "Ateneul Rom\u00e2n - Sala Mare",
+      "date": "2026-10-17 11:00:00",
+      "url": "https://oveit.com/hub/event/clasic-e-fantastic-lectia-de-jazz-e7VWRNz4",
+      "source": "Ateneul Rom\u00e2n",
+      "category": "music",
+      "price": "de la 35 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -857,6 +872,21 @@
       "video_url": null
     },
     {
+      "title": "ctrl x King4King present: FLEXORIATION w/ Orkgotik, sus/spin, Judas, Toiboy, Admina & YCS",
+      "artist": "ctrl x King4King present",
+      "venue": "Club Control",
+      "date": "2026-09-04 23:00:00",
+      "url": "https://eventbook.ro/music/bilete-ctrl-x-king4king-present-flexoriation",
+      "source": "eventbook",
+      "category": "music",
+      "price": "50 LEI",
+      "spotify_url": "https://open.spotify.com/artist/79npQdzzJqEv2efNQTR3F3",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "IUBI",
       "artist": "IUBI",
       "venue": "Apollo111 Barul",
@@ -1022,14 +1052,14 @@
       "video_url": null
     },
     {
-      "title": "Jozef Van Wissem | Control Club | 29.10.2026",
-      "artist": "Jozef Van Wissem",
-      "venue": "Club Control",
+      "title": "LIVE: Jozef Van Wissem [USA]",
+      "artist": "Jozef Van Wissem [USA]",
+      "venue": "Control Club - Berlin Room",
       "date": "2026-10-29 20:00:00",
-      "url": "https://eventbook.ro/music/bilete-jozef-van-wissem-control-club-29-10-2026",
-      "source": "eventbook",
+      "url": "https://www.control-club.ro/event/?slug=live-jozef-van-wissem-usa",
+      "source": "control",
       "category": "music",
-      "price": "80 LEI",
+      "price": null,
       "spotify_url": "https://open.spotify.com/artist/1mC0FqPLboQUFfxYuthfdn",
       "description": null,
       "description_source": null,
@@ -1217,21 +1247,6 @@
       "video_url": null
     },
     {
-      "title": "Brutus Nights: TCFC & Ground Countrol W/ Leo",
-      "artist": "TCFC & Ground Countrol W/ Leo",
-      "venue": "Control Club - Berlin Room & Front Room",
-      "date": "2026-08-18 22:00:00",
-      "url": "https://www.control-club.ro/event/?slug=brutus-nights-tcfc-leo",
-      "source": "control",
-      "category": "music",
-      "price": "30.00 lei",
-      "spotify_url": "https://open.spotify.com/artist/0q41Ca4Yrb3VD3MLbZtCby",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Mitici (all night long)",
       "artist": "Mitici (all night long)",
       "venue": "Control Club - Front Room",
@@ -1247,21 +1262,6 @@
       "video_url": null
     },
     {
-      "title": "Kabinett [CO]",
-      "artist": "Kabinett [CO]",
-      "venue": "Control Club - Berlin Room",
-      "date": "2026-08-21 23:00:00",
-      "url": "https://www.control-club.ro/event/?slug=kabinett-co",
-      "source": "control",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/1topMe2l8xWhnwlBG88rCz",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Cezarul",
       "artist": "Dirty Disco w/ Eugen R\u0103descu, Joji Chissu & Cezarul",
       "venue": "Control Club - Berlin Room & Front Room",
@@ -1271,6 +1271,36 @@
       "category": "music",
       "price": "Door ticket",
       "spotify_url": "https://open.spotify.com/artist/3t0CNYt67w5ldJkONlrnQs",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Corp.Cast w/ Cocco Mio, von B\u00fclove, Chlorys & Admina",
+      "artist": "Corp.Cast w/ Cocco Mio, von B\u00fclove, Chlorys & Admina",
+      "venue": "Control Club - Front Room",
+      "date": "2026-08-23 20:00:00",
+      "url": "https://www.control-club.ro/event/?slug=corp-cast-w-cocco-mio-von-buelove-chlorys-admina",
+      "source": "control",
+      "category": "music",
+      "price": "Gratis",
+      "spotify_url": "https://open.spotify.com/artist/5Opu7DOBUG9xc5kK6TB9UL",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ctrl x King4King present: \ud80c\udda9\ud835\ude41\ud835\ude47\ud835\ude40\ud835\ude53\ud835\ude4a\ud835\ude4d\ud835\ude44\ud835\ude3c\ud835\ude4f\ud835\ude44\ud835\ude4a\ud835\ude49\ud80c\uddaa w/ Orkgotik [CO/ARG], sus/spin, Judas, Toiboy, Admina & YCS",
+      "artist": "\ud80c\udda9\ud835\ude41\ud835\ude47\ud835\ude40\ud835\ude53\ud835\ude4a\ud835\ude4d\ud835\ude44\ud835\ude3c\ud835\ude4f\ud835\ude44\ud835\ude4a\ud835\ude49\ud80c\uddaa w/ Orkgotik [CO/ARG], sus/spin, Judas, Toiboy, Admina & YCS",
+      "venue": "Control Club - Berlin Room",
+      "date": "2026-09-04 23:00:00",
+      "url": "https://www.control-club.ro/event/?slug=ctrl-x-king4king-present-%F0%93%86%A9%F0%9D%99%81%F0%9D%99%87%F0%9D%99%80%F0%9D%99%93%F0%9D%99%8A%F0%9D%99%8D%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%8F%F0%9D%99%84%F0%9D%99%8A%F0%9D%99%89%F0%93%86%AA-w-orkgotik-sus-spin-judas-toiboy-admina-ycs",
+      "source": "control",
+      "category": "music",
+      "price": null,
+      "spotify_url": "https://open.spotify.com/artist/5f0ceBaCx9JmX9IiAuP8Ef",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -2316,7 +2346,7 @@
       "artist": "byron",
       "venue": "Expirat Halele Carol",
       "date": "2026-08-19 21:30:00",
-      "url": "https://tickets.expirat.org/bilete-byron-o-triptic-electric-acustic-improv-128427/",
+      "url": "https://byron.iabilet.ro/bilete-byron-o-triptic-electric-acustic-improv-128427/",
       "source": "expirat",
       "category": "music",
       "price": "90 RON",
@@ -2402,6 +2432,21 @@
       "video_url": null
     },
     {
+      "title": "Infama revenire Leather Brigade cu Scythe, Unbaptised \u0219i V\u00f6mitt",
+      "artist": "Infama revenire Leather Brigade cu Scythe, Unbaptised \u0219i V\u00f6mitt",
+      "venue": "Expirat Halele Carol",
+      "date": "2026-09-13 20:00:00",
+      "url": "https://tickets.expirat.org/bilete-infama-revenire-leather-brigade-cu-scythe-unbaptised-si-vomitt-130308/",
+      "source": "expirat",
+      "category": "music",
+      "price": "30 RON",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Concert Vlad Flueraru",
       "artist": "Concert Vlad Flueraru",
       "venue": "Expirat Halele Carol",
@@ -2421,7 +2466,7 @@
       "artist": "Armand Popa",
       "venue": "Expirat Halele Carol",
       "date": "2026-09-24 21:30:00",
-      "url": "https://cinemagia-app.iabilet.ro/bilete-armand-popa-o-lansare-fuzz-panic-deluxe-129537/",
+      "url": "https://tickets.expirat.org/bilete-armand-popa-o-lansare-fuzz-panic-deluxe-129537/",
       "source": "expirat",
       "category": "music",
       "price": "40 RON",
@@ -2541,7 +2586,7 @@
       "artist": "Concert aniversar byron 20 de ani",
       "venue": "Expirat Halele Carol",
       "date": "2026-12-01 00:00:00",
-      "url": "https://tickets.expirat.org/bilete-concert-aniversar-byron-20-de-ani-matouring-expirat-129676/",
+      "url": "https://byron.iabilet.ro/bilete-concert-aniversar-byron-20-de-ani-matouring-expirat-129676/",
       "source": "expirat",
       "category": "music",
       "price": "113,03 RON",
@@ -3002,59 +3047,14 @@
       "video_url": null
     },
     {
-      "title": "All you can Party: A Festa Portuguesa",
-      "artist": "All you can Party",
-      "venue": "Naive",
-      "date": "2026-08-21 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-all-you-can-party-a-festa-portuguesa-129887/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 169.68 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "August Retroverse",
-      "artist": "August Retroverse",
-      "venue": "Naive",
-      "date": "2026-08-20 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-august-retroverse-129194/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 26.51 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Munch: Fountain of Sin - Prelude",
-      "artist": "Munch",
-      "venue": "Restaurant Burgeri \u015ei Oase",
-      "date": "2026-08-20 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-munch-fountain-of-sin-prelude-130130/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "15 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Balkanique Party \u2022 Epoca de Aur a Manelelor",
-      "artist": "Balkanique Party",
-      "venue": "Heavy Yard",
+      "title": "Concert Predestin + Collapse",
+      "artist": "Concert Predestin + Collapse",
+      "venue": "Encore",
       "date": "2026-08-22 00:00:00",
-      "url": "https://www.iabilet.ro/bilete-balkanique-party-o-epoca-de-aur-a-manelelor-130121/",
+      "url": "https://www.iabilet.ro/bilete-concert-predestin-collapse-130012/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 35.79 lei",
+      "price": "31.82 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3077,14 +3077,59 @@
       "video_url": null
     },
     {
-      "title": "Concert Predestin + Collapse",
-      "artist": "Concert Predestin + Collapse",
-      "venue": "Encore",
-      "date": "2026-08-22 00:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-predestin-collapse-130012/",
+      "title": "August Retroverse",
+      "artist": "August Retroverse",
+      "venue": "Naive",
+      "date": "2026-08-20 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-august-retroverse-129194/",
       "source": "iabilet",
       "category": "music",
-      "price": "31.82 lei",
+      "price": "de la 26.51 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Balkanique Party \u2022 Epoca de Aur a Manelelor",
+      "artist": "Balkanique Party",
+      "venue": "Heavy Yard",
+      "date": "2026-08-22 00:00:00",
+      "url": "https://www.iabilet.ro/bilete-balkanique-party-o-epoca-de-aur-a-manelelor-130121/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 35.79 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Munch: Fountain of Sin - Prelude",
+      "artist": "Munch",
+      "venue": "Restaurant Burgeri \u015ei Oase",
+      "date": "2026-08-20 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-munch-fountain-of-sin-prelude-130130/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "15 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "All you can Party: A Festa Portuguesa",
+      "artist": "All you can Party",
+      "venue": "Naive",
+      "date": "2026-08-21 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-all-you-can-party-a-festa-portuguesa-129887/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 169.68 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3152,6 +3197,51 @@
       "video_url": null
     },
     {
+      "title": "Balkanik After Dark | 28 august",
+      "artist": "Balkanik After Dark",
+      "venue": "Kundalini Pool Bar & Lounge",
+      "date": "2026-08-28 23:30:00",
+      "url": "https://www.iabilet.ro/bilete-balkanik-after-dark-28-august-130089/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 52.73 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Balkanik After Dark | 29 august",
+      "artist": "Balkanik After Dark",
+      "venue": "The Forge",
+      "date": "2026-08-29 23:30:00",
+      "url": "https://www.iabilet.ro/bilete-balkanik-after-dark-29-august-130090/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 42.18 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert D.E.N.I.S. + PLANT",
+      "artist": "Concert D.E.N.I.S. + PLANT",
+      "venue": "Encore",
+      "date": "2026-08-29 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-d-e-n-i-s-plant-129515/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "42.42 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Evolu\u021bie | Turneu Leo de la Ro\u0219iori",
       "artist": "Evolu\u021bie",
       "venue": "Arenele Romane",
@@ -3175,21 +3265,6 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 42.42 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Concert D.E.N.I.S. + PLANT",
-      "artist": "Concert D.E.N.I.S. + PLANT",
-      "venue": "Encore",
-      "date": "2026-08-29 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-d-e-n-i-s-plant-129515/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "42.42 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3242,21 +3317,6 @@
       "video_url": null
     },
     {
-      "title": "Marea Gala Flamenco - Show 1",
-      "artist": "Marea Gala Flamenco",
-      "venue": "Sala Palatului",
-      "date": "2026-09-05 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-marea-gala-flamenco-show-1-128418/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 58.33 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Elli Kokkinou",
       "artist": "Elli Kokkinou",
       "venue": "Arenele Romane",
@@ -3266,6 +3326,21 @@
       "category": "music",
       "price": "de la 191.70 lei",
       "spotify_url": "https://open.spotify.com/artist/3dHMnH9LXTSuhfdcWfjnoc",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Marea Gala Flamenco - Show 1",
+      "artist": "Marea Gala Flamenco",
+      "venue": "Sala Palatului",
+      "date": "2026-09-05 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-marea-gala-flamenco-show-1-128418/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 58.33 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3362,6 +3437,21 @@
       "video_url": null
     },
     {
+      "title": "Concert Not My Cup of Tea + Soupy + Heavy Joy",
+      "artist": "Concert Not My Cup of Tea + Soupy + Heavy Joy",
+      "venue": "Encore",
+      "date": "2026-09-11 00:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-not-my-cup-of-tea-soupy-heavy-joy-130288/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "42.42 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Festobal Editia a II-a",
       "artist": "Festobal Editia a II-a",
       "venue": "Under the Bridge / Magic Place",
@@ -3422,6 +3512,21 @@
       "video_url": null
     },
     {
+      "title": "GUS GUS LIVE la Hard Rock Cafe",
+      "artist": "GUS GUS LIVE la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-09-13 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-gus-gus-live-la-hard-rock-cafe-127165/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 153.20 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Abonament Festival \u201eMasters Of Classic\u201d",
       "artist": "Abonament Festival \u201eMasters Of Classic\u201d",
       "venue": "Sala Palatului",
@@ -3452,15 +3557,15 @@
       "video_url": null
     },
     {
-      "title": "GUS GUS LIVE la Hard Rock Cafe",
-      "artist": "GUS GUS LIVE la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-09-13 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-gus-gus-live-la-hard-rock-cafe-127165/",
+      "title": "Sunday Live Session w/ Florin Ristei",
+      "artist": "Sunday Live Session w/ Florin Ristei",
+      "venue": "Naive",
+      "date": "2026-09-13 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-sunday-live-session-w-florin-ristei-128870/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 153.20 lei",
-      "spotify_url": null,
+      "price": "de la 84.84 lei",
+      "spotify_url": "https://open.spotify.com/artist/75O3JSFrt909DtV34BTWfW",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3482,21 +3587,6 @@
       "video_url": null
     },
     {
-      "title": "Sunday Live Session w/ Florin Ristei",
-      "artist": "Sunday Live Session w/ Florin Ristei",
-      "venue": "Naive",
-      "date": "2026-09-13 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-sunday-live-session-w-florin-ristei-128870/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 84.84 lei",
-      "spotify_url": "https://open.spotify.com/artist/75O3JSFrt909DtV34BTWfW",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Rock Sympho Show IV 2026",
       "artist": "Rock Sympho Show IV 2026",
       "venue": "Sala Palatului",
@@ -3505,21 +3595,6 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 120 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Concert Mihai Margineanu la Hard Rock Cafe",
-      "artist": "Concert Mihai Margineanu la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-09-17 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-mihai-margineanu-la-hard-rock-cafe-127341/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 141.90 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3542,14 +3617,14 @@
       "video_url": null
     },
     {
-      "title": "Concert Tania Turtureanu la Hard Rock Cafe",
-      "artist": "Concert Tania Turtureanu la Hard Rock Cafe",
+      "title": "Concert Mihai Margineanu la Hard Rock Cafe",
+      "artist": "Concert Mihai Margineanu la Hard Rock Cafe",
       "venue": "Hard Rock Cafe",
-      "date": "2026-09-18 21:30:00",
-      "url": "https://www.iabilet.ro/bilete-concert-tania-turtureanu-la-hard-rock-cafe-127342/",
+      "date": "2026-09-17 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-mihai-margineanu-la-hard-rock-cafe-127341/",
       "source": "iabilet",
       "category": "music",
-      "price": null,
+      "price": "de la 141.90 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3572,14 +3647,14 @@
       "video_url": null
     },
     {
-      "title": "FRAME 1.2",
-      "artist": "FRAME 1.2",
-      "venue": "Galeria Senat",
-      "date": "2026-09-19 22:00:00",
-      "url": "https://www.iabilet.ro/bilete-frame-1-2-129851/",
+      "title": "Concert Tania Turtureanu la Hard Rock Cafe",
+      "artist": "Concert Tania Turtureanu la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-09-18 21:30:00",
+      "url": "https://www.iabilet.ro/bilete-concert-tania-turtureanu-la-hard-rock-cafe-127342/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 106.05 lei",
+      "price": null,
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3602,14 +3677,29 @@
       "video_url": null
     },
     {
-      "title": "Concert Liviu Teodorescu la Hard Rock Cafe",
-      "artist": "Concert Liviu Teodorescu la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-09-20 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-liviu-teodorescu-la-hard-rock-cafe-127343/",
+      "title": "FRAME 1.2",
+      "artist": "FRAME 1.2",
+      "venue": "Galeria Senat",
+      "date": "2026-09-19 22:00:00",
+      "url": "https://www.iabilet.ro/bilete-frame-1-2-129851/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 100.69 lei",
+      "price": "de la 106.05 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Manifestor Generator + Sorrowsight + Dark Aeclipse",
+      "artist": "Concert Manifestor Generator + Sorrowsight + Dark Aeclipse",
+      "venue": "Encore",
+      "date": "2026-09-20 00:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-manifestor-generator-sorrowsight-dark-aeclipse-130065/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "53.03 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3632,29 +3722,14 @@
       "video_url": null
     },
     {
-      "title": "Concert Manifestor Generator + Sorrowsight + Dark Aeclipse",
-      "artist": "Concert Manifestor Generator + Sorrowsight + Dark Aeclipse",
-      "venue": "Encore",
-      "date": "2026-09-20 00:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-manifestor-generator-sorrowsight-dark-aeclipse-130065/",
+      "title": "Concert Liviu Teodorescu la Hard Rock Cafe",
+      "artist": "Concert Liviu Teodorescu la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-09-20 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-liviu-teodorescu-la-hard-rock-cafe-127343/",
       "source": "iabilet",
       "category": "music",
-      "price": "53.03 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "K-POP All Stars la Bucuresti",
-      "artist": "K-POP All Stars la Bucuresti",
-      "venue": "Arenele Romane",
-      "date": "2026-09-22 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-k-pop-all-stars-la-bucuresti-126486/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 206.72 lei",
+      "price": "de la 100.69 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3677,14 +3752,14 @@
       "video_url": null
     },
     {
-      "title": "C\u0103t\u0103lin \u0218erban \u2013 Recital de pian | Bucharest International Piano Festival",
-      "artist": "C\u0103t\u0103lin \u0218erban",
-      "venue": "Ateneul Rom\u00e2n",
-      "date": "2026-09-23 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-catalin-serban-recital-de-pian-bucharest-international-piano-festival-128503/",
+      "title": "K-POP All Stars la Bucuresti",
+      "artist": "K-POP All Stars la Bucuresti",
+      "venue": "Arenele Romane",
+      "date": "2026-09-22 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-k-pop-all-stars-la-bucuresti-126486/",
       "source": "iabilet",
       "category": "music",
-      "price": "159.08 lei",
+      "price": "de la 206.72 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3700,6 +3775,66 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 110.99 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "C\u0103t\u0103lin \u0218erban \u2013 Recital de pian | Bucharest International Piano Festival",
+      "artist": "C\u0103t\u0103lin \u0218erban",
+      "venue": "Ateneul Rom\u00e2n",
+      "date": "2026-09-23 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-catalin-serban-recital-de-pian-bucharest-international-piano-festival-128503/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "159.08 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "David Kadouch \u2013 Recital de pian | Bucharest International Piano Festival",
+      "artist": "David Kadouch",
+      "venue": "Ateneul Rom\u00e2n",
+      "date": "2026-09-24 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-david-kadouch-recital-de-pian-bucharest-international-piano-festival-128514/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "159.08 lei",
+      "spotify_url": "https://open.spotify.com/artist/6pkRjdkwMEEJTILeBF45OC",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Florin Ristei la Hard Rock Cafe",
+      "artist": "Concert Florin Ristei la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-09-24 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-florin-ristei-la-hard-rock-cafe-127348/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 162.51 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Red Bull SoundClash: Smiley vs Oscar",
+      "artist": "Red Bull SoundClash",
+      "venue": "Romexpo",
+      "date": "2026-09-24 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-red-bull-soundclash-smiley-vs-oscar-129508/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 120 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3737,51 +3872,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Florin Ristei la Hard Rock Cafe",
-      "artist": "Concert Florin Ristei la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-09-24 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-florin-ristei-la-hard-rock-cafe-127348/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 162.51 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Red Bull SoundClash: Smiley vs Oscar",
-      "artist": "Red Bull SoundClash",
-      "venue": "Romexpo",
-      "date": "2026-09-24 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-red-bull-soundclash-smiley-vs-oscar-129508/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 120 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "David Kadouch \u2013 Recital de pian | Bucharest International Piano Festival",
-      "artist": "David Kadouch",
-      "venue": "Ateneul Rom\u00e2n",
-      "date": "2026-09-24 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-david-kadouch-recital-de-pian-bucharest-international-piano-festival-128514/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "159.08 lei",
-      "spotify_url": "https://open.spotify.com/artist/6pkRjdkwMEEJTILeBF45OC",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Mihai Ritivoiu \u2013 Recital de pian | Bucharest International Piano Festival",
       "artist": "Mihai Ritivoiu",
       "venue": "Ateneul Rom\u00e2n",
@@ -3791,51 +3881,6 @@
       "category": "music",
       "price": "159.08 lei",
       "spotify_url": "https://open.spotify.com/artist/6g1d8FHhWhkywfSpTrgtf6",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Vintage Sounds at the Palace",
-      "artist": "Vintage Sounds at the Palace",
-      "venue": "Palatul Bragadiru",
-      "date": "2026-09-26 20:30:00",
-      "url": "https://www.iabilet.ro/bilete-vintage-sounds-at-the-palace-126591/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 143.17 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Exuviath, Drive Your Life, Goatrocity live",
-      "artist": "Exuviath, Drive Your Life, Goatrocity live",
-      "venue": "Encore",
-      "date": "2026-09-26 00:00:00",
-      "url": "https://www.iabilet.ro/bilete-exuviath-drive-your-life-goatrocity-live-126793/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "53.03 lei",
-      "spotify_url": "https://open.spotify.com/artist/5iRIu2ImRWOCCvcLPxEk8W",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Khatia Buniatishvili \u2013 Concert de Gal\u0103 | Bucharest International Piano Festival",
-      "artist": "Khatia Buniatishvili",
-      "venue": "Ateneul Rom\u00e2n",
-      "date": "2026-09-26 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-khatia-buniatishvili-concert-de-gala-bucharest-international-piano-festival-128517/",
-      "source": "iabilet",
-      "category": "music",
-      "price": null,
-      "spotify_url": "https://open.spotify.com/artist/0bouHpX4JiuPnIfP2jFxRi",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3857,6 +3902,51 @@
       "video_url": null
     },
     {
+      "title": "Vintage Sounds at the Palace",
+      "artist": "Vintage Sounds at the Palace",
+      "venue": "Palatul Bragadiru",
+      "date": "2026-09-26 20:30:00",
+      "url": "https://www.iabilet.ro/bilete-vintage-sounds-at-the-palace-126591/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 143.17 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Khatia Buniatishvili \u2013 Concert de Gal\u0103 | Bucharest International Piano Festival",
+      "artist": "Khatia Buniatishvili",
+      "venue": "Ateneul Rom\u00e2n",
+      "date": "2026-09-26 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-khatia-buniatishvili-concert-de-gala-bucharest-international-piano-festival-128517/",
+      "source": "iabilet",
+      "category": "music",
+      "price": null,
+      "spotify_url": "https://open.spotify.com/artist/0bouHpX4JiuPnIfP2jFxRi",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Exuviath, Drive Your Life, Goatrocity live",
+      "artist": "Exuviath, Drive Your Life, Goatrocity live",
+      "venue": "Encore",
+      "date": "2026-09-26 00:00:00",
+      "url": "https://www.iabilet.ro/bilete-exuviath-drive-your-life-goatrocity-live-126793/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "53.03 lei",
+      "spotify_url": "https://open.spotify.com/artist/5iRIu2ImRWOCCvcLPxEk8W",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Concert Bosquito la Hard Rock Cafe",
       "artist": "Concert Bosquito la Hard Rock Cafe",
       "venue": "Hard Rock Cafe",
@@ -3865,21 +3955,6 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 121.30 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Muzica Bucurestiului de altadata",
-      "artist": "Muzica Bucurestiului de altadata",
-      "venue": "Arenele Romane",
-      "date": "2026-09-28 19:30:00",
-      "url": "https://www.iabilet.ro/bilete-muzica-bucurestiului-de-altadata-128855/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 149 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -3896,6 +3971,21 @@
       "category": "music",
       "price": "de la 190.89 lei",
       "spotify_url": "https://open.spotify.com/artist/4Gl6dy6h1BxvmFmX4luqvV",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Muzica Bucurestiului de altadata",
+      "artist": "Muzica Bucurestiului de altadata",
+      "venue": "Arenele Romane",
+      "date": "2026-09-28 19:30:00",
+      "url": "https://www.iabilet.ro/bilete-muzica-bucurestiului-de-altadata-128855/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 149 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -3962,21 +4052,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Cobzarul Bogdan Simion",
-      "artist": "Concert Cobzarul Bogdan Simion",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-10-04 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-cobzarul-bogdan-simion-127407/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 152.20 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Qfest editia XI 2026 - Abonamente",
       "artist": "Qfest editia XI 2026",
       "venue": "Quantic",
@@ -3985,6 +4060,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "400 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Cobzarul Bogdan Simion",
+      "artist": "Concert Cobzarul Bogdan Simion",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-10-04 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-cobzarul-bogdan-simion-127407/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 152.20 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4052,21 +4142,6 @@
       "video_url": null
     },
     {
-      "title": "Concert The Motans la Hard Rock Cafe",
-      "artist": "Concert The Motans la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-10-08 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-the-motans-la-hard-rock-cafe-127408/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 141.90 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Basarabian Party Bucharest - Editia #50",
       "artist": "Basarabian Party Bucharest",
       "venue": "ONE Club",
@@ -4082,14 +4157,14 @@
       "video_url": null
     },
     {
-      "title": "Concert Mircea Vintila & Brambura",
-      "artist": "Concert Mircea Vintila & Brambura",
+      "title": "Concert The Motans la Hard Rock Cafe",
+      "artist": "Concert The Motans la Hard Rock Cafe",
       "venue": "Hard Rock Cafe",
-      "date": "2026-10-09 21:30:00",
-      "url": "https://www.iabilet.ro/bilete-concert-mircea-vintila-brambura-128191/",
+      "date": "2026-10-08 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-the-motans-la-hard-rock-cafe-127408/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 53.03 lei",
+      "price": "de la 141.90 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4104,7 +4179,7 @@
       "url": "https://www.iabilet.ro/bilete-macky-gee-x-keep-comin-130073/",
       "source": "iabilet",
       "category": "music",
-      "price": "52.42 lei",
+      "price": "62.90 lei",
       "spotify_url": "https://open.spotify.com/artist/5EDztvTkyoKtK0ZdEdhOFx",
       "description": null,
       "description_source": null,
@@ -4120,6 +4195,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 123.32 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Mircea Vintila & Brambura",
+      "artist": "Concert Mircea Vintila & Brambura",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-10-09 21:30:00",
+      "url": "https://www.iabilet.ro/bilete-concert-mircea-vintila-brambura-128191/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 53.03 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4322,14 +4412,14 @@
       "video_url": null
     },
     {
-      "title": "Concert Vali Boghean | Destin Basarabean",
-      "artist": "Concert Vali Boghean",
-      "venue": "Sala Palatului",
-      "date": "2026-10-18 19:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-vali-boghean-destin-basarabean-128411/",
+      "title": "F\u0103r\u0103 Zah\u0103r - \"Nevralgii de Toamn\u0103\"",
+      "artist": "F\u0103r\u0103 Zah\u0103r",
+      "venue": "Sala Luceaf\u0103rul",
+      "date": "2026-10-18 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-fara-zahar-nevralgii-de-toamna-128176/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 100 lei",
+      "price": "de la 84.84 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4352,14 +4442,14 @@
       "video_url": null
     },
     {
-      "title": "F\u0103r\u0103 Zah\u0103r - \"Nevralgii de Toamn\u0103\"",
-      "artist": "F\u0103r\u0103 Zah\u0103r",
-      "venue": "Sala Luceaf\u0103rul",
-      "date": "2026-10-18 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-fara-zahar-nevralgii-de-toamna-128176/",
+      "title": "Concert Vali Boghean | Destin Basarabean",
+      "artist": "Concert Vali Boghean",
+      "venue": "Sala Palatului",
+      "date": "2026-10-18 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-vali-boghean-destin-basarabean-128411/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 84.84 lei",
+      "price": "de la 100 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4412,6 +4502,21 @@
       "video_url": null
     },
     {
+      "title": "Tania Turtureanu la Sala Palatului",
+      "artist": "Tania Turtureanu la Sala Palatului",
+      "venue": "Sala Palatului",
+      "date": "2026-10-21 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-tania-turtureanu-la-sala-palatului-127601/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 173.51 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Concert Timpuri Noi la Hard Rock Cafe",
       "artist": "Concert Timpuri Noi la Hard Rock Cafe",
       "venue": "Hard Rock Cafe",
@@ -4427,14 +4532,14 @@
       "video_url": null
     },
     {
-      "title": "Tania Turtureanu la Sala Palatului",
-      "artist": "Tania Turtureanu la Sala Palatului",
-      "venue": "Sala Palatului",
-      "date": "2026-10-21 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-tania-turtureanu-la-sala-palatului-127601/",
+      "title": "Villagers of Ioannina City Live",
+      "artist": "Villagers of Ioannina City Live",
+      "venue": "Quantic",
+      "date": "2026-10-22 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-villagers-of-ioannina-city-live-130208/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 144.90 lei",
+      "price": "96.53 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4457,15 +4562,15 @@
       "video_url": null
     },
     {
-      "title": "Villagers of Ioannina City Live",
-      "artist": "Villagers of Ioannina City Live",
-      "venue": "Quantic",
-      "date": "2026-10-22 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-villagers-of-ioannina-city-live-130208/",
+      "title": "The Powerslave - Iron Maiden Tribute",
+      "artist": "The Powerslave",
+      "venue": "Encore",
+      "date": "2026-10-23 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-the-powerslave-iron-maiden-tribute-125037/",
       "source": "iabilet",
       "category": "music",
-      "price": "96.53 lei",
-      "spotify_url": "https://open.spotify.com/artist/0N8D2mPKMd3MWIhqdfpTBp",
+      "price": "68.93 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4502,14 +4607,14 @@
       "video_url": null
     },
     {
-      "title": "The Powerslave - Iron Maiden Tribute",
-      "artist": "The Powerslave",
-      "venue": "Encore",
-      "date": "2026-10-23 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-the-powerslave-iron-maiden-tribute-125037/",
+      "title": "GZUZ live la Quantic",
+      "artist": "GZUZ live la Quantic",
+      "venue": "Quantic",
+      "date": "2026-10-24 20:00:00",
+      "url": "https://www.iabilet.ro/bilete-gzuz-live-la-quantic-127498/",
       "source": "iabilet",
       "category": "music",
-      "price": "68.93 lei",
+      "price": "201.78 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4562,21 +4667,6 @@
       "video_url": null
     },
     {
-      "title": "GZUZ live la Quantic",
-      "artist": "GZUZ live la Quantic",
-      "venue": "Quantic",
-      "date": "2026-10-24 20:00:00",
-      "url": "https://www.iabilet.ro/bilete-gzuz-live-la-quantic-127498/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "201.78 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert Holy Molly",
       "artist": "Concert Holy Molly",
       "venue": "Hard Rock Cafe",
@@ -4622,21 +4712,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Son Mieux la Hard Rock Cafe",
-      "artist": "Concert Son Mieux la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-10-30 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-son-mieux-la-hard-rock-cafe-122667/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 111.99 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert Alexandra Capitanescu si Lavina",
       "artist": "Concert Alexandra Capitanescu si Lavina",
       "venue": "Quantic",
@@ -4645,6 +4720,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 89.11 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Son Mieux la Hard Rock Cafe",
+      "artist": "Concert Son Mieux la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-10-30 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-son-mieux-la-hard-rock-cafe-122667/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 111.99 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4682,21 +4772,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Extraordinar Diana Sarbu & invitatii - \"Eu continui sa te iubesc\"",
-      "artist": "Concert Extraordinar Diana Sarbu & invitatii",
-      "venue": "Sala Palatului",
-      "date": "2026-11-03 19:30:00",
-      "url": "https://www.iabilet.ro/bilete-concert-extraordinar-diana-sarbu-invitatii-eu-continui-sa-te-iubesc-126784/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 130 lei",
-      "spotify_url": "https://open.spotify.com/artist/2MMy13f3JmyuwwhNo6A5RP",
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "La Dolce Vita",
       "artist": "La Dolce Vita",
       "venue": "Palatul Bragadiru",
@@ -4712,6 +4787,21 @@
       "video_url": null
     },
     {
+      "title": "Concert Extraordinar Diana Sarbu & invitatii - \"Eu continui sa te iubesc\"",
+      "artist": "Concert Extraordinar Diana Sarbu & invitatii",
+      "venue": "Sala Palatului",
+      "date": "2026-11-03 19:30:00",
+      "url": "https://www.iabilet.ro/bilete-concert-extraordinar-diana-sarbu-invitatii-eu-continui-sa-te-iubesc-126784/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 130 lei",
+      "spotify_url": "https://open.spotify.com/artist/2MMy13f3JmyuwwhNo6A5RP",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Uriah Heep \u2013 The Magician\u2019s Farewell Tour",
       "artist": "Uriah Heep",
       "venue": "Laminor Arena",
@@ -4721,6 +4811,21 @@
       "category": "music",
       "price": "de la 220 lei",
       "spotify_url": "https://open.spotify.com/artist/45O9BwPMyywM755SYUK0sP",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Holograf la Hard Rock Cafe",
+      "artist": "Concert Holograf la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-11-04 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-holograf-la-hard-rock-cafe-127482/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 162.51 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -4757,21 +4862,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Holograf la Hard Rock Cafe",
-      "artist": "Concert Holograf la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-11-04 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-holograf-la-hard-rock-cafe-127482/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 162.51 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert Mihai Margineanu la Hard Rock Cafe",
       "artist": "Concert Mihai Margineanu la Hard Rock Cafe",
       "venue": "Hard Rock Cafe",
@@ -4780,21 +4870,6 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 141.90 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
-      "title": "Confesiuni muzicale: Monica Anghel \u0219i Andrei Tudor",
-      "artist": "Confesiuni muzicale",
-      "venue": "Sala Radio",
-      "date": "2026-11-07 19:30:00",
-      "url": "https://www.iabilet.ro/bilete-confesiuni-muzicale-monica-anghel-si-andrei-tudor-125131/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 164.77 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4817,14 +4892,29 @@
       "video_url": null
     },
     {
-      "title": "Concert Mircea Baniciu la Hard Rock Cafe",
-      "artist": "Concert Mircea Baniciu la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-11-08 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-concert-mircea-baniciu-la-hard-rock-cafe-127485/",
+      "title": "Confesiuni muzicale: Monica Anghel \u0219i Andrei Tudor",
+      "artist": "Confesiuni muzicale",
+      "venue": "Sala Radio",
+      "date": "2026-11-07 19:30:00",
+      "url": "https://www.iabilet.ro/bilete-confesiuni-muzicale-monica-anghel-si-andrei-tudor-125131/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 121.30 lei",
+      "price": "de la 164.77 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Apolodor - Ada Milea @ Concertul dup\u0103 ''Cartea lui Apolodor'' de Gelu Naum",
+      "artist": "Apolodor",
+      "venue": "Sala Luceaf\u0103rul",
+      "date": "2026-11-08 11:00:00",
+      "url": "https://www.iabilet.ro/bilete-apolodor-ada-milea-concertul-dupa-cartea-lui-apolodor-de-gelu-naum-128145/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 84.84 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4847,14 +4937,14 @@
       "video_url": null
     },
     {
-      "title": "Apolodor - Ada Milea @ Concertul dup\u0103 ''Cartea lui Apolodor'' de Gelu Naum",
-      "artist": "Apolodor",
-      "venue": "Sala Luceaf\u0103rul",
-      "date": "2026-11-08 11:00:00",
-      "url": "https://www.iabilet.ro/bilete-apolodor-ada-milea-concertul-dupa-cartea-lui-apolodor-de-gelu-naum-128145/",
+      "title": "Concert Mircea Baniciu la Hard Rock Cafe",
+      "artist": "Concert Mircea Baniciu la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-11-08 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-concert-mircea-baniciu-la-hard-rock-cafe-127485/",
       "source": "iabilet",
       "category": "music",
-      "price": "de la 84.84 lei",
+      "price": "de la 121.30 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -4967,21 +5057,6 @@
       "video_url": null
     },
     {
-      "title": "ABBA Tribute Band REVIVAL (UK)",
-      "artist": "ABBA Tribute Band REVIVAL (UK)",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-11-13 21:30:00",
-      "url": "https://www.iabilet.ro/bilete-abba-tribute-band-revival-uk-127300/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 84.84 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Spears of Wallachia Festival II",
       "artist": "Spears of Wallachia Festival II",
       "venue": "Quantic",
@@ -4990,6 +5065,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "128.71 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ABBA Tribute Band REVIVAL (UK)",
+      "artist": "ABBA Tribute Band REVIVAL (UK)",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-11-13 21:30:00",
+      "url": "https://www.iabilet.ro/bilete-abba-tribute-band-revival-uk-127300/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 84.84 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -5162,21 +5252,6 @@
       "video_url": null
     },
     {
-      "title": "Concert Vita de Vie Acustic la Hard Rock Cafe",
-      "artist": "Concert Vita de Vie Acustic la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-11-21 21:30:00",
-      "url": "https://www.iabilet.ro/bilete-concert-vita-de-vie-acustic-la-hard-rock-cafe-129431/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 141.90 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert aniversar: 25 de ani de Amadeus",
       "artist": "Concert aniversar",
       "venue": "Sala Radio",
@@ -5185,6 +5260,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 164.77 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Concert Vita de Vie Acustic la Hard Rock Cafe",
+      "artist": "Concert Vita de Vie Acustic la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-11-21 21:30:00",
+      "url": "https://www.iabilet.ro/bilete-concert-vita-de-vie-acustic-la-hard-rock-cafe-129431/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 141.90 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -5237,21 +5327,6 @@
       "video_url": null
     },
     {
-      "title": "KOVACS la Hard Rock Cafe",
-      "artist": "KOVACS la Hard Rock Cafe",
-      "venue": "Hard Rock Cafe",
-      "date": "2026-11-24 21:00:00",
-      "url": "https://www.iabilet.ro/bilete-kovacs-la-hard-rock-cafe-124291/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 189.11 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Concert Nicole Cherry \u201cInfinit\u201d",
       "artist": "Concert Nicole Cherry \u201cInfinit\u201d",
       "venue": "Sala Palatului",
@@ -5260,6 +5335,21 @@
       "source": "iabilet",
       "category": "music",
       "price": "de la 154.41 lei",
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "KOVACS la Hard Rock Cafe",
+      "artist": "KOVACS la Hard Rock Cafe",
+      "venue": "Hard Rock Cafe",
+      "date": "2026-11-24 21:00:00",
+      "url": "https://www.iabilet.ro/bilete-kovacs-la-hard-rock-cafe-124291/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 189.11 lei",
       "spotify_url": null,
       "description": null,
       "description_source": null,
@@ -5387,21 +5477,6 @@
       "video_url": null
     },
     {
-      "title": "\u0218tefan B\u0103nic\u0103 - Concert Extraordinar de Cr\u0103ciun - Show 1",
-      "artist": "\u0218tefan B\u0103nic\u0103",
-      "venue": "Sala Palatului",
-      "date": "2026-12-05 19:30:00",
-      "url": "https://www.iabilet.ro/bilete-stefan-banica-concert-extraordinar-de-craciun-show-1-127516/",
-      "source": "iabilet",
-      "category": "music",
-      "price": "de la 149 lei",
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
-    },
-    {
       "title": "Ada Milea - Concert'n 4",
       "artist": "Ada Milea",
       "venue": "Sala Luceaf\u0103rul",
@@ -5411,6 +5486,21 @@
       "category": "music",
       "price": "de la 95.45 lei",
       "spotify_url": "https://open.spotify.com/artist/5aKUWVbHfEugTAVoHBKNFi",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "\u0218tefan B\u0103nic\u0103 - Concert Extraordinar de Cr\u0103ciun - Show 1",
+      "artist": "\u0218tefan B\u0103nic\u0103",
+      "venue": "Sala Palatului",
+      "date": "2026-12-05 19:30:00",
+      "url": "https://www.iabilet.ro/bilete-stefan-banica-concert-extraordinar-de-craciun-show-1-127516/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 149 lei",
+      "spotify_url": null,
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -5606,6 +5696,21 @@
       "category": "music",
       "price": "de la 137.87 lei",
       "spotify_url": "https://open.spotify.com/artist/2QGAq23m5SoZerLzjifDeQ",
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Lords of the Sound - The Music of Hans Zimmer",
+      "artist": "Lords of the Sound",
+      "venue": "Sala Palatului",
+      "date": "2027-01-09 19:00:00",
+      "url": "https://www.iabilet.ro/bilete-lords-of-the-sound-the-music-of-hans-zimmer-130300/",
+      "source": "iabilet",
+      "category": "music",
+      "price": "de la 120 lei",
+      "spotify_url": "https://open.spotify.com/artist/0Sq9M5pftKyByoFd4CzpQB",
       "description": null,
       "description_source": null,
       "image_url": null,
@@ -6307,51 +6412,6 @@
       "title": "-EM",
       "artist": null,
       "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-08-18 19:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/em",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/_em.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "Hysteresis II - Moon",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-08-18 20:30:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/hysteresis-ii-moon",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/hysteresis-II.png",
-      "video_url": null
-    },
-    {
-      "title": "-EM",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
-      "date": "2026-08-18 21:00:00",
-      "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/em",
-      "source": "cuibul",
-      "category": "theatre",
-      "price": null,
-      "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": "https://cuibulartistilor.ro/s/resources/events_images/_em.jpeg",
-      "video_url": null
-    },
-    {
-      "title": "-EM",
-      "artist": null,
-      "venue": "Cuibul Arti\u0219tilor",
       "date": "2026-08-19 19:00:00",
       "url": "https://www.rezervari.cuibulartistilor.ro/spectacol/em",
       "source": "cuibul",
@@ -6724,6 +6784,21 @@
       "video_url": null
     },
     {
+      "title": "Te iubesc de ma scoti din minti!",
+      "artist": "Te iubesc de ma scoti din minti!",
+      "venue": "NJoy Club&Garden",
+      "date": "2026-08-25 20:00:00",
+      "url": "https://eventbook.ro/theater/bilete-te-iubesc-de-ma-scoti-din-minti",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "60 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la Te iubesc de ma scoti din minti!",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/02/bilete-te-iubesc-de-ma-scoti-din-minti-rEn.webp",
+      "video_url": null
+    },
+    {
       "title": "Orgiile Otiliei",
       "artist": "Orgiile Otiliei",
       "venue": "Teatrul Infinit",
@@ -6751,6 +6826,21 @@
       "description": "Cump\u0103r\u0103 bilete la O cin\u0103 cu bucluc",
       "description_source": "scraped",
       "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2025/02/bilete-o-cina-cu-bucluc-regia-alexandru-rusu.webp",
+      "video_url": null
+    },
+    {
+      "title": "Ema \u0219i Eric \u00eenva\u021b\u0103 bunele maniere",
+      "artist": "Ema \u0219i Eric \u00eenva\u021b\u0103 bunele maniere",
+      "venue": "Improteca",
+      "date": "2026-08-29 10:30:00",
+      "url": "https://eventbook.ro/theater/bilete-ema-si-eric-invata-bunele-maniere",
+      "source": "eventbook",
+      "category": "theatre",
+      "price": "40 LEI",
+      "spotify_url": null,
+      "description": "Cump\u0103r\u0103 bilete la EMA SI ERIC INVATA BUNELE MANIERE - SPECTACOL DE TEATRU MUZICAL PENTRU COPII",
+      "description_source": "scraped",
+      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/08/bilete-ema-si-eric-invata-bunele-maniere-TXt.webp",
       "video_url": null
     },
     {
@@ -7309,6 +7399,21 @@
       "video_url": null
     },
     {
+      "title": "Vintage Sounds at the Palace",
+      "artist": null,
+      "venue": "Teatrul Godot",
+      "date": "2026-09-26 20:30:00",
+      "url": "https://www.teatrulgodot.ro/spectacole/vintage-sounds-at-the-palace/",
+      "source": "godot",
+      "category": "music",
+      "price": null,
+      "spotify_url": null,
+      "description": null,
+      "description_source": null,
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Nepotul Meu Se Crede Poet",
       "artist": null,
       "venue": "Teatrul Godot",
@@ -7453,10 +7558,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "\u201eSunt momente \u00een via\u021b\u0103 c\u00e2nd o m\u00e2n\u0103 uria\u0219\u0103, invizibil\u0103, te ia de unde e\u0219ti \u0219i te poart\u0103 c\u0103tre un loc mai bun. A\u0219a m\u0103 simt \u0219i eu cu acest spectacol. Bucuria pe care o simt \u00een facerea lui, sper c\u0103 va fi contagioas\u0103 \u0219i pentru public. Este un manifest pentru iubire, pentru dor, pentru prietenie, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/01/cover-site-spectacol-CLUB-27-pt-site-la-dimensiune-02-scaled.jpg",
+      "video_url": "https://www.youtube.com/embed/nAyZGRLB3dI"
     },
     {
       "title": "Liber Volatilium",
@@ -7468,9 +7573,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201eIubesc oamenii. \u0218i uneori m\u0103 uit minunat\u0103 la ei \u0219i nu le \u00een\u021beleg, c\u00e2t de mult m-a\u0219 str\u0103dui, aluatul g\u00e2ndurilor. Sunt ca un aeroport supra-aglomerat cu multe zboruri \u00eent\u00e2rziate sau am\u00e2nate din cauza condi\u021biilor meteo nefavorabile. Ce ne \u021bine at\u00e2t de lega\u021bi de p\u0103m\u00e2nt cu credin\u021be care nici m\u0103car nu ne apar\u021bin, dar care devin [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/08/KV-temp-Liber-Volatilium-03-1920x1080-px-1024x576.jpg",
       "video_url": null
     },
     {
@@ -7483,9 +7588,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201eIubesc oamenii. \u0218i uneori m\u0103 uit minunat\u0103 la ei \u0219i nu le \u00een\u021beleg, c\u00e2t de mult m-a\u0219 str\u0103dui, aluatul g\u00e2ndurilor. Sunt ca un aeroport supra-aglomerat cu multe zboruri \u00eent\u00e2rziate sau am\u00e2nate din cauza condi\u021biilor meteo nefavorabile. Ce ne \u021bine at\u00e2t de lega\u021bi de p\u0103m\u00e2nt cu credin\u021be care nici m\u0103car nu ne apar\u021bin, dar care devin [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/08/KV-temp-Liber-Volatilium-03-1920x1080-px-1024x576.jpg",
       "video_url": null
     },
     {
@@ -7500,7 +7605,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/04/10-scaled-e1727259247470.jpg",
       "video_url": null
     },
     {
@@ -7513,9 +7618,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201eSpectacolul abund\u0103 in replici bune, pline de umor, a\u0219a c\u0103 vei r\u00e2de mult. Autorul te am\u0103ge\u0219te cu o comedie spumoas\u0103 \u0219i apoi te execut\u0103 gra\u021bios. Pentru c\u0103 gluma vireaz\u0103 brusc \u00een dram\u0103 \u0219i apoi spre tragedie. \u0218i, a\u0219a cum le st\u0103 bine scriitorilor abili, Alex Popa \u021bi-a dat numeroase indicii pentru a \u00een\u021belege ce se [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/04/Secretul-fericirii-05-mai-foto-Andrei-Gindac-Two-Bugs__29-scaled.jpg",
       "video_url": null
     },
     {
@@ -7528,9 +7633,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "C\u00e2nd mi-am dat seama c\u0103 nu se poate \u00eentoarce \u00een lumea noastr\u0103, am ales s\u0103 intru eu \u00een a lui.",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/Lumea-lui-Frank-04-mai-foto-Andrei-Gindac_11.jpg",
       "video_url": null
     },
     {
@@ -7543,9 +7648,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201eE un text n\u0103scut dintr-o c\u0103utare a mea ce se \u00eentinde peste timp. E, dac\u0103 vre\u021bi, o \u00eencercare de a r\u0103spunde unei \u00eentreb\u0103ri foarte importante aflate, probabil, \u00een sufletul fiec\u0103ruia dintre noi: oare se sf\u00e2r\u0219esec lucrurile, \u00eentr-adev\u0103r, acolo unde credem noi?\u00a0 Spectacolul poate fi un semnal de alarm\u0103 \u00een fa\u021ba riscului de aplatizare a vie\u021bii, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/04/Distanta-dintre-pasi-04-iunie-foto-Maria-Gindac-Two-Bugs__8-scaled.jpg",
       "video_url": null
     },
     {
@@ -7558,9 +7663,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "C\u00e2nd aveam \u0219apte ani, m-am g\u00e2ndit: \u201eLa 18 ani o s\u0103 m\u0103 c\u0103s\u0103toresc \u0219i o s\u0103 fac copii.\u201d N-am reu\u0219it niciodat\u0103 s\u0103 g\u0103sesc ce aveau p\u0103rin\u021bii mei. [\u2026] Ar trebui s\u0103 fug afar\u0103 \u0219i s\u0103 \u00een\u0219fac prima persoan\u0103 pe care pot s\u0103 o suport? \u201eCred c\u0103 un spectacol de teatru este reu\u0219it \u00een m\u0103sura \u00een [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/02/Design-fara-titlu-1-1-1024x576.png",
       "video_url": null
     },
     {
@@ -7573,10 +7678,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "De-a lungul vie\u021bii, dai de o m\u00e2n\u0103 de oameni de care e\u0219ti atras. Dar nu atras \u00een felul \u0103la. [...] S\u0103 nu renun\u021bi niciodat\u0103 la oamenii \u0103\u0219tia.",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/08/AB_0065.jpg",
+      "video_url": "https://www.youtube.com/embed/WOXoWPlq-ts"
     },
     {
       "title": "Monster",
@@ -7588,9 +7693,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201e\u00abMonster\u00bb descrie perfect impasul emo\u021bional \u00een care a ajuns societatea noastr\u0103. Exemplific\u00e2nd cu sistemul educa\u021bional, povestea urm\u0103re\u0219te patru destine care se \u00eent\u00e2lnesc \u0219i care \u00eencearc\u0103 s\u0103-\u0219i cl\u0103deasc\u0103 un viitor \u2013 fiecare \u00een felul s\u0103u \u2013 pe ni\u0219te temelii umbrite de un trecut dureros. Lipsa comunic\u0103rii reale, c\u0103utarea disperat\u0103 a propriei identit\u0103\u021bi \u00een contextul social \u0219i [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2025/09/Monster-14-oct-foto-Andrei-Gindac-Two-BugsCL1A1132-scaled.jpg",
       "video_url": null
     },
     {
@@ -7603,9 +7708,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Singura regul\u0103 la acest joc, de-a via\u021ba pe p\u0103m\u00e2nt, este c\u0103, la sf\u00e2r\u0219it, trebuie s\u0103 mori singur.",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/IMG_9733.jpg",
       "video_url": null
     },
     {
@@ -7618,9 +7723,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Gre\u0219eala noastr\u0103 e s\u0103 credem c\u0103 z\u00e2mbetul este pentru cei ferici\u021bi. [...] Z\u00e2mbetul e cel care \u00eel face pe om fericit.",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/07/ibrahim-30x50-1.jpg",
       "video_url": null
     },
     {
@@ -7633,9 +7738,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "\u201e(the) Woman porne\u0219te de la maternitate, dar vorbe\u0219te despre ceva mult mai larg: despre ce se \u00eent\u00e2mpl\u0103 c\u00e2nd rolurile pe care le juc\u0103m \u2013 de femeie, de b\u0103rbat, de partener, de artist, de p\u0103rinte, de \u201eadult func\u021bional\u201d \u2013 \u00eencep s\u0103 se ciocneasc\u0103 \u00eentre ele. Despre presiunea de a face totul \u00abcorect\u00bb. Despre oboseal\u0103, dorin\u021b\u0103, vin\u0103, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2026/01/the-Woman-13-ian-foto-Andrei-Gindac-Two-BugsCL1A5357-scaled.jpg",
       "video_url": null
     },
     {
@@ -7648,10 +7753,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "\u201eCine l-a ucis pe tata?, romanul autobiografic al lui \u00c9douard Louis, e o scrisoare care nu-\u0219i g\u0103se\u0219te r\u0103spuns, e urletul violent al unui fiu c\u0103tre tat\u0103l s\u0103u. Autorul face slalom, la viteze halucinante, prin propriul s\u0103u trecut, \u00een zone sensibile de intimitate \u0219i traum\u0103. Devenit bestseller, bucur\u00e2ndu-se de multiple traduceri \u0219i mont\u0103ri, Cine l-a ucis [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/12/afis-cine-l-a-ucis-pe-tata-web.jpg",
+      "video_url": "https://www.youtube.com/embed/2qEFoLwXl7Q"
     },
     {
       "title": "CINE L-A UCIS PE TATA?",
@@ -7663,10 +7768,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "\u201eCine l-a ucis pe tata?, romanul autobiografic al lui \u00c9douard Louis, e o scrisoare care nu-\u0219i g\u0103se\u0219te r\u0103spuns, e urletul violent al unui fiu c\u0103tre tat\u0103l s\u0103u. Autorul face slalom, la viteze halucinante, prin propriul s\u0103u trecut, \u00een zone sensibile de intimitate \u0219i traum\u0103. Devenit bestseller, bucur\u00e2ndu-se de multiple traduceri \u0219i mont\u0103ri, Cine l-a ucis [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2023/12/afis-cine-l-a-ucis-pe-tata-web.jpg",
+      "video_url": "https://www.youtube.com/embed/2qEFoLwXl7Q"
     },
     {
       "title": "CHIPUL T\u0102U \u00ceNTR-UN CONTUR DE INIM\u0102",
@@ -7678,9 +7783,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Chipul t\u0103u \u00eentr-un contur de inim\u0103 este un spectacol-jurnal care exploreaz\u0103 nu doar impactul direct al prezen\u021bei sau absen\u021bei influen\u021bei p\u0103rin\u021bilor, ci \u0219i felul \u00een care aceste leg\u0103turi esen\u021biale contribuie la formarea identit\u0103\u021bii personale \u0219i la traseul emo\u021bional al fiec\u0103rui individ. Textul este inspirat din pove\u0219tile reale ale actorilor \u0219i actri\u021belor. Procesul de crea\u021bie a [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://teatrulmetropolis.ro/wp-content/uploads/2024/08/Design-fara-titlu.jpg",
       "video_url": null
     },
     {
@@ -7693,9 +7798,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Povestea se petrece \u00een Irlanda zilelor noastre, \u00een satul Killukan, aflat la 15 kilometri de Mullingar; un loc prozaic, care nu este celebru pentru nimic. Se afl\u0103 chiar la doi pa\u0219i de via\u021b\u0103\u2026 Tony este un b\u0103tr\u00e2n \u00een jur de \u0219aptezeci de ani, care tr\u0103ie\u0219te cu fiul s\u0103u, Anthony, trecut de patruzeci de ani, iar [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/la-doi-pasi-de-mullingar-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -7708,9 +7813,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Povestea se petrece \u00een Irlanda zilelor noastre, \u00een satul Killukan, aflat la 15 kilometri de Mullingar; un loc prozaic, care nu este celebru pentru nimic. Se afl\u0103 chiar la doi pa\u0219i de via\u021b\u0103\u2026 Tony este un b\u0103tr\u00e2n \u00een jur de \u0219aptezeci de ani, care tr\u0103ie\u0219te cu fiul s\u0103u, Anthony, trecut de patruzeci de ani, iar [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/la-doi-pasi-de-mullingar-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -7723,10 +7828,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "O medita\u021bie asupra ideii de credin\u021b\u0103 \u0219i miracol versus ra\u021biune, \u00eentr-un spectacol tulbur\u0103tor nominalizat la dou\u0103 Premii Uniter \u00een 2024. \u00centr-o m\u0103n\u0103stire de maici se petrece ceva teribil: un nou-n\u0103scut este g\u0103sit mort. Pentru a decide soarta tinerei novice, Agnes, care a n\u0103scut \u0219i pare c\u0103 nu-\u0219i aminte\u0219te nimic, instan\u021ba o trimite pe Martha Livingstone, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/agnes-EBS-1280x853-px.jpg",
+      "video_url": "https://www.youtube.com/embed/qqFyTWdlwMA"
     },
     {
       "title": "Amadeus",
@@ -7738,9 +7843,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Celebra rivalitate dintre Mozart \u0219i Salieri, surprins\u0103 admirabil de Peter Shaffer \u00een piesa \u201eAmadeus\u201d \u0219i care a stat la baza unuia dintre filmele legendare ale secolului XX, regizat de Milo\u0161 Forman, va ajunge, din toamn\u0103, pe scena Teatrului Nottara, \u00een viziunea lui Vlad Cristache. Scenografia va fi semnat\u0103 de Oana Micu, iar distribu\u021bia va fi [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/amadeus-repetitii-EBS-1280x853-px.jpg.jpeg",
       "video_url": null
     },
     {
@@ -7753,9 +7858,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Trei prietene de-o via\u021b\u0103, vacan\u021ba visurilor lor, multe speran\u021be, \u00eentr-o comedie cu trei actri\u021be seduc\u0103toare. \u00cen Kifisi\u00e1, un cartier \u00eenst\u0103rit al Atenei, trei femei discut\u0103 despre iubire \u0219i, \u00een special, despre b\u0103rba\u021bii din via\u021ba lor. Preg\u0103tite s\u0103 porneasc\u0103 \u00eentr-o c\u0103l\u0103torie \u00een Thailanda, pentru a se elibera \u0219i a deschide un nou drum \u00een via\u021b\u0103, Aleka, [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/thailanda-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -7768,9 +7873,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Celebra rivalitate dintre Mozart \u0219i Salieri, surprins\u0103 admirabil de Peter Shaffer \u00een piesa \u201eAmadeus\u201d \u0219i care a stat la baza unuia dintre filmele legendare ale secolului XX, regizat de Milo\u0161 Forman, va ajunge, din toamn\u0103, pe scena Teatrului Nottara, \u00een viziunea lui Vlad Cristache. Scenografia va fi semnat\u0103 de Oana Micu, iar distribu\u021bia va fi [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/amadeus-repetitii-EBS-1280x853-px.jpg.jpeg",
       "video_url": null
     },
     {
@@ -7783,9 +7888,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "O comedie dulce-amar\u0103 a vie\u021bii de zi cu zi, marca celui mai important dramaturg canadian. Ac\u0163iunea se petrece pe balcoanele al\u0103turate ale unui bloc dintr-un mare ora\u015f. Protagonistul, John Cummings, interac\u0163ioneaz\u0103 cu trei femei: Fay, Angel \u015fi Gwen, care \u00eei devin vecine timp de trei ani. John e ziarist \u015fi \u00eencearc\u0103 s\u0103 scrie un nou [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/11/Praf-de-stele-homepage-1280x853-px-e1731964074931.jpg",
       "video_url": null
     },
     {
@@ -7798,9 +7903,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "O comedie emo\u021bionant\u0103, \u00een care grani\u021ba dintre realitate \u0219i imagina\u021bie este pulverizat\u0103! O poveste tandr\u0103 \u0219i dulce-amar\u0103 despre iubire \u0219i demonii ei! Un scriitor de succes este prins \u00een v\u00e2rtejul unui carusel de rela\u021bii complicate. Universul lui este populat de femei care i-au marcat \u0219i \u00eenc\u0103 \u00eei marcheaz\u0103 via\u021ba, care apar \u0219i dispar, care devin [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/jake-si-femeile-lui-EBS-1280x853-px.jpg.jpeg",
       "video_url": null
     },
     {
@@ -7813,9 +7918,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Un spectacol ce surprinde cu fine\u021be nuan\u021bele dramei din celebra poveste a lui Ingmar Bergman, vulnerabilitatea \u0219i curajul asum\u0103rii gre\u0219elilor sunt cheia care armonizeaz\u0103 dou\u0103 suflete r\u0103t\u0103cite. Dup\u0103 mul\u021bi ani, Charlotte, o pianist\u0103 celebr\u0103 \u0219i aplaudat\u0103 \u00een toat\u0103 lumea, \u00ee\u0219i viziteaz\u0103 fiica, undeva, \u00eentr-un sat pierdut de lume, la casa parohial\u0103 unde locuie\u0219te al\u0103turi de [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/sonata-de-toamna-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -7828,10 +7933,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "Comedia erorilor \u2013 o poveste savuroas\u0103, cu aventuri, iubire \u0219i umor de calitate, unul dintre cele mai iubite spectacole din Bucure\u0219ti. Una dintre piesele timpurii ale lui William Shakespeare, \u201eComedia erorilor\u201d este o poveste plin\u0103 de \u00eent\u00e2mpl\u0103ri neprev\u0103zute, qui-pro-quo-uri savuroase, iubire \u0219i aventur\u0103. Este, \u00een acela\u0219i timp, o c\u0103l\u0103torie de descoperire de sine, de asumare [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2025/06/comedia-erorilor-EBS-1280x853-px.jpg",
+      "video_url": "https://www.youtube.com/embed/J-lii6Ut0Ds"
     },
     {
       "title": "La doi pa\u0219i de Mullingar",
@@ -7843,9 +7948,9 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
+      "description": "Povestea se petrece \u00een Irlanda zilelor noastre, \u00een satul Killukan, aflat la 15 kilometri de Mullingar; un loc prozaic, care nu este celebru pentru nimic. Se afl\u0103 chiar la doi pa\u0219i de via\u021b\u0103\u2026 Tony este un b\u0103tr\u00e2n \u00een jur de \u0219aptezeci de ani, care tr\u0103ie\u0219te cu fiul s\u0103u, Anthony, trecut de patruzeci de ani, iar [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/2024/10/la-doi-pasi-de-mullingar-EBS-1280x853-px.jpg",
       "video_url": null
     },
     {
@@ -7858,10 +7963,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "\u201eLapte negru\u201d este un spectacol care vorbe\u0219te cu mult umor despre feminitate, maternitate, depresie postnatal\u0103 \u0219i pasiunea pentru scris, \u00eentr-o societate \u00een care femeile \u00eenc\u0103 se lupt\u0103 cu standarde duble \u0219i cu tipare mentalitare conservatoare. O poveste inspirat\u0103 din experien\u021ba renumitei scriitoare turce Elif Shafak, confruntat\u0103 cu dificultatea g\u0103sirii unui echilibru \u00eentre activitatea scrisului \u0219i [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/lapte-negru-EBS-2.jpg.jpeg",
+      "video_url": "https://www.youtube.com/embed/Zl8EcMNCRaQ"
     },
     {
       "title": "Mama",
@@ -7873,10 +7978,10 @@
       "category": "theatre",
       "price": null,
       "spotify_url": null,
-      "description": null,
-      "description_source": null,
-      "image_url": null,
-      "video_url": null
+      "description": "Un spectacol de neratat din programul teatrelor din Bucure\u0219ti despre singur\u0103tatea care na\u0219te mon\u0219tri. O fars\u0103 neagr\u0103, cu mult umor de limbaj, ce \u00eenv\u0103luie o dram\u0103 psihologic\u0103 nuan\u021bat\u0103,\u00a0Mama\u00a0este o poveste tulbur\u0103toare \u0219i intens\u0103 despre singur\u0103tate, familie, nevoia de afec\u021biune. Dup\u0103 o via\u021b\u0103 \u00eentreag\u0103 \u00een care s-a dedicat familiei, Anne \u00ee\u0219i d\u0103 seama c\u0103 nimeni nu [\u2026]",
+      "description_source": "scraped",
+      "image_url": "https://nottara.ro/wp-content/uploads/mama-2-EBS-1280x853-px.jpg",
+      "video_url": "https://www.youtube.com/embed/jR5q31MTzgU"
     },
     {
       "title": "Nicio pastil\u0103 magic\u0103 la SEAS",
@@ -7905,7 +8010,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/997/1252/large_amintiri.jpg",
       "video_url": null
     },
     {
@@ -7920,7 +8025,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/996/1264/large_Afis_Hedda_3.jpg",
       "video_url": null
     },
     {
@@ -7935,7 +8040,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
       "video_url": null
     },
     {
@@ -7950,7 +8055,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1102/1424/large_Afis_Moroi_copy_mic.jpg",
       "video_url": null
     },
     {
@@ -7965,7 +8070,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/997/1252/large_amintiri.jpg",
       "video_url": null
     },
     {
@@ -7980,7 +8085,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
       "video_url": null
     },
     {
@@ -7995,7 +8100,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1193/1665/large_Afis_Ceasu_nou.jpg",
       "video_url": null
     },
     {
@@ -8010,7 +8115,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1113/1442/large_nimic_nu_este_intamplator_TNB_web.jpg",
       "video_url": null
     },
     {
@@ -8025,7 +8130,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
       "video_url": null
     },
     {
@@ -8040,7 +8145,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/355/1235/large_Afis_nou_2024_-_20_de_ani.jpg",
       "video_url": null
     },
     {
@@ -8055,7 +8160,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/941/1433/large_Afis_Opera_nou.jpg",
       "video_url": null
     },
     {
@@ -8070,7 +8175,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
       "video_url": null
     },
     {
@@ -8085,7 +8190,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/581/625/large_A_FOST_ODATA_IN_ROMANIA_resize.jpg",
       "video_url": null
     },
     {
@@ -8100,7 +8205,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/825/1028/large_Afis_Facebook_2.jpg",
       "video_url": null
     },
     {
@@ -8115,7 +8220,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1115/1526/large_Afis-NICIO-PASTILA-jpeg-WEB_2.jpg",
       "video_url": null
     },
     {
@@ -8145,7 +8250,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/770/1432/large_Dineu_afis_nou.jpg",
       "video_url": null
     },
     {
@@ -8160,7 +8265,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
     },
     {
@@ -8175,7 +8280,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/983/1238/large_Afis_final_bun52.jpg",
       "video_url": null
     },
     {
@@ -8205,7 +8310,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1073/1368/large_Afis_MARY_STUART_-_WEB.jpg",
       "video_url": null
     },
     {
@@ -8220,7 +8325,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
     },
     {
@@ -8235,7 +8340,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
       "video_url": null
     },
     {
@@ -8250,7 +8355,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/996/1264/large_Afis_Hedda_3.jpg",
       "video_url": null
     },
     {
@@ -8265,7 +8370,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1073/1368/large_Afis_MARY_STUART_-_WEB.jpg",
       "video_url": null
     },
     {
@@ -8280,7 +8385,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/670/748/large_FIGURANTA_1_web.jpg",
       "video_url": null
     },
     {
@@ -8295,7 +8400,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/918/1140/large_evadarea_tacuta.jpg",
       "video_url": null
     },
     {
@@ -8310,7 +8415,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/915/1142/large_afis-mic.jpg",
       "video_url": null
     },
     {
@@ -8325,7 +8430,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1073/1368/large_Afis_MARY_STUART_-_WEB.jpg",
       "video_url": null
     },
     {
@@ -8340,7 +8445,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/766/925/large_scrisoarea_afisnou_web.jpg",
       "video_url": null
     },
     {
@@ -8355,7 +8460,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/670/748/large_FIGURANTA_1_web.jpg",
       "video_url": null
     },
     {
@@ -8370,7 +8475,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/676/764/large_153AD4EE-98B9-4CED-BAEC-DDE158F474F5.jpeg",
       "video_url": null
     },
     {
@@ -8385,7 +8490,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
     },
     {
@@ -8400,7 +8505,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/676/764/large_153AD4EE-98B9-4CED-BAEC-DDE158F474F5.jpeg",
       "video_url": null
     },
     {
@@ -8415,7 +8520,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/976/1231/large_1_afrim.jpg",
       "video_url": null
     },
     {
@@ -8430,7 +8535,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1098/1416/large_afis_final.jpg",
       "video_url": null
     },
     {
@@ -8445,7 +8550,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/910/1125/large_afis_50X70_final.jpg",
       "video_url": null
     },
     {
@@ -8460,7 +8565,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/304/1702/large_afis_micul_2026_web.jpg",
       "video_url": null
     },
     {
@@ -8475,7 +8580,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/533/548/large_Afis_Orchestra_Titanic.jpg",
       "video_url": null
     },
     {
@@ -8490,7 +8595,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/917/1133/large_Afis80.jpg",
       "video_url": null
     },
     {
@@ -8505,7 +8610,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/910/1125/large_afis_50X70_final.jpg",
       "video_url": null
     },
     {
@@ -8520,7 +8625,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/765/928/large_afis_efectul_razelorv3.jpg",
       "video_url": null
     },
     {
@@ -8535,7 +8640,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/351/654/large_ALLEGRO_distributie_completa_variabila_2019.jpg",
       "video_url": null
     },
     {
@@ -8550,7 +8655,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/762/921/large_afis_Noapte_lui_Helver.JPG",
       "video_url": null
     },
     {
@@ -8565,7 +8670,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/759/936/large_Afi_final.jpg",
       "video_url": null
     },
     {
@@ -8580,7 +8685,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/581/625/large_A_FOST_ODATA_IN_ROMANIA_resize.jpg",
       "video_url": null
     },
     {
@@ -8595,7 +8700,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/792/981/large_Afis_bolta_web.jpg",
       "video_url": null
     },
     {
@@ -8610,7 +8715,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/471/451/large_fetita_soldat_web.jpg",
       "video_url": null
     },
     {
@@ -8625,7 +8730,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/784/964/large_Afis_final_bun37.jpg",
       "video_url": null
     },
     {
@@ -8640,7 +8745,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/749/908/large_afis_nou_Extraordinara.jpg",
       "video_url": null
     },
     {
@@ -8655,7 +8760,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/584/635/large_Afis_final_bun_Padurea.jpg",
       "video_url": null
     },
     {
@@ -8670,7 +8775,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
       "video_url": null
     },
     {
@@ -8685,7 +8790,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/608/757/large_frumos_TNB_web_mic.jpg",
       "video_url": null
     },
     {
@@ -8700,7 +8805,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
       "video_url": null
     },
     {
@@ -8715,7 +8820,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/584/635/large_Afis_final_bun_Padurea.jpg",
       "video_url": null
     },
     {
@@ -8730,7 +8835,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/749/908/large_afis_nou_Extraordinara.jpg",
       "video_url": null
     },
     {
@@ -8745,7 +8850,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/584/635/large_Afis_final_bun_Padurea.jpg",
       "video_url": null
     },
     {
@@ -8760,7 +8865,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/590/1233/large_presul_2024_feb.jpg",
       "video_url": null
     },
     {
@@ -8775,7 +8880,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/853/1045/large_Afis_final_FS.jpg",
       "video_url": null
     },
     {
@@ -8790,7 +8895,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/355/1235/large_Afis_nou_2024_-_20_de_ani.jpg",
       "video_url": null
     },
     {
@@ -8805,7 +8910,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/527/541/large_Afis_Vivien.jpg",
       "video_url": null
     },
     {
@@ -8835,7 +8940,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/786/975/large_Afis_cu_logo.jpg",
       "video_url": null
     },
     {
@@ -8850,7 +8955,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/704/822/large_Afis-incognito-web11.jpg",
       "video_url": null
     },
     {
@@ -8865,7 +8970,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/676/764/large_153AD4EE-98B9-4CED-BAEC-DDE158F474F5.jpeg",
       "video_url": null
     },
     {
@@ -8880,7 +8985,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1117/1443/large_contractii_web.jpg",
       "video_url": null
     },
     {
@@ -8895,7 +9000,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/825/1028/large_Afis_Facebook_2.jpg",
       "video_url": null
     },
     {
@@ -8925,7 +9030,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/780/956/large_AFIS_final_Titanic.jpg",
       "video_url": null
     },
     {
@@ -8940,7 +9045,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/983/1238/large_Afis_final_bun52.jpg",
       "video_url": null
     },
     {
@@ -8955,7 +9060,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1206/1694/large_afis_yen.jpg",
       "video_url": null
     },
     {
@@ -8970,7 +9075,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/914/1130/large_YOU_SAY_no.jpg",
       "video_url": null
     },
     {
@@ -8985,7 +9090,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1098/1416/large_afis_final.jpg",
       "video_url": null
     },
     {
@@ -9000,7 +9105,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/593/655/large_Afis_Class_OK.jpg",
       "video_url": null
     },
     {
@@ -9015,7 +9120,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/907/1196/large_afis_Calatoria-1_web.jpg",
       "video_url": null
     },
     {
@@ -9030,7 +9135,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/829/1044/large_Afis_CEI_DREPTI.jpg",
       "video_url": null
     },
     {
@@ -9045,7 +9150,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/918/1140/large_evadarea_tacuta.jpg",
       "video_url": null
     },
     {
@@ -9060,7 +9165,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/1269/1705/large_Poveste_de_iarna-afis_4.jpg",
       "video_url": null
     },
     {
@@ -9075,7 +9180,7 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/997/1252/large_amintiri.jpg",
       "video_url": null
     },
     {
@@ -9105,26 +9210,11 @@
       "spotify_url": null,
       "description": null,
       "description_source": null,
-      "image_url": null,
+      "image_url": "https://www.tnb.ro/uploads/spectacles/907/1196/large_afis_Calatoria-1_web.jpg",
       "video_url": null
     }
   ],
   "culture_events": [
-    {
-      "title": "Expozi\u021bie | Ocolul P\u0103m\u00e2ntului \u00een 50 de misiuni",
-      "artist": null,
-      "venue": "Muzeul Copiilor",
-      "date": "2026-08-18 10:00:00",
-      "url": "https://arcub.ro/eveniment/expozitie-ocolul-pamantului-in-50-de-misiuni",
-      "source": "arcub",
-      "category": "culture",
-      "price": null,
-      "spotify_url": null,
-      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 30.05.2026\u201322.08.2026.",
-      "description_source": "scraped",
-      "image_url": null,
-      "video_url": null
-    },
     {
       "title": "Expozi\u021bie | Ocolul P\u0103m\u00e2ntului \u00een 50 de misiuni",
       "artist": null,
@@ -10146,6 +10236,36 @@
       "video_url": null
     },
     {
+      "title": "Late Summer Spritz",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://mare.ro/exhibition/late-summer-spritz/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 13.08.2026\u201315.11.2026; deschidere la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Photographs by Constantin Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MARe - Muzeul de Art\u0103 Recent\u0103",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://mare.ro/exhibition/photographs-constantin-brancusi/",
+      "source": "mare",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 22.05.2026\u201327.09.2026; deschidere la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
       "title": "Bo\u00eete, Box, Br\u00e2ncu\u0219i",
       "artist": null,
       "venue": "MNAC",
@@ -11721,34 +11841,154 @@
       "video_url": null
     },
     {
-      "title": "DE CAPUL NOSTRU / ON OUR OWN",
+      "title": "Urban Steps Powered by Molotow Rom\u00e2nia",
       "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-08-18 18:00:00",
-      "url": "https://eventbook.ro/film/bilete-de-capul-nostru-on-our-own",
-      "source": "elvirepopescu",
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/55/Urban%20Steps%20Powered%20by%20Molotow%20Rom%C3%A2nia",
+      "source": "mnac",
       "category": "culture",
-      "price": "27 LEI",
+      "price": null,
       "spotify_url": null,
-      "description": "Director:Tudor Cristian JurgiuCast:Denisa Vraj\u0103, Vlad Furtun\u0103, Mara Diaconu Ducica, Sofia VasiliuGenre:Dram\u0103Duration:1h 34mCountry:Rom\u00e2niaLanguage:ROYear:2026 Sinopsis:\u00centr-un mic ora\u0219 din Rom\u00e2nia, un grup de adolescen\u021bi \u00eenva\u021b\u0103 s\u0103 se descurce f\u0103r\u0103 p\u0103rin\u021bii lor pleca\u021bi \u00een str\u0103in\u0103tate. For\u021ba\u021bi s\u0103 devin\u0103 adul\u021bi prea devreme, \u00ee\u0219i construiesc propria familie \u00eentr-o \u00eencercare disperat\u0103 de a umple golul. \u00cen centrul lor e Flavia, o t\u00e2n\u0103r\u0103 puternic\u0103, obi\u0219nuit\u0103 s\u0103 \u00ee\u0219i ascund\u0103 emo\u021biile \u00een spatele sarcasmul",
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 15.11.2018\u2013permanent\u0103; program de vizitare de la 11:00.",
       "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/06/bilete-de-capul-nostru-on-our-own-72X.webp",
-      "video_url": "https://www.youtube.com/embed/-6whO8jmM_k?si=VwSa-QyUgmYlLc8h"
+      "image_url": null,
+      "video_url": null
     },
     {
-      "title": "HER PRIVATE HELL",
+      "title": "LEVIATHAN",
       "artist": null,
-      "venue": "Cinema Elvire Popesco",
-      "date": "2026-08-18 20:00:00",
-      "url": "https://eventbook.ro/film/bilete-her-private-hell",
-      "source": "elvirepopescu",
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1029/LEVIATHAN",
+      "source": "mnac",
       "category": "culture",
-      "price": "27 LEI",
+      "price": null,
       "spotify_url": null,
-      "description": "Director:Nicolas Winding RefnCast:Charles Melton, Sophie Thatcher, Havana Rose Liu, Dougray ScottGenre:Crim\u0103, Dram\u0103, SF, ThrillerDuration:1h 49mCountry:Danemarca, SUAYear:2026 Prin cea\u021ba misterioas\u0103 ce pune st\u0103p\u00e2nire pe o metropol\u0103 futurist\u0103, dezl\u0103n\u021buind o entitate enigmatic\u0103 \u0219i mortal\u0103, o t\u00e2n\u0103r\u0103 tulburat\u0103 \u00ee\u0219i caut\u0103 tat\u0103l. Drumul ei se intersecteaz\u0103 cu cel al unui soldat american pornit \u00eentr-o odisee cutremur\u0103toare pentru a-\u0219i salva fiica din Iad.",
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 26.05.2022\u2013permanent\u0103; program de vizitare de la 11:00.",
       "description_source": "scraped",
-      "image_url": "https://storage.googleapis.com/eventbook-files/images/event/2026/07/bilete-her-private-hell-SJH.webp",
-      "video_url": "https://www.youtube.com/embed/WrK_XdlWN6A?si=Y-FVbDxKukCcKSjU"
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "URBAN ELEVATION BY MOLOTOW ROM\u00c2NIA",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1304/URBAN%20ELEVATION%20BY%20MOLOTOW%20ROM%C3%82NIA",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 12.12.2024\u2013permanent\u0103; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "Bo\u00eete, Box, Br\u00e2ncu\u0219i",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1354/Bo%C3%AEte%2C%20Box%2C%20Br%C3%A2ncu%C8%99i",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 19.02.2026\u201315.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "CAMPO SANTO",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1366/CAMPO%20SANTO",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "CRUCI \u00ceNDOITE. O RETROSPECTIV\u0102 VICTORIA & MARIAN ZIDARU",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1368/CRUCI%20%C3%8ENDOITE.%20O%20RETROSPECTIV%C4%82%20VICTORIA%20%26%20MARIAN%20ZIDARU",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "ROMAN COTO\u0218MAN. 110 SINGUR\u0102T\u0102\u021aI",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1369/ROMAN%20COTO%C8%98MAN.%20110%20SINGUR%C4%82T%C4%82%C8%9AI",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "CECI N\u2019EST PAS POP",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1372/CECI%20N%E2%80%99EST%20PAS%20POP",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "CRISTIAN DI\u021aOIU. ECLERAJE",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1367/CRISTIAN%20DI%C8%9AOIU.%20ECLERAJE",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
+    },
+    {
+      "title": "TITU TONCIAN. DE JUR \u00ceMPREJURUL NUMELUI MEU",
+      "artist": null,
+      "venue": "MNAC",
+      "date": "2026-09-17 11:00:00",
+      "url": "https://www.mnac.ro/event/1371/TITU%20TONCIAN.%20DE%20JUR%20%C3%8EMPREJURUL%20NUMELUI%20MEU",
+      "source": "mnac",
+      "category": "culture",
+      "price": null,
+      "spotify_url": null,
+      "description": "Expozi\u021bie \u00een desf\u0103\u0219urare: 23.05.2026\u201318.10.2026; program de vizitare de la 11:00.",
+      "description_source": "scraped",
+      "image_url": null,
+      "video_url": null
     },
     {
       "title": "DOLCE FAR NIENTE",
@@ -11931,7 +12171,7 @@
       "video_url": "https://www.youtube.com/embed/DeON55tj9EY?si=ltxsqM3cLkhh92Cn"
     },
     {
-      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: FILMUL CU DINOZAURI / PAW PATROL: THE DINO MOVIE",
+      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: \u00ceN LUMEA DINOZAURILOR / PAW PATROL: THE DINO MOVIE",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
       "date": "2026-08-23 11:00:00",
@@ -12156,7 +12396,7 @@
       "video_url": "https://www.youtube.com/embed/v1FlEyHn5dQ?si=BIWTFZFJwAnoCyWk"
     },
     {
-      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: FILMUL CU DINOZAURI / PAW PATROL: THE DINO MOVIE",
+      "title": "PATRULA C\u0102\u021aELU\u0218ILOR: \u00ceN LUMEA DINOZAURILOR / PAW PATROL: THE DINO MOVIE",
       "artist": null,
       "venue": "Cinema Elvire Popesco",
       "date": "2026-08-29 12:00:00",
