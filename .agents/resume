@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Dependencies survive snapshots and pause/resume. There is no database or
+# per-user authentication to repair; Amp supervises the declared web service.
+printf 'Orb ready. Start the web preview with amp orb services ensure.\n'

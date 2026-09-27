@@ -17,6 +17,21 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
+### Amp orbs
+
+`.agents/setup` installs Python dependencies, Playwright Chromium, and the web
+dependencies from `web/pnpm-lock.yaml`. It uses the orb's preinstalled Python
+3.11+, Node.js 20.9+, and uv, and pins pnpm to 10.28.2 for compatibility with the
+repository's build-script policy. Plain `python3` commands work without activating
+a virtualenv. Setup is safe to rerun; Amp snapshots the installed dependencies for
+reuse by fresh orbs. `.agents/resume` does not reinstall anything.
+
+Run `amp orb services ensure` to start the supervised Next.js development server
+and print its authenticated portal URL. No secrets or database are needed for
+unit tests or the web preview, which reads the committed event data. Live scraper,
+Spotify, enrichment, and email operations may need the credentials below; store
+them in Amp secrets rather than in setup scripts.
+
 ### Environment Variables
 
 | Variable | Description |

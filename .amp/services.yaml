@@ -1,0 +1,10 @@
+services:
+  web:
+    command: pnpm dev --hostname 0.0.0.0 --port "$PORT"
+    cwd: web
+    health: /
+    env:
+      TZ: Europe/Bucharest
+    portal:
+      title: Cultură la plic
+      description: Development preview using the repository's event data.
