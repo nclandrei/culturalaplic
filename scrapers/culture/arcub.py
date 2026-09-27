@@ -260,7 +260,7 @@ def _festival_events(
         r"^Program artistic\s*•\s*", "", title, flags=re.IGNORECASE
     )
     events: list[Event] = []
-    for heading in content.find_all(["h2", "h3", "h4"]):
+    for heading in content.find_all(["h2", "h3", "h4", "p"], recursive=False):
         parsed = parse_date_range(heading.get_text(" ", strip=True), now=now)
         if not parsed or parsed[0].date() != parsed[1].date():
             continue
@@ -269,6 +269,10 @@ def _festival_events(
             continue
         sibling = heading.find_next_sibling()
         while sibling and sibling.name not in {"h2", "h3", "h4"}:
+            if sibling.name == "p" and parse_date_range(
+                sibling.get_text(" ", strip=True), now=now
+            ):
+                break
             if sibling.name == "ul":
                 for item in sibling.find_all("li", recursive=False):
                     item_text = " ".join(item.get_text(" ", strip=True).split())
@@ -279,7 +283,22 @@ def _festival_events(
                     )
                     if not match:
                         continue
-                    parts = re.split(r"\s+[–—-]\s+", match.group(3), maxsplit=1)
+                    details = match.group(3)
+                    # A colon separates the location from the activity even
+                    # when the activity title itself contains a dash.
+                    parts = re.split(r":\s+|\s+[–—-]\s+", details, maxsplit=1)
+                    first_bold = item.find("strong")
+                    if first_bold:
+                        bold_text = " ".join(first_bold.get_text(" ", strip=True).split())
+                        location = bold_text.split("|", 1)[-1].strip()
+                        if ":" not in location and details.startswith(location):
+                            remainder = details[len(location):].strip()
+                            if re.match(r"^[–—-]\s+", remainder):
+                                parts = [location, remainder[1:].strip()]
+                    if "|" in details:
+                        route_parts = [part.strip() for part in details.split("|") if part.strip()]
+                        if len(route_parts) >= 3:
+                            parts = [" | ".join(route_parts[1:]), route_parts[0]]
                     if len(parts) != 2:
                         continue
                     venue, item_title = (part.strip() for part in parts)

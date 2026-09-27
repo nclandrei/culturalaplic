@@ -162,6 +162,58 @@ def test_ticket_intervals_expand_only_through_the_arcub_range_end():
     ]
 
 
+def test_festival_paragraph_dates_do_not_leak_events_between_days():
+    html = """
+    <div class="content">
+      <h3><strong>PROGRAM WEEKEND #22</strong></h3>
+      <p><strong>Sâmbătă, 26 septembrie</strong></p>
+      <ul><li><p><strong>12:00 – 14:00 | Piața Revoluției</strong> – Atelier</p></li></ul>
+      <p> </p><p><strong>Duminică, 27 septembrie</strong></p>
+      <ul><li><p><strong>19:00 – 20:00 | Zona Teatrului Odeon – Cor</strong></p></li></ul>
+    </div>
+    """
+    event_card = card("Program artistic • Străzi deschise • Weekend #22", "26 - 27 septembrie")
+    events = parse_card_events(event_card, html, now=datetime(2026, 9, 26))
+    assert [(event.date, event.venue, event.title) for event in events] == [
+        (datetime(2026, 9, 26, 12), "Piața Revoluției", "Străzi deschise • Weekend #22 — Atelier"),
+        (datetime(2026, 9, 27, 19), "Zona Teatrului Odeon", "Străzi deschise • Weekend #22 — Cor"),
+    ]
+    assert [event.date for event in parse_card_events(
+        event_card, html, now=datetime(2026, 9, 27)
+    )] == [datetime(2026, 9, 27, 19)]
+
+
+@pytest.mark.parametrize(
+    ("line", "venue", "title"),
+    [
+        (
+            '<strong>10:00 – 22:00 | Calea Victoriei – Palatul CEC</strong> – Activități sportive',
+            "Calea Victoriei – Palatul CEC",
+            "Activități sportive",
+        ),
+        (
+            '<strong>10:00 – 22:00 | Calea Grivița: </strong>Expoziția „Cred în România” - Catalizator III',
+            "Calea Grivița",
+            'Expoziția „Cred în România” - Catalizator III',
+        ),
+        (
+            '<strong>13:30 – 15:30 | Tur ghidat</strong> cu Ovidiu | Traseu itinerant | Splai → Ateneu |',
+            "Traseu itinerant | Splai → Ateneu",
+            "Tur ghidat cu Ovidiu",
+        ),
+    ],
+)
+def test_festival_preserves_locations_and_activity_titles(line, venue, title):
+    events = parse_card_events(
+        card("Program artistic • Străzi deschise", "26 - 27 septembrie"),
+        f'<div class="content"><p>Duminică, 27 septembrie</p><ul><li>{line}</li></ul></div>',
+        now=datetime(2026, 9, 27),
+    )
+    assert len(events) == 1
+    assert events[0].venue == venue
+    assert events[0].title == f"Străzi deschise — {title}"
+
+
 def test_known_hub_ticket_block_uses_its_verified_opening_time():
     fetcher = Mock(side_effect=HttpError("HTTP 403", status_code=403))
 

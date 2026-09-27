@@ -1,6 +1,7 @@
 from unittest.mock import call, patch
 
 from scrapers.music import enescu
+from services.http import HttpError
 
 
 def test_scrape_includes_international_competition_events():
@@ -23,21 +24,21 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    with patch.object(
+        enescu, "fetch_page_with_reader_fallback", side_effect=["", competition_html]
+    ) as fetch:
         events = enescu.scrape()
 
     assert fetch.call_args_list == [
         call(
-            enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
-            needs_js=False,
+            enescu.FESTIVAL_EVENTS_URL,
+            expected_text="concert-details",
             timeout=30000,
-            headers=enescu.READER_HEADERS,
         ),
         call(
-            enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
-            needs_js=False,
+            enescu.COMPETITION_EVENTS_URL,
+            expected_text="concert-details",
             timeout=30000,
-            headers=enescu.READER_HEADERS,
         ),
     ]
     assert len(events) == 1
@@ -47,8 +48,10 @@ def test_scrape_includes_international_competition_events():
     assert events[0].url.startswith(enescu.COMPETITION_EVENTS_URL)
 
 
-def test_reader_url_keeps_the_official_https_source():
-    assert enescu.reader_url(enescu.COMPETITION_EVENTS_URL) == (
-        "https://r.jina.ai/https://festivalenescu.ro/ro/"
-        "concursul-international-george-enescu/evenimente"
-    )
+def test_blocked_sources_do_not_produce_events(capsys):
+    with patch.object(
+        enescu, "fetch_page_with_reader_fallback", side_effect=HttpError("Blocked")
+    ) as fetch:
+        assert enescu.scrape() == []
+    assert fetch.call_count == 2
+    assert "Blocked" in capsys.readouterr().out

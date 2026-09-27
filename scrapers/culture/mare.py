@@ -5,7 +5,7 @@ from datetime import datetime, time, timedelta
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://mare.ro"
 EXHIBITIONS_URL = f"{BASE_URL}/exhibitions-2/"
@@ -38,14 +38,17 @@ def parse_date_range(date_text: str) -> tuple[datetime | None, datetime | None]:
     - Listing page: '06.02-03.05.2026'
     - Detail page: '6 februarie - 3 mai 2026.'
     """
-    date_text = date_text.lower().strip().rstrip(".")
+    date_text = re.sub(r"[–—]", "-", date_text.lower().strip().rstrip("."))
     
-    dotted_pattern = r"(\d{1,2})\.(\d{1,2})-(\d{1,2})\.(\d{1,2})\.(\d{4})"
+    dotted_pattern = (
+        r"(\d{1,2})\.(\d{1,2})(?:\.(\d{4}))?\s*-\s*"
+        r"(\d{1,2})\.(\d{1,2})\.(\d{4})"
+    )
     match = re.search(dotted_pattern, date_text)
     if match:
-        start_day, start_month, end_day, end_month, year = match.groups()
+        start_day, start_month, start_year, end_day, end_month, year = match.groups()
         try:
-            start_date = datetime(int(year), int(start_month), int(start_day))
+            start_date = datetime(int(start_year or year), int(start_month), int(start_day))
             end_date = datetime(int(year), int(end_month), int(end_day))
             return start_date, end_date
         except (ValueError, TypeError):
@@ -158,7 +161,9 @@ def scrape() -> list[Event]:
     seen: set[str] = set()
     
     try:
-        html = fetch_page(EXHIBITIONS_URL, needs_js=False, timeout=30000)
+        html = fetch_page_with_reader_fallback(
+            EXHIBITIONS_URL, expected_text="current__item", timeout=30000
+        )
     except Exception as e:
         print(f"Failed to fetch MARe exhibitions: {e}")
         return events

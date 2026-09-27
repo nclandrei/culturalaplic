@@ -214,3 +214,47 @@ class TestHttpRetry:
 
         assert "event-marker" in result
         assert respx.calls.call_count == 1
+
+    @pytest.mark.parametrize("failure", [403, httpx.ConnectError("Network is unreachable")])
+    @respx.mock
+    def test_reader_recovers_failed_direct_request_without_recording_failure(self, failure):
+        source_url = "https://example.com/events"
+        route = respx.get(source_url)
+        if isinstance(failure, int):
+            route.respond(failure)
+        else:
+            route.side_effect = failure
+        respx.get(f"https://r.jina.ai/{source_url}").respond(
+            200, text="<div class='event-marker'>Concert</div>"
+        )
+
+        reset_fetch_failures()
+        result = http_service.fetch_page_with_reader_fallback(source_url, "event-marker")
+
+        assert "Concert" in result
+        assert get_fetch_failures() == []
+
+    @respx.mock
+    def test_reader_failure_is_still_recorded(self):
+        source_url = "https://example.com/events"
+        respx.get(source_url).respond(403)
+        respx.get(f"https://r.jina.ai/{source_url}").respond(403)
+
+        reset_fetch_failures()
+        with pytest.raises(HttpError):
+            http_service.fetch_page_with_reader_fallback(source_url, "event-marker")
+        assert get_fetch_failures() == [f"HTTP 403 for https://r.jina.ai/{source_url}"]
+
+    @respx.mock
+    def test_reader_challenge_with_status_200_is_not_a_success(self):
+        source_url = "https://example.com/events"
+        respx.get(source_url).respond(403)
+        respx.get(f"https://r.jina.ai/{source_url}").respond(
+            200, text="<html><title>Just a moment...</title></html>"
+        )
+
+        reset_fetch_failures()
+        with pytest.raises(HttpError, match="no 'event-marker' markup"):
+            http_service.fetch_page_with_reader_fallback(source_url, "event-marker")
+        assert len(get_fetch_failures()) == 1
+        assert source_url in get_fetch_failures()[0]

@@ -1,7 +1,9 @@
 from datetime import datetime, time
 from unittest.mock import patch
 
-from scrapers.culture.mare import expand_exhibition, scrape
+import pytest
+
+from scrapers.culture.mare import expand_exhibition, parse_date_range, scrape
 
 
 def test_scrape_reads_current_exhibition_from_live_card_markup():
@@ -24,13 +26,31 @@ def test_scrape_reads_current_exhibition_from_live_card_markup():
     </div>
     """
 
-    with patch("scrapers.culture.mare.fetch_page", return_value=html):
+    with (
+        patch("scrapers.culture.mare.fetch_page_with_reader_fallback", return_value=html),
+        patch("scrapers.culture.mare.datetime") as clock,
+    ):
+        clock.now.return_value = datetime(2026, 9, 27, 12)
+        clock.side_effect = datetime
+        clock.combine = datetime.combine
         events = scrape()
 
     assert events
     assert {event.title for event in events} == {"Photographs by Constantin Brâncuși"}
     assert events[0].date.hour == 11
     assert events[0].url.endswith("/photographs-constantin-brancusi/")
+
+
+@pytest.mark.parametrize(
+    ("text", "start", "end"),
+    [
+        ("10.09.2026-24.05.2027", datetime(2026, 9, 10), datetime(2027, 5, 24)),
+        ("13.08-15.11.2026", datetime(2026, 8, 13), datetime(2026, 11, 15)),
+        ("10.09.2026 – 24.05.2027", datetime(2026, 9, 10), datetime(2027, 5, 24)),
+    ],
+)
+def test_listing_date_ranges(text, start, end):
+    assert parse_date_range(text) == (start, end)
 
 
 def test_exhibition_end_date_is_inclusive_through_its_opening_day():

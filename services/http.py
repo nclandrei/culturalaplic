@@ -235,13 +235,23 @@ def fetch_page_with_reader_fallback(
     needs_js: bool = False,
     timeout: int = 30000,
 ) -> str:
-    """Retry a 200 response missing expected markup through the HTML reader."""
-    html = fetch_page(url, needs_js=needs_js, timeout=timeout)
+    """Recover failed or incomplete direct requests through the HTML reader."""
+    try:
+        html = fetch_page(
+            url, needs_js=needs_js, timeout=timeout, record_failure=False
+        )
+    except HttpError:
+        html = ""
     if expected_text in html:
         return html
 
-    return fetch_page(
+    html = fetch_page(
         f"{HTML_READER_BASE_URL}{url}",
         timeout=timeout,
         headers=HTML_READER_HEADERS,
     )
+    if expected_text not in html:
+        message = f"HTML reader returned no {expected_text!r} markup for {url}"
+        _record_fetch_failure(message)
+        raise HttpError(message)
+    return html

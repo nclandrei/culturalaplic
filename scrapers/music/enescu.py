@@ -4,7 +4,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup, Tag
 
 from models import Event
-from services.http import fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://festivalenescu.ro"
 FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
@@ -13,19 +13,12 @@ COMPETITION_EVENTS_URL = (
 )
 EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
-READER_BASE_URL = "https://r.jina.ai/"
-READER_HEADERS = {"X-Return-Format": "html"}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
 }
-
-
-def reader_url(url: str) -> str:
-    """Route the official page through a CI-accessible HTML reader."""
-    return f"{READER_BASE_URL}{url}"
 
 
 def parse_date(element: Tag) -> datetime | None:
@@ -110,11 +103,10 @@ def scrape() -> list[Event]:
 
     for events_url in EVENTS_URLS:
         try:
-            html = fetch_page(
-                reader_url(events_url),
-                needs_js=False,
+            html = fetch_page_with_reader_fallback(
+                events_url,
+                expected_text="concert-details",
                 timeout=30000,
-                headers=READER_HEADERS,
             )
         except Exception as e:
             print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
