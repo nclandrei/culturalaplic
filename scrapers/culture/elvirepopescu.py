@@ -51,7 +51,12 @@ def clean_title(title: str) -> str:
     return re.sub(r"\s*\d+\+\s*$", "", title).strip()
 
 
-def parse_event(container: BeautifulSoup) -> Event | None:
+def parse_event(
+    container: BeautifulSoup,
+    *,
+    venue: str = "Cinema Elvire Popesco",
+    source: str = "elvirepopescu",
+) -> Event | None:
     """Parse a single event from its container."""
     title_link = container.select_one("a.event-title")
     if not title_link:
@@ -101,10 +106,10 @@ def parse_event(container: BeautifulSoup) -> Event | None:
     return Event(
         title=title,
         artist=None,
-        venue="Cinema Elvire Popesco",
+        venue=venue,
         date=event_date,
         url=url,
-        source="elvirepopescu",
+        source=source,
         category="culture",
         price=price,
     )

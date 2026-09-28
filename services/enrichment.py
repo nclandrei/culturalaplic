@@ -525,6 +525,7 @@ SOURCE_EXTRACTORS = {
     "improteca": extract_improteca,
     "mare": extract_mare,
     "elvirepopescu": extract_elvirepopescu,
+    "cinemateca": extract_elvirepopescu,
 }
 
 

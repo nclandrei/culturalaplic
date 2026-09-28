@@ -14,9 +14,9 @@ from types import ModuleType
 
 from models import Event
 from services.email import ScraperError
-from scrapers.culture import arcub, elvirepopescu, improteca, mare, mnac
-from scrapers.music import ateneul, bfh, control, enescu, eventbook as eventbook_music, expirat, garana, hardrock, iabilet, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
-from scrapers.theatre import bulandra, cuibul, eventbook as eventbook_theatre, godot, grivita53, metropolis, nottara, teatrulmic, tnb
+from scrapers.culture import arcub, cinemateca, elvirepopescu, improteca, mare, mnac
+from scrapers.music import ateneul, bfh, control, enescu, eventbook as eventbook_music, expirat, garana, greenhours, hardrock, iabilet, jazzinthepark, jazzx, jfr, operanb, quantic, rockstadt
+from scrapers.theatre import act, bulandra, cuibul, eventbook as eventbook_theatre, godot, greenhours as greenhours_theatre, grivita53, metropolis, nottara, odeon, teatrulmic, tnb
 from services.dedup import (
     dedup_serialized_cross_source,
     llm_dedup,
@@ -39,13 +39,13 @@ FESTIVAL_SCRAPERS = {bfh, garana, jazzinthepark, jfr, rockstadt}
 SCRAPER_GROUPS = {
     1: {
         "music": [ateneul, enescu, eventbook_music, control, hardrock, jazzx],
-        "theatre": [bulandra, cuibul, eventbook_theatre, godot, grivita53],
+        "theatre": [bulandra, cuibul, eventbook_theatre, godot, grivita53, odeon],
         "culture": [arcub, mare, mnac],
     },
     2: {
-        "music": [operanb, expirat, quantic, iabilet],
-        "theatre": [metropolis, nottara, teatrulmic, tnb],
-        "culture": [elvirepopescu, improteca],
+        "music": [operanb, expirat, greenhours, quantic, iabilet],
+        "theatre": [act, greenhours_theatre, metropolis, nottara, teatrulmic, tnb],
+        "culture": [cinemateca, elvirepopescu, improteca],
     },
 }
 
@@ -165,7 +165,7 @@ def run_music_scrapers(group: int | None = None) -> list[Event]:
             scrapers = scrapers + [bfh, garana, jazzinthepark, jfr, rockstadt]
     else:
         # Run all scrapers
-        scrapers = [ateneul, bfh, control, enescu, eventbook_music, expirat, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+        scrapers = [ateneul, bfh, control, enescu, eventbook_music, expirat, greenhours, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
 
     for scraper in scrapers:
         if scraper in FESTIVAL_SCRAPERS and not run_festivals:
@@ -189,7 +189,7 @@ def run_theatre_scrapers(group: int | None = None) -> list[Event]:
     if group is not None:
         scrapers = SCRAPER_GROUPS[group]["theatre"]
     else:
-        scrapers = [bulandra, cuibul, eventbook_theatre, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
+        scrapers = [act, bulandra, cuibul, eventbook_theatre, godot, greenhours_theatre, grivita53, metropolis, nottara, odeon, teatrulmic, tnb]
 
     for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
@@ -208,7 +208,7 @@ def run_culture_scrapers(group: int | None = None) -> list[Event]:
     if group is not None:
         scrapers = SCRAPER_GROUPS[group]["culture"]
     else:
-        scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
+        scrapers = [arcub, cinemateca, elvirepopescu, improteca, mare, mnac]
 
     for scraper in scrapers:
         events.extend(run_scraper_safely(scraper))
@@ -593,9 +593,9 @@ def main() -> None:
             culture_scrapers = SCRAPER_GROUPS[group]["culture"]
         else:
             print("All scrapers (no group specified):")
-            music_scrapers = [ateneul, bfh, control, enescu, eventbook_music, expirat, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
-            theatre_scrapers = [bulandra, cuibul, eventbook_theatre, godot, grivita53, metropolis, nottara, teatrulmic, tnb]
-            culture_scrapers = [arcub, elvirepopescu, improteca, mare, mnac]
+            music_scrapers = [ateneul, bfh, control, enescu, eventbook_music, expirat, greenhours, hardrock, iabilet, operanb, quantic, jfr, garana, jazzinthepark, jazzx, rockstadt]
+            theatre_scrapers = [act, bulandra, cuibul, eventbook_theatre, godot, greenhours_theatre, grivita53, metropolis, nottara, odeon, teatrulmic, tnb]
+            culture_scrapers = [arcub, cinemateca, elvirepopescu, improteca, mare, mnac]
 
         # Filter out festivals if not running
         if not run_festivals:

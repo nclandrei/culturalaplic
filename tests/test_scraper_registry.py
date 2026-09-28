@@ -5,13 +5,15 @@ from unittest.mock import patch
 from main import (
     SCRAPER_GROUPS,
     main,
+    run_culture_scrapers,
     run_music_scrapers,
     run_theatre_scrapers,
     should_run_festival_scrapers,
 )
+from scrapers.culture import cinemateca
 from scrapers.music import eventbook as eventbook_music
-from scrapers.music import hardrock, iabilet
-from scrapers.theatre import eventbook as eventbook_theatre
+from scrapers.music import greenhours, hardrock, iabilet
+from scrapers.theatre import act, eventbook as eventbook_theatre, greenhours as greenhours_theatre, odeon
 from scripts.test_full_flow import SCRAPERS as INTEGRATION_SCRAPERS
 
 
@@ -67,6 +69,28 @@ def test_eventbook_is_registered_for_scheduled_and_local_runs():
     assert eventbook_theatre in scheduled_scrapers
 
 
+def test_new_venues_run_in_scheduled_groups_and_local_runs():
+    additions = {
+        "music": {greenhours},
+        "theatre": {act, greenhours_theatre, odeon},
+        "culture": {cinemateca},
+    }
+    runners = {
+        "music": run_music_scrapers,
+        "theatre": run_theatre_scrapers,
+        "culture": run_culture_scrapers,
+    }
+    for category, expected in additions.items():
+        grouped = set(SCRAPER_GROUPS[1][category] + SCRAPER_GROUPS[2][category])
+        assert expected <= grouped
+        with (
+            patch("main.should_run_festival_scrapers", return_value=False),
+            patch("main.run_scraper_safely", return_value=[]) as run_scraper,
+        ):
+            runners[category]()
+        assert expected <= {call.args[0] for call in run_scraper.call_args_list}
+
+
 def test_dry_run_lists_newly_registered_scrapers(capsys):
     with (
         patch.object(sys, "argv", ["main.py", "--dry-run"]),
@@ -77,6 +101,9 @@ def test_dry_run_lists_newly_registered_scrapers(capsys):
     output = capsys.readouterr().out
     assert "  - hardrock" in output
     assert "  - eventbook" in output
+    assert output.count("  - greenhours\n") == 2
+    for name in ("act", "odeon", "cinemateca"):
+        assert f"  - {name}\n" in output
 
 
 def test_full_flow_uses_scheduler_registry():
