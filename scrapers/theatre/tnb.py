@@ -13,17 +13,7 @@ from services.http import (
 )
 
 BASE_URL = "https://www.tnb.ro"
-CALENDAR_URL = f"{BASE_URL}/ro/calendar"
-
-MONTHS = {
-    "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
-    "iul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
-}
-
-
-def get_calendar_url(year: int, month: int) -> str:
-    """Build calendar URL for given year and month."""
-    return f"{CALENDAR_URL}?year={year}&month={month}&view=list"
+EVENTS_URL = f"{BASE_URL}/ro/bilete-online"
 
 
 def parse_time(time_text: str) -> tuple[int, int]:
@@ -35,8 +25,8 @@ def parse_time(time_text: str) -> tuple[int, int]:
 
 
 def parse_event(event_elem: BeautifulSoup, event_date: datetime) -> Event | None:
-    """Parse a single event from an official list-view day."""
-    title_elem = event_elem.select_one("a.ev_title")
+    """Parse one row from the official online ticket programme."""
+    title_elem = event_elem.select_one(".title a")
     if not title_elem:
         return None
     
@@ -48,14 +38,14 @@ def parse_event(event_elem: BeautifulSoup, event_date: datetime) -> Event | None
     if url and not url.startswith("http"):
         url = BASE_URL + url
     
-    hour_elem = event_elem.select_one(".time")
+    hour_elem = event_elem.select_one("td.c3")
     hour, minute = 19, 0
     if hour_elem:
         hour, minute = parse_time(hour_elem.get_text(strip=True))
     
     event_datetime = event_date.replace(hour=hour, minute=minute)
     
-    location_elem = event_elem.select_one(".location")
+    location_elem = event_elem.select_one("td.c2")
     hall = location_elem.get_text(strip=True) if location_elem else ""
     if hall == "-":
         hall = ""
@@ -86,78 +76,51 @@ def parse_day(day_elem: BeautifulSoup) -> list[Event]:
     if not day_number or not month_name or not year_number:
         return []
 
-    month = MONTHS.get(month_name.get_text(strip=True).lower()[:3])
-    if not month:
-        return []
-
     try:
         event_date = datetime(
             int(year_number.get_text(strip=True)),
-            month,
+            int(month_name.get_text(strip=True)),
             int(day_number.get_text(strip=True)),
         )
     except ValueError:
         return []
 
     events: list[Event] = []
-    for event_elem in day_elem.select(".right_items .item"):
+    for event_elem in day_elem.select(".right_date tr"):
         event = parse_event(event_elem, event_date)
         if event:
             events.append(event)
     return events
 
 
-def scrape_month(year: int, month: int) -> list[Event]:
-    """Scrape events for a specific month."""
-    events: list[Event] = []
-    
-    url = get_calendar_url(year, month)
-    try:
-        try:
-            html = fetch_page(
-                f"{HTML_READER_BASE_URL}{url}",
-                headers=HTML_READER_HEADERS,
-                timeout=60000,
-                record_failure=False,
-            )
-            if "right_items" not in html:
-                raise HttpError("TNB reader returned no calendar list")
-        except HttpError:
-            html = fetch_page_with_reader_fallback(
-                url, expected_text="right_items", timeout=60000,
-            )
-    except Exception as e:
-        print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
-        return events
-    
-    soup = BeautifulSoup(html, "html.parser")
-    
-    for day_elem in soup.select("div.day"):
-        events.extend(parse_day(day_elem))
-    
-    return events
-
-
 def scrape() -> list[Event]:
-    """Fetch upcoming events from Teatrul Național București."""
+    """Fetch all published dates without the unavailable monthly calendar."""
     events: list[Event] = []
     seen: set[tuple[str, str, str]] = set()
-    
-    now = datetime.now()
-    months_to_scrape = [
-        (now.year, now.month),
-        (now.year if now.month < 12 else now.year + 1, (now.month % 12) + 1),
-    ]
-    
-    for year, month in months_to_scrape:
-        month_events = scrape_month(year, month)
-        for event in month_events:
+    try:
+        html = fetch_page(
+            f"{HTML_READER_BASE_URL}{EVENTS_URL}",
+            headers=HTML_READER_HEADERS,
+            timeout=60000,
+            record_failure=False,
+        )
+        if 'id="show_list"' not in html:
+            raise HttpError("TNB reader returned no ticket programme")
+    except HttpError:
+        html = fetch_page_with_reader_fallback(
+            EVENTS_URL, expected_text='id="show_list"', timeout=60000,
+        )
+
+    soup = BeautifulSoup(html, "html.parser")
+    for day in soup.select("div.day"):
+        for event in parse_day(day):
             key = (event.title, event.date.isoformat(), event.venue)
             if key not in seen:
                 seen.add(key)
                 events.append(event)
     
-    events = [e for e in events if e.date >= now.replace(hour=0, minute=0, second=0, microsecond=0)]
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    events = [e for e in events if e.date >= today]
     events.sort(key=lambda e: e.date)
     
     return events

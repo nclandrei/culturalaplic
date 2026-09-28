@@ -25,21 +25,23 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    with patch.object(enescu, "fetch_page", side_effect=[
+        '<div class="blog program-concerte"></div>', competition_html,
+    ]) as fetch:
         events = enescu.scrape()
 
     assert fetch.call_args_list == [
         call(
             enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
-            needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
         call(
             enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
-            needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
     ]
     assert len(events) == 1
@@ -67,7 +69,9 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    with patch.object(enescu, "fetch_page", side_effect=[
+        '<div class="blog program-concerte"></div>', completed_html,
+    ]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
@@ -78,4 +82,26 @@ def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
+            enescu.scrape()
+
+
+def test_http_source_recovers_challenged_festival_listing():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Just a moment...</title>",
+        '<div class="blog program-concerte"></div>',
+    ]) as fetch:
+        soup = enescu.fetch_listing(enescu.FESTIVAL_EVENTS_URL)
+    assert soup.select_one(".program-concerte") is not None
+    assert fetch.call_args.args == (
+        "https://r.jina.ai/http://festivalenescu.ro/ro/festivalul-george-enescu/concerte",
+    )
+
+
+def test_failed_competition_is_not_hidden_by_valid_festival():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        '<div class="blog program-concerte"></div>',
+        enescu.HttpError("HTTP 422"),
+        "<title>Evenimente</title>",
+    ]):
+        with pytest.raises(ValueError, match="concursul-international"):
             enescu.scrape()
