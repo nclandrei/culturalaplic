@@ -4,7 +4,13 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page_with_reader_fallback
+from services.http import (
+    HTML_READER_BASE_URL,
+    HTML_READER_HEADERS,
+    HttpError,
+    fetch_page,
+    fetch_page_with_reader_fallback,
+)
 
 BASE_URL = "https://www.tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
@@ -107,11 +113,19 @@ def scrape_month(year: int, month: int) -> list[Event]:
     
     url = get_calendar_url(year, month)
     try:
-        html = fetch_page_with_reader_fallback(
-            url,
-            expected_text="right_items",
-            timeout=60000,
-        )
+        try:
+            html = fetch_page(
+                f"{HTML_READER_BASE_URL}{url}",
+                headers=HTML_READER_HEADERS,
+                timeout=60000,
+                record_failure=False,
+            )
+            if "right_items" not in html:
+                raise HttpError("TNB reader returned no calendar list")
+        except HttpError:
+            html = fetch_page_with_reader_fallback(
+                url, expected_text="right_items", timeout=60000,
+            )
     except Exception as e:
         print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
         return events

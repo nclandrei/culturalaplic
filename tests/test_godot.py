@@ -1,4 +1,5 @@
 from datetime import datetime
+from unittest.mock import patch
 
 from scrapers.theatre import godot
 
@@ -35,7 +36,13 @@ def test_scrape_uses_the_performance_time_from_the_detail_page(monkeypatch):
 
     monkeypatch.setattr(godot, "fetch_page", fetch)
 
-    events = godot.scrape()
+    class FixedDatetime(datetime):
+        @classmethod
+        def now(cls):
+            return cls(2026, 9, 19)
+
+    with patch.object(godot, "datetime", FixedDatetime):
+        events = godot.scrape()
 
     assert len(events) == 1
     assert events[0].date == datetime(2026, 9, 20, 18, 30)

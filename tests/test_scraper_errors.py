@@ -4,6 +4,7 @@ from datetime import datetime
 import traceback
 from unittest.mock import MagicMock, patch
 
+import httpx
 import pytest
 
 from models import Event
@@ -141,7 +142,7 @@ class TestScraperErrorCollection:
         ]
         assert "unknown_feed" not in successful_scraper_sources["music"]
 
-    def test_enescu_cannot_silently_delete_its_current_program(self):
+    def test_enescu_challenge_cannot_silently_delete_its_current_program(self):
         from main import (
             run_scraper_safely,
             scraper_errors,
@@ -152,7 +153,7 @@ class TestScraperErrorCollection:
         scraper_errors.clear()
         successful_scraper_sources["music"].clear()
 
-        with patch.object(enescu, "scrape", return_value=[]):
+        with patch.object(enescu, "scrape", side_effect=ValueError("Festival page blocked")):
             assert run_scraper_safely(enescu) == []
 
         assert [error.scraper_name for error in scraper_errors] == ["enescu"]
@@ -209,6 +210,36 @@ class TestScraperErrorCollection:
             "partial_feed"
         ]
         assert "partial_feed" not in successful_scraper_sources["music"]
+
+
+def test_transient_spotify_error_does_not_prevent_event_publication():
+    from main import enrich_with_spotify
+
+    request = httpx.Request("GET", "https://api.spotify.com/v1/search")
+    response = httpx.Response(502, request=request)
+    outage = httpx.HTTPStatusError("Bad gateway", request=request, response=response)
+    first = Event("First", "First", "Venue", datetime(2026, 10, 1), "https://example.com/first", "test", "music")
+    second = Event("Second", "Second", "Venue", datetime(2026, 10, 2), "https://example.com/second", "test", "music")
+
+    with patch.dict("os.environ", {"SPOTIFY_CLIENT_ID": "test"}), \
+         patch("main.search_artist", side_effect=[outage, "https://open.spotify.com/artist/second"]):
+        events = enrich_with_spotify([first, second])
+
+    assert [e.spotify_url for e in events] == [None, "https://open.spotify.com/artist/second"]
+
+
+def test_permanent_spotify_auth_error_is_not_silenced():
+    from main import enrich_with_spotify
+
+    request = httpx.Request("GET", "https://api.spotify.com/v1/search")
+    response = httpx.Response(401, request=request)
+    outage = httpx.HTTPStatusError("Unauthorized", request=request, response=response)
+    event = Event("First", "First", "Venue", datetime(2026, 10, 1), "https://example.com/first", "test", "music")
+
+    with patch.dict("os.environ", {"SPOTIFY_CLIENT_ID": "test"}), \
+         patch("main.search_artist", side_effect=outage), \
+         pytest.raises(httpx.HTTPStatusError):
+        enrich_with_spotify([event])
 
 
 class TestScraperAlertEmail:

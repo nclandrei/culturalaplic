@@ -7,6 +7,7 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://jazzinthepark.ro"
+FESTIVAL_URL = f"{BASE_URL}/"
 LINEUP_URL = f"{BASE_URL}/line-up/"
 COMPETITION_URL = f"{BASE_URL}/en/jazz-in-the-park-competition/"
 ALLOW_EMPTY_RESULTS = True  # Annual festival; its next lineup may be unpublished.
@@ -73,6 +74,25 @@ def parse_competition_dates(text: str) -> list[datetime]:
         return []
 
     if end < start:
+        return []
+    return [start + timedelta(days=offset) for offset in range((end - start).days + 1)]
+
+
+def parse_festival_dates(text: str) -> list[datetime]:
+    """Read announced edition dates; leave unknown artist set times unset."""
+    match = re.search(
+        r"See you next year:\s*([A-Z]+)\s+(\d{1,2})\s*[-–]\s*(\d{1,2}),?\s+(\d{4})",
+        text,
+        re.IGNORECASE,
+    )
+    if not match or match.group(1).upper() not in MONTHS:
+        return []
+    try:
+        start = datetime(int(match.group(4)), MONTHS[match.group(1).upper()], int(match.group(2)))
+        end = datetime(int(match.group(4)), MONTHS[match.group(1).upper()], int(match.group(3)))
+    except ValueError:
+        return []
+    if not start <= end or (end - start).days > 7:
         return []
     return [start + timedelta(days=offset) for offset in range((end - start).days + 1)]
 
@@ -153,6 +173,23 @@ def scrape() -> list[Event]:
                     price=None,
                 )
             )
+
+    try:
+        festival_html = fetch_page(FESTIVAL_URL, needs_js=False)
+    except Exception as e:
+        print(f"Failed to fetch Jazz in the Park festival dates: {e}")
+    else:
+        for day in parse_festival_dates(BeautifulSoup(festival_html, "html.parser").get_text(" ", strip=True)):
+            if day.date() >= datetime.now().date():
+                events.append(Event(
+                    title=f"Jazz in the Park {day.year}",
+                    artist=None,
+                    venue="Parcul Etnografic, Cluj-Napoca",
+                    date=day,
+                    url=FESTIVAL_URL,
+                    source="Jazz in the Park",
+                    category="music",
+                ))
 
     events.sort(key=lambda e: e.date)
     return events

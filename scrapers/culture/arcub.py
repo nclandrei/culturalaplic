@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://arcub.ro"
 AGENDA_URL = f"{BASE_URL}/agenda"
+ALLOW_EMPTY_RESULTS = True  # An active agenda need not have timed cultural events.
 MAX_RANGE_DAYS = 120
 HUB_DETECTIVES_URL = (
     "https://bilete.hubproedus.ro/view/"
@@ -260,7 +261,9 @@ def _festival_events(
         r"^Program artistic\s*•\s*", "", title, flags=re.IGNORECASE
     )
     events: list[Event] = []
-    for heading in content.find_all(["h2", "h3", "h4"]):
+    for heading in content.find_all(["h2", "h3", "h4", "p"]):
+        if heading.name == "p" and (heading.find_parent("li") or not heading.find("strong")):
+            continue
         parsed = parse_date_range(heading.get_text(" ", strip=True), now=now)
         if not parsed or parsed[0].date() != parsed[1].date():
             continue
@@ -269,6 +272,10 @@ def _festival_events(
             continue
         sibling = heading.find_next_sibling()
         while sibling and sibling.name not in {"h2", "h3", "h4"}:
+            if sibling.name == "p" and sibling.find("strong"):
+                next_date = parse_date_range(sibling.get_text(" ", strip=True), now=now)
+                if next_date and next_date[0].date() == next_date[1].date():
+                    break
             if sibling.name == "ul":
                 for item in sibling.find_all("li", recursive=False):
                     item_text = " ".join(item.get_text(" ", strip=True).split())
@@ -279,10 +286,18 @@ def _festival_events(
                     )
                     if not match:
                         continue
-                    parts = re.split(r"\s+[–—-]\s+", match.group(3), maxsplit=1)
-                    if len(parts) != 2:
-                        continue
-                    venue, item_title = (part.strip() for part in parts)
+                    parts = re.split(r"\s+[–—-]\s+", match.group(3))
+                    if len(parts) >= 2:
+                        if ":" in parts[0]:
+                            venue, title_start = parts[0].split(":", 1)
+                            item_title = " – ".join([title_start.strip(), *parts[1:]])
+                        else:
+                            venue, item_title = " – ".join(parts[:-1]), parts[-1]
+                    else:
+                        fields = [field.strip() for field in match.group(3).split("|")]
+                        if len(fields) < 2:
+                            continue
+                        item_title, venue = fields[:2]
                     events.append(
                         _event(
                             title=f"{series_title} — {item_title}",
@@ -409,9 +424,12 @@ def scrape() -> list[Event]:
         return []
 
     soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select(".project-box")
+    if not cards:
+        raise ValueError("ARCUB agenda has no project cards; cannot verify an empty programme")
     events: list[Event] = []
     seen: set[tuple[str, str, str]] = set()
-    for card in soup.select(".project-box"):
+    for card in cards:
         metadata = _card_metadata(card)
         if not metadata:
             continue

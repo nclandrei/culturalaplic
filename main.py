@@ -5,6 +5,7 @@ import argparse
 import json
 import os
 
+import httpx
 from dotenv import load_dotenv
 load_dotenv()
 from dataclasses import asdict, replace
@@ -224,7 +225,16 @@ def enrich_with_spotify(events: list[Event]) -> list[Event]:
     enriched: list[Event] = []
     for event in events:
         if event.category == "music" and event.artist:
-            spotify_url = search_artist(event.artist)
+            try:
+                spotify_url = search_artist(event.artist)
+            except httpx.HTTPStatusError as e:
+                if e.response.status_code not in {429, 500, 502, 503, 504}:
+                    raise
+                print(f"  Spotify unavailable for {event.artist}: HTTP {e.response.status_code}")
+                spotify_url = None
+            except httpx.TransportError as e:
+                print(f"  Spotify unavailable for {event.artist}: {e}")
+                spotify_url = None
             enriched.append(replace(event, spotify_url=spotify_url))
         else:
             enriched.append(event)

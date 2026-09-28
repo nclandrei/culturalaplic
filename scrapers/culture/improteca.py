@@ -1,5 +1,6 @@
 import re
 import unicodedata
+from dataclasses import replace
 from datetime import datetime
 from urllib.parse import urlparse
 
@@ -250,6 +251,28 @@ def parse_event(article: BeautifulSoup) -> Event | None:
     )
 
 
+def parse_course_dates(html: str) -> list[datetime]:
+    """Read only the first meetings explicitly dated on a course detail page."""
+    text = normalize_text(BeautifulSoup(html, "html.parser").get_text(" ", strip=True))
+    if "primele intalniri" not in text:
+        return []
+    days = re.search(
+        rf"primele intalniri:\s*(\d{{1,2}})\s+si\s+(\d{{1,2}})\s+({MONTH_PATTERN})\s+(\d{{4}})",
+        text,
+    )
+    start_time = re.search(
+        r"in fiecare\s+\w+,?\s*(?:de la\s+)?(\d{1,2}):(\d{2})",
+        text,
+    )
+    if not days or not start_time:
+        raise ValueError("Improteca course has explicit meetings but no parseable dates/time")
+    month = MONTH_LOOKUP[days.group(3)]
+    return [
+        datetime(int(days.group(4)), month, int(day), int(start_time.group(1)), int(start_time.group(2)))
+        for day in (days.group(1), days.group(2))
+    ]
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming events from Improteca."""
     events: list[Event] = []
@@ -279,12 +302,24 @@ def scrape() -> list[Event]:
         page_has_upcoming_events = False
         for article in articles:
             event = parse_event(article)
-            if event and event.date >= today:
-                page_has_upcoming_events = True
-                key = (event.title, event.date.isoformat())
-                if key not in seen:
-                    seen.add(key)
-                    events.append(event)
+            if not event:
+                continue
+            occurrences = [event]
+            if "curs de improviza" in normalize_text(event.title):
+                detail = fetch_page(event.url, needs_js=False, timeout=60000)
+                dates = parse_course_dates(detail)
+                if dates:
+                    detail_text = BeautifulSoup(detail, "html.parser").get_text(" ", strip=True)
+                    room = re.search(r"Sala de repetiții:\s*(.*?)\s+Trainer:", detail_text, re.I)
+                    venue = room.group(1) if room else event.venue
+                    occurrences = [replace(event, date=date, venue=venue) for date in dates]
+            for occurrence in occurrences:
+                if occurrence.date >= today:
+                    page_has_upcoming_events = True
+                    key = (occurrence.title, occurrence.date.isoformat())
+                    if key not in seen:
+                        seen.add(key)
+                        events.append(occurrence)
 
         if page_has_upcoming_events:
             consecutive_past_pages = 0

@@ -14,6 +14,7 @@ SOURCE_PRIORITY = {
     "eventbook": 10,
     "jfr": 20,
     "control": 20,
+    "expirat": 20,
 }
 TRACKING_QUERY_KEYS = {"fbclid", "gclid"}
 CONTROL_TICKET_SOURCES = frozenset({"control", "eventbook"})
@@ -93,6 +94,16 @@ def canonicalize_url(url: str) -> str:
         return urlunsplit(("https", hostname, path, query, ""))
     except ValueError:
         return url.strip()
+
+
+def iabilet_ticket_id(url: str) -> str | None:
+    """Identify one ticket across iaBilet's venue subdomains and main site."""
+    parsed = urlsplit(url)
+    host = parsed.hostname or ""
+    if host != "iabilet.ro" and not host.endswith(".iabilet.ro"):
+        return None
+    match = re.search(r"/bilete-[^/]+-(\d+)/?$", parsed.path)
+    return match.group(1) if match else None
 
 
 def source_priority(event: Event) -> int:
@@ -183,14 +194,24 @@ def dedup_preferred_cross_source(events: list[Event]) -> list[Event]:
 
     for event in events:
         canonical_url = canonicalize_url(event.url)
+        ticket_id = iabilet_ticket_id(event.url)
         is_duplicate = False
         for existing_index, existing in enumerate(deduped):
             same_canonical_occurrence = (
                 event.date == existing.date
                 and canonical_url
                 and canonical_url == canonicalize_url(existing.url)
+                and (
+                    event.source != existing.source
+                    or (event.title == existing.title and event.venue == existing.venue)
+                )
             )
-            if same_canonical_occurrence or is_unique_control_ticket_overlap(
+            same_ticket_occurrence = (
+                event.date == existing.date
+                and ticket_id is not None
+                and ticket_id == iabilet_ticket_id(existing.url)
+            )
+            if same_canonical_occurrence or same_ticket_occurrence or is_unique_control_ticket_overlap(
                 event,
                 existing,
                 schedule_counts,

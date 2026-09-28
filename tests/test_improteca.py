@@ -1,4 +1,5 @@
 from datetime import datetime
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
@@ -86,3 +87,35 @@ def test_scrape_stops_after_consecutive_archive_pages(monkeypatch):
         "https://improteca.ro/calendar-evenimente/",
         "https://improteca.ro/calendar-evenimente/2/",
     ]
+
+
+def test_course_uses_both_explicit_first_meetings_and_detail_start_time(monkeypatch):
+    course_url = "https://improteca.ro/2026/09/25/curs-pentru-incepatori/"
+    listing = f"""
+    <article class="elementor-post"><h2 class="elementor-post__title"><a href="{course_url}">
+      Curs de improvizatie pentru incepatori</a></h2>
+      <div class="elementor-post__excerpt">13 octombrie 2026, ora 20:00 📍 Vechea sală 📅</div>
+    </article>
+    """
+    detail = "<p>În fiecare marți, 18:00-20:00. Primele întâlniri: 6 și 13 octombrie 2026. Sala de repetiții: Negustori 25 Trainer: Andrei</p>"
+    requests = []
+
+    def fetch(url, **kwargs):
+        requests.append(url)
+        return listing if url == improteca.EVENTS_URL else detail
+
+    monkeypatch.setattr(improteca, "fetch_page", fetch)
+
+    class FixedDatetime(datetime):
+        @classmethod
+        def now(cls):
+            return cls(2026, 9, 27)
+
+    with patch.object(improteca, "datetime", FixedDatetime):
+        events = improteca.scrape()
+
+    assert [e.date for e in events] == [
+        datetime(2026, 10, 6, 18), datetime(2026, 10, 13, 18),
+    ]
+    assert [e.venue for e in events] == ["Negustori 25", "Negustori 25"]
+    assert requests == [improteca.EVENTS_URL, course_url]

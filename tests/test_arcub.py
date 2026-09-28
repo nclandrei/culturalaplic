@@ -141,6 +141,34 @@ def test_festival_program_emits_each_named_line_with_its_location():
     ]
 
 
+def test_festival_program_reads_paragraph_day_headings_without_carrying_over_days():
+    detail_html = """
+    <div class="content">
+      <p><strong>Sâmbătă, 26 septembrie</strong></p>
+      <ul><li>19:00 – 20:00 | Odeon – Concert de sâmbătă</li></ul>
+      <p><strong>Duminică, 27 septembrie</strong></p>
+      <ul>
+        <li><p><strong>13:30 – 15:30 | Piața Revoluției</strong> – Tur ghidat</p></li>
+        <li><p><strong>14:00 – 15:00 | Tur ghidat „Istoria orașului”</strong> | Traseu itinerant | Piața Revoluției</p></li>
+        <li><p><strong>16:00 – 17:00 | Palatul CEC: Ambasadorii SANE</strong> – sesiune sportivă – fitness și yoga</p></li>
+        <li><p><strong>19:00 – 20:00 | Odeon</strong> – Copiii Corului Cantus Mundi</p></li>
+      </ul>
+    </div>
+    """
+    events = parse_card_events(
+        card("Program artistic • Străzi deschise • Weekend #22", "26 - 27 septembrie"),
+        detail_html,
+        now=datetime(2026, 9, 27, 12),
+    )
+
+    assert [(event.date, event.title, event.venue) for event in events] == [
+        (datetime(2026, 9, 27, 13, 30), "Străzi deschise • Weekend #22 — Tur ghidat", "Piața Revoluției"),
+        (datetime(2026, 9, 27, 14), "Străzi deschise • Weekend #22 — Tur ghidat „Istoria orașului”", "Traseu itinerant"),
+        (datetime(2026, 9, 27, 16), "Străzi deschise • Weekend #22 — Ambasadorii SANE – sesiune sportivă – fitness și yoga", "Palatul CEC"),
+        (datetime(2026, 9, 27, 19), "Străzi deschise • Weekend #22 — Copiii Corului Cantus Mundi", "Odeon"),
+    ]
+
+
 def test_ticket_intervals_expand_only_through_the_arcub_range_end():
     ticket_html = """
     <h3>30.05.2026 - 20.09.2026</h3>

@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 from scrapers.theatre import cuibul
@@ -53,7 +54,13 @@ def test_scrape_keeps_every_performance_time_in_a_program_card():
     </div>
     """
 
-    with patch("scrapers.theatre.cuibul.fetch_page", return_value=html):
+    class FixedDatetime(datetime):
+        @classmethod
+        def now(cls):
+            return cls(2026, 8, 15)
+
+    with patch("scrapers.theatre.cuibul.fetch_page", return_value=html), \
+         patch("scrapers.theatre.cuibul.datetime", FixedDatetime):
         events = cuibul.scrape()
 
     assert [event.date.strftime("%Y-%m-%d %H:%M") for event in events] == [

@@ -13,6 +13,7 @@ COMPETITION_EVENTS_URL = (
 )
 EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
+ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future shows.
 READER_BASE_URL = "https://r.jina.ai/"
 READER_HEADERS = {"X-Return-Format": "html"}
 
@@ -107,6 +108,9 @@ def scrape() -> list[Event]:
     """Fetch Festival and International Competition events."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
+    valid_listings = 0
+    blocked_listings: list[str] = []
+    today = datetime.now().date()
 
     for events_url in EVENTS_URLS:
         try:
@@ -121,14 +125,25 @@ def scrape() -> list[Event]:
             continue
 
         soup = BeautifulSoup(html, "html.parser")
+        title = soup.title.get_text(" ", strip=True) if soup.title else ""
+        if "just a moment" in title.casefold() or "attention required" in title.casefold():
+            blocked_listings.append(events_url)
+            continue
 
-        for item in soup.select(".item[itemprop='blogPost']"):
+        items = soup.select(".item[itemprop='blogPost']")
+        if items or "evenimente" in title.casefold():
+            valid_listings += 1
+        for item in items:
             event = parse_event(item)
-            if event:
+            if event and event.date.date() >= today:
                 key = (event.title, event.date.isoformat())
                 if key not in seen:
                     seen.add(key)
                     events.append(event)
 
+    if blocked_listings:
+        raise ValueError(f"Festivalul Enescu programme blocked: {', '.join(blocked_listings)}")
+    if not valid_listings:
+        raise ValueError("Festivalul Enescu returned no verifiable programme markup")
     events.sort(key=lambda e: e.date)
     return events

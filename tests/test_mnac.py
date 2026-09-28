@@ -11,6 +11,11 @@ def timestamp_ms(value: datetime) -> int:
     return int(value.timestamp() * 1000)
 
 
+def test_workshop_timestamp_matches_official_minute_not_api_noise():
+    # Official MNAC detail says "3 octombrie, 11:00-12:30".
+    assert mnac.parse_timestamp("1791014423293") == datetime(2026, 10, 3, 11, 0)
+
+
 def test_parse_exhibition_keeps_ongoing_and_permanent_exhibitions():
     now = datetime(2026, 8, 15, 12, 0)
     ongoing = {

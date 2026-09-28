@@ -8,6 +8,7 @@ import pytest
 from models import Event
 from services.dedup import (
     canonicalize_url,
+    dedup_serialized_cross_source,
     llm_dedup,
     normalize_venue,
     sanitize_venue,
@@ -127,6 +128,27 @@ class TestStage1Dedup:
         evening.url = matinee.url
 
         assert stage1_dedup([matinee, evening]) == [matinee, evening]
+
+    def test_iabilet_ticket_subdomains_share_one_occurrence_without_losing_showtimes(self):
+        expirat = make_event("COJO", "Expirat Halele Carol", datetime(2026, 10, 15), "expirat", "COJO @ Expirat")
+        expirat.url = "https://expirat.iabilet.ro/bilete-cojo-expirat-132121/"
+        generic = make_event("COJO", "Expirat Halele Carol", datetime(2026, 10, 15), "iabilet", "COJO @ Expirat")
+        generic.url = "https://www.iabilet.ro/bilete-cojo-expirat-132121/"
+        next_show = make_event("COJO", "Expirat Halele Carol", datetime(2026, 10, 16), "iabilet", "COJO @ Expirat")
+        next_show.url = generic.url
+
+        assert stage1_dedup([generic, expirat, next_show]) == [expirat, next_show]
+        records = [vars(e).copy() for e in [generic, expirat, next_show]]
+        assert dedup_serialized_cross_source(records) == records[1:]
+
+    def test_simultaneous_program_items_sharing_url_remain_distinct(self):
+        sports = make_event(None, "Calea Victoriei – Palatul CEC", datetime(2026, 9, 27, 10), "arcub", "Activități sportive")
+        exhibition = make_event(None, "Calea Victoriei – Calea Grivița", datetime(2026, 9, 27, 10), "arcub", "Expoziția Cred în România")
+        exhibition.url = sports.url = "https://arcub.ro/eveniment/program-artistic-strazi-deschise-weekend-22"
+
+        assert stage1_dedup([sports, exhibition]) == [sports, exhibition]
+        records = [vars(e).copy() for e in [sports, exhibition]]
+        assert dedup_serialized_cross_source(records) == records
 
     @pytest.mark.parametrize(
         (

@@ -214,3 +214,34 @@ class TestHttpRetry:
 
         assert "event-marker" in result
         assert respx.calls.call_count == 1
+
+    @respx.mock
+    def test_blocked_primary_uses_reader_without_recording_recovered_failure(self):
+        source_url = "https://example.com/events"
+        respx.get(source_url).respond(403, text="Blocked")
+        respx.get("https://r.jina.ai/" + source_url).respond(
+            200, text="<div class='event-marker'>Event</div>",
+        )
+
+        reset_fetch_failures()
+        result = http_service.fetch_page_with_reader_fallback(
+            source_url, expected_text="event-marker",
+        )
+
+        assert "Event" in result
+        assert get_fetch_failures() == []
+
+    @respx.mock
+    def test_reader_challenge_page_is_not_accepted_as_empty_calendar(self):
+        source_url = "https://example.com/events"
+        respx.get(source_url).respond(403, text="Blocked")
+        respx.get("https://r.jina.ai/" + source_url).respond(
+            200, text="<html>Just a moment...</html>",
+        )
+
+        reset_fetch_failures()
+        with pytest.raises(HttpError, match="event-marker"):
+            http_service.fetch_page_with_reader_fallback(
+                source_url, expected_text="event-marker",
+            )
+        assert get_fetch_failures()

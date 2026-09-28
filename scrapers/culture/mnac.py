@@ -28,7 +28,7 @@ def parse_timestamp(timestamp_ms: str) -> datetime | None:
         return (
             datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
             .astimezone(BUCHAREST_TZ)
-            .replace(tzinfo=None)
+            .replace(tzinfo=None, second=0, microsecond=0)
         )
     except (ValueError, TypeError, OSError):
         return None

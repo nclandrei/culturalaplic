@@ -12,7 +12,7 @@ ALLOW_EMPTY_RESULTS = True  # The official calendar explicitly confirms no shows
 
 ROMANIAN_MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "mart": 3, "apr": 4, "mai": 5, "iun": 6,
-    "iul": 7, "aug": 8, "sep": 9, "oct": 10, "noi": 11, "dec": 12,
+    "iul": 7, "aug": 8, "sep": 9, "sept": 9, "oct": 10, "noi": 11, "nov": 11, "dec": 12,
 }
 
 
@@ -106,7 +106,7 @@ def parse_event(event_div: BeautifulSoup) -> Event | None:
 def scrape() -> list[Event]:
     """Fetch upcoming events from Teatrul Mic."""
     events: list[Event] = []
-    seen_urls: set[str] = set()
+    seen: set[tuple[str, datetime, str]] = set()
     
     try:
         html = fetch_page(EVENTS_URL, needs_js=True)
@@ -121,8 +121,8 @@ def scrape() -> list[Event]:
             continue
         
         event = parse_event(event_div)
-        if event and event.url not in seen_urls:
-            seen_urls.add(event.url)
+        if event and (event.url, event.date, event.venue) not in seen:
+            seen.add((event.url, event.date, event.venue))
             events.append(event)
     
     events.sort(key=lambda e: e.date)

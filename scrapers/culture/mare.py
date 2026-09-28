@@ -5,7 +5,7 @@ from datetime import datetime, time, timedelta
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://mare.ro"
 EXHIBITIONS_URL = f"{BASE_URL}/exhibitions-2/"
@@ -40,28 +40,38 @@ def parse_date_range(date_text: str) -> tuple[datetime | None, datetime | None]:
     """
     date_text = date_text.lower().strip().rstrip(".")
     
-    dotted_pattern = r"(\d{1,2})\.(\d{1,2})-(\d{1,2})\.(\d{1,2})\.(\d{4})"
+    dotted_pattern = (
+        r"(\d{1,2})\.(\d{1,2})(?:\.(\d{4}))?\s*[-–—]\s*"
+        r"(\d{1,2})\.(\d{1,2})\.(\d{4})"
+    )
     match = re.search(dotted_pattern, date_text)
     if match:
-        start_day, start_month, end_day, end_month, year = match.groups()
+        start_day, start_month, start_year, end_day, end_month, end_year = match.groups()
         try:
-            start_date = datetime(int(year), int(start_month), int(start_day))
-            end_date = datetime(int(year), int(end_month), int(end_day))
-            return start_date, end_date
+            inferred_year = int(end_year) - (int(start_month) > int(end_month))
+            start_date = datetime(int(start_year or inferred_year), int(start_month), int(start_day))
+            end_date = datetime(int(end_year), int(end_month), int(end_day))
+            if start_date <= end_date:
+                return start_date, end_date
         except (ValueError, TypeError):
             pass
     
-    text_pattern = r"(\d{1,2})\s+(\w+)\s*-\s*(\d{1,2})\s+(\w+)\s+(\d{4})"
+    text_pattern = (
+        r"(\d{1,2})\s+(\w+)(?:\s+(\d{4}))?\s*[-–—]\s*"
+        r"(\d{1,2})\s+(\w+)\s+(\d{4})"
+    )
     match = re.search(text_pattern, date_text)
     if match:
-        start_day, start_month_str, end_day, end_month_str, year_str = match.groups()
+        start_day, start_month_str, start_year, end_day, end_month_str, end_year = match.groups()
         start_month = ROMANIAN_MONTHS.get(start_month_str)
         end_month = ROMANIAN_MONTHS.get(end_month_str)
         if start_month and end_month:
             try:
-                start_date = datetime(int(year_str), start_month, int(start_day))
-                end_date = datetime(int(year_str), end_month, int(end_day))
-                return start_date, end_date
+                inferred_year = int(end_year) - (start_month > end_month)
+                start_date = datetime(int(start_year or inferred_year), start_month, int(start_day))
+                end_date = datetime(int(end_year), end_month, int(end_day))
+                if start_date <= end_date:
+                    return start_date, end_date
             except (ValueError, TypeError):
                 pass
     
@@ -158,7 +168,9 @@ def scrape() -> list[Event]:
     seen: set[str] = set()
     
     try:
-        html = fetch_page(EXHIBITIONS_URL, needs_js=False, timeout=30000)
+        html = fetch_page_with_reader_fallback(
+            EXHIBITIONS_URL, expected_text="current__item", timeout=30000,
+        )
     except Exception as e:
         print(f"Failed to fetch MARe exhibitions: {e}")
         return events

@@ -72,6 +72,7 @@ def test_auto_fix_workflow_can_push_and_open_pull_request():
     workflow = (ROOT / ".github/workflows/fix-scrapers.yml").read_text()
 
     assert "permissions:\n  contents: write\n  pull-requests: write" in workflow
+    assert '--label "auto-fix"' not in workflow  # Repository has no such label.
 
 
 def test_auto_fix_workflow_detects_amp_errors_with_zero_exit_status():
