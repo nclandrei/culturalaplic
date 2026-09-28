@@ -1,9 +1,12 @@
 from datetime import datetime
 from unittest.mock import Mock
 
+import httpx
+import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.theatre import tnb
+from services import http
 from services.http import HttpError
 
 
@@ -85,3 +88,43 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+@pytest.mark.parametrize("first_result", [422, "<title>Just a moment...</title>"])
+def test_reader_recovers_without_recording_a_scraper_failure(monkeypatch, first_result):
+    urls = []
+
+    def fake_get(url, **kwargs):
+        urls.append(url)
+        status = first_result if len(urls) == 1 and isinstance(first_result, int) else 200
+        content = first_result if len(urls) == 1 and isinstance(first_result, str) else LIST_VIEW_HTML
+        return httpx.Response(status, text=content, request=httpx.Request("GET", url))
+
+    monkeypatch.setattr(http.httpx, "get", fake_get)
+    http.reset_fetch_failures()
+    try:
+        events = tnb.scrape_month(2026, 9)
+        assert len(events) == 2
+        assert events[0].date == datetime(2026, 9, 5, 11)
+        assert events[0].url.startswith("https://www.tnb.ro/")
+        assert urls == [
+            "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+            "https://r.jina.ai/http://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+        ]
+        assert http.get_fetch_failures() == []
+    finally:
+        http.reset_fetch_failures()
+
+
+def test_exhausted_recovery_still_records_failure(monkeypatch):
+    def fake_get(url, **kwargs):
+        return httpx.Response(422, request=httpx.Request("GET", url))
+
+    monkeypatch.setattr(http.httpx, "get", fake_get)
+    http.reset_fetch_failures()
+    try:
+        assert tnb.scrape_month(2026, 9) == []
+        assert len(http.get_fetch_failures()) == 1
+        assert "HTTP 422" in http.get_fetch_failures()[0]
+    finally:
+        http.reset_fetch_failures()

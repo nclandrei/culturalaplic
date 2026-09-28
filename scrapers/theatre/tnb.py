@@ -14,6 +14,7 @@ from services.http import (
 
 BASE_URL = "https://www.tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
+EVENTS_URL = CALENDAR_URL
 
 MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
@@ -113,16 +114,21 @@ def scrape_month(year: int, month: int) -> list[Event]:
     
     url = get_calendar_url(year, month)
     try:
-        try:
-            html = fetch_page(
-                f"{HTML_READER_BASE_URL}{url}",
-                headers=HTML_READER_HEADERS,
-                timeout=60000,
-                record_failure=False,
-            )
-            if "right_items" not in html:
-                raise HttpError("TNB reader returned no calendar list")
-        except HttpError:
+        # The reader can time out (HTTP 422) for one scheme while its other
+        # official-source URL still serves the calendar. Keep event URLs HTTPS.
+        for source_url in (url, url.replace("https://", "http://", 1)):
+            try:
+                html = fetch_page(
+                    f"{HTML_READER_BASE_URL}{source_url}",
+                    headers=HTML_READER_HEADERS,
+                    timeout=60000,
+                    record_failure=False,
+                )
+                if "right_items" in html:
+                    break
+            except HttpError:
+                continue
+        else:
             html = fetch_page_with_reader_fallback(
                 url, expected_text="right_items", timeout=60000,
             )
