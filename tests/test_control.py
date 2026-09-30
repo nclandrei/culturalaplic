@@ -1,7 +1,11 @@
 from unittest.mock import patch
 from datetime import datetime
 
+import httpx
+import pytest
+
 from scrapers.music import control
+from services import http
 
 
 def test_scrape_uses_server_rendered_events_without_browser_wait():
@@ -10,7 +14,7 @@ def test_scrape_uses_server_rendered_events_without_browser_wait():
     with patch("scrapers.music.control.fetch_page", return_value=html) as fetch:
         control.scrape()
 
-    fetch.assert_called_once_with(control.EVENTS_URL)
+    fetch.assert_called_once_with(control.EVENTS_URL, record_failure=False)
 
 
 def test_scrape_parses_server_rendered_event_fixture():
@@ -60,7 +64,7 @@ def test_scrape_prefers_explicit_show_time_over_open_doors(monkeypatch):
     <p>Open Doors: 20:00<br>Show Time: 21:00</p>
     """
 
-    def fetch(url: str) -> str:
+    def fetch(url: str, **kwargs) -> str:
         return listing_html if url == control.EVENTS_URL else detail_html
 
     monkeypatch.setattr(control, "fetch_page", fetch)
@@ -117,3 +121,32 @@ def test_loading_placeholder_is_not_published_as_a_price():
 
     assert len(events) == 1
     assert events[0].price is None
+
+
+@pytest.mark.parametrize("url", [control.EVENTS_URL, f"{control.BASE_URL}/events/show"])
+def test_connection_refusal_recovers_with_browser_without_recording_failure(url):
+    http.reset_fetch_failures()
+    try:
+        with patch("services.http._fetch_http", side_effect=httpx.ConnectError("Connection refused")), \
+             patch("services.http._fetch_js", return_value="<p>Show Time: 21:30</p>") as browser:
+            assert control.fetch_control_page(url) == "<p>Show Time: 21:30</p>"
+
+        assert browser.call_args.args[0] == url
+        assert http.get_fetch_failures() == []
+    finally:
+        http.reset_fetch_failures()
+
+
+def test_failed_browser_fallback_still_records_scraper_failure():
+    http.reset_fetch_failures()
+    try:
+        with patch("services.http._fetch_http", side_effect=httpx.ConnectError("Connection refused")), \
+             patch("services.http._fetch_js", side_effect=RuntimeError("Browser connection refused")):
+            assert control.scrape() == []
+
+        failures = http.get_fetch_failures()
+        assert len(failures) == 1
+        assert control.EVENTS_URL in failures[0]
+        assert "Browser connection refused" in failures[0]
+    finally:
+        http.reset_fetch_failures()

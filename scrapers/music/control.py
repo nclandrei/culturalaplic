@@ -4,11 +4,20 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import fetch_page
+from services.http import HttpError, fetch_page
 
 BASE_URL = "https://www.control-club.ro"
 EVENTS_URL = f"{BASE_URL}/events/"
 MIN_EXPECTED_EVENTS = 1
+
+
+def fetch_control_page(url: str) -> str:
+    """Try HTTP first, then a browser if the direct request fails."""
+    try:
+        return fetch_page(url, record_failure=False)
+    except HttpError:
+        # Only an unsuccessful fallback should mark the scrape incomplete.
+        return fetch_page(url, needs_js=True)
 
 
 def parse_date_header(header_text: str) -> datetime | None:
@@ -159,7 +168,7 @@ def scrape() -> list[Event]:
     seen_urls: set[str] = set()
     
     try:
-        html = fetch_page(EVENTS_URL)
+        html = fetch_control_page(EVENTS_URL)
     except Exception as e:
         print(f"Failed to fetch Control Club events: {e}")
         return events
@@ -188,7 +197,7 @@ def scrape() -> list[Event]:
                 event = parse_event(event_div, event_date, room)
                 if event and event.url not in seen_urls:
                     try:
-                        detail_html = fetch_page(event.url)
+                        detail_html = fetch_control_page(event.url)
                     except Exception as e:
                         print(f"Failed to fetch Control detail {event.url}: {e}")
                     else:
