@@ -1,6 +1,7 @@
 from datetime import datetime
 from unittest.mock import Mock
 
+import pytest
 from bs4 import BeautifulSoup
 
 from scrapers.theatre import tnb
@@ -85,3 +86,31 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_reader_422_uses_canonical_route_without_fetching_blocked_origin(monkeypatch):
+    fetch = Mock(side_effect=[HttpError("HTTP 422", status_code=422), LIST_VIEW_HTML])
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+    fallback = Mock(side_effect=AssertionError("should try canonical reader URL"))
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+
+    assert len(tnb.scrape_month(2026, 10)) == 2
+    assert fetch.call_count == 2
+    fetch.assert_called_with(
+        "https://r.jina.ai/https://www.tnb.ro/ro/calendar/?year=2026&month=10&view=list",
+        headers={"X-Return-Format": "html"},
+        timeout=60000,
+    )
+    fallback.assert_not_called()
+
+
+@pytest.mark.parametrize("response", [
+    HttpError("HTTP 422", status_code=422),
+    "<html>Origin unavailable</html>",
+])
+def test_failed_canonical_reader_cannot_be_treated_as_an_empty_month(monkeypatch, response):
+    monkeypatch.setattr(tnb, "fetch_page", Mock(side_effect=[
+        HttpError("HTTP 422", status_code=422), response,
+    ]))
+    with pytest.raises(HttpError, match="Failed to fetch TNB calendar"):
+        tnb.scrape_month(2026, 10)

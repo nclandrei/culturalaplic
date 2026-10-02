@@ -9,6 +9,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.teatrulact.ro"
 EVENTS_URL = f"{BASE_URL}/program/"
+ALLOW_EMPTY_RESULTS = True  # Only accepted when the program explicitly says so.
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
@@ -74,6 +75,15 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch Teatrul ACT's JS-populated program (up to 25 upcoming entries)."""
-    return parse_events(fetch_page(
+    html = fetch_page(
         EVENTS_URL, needs_js=True, timeout=60000, wait_selector="li.event_list"
-    ))
+    )
+    events = parse_events(html)
+    if not events:
+        soup = BeautifulSoup(html, "html.parser")
+        if not any(
+            row.get_text(" ", strip=True) == "Nu există spectacole programate."
+            for row in soup.select("li.event_list")
+        ):
+            raise ValueError("ACT program contains no parseable upcoming events or empty notice")
+    return events

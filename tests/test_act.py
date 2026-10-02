@@ -1,5 +1,8 @@
 from datetime import datetime
 
+import pytest
+
+from scrapers.theatre import act
 from scrapers.theatre.act import parse_events
 
 
@@ -37,3 +40,22 @@ def test_explicit_year_prevents_false_rollover_and_bad_or_cancelled_rows_are_ski
     assert [(event.title, event.date) for event in events] == [
         ("O SCRISOARE PIERDUTĂ", datetime(2026, 9, 30, 19, 30))
     ]
+
+
+def test_scrape_accepts_explicit_empty_program(monkeypatch):
+    monkeypatch.setattr(act, "fetch_page", lambda *args, **kwargs: '''
+        <ul class="event_container"><li class="event_list vc_col-sm-12" id="post-0">
+        Nu există spectacole programate.</li></ul>''')
+    assert act.ALLOW_EMPTY_RESULTS is True
+    assert act.scrape() == []
+
+
+@pytest.mark.parametrize("html", [
+    '<li class="event_list">Loading...</li>',
+    '<li class="event_list"><h2>Changed markup</h2></li>',
+    '<p>Nu există spectacole programate.</p>',
+])
+def test_scrape_does_not_hide_missing_or_changed_program(monkeypatch, html):
+    monkeypatch.setattr(act, "fetch_page", lambda *args, **kwargs: html)
+    with pytest.raises(ValueError, match="no parseable upcoming events"):
+        act.scrape()

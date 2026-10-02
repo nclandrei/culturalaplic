@@ -1,8 +1,11 @@
 from datetime import datetime
 
+import httpx
+import pytest
 from bs4 import BeautifulSoup
 
 from models import Event
+from services import http
 from services.http import HttpError
 from scrapers.music import quantic
 from scrapers.music.quantic import (
@@ -223,3 +226,42 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+@pytest.mark.parametrize("reader_blocked", [False, True])
+def test_blocked_ticket_reader_recovers_time_or_records_failure(monkeypatch, reader_blocked):
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 19),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(quantic, "fetch_page_with_reader_fallback",
+                        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>')
+    calls = []
+
+    def fetch(url, headers):
+        calls.append(url)
+        if url == ticket_url or reader_blocked:
+            response = httpx.Response(403, request=httpx.Request("GET", url))
+            response.raise_for_status()
+        return '''<script type="application/ld+json">
+          {"@type":"Event", "name":"Aephanemer @Quantic",
+           "startDate":"2026-11-18T20:00:00"}</script>'''
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+    try:
+        if reader_blocked:
+            with pytest.raises(HttpError):
+                enrich_event_from_ticket(event)
+            assert len(http.get_fetch_failures()) == 1
+            assert event.date == datetime(2026, 11, 18, 19)
+        else:
+            enrich_event_from_ticket(event)
+            assert event.date == datetime(2026, 11, 18, 20)
+            assert http.get_fetch_failures() == []
+        assert calls == [ticket_url, f"https://r.jina.ai/{ticket_url}"]
+    finally:
+        http.reset_fetch_failures()

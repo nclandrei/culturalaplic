@@ -14,6 +14,7 @@ from services.http import (
 
 BASE_URL = "https://www.tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
+EVENTS_URL = CALENDAR_URL
 
 MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
@@ -122,13 +123,24 @@ def scrape_month(year: int, month: int) -> list[Event]:
             )
             if "right_items" not in html:
                 raise HttpError("TNB reader returned no calendar list")
-        except HttpError:
-            html = fetch_page_with_reader_fallback(
-                url, expected_text="right_items", timeout=60000,
-            )
+        except HttpError as error:
+            if error.status_code == 422:
+                # The site's navigation links to /calendar/. Try that equivalent
+                # route rather than repeating the failed reader URL.
+                canonical_url = url.replace("/calendar?", "/calendar/?")
+                html = fetch_page(
+                    f"{HTML_READER_BASE_URL}{canonical_url}",
+                    headers=HTML_READER_HEADERS,
+                    timeout=60000,
+                )
+                if "right_items" not in html:
+                    raise HttpError("TNB reader returned no calendar list")
+            else:
+                html = fetch_page_with_reader_fallback(
+                    url, expected_text="right_items", timeout=60000,
+                )
     except Exception as e:
-        print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
-        return events
+        raise HttpError(f"Failed to fetch TNB calendar for {year}/{month}: {e}") from e
     
     soup = BeautifulSoup(html, "html.parser")
     
