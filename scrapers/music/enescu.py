@@ -8,8 +8,9 @@ from services.http import fetch_page
 
 BASE_URL = "https://festivalenescu.ro"
 FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
+# The reader can access the competition on www; the bare host returns a challenge.
 COMPETITION_EVENTS_URL = (
-    f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente"
+    "https://www.festivalenescu.ro/ro/concursul-international-george-enescu/evenimente"
 )
 EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)

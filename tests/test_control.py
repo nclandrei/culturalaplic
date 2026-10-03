@@ -1,7 +1,10 @@
-from unittest.mock import patch
+from unittest.mock import call, patch
 from datetime import datetime
 
+import pytest
+
 from scrapers.music import control
+from services import http
 
 
 def test_scrape_uses_server_rendered_events_without_browser_wait():
@@ -10,7 +13,42 @@ def test_scrape_uses_server_rendered_events_without_browser_wait():
     with patch("scrapers.music.control.fetch_page", return_value=html) as fetch:
         control.scrape()
 
-    fetch.assert_called_once_with(control.EVENTS_URL)
+    fetch.assert_called_once_with(control.EVENTS_URL, record_failure=False)
+
+
+def test_connection_failure_recovers_without_recording_a_scraper_failure():
+    html = "<div class='events-list-view'></div>"
+    http.reset_fetch_failures()
+    with patch.object(http, "_fetch_http", side_effect=ConnectionRefusedError()), patch.object(
+        http, "_fetch_js", return_value=html
+    ) as browser:
+        assert control.fetch_control_page(control.EVENTS_URL) == html
+    assert browser.call_args.args[0] == control.EVENTS_URL
+    assert http.get_fetch_failures() == []
+
+
+def test_failed_browser_fallback_still_records_failure():
+    http.reset_fetch_failures()
+    try:
+        with patch.object(http, "_fetch_http", side_effect=ConnectionRefusedError()), patch.object(
+            http, "_fetch_js", side_effect=RuntimeError("browser unavailable")
+        ):
+            with pytest.raises(http.HttpError, match="browser unavailable"):
+                control.fetch_control_page(control.EVENTS_URL)
+        assert len(http.get_fetch_failures()) == 1
+    finally:
+        http.reset_fetch_failures()
+
+
+def test_detail_pages_also_use_browser_fallback():
+    url = f"{control.BASE_URL}/events/king-automatic"
+    with patch.object(control, "fetch_page", side_effect=[
+        http.HttpError("connection refused"), "<p>Show Time: 21:00</p>"
+    ]) as fetch:
+        assert control.parse_show_time(control.fetch_control_page(url)) == (21, 0)
+    assert fetch.call_args_list == [
+        call(url, record_failure=False), call(url, needs_js=True)
+    ]
 
 
 def test_scrape_parses_server_rendered_event_fixture():
@@ -60,7 +98,7 @@ def test_scrape_prefers_explicit_show_time_over_open_doors(monkeypatch):
     <p>Open Doors: 20:00<br>Show Time: 21:00</p>
     """
 
-    def fetch(url: str) -> str:
+    def fetch(url: str, **kwargs) -> str:
         return listing_html if url == control.EVENTS_URL else detail_html
 
     monkeypatch.setattr(control, "fetch_page", fetch)

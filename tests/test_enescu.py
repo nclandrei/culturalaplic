@@ -46,12 +46,14 @@ def test_scrape_includes_international_competition_events():
     assert events[0].title.startswith("Concertul de deschidere")
     assert events[0].date.isoformat() == "2027-08-23T19:00:00"
     assert events[0].venue == "Ateneul Român"
-    assert events[0].url.startswith(enescu.COMPETITION_EVENTS_URL)
+    assert events[0].url == (
+        f"{enescu.BASE_URL}/ro/concursul-international-george-enescu/evenimente/deschidere"
+    )
 
 
 def test_reader_url_keeps_the_official_https_source():
     assert enescu.reader_url(enescu.COMPETITION_EVENTS_URL) == (
-        "https://r.jina.ai/https://festivalenescu.ro/ro/"
+        "https://r.jina.ai/https://www.festivalenescu.ro/ro/"
         "concursul-international-george-enescu/evenimente"
     )
 
