@@ -4,7 +4,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup, Tag
 
 from models import Event
-from services.http import fetch_page
+from services.http import HttpError, fetch_page
 
 BASE_URL = "https://festivalenescu.ro"
 FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
@@ -114,18 +114,31 @@ def scrape() -> list[Event]:
 
     for events_url in EVENTS_URLS:
         try:
-            html = fetch_page(
-                reader_url(events_url),
-                needs_js=False,
-                timeout=30000,
-                headers=READER_HEADERS,
-            )
+            for attempt in range(2):
+                try:
+                    html = fetch_page(
+                        reader_url(events_url),
+                        needs_js=False,
+                        timeout=30000,
+                        headers=READER_HEADERS if attempt == 0 else {
+                            **READER_HEADERS, "X-No-Cache": "true",
+                        },
+                        record_failure=attempt == 1,
+                    )
+                except HttpError:
+                    if attempt == 1:
+                        raise
+                    continue
+                soup = BeautifulSoup(html, "html.parser")
+                title = soup.title.get_text(" ", strip=True) if soup.title else ""
+                if not any(marker in title.casefold() for marker in (
+                    "just a moment", "attention required",
+                )):
+                    break
         except Exception as e:
             print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
             continue
 
-        soup = BeautifulSoup(html, "html.parser")
-        title = soup.title.get_text(" ", strip=True) if soup.title else ""
         if "just a moment" in title.casefold() or "attention required" in title.casefold():
             blocked_listings.append(events_url)
             continue

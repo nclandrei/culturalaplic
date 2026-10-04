@@ -85,3 +85,21 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_scrape_month_recovers_reader_422_with_fresh_render(monkeypatch):
+    fetch = Mock(side_effect=[HttpError("HTTP 422", status_code=422), LIST_VIEW_HTML])
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+    fallback = Mock(side_effect=AssertionError("should use fresh reader content"))
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+
+    events = tnb.scrape_month(2026, 9)
+
+    assert len(events) == 2
+    assert events[0].date == datetime(2026, 9, 5, 11)
+    assert fetch.call_args.kwargs == {
+        "headers": {"X-Return-Format": "html", "X-No-Cache": "true"},
+        "timeout": 60000,
+        "record_failure": False,
+    }
+    fallback.assert_not_called()

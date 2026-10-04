@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import pytest
 from bs4 import BeautifulSoup
 
 from models import Event
@@ -223,3 +224,64 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_blocked_ticket_uses_reader_without_recording_recovered_failure(monkeypatch):
+    from services import http
+
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 19),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+    calls = []
+
+    def fetch(url, headers=None):
+        calls.append((url, headers))
+        if url == ticket_url:
+            raise HttpError("HTTP 403", status_code=403)
+        return '''<script type="application/ld+json">
+            {"@type":"Event", "name":"Aephanemer @Quantic",
+             "startDate":"2026-11-18T18:00:00+00:00"}
+            </script>'''
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 11, 18, 20)
+    assert calls == [
+        (ticket_url, None),
+        (f"https://r.jina.ai/{ticket_url}", {"X-Return-Format": "html"}),
+    ]
+    assert http.get_fetch_failures() == []
+
+
+def test_reader_challenge_still_fails_scraper(monkeypatch):
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 19),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    monkeypatch.setattr(quantic, "scrape_month", lambda *args: [event])
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: '<a href="https://www.ambilet.ro/bilete/aephanemer">Bilete</a>',
+    )
+
+    def fetch(url, **kwargs):
+        if not url.startswith("https://r.jina.ai/"):
+            raise HttpError("HTTP 403", status_code=403)
+        return "<title>Just a moment...</title>"
+
+    monkeypatch.setattr(quantic, "fetch_page", fetch)
+    with pytest.raises(ValueError, match="ticket page blocked"):
+        quantic.scrape()
+    assert event.date == datetime(2026, 11, 18, 19)

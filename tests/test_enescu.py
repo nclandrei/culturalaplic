@@ -34,12 +34,14 @@ def test_scrape_includes_international_competition_events():
             needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
         call(
             enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
             needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
     ]
     assert len(events) == 1
@@ -75,7 +77,28 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Just a moment...</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+@pytest.mark.parametrize("failure", [
+    "<title>Attention Required! | Cloudflare</title>",
+    enescu.HttpError("HTTP 422", status_code=422),
+])
+def test_reader_retries_with_fresh_content(failure):
+    with patch.object(enescu, "fetch_page", side_effect=[
+        failure, "<title>Evenimente</title>", "<title>Evenimente</title>",
+    ]) as fetch:
+        assert enescu.scrape() == []
+
+    assert fetch.call_count == 3
+    assert fetch.call_args_list[1] == call(
+        enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
+        needs_js=False,
+        timeout=30000,
+        headers={**enescu.READER_HEADERS, "X-No-Cache": "true"},
+        record_failure=True,
+    )

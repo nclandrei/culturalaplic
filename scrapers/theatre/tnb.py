@@ -123,9 +123,21 @@ def scrape_month(year: int, month: int) -> list[Event]:
             if "right_items" not in html:
                 raise HttpError("TNB reader returned no calendar list")
         except HttpError:
-            html = fetch_page_with_reader_fallback(
-                url, expected_text="right_items", timeout=60000,
-            )
+            try:
+                # A reader error may be cached; retry a fresh render before
+                # falling back to the frequently unreachable primary server.
+                html = fetch_page(
+                    f"{HTML_READER_BASE_URL}{url}",
+                    headers={**HTML_READER_HEADERS, "X-No-Cache": "true"},
+                    timeout=60000,
+                    record_failure=False,
+                )
+                if "right_items" not in html:
+                    raise HttpError("TNB reader returned no calendar list")
+            except HttpError:
+                html = fetch_page_with_reader_fallback(
+                    url, expected_text="right_items", timeout=60000,
+                )
     except Exception as e:
         print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
         return events

@@ -9,7 +9,13 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 from models import Event
-from services.http import fetch_page, fetch_page_with_reader_fallback
+from services.http import (
+    HTML_READER_BASE_URL,
+    HTML_READER_HEADERS,
+    HttpError,
+    fetch_page,
+    fetch_page_with_reader_fallback,
+)
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -261,18 +267,25 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            record_failure=False,
         )
-    except Exception:
-        if not can_use_fallback:
-            raise
-        print(
-            "Using verified Quantic ticket datetime after blocked ticket page: "
-            f"{ticket_url}"
+    except HttpError:
+        if can_use_fallback:
+            print(
+                "Using verified Quantic ticket datetime after blocked ticket page: "
+                f"{ticket_url}"
+            )
+            event.date = verified_fallback[1]
+            return
+        ticket_html = fetch_page(
+            f"{HTML_READER_BASE_URL}{ticket_url}",
+            headers=HTML_READER_HEADERS,
         )
-        event.date = verified_fallback[1]
-        return
     ticket_title = extract_ticket_title(ticket_html)
+    if ticket_title and any(marker in ticket_title.casefold() for marker in (
+        "just a moment", "attention required",
+    )):
+        raise ValueError(f"Quantic ticket page blocked: {ticket_url}")
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):
         return
     ticket_datetime = parse_ticket_datetime(ticket_html, ticket_url)
@@ -455,6 +468,9 @@ def scrape() -> list[Event]:
     for event in events:
         try:
             enrich_event_from_ticket(event)
+        except ValueError:
+            # A reader challenge is not a successful ticket verification.
+            raise
         except Exception as e:
             print(f"Failed to verify Quantic ticket time for {event.url}: {e}")
     
