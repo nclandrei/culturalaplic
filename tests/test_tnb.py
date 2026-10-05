@@ -68,7 +68,7 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
     assert len(events) == 2
     assert requests == [
         (
-            "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+            "https://r.jina.ai/https://www.tnb.ro/ro/calendar/?year=2026&month=9&view=list",
             {"headers": {"X-Return-Format": "html"}, "timeout": 60000, "record_failure": False},
         )
     ]
@@ -82,6 +82,12 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
 
     assert len(tnb.scrape_month(2026, 10)) == 2
     fallback.assert_called_once_with(
-        "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
+        "https://www.tnb.ro/ro/calendar/?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
+    )
+
+
+def test_november_uses_canonical_calendar_path():
+    assert tnb.get_calendar_url(2026, 11) == (
+        "https://www.tnb.ro/ro/calendar/?year=2026&month=11&view=list"
     )
