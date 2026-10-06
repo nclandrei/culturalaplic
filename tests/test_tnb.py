@@ -85,3 +85,35 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_reader_422_recovers_using_official_http_entry_point(monkeypatch):
+    fetch = Mock(side_effect=[HttpError("HTTP 422", status_code=422), LIST_VIEW_HTML])
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+    fallback = Mock(side_effect=AssertionError("reader retry should recover"))
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+
+    events = tnb.scrape_month(2026, 9)
+
+    assert len(events) == 2
+    assert events[0].date == datetime(2026, 9, 5, 11)
+    assert fetch.call_count == 2
+    assert fetch.call_args.args == (
+        "https://r.jina.ai/http://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+    )
+    assert fetch.call_args.kwargs == {
+        "headers": {"X-Return-Format": "html"},
+        "timeout": 60000, "record_failure": False,
+    }
+    fallback.assert_not_called()
+
+
+def test_repeated_reader_422_still_uses_official_fallback(monkeypatch):
+    fetch = Mock(side_effect=HttpError("HTTP 422", status_code=422))
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+    fallback = Mock(return_value=LIST_VIEW_HTML)
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+
+    assert len(tnb.scrape_month(2026, 9)) == 2
+    assert fetch.call_count == 2
+    fallback.assert_called_once()

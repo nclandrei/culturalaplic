@@ -5,6 +5,9 @@ import pytest
 from scrapers.music import enescu
 
 
+EMPTY_PROGRAMME = '<div class="blog program-concerte"><div class="items-intro"></div></div>'
+
+
 def test_scrape_includes_international_competition_events():
     competition_html = """
       <div class="item" itemprop="blogPost">
@@ -25,7 +28,7 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    with patch.object(enescu, "fetch_page", side_effect=[EMPTY_PROGRAMME, competition_html]) as fetch:
         events = enescu.scrape()
 
     assert fetch.call_args_list == [
@@ -34,12 +37,14 @@ def test_scrape_includes_international_competition_events():
             needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
         call(
             enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
             needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
     ]
     assert len(events) == 1
@@ -67,7 +72,7 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    with patch.object(enescu, "fetch_page", side_effect=[EMPTY_PROGRAMME, completed_html]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
@@ -75,7 +80,24 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
-        "<title>Evenimente</title>",
+        "<title>Attention Required! | Cloudflare</title>",
+        EMPTY_PROGRAMME,
     ]):
         with pytest.raises(ValueError, match="blocked"):
+            enescu.scrape()
+
+
+def test_challenge_falls_back_to_trailing_slash_programme():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Just a moment...</title>", EMPTY_PROGRAMME, EMPTY_PROGRAMME,
+    ]) as fetch:
+        assert enescu.scrape() == []
+    assert fetch.call_args_list[1].args == (
+        enescu.reader_url(enescu.FESTIVAL_EVENTS_URL + "/"),
+    )
+
+
+def test_page_title_alone_does_not_prove_an_empty_programme():
+    with patch.object(enescu, "fetch_page", return_value="<title>Evenimente</title>"):
+        with pytest.raises(ValueError, match="unverifiable"):
             enescu.scrape()

@@ -259,10 +259,18 @@ def enrich_event_from_ticket(event: Event) -> None:
         and ticket_title_matches(event.title, verified_fallback[0])
     )
     try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
+        if (
+            (urlparse(ticket_url).hostname or "").removeprefix("www.") == "ambilet.ro"
+            and not can_use_fallback
+        ):
+            ticket_html = fetch_page_with_reader_fallback(
+                ticket_url, expected_text='"startDate"',
+            )
+        else:
+            ticket_html = fetch_page(
+                ticket_url,
+                record_failure=not can_use_fallback,
+            )
     except Exception:
         if not can_use_fallback:
             raise
