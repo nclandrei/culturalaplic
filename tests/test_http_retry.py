@@ -139,6 +139,40 @@ class TestHttpRetry:
             ".events-list-view", timeout=30000
         )
 
+    @respx.mock
+    @pytest.mark.parametrize("recovers", [True, False])
+    def test_reader_retries_incomplete_chunked_response(self, recovers):
+        source_url = "https://mare.ro/exhibitions-2/"
+        reader_url = "https://r.jina.ai/" + source_url
+        respx.get(source_url).respond(403, text="Blocked")
+        error = httpx.RemoteProtocolError(
+            "peer closed connection without sending complete message body "
+            "(incomplete chunked read)"
+        )
+        route = respx.get(reader_url)
+        route.side_effect = [
+            error, error,
+            httpx.Response(200, text='<a class="current__item">Exhibition</a>')
+            if recovers else error,
+        ]
+
+        reset_fetch_failures()
+        with patch.object(http_service._fetch_http.retry, "wait", return_value=0):
+            if recovers:
+                result = http_service.fetch_page_with_reader_fallback(
+                    source_url, expected_text="current__item",
+                )
+                assert result == '<a class="current__item">Exhibition</a>'
+                assert get_fetch_failures() == []
+            else:
+                with pytest.raises(HttpError, match="incomplete chunked read"):
+                    http_service.fetch_page_with_reader_fallback(
+                        source_url, expected_text="current__item",
+                    )
+                assert len(get_fetch_failures()) == 1
+                assert reader_url in get_fetch_failures()[0]
+        assert route.call_count == 3
+
     def test_js_fetch_renders_bucharest_local_times(self):
         with patch("services.http.sync_playwright") as mock_playwright:
             playwright = mock_playwright.return_value.__enter__.return_value

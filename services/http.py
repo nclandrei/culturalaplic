@@ -40,7 +40,10 @@ def _is_retryable_httpx(e: BaseException) -> bool:
     """Check if httpx exception is retryable."""
     if isinstance(e, httpx.HTTPStatusError):
         return e.response.status_code in RETRYABLE_STATUS_CODES
-    if isinstance(e, (httpx.ConnectError, httpx.ReadTimeout, httpx.ConnectTimeout)):
+    if isinstance(e, (
+        httpx.ConnectError, httpx.ReadTimeout, httpx.ConnectTimeout,
+        httpx.RemoteProtocolError,
+    )):
         return True
     return False
 
