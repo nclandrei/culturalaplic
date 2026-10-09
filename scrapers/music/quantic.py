@@ -259,10 +259,20 @@ def enrich_event_from_ticket(event: Event) -> None:
         and ticket_title_matches(event.title, verified_fallback[0])
     )
     try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
+        ticket_host = urlparse(ticket_url).hostname or ""
+        if not can_use_fallback and (
+            ticket_host == "ambilet.ro" or ticket_host.endswith(".ambilet.ro")
+        ):
+            # AmBilet can block direct requests while its reader still exposes
+            # the event's JSON-LD, including the show time (not doors opening).
+            ticket_html = fetch_page_with_reader_fallback(
+                ticket_url, expected_text="application/ld+json",
+            )
+        else:
+            ticket_html = fetch_page(
+                ticket_url,
+                record_failure=not can_use_fallback,
+            )
     except Exception:
         if not can_use_fallback:
             raise

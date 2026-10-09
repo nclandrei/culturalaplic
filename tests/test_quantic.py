@@ -223,3 +223,47 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_blocked_ambilet_ticket_recovers_show_time_without_scraper_failure(monkeypatch):
+    import httpx
+    from services import http
+
+    event = Event(
+        title="Aephanemer",
+        artist="Aephanemer",
+        venue="Quantic",
+        date=datetime(2026, 11, 18, 19, 0),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    ticket_html = """
+    <script type="application/ld+json">
+      {"@graph":[{"@type":"Organization","name":"AmBilet"},
+        {"@type":"Event","name":"Aephanemer @Quantic",
+         "startDate":"2026-11-18T20:00:00"}]}
+    </script>
+    """
+
+    def fake_get(url, **kwargs):
+        if url == event.url:
+            body = f'<div class="tribe-events"><a href="{ticket_url}">Bilete</a></div>'
+            status = 200
+        elif url == ticket_url:
+            body, status = "Forbidden", 403
+        elif url == f"https://r.jina.ai/{ticket_url}":
+            body, status = ticket_html, 200
+        else:
+            raise AssertionError(f"Unexpected URL: {url}")
+        return httpx.Response(status, text=body, request=httpx.Request("GET", url))
+
+    monkeypatch.setattr(http.httpx, "get", fake_get)
+    http.reset_fetch_failures()
+    try:
+        enrich_event_from_ticket(event)
+        assert event.date == datetime(2026, 11, 18, 20, 0)
+        assert http.get_fetch_failures() == []
+    finally:
+        http.reset_fetch_failures()

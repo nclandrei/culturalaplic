@@ -68,7 +68,7 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
     assert len(events) == 2
     assert requests == [
         (
-            "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+            "https://r.jina.ai/http://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
             {"headers": {"X-Return-Format": "html"}, "timeout": 60000, "record_failure": False},
         )
     ]

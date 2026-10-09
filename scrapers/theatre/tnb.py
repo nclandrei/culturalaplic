@@ -114,8 +114,10 @@ def scrape_month(year: int, month: int) -> list[Event]:
     url = get_calendar_url(year, month)
     try:
         try:
+            # TNB's HTTPS origin times out from the reader for some months;
+            # its HTTP calendar serves the same dated list successfully.
             html = fetch_page(
-                f"{HTML_READER_BASE_URL}{url}",
+                f"{HTML_READER_BASE_URL}{url.replace('https://', 'http://', 1)}",
                 headers=HTML_READER_HEADERS,
                 timeout=60000,
                 record_failure=False,
