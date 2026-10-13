@@ -191,7 +191,7 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     assert event.date == datetime(2026, 9, 9, 19, 0)
 
 
-def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+def test_ambilet_block_recovers_linked_json_ld_datetime(monkeypatch):
     event = Event(
         title="Oddland, Mother Of Millions, Ring Of Gyges",
         artist="Oddland, Mother Of Millions, Ring Of Gyges",
@@ -205,21 +205,60 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
         "https://www.ambilet.ro/bilete/"
         "oddland-mother-of-millions-ring-of-gyges-26-09-2026/"
     )
-    monkeypatch.setattr(
-        quantic,
-        "fetch_page_with_reader_fallback",
-        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
-    )
-
+    from services import http
     calls = []
 
     def blocked_fetch(url: str, **kwargs):
         calls.append((url, kwargs))
-        raise HttpError("HTTP 403", status_code=403)
+        if url == event.url:
+            return f'<a href="{ticket_url}">Bilete</a><div class="tribe-events"></div>'
+        if url == ticket_url:
+            raise HttpError("HTTP 403", status_code=403)
+        assert url == f"{http.HTML_READER_BASE_URL}{ticket_url}"
+        return '''<script type="application/ld+json">
+          {"@graph":[{"@type":"Organization","name":"AmBilet"},
+            {"@type":"Event","name":"Oddland, Mother Of Millions, Ring Of Gyges",
+             "startDate":"2026-09-26T17:00:00+00:00"}]}
+        </script>'''
 
-    monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
+    monkeypatch.setattr(http, "fetch_page", blocked_fetch)
 
     enrich_event_from_ticket(event)
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
-    assert calls == [(ticket_url, {"record_failure": False})]
+    assert [url for url, kwargs in calls] == [
+        event.url, ticket_url, f"{http.HTML_READER_BASE_URL}{ticket_url}",
+    ]
+    assert calls[1][1]["record_failure"] is False
+    assert "record_failure" not in calls[2][1]
+
+
+def test_ambilet_reader_challenge_remains_a_required_failure(monkeypatch):
+    import pytest
+    from services import http
+
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 20),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+
+    def blocked_fetch(url: str, **kwargs):
+        if url == event.url:
+            return f'<div class="tribe-events"><a href="{ticket_url}">Bilete</a></div>'
+        if url == ticket_url:
+            raise HttpError("HTTP 403", status_code=403)
+        return "Performing security verification"
+
+    monkeypatch.setattr(http, "fetch_page", blocked_fetch)
+    http.reset_fetch_failures()
+    try:
+        with pytest.raises(HttpError, match="Reader page missing"):
+            enrich_event_from_ticket(event)
+        assert event.date == datetime(2026, 11, 18, 20)
+        assert len(http.get_fetch_failures()) == 1
+        assert ticket_url in http.get_fetch_failures()[0]
+    finally:
+        http.reset_fetch_failures()

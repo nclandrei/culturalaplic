@@ -111,25 +111,44 @@ def scrape() -> list[Event]:
     """Fetch upcoming events from Expirat."""
     events: list[Event] = []
     seen_urls: set[str] = set()
-    
-    try:
-        html = fetch_page(SCHEDULE_URL, needs_js=False)
-    except Exception as e:
-        print(f"Failed to fetch Expirat schedule: {e}")
-        return events
-    
-    soup = BeautifulSoup(html, "html.parser")
-    
-    card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
-        event_url = data.get("url", "")
-        event = parse_json_ld_event(
-            data,
-            card_times.get(normalize_url_path(event_url)),
-        )
-        if event and event.url not in seen_urls:
-            seen_urls.add(event.url)
-            events.append(event)
+    seen_pages: set[str] = set()
+    page_url = SCHEDULE_URL
+
+    while page_url and page_url not in seen_pages:
+        seen_pages.add(page_url)
+        soup = BeautifulSoup(fetch_page(page_url, needs_js=False), "html.parser")
+        card_times = extract_card_times(soup)
+        records = extract_json_ld_events(soup)
+        record_paths = {normalize_url_path(data.get("url", "")) for data in records}
+
+        # The listing no longer embeds JSON-LD; detail pages still provide
+        # explicit years, prices and start times, unlike the visible cards.
+        for card in soup.select('[data-event-list="item"]'):
+            link = card.select_one("a[href]")
+            if not link:
+                continue
+            path = normalize_url_path(link["href"])
+            if path in record_paths or path in seen_urls:
+                continue
+            detail_url = urljoin(BASE_URL, path + "/")
+            detail = BeautifulSoup(fetch_page(detail_url), "html.parser")
+            detail_records = extract_json_ld_events(detail)
+            matching = [data for data in detail_records
+                        if normalize_url_path(data.get("url", "")) == path]
+            if not matching:
+                raise ValueError(f"Expirat event missing structured data: {detail_url}")
+            records.extend(matching)
+            record_paths.add(path)
+
+        for data in records:
+            path = normalize_url_path(data.get("url", ""))
+            event = parse_json_ld_event(data, card_times.get(path))
+            if event and path not in seen_urls:
+                seen_urls.add(path)
+                events.append(event)
+
+        more = soup.select_one('[data-event-list="more"] a[href]')
+        page_url = urljoin(page_url, more["href"]) if more else ""
 
     events.sort(key=lambda event: event.date)
     return events
