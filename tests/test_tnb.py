@@ -60,8 +60,6 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
         return LIST_VIEW_HTML
 
     monkeypatch.setattr(tnb, "fetch_page", fake_fetch_page)
-    fallback = Mock(side_effect=AssertionError("should not fetch blocked primary"))
-    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
 
     events = tnb.scrape_month(2026, 9)
 
@@ -72,16 +70,25 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
             {"headers": {"X-Return-Format": "html"}, "timeout": 60000, "record_failure": False},
         )
     ]
-    fallback.assert_not_called()
 
 
 def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
-    monkeypatch.setattr(tnb, "fetch_page", Mock(side_effect=HttpError("HTTP 422")))
-    fallback = Mock(return_value=LIST_VIEW_HTML)
-    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+    fetch = Mock(side_effect=[HttpError("HTTP 422"), LIST_VIEW_HTML])
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
 
     assert len(tnb.scrape_month(2026, 10)) == 2
-    fallback.assert_called_once_with(
+    assert fetch.call_count == 2
+    fetch.assert_called_with(
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
-        expected_text="right_items", timeout=60000,
+        timeout=60000,
     )
+
+
+def test_scrape_month_does_not_repeat_failed_reader(monkeypatch):
+    fetch = Mock(side_effect=HttpError("HTTP 422"))
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+
+    assert tnb.scrape_month(2026, 10) == []
+    assert fetch.call_count == 2
+    assert fetch.call_args_list[0].args[0].startswith("https://r.jina.ai/")
+    assert fetch.call_args_list[1].args[0].startswith("https://www.tnb.ro/")

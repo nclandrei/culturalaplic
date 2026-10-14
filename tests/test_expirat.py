@@ -53,3 +53,19 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_scrape_reads_details_when_listing_has_no_json_ld(monkeypatch):
+    listing, script = EXPIRAT_HTML.split('<script type="application/ld+json">')
+    detail = '<script type="application/ld+json">' + script
+    monkeypatch.setattr(
+        expirat, "fetch_page",
+        lambda url, **kwargs: listing if url == expirat.SCHEDULE_URL else detail,
+    )
+
+    events = expirat.scrape()
+
+    assert len(events) == 1
+    assert events[0].title == "byron • Triptic: Electric / Acustic / Improv"
+    assert events[0].date == datetime(2026, 8, 19, 21, 30)
+    assert events[0].price == "90 RON"

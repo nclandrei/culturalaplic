@@ -15,7 +15,11 @@ EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
 ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future shows.
 READER_BASE_URL = "https://r.jina.ai/"
-READER_HEADERS = {"X-Return-Format": "html"}
+READER_HEADERS = {
+    "X-Return-Format": "html",
+    "X-No-Cache": "true",
+    "X-Wait-For-Selector": ".concert-details",
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,

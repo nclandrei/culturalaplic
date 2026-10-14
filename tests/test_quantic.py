@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import pytest
 from bs4 import BeautifulSoup
 
 from models import Event
@@ -191,7 +192,7 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     assert event.date == datetime(2026, 9, 9, 19, 0)
 
 
-def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+def test_ambilet_uses_live_reader_datetime_not_hardcoded_override(monkeypatch):
     event = Event(
         title="Oddland, Mother Of Millions, Ring Of Gyges",
         artist="Oddland, Mother Of Millions, Ring Of Gyges",
@@ -205,21 +206,30 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
         "https://www.ambilet.ro/bilete/"
         "oddland-mother-of-millions-ring-of-gyges-26-09-2026/"
     )
-    monkeypatch.setattr(
-        quantic,
-        "fetch_page_with_reader_fallback",
-        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
-    )
-
     calls = []
 
-    def blocked_fetch(url: str, **kwargs):
+    def fetch_with_fallback(url: str, **kwargs):
         calls.append((url, kwargs))
-        raise HttpError("HTTP 403", status_code=403)
+        if url == event.url:
+            return f'<a href="{ticket_url}">Bilete</a>'
+        return '''<script type="application/ld+json">
+          {"@type":"Event", "name":"Oddland, Mother Of Millions, Ring Of Gyges",
+           "startDate":"2026-09-27T21:00:00+03:00"}
+        </script>'''
 
-    monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
+    monkeypatch.setattr(quantic, "fetch_page_with_reader_fallback", fetch_with_fallback)
 
     enrich_event_from_ticket(event)
 
-    assert event.date == datetime(2026, 9, 26, 20, 0)
-    assert calls == [(ticket_url, {"record_failure": False})]
+    assert event.date == datetime(2026, 9, 27, 21, 0)
+    assert calls[-1] == (ticket_url, {"expected_text": "startDate"})
+
+    def failed_fallback(url: str, **kwargs):
+        if url == event.url:
+            return f'<a href="{ticket_url}">Bilete</a>'
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(quantic, "fetch_page_with_reader_fallback", failed_fallback)
+    with pytest.raises(HttpError):
+        enrich_event_from_ticket(event)
+    assert event.date == datetime(2026, 9, 27, 21, 0)
