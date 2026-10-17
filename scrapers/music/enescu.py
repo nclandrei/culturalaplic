@@ -7,9 +7,13 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://festivalenescu.ro"
-FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
+# The Romanian programme is challenged even through the reader. The official
+# English listings remain accessible; request the full programme, not one page.
+FESTIVAL_EVENTS_URL = (
+    f"{BASE_URL}/en/george-enescu-international-festival/concert-schedule?limit=100"
+)
 COMPETITION_EVENTS_URL = (
-    f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente"
+    f"{BASE_URL}/en/george-enescu-international-competition/events?limit=100"
 )
 EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
@@ -17,10 +21,13 @@ ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future sh
 READER_BASE_URL = "https://r.jina.ai/"
 READER_HEADERS = {"X-Return-Format": "html"}
 
-ROMANIAN_MONTHS = {
+MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
+    "january": 1, "february": 2, "march": 3, "april": 4,
+    "may": 5, "june": 6, "july": 7,
+    "september": 9, "october": 10, "november": 11, "december": 12,
 }
 
 
@@ -43,16 +50,23 @@ def parse_date(element: Tag) -> datetime | None:
         day = int(day_el.get_text(strip=True))
         month_text = month_el.get_text(strip=True).lower()
         year = int(year_el.get_text(strip=True))
-        month = ROMANIAN_MONTHS.get(month_text)
+        month = MONTHS.get(month_text)
         if not month:
             return None
 
         hour, minute = 19, 0
         if hour_el:
-            time_match = re.search(r"(\d{1,2}):(\d{2})", hour_el.get_text())
+            time_match = re.search(
+                r"(\d{1,2})[:.](\d{2})\s*(AM|PM)?",
+                hour_el.get_text(),
+                re.IGNORECASE,
+            )
             if time_match:
                 hour = int(time_match.group(1))
                 minute = int(time_match.group(2))
+                period = time_match.group(3)
+                if period:
+                    hour = hour % 12 + (12 if period.upper() == "PM" else 0)
 
         return datetime(year, month, day, hour, minute)
     except (ValueError, TypeError):
@@ -131,7 +145,7 @@ def scrape() -> list[Event]:
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or soup.select_one(".program-concerte .items-intro"):
             valid_listings += 1
         for item in items:
             event = parse_event(item)
