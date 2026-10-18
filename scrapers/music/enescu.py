@@ -113,26 +113,38 @@ def scrape() -> list[Event]:
     today = datetime.now().date()
 
     for events_url in EVENTS_URLS:
-        try:
-            html = fetch_page(
-                reader_url(events_url),
-                needs_js=False,
-                timeout=30000,
-                headers=READER_HEADERS,
-            )
-        except Exception as e:
-            print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
+        items = []
+        blocked = False
+        # Reader caches for HTTP and HTTPS differ; HTTPS can contain a challenge
+        # while the HTTP-source cache still holds the official programme HTML.
+        for source_url in (events_url, events_url.replace("https://", "http://", 1)):
+            try:
+                html = fetch_page(
+                    reader_url(source_url),
+                    needs_js=False,
+                    timeout=30000,
+                    headers=READER_HEADERS,
+                    record_failure=False,
+                )
+            except Exception as e:
+                print(f"Failed to fetch Festivalul Enescu events from {source_url}: {e}")
+                continue
+
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(" ", strip=True).casefold() if soup.title else ""
+            if "just a moment" in title or "attention required" in title:
+                blocked = True
+                continue
+
+            items = soup.select(".item[itemprop='blogPost']")
+            if items or title in {"evenimente", "program concerte"}:
+                valid_listings += 1
+                break
+        else:
+            if blocked:
+                blocked_listings.append(events_url)
             continue
 
-        soup = BeautifulSoup(html, "html.parser")
-        title = soup.title.get_text(" ", strip=True) if soup.title else ""
-        if "just a moment" in title.casefold() or "attention required" in title.casefold():
-            blocked_listings.append(events_url)
-            continue
-
-        items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
-            valid_listings += 1
         for item in items:
             event = parse_event(item)
             if event and event.date.date() >= today:

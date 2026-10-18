@@ -1,11 +1,12 @@
-from unittest.mock import call, patch
+from unittest.mock import patch
 
 import pytest
 
 from scrapers.music import enescu
 
 
-def test_scrape_includes_international_competition_events():
+@pytest.mark.parametrize("blocked_primary", [False, True])
+def test_scrape_includes_international_competition_events(blocked_primary):
     competition_html = """
       <div class="item" itemprop="blogPost">
         <div class="concert-details">
@@ -25,23 +26,18 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    responses = {
+        enescu.reader_url(enescu.FESTIVAL_EVENTS_URL): "<title>Program concerte</title>",
+        enescu.reader_url(enescu.COMPETITION_EVENTS_URL): (
+            "<title>Just a moment...</title>" if blocked_primary else competition_html
+        ),
+        enescu.reader_url(enescu.COMPETITION_EVENTS_URL.replace("https://", "http://", 1)): (
+            competition_html
+        ),
+    }
+    with patch.object(enescu, "fetch_page", side_effect=lambda url, **kwargs: responses[url]):
         events = enescu.scrape()
 
-    assert fetch.call_args_list == [
-        call(
-            enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
-            needs_js=False,
-            timeout=30000,
-            headers=enescu.READER_HEADERS,
-        ),
-        call(
-            enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
-            needs_js=False,
-            timeout=30000,
-            headers=enescu.READER_HEADERS,
-        ),
-    ]
     assert len(events) == 1
     assert events[0].title.startswith("Concertul de deschidere")
     assert events[0].date.isoformat() == "2027-08-23T19:00:00"
@@ -67,7 +63,9 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Program concerte</title>", completed_html,
+    ]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
@@ -75,6 +73,7 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Attention Required! | Cloudflare</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
