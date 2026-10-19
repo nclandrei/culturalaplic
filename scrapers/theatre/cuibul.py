@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.rezervari.cuibulartistilor.ro"
 EVENTS_URL = BASE_URL + "/program"
+ALLOW_EMPTY_RESULTS = True  # Only accepted after verifying the explicit empty state.
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -155,7 +156,15 @@ def scrape() -> list[Event]:
             if key not in seen:
                 seen.add(key)
                 events.append(event)
-    
+
+    if not events:
+        text = soup.get_text(" ", strip=True)
+        if (
+            "Niciun spectacol programat." not in text
+            or "Nu am putut incarca programul" in text
+        ):
+            raise ValueError("Cuibul programme has no events or verified empty state")
+
     events.sort(key=lambda e: e.date)
     
     return events

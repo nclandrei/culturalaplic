@@ -75,7 +75,34 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Attention Required!</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_challenged_reader_recovers_programme_from_http_origin():
+    programme = """
+    <div class="item" itemprop="blogPost">
+      <div class="concert-details">
+        <span class="concert-day">23</span><span class="concert-month">August</span>
+        <span class="concert-year">2027</span><span class="concert-hour">18:30</span>
+      </div>
+      <div class="concert-preview"><h2><a href="/ro/concert">Concert</a></h2></div>
+    </div>
+    """
+
+    def fetch(url, **kwargs):
+        if url == enescu.reader_url(enescu.COMPETITION_EVENTS_URL):
+            return "<title>Just a moment...</title>"
+        if url == enescu.reader_url(enescu.COMPETITION_EVENTS_URL.replace("https://", "http://")):
+            return programme
+        return "<title>Evenimente</title>"
+
+    with patch.object(enescu, "fetch_page", side_effect=fetch):
+        events = enescu.scrape()
+
+    assert [(e.title, e.date.isoformat(), e.url) for e in events] == [
+        ("Concert", "2027-08-23T18:30:00", "https://festivalenescu.ro/ro/concert")
+    ]

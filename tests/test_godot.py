@@ -1,11 +1,14 @@
 from datetime import datetime
 from unittest.mock import patch
 
+import pytest
+
 from scrapers.theatre import godot
 
 
 def test_scrape_uses_the_performance_time_from_the_detail_page(monkeypatch):
     listing_html = """
+    <link rel="next" href="/spectacole/page/2/">
     <div class="show-item">
       <div class="about-col">
         <h2 class="title">
@@ -26,13 +29,16 @@ def test_scrape_uses_the_performance_time_from_the_detail_page(monkeypatch):
     """
 
     def fetch(url: str, **kwargs) -> str:
-        if url == godot.reader_url(godot.EVENTS_URL):
+        if url in (
+            godot.reader_url(godot.EVENTS_URL),
+            godot.reader_url(f"{godot.EVENTS_URL}page/2/"),
+        ):
             return listing_html
         if url == godot.reader_url(
             f"{godot.BASE_URL}/spectacole/vino-veritas-30/"
         ):
             return detail_html
-        raise AssertionError(f"Unexpected URL: {url}")
+        pytest.fail(f"Unexpected URL after repeated programme page: {url}")
 
     monkeypatch.setattr(godot, "fetch_page", fetch)
 

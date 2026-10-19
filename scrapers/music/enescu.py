@@ -120,6 +120,18 @@ def scrape() -> list[Event]:
                 timeout=30000,
                 headers=READER_HEADERS,
             )
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(" ", strip=True) if soup.title else ""
+            if "just a moment" in title.casefold() or "attention required" in title.casefold():
+                # The reader caches HTTP and HTTPS origins separately. The
+                # HTTP origin can still serve the official programme when
+                # its HTTPS cache contains a Cloudflare challenge.
+                html = fetch_page(
+                    reader_url(events_url.replace("https://", "http://", 1)),
+                    needs_js=False,
+                    timeout=30000,
+                    headers=READER_HEADERS,
+                )
         except Exception as e:
             print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
             continue

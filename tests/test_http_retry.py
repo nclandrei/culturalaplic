@@ -121,6 +121,20 @@ class TestHttpRetry:
         assert result == "Connected"
         assert respx.calls.call_count == 2
 
+    @respx.mock
+    def test_retry_incomplete_chunked_response_without_recording_a_failure(self):
+        respx.get("https://example.com").side_effect = [
+            httpx.RemoteProtocolError(
+                "peer closed connection without sending complete message body "
+                "(incomplete chunked read)"
+            ),
+            httpx.Response(200, text="Complete programme"),
+        ]
+
+        reset_fetch_failures()
+        assert fetch_page("https://example.com") == "Complete programme"
+        assert get_fetch_failures() == []
+
     def test_js_fetch_waits_for_requested_selector(self):
         """Should wait for asynchronous page content before reading the HTML."""
         with patch("services.http.sync_playwright") as mock_playwright:

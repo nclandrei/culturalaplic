@@ -128,6 +128,7 @@ def scrape() -> list[Event]:
     """Fetch upcoming events from Teatrul Godot."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
+    seen_pages: set[tuple[str, ...]] = set()
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     
     page = 1
@@ -151,6 +152,15 @@ def scrape() -> list[Event]:
         
         if not cards:
             break
+
+        # The site advertises a next page even when it repeats the full
+        # programme. Stop on a repeated listing, including past performances.
+        page_links = tuple(sorted(
+            link.get("href", "") for link in soup.select(".show-item h2.title a")
+        ))
+        if page_links in seen_pages:
+            break
+        seen_pages.add(page_links)
         
         for card in cards:
             event = parse_event(card)

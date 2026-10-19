@@ -1,6 +1,8 @@
 from datetime import datetime
 from unittest.mock import patch
 
+import pytest
+
 from scrapers.theatre import cuibul
 
 
@@ -67,3 +69,23 @@ def test_scrape_keeps_every_performance_time_in_a_program_card():
         "2026-08-16 19:00",
         "2026-08-16 21:00",
     ]
+
+
+def test_explicit_empty_programme_is_allowed():
+    with patch.object(cuibul, "fetch_page", return_value="""
+        <main><h1>Calendar Spectacole</h1><p>Niciun spectacol programat.</p></main>
+    """):
+        assert cuibul.scrape() == []
+    assert cuibul.ALLOW_EMPTY_RESULTS is True
+
+
+@pytest.mark.parametrize("html", [
+    "<main><h1>Calendar Spectacole</h1><p>Se incarca...</p></main>",
+    "<main><p>Nu am putut incarca programul. Incearca din nou mai tarziu.</p>"
+    "<p>Niciun spectacol programat.</p></main>",
+    "<main><h2>New card markup</h2></main>",
+])
+def test_unverified_empty_programme_is_not_accepted(html):
+    with patch.object(cuibul, "fetch_page", return_value=html):
+        with pytest.raises(ValueError, match="verified empty state"):
+            cuibul.scrape()
