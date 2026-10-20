@@ -8,6 +8,7 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.rezervari.cuibulartistilor.ro"
 EVENTS_URL = BASE_URL + "/program"
+ALLOW_EMPTY_RESULTS = True  # The calendar explicitly reports an empty programme.
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -155,7 +156,13 @@ def scrape() -> list[Event]:
             if key not in seen:
                 seen.add(key)
                 events.append(event)
-    
+
+    if not events and not any(
+        paragraph.get_text(" ", strip=True) == "Niciun spectacol programat."
+        for paragraph in soup.select("main p")
+    ):
+        raise ValueError("Cuibul Artistilor returned no verifiable programme markup")
+
     events.sort(key=lambda e: e.date)
     
     return events

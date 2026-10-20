@@ -1,6 +1,8 @@
 from datetime import datetime
 from unittest.mock import patch
 
+import pytest
+
 from scrapers.theatre import cuibul
 
 
@@ -67,3 +69,20 @@ def test_scrape_keeps_every_performance_time_in_a_program_card():
         "2026-08-16 19:00",
         "2026-08-16 21:00",
     ]
+
+
+def test_scrape_accepts_explicitly_empty_calendar():
+    html = "<main><h1>Calendar Spectacole</h1><p>Niciun spectacol programat.</p></main>"
+    with patch.object(cuibul, "fetch_page", return_value=html):
+        assert cuibul.scrape() == []
+    assert cuibul.ALLOW_EMPTY_RESULTS is True
+
+
+@pytest.mark.parametrize("html", [
+    "<main><h1>Calendar Spectacole</h1></main>",
+    "<title>Attention Required! | Cloudflare</title>",
+])
+def test_scrape_rejects_empty_output_without_empty_calendar_message(html):
+    with patch.object(cuibul, "fetch_page", return_value=html):
+        with pytest.raises(ValueError, match="no verifiable programme markup"):
+            cuibul.scrape()
