@@ -121,7 +121,29 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    listed_paths = {normalize_url_path(data.get("url", "")) for data in records}
+    # The whitelabel listing no longer embeds Event JSON-LD, but detail pages do.
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one("a[href]")
+        if not link:
+            continue
+        path = normalize_url_path(link["href"])
+        if path in listed_paths:
+            continue
+        detail_html = fetch_page(urljoin(BASE_URL, path), needs_js=False)
+        detail_soup = BeautifulSoup(detail_html, "html.parser")
+        detail_records = extract_json_ld_events(detail_soup)
+        matching = [
+            data for data in detail_records
+            if normalize_url_path(data.get("url", "")) == path
+        ]
+        if not matching:
+            raise ValueError(f"Missing Expirat event data: {path}")
+        records.extend(matching)
+        listed_paths.add(path)
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,

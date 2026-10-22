@@ -1,5 +1,6 @@
 from datetime import datetime
 
+import pytest
 from bs4 import BeautifulSoup
 
 from models import Event
@@ -104,7 +105,8 @@ def test_iabilet_whitelabel_can_override_a_rescheduled_date():
     )
 
 
-def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
+@pytest.mark.parametrize("blocked_ticket", [False, True])
+def test_enrich_event_follows_the_linked_ticket_page(monkeypatch, blocked_ticket):
     event = Event(
         title="Trio Mandili live in Bucharest",
         artist="Trio Mandili live in Bucharest",
@@ -133,7 +135,13 @@ def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
         "fetch_page_with_reader_fallback",
         lambda *args, **kwargs: detail_html,
     )
-    monkeypatch.setattr(quantic, "fetch_page", lambda *args, **kwargs: ticket_html)
+
+    def fetch_ticket(url, **kwargs):
+        if blocked_ticket and not url.startswith("https://r.jina.ai/"):
+            raise HttpError("HTTP 403", status_code=403)
+        return ticket_html
+
+    monkeypatch.setattr(quantic, "fetch_page", fetch_ticket)
 
     enrich_event_from_ticket(event)
 

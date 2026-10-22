@@ -13,7 +13,8 @@ from services.http import (
 )
 
 BASE_URL = "https://www.tnb.ro"
-CALENDAR_URL = f"{BASE_URL}/ro/calendar"
+# The reader can reach the apex host; the www calendar currently times out.
+CALENDAR_URL = "https://tnb.ro/ro/calendar"
 
 MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,

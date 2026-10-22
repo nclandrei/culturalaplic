@@ -9,7 +9,13 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 from models import Event
-from services.http import fetch_page, fetch_page_with_reader_fallback
+from services.http import (
+    HTML_READER_BASE_URL,
+    HTML_READER_HEADERS,
+    HttpError,
+    fetch_page,
+    fetch_page_with_reader_fallback,
+)
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -259,10 +265,16 @@ def enrich_event_from_ticket(event: Event) -> None:
         and ticket_title_matches(event.title, verified_fallback[0])
     )
     try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
+        try:
+            ticket_html = fetch_page(ticket_url, record_failure=False)
+        except HttpError:
+            if can_use_fallback:
+                raise
+            # Ticket pages may expose dates as plain text rather than JSON-LD.
+            ticket_html = fetch_page(
+                f"{HTML_READER_BASE_URL}{ticket_url}",
+                headers=HTML_READER_HEADERS,
+            )
     except Exception:
         if not can_use_fallback:
             raise

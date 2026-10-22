@@ -1,5 +1,7 @@
 from datetime import datetime
 
+import pytest
+
 from scrapers.music import expirat
 
 
@@ -28,20 +30,29 @@ EXPIRAT_HTML = """
 """
 
 
-def test_scrape_uses_official_iabilet_feed(monkeypatch):
+@pytest.mark.parametrize("listing_has_json_ld", [True, False])
+def test_scrape_uses_official_iabilet_feed(monkeypatch, listing_has_json_ld):
     requests = []
 
     def fake_fetch_page(url, **kwargs):
         requests.append((url, kwargs))
+        if url == expirat.SCHEDULE_URL and not listing_has_json_ld:
+            return EXPIRAT_HTML.split('<script type="application/ld+json">')[0]
         return EXPIRAT_HTML
 
     monkeypatch.setattr(expirat, "fetch_page", fake_fetch_page)
 
     events = expirat.scrape()
 
-    assert requests == [
+    expected_requests = [
         ("https://expirat.iabilet.ro/", {"needs_js": False}),
     ]
+    if not listing_has_json_ld:
+        expected_requests.append((
+            "https://expirat.iabilet.ro/bilete-byron-o-triptic-electric-acustic-improv-128427",
+            {"needs_js": False},
+        ))
+    assert requests == expected_requests
     assert len(events) == 1
     assert events[0].title == "byron • Triptic: Electric / Acustic / Improv"
     assert events[0].artist == "byron"
