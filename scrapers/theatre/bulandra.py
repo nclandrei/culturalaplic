@@ -2,11 +2,17 @@ import json
 import re
 from datetime import datetime
 
+from bs4 import BeautifulSoup
+
 from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://www.bulandra.ro"
 EVENTS_URL = f"{BASE_URL}/program/"
+TICKET_URLS = (
+    "https://www.bilet.ro/promoter/teatrul-bulandra",
+    "https://www.blt.ro/bulandra.html",
+)
 BUCHAREST_ROOMS = {"Toma Caragiu", "Liviu Ciulei"}
 
 
@@ -124,17 +130,46 @@ def scrape() -> list[Event]:
     seen: set[tuple[str, str]] = set()
     
     try:
-        html = fetch_page(EVENTS_URL, needs_js=True, timeout=60000)
+        html = fetch_page(EVENTS_URL, needs_js=False, record_failure=False)
     except Exception as e:
         print(f"Failed to fetch Bulandra events: {e}")
-        return events
+        html = ""
     
     feed_events = extract_feed_data(html)
+    if not feed_events:
+        # Both sellers are linked from the official programme. Their listings
+        # overlap, but BLT includes later dates while Bilet includes today's shows.
+        for url in TICKET_URLS:
+            soup = BeautifulSoup(fetch_page(url), "html.parser")
+            for script in soup.select('script[type="application/ld+json"]'):
+                data = json.loads(script.get_text())
+                for item in data if isinstance(data, list) else [data]:
+                    if item.get("@type") != "Event":
+                        continue
+                    location = item.get("location", {})
+                    name = location.get("name", "")
+                    room = next((r for r in BUCHAREST_ROOMS if r in name), None)
+                    if location.get("sameAs") == "bulandra.ro":
+                        if name.startswith("Izvor,"):
+                            room = "Liviu Ciulei"
+                        elif name.startswith("Icoanei,"):
+                            room = "Toma Caragiu"
+                    if room:
+                        feed_events.append({
+                            "title": item.get("name", "").strip(),
+                            "start": item.get("startDate", ""),
+                            "permalink": item.get("url", ""),
+                            "terms": {"wcs_room": [{"name": room}]},
+                        })
+        if not feed_events:
+            raise ValueError("Bulandra ticket listings returned no programme data")
     
+    today = datetime.now().date()
     for data in feed_events:
         event = parse_json_event(data)
-        if event:
-            key = (event.title, event.date.isoformat())
+        if event and event.date.date() >= today:
+            # Sellers use different titles for the same performance.
+            key = (event.venue, event.date.isoformat())
             if key not in seen:
                 seen.add(key)
                 events.append(event)
