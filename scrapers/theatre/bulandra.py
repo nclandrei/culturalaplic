@@ -2,11 +2,14 @@ import json
 import re
 from datetime import datetime
 
+from bs4 import BeautifulSoup
+
 from models import Event
-from services.http import fetch_page
+from services.http import HttpError, fetch_page
 
 BASE_URL = "https://www.bulandra.ro"
 EVENTS_URL = f"{BASE_URL}/program/"
+TICKETS_URL = "https://www.blt.ro/bulandra.html"
 BUCHAREST_ROOMS = {"Toma Caragiu", "Liviu Ciulei"}
 
 
@@ -122,18 +125,55 @@ def scrape() -> list[Event]:
     """Fetch upcoming events from Teatrul Bulandra."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
-    
+
     try:
-        html = fetch_page(EVENTS_URL, needs_js=True, timeout=60000)
-    except Exception as e:
+        html = fetch_page(
+            EVENTS_URL, needs_js=True, timeout=60000, record_failure=False,
+        )
+        feed_events = extract_feed_data(html)
+    except HttpError as e:
         print(f"Failed to fetch Bulandra events: {e}")
-        return events
-    
-    feed_events = extract_feed_data(html)
-    
+        feed_events = []
+
+    if not feed_events:
+        # BLT publishes every performance as JSON-LD; its location field is
+        # an address, so use the matching listing tile for the hall name.
+        soup = BeautifulSoup(fetch_page(TICKETS_URL), "html.parser")
+        rooms = {}
+        for tile in soup.select(".eventTiles a[href]"):
+            location = tile.select_one(".tileLocation")
+            if location:
+                text = location.get_text(" ", strip=True)
+                for room in BUCHAREST_ROOMS:
+                    if f"Teatrul Bulandra (sala {room})" == text:
+                        rooms[tile["href"]] = room
+
+        for script in soup.select('script[type="application/ld+json"]'):
+            try:
+                data = json.loads(script.string or "")
+            except json.JSONDecodeError:
+                continue
+            if not isinstance(data, list):
+                continue
+            for item in data:
+                if item.get("@type") != "Event":
+                    continue
+                room = rooms.get(item.get("url"))
+                if not room:
+                    continue
+                feed_events.append({
+                    "title": item.get("name"),
+                    "start": item.get("startDate"),
+                    "permalink": item.get("url"),
+                    "terms": {"wcs_room": [{"name": room}]},
+                })
+        if not feed_events:
+            raise ValueError("Bulandra ticket listing returned no verifiable events")
+
+    today = datetime.now().date()
     for data in feed_events:
         event = parse_json_event(data)
-        if event:
+        if event and event.date.date() >= today:
             key = (event.title, event.date.isoformat())
             if key not in seen:
                 seen.add(key)
