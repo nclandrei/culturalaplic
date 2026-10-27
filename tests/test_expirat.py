@@ -53,3 +53,58 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_scrape_fetches_detail_json_ld_and_follows_pagination(monkeypatch):
+    card = EXPIRAT_HTML.split('<script type="application/ld+json">')[0]
+    detail_url = (
+        "https://expirat.iabilet.ro/"
+        "bilete-byron-o-triptic-electric-acustic-improv-128427/"
+    )
+    second_detail = EXPIRAT_HTML.replace("128427", "128428").replace(
+        "2026-08-19", "2027-01-09"
+    )
+    pages = {
+        expirat.SCHEDULE_URL: card + '<a href="/?page=2">mai mult</a>',
+        detail_url: EXPIRAT_HTML,
+        "https://expirat.iabilet.ro/?page=2": (
+            card + card.replace("128427", "128428").replace("ora 21:30", "ora 22:00")
+            + '<a href="/?page=2">mai mult</a>'
+        ),
+        detail_url.replace("128427", "128428"): second_detail,
+    }
+    requests = []
+
+    def fake_fetch_page(url, **kwargs):
+        assert kwargs == {"needs_js": False}
+        requests.append(url)
+        return pages[url]
+
+    monkeypatch.setattr(expirat, "fetch_page", fake_fetch_page)
+
+    events = expirat.scrape()
+
+    assert len(events) == 2
+    assert events[0].date == datetime(2026, 8, 19, 21, 30)
+    assert events[1].date == datetime(2027, 1, 9, 22, 0)
+    assert events[0].url == detail_url
+    assert events[0].price == "90 RON"
+    assert requests == list(pages)
+
+
+def test_scrape_continues_after_detail_fetch_failure(monkeypatch):
+    card = EXPIRAT_HTML.split('<script type="application/ld+json">')[0]
+
+    def fake_fetch_page(url, **kwargs):
+        if url == expirat.SCHEDULE_URL:
+            return card.replace("128427", "missing") + card
+        if "missing" in url:
+            raise RuntimeError("unavailable")
+        return EXPIRAT_HTML
+
+    monkeypatch.setattr(expirat, "fetch_page", fake_fetch_page)
+
+    events = expirat.scrape()
+
+    assert len(events) == 1
+    assert events[0].date == datetime(2026, 8, 19, 21, 30)

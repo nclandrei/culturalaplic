@@ -223,3 +223,41 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_blocked_ticket_reader_recovers_show_datetime_without_fetch_failures(monkeypatch):
+    from services import http
+
+    event = Event(
+        title="Aephanemer @Quantic",
+        artist="Aephanemer",
+        venue="Quantic",
+        date=datetime(2026, 11, 18, 19, 0),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+
+    def fetch(url, headers=None):
+        if url == ticket_url:
+            import httpx
+            response = httpx.Response(403, request=httpx.Request("GET", url))
+            response.raise_for_status()
+        return '''<script type="application/ld+json">
+          {"@type":"Event", "name":"Aephanemer @Quantic",
+           "startDate":"2026-11-18T20:00:00"}
+        </script>'''
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 11, 18, 20, 0)
+    assert http.get_fetch_failures() == []

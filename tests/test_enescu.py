@@ -49,9 +49,9 @@ def test_scrape_includes_international_competition_events():
     assert events[0].url.startswith(enescu.COMPETITION_EVENTS_URL)
 
 
-def test_reader_url_keeps_the_official_https_source():
+def test_reader_url_uses_accessible_official_http_entry_point():
     assert enescu.reader_url(enescu.COMPETITION_EVENTS_URL) == (
-        "https://r.jina.ai/https://festivalenescu.ro/ro/"
+        "https://r.jina.ai/http://festivalenescu.ro/ro/"
         "concursul-international-george-enescu/evenimente"
     )
 
@@ -70,6 +70,12 @@ def test_completed_competition_can_return_zero_future_events():
     with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
+
+
+def test_empty_festival_programme_is_verifiable():
+    html = '<title>Program concerte</title><div class="blog"></div>'
+    with patch.object(enescu, "fetch_page", side_effect=[html, ""]):
+        assert enescu.scrape() == []
 
 
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():

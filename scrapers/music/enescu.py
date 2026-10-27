@@ -7,7 +7,7 @@ from models import Event
 from services.http import fetch_page
 
 BASE_URL = "https://festivalenescu.ro"
-FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
+FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte/"
 COMPETITION_EVENTS_URL = (
     f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente"
 )
@@ -25,8 +25,8 @@ ROMANIAN_MONTHS = {
 
 
 def reader_url(url: str) -> str:
-    """Route the official page through a CI-accessible HTML reader."""
-    return f"{READER_BASE_URL}{url}"
+    """Use the official HTTP entry point, which the reader can access."""
+    return f"{READER_BASE_URL}{url.replace('https://', 'http://', 1)}"
 
 
 def parse_date(element: Tag) -> datetime | None:
@@ -131,7 +131,9 @@ def scrape() -> list[Event]:
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or "evenimente" in title.casefold() or (
+            title.casefold() == "program concerte" and soup.select_one(".blog")
+        ):
             valid_listings += 1
         for item in items:
             event = parse_event(item)

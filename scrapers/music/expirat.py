@@ -121,7 +121,43 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    if not records:
+        # Listings no longer embed JSON-LD; event detail pages still do.
+        detail_urls: set[str] = set()
+        visited_pages = {SCHEDULE_URL}
+        while True:
+            card_times.update(extract_card_times(soup))
+            for card in soup.select('[data-event-list="item"]'):
+                link = card.select_one("a[href]")
+                if not link:
+                    continue
+                url = urljoin(BASE_URL, normalize_url_path(link["href"]) + "/")
+                if url in detail_urls:
+                    continue
+                detail_urls.add(url)
+                try:
+                    detail_html = fetch_page(url, needs_js=False)
+                except Exception as e:
+                    print(f"Failed to fetch Expirat event {url}: {e}")
+                    continue
+                records.extend(extract_json_ld_events(BeautifulSoup(detail_html, "html.parser")))
+
+            next_link = soup.find("a", string=re.compile(r"^\s*mai mult\s*$", re.I))
+            if not next_link or not next_link.get("href"):
+                break
+            next_url = urljoin(BASE_URL, next_link["href"])
+            if next_url in visited_pages:
+                break
+            visited_pages.add(next_url)
+            try:
+                html = fetch_page(next_url, needs_js=False)
+            except Exception as e:
+                print(f"Failed to fetch Expirat schedule {next_url}: {e}")
+                break
+            soup = BeautifulSoup(html, "html.parser")
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,
