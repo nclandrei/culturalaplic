@@ -4,6 +4,7 @@ from unittest.mock import Mock
 from bs4 import BeautifulSoup
 
 from scrapers.theatre import tnb
+from services import http
 from services.http import HttpError
 
 
@@ -76,12 +77,18 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
 
 
 def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
-    monkeypatch.setattr(tnb, "fetch_page", Mock(side_effect=HttpError("HTTP 422")))
-    fallback = Mock(return_value=LIST_VIEW_HTML)
-    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+    def fetch(url, headers=None):
+        if url == "https://r.jina.ai/http://www.tnb.ro/ro/calendar?year=2026&month=9&view=list":
+            return LIST_VIEW_HTML
+        raise HttpError("HTTP 422", status_code=422)
 
-    assert len(tnb.scrape_month(2026, 10)) == 2
-    fallback.assert_called_once_with(
-        "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
-        expected_text="right_items", timeout=60000,
-    )
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+
+    events = tnb.scrape_month(2026, 9)
+
+    assert [(event.title, event.date) for event in events] == [
+        ("Amintiri din copilărie", datetime(2026, 9, 5, 11)),
+        ("Moroi și păpădii la Chișinău", datetime(2026, 9, 5, 0)),
+    ]
+    assert http.get_fetch_failures() == []

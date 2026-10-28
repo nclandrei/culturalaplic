@@ -9,13 +9,19 @@ from services.http import fetch_page
 BASE_URL = "https://festivalenescu.ro"
 FESTIVAL_EVENTS_URL = f"{BASE_URL}/ro/festivalul-george-enescu/concerte"
 COMPETITION_EVENTS_URL = (
-    f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente"
+    f"{BASE_URL}/ro/concursul-international-george-enescu/evenimente/"
 )
 EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
 ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future shows.
 READER_BASE_URL = "https://r.jina.ai/"
-READER_HEADERS = {"X-Return-Format": "html"}
+# Without waiting for Joomla's listing container the reader can return the
+# initial Cloudflare document rather than the rendered programme HTML.
+READER_HEADERS = {
+    "X-Return-Format": "html",
+    "X-Wait-For-Selector": "#jf_results",
+    "X-Timeout": "30",
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -49,7 +55,7 @@ def parse_date(element: Tag) -> datetime | None:
 
         hour, minute = 19, 0
         if hour_el:
-            time_match = re.search(r"(\d{1,2}):(\d{2})", hour_el.get_text())
+            time_match = re.search(r"(\d{1,2})[:.](\d{2})", hour_el.get_text())
             if time_match:
                 hour = int(time_match.group(1))
                 minute = int(time_match.group(2))
@@ -108,7 +114,7 @@ def scrape() -> list[Event]:
     """Fetch Festival and International Competition events."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
-    valid_listings = 0
+    missing_listings: list[str] = []
     blocked_listings: list[str] = []
     today = datetime.now().date()
 
@@ -122,6 +128,7 @@ def scrape() -> list[Event]:
             )
         except Exception as e:
             print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
+            missing_listings.append(events_url)
             continue
 
         soup = BeautifulSoup(html, "html.parser")
@@ -131,10 +138,13 @@ def scrape() -> list[Event]:
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
-            valid_listings += 1
+        if not items and not soup.select_one("#jf_results .blog"):
+            missing_listings.append(events_url)
         for item in items:
             event = parse_event(item)
+            if not event:
+                missing_listings.append(events_url)
+                continue
             if event and event.date.date() >= today:
                 key = (event.title, event.date.isoformat())
                 if key not in seen:
@@ -143,7 +153,10 @@ def scrape() -> list[Event]:
 
     if blocked_listings:
         raise ValueError(f"Festivalul Enescu programme blocked: {', '.join(blocked_listings)}")
-    if not valid_listings:
-        raise ValueError("Festivalul Enescu returned no verifiable programme markup")
+    if missing_listings:
+        raise ValueError(
+            "Festivalul Enescu returned no verifiable programme markup: "
+            + ", ".join(dict.fromkeys(missing_listings))
+        )
     events.sort(key=lambda e: e.date)
     return events

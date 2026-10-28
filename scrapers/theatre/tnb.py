@@ -123,8 +123,11 @@ def scrape_month(year: int, month: int) -> list[Event]:
             if "right_items" not in html:
                 raise HttpError("TNB reader returned no calendar list")
         except HttpError:
+            # The reader can fail to retrieve the HTTPS origin (HTTP 422)
+            # while the same official calendar remains available over HTTP.
             html = fetch_page_with_reader_fallback(
-                url, expected_text="right_items", timeout=60000,
+                url.replace("https://", "http://", 1),
+                expected_text="right_items", timeout=60000,
             )
     except Exception as e:
         print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")

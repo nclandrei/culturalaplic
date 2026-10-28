@@ -121,13 +121,38 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    listed_paths = {normalize_url_path(data.get("url", "")) for data in records}
+    # The white-label listing no longer embeds Event JSON-LD. Detail pages
+    # still provide explicit years, unlike the abbreviated dates on the cards.
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one("a[href]")
+        if not link:
+            continue
+        path = normalize_url_path(link["href"])
+        if path in listed_paths:
+            continue
+        listed_paths.add(path)
+        detail_url = urljoin(BASE_URL, path + "/")
+        detail_html = fetch_page(detail_url, needs_js=False)
+        detail_records = extract_json_ld_events(BeautifulSoup(detail_html, "html.parser"))
+        matching_records = [
+            data for data in detail_records
+            if normalize_url_path(data.get("url", "")) == path
+        ]
+        if not matching_records:
+            raise ValueError(f"Expirat event page missing Event JSON-LD: {detail_url}")
+        records.extend(matching_records)
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,
             card_times.get(normalize_url_path(event_url)),
         )
-        if event and event.url not in seen_urls:
+        if not event:
+            raise ValueError(f"Expirat event has invalid Event JSON-LD: {event_url}")
+        if event.url not in seen_urls:
             seen_urls.add(event.url)
             events.append(event)
 

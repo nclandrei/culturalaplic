@@ -222,4 +222,41 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
     enrich_event_from_ticket(event)
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
-    assert calls == [(ticket_url, {"record_failure": False})]
+    assert calls == [
+        (ticket_url, {"record_failure": False}),
+        (f"https://r.jina.ai/{ticket_url}", {
+            "headers": {"X-Return-Format": "html"}, "record_failure": False,
+        }),
+    ]
+
+
+def test_blocked_ticket_recovers_live_datetime_from_reader(monkeypatch):
+    event = Event(
+        title="Aephanemer",
+        artist="Aephanemer",
+        venue="Quantic",
+        date=datetime(2026, 11, 18, 19, 0),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+
+    def fetch(url, **kwargs):
+        if url == ticket_url:
+            raise HttpError("HTTP 403", status_code=403)
+        assert url == f"https://r.jina.ai/{ticket_url}"
+        return '''<script type="application/ld+json">
+            {"@type": "Event", "name": "Aephanemer @Quantic",
+             "startDate": "2026-11-18T20:00:00+02:00"}
+        </script>'''
+
+    monkeypatch.setattr(quantic, "fetch_page", fetch)
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 11, 18, 20, 0)
