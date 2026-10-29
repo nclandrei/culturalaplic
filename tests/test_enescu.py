@@ -51,7 +51,7 @@ def test_scrape_includes_international_competition_events():
 
 def test_reader_url_keeps_the_official_https_source():
     assert enescu.reader_url(enescu.COMPETITION_EVENTS_URL) == (
-        "https://r.jina.ai/https://festivalenescu.ro/ro/"
+        "https://r.jina.ai/https://festivalenescu.ro:443/ro/"
         "concursul-international-george-enescu/evenimente"
     )
 

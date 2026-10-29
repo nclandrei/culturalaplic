@@ -25,8 +25,8 @@ ROMANIAN_MONTHS = {
 
 
 def reader_url(url: str) -> str:
-    """Route the official page through a CI-accessible HTML reader."""
-    return f"{READER_BASE_URL}{url}"
+    """Request the reader-accessible form of the official HTTPS programme URL."""
+    return f"{READER_BASE_URL}{url.replace(BASE_URL, BASE_URL + ':443', 1)}"
 
 
 def parse_date(element: Tag) -> datetime | None:
