@@ -40,3 +40,42 @@ def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover()
     assert [(event.title, event.date) for event in events] == [
         ("Macbeth", datetime(2026, 10, 3, 19, 0))
     ]
+
+
+def test_scrape_reads_replacement_embed_and_preserves_explicit_years(monkeypatch):
+    import json
+    from scrapers.theatre import odeon
+
+    record = {
+        "title": "Neliniște", "date": "2099-11-01", "startTime": "19:00",
+        "status": "active", "venue": "Sala Majestic", "subtitle": "de Autor",
+        "detailsUrl": "/spectacol/neliniste/", "ticketPrices": "80 lei",
+    }
+    records = [record, record, dict(record, status="cancelled"),
+               dict(record, isListed=False), dict(record, date="2020-11-01"),
+               dict(record, date="invalid"), dict(record, date="2099-12-01")]
+    calls = []
+
+    def fetch(url, **kwargs):
+        calls.append((url, kwargs))
+        if url == odeon.EVENTS_URL:
+            return '<script src="https://calendar.example/embed/program.js?tenant=odeon"></script>'
+        return 'let PERFORMANCES = ' + json.dumps(records) + '; const OTHER = [];'
+
+    monkeypatch.setattr(odeon, "fetch_page", fetch)
+    events = odeon.scrape()
+    assert [event.date for event in events] == [datetime(2099, 11, 1, 19), datetime(2099, 12, 1, 19)]
+    assert events[0].title == "Neliniște"
+    assert events[0].venue == "Teatrul Odeon - Sala Majestic"
+    assert events[0].price == "80 lei"
+    assert events[0].url == "https://teatrul-odeon.ro/spectacol/neliniste/"
+    assert calls[1][1] == {"headers": {"Referer": odeon.EVENTS_URL}}
+
+
+def test_empty_replacement_season_stays_empty(monkeypatch):
+    from scrapers.theatre import odeon
+
+    monkeypatch.setattr(odeon, "fetch_page", lambda url, **kw:
+                        '<script src="https://calendar.example/embed/program.js"></script>'
+                        if url == odeon.EVENTS_URL else 'let PERFORMANCES = [];')
+    assert odeon.scrape() == []

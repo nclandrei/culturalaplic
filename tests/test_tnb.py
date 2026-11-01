@@ -82,6 +82,23 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
 
     assert len(tnb.scrape_month(2026, 10)) == 2
     fallback.assert_called_once_with(
-        "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
+        "http://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_reader_timeout_recovers_without_marking_calendar_incomplete(monkeypatch):
+    from services import http
+
+    def fetch(url, headers=None):
+        if url.startswith("https://r.jina.ai/http://www.tnb.ro/"):
+            return LIST_VIEW_HTML
+        raise HttpError("Reader timeout or blocked origin", status_code=422)
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+    events = tnb.scrape_month(2026, 9)
+    assert [event.date for event in events] == [
+        datetime(2026, 9, 5, 11), datetime(2026, 9, 5),
+    ]
+    assert http.get_fetch_failures() == []

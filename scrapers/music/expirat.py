@@ -118,18 +118,43 @@ def scrape() -> list[Event]:
         print(f"Failed to fetch Expirat schedule: {e}")
         return events
     
-    soup = BeautifulSoup(html, "html.parser")
-    
-    card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
-        event_url = data.get("url", "")
-        event = parse_json_ld_event(
-            data,
-            card_times.get(normalize_url_path(event_url)),
-        )
-        if event and event.url not in seen_urls:
-            seen_urls.add(event.url)
-            events.append(event)
+    visited_pages = {SCHEDULE_URL}
+    fetched_details: set[str] = set()
+    while True:
+        soup = BeautifulSoup(html, "html.parser")
+        card_times = extract_card_times(soup)
+        records = extract_json_ld_events(soup)
+        record_paths = {normalize_url_path(data.get("url", "")) for data in records}
+        # Listing pages no longer include JSON-LD; detail pages still do and
+        # provide explicit years, avoiding guesses from the yearless cards.
+        for card in soup.select('[data-event-list="item"]'):
+            link = card.select_one("a[href]")
+            if not link:
+                continue
+            path = normalize_url_path(str(link["href"]))
+            if path in record_paths or path in fetched_details:
+                continue
+            fetched_details.add(path)
+            detail = fetch_page(urljoin(BASE_URL, path + "/"), needs_js=False)
+            records.extend(extract_json_ld_events(BeautifulSoup(detail, "html.parser")))
+        for data in records:
+            event_url = data.get("url", "")
+            event = parse_json_ld_event(
+                data,
+                card_times.get(normalize_url_path(event_url)),
+            )
+            if event and event.url not in seen_urls:
+                seen_urls.add(event.url)
+                events.append(event)
+
+        next_link = soup.find("a", string=re.compile(r"^\s*mai mult\s*$", re.I))
+        if not next_link or not next_link.get("href"):
+            break
+        next_url = urljoin(SCHEDULE_URL, str(next_link["href"]))
+        if next_url in visited_pages:
+            break
+        visited_pages.add(next_url)
+        html = fetch_page(next_url, needs_js=False)
 
     events.sort(key=lambda event: event.date)
     return events

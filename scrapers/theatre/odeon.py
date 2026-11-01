@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -82,4 +83,37 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    embed = soup.select_one('script[src*="/embed/program.js"]')
+    if not embed:
+        return parse_events(html)
+
+    # The replacement calendar ships explicitly dated records in its script.
+    script = fetch_page(str(embed["src"]), headers={"Referer": EVENTS_URL})
+    match = re.search(r"\b(?:let|const|var) PERFORMANCES\s*=\s*", script)
+    if not match:
+        raise ValueError("Odeon program script is missing PERFORMANCES")
+    records, _ = json.JSONDecoder().raw_decode(script[match.end():])
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for record in records:
+        if record.get("status") != "active" or record.get("isListed") is False:
+            continue
+        try:
+            date = datetime.fromisoformat(f"{record['date']}T{record['startTime']}")
+        except (KeyError, ValueError):
+            continue
+        title = record.get("title", "").strip()
+        if not title or date < today or (title, date) in seen:
+            continue
+        seen.add((title, date))
+        hall = record.get("venue", "")
+        events.append(Event(
+            title, record.get("subtitle") or None,
+            f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon", date,
+            urljoin(BASE_URL, record.get("detailsUrl") or EVENTS_URL),
+            "odeon", "theatre", record.get("ticketPrices") or None,
+        ))
+    return sorted(events, key=lambda event: event.date)

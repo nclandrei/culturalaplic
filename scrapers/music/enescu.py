@@ -127,8 +127,19 @@ def scrape() -> list[Event]:
         soup = BeautifulSoup(html, "html.parser")
         title = soup.title.get_text(" ", strip=True) if soup.title else ""
         if "just a moment" in title.casefold() or "attention required" in title.casefold():
-            blocked_listings.append(events_url)
-            continue
+            # Joomla's component view serves the same programme without the
+            # full-page template, which can be cached as a Cloudflare challenge.
+            html = fetch_page(
+                reader_url(f"{events_url}?tmpl=component"),
+                needs_js=False,
+                timeout=30000,
+                headers=READER_HEADERS,
+            )
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(" ", strip=True) if soup.title else ""
+            if "just a moment" in title.casefold() or "attention required" in title.casefold():
+                blocked_listings.append(events_url)
+                continue
 
         items = soup.select(".item[itemprop='blogPost']")
         if items or "evenimente" in title.casefold():

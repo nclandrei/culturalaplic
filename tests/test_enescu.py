@@ -72,10 +72,31 @@ def test_completed_competition_can_return_zero_future_events():
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
 
+def test_blocked_competition_recovers_component_programme():
+    programme = """
+    <title>Evenimente</title>
+    <div class="item" itemprop="blogPost">
+      <div class="concert-details">
+        <span class="concert-day">23</span><span class="concert-month">August</span>
+        <span class="concert-year">2099</span><span class="concert-hour">18:30</span>
+      </div>
+      <div class="concert-preview"><h2><a href="/ro/deschidere">Deschidere</a></h2></div>
+    </div>
+    """
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "", "<title>Just a moment...</title>", programme,
+    ]):
+        events = enescu.scrape()
+    assert [(event.title, event.date.isoformat()) for event in events] == [
+        ("Deschidere", "2099-08-23T18:30:00"),
+    ]
+
+
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
+        "",
         "<title>Just a moment...</title>",
-        "<title>Evenimente</title>",
+        "<title>Just a moment...</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()

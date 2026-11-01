@@ -53,3 +53,39 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_fetches_detail_schema_when_listing_has_none_and_follows_pagination(monkeypatch):
+    import json
+
+    def card(path, time):
+        return f'<div data-event-list="item"><a href="/{path}/?tracking=1">Concert</a><p>{time}</p></div>'
+
+    def detail(path, date):
+        return '<script type="application/ld+json">' + json.dumps({
+            "@type": "Event", "name": "Concert", "url": f"{expirat.BASE_URL}/{path}/",
+            "startDate": date, "location": {"name": "Expirat Halele Carol"},
+        }) + '</script>'
+
+    pages = {
+        expirat.SCHEDULE_URL: card("first", "ora 21:30 acces de la 20:00") + '<a href="/?page=2">mai mult</a>',
+        expirat.BASE_URL + "/?page=2": card("first", "") + card("second", "acces de la 20:00"),
+        expirat.BASE_URL + "/first/": detail("first", "2026-12-31"),
+        expirat.BASE_URL + "/second/": detail("second", "2027-01-02"),
+    }
+    calls = []
+
+    def fetch(url, **kwargs):
+        calls.append(url)
+        return pages[url]
+
+    monkeypatch.setattr(expirat, "fetch_page", fetch)
+    events = expirat.scrape()
+    assert [event.date for event in events] == [datetime(2026, 12, 31, 21, 30), datetime(2027, 1, 2)]
+    assert calls.count(expirat.BASE_URL + "/first/") == 1
+    assert len(calls) == 4
+
+
+def test_empty_season_stays_empty(monkeypatch):
+    monkeypatch.setattr(expirat, "fetch_page", lambda *args, **kwargs: "<html></html>")
+    assert expirat.scrape() == []
