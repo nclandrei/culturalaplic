@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -67,11 +68,40 @@ def _parse_event(row: Tag, today: datetime) -> Event | None:
 
 
 def parse_events(html: str, now: datetime | None = None) -> list[Event]:
-    """Parse the server-rendered EventON calendar, which contains explicit years."""
+    """Parse the programme widget or the older EventON calendar."""
     today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
     soup = BeautifulSoup(html, "html.parser")
     events: list[Event] = []
     seen: set[tuple[str, datetime]] = set()
+    performances = re.search(r"\blet\s+PERFORMANCES\s*=\s*", html)
+    if performances:
+        # The official embed script includes JSON with full dates; the visible
+        # cards omit the year and only open their detail links inside a modal.
+        rows, _ = json.JSONDecoder().raw_decode(html[performances.end():])
+        for row in rows:
+            if row.get("status") in {"cancelled", "suspended", "postponed"} or row.get("isListed") is False:
+                continue
+            try:
+                event_date = datetime.fromisoformat(f"{row['date']}T{row['startTime']}")
+            except (KeyError, ValueError):
+                continue
+            title = row.get("title", "").strip()
+            if not title or event_date < today or (title, event_date) in seen:
+                continue
+            hall = row.get("venue") or row.get("category")
+            events.append(Event(
+                title=title,
+                artist=row.get("subtitle") or None,
+                venue=f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon",
+                date=event_date,
+                url=urljoin(BASE_URL, row.get("detailsUrl") or row.get("ticketUrl") or EVENTS_URL),
+                source="odeon",
+                category="theatre",
+                price=row.get("ticketPrices") or None,
+            ))
+            seen.add((title, event_date))
+        return sorted(events, key=lambda event: event.date)
+
     for row in soup.select(".eventon_list_event"):
         event = _parse_event(row, today)
         if event and (event.title, event.date) not in seen:
@@ -82,4 +112,17 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    embed = soup.select_one("script[src*='/api/embed/program.js']")
+    if embed:
+        # Discover the widget URL from the official page rather than hard-code
+        # its tenant/API key. The widget requires the embedding site's origin.
+        script = fetch_page(
+            urljoin(EVENTS_URL, embed["src"]),
+            headers={"Referer": EVENTS_URL, "Origin": BASE_URL},
+        )
+        if not re.search(r"\blet\s+PERFORMANCES\s*=\s*", script):
+            raise ValueError("Teatrul Odeon widget returned no programme data")
+        return parse_events(script)
+    return parse_events(html)

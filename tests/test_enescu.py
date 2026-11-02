@@ -5,7 +5,8 @@ import pytest
 from scrapers.music import enescu
 
 
-def test_scrape_includes_international_competition_events():
+@pytest.mark.parametrize("challenge", [None, "Just a moment...", "Attention Required! | Cloudflare"])
+def test_scrape_includes_international_competition_events(challenge):
     competition_html = """
       <div class="item" itemprop="blogPost">
         <div class="concert-details">
@@ -25,10 +26,13 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    responses = ["", competition_html]
+    if challenge:
+        responses.insert(1, f"<title>{challenge}</title>")
+    with patch.object(enescu, "fetch_page", side_effect=responses) as fetch:
         events = enescu.scrape()
 
-    assert fetch.call_args_list == [
+    expected_calls = [
         call(
             enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
             needs_js=False,
@@ -42,6 +46,14 @@ def test_scrape_includes_international_competition_events():
             headers=enescu.READER_HEADERS,
         ),
     ]
+    if challenge:
+        expected_calls.append(call(
+            enescu.reader_url(enescu.COMPETITION_EVENTS_URL + "/"),
+            needs_js=False,
+            timeout=30000,
+            headers=enescu.READER_HEADERS,
+        ))
+    assert fetch.call_args_list == expected_calls
     assert len(events) == 1
     assert events[0].title.startswith("Concertul de deschidere")
     assert events[0].date.isoformat() == "2027-08-23T19:00:00"
@@ -75,7 +87,14 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Just a moment...</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_empty_official_festival_programme_is_recognized():
+    html = '<title>Program concerte</title><div class="blog program-concerte"></div>'
+    with patch.object(enescu, "fetch_page", side_effect=[html, ""]):
+        assert enescu.scrape() == []

@@ -1,5 +1,10 @@
+import json
 from datetime import datetime
+from unittest.mock import patch
 
+import pytest
+
+from scrapers.theatre import odeon
 from scrapers.theatre.odeon import parse_events
 
 
@@ -40,3 +45,42 @@ def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover()
     assert [(event.title, event.date) for event in events] == [
         ("Macbeth", datetime(2026, 10, 3, 19, 0))
     ]
+
+
+def test_scrape_reads_official_embed_with_explicit_dates_and_filters_invalid_shows():
+    performance = {
+        "title": "Pescărușul", "date": "2097-12-31", "startTime": "19:30",
+        "venue": "Sala Studio", "status": "active", "isListed": True,
+        "subtitle": "de A. P. Cehov, regia Andrei și Andreea Grosu",
+        "detailsUrl": "/spectacol/pescarusul/", "ticketUrl": "https://bilete.teatrul-odeon.ro/pescarusul",
+        "ticketPrices": "60 lei Cat. I; 40 lei Cat. II; 30 lei Cat. III",
+    }
+    rows = [
+        {**performance, "date": "2098-01-02", "venue": "Sala Majestic"},
+        {**performance, "date": "2025-12-31"},
+        *({**performance, "status": status} for status in ["cancelled", "suspended", "postponed"]),
+        {**performance, "isListed": False},
+        {**performance, "date": "invalid"},
+        performance, performance,
+    ]
+    html = '<script src="https://projects.doimih.net/hub/api/embed/program.js?tenant=test"></script>'
+    script = "(function() { let PERFORMANCES = " + json.dumps(rows) + "; let OTHER = []; })();"
+    with patch.object(odeon, "fetch_page", side_effect=[html, script]):
+        events = odeon.scrape()
+
+    assert [(event.title, event.date, event.venue) for event in events] == [
+        ("Pescărușul", datetime(2097, 12, 31, 19, 30), "Teatrul Odeon - Sala Studio"),
+        ("Pescărușul", datetime(2098, 1, 2, 19, 30), "Teatrul Odeon - Sala Majestic"),
+    ]
+    assert events[0].artist == "de A. P. Cehov, regia Andrei și Andreea Grosu"
+    assert events[0].price == "60 lei Cat. I; 40 lei Cat. II; 30 lei Cat. III"
+    assert events[0].url == "https://teatrul-odeon.ro/spectacol/pescarusul/"
+    assert events[0].source == "odeon"
+    assert events[0].category == "theatre"
+
+
+def test_widget_access_error_is_not_an_empty_programme():
+    html = '<script src="https://projects.doimih.net/hub/api/embed/program.js?tenant=test"></script>'
+    with patch.object(odeon, "fetch_page", side_effect=[html, '{"success":false}']):
+        with pytest.raises(ValueError, match="no programme data"):
+            odeon.scrape()
