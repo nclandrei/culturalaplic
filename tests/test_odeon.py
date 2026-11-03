@@ -1,5 +1,8 @@
+import json
 from datetime import datetime
+from unittest.mock import patch
 
+from scrapers.theatre import odeon
 from scrapers.theatre.odeon import parse_events
 
 
@@ -40,3 +43,33 @@ def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover()
     assert [(event.title, event.date) for event in events] == [
         ("Macbeth", datetime(2026, 10, 3, 19, 0))
     ]
+
+
+def test_scrape_reads_official_widget_dates_halls_and_public_performances():
+    performance = {
+        "title": "Nu vorbim despre asta", "date": "2027-01-08", "startTime": "19:30",
+        "status": "active", "category": "Sala Studio", "venue": "Sala Majestic",
+        "subtitle": "de Alexandra Felseghi", "ticketPrices": "60 lei; 40 lei",
+        "detailsUrl": "/spectacol/nu-vorbim-despre-asta/", "isListed": True,
+    }
+    performances = [
+        performance, dict(performance, date="2027-01-12"), performance,
+        dict(performance, date="2025-01-08"),
+        dict(performance, date="2027-01-09", status="cancelled"),
+        dict(performance, date="2027-01-10", status="suspended"),
+        dict(performance, date="2027-01-11", hiddenFromPublic=True),
+        dict(performance, date="2027-01-13", isListed=False),
+        dict(performance, date="invalid"),
+    ]
+    html = '<script src="https://projects.doimih.net/hub/api/embed/program.js?tenant=odeon"></script>'
+    programme = "let PERFORMANCES = " + json.dumps(performances) + "; render();"
+    with patch.object(odeon, "fetch_page", side_effect=[html, programme]):
+        events = odeon.scrape()
+    assert [(event.title, event.date) for event in events] == [
+        ("Nu vorbim despre asta", datetime(2027, 1, 8, 19, 30)),
+        ("Nu vorbim despre asta", datetime(2027, 1, 12, 19, 30)),
+    ]
+    assert events[0].venue == "Teatrul Odeon - Sala Studio"
+    assert events[0].artist == "de Alexandra Felseghi"
+    assert events[0].price == "60 lei; 40 lei"
+    assert events[0].url == "https://teatrul-odeon.ro/spectacol/nu-vorbim-despre-asta/"

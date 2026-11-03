@@ -12,7 +12,7 @@ def test_scrape_includes_international_competition_events():
           <span class="concert-day">23</span>
           <span class="concert-month">August</span>
           <span class="concert-year">2027</span>
-          <div class="concert-hour">19:00</div>
+          <div class="concert-hour">18.30</div>
           <div class="concert-location">Ateneul Român</div>
         </div>
         <div class="concert-preview">
@@ -44,7 +44,7 @@ def test_scrape_includes_international_competition_events():
     ]
     assert len(events) == 1
     assert events[0].title.startswith("Concertul de deschidere")
-    assert events[0].date.isoformat() == "2027-08-23T19:00:00"
+    assert events[0].date.isoformat() == "2027-08-23T18:30:00"
     assert events[0].venue == "Ateneul Român"
     assert events[0].url.startswith(enescu.COMPETITION_EVENTS_URL)
 
@@ -67,7 +67,9 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Program concerte</title>", completed_html,
+    ]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
@@ -75,7 +77,17 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Attention Required!</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_cached_challenge_recovers_through_full_programme_url():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Just a moment...</title>",
+        "<title>Program concerte</title>",
+        "<title>Evenimente</title>",
+    ]):
+        assert enescu.scrape() == []

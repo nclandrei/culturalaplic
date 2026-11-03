@@ -49,7 +49,7 @@ def parse_date(element: Tag) -> datetime | None:
 
         hour, minute = 19, 0
         if hour_el:
-            time_match = re.search(r"(\d{1,2}):(\d{2})", hour_el.get_text())
+            time_match = re.search(r"(\d{1,2})[:.](\d{2})", hour_el.get_text())
             if time_match:
                 hour = int(time_match.group(1))
                 minute = int(time_match.group(2))
@@ -127,11 +127,21 @@ def scrape() -> list[Event]:
         soup = BeautifulSoup(html, "html.parser")
         title = soup.title.get_text(" ", strip=True) if soup.title else ""
         if "just a moment" in title.casefold() or "attention required" in title.casefold():
-            blocked_listings.append(events_url)
-            continue
+            # Joomla's full-list URL can recover a reader-cached challenge.
+            html = fetch_page(
+                reader_url(events_url) + "?limit=0",
+                needs_js=False,
+                timeout=30000,
+                headers=READER_HEADERS,
+            )
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(" ", strip=True) if soup.title else ""
+            if "just a moment" in title.casefold() or "attention required" in title.casefold():
+                blocked_listings.append(events_url)
+                continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or title.casefold() in {"evenimente", "program concerte"}:
             valid_listings += 1
         for item in items:
             event = parse_event(item)

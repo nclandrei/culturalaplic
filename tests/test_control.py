@@ -10,7 +10,7 @@ def test_scrape_uses_server_rendered_events_without_browser_wait():
     with patch("scrapers.music.control.fetch_page", return_value=html) as fetch:
         control.scrape()
 
-    fetch.assert_called_once_with(control.EVENTS_URL)
+    fetch.assert_called_once_with(control.EVENTS_URL, record_failure=False)
 
 
 def test_scrape_parses_server_rendered_event_fixture():
@@ -60,7 +60,7 @@ def test_scrape_prefers_explicit_show_time_over_open_doors(monkeypatch):
     <p>Open Doors: 20:00<br>Show Time: 21:00</p>
     """
 
-    def fetch(url: str) -> str:
+    def fetch(url: str, **kwargs) -> str:
         return listing_html if url == control.EVENTS_URL else detail_html
 
     monkeypatch.setattr(control, "fetch_page", fetch)
@@ -117,3 +117,20 @@ def test_loading_placeholder_is_not_published_as_a_price():
 
     assert len(events) == 1
     assert events[0].price is None
+
+
+def test_scrape_recovers_listing_timeout_with_browser():
+    html = """
+    <div class="events-list-view"><div class="date">
+      <div class="title"><p>Friday, March 5, 2027</p></div>
+      <div class="room"><p class="title">Berlin Room</p>
+        <div class="event"><a class="title hover" href="/events/j-bernardt">J. Bernardt</a>
+          <span class="hour">20:00</span></div>
+      </div>
+    </div></div>
+    """
+    with patch.object(control, "fetch_page", side_effect=[TimeoutError("timed out"), html, ""]):
+        events = control.scrape()
+    assert [(event.title, event.date, event.url) for event in events] == [
+        ("J. Bernardt", datetime(2027, 3, 5, 20), "https://www.control-club.ro/events/j-bernardt"),
+    ]
