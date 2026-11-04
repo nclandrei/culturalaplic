@@ -25,7 +25,9 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "", "<title>Just a moment...</title>", competition_html,
+    ]) as fetch:
         events = enescu.scrape()
 
     assert fetch.call_args_list == [
@@ -37,6 +39,12 @@ def test_scrape_includes_international_competition_events():
         ),
         call(
             enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
+            needs_js=False,
+            timeout=30000,
+            headers=enescu.READER_HEADERS,
+        ),
+        call(
+            enescu.reader_url(f"{enescu.COMPETITION_EVENTS_URL}?limitstart=0"),
             needs_js=False,
             timeout=30000,
             headers=enescu.READER_HEADERS,
@@ -75,6 +83,7 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Attention Required! | Cloudflare</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):

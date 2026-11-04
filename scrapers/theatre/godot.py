@@ -4,7 +4,7 @@ from datetime import datetime, time
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import HTML_READER_BASE_URL, HTML_READER_HEADERS, fetch_page
+from services.http import fetch_page_with_reader_fallback
 
 BASE_URL = "https://www.teatrulgodot.ro"
 EVENTS_URL = f"{BASE_URL}/spectacole/"
@@ -14,10 +14,6 @@ ROMANIAN_MONTHS = {
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
 }
-
-
-def reader_url(url: str) -> str:
-    return f"{HTML_READER_BASE_URL}{url}"
 
 
 def parse_date(day_text: str, month_text: str, year_text: str) -> datetime | None:
@@ -137,9 +133,9 @@ def scrape() -> list[Event]:
         url = EVENTS_URL if page == 1 else f"{EVENTS_URL}page/{page}/"
         
         try:
-            html = fetch_page(
-                reader_url(url),
-                headers=HTML_READER_HEADERS,
+            html = fetch_page_with_reader_fallback(
+                url,
+                expected_text="home-show-box",
                 timeout=60000,
             )
         except Exception as e:
@@ -157,9 +153,9 @@ def scrape() -> list[Event]:
             if event and event.date >= today:
                 key = (event.title, event.date.date().isoformat())
                 if key not in seen:
-                    detail_html = fetch_page(
-                        reader_url(event.url),
-                        headers=HTML_READER_HEADERS,
+                    detail_html = fetch_page_with_reader_fallback(
+                        event.url,
+                        expected_text="Ora:",
                         timeout=60000,
                     )
                     start_time = parse_detail_time(detail_html)
