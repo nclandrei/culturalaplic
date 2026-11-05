@@ -52,7 +52,7 @@ def test_scrape_includes_international_competition_events():
 def test_reader_url_keeps_the_official_https_source():
     assert enescu.reader_url(enescu.COMPETITION_EVENTS_URL) == (
         "https://r.jina.ai/https://festivalenescu.ro/ro/"
-        "concursul-international-george-enescu/evenimente"
+        "concursul-international-george-enescu/evenimente/"
     )
 
 
@@ -67,7 +67,9 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Program concerte</title>", completed_html,
+    ]):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 

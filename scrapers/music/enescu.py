@@ -25,8 +25,8 @@ ROMANIAN_MONTHS = {
 
 
 def reader_url(url: str) -> str:
-    """Route the official page through a CI-accessible HTML reader."""
-    return f"{READER_BASE_URL}{url}"
+    """Use the reader's accessible trailing-slash programme pages."""
+    return f"{READER_BASE_URL}{url.rstrip('/')}/"
 
 
 def parse_date(element: Tag) -> datetime | None:
@@ -131,7 +131,7 @@ def scrape() -> list[Event]:
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or title.casefold() in {"evenimente", "program concerte"}:
             valid_listings += 1
         for item in items:
             event = parse_event(item)
