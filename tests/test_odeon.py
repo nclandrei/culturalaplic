@@ -1,5 +1,7 @@
+import json
 from datetime import datetime
 
+from scrapers.theatre import odeon
 from scrapers.theatre.odeon import parse_events
 
 
@@ -40,3 +42,38 @@ def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover()
     assert [(event.title, event.date) for event in events] == [
         ("Macbeth", datetime(2026, 10, 3, 19, 0))
     ]
+
+
+def test_scrape_reads_widget_dates_halls_and_visibility(monkeypatch):
+    class Clock(datetime):
+        @classmethod
+        def now(cls):
+            return cls(2026, 11, 6)
+
+    record = {
+        "title": "Nu vorbim despre asta", "date": "2026-11-08",
+        "startTime": "19:30", "status": "active", "venue": "Sala Majestic",
+        "category": "Sala Studio", "subtitle": "de Alexandra Felseghi",
+        "detailsUrl": "/spectacol/nu-vorbim-despre-asta/", "ticketPrices": "60 lei",
+    }
+    records = [
+        record, record, dict(record, date="2026-12-12"),
+        dict(record, date="2026-11-05"), dict(record, status="cancelled"),
+        dict(record, hiddenFromPublic=True), dict(record, date="invalid"),
+    ]
+
+    def fetch(url, **kwargs):
+        if url == odeon.EVENTS_URL:
+            return '<script src="https://widget.example/api/embed/program.js?tenant=odeon"></script>'
+        return "let PERFORMANCES = " + json.dumps(records) + "; render();"
+
+    monkeypatch.setattr(odeon, "datetime", Clock)
+    monkeypatch.setattr(odeon, "fetch_page", fetch)
+    events = odeon.scrape()
+    assert [event.date for event in events] == [
+        datetime(2026, 11, 8, 19, 30), datetime(2026, 12, 12, 19, 30),
+    ]
+    assert events[0].title == "Nu vorbim despre asta"
+    assert events[0].venue == "Teatrul Odeon - Sala Studio"
+    assert events[0].price == "60 lei"
+    assert events[0].url == "https://teatrul-odeon.ro/spectacol/nu-vorbim-despre-asta/"

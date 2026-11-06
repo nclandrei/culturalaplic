@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -82,4 +83,42 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    script = soup.select_one('script[src*="/api/embed/program.js"]')
+    if not script:
+        return parse_events(html)
+
+    # The official widget embeds explicit dates in its JavaScript, not the page HTML.
+    # Its server requires the embedding site's Referer.
+    program = fetch_page(
+        urljoin(BASE_URL, str(script["src"])), headers={"Referer": f"{BASE_URL}/"},
+    )
+    match = re.search(r"\b(?:let|const|var)\s+PERFORMANCES\s*=\s*", program)
+    if not match:
+        raise ValueError("Odeon widget is missing performance data")
+    records, _ = json.JSONDecoder().raw_decode(program[match.end():])
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime, str]] = set()
+    for record in records:
+        if record.get("status") != "active" or record.get("hiddenFromPublic"):
+            continue
+        try:
+            event_date = datetime.fromisoformat(f"{record['date']}T{record['startTime']}")
+        except (KeyError, ValueError):
+            continue
+        title = record.get("title", "").strip()
+        hall = record.get("category") or record.get("venue", "")
+        key = (title, event_date, hall)
+        if not title or event_date < today or key in seen:
+            continue
+        seen.add(key)
+        events.append(Event(
+            title, record.get("subtitle") or None,
+            f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon",
+            event_date,
+            urljoin(BASE_URL, record.get("detailsUrl") or record.get("ticketUrl") or EVENTS_URL),
+            "odeon", "theatre", record.get("ticketPrices") or None,
+        ))
+    return sorted(events, key=lambda event: event.date)

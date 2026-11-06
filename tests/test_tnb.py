@@ -1,9 +1,11 @@
 from datetime import datetime
 from unittest.mock import Mock
 
+import httpx
 from bs4 import BeautifulSoup
 
 from scrapers.theatre import tnb
+from services import http
 from services.http import HttpError
 
 
@@ -85,3 +87,47 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_scrape_preserves_official_dates_halls_and_next_month_at_year_end(monkeypatch):
+    class FrozenDatetime(datetime):
+        @classmethod
+        def now(cls):
+            return cls(2026, 12, 5, 14, 0)
+
+    monkeypatch.setattr(tnb, "datetime", FrozenDatetime)
+    december = LIST_VIEW_HTML.replace("Sep", "Dec")
+    january = LIST_VIEW_HTML.replace("Sep", "Ian").replace("2026", "2027")
+    fetch = Mock(side_effect=[december + december, january])
+    monkeypatch.setattr(tnb, "fetch_page", fetch)
+
+    events = tnb.scrape()
+
+    assert [call.args[0] for call in fetch.call_args_list] == [
+        "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=12&view=list",
+        "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2027&month=1&view=list",
+    ]
+    assert [(event.date, event.venue) for event in events] == [
+        (datetime(2026, 12, 5, 0, 0), "TNB"),
+        (datetime(2026, 12, 5, 11, 0), "TNB - Sala Atelier"),
+        (datetime(2027, 1, 5, 0, 0), "TNB"),
+        (datetime(2027, 1, 5, 11, 0), "TNB - Sala Atelier"),
+    ]
+    assert all(event.source == "tnb" and event.category == "theatre" for event in events)
+
+
+def test_scrape_reports_terminal_reader_failure(monkeypatch, capsys):
+    def fail_fetch(url, headers=None):
+        response = httpx.Response(422, request=httpx.Request("GET", url))
+        response.raise_for_status()
+
+    monkeypatch.setattr(http, "_fetch_http", fail_fetch)
+    http.reset_fetch_failures()
+    try:
+        assert tnb.scrape() == []
+        failures = http.get_fetch_failures()
+        assert len(failures) == 2
+        assert all(message.startswith("HTTP 422 for https://r.jina.ai/") for message in failures)
+        assert capsys.readouterr().out.count("Failed to fetch TNB calendar") == 2
+    finally:
+        http.reset_fetch_failures()

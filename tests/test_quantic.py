@@ -223,3 +223,31 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_blocked_ambilet_recovers_show_time_without_failed_scrape(monkeypatch):
+    import httpx
+    from services import http
+
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    event = Event(
+        "Aephanemer", "Aephanemer", "Quantic", datetime(2026, 11, 18, 19),
+        "https://quantic.pub/eveniment/aephanemer/", "quantic", "music",
+    )
+
+    def fetch(url, headers=None):
+        if url == event.url:
+            return f'<div class="tribe-events"><a href="{ticket_url}">Bilete</a></div>'
+        if url == ticket_url:
+            response = httpx.Response(403, request=httpx.Request("GET", url))
+            response.raise_for_status()
+        assert url == http.HTML_READER_BASE_URL + ticket_url
+        return '''<script type="application/ld+json">
+          {"@graph":[{"@type":"Event", "name":"Aephanemer @Quantic",
+           "startDate":"2026-11-18T20:00:00"}]}</script>'''
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+    enrich_event_from_ticket(event)
+    assert event.date == datetime(2026, 11, 18, 20)
+    assert http.get_fetch_failures() == []
