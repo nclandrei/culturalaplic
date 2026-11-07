@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -80,6 +81,57 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
     return sorted(events, key=lambda event: event.date)
 
 
+def parse_program(script: str, now: datetime | None = None) -> list[Event]:
+    """Read the explicit performance data supplied by the official calendar embed."""
+    match = re.search(r"\b(?:let|const|var)\s+PERFORMANCES\s*=\s*", script)
+    if not match:
+        raise ValueError("Odeon calendar embed is missing performance data")
+    performances, _ = json.JSONDecoder().raw_decode(script[match.end():])
+    today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for performance in performances:
+        if performance.get("status") in {"cancelled", "suspended", "postponed"}:
+            continue
+        if performance.get("hiddenFromPublic") or performance.get("isListed") is False:
+            continue
+        try:
+            event_date = datetime.fromisoformat(
+                f"{performance['date']}T{performance['startTime']}"
+            )
+        except (KeyError, ValueError):
+            continue
+        title = performance.get("title", "").strip()
+        key = (title, event_date)
+        if not title or event_date < today or key in seen:
+            continue
+        seen.add(key)
+        # The displayed category is authoritative: some records have a stale venue.
+        hall = performance.get("category") or performance.get("venue", "")
+        venue = f"Teatrul Odeon - {hall}" if hall.startswith("Sala ") else "Teatrul Odeon"
+        url = performance.get("detailsUrl") or performance.get("ticketUrl") or EVENTS_URL
+        events.append(Event(
+            title=title,
+            artist=performance.get("subtitle") or None,
+            venue=venue,
+            date=event_date,
+            url=urljoin(BASE_URL, url),
+            source="odeon",
+            category="theatre",
+            price=performance.get("ticketPrices") or None,
+        ))
+    return sorted(events, key=lambda event: event.date)
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    embed = soup.select_one("script[src*='/hub/api/embed/program.js']")
+    if embed:
+        script = fetch_page(
+            urljoin(EVENTS_URL, str(embed["src"])),
+            headers={"Referer": f"{BASE_URL}/", "Origin": BASE_URL},
+        )
+        return parse_program(script)
+    return parse_events(html)
