@@ -1,6 +1,7 @@
+import json
 import re
 from datetime import datetime
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from bs4 import BeautifulSoup, Tag
 
@@ -80,6 +81,63 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
     return sorted(events, key=lambda event: event.date)
 
 
+def parse_program(data: dict, now: datetime | None = None) -> list[Event]:
+    """Parse the embed's public program-data response (dates are local ISO dates)."""
+    if data.get("success") is False or not isinstance(data.get("performances"), list):
+        raise ValueError("Invalid Odeon programme response")
+    today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for row in data["performances"]:
+        if not isinstance(row, dict):
+            continue
+        if row.get("status") in {"cancelled", "canceled", "postponed"} or row.get("isListed") is False:
+            continue
+        try:
+            event_date = datetime.strptime(f"{row['date']}T{row['startTime']}", "%Y-%m-%dT%H:%M")
+        except (KeyError, TypeError, ValueError):
+            continue
+        title = _clean_title(row.get("title") or "")
+        key = (title, event_date)
+        if not title or event_date < today or key in seen:
+            continue
+        seen.add(key)
+        hall = (row.get("venue") or "").strip()
+        # The programme card's hall can override the production's default venue.
+        category = (row.get("category") or "").strip()
+        if category.casefold().startswith("sala "):
+            hall = category
+        details_url = row.get("detailsUrl")
+        url = urljoin(BASE_URL, details_url) if details_url and details_url != "#" else EVENTS_URL
+        events.append(Event(
+            title,
+            (row.get("subtitle") or "").split("|", 1)[0].strip() or None,
+            f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon",
+            event_date,
+            url,
+            "odeon",
+            "theatre",
+            (row.get("ticketPrices") or "").strip() or None,
+        ))
+    return sorted(events, key=lambda event: event.date)
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    for script in soup.select("script[src]"):
+        embed_url = urlsplit(urljoin(EVENTS_URL, str(script["src"])))
+        if embed_url.path.endswith("/api/embed/program.js"):
+            # The embed polls this read-only endpoint with the same public tenant/key.
+            # Discover the query in the calendar rather than hard-coding its key.
+            data_url = urlunsplit(embed_url._replace(
+                path=embed_url.path.removesuffix("program.js") + "program-data",
+                fragment="",
+            ))
+            data = json.loads(fetch_page(data_url, headers={
+                "Referer": EVENTS_URL,
+                "Origin": BASE_URL,
+            }))
+            return parse_program(data)
+    return parse_events(html)

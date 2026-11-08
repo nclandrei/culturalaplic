@@ -16,11 +16,18 @@ EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
 ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future shows.
 READER_BASE_URL = "https://r.jina.ai/"
 READER_HEADERS = {"X-Return-Format": "html"}
+LISTING_FALLBACK_URLS = {
+    FESTIVAL_EVENTS_URL: f"{BASE_URL}/en/george-enescu-international-festival/concert-schedule/",
+    COMPETITION_EVENTS_URL: f"{COMPETITION_EVENTS_URL}?format=html&limit=0",
+}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
+    "january": 1, "february": 2, "march": 3, "april": 4,
+    "may": 5, "june": 6, "july": 7,
+    "september": 9, "october": 10, "november": 11, "december": 12,
 }
 
 
@@ -49,10 +56,13 @@ def parse_date(element: Tag) -> datetime | None:
 
         hour, minute = 19, 0
         if hour_el:
-            time_match = re.search(r"(\d{1,2}):(\d{2})", hour_el.get_text())
+            time_match = re.search(r"(\d{1,2})[:.](\d{2})\s*(AM|PM)?", hour_el.get_text(), re.I)
             if time_match:
                 hour = int(time_match.group(1))
                 minute = int(time_match.group(2))
+                meridiem = time_match.group(3)
+                if meridiem:
+                    hour = hour % 12 + (12 if meridiem.upper() == "PM" else 0)
 
         return datetime(year, month, day, hour, minute)
     except (ValueError, TypeError):
@@ -127,11 +137,22 @@ def scrape() -> list[Event]:
         soup = BeautifulSoup(html, "html.parser")
         title = soup.title.get_text(" ", strip=True) if soup.title else ""
         if "just a moment" in title.casefold() or "attention required" in title.casefold():
+            # The reader can retrieve these official alternatives even when the
+            # default Romanian routes return a Cloudflare challenge.
+            html = fetch_page(
+                reader_url(LISTING_FALLBACK_URLS[events_url]),
+                needs_js=False,
+                timeout=30000,
+                headers=READER_HEADERS,
+            )
+            soup = BeautifulSoup(html, "html.parser")
+            title = soup.title.get_text(" ", strip=True) if soup.title else ""
+        if "just a moment" in title.casefold() or "attention required" in title.casefold():
             blocked_listings.append(events_url)
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or soup.select_one(".program-concerte") or "evenimente" in title.casefold():
             valid_listings += 1
         for item in items:
             event = parse_event(item)

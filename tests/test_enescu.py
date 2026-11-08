@@ -75,7 +75,42 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "<title>Just a moment...</title>",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+@pytest.mark.parametrize("hour, expected", [("07:30 PM", "19:30"), ("12.15 AM", "00:15")])
+def test_blocked_listings_use_official_alternatives(hour, expected):
+    festival_html = f"""
+    <title>Concert schedule</title><div class="blog program-concerte">
+      <div class="item" itemprop="blogPost">
+        <div class="concert-details">
+          <span class="concert-day">28</span><span class="concert-month">September</span>
+          <span class="concert-year">2099</span><div class="concert-hour">{hour}</div>
+          <div class="concert-location">Romanian Athenaeum</div>
+        </div>
+        <div class="concert-preview"><h2><a href="/en/concert">Concert</a></h2></div>
+      </div>
+    </div>
+    """
+    challenge = "<title>Attention Required! | Cloudflare</title>"
+    with patch.object(enescu, "fetch_page", side_effect=[
+        challenge, festival_html, challenge, "<title>Evenimente</title>",
+    ]):
+        events = enescu.scrape()
+    assert len(events) == 1
+    assert events[0].date.isoformat() == f"2099-09-28T{expected}:00"
+    assert events[0].url == "https://festivalenescu.ro/en/concert"
+    assert events[0].venue == "Romanian Athenaeum"
+
+
+def test_accessible_empty_festival_fallback_is_not_a_failure():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Just a moment...</title>",
+        '<title>Concert schedule</title><div class="blog program-concerte"></div>',
+        "<title>Evenimente</title>",
+    ]):
+        assert enescu.scrape() == []
