@@ -75,7 +75,54 @@ def test_completed_competition_can_return_zero_future_events():
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     with patch.object(enescu, "fetch_page", side_effect=[
         "<title>Just a moment...</title>",
+        "Title: Just a moment...\nMarkdown Content:\nPlease enable cookies",
         "<title>Evenimente</title>",
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_markdown_fallback_recovers_programme_and_keeps_explicit_dates():
+    markdown = """Title: Evenimente
+
+# Concursul Internațional George Enescu, ediția a XX-a
+Programul evenimentelor
+
+Duminică 23 August 2026
+19:00
+Ateneul Român
+București
+## [Past concert](https://festivalenescu.ro/ro/past)
+
+Luni 23 August 2027
+18.30
+Sala Radio
+București
+## [Concert viitor](https://festivalenescu.ro/ro/future)
+**ORCHESTRA NAȚIONALĂ RADIO**
+
+Marți 24 August 2027
+UNMB
+București
+Intrare liberă
+## [Masterclass](https://festivalenescu.ro/ro/masterclass)
+"""
+    with patch.object(enescu, "fetch_page", side_effect=[
+        "<title>Just a moment...</title>",
+        "# Program oficial - Festivalul Internațional George Enescu\n",
+        "<title>Attention Required! | Cloudflare</title>", markdown,
+    ]):
+        events = enescu.scrape()
+    assert [(event.title, event.date.isoformat(), event.venue) for event in events] == [
+        ("Concert viitor", "2027-08-23T18:30:00", "Sala Radio"),
+        ("Masterclass", "2027-08-24T19:00:00", "UNMB"),
+    ]
+    assert events[0].url == "https://festivalenescu.ro/ro/future"
+
+
+def test_incomplete_markdown_is_not_mistaken_for_an_empty_season():
+    with pytest.raises(ValueError, match="missing title/link"):
+        enescu.parse_markdown_events(
+            "# Concursul Internațional George Enescu\n"
+            "Duminică 23 August 2027\n19:00\nAteneul Român\n"
+        )

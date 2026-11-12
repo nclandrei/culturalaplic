@@ -104,6 +104,36 @@ def parse_event(element: Tag) -> Event | None:
     )
 
 
+def parse_markdown_events(markdown: str) -> list[Event]:
+    """Read the reader's full Markdown programme when raw HTML is challenged."""
+    if not re.search(r"^# (?:Program oficial|Concursul Internațional George Enescu)", markdown, re.MULTILINE):
+        raise ValueError("Festivalul Enescu reader returned no verifiable programme")
+    dates = list(re.finditer(
+        r"^\w+ (\d{1,2}) (\w+) (\d{4})\s*$", markdown, re.MULTILINE,
+    ))
+    events: list[Event] = []
+    for index, match in enumerate(dates):
+        end = dates[index + 1].start() if index + 1 < len(dates) else len(markdown)
+        block = markdown[match.end():end]
+        heading = re.search(r"^## \[([^\n]+)\]\((https://festivalenescu\.ro/[^\s)]+)\)", block, re.MULTILINE)
+        if not heading:
+            raise ValueError("Festivalul Enescu programme entry missing title/link")
+        metadata = [line.strip() for line in block[:heading.start()].splitlines() if line.strip()]
+        hour, minute = 19, 0
+        if metadata and re.fullmatch(r"\d{1,2}[:.]\d{2}", metadata[0]):
+            hour, minute = map(int, re.split(r"[:.]", metadata.pop(0)))
+        month = ROMANIAN_MONTHS.get(match[2].lower())
+        if not month:
+            raise ValueError(f"Unknown Enescu programme month: {match[2]}")
+        events.append(Event(
+            title=heading[1], artist=None,
+            venue=metadata[0] if metadata else "Festivalul George Enescu",
+            date=datetime(int(match[3]), month, int(match[1]), hour, minute),
+            url=heading[2], source="Festivalul Enescu", category="music", price=None,
+        ))
+    return events
+
+
 def scrape() -> list[Event]:
     """Fetch Festival and International Competition events."""
     events: list[Event] = []
@@ -127,14 +157,23 @@ def scrape() -> list[Event]:
         soup = BeautifulSoup(html, "html.parser")
         title = soup.title.get_text(" ", strip=True) if soup.title else ""
         if "just a moment" in title.casefold() or "attention required" in title.casefold():
-            blocked_listings.append(events_url)
-            continue
-
-        items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+            try:
+                markdown = fetch_page(
+                    reader_url(events_url),
+                    headers={"X-Return-Format": "markdown"},
+                )
+                listing_events = parse_markdown_events(markdown)
+            except Exception as e:
+                print(f"Festivalul Enescu Markdown fallback failed for {events_url}: {e}")
+                blocked_listings.append(events_url)
+                continue
             valid_listings += 1
-        for item in items:
-            event = parse_event(item)
+        else:
+            items = soup.select(".item[itemprop='blogPost']")
+            if items or "evenimente" in title.casefold():
+                valid_listings += 1
+            listing_events = [parse_event(item) for item in items]
+        for event in listing_events:
             if event and event.date.date() >= today:
                 key = (event.title, event.date.isoformat())
                 if key not in seen:
