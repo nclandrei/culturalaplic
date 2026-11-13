@@ -191,6 +191,38 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     assert event.date == datetime(2026, 9, 9, 19, 0)
 
 
+def test_unavailable_ticket_pages_keep_calendar_events_without_scraper_failure(monkeypatch):
+    import httpx
+    from services import http
+
+    events = [
+        Event("Aephanemer", None, "Quantic", datetime(2026, 11, 18, 20),
+              "https://quantic.pub/eveniment/aephanemer/", "quantic", "music", None),
+        Event("Conway", None, "Quantic", datetime(2026, 11, 15, 20),
+              "https://quantic.pub/eveniment/conway/", "quantic", "music", None),
+    ]
+    monkeypatch.setattr(quantic, "scrape_month", lambda *args: events)
+    monkeypatch.setattr(quantic, "fetch_page_with_reader_fallback", lambda url, **kwargs:
+                        '<a href="https://www.ambilet.ro/bilete/concert-aephanemer-quantic">Bilete</a>'
+                        if "aephanemer" in url else
+                        '<a href="https://bilete.quantic.pub/bilete-conway-127549/">Bilete</a>')
+
+    def fetch(url, headers=None):
+        request = httpx.Request("GET", url)
+        status = 403 if "ambilet" in url else 404
+        raise httpx.HTTPStatusError("unavailable", request=request,
+                                    response=httpx.Response(status, request=request))
+
+    monkeypatch.setattr(http, "_fetch_http", fetch)
+    http.reset_fetch_failures()
+    result = quantic.scrape()
+    assert [(event.title, event.date) for event in result] == [
+        ("Conway", datetime(2026, 11, 15, 20)),
+        ("Aephanemer", datetime(2026, 11, 18, 20)),
+    ]
+    assert http.get_fetch_failures() == []
+
+
 def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
     event = Event(
         title="Oddland, Mother Of Millions, Ring Of Gyges",

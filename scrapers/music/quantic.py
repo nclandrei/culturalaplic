@@ -261,7 +261,9 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            # Ticket verification is optional; the official calendar already
+            # supplies this event and its datetime.
+            record_failure=False,
         )
     except Exception:
         if not can_use_fallback:

@@ -121,7 +121,20 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    listed_paths = {normalize_url_path(data.get("url", "")) for data in records}
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one(".desc a[href]")
+        if not link:
+            continue
+        path = normalize_url_path(link["href"])
+        if path in listed_paths:
+            continue
+        listed_paths.add(path)
+        detail_html = fetch_page(urljoin(BASE_URL, path + "/"), needs_js=False)
+        records.extend(extract_json_ld_events(BeautifulSoup(detail_html, "html.parser")))
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,

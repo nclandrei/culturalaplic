@@ -51,5 +51,20 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
     assert events[0].source == "expirat"
 
 
+def test_scrape_reads_detail_schema_when_listing_only_has_cards(monkeypatch):
+    listing = '''<div data-event-list="item"><div class="desc">
+      <a href="/bilete-byron-o-triptic-electric-acustic-improv-128427/?tracking=1">
+        <h1>byron • Triptic</h1></a>
+      <div class="date-location">miercuri, 19 august, ora 21:30 acces de la 20:00</div>
+    </div></div>'''
+    detail = EXPIRAT_HTML.replace("2026-08-19", "2027-01-19")
+    monkeypatch.setattr(expirat, "fetch_page", lambda url, **kwargs: listing if url == expirat.SCHEDULE_URL else detail)
+    events = expirat.scrape()
+    assert len(events) == 1
+    assert events[0].date == datetime(2027, 1, 19, 21, 30)
+    assert events[0].price == "90 RON"
+    assert events[0].venue == "Expirat Halele Carol"
+
+
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
