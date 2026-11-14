@@ -136,7 +136,7 @@ def _json_ld_event_start(soup: BeautifulSoup) -> datetime | None:
 
 
 def extract_ticket_title(html: str) -> str | None:
-    """Read the event identity used to validate a linked ticket override."""
+    """Read the event identity used to validate a linked ticket datetime."""
     soup = BeautifulSoup(html, "html.parser")
     event_data = _json_ld_event(soup)
     if event_data and event_data.get("name"):
@@ -259,18 +259,21 @@ def enrich_event_from_ticket(event: Event) -> None:
         and ticket_title_matches(event.title, verified_fallback[0])
     )
     try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
-    except Exception:
-        if not can_use_fallback:
-            raise
+        # Ticket timing is optional: a dead or blocked ticket page must not
+        # invalidate the official calendar's independently sourced datetime.
+        ticket_html = fetch_page(ticket_url, record_failure=False)
+    except Exception as e:
+        if can_use_fallback:
+            print(
+                "Using verified Quantic ticket datetime after blocked ticket page: "
+                f"{ticket_url}"
+            )
+            event.date = verified_fallback[1]
+            return
         print(
-            "Using verified Quantic ticket datetime after blocked ticket page: "
-            f"{ticket_url}"
+            f"Could not enrich Quantic ticket time from {ticket_url}; "
+            f"keeping calendar datetime {event.date.isoformat()}: {e}"
         )
-        event.date = verified_fallback[1]
         return
     ticket_title = extract_ticket_title(ticket_html)
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):

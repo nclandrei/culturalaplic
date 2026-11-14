@@ -164,6 +164,16 @@ def scrape() -> list[Event]:
                     )
                     start_time = parse_detail_time(detail_html)
                     if not start_time:
+                        # Reader snapshots can omit the performance information.
+                        # Verify against the live detail page before failing.
+                        detail_html = fetch_page(
+                            event.url,
+                            needs_js=True,
+                            wait_selector=".show-info-box, .item-spectacol-details",
+                            timeout=60000,
+                        )
+                        start_time = parse_detail_time(detail_html)
+                    if not start_time:
                         raise ValueError(
                             f"Missing Godot performance time: {event.url}"
                         )

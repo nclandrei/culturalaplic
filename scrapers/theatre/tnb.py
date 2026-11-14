@@ -9,7 +9,6 @@ from services.http import (
     HTML_READER_HEADERS,
     HttpError,
     fetch_page,
-    fetch_page_with_reader_fallback,
 )
 
 BASE_URL = "https://www.tnb.ro"
@@ -123,9 +122,15 @@ def scrape_month(year: int, month: int) -> list[Event]:
             if "right_items" not in html:
                 raise HttpError("TNB reader returned no calendar list")
         except HttpError:
-            html = fetch_page_with_reader_fallback(
-                url, expected_text="right_items", timeout=60000,
+            # The official HTTP calendar remains reachable by the reader when
+            # its HTTPS origin times out. Keep the same month and list view.
+            html = fetch_page(
+                f"{HTML_READER_BASE_URL}{url.replace('https://', 'http://', 1)}",
+                headers=HTML_READER_HEADERS,
+                timeout=60000,
             )
+            if "right_items" not in html:
+                raise HttpError("TNB reader returned no calendar list")
     except Exception as e:
         print(f"Failed to fetch TNB calendar for {year}/{month}: {e}")
         return events

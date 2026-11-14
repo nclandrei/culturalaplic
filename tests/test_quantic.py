@@ -1,8 +1,10 @@
 from datetime import datetime
 
+import pytest
 from bs4 import BeautifulSoup
 
 from models import Event
+from services import http
 from services.http import HttpError
 from scrapers.music import quantic
 from scrapers.music.quantic import (
@@ -191,10 +193,11 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     assert event.date == datetime(2026, 9, 9, 19, 0)
 
 
-def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+@pytest.mark.parametrize("status_code", [403, 404, 503])
+def test_optional_ticket_failure_keeps_calendar_datetime(monkeypatch, capsys, status_code):
     event = Event(
-        title="Oddland, Mother Of Millions, Ring Of Gyges",
-        artist="Oddland, Mother Of Millions, Ring Of Gyges",
+        title="Completely Different Band",
+        artist="Completely Different Band",
         venue="Quantic",
         date=datetime(2026, 9, 26, 19, 0),
         url="https://quantic.pub/eveniment/oddland-mother-of-millions/",
@@ -215,11 +218,82 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     def blocked_fetch(url: str, **kwargs):
         calls.append((url, kwargs))
-        raise HttpError("HTTP 403", status_code=403)
+        raise HttpError(f"HTTP {status_code}", status_code=status_code)
 
     monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
 
     enrich_event_from_ticket(event)
 
+    assert event.date == datetime(2026, 9, 26, 19, 0)
+    assert calls == [(ticket_url, {"record_failure": False})]
+    assert "keeping calendar datetime" in capsys.readouterr().out
+
+
+def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+    event = Event(
+        title="Oddland, Mother Of Millions, Ring Of Gyges",
+        artist="Oddland, Mother Of Millions, Ring Of Gyges",
+        venue="Quantic",
+        date=datetime(2026, 9, 26, 19, 0),
+        url="https://quantic.pub/eveniment/oddland-mother-of-millions/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = (
+        "https://www.ambilet.ro/bilete/"
+        "oddland-mother-of-millions-ring-of-gyges-26-09-2026/"
+    )
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+    calls = []
+
+    def blocked_fetch(url, **kwargs):
+        calls.append((url, kwargs))
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
+    enrich_event_from_ticket(event)
+
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_optional_ticket_failure_does_not_record_fatal_fetch_failure(monkeypatch):
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 20),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: '<a href="https://www.ambilet.ro/bilete/aephanemer">Bilete</a>',
+    )
+
+    def blocked_http(*args, **kwargs):
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(http, "_fetch_http", blocked_http)
+    http.reset_fetch_failures()
+    try:
+        enrich_event_from_ticket(event)
+        assert event.date == datetime(2026, 11, 18, 20)
+        assert http.get_fetch_failures() == []
+    finally:
+        http.reset_fetch_failures()
+
+
+def test_primary_calendar_failure_remains_fatal(monkeypatch):
+    def blocked_http(*args, **kwargs):
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(http, "_fetch_http", blocked_http)
+    http.reset_fetch_failures()
+    try:
+        assert quantic.scrape_month(2026, 11) == []
+        assert len(http.get_fetch_failures()) == 1
+        assert "HTTP 403" in http.get_fetch_failures()[0]
+    finally:
+        http.reset_fetch_failures()

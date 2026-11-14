@@ -121,7 +121,31 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    listed_paths = {normalize_url_path(data.get("url", "")) for data in records}
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one("a[href]")
+        if not link:
+            continue
+        path = normalize_url_path(link.get("href", ""))
+        if path in listed_paths:
+            continue
+        listed_paths.add(path)
+        # The listing no longer embeds Event JSON-LD. Detail pages still
+        # provide explicit years and ISO dates, unlike the abbreviated cards.
+        detail_url = urljoin(BASE_URL, path + "/")
+        try:
+            detail_html = fetch_page(detail_url, needs_js=False)
+        except Exception as e:
+            print(f"Failed to fetch Expirat event {detail_url}: {e}")
+            continue
+        detail_soup = BeautifulSoup(detail_html, "html.parser")
+        records.extend(
+            data for data in extract_json_ld_events(detail_soup)
+            if normalize_url_path(data.get("url", "")) == path
+        )
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,

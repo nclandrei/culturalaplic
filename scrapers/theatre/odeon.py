@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -82,4 +83,45 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    embed = soup.select_one("script[src*='/api/embed/program.js']")
+    if not embed:
+        return parse_events(html)
+    # The embedded program endpoint checks the referring theatre domain.
+    script = fetch_page(
+        urljoin(EVENTS_URL, str(embed["src"])), headers={"Referer": EVENTS_URL}
+    )
+    return parse_embed_events(script)
+
+
+def parse_embed_events(script: str, now: datetime | None = None) -> list[Event]:
+    """Read the JSON performances used by the current official program widget."""
+    match = re.search(r"\b(?:let|const|var)\s+PERFORMANCES\s*=\s*", script)
+    if not match:
+        raise ValueError("Odeon program widget is missing PERFORMANCES")
+    rows, _ = json.JSONDecoder().raw_decode(script[match.end():])
+    today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for row in rows:
+        if row.get("status") != "active" or row.get("hiddenFromPublic"):
+            continue
+        try:
+            event_date = datetime.strptime(
+                f"{row['date']} {row['startTime']}", "%Y-%m-%d %H:%M"
+            )
+        except (KeyError, ValueError):
+            continue
+        title = _clean_title(row.get("title", ""))
+        if not title or event_date < today or (title, event_date) in seen:
+            continue
+        seen.add((title, event_date))
+        hall = row.get("category") or row.get("venue")
+        venue = f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon"
+        url = urljoin(BASE_URL, row.get("detailsUrl") or row.get("ticketUrl") or EVENTS_URL)
+        events.append(Event(
+            title, row.get("subtitle") or None, venue, event_date, url,
+            "odeon", "theatre", row.get("ticketPrices") or None,
+        ))
+    return sorted(events, key=lambda event: event.date)

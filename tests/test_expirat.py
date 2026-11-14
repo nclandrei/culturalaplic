@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from scrapers.music import expirat
+from services import http
 
 
 EXPIRAT_HTML = """
@@ -53,3 +54,70 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_listing_without_json_ld_reads_detail_dates_and_deduplicates(monkeypatch):
+    listing = """
+    <div data-event-list="item">
+      <a href="/bilete-concert-123/?tracking=1"><h1>Concert</h1></a>
+      <div class="date-location">joi, 21 ianuarie '27, ora 21:30 acces de la 20:00</div>
+    </div>
+    <div data-event-list="item"><a href="/bilete-concert-123/">Concert</a></div>
+    """
+    detail = """
+    <script type="application/ld+json">
+    {"@type":"BreadcrumbList", "name":"Not an event"}
+    </script>
+    <script type="application/ld+json">
+    {"@type":"Event", "name":"Concert", "startDate":"2027-01-21",
+     "url":"https://expirat.iabilet.ro/bilete-concert-123/"}
+    </script>
+    """
+    requests = []
+
+    def fake_fetch(url, **kwargs):
+        requests.append((url, kwargs))
+        return listing if url == expirat.SCHEDULE_URL else detail
+
+    monkeypatch.setattr(expirat, "fetch_page", fake_fetch)
+
+    events = expirat.scrape()
+
+    assert requests == [
+        (expirat.SCHEDULE_URL, {"needs_js": False}),
+        ("https://expirat.iabilet.ro/bilete-concert-123/", {"needs_js": False}),
+    ]
+    assert len(events) == 1
+    assert events[0].date == datetime(2027, 1, 21, 21, 30)
+
+
+def test_detail_without_advertised_show_time_preserves_iso_date(monkeypatch):
+    listing = '<div data-event-list="item"><a href="/concert/">Concert</a></div>'
+    detail = """
+    <script type="application/ld+json">
+    {"@type":"Event", "name":"Concert", "startDate":"2026-12-01",
+     "url":"https://expirat.iabilet.ro/concert/"}
+    </script>
+    """
+    monkeypatch.setattr(
+        expirat, "fetch_page",
+        lambda url, **kwargs: listing if url == expirat.SCHEDULE_URL else detail,
+    )
+
+    assert expirat.scrape()[0].date == datetime(2026, 12, 1)
+
+
+def test_primary_detail_failure_is_still_recorded(monkeypatch):
+    def fake_http(url, headers=None):
+        if url == expirat.SCHEDULE_URL:
+            return '<div data-event-list="item"><a href="/concert/">Concert</a></div>'
+        raise http.HttpError("detail unavailable", status_code=404)
+
+    monkeypatch.setattr(http, "_fetch_http", fake_http)
+    http.reset_fetch_failures()
+    try:
+        assert expirat.scrape() == []
+        assert len(http.get_fetch_failures()) == 1
+        assert "detail unavailable" in http.get_fetch_failures()[0]
+    finally:
+        http.reset_fetch_failures()

@@ -1,5 +1,4 @@
 from datetime import datetime
-from unittest.mock import Mock
 
 from bs4 import BeautifulSoup
 
@@ -60,8 +59,6 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
         return LIST_VIEW_HTML
 
     monkeypatch.setattr(tnb, "fetch_page", fake_fetch_page)
-    fallback = Mock(side_effect=AssertionError("should not fetch blocked primary"))
-    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
 
     events = tnb.scrape_month(2026, 9)
 
@@ -72,16 +69,21 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
             {"headers": {"X-Return-Format": "html"}, "timeout": 60000, "record_failure": False},
         )
     ]
-    fallback.assert_not_called()
 
 
-def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
-    monkeypatch.setattr(tnb, "fetch_page", Mock(side_effect=HttpError("HTTP 422")))
-    fallback = Mock(return_value=LIST_VIEW_HTML)
-    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+def test_scrape_month_uses_http_origin_if_https_reader_times_out(monkeypatch):
+    def fetch_calendar(url, **kwargs):
+        if url.startswith("https://r.jina.ai/https://"):
+            raise HttpError("HTTP 422")
+        assert url == (
+            "https://r.jina.ai/http://www.tnb.ro/ro/calendar"
+            "?year=2026&month=10&view=list"
+        )
+        return LIST_VIEW_HTML
 
-    assert len(tnb.scrape_month(2026, 10)) == 2
-    fallback.assert_called_once_with(
-        "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
-        expected_text="right_items", timeout=60000,
-    )
+    monkeypatch.setattr(tnb, "fetch_page", fetch_calendar)
+
+    events = tnb.scrape_month(2026, 10)
+    assert [event.date for event in events] == [
+        datetime(2026, 9, 5, 11), datetime(2026, 9, 5),
+    ]
