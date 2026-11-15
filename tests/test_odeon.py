@@ -1,42 +1,57 @@
+import json
 from datetime import datetime
+from unittest.mock import patch
 
-from scrapers.theatre.odeon import parse_events
+import pytest
 
-
-def _row(title: str, start: str, status: str = "EventScheduled", hall: str = "Sala Studio") -> str:
-    return f'''<div class="eventon_list_event scheduled">
-      <div class="evo_event_schema"><a itemprop="url" href="/events/wrong-calendar-url"></a>
-      <meta itemprop="startDate" content="{start}+0:00"><meta itemprop="eventStatus" content="https://schema.org/{status}"></div>
-      <span class="evcal_event_title">{title}</span>
-      <span class="evcal_event_subtitle">de Autor, regia Regizor | În cadrul unui festival</span>
-      <em class="event_location_name">{hall}, Preț bilete: 60 lei Cat. I; 40 lei Cat. II.</em>
-      <a class="evo_cusmeta_btn" href="/spectacol/test/">Detalii</a>
-    </div>'''
+from scrapers.theatre.odeon import parse_events, scrape
 
 
-def test_parses_explicit_dates_halls_prices_and_same_title_occurrences():
-    html = _row("Pescărușul | 14 +", "2026-10-2T19:30") + _row(
-        "Pescărușul | 14 +", "2026-12-31T18:00", hall="Sala Majestic"
-    )
-    events = parse_events(html, datetime(2026, 9, 27))
-    assert [(event.title, event.date) for event in events] == [
-        ("Pescărușul", datetime(2026, 10, 2, 19, 30)),
-        ("Pescărușul", datetime(2026, 12, 31, 18, 0)),
-    ]
+def _performance(**overrides) -> dict:
+    return {
+        "title": "Pescărușul", "date": "2026-11-15", "startTime": "19:30",
+        "originalDate": "2026-09-26", "status": "active", "isListed": True,
+        "venue": "Sala Studio", "subtitle": "de Autor, regia Regizor",
+        "ticketPrices": "60 lei Cat. I; 40 lei Cat. II",
+        "detailsUrl": "/spectacol/test/", "ticketUrl": "https://bilete.teatrul-odeon.ro/test",
+        **overrides,
+    }
+
+
+def _script(*performances: dict) -> str:
+    return f"(function() {{ let PERFORMANCES = {json.dumps(performances)}; }})();"
+
+
+def test_scrape_reads_the_live_programme_embed_not_the_obsolete_calendar():
+    html = '<script src="https://projects.doimih.net/hub/api/embed/program.js?tenant=test"></script>'
+    script = _script(_performance(date="2099-11-15"))
+    with patch("scrapers.theatre.odeon.fetch_page", side_effect=[html, script]):
+        events = scrape()
+    assert len(events) == 1
+    assert events[0].title == "Pescărușul"
+    assert events[0].date == datetime(2099, 11, 15, 19, 30)
     assert events[0].venue == "Teatrul Odeon - Sala Studio"
     assert events[0].price == "60 lei Cat. I; 40 lei Cat. II"
     assert events[0].artist == "de Autor, regia Regizor"
     assert events[0].url == "https://teatrul-odeon.ro/spectacol/test/"
 
 
-def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover():
-    future = _row("Macbeth | 14 +", "2026-10-3T19:00")
-    html = (
-        _row("Old", "2025-12-31T19:00")
-        + _row("Cancelled", "2026-10-4T19:00", "EventCancelled")
-        + _row("Broken", "not-a-date") + future + future
+def test_filters_unavailable_entries_and_keeps_same_day_and_next_year_occurrences():
+    today = _performance()
+    script = _script(
+        _performance(date="2027-01-02", venue="Sala Majestic"),
+        _performance(date="2026-11-14"),
+        _performance(status="cancelled"), _performance(status="suspended"),
+        _performance(isListed=False), _performance(date="bad"), today, today,
     )
-    events = parse_events(html, datetime(2026, 9, 27))
-    assert [(event.title, event.date) for event in events] == [
-        ("Macbeth", datetime(2026, 10, 3, 19, 0))
+    events = parse_events(script, datetime(2026, 11, 15, 20))
+    assert [(event.title, event.date, event.venue) for event in events] == [
+        ("Pescărușul", datetime(2026, 11, 15, 19, 30), "Teatrul Odeon - Sala Studio"),
+        ("Pescărușul", datetime(2027, 1, 2, 19, 30), "Teatrul Odeon - Sala Majestic"),
     ]
+
+
+def test_missing_programme_data_is_not_an_empty_season():
+    with pytest.raises(ValueError, match="programme data not found"):
+        parse_events("<title>Access denied</title>")
+    assert parse_events(_script()) == []
