@@ -234,6 +234,7 @@ def fetch_page_with_reader_fallback(
     expected_text: str,
     needs_js: bool = False,
     timeout: int = 30000,
+    record_failure: bool = True,
 ) -> str:
     """Recover blocked or incomplete primary pages, but reject reader challenges."""
     try:
@@ -249,9 +250,11 @@ def fetch_page_with_reader_fallback(
         f"{HTML_READER_BASE_URL}{url}",
         timeout=timeout,
         headers=HTML_READER_HEADERS,
+        record_failure=record_failure,
     )
     if expected_text not in html:
         message = f"Reader page missing {expected_text} for {url}"
-        _record_fetch_failure(message)
+        if record_failure:
+            _record_fetch_failure(message)
         raise HttpError(message)
     return html

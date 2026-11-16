@@ -231,8 +231,9 @@ class TestHttpRetry:
         assert "Event" in result
         assert get_fetch_failures() == []
 
+    @pytest.mark.parametrize("record_failure", [True, False])
     @respx.mock
-    def test_reader_challenge_page_is_not_accepted_as_empty_calendar(self):
+    def test_reader_challenge_page_is_not_accepted_as_empty_calendar(self, record_failure):
         source_url = "https://example.com/events"
         respx.get(source_url).respond(403, text="Blocked")
         respx.get("https://r.jina.ai/" + source_url).respond(
@@ -242,6 +243,6 @@ class TestHttpRetry:
         reset_fetch_failures()
         with pytest.raises(HttpError, match="event-marker"):
             http_service.fetch_page_with_reader_fallback(
-                source_url, expected_text="event-marker",
+                source_url, expected_text="event-marker", record_failure=record_failure,
             )
-        assert get_fetch_failures()
+        assert bool(get_fetch_failures()) is record_failure

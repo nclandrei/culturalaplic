@@ -6,10 +6,12 @@ from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 
 from models import Event
+from scrapers.music.iabilet import parse_date
 from services.http import fetch_page
 
 BASE_URL = "https://expirat.iabilet.ro"
 SCHEDULE_URL = f"{BASE_URL}/"
+EVENTS_URL = SCHEDULE_URL
 MIN_EXPECTED_EVENTS = 1
 
 
@@ -107,6 +109,39 @@ def parse_json_ld_event(
     )
 
 
+def parse_event_card(card: BeautifulSoup) -> Event | None:
+    """Read the visible whitelabel cards when JSON-LD is absent."""
+    title = card.select_one(".desc h1")
+    link = card.select_one(".desc a[href]")
+    location = card.select(".date-location p")
+    if not title or not link or len(location) < 2:
+        return None
+    date_text = location[1].get_text(" ", strip=True)
+    match = re.search(r"\b(\d{1,2})\s+([a-zăâîșț]+)(?:\s+['’](\d{2})|\s+(\d{4}))?", date_text, re.I)
+    if not match:
+        return None
+    try:
+        date = parse_date(match[1], match[2].lower()[:3], match[3] or match[4])
+    except ValueError:
+        return None
+    if date is None:
+        return None
+    time = re.search(r"\bora\s+(\d{1,2}):(\d{2})", date_text, re.I)
+    if time:
+        date = date.replace(hour=int(time[1]), minute=int(time[2]))
+    title_text = title.get_text(" ", strip=True)
+    return Event(
+        title=title_text,
+        artist=extract_artist_from_title(title_text),
+        venue=location[0].get_text(" ", strip=True).split(",", 1)[0],
+        date=date,
+        url=urljoin(BASE_URL, link["href"]).split("?", 1)[0],
+        source="expirat",
+        category="music",
+        price=None,
+    )
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming events from Expirat."""
     events: list[Event] = []
@@ -127,8 +162,14 @@ def scrape() -> list[Event]:
             data,
             card_times.get(normalize_url_path(event_url)),
         )
-        if event and event.url not in seen_urls:
-            seen_urls.add(event.url)
+        if event and normalize_url_path(event.url) not in seen_urls:
+            seen_urls.add(normalize_url_path(event.url))
+            events.append(event)
+
+    for card in soup.select('[data-event-list="item"]'):
+        event = parse_event_card(card)
+        if event and normalize_url_path(event.url) not in seen_urls:
+            seen_urls.add(normalize_url_path(event.url))
             events.append(event)
 
     events.sort(key=lambda event: event.date)

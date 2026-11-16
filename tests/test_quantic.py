@@ -1,9 +1,11 @@
 from datetime import datetime
 
 from bs4 import BeautifulSoup
+import pytest
+import respx
 
 from models import Event
-from services.http import HttpError
+from services.http import HttpError, get_fetch_failures, reset_fetch_failures
 from scrapers.music import quantic
 from scrapers.music.quantic import (
     enrich_event_from_ticket,
@@ -223,3 +225,24 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+@pytest.mark.parametrize("status", [403, 404])
+@respx.mock
+def test_blocked_optional_ticket_preserves_calendar_event(monkeypatch, status):
+    event = Event(
+        "Aephanemer", "Aephanemer", "Quantic", datetime(2099, 12, 5, 19),
+        "https://quantic.pub/eveniment/aephanemer/", "quantic", "music", None,
+    )
+    monkeypatch.setattr(quantic, "scrape_month", lambda *args: [event])
+    respx.get(event.url).respond(200, text=(
+        '<div class="tribe-events"><a href="https://www.ambilet.ro/bilete/aephanemer">'
+        'Bilete</a></div>'
+    ))
+    respx.get("https://www.ambilet.ro/bilete/aephanemer").respond(status)
+    reset_fetch_failures()
+    events = quantic.scrape()
+    assert [(item.title, item.date) for item in events] == [
+        ("Aephanemer", datetime(2099, 12, 5, 19)),
+    ]
+    assert get_fetch_failures() == []

@@ -1,4 +1,5 @@
-from datetime import datetime
+import json
+from datetime import datetime, timezone
 from unittest.mock import Mock
 
 from bs4 import BeautifulSoup
@@ -49,7 +50,7 @@ def test_parse_day_keeps_events_on_the_list_view_date():
     ]
     assert events[0].venue == "TNB - Sala Atelier"
     assert events[1].venue == "TNB"
-    assert events[1].url == "https://www.tnb.ro/ro/moroi-si-papadii-la-chisinau"
+    assert events[1].url == "https://tnb.ro/ro/moroi-si-papadii-la-chisinau"
 
 
 def test_scrape_month_prefers_reader_list_view(monkeypatch):
@@ -68,7 +69,7 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
     assert len(events) == 2
     assert requests == [
         (
-            "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list",
+            "https://r.jina.ai/https://tnb.ro/ro/calendar?year=2026&month=9&view=list",
             {"headers": {"X-Return-Format": "html"}, "timeout": 60000, "record_failure": False},
         )
     ]
@@ -82,6 +83,33 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
 
     assert len(tnb.scrape_month(2026, 10)) == 2
     fallback.assert_called_once_with(
-        "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
+        "https://tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+def test_scrape_reads_full_ticket_programme_and_only_tnb_venues(monkeypatch):
+    clock = Mock(wraps=datetime)
+    clock.now.return_value = datetime(2026, 11, 16)
+    monkeypatch.setattr(tnb, "datetime", clock)
+    items = [
+        {
+            "id": 100 + day, "event": {"id": 200 + day},
+            "title": f"Show {day}", "venue": {"name": "TNB - Sala Atelier"},
+            "dateStart": datetime(2026, 12, day, 19, 30, tzinfo=timezone.utc).timestamp() * 1000,
+        }
+        for day in range(1, 18)
+    ]
+    state = {"instances": {"instances": items + [
+        items[0], dict(items[0], title="Elsewhere", venue={"name": "Other theatre"}),
+    ]}}
+    html = '<script>window.__INITIAL_STATE__=' + json.dumps(state) + ';</script>'
+    monkeypatch.setattr(tnb, "fetch_page", lambda *args, **kwargs: html)
+    monkeypatch.setattr(tnb, "scrape_month", Mock(side_effect=AssertionError("calendar not needed")))
+
+    events = tnb.scrape()
+    assert len(events) == 17
+    assert events[0].date == datetime(2026, 12, 1, 21, 30)
+    assert events[-1].title == "Show 17"
+    assert events[0].venue == "TNB - Sala Atelier"
+    assert events[0].url == "https://www.bilet.ro/eveniment/tnb-201-101"

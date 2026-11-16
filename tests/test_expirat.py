@@ -53,3 +53,25 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_scrape_cards_without_json_ld_preserves_year_and_show_time(monkeypatch):
+    def card(title, date):
+        return f'''<div data-event-list="item"><div class="desc">
+          <a href="/bilete-{title}/?tracking=1"><h1>{title}</h1></a>
+          <div class="date-location"><p>Expirat Halele Carol, București</p>
+          <p>{date}</p></div></div></div>'''
+
+    html = (
+        card("Vama", "miercuri, 20 ianuarie '99, ora 21:30 acces de la 20:00")
+        + card("Unknown", "joi, 21 ianuarie 2099 acces de la 20:00")
+        + card("Vama", "miercuri, 20 ianuarie '99, ora 21:30 acces de la 20:00")
+    )
+    monkeypatch.setattr(expirat, "fetch_page", lambda *args, **kwargs: html)
+    events = expirat.scrape()
+    assert [(event.title, event.date) for event in events] == [
+        ("Vama", datetime(2099, 1, 20, 21, 30)),
+        ("Unknown", datetime(2099, 1, 21)),
+    ]
+    assert events[0].url == "https://expirat.iabilet.ro/bilete-Vama/"
+    assert events[0].venue == "Expirat Halele Carol"

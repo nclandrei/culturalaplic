@@ -1,5 +1,7 @@
+import json
 import re
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from bs4 import BeautifulSoup
 
@@ -12,8 +14,10 @@ from services.http import (
     fetch_page_with_reader_fallback,
 )
 
-BASE_URL = "https://www.tnb.ro"
+BASE_URL = "https://tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
+EVENTS_URL = CALENDAR_URL
+TICKETS_URL = "https://www.bilet.ro/venue/tnb"
 
 MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
@@ -138,6 +142,31 @@ def scrape_month(year: int, month: int) -> list[Event]:
     return events
 
 
+def scrape_ticket_programme() -> list[Event]:
+    """Read the full TNB programme, not just the first 16 visible ticket cards."""
+    html = fetch_page(TICKETS_URL, record_failure=False)
+    soup = BeautifulSoup(html, "html.parser")
+    state_script = next((
+        script.get_text() for script in soup.select("script:not([src])")
+        if "window.__INITIAL_STATE__=" in script.get_text()
+    ), None)
+    if not state_script:
+        raise ValueError("TNB ticket programme has no initial state")
+    state, _ = json.JSONDecoder().raw_decode(state_script.split("window.__INITIAL_STATE__=", 1)[1])
+    events: list[Event] = []
+    for item in state["instances"]["instances"]:
+        venue = item["venue"]["name"]
+        if not venue.startswith("TNB - "):
+            continue
+        date = datetime.fromtimestamp(
+            item["dateStart"] / 1000, ZoneInfo("Europe/Bucharest"),
+        ).replace(tzinfo=None)
+        # The provider resolves these stable IDs to the canonical titled URL.
+        url = f"https://www.bilet.ro/eveniment/tnb-{item['event']['id']}-{item['id']}"
+        events.append(Event(item["title"], None, venue, date, url, "tnb", "theatre", None))
+    return events
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming events from Teatrul Național București."""
     events: list[Event] = []
@@ -149,15 +178,24 @@ def scrape() -> list[Event]:
         (now.year if now.month < 12 else now.year + 1, (now.month % 12) + 1),
     ]
     
-    for year, month in months_to_scrape:
-        month_events = scrape_month(year, month)
-        for event in month_events:
+    try:
+        events = scrape_ticket_programme()
+    except (HttpError, ValueError, KeyError) as e:
+        print(f"Failed to fetch TNB ticket programme, trying official calendar: {e}")
+
+    if not events:
+        for year, month in months_to_scrape:
+            events.extend(scrape_month(year, month))
+
+    unique_events: list[Event] = []
+    for event in events:
+        if (event.date.year, event.date.month) in months_to_scrape:
             key = (event.title, event.date.isoformat(), event.venue)
             if key not in seen:
                 seen.add(key)
-                events.append(event)
+                unique_events.append(event)
     
-    events = [e for e in events if e.date >= now.replace(hour=0, minute=0, second=0, microsecond=0)]
+    events = [e for e in unique_events if e.date >= now.replace(hour=0, minute=0, second=0, microsecond=0)]
     events.sort(key=lambda e: e.date)
     
     return events

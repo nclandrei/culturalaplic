@@ -247,6 +247,7 @@ def enrich_event_from_ticket(event: Event) -> None:
     detail_html = fetch_page_with_reader_fallback(
         event.url,
         expected_text="tribe-events",
+        record_failure=False,
     )
     ticket_url = find_ticket_url(detail_html)
     if not ticket_url:
@@ -261,7 +262,7 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            record_failure=False,
         )
     except Exception:
         if not can_use_fallback:
@@ -457,7 +458,7 @@ def scrape() -> list[Event]:
             enrich_event_from_ticket(event)
         except Exception as e:
             print(f"Failed to verify Quantic ticket time for {event.url}: {e}")
-    
+
     events.sort(key=lambda e: e.date)
     
     return events
