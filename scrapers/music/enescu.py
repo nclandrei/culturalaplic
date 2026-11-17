@@ -29,6 +29,29 @@ def reader_url(url: str) -> str:
     return f"{READER_BASE_URL}{url}"
 
 
+def fetch_programme(url: str) -> BeautifulSoup:
+    """Prefer the current official page; a reader challenge is not a programme."""
+    try:
+        html = fetch_page(url, needs_js=False, record_failure=False)
+    except Exception:
+        html = ""
+    soup = BeautifulSoup(html, "html.parser")
+    if not soup.select(".item[itemprop='blogPost']"):
+        html = fetch_page(
+            reader_url(url), needs_js=False, timeout=30000, headers=READER_HEADERS,
+        )
+        soup = BeautifulSoup(html, "html.parser")
+    title = soup.title.get_text(" ", strip=True).casefold() if soup.title else ""
+    if "just a moment" in title or "attention required" in title:
+        raise ValueError(f"Festivalul Enescu programme blocked: {url}")
+    items = soup.select(".item[itemprop='blogPost']")
+    if not items:
+        raise ValueError(f"Festivalul Enescu returned no verifiable programme markup: {url}")
+    if any(parse_event(item) is None for item in items):
+        raise ValueError(f"Festivalul Enescu programme contains unparseable events: {url}")
+    return soup
+
+
 def parse_date(element: Tag) -> datetime | None:
     """Parse date from concert-details element."""
     day_el = element.select_one(".concert-day")
@@ -108,31 +131,17 @@ def scrape() -> list[Event]:
     """Fetch Festival and International Competition events."""
     events: list[Event] = []
     seen: set[tuple[str, str]] = set()
-    valid_listings = 0
-    blocked_listings: list[str] = []
+    failures: list[str] = []
     today = datetime.now().date()
 
     for events_url in EVENTS_URLS:
         try:
-            html = fetch_page(
-                reader_url(events_url),
-                needs_js=False,
-                timeout=30000,
-                headers=READER_HEADERS,
-            )
+            soup = fetch_programme(events_url)
         except Exception as e:
-            print(f"Failed to fetch Festivalul Enescu events from {events_url}: {e}")
-            continue
-
-        soup = BeautifulSoup(html, "html.parser")
-        title = soup.title.get_text(" ", strip=True) if soup.title else ""
-        if "just a moment" in title.casefold() or "attention required" in title.casefold():
-            blocked_listings.append(events_url)
+            failures.append(str(e))
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
-            valid_listings += 1
         for item in items:
             event = parse_event(item)
             if event and event.date.date() >= today:
@@ -141,9 +150,7 @@ def scrape() -> list[Event]:
                     seen.add(key)
                     events.append(event)
 
-    if blocked_listings:
-        raise ValueError(f"Festivalul Enescu programme blocked: {', '.join(blocked_listings)}")
-    if not valid_listings:
-        raise ValueError("Festivalul Enescu returned no verifiable programme markup")
+    if failures:
+        raise ValueError("; ".join(failures))
     events.sort(key=lambda e: e.date)
     return events

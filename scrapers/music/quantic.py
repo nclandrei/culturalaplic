@@ -9,7 +9,13 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 from models import Event
-from services.http import fetch_page, fetch_page_with_reader_fallback
+from services.http import (
+    HTML_READER_BASE_URL,
+    HTML_READER_HEADERS,
+    HttpError,
+    fetch_page,
+    fetch_page_with_reader_fallback,
+)
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -22,15 +28,6 @@ TICKET_HOSTS = (
     "bilet.ro",
 )
 BUCHAREST_TZ = ZoneInfo("Europe/Bucharest")
-VERIFIED_TICKET_OVERRIDES = {
-    (
-        "https://www.ambilet.ro/bilete/"
-        "oddland-mother-of-millions-ring-of-gyges-26-09-2026"
-    ): (
-        "Oddland, Mother Of Millions, Ring Of Gyges",
-        datetime(2026, 9, 26, 20, 0),
-    ),
-}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1,
@@ -83,11 +80,6 @@ def find_ticket_url(html: str) -> str | None:
         if any(host == suffix or host.endswith(f".{suffix}") for suffix in TICKET_HOSTS):
             return href
     return None
-
-
-def _ticket_lookup_key(url: str) -> str:
-    parsed = urlparse(url)
-    return f"{parsed.scheme}://{parsed.netloc}{parsed.path.rstrip('/')}"
 
 
 def _json_ld_event(soup: BeautifulSoup) -> dict | None:
@@ -243,35 +235,25 @@ def parse_ticket_datetime(html: str, ticket_url: str) -> datetime | None:
 
 
 def enrich_event_from_ticket(event: Event) -> None:
-    """Override a calendar access time when its ticket page states a show time."""
-    detail_html = fetch_page_with_reader_fallback(
-        event.url,
-        expected_text="tribe-events",
-    )
+    """Optionally refine a complete calendar event with a linked show time."""
+    # Neither optional detail nor ticket failures invalidate the calendar.
+    # Keep the required month requests on the failure-recording shared helper.
+    try:
+        detail_html = fetch_page(event.url, record_failure=False)
+    except HttpError:
+        detail_html = ""
+    if "tribe-events" not in detail_html:
+        detail_html = fetch_page(
+            f"{HTML_READER_BASE_URL}{event.url}",
+            headers=HTML_READER_HEADERS,
+            record_failure=False,
+        )
+        if "tribe-events" not in detail_html:
+            raise ValueError(f"Quantic detail missing event markup: {event.url}")
     ticket_url = find_ticket_url(detail_html)
     if not ticket_url:
         return
-    verified_fallback = VERIFIED_TICKET_OVERRIDES.get(
-        _ticket_lookup_key(ticket_url)
-    )
-    can_use_fallback = bool(
-        verified_fallback
-        and ticket_title_matches(event.title, verified_fallback[0])
-    )
-    try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
-    except Exception:
-        if not can_use_fallback:
-            raise
-        print(
-            "Using verified Quantic ticket datetime after blocked ticket page: "
-            f"{ticket_url}"
-        )
-        event.date = verified_fallback[1]
-        return
+    ticket_html = fetch_page(ticket_url, record_failure=False)
     ticket_title = extract_ticket_title(ticket_html)
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):
         return

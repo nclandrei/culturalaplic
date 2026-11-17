@@ -107,19 +107,25 @@ class TestHttpRetry:
         assert exc_info.value.status_code == 429
         assert respx.calls.call_count == 3
 
+    @pytest.mark.parametrize("error", [
+        httpx.ConnectError("Connection refused"),
+        httpx.RemoteProtocolError("incomplete chunked read"),
+    ])
     @respx.mock
-    def test_retry_on_connection_error(self):
+    def test_retry_on_connection_error(self, error):
         """Should retry on connection errors."""
         route = respx.get("https://example.com")
         route.side_effect = [
-            httpx.ConnectError("Connection refused"),
+            error,
             httpx.Response(200, text="Connected"),
         ]
 
+        reset_fetch_failures()
         result = fetch_page("https://example.com")
 
         assert result == "Connected"
         assert respx.calls.call_count == 2
+        assert get_fetch_failures() == []
 
     def test_js_fetch_waits_for_requested_selector(self):
         """Should wait for asynchronous page content before reading the HTML."""

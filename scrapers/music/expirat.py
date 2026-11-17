@@ -121,13 +121,37 @@ def scrape() -> list[Event]:
     soup = BeautifulSoup(html, "html.parser")
     
     card_times = extract_card_times(soup)
-    for data in extract_json_ld_events(soup):
+    records = extract_json_ld_events(soup)
+    # The whitelabel listing now has cards only; structured dates (including
+    # the year) and prices are still published on each linked detail page.
+    record_paths = {normalize_url_path(data.get("url", "")) for data in records}
+    for card in soup.select('[data-event-list="item"]'):
+        link = card.select_one(".desc a[href]") or card.select_one("a[href]")
+        if not link:
+            continue
+        detail_url = urljoin(BASE_URL, link.get("href", ""))
+        path = normalize_url_path(detail_url)
+        if path in record_paths:
+            continue
+        record_paths.add(path)
+        detail_soup = BeautifulSoup(fetch_page(detail_url, needs_js=False), "html.parser")
+        detail_records = [
+            data for data in extract_json_ld_events(detail_soup)
+            if normalize_url_path(data.get("url", "")) == path
+        ]
+        if not detail_records:
+            raise ValueError(f"Expirat detail missing event data: {detail_url}")
+        records.extend(detail_records)
+
+    for data in records:
         event_url = data.get("url", "")
         event = parse_json_ld_event(
             data,
             card_times.get(normalize_url_path(event_url)),
         )
-        if event and event.url not in seen_urls:
+        if event is None:
+            raise ValueError(f"Expirat event has invalid required data: {event_url}")
+        if event.url not in seen_urls:
             seen_urls.add(event.url)
             events.append(event)
 

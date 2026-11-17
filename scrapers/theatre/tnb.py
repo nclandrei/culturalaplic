@@ -113,16 +113,20 @@ def scrape_month(year: int, month: int) -> list[Event]:
     
     url = get_calendar_url(year, month)
     try:
-        try:
-            html = fetch_page(
-                f"{HTML_READER_BASE_URL}{url}",
-                headers=HTML_READER_HEADERS,
-                timeout=60000,
-                record_failure=False,
-            )
-            if "right_items" not in html:
-                raise HttpError("TNB reader returned no calendar list")
-        except HttpError:
+        # The www host can time out in the reader while the official alias works.
+        for source_url in (url, url.replace("https://www.tnb.ro/", "https://tnb.ro/")):
+            try:
+                html = fetch_page(
+                    f"{HTML_READER_BASE_URL}{source_url}",
+                    headers=HTML_READER_HEADERS,
+                    timeout=60000,
+                    record_failure=False,
+                )
+                if "right_items" in html:
+                    break
+            except HttpError:
+                continue
+        else:
             html = fetch_page_with_reader_fallback(
                 url, expected_text="right_items", timeout=60000,
             )

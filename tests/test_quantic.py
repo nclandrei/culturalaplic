@@ -1,9 +1,10 @@
 from datetime import datetime
 
 from bs4 import BeautifulSoup
+import pytest
 
 from models import Event
-from services.http import HttpError
+from services.http import HttpError, get_fetch_failures, reset_fetch_failures
 from scrapers.music import quantic
 from scrapers.music.quantic import (
     enrich_event_from_ticket,
@@ -128,12 +129,9 @@ def test_enrich_event_follows_the_linked_ticket_page(monkeypatch):
       <p>12 septembrie, ora 21:00 acces de la 20:00</p>
     </div>
     """
-    monkeypatch.setattr(
-        quantic,
-        "fetch_page_with_reader_fallback",
-        lambda *args, **kwargs: detail_html,
-    )
-    monkeypatch.setattr(quantic, "fetch_page", lambda *args, **kwargs: ticket_html)
+    monkeypatch.setattr(quantic, "fetch_page", lambda url, **kwargs: (
+        "tribe-events " + detail_html if url == event.url else ticket_html
+    ))
 
     enrich_event_from_ticket(event)
 
@@ -177,13 +175,10 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     """
     monkeypatch.setattr(
         quantic,
-        "fetch_page_with_reader_fallback",
-        lambda *args, **kwargs: detail_html,
-    )
-    monkeypatch.setattr(
-        quantic,
         "fetch_page",
-        lambda *args, **kwargs: unrelated_ticket_html,
+        lambda url, **kwargs: (
+            "tribe-events " + detail_html if url == event.url else unrelated_ticket_html
+        ),
     )
 
     enrich_event_from_ticket(event)
@@ -191,7 +186,8 @@ def test_unrelated_ticket_page_cannot_override_calendar_datetime(monkeypatch):
     assert event.date == datetime(2026, 9, 9, 19, 0)
 
 
-def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
+@pytest.mark.parametrize("status", [403, 404])
+def test_optional_ticket_failure_keeps_calendar_datetime(monkeypatch, status):
     event = Event(
         title="Oddland, Mother Of Millions, Ring Of Gyges",
         artist="Oddland, Mother Of Millions, Ring Of Gyges",
@@ -205,21 +201,51 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
         "https://www.ambilet.ro/bilete/"
         "oddland-mother-of-millions-ring-of-gyges-26-09-2026/"
     )
-    monkeypatch.setattr(
-        quantic,
-        "fetch_page_with_reader_fallback",
-        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
-    )
-
     calls = []
 
     def blocked_fetch(url: str, **kwargs):
         calls.append((url, kwargs))
-        raise HttpError("HTTP 403", status_code=403)
+        if url == event.url:
+            return f'tribe-events <a href="{ticket_url}">Bilete</a>'
+        raise HttpError(f"HTTP {status}", status_code=status)
 
     monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
 
-    enrich_event_from_ticket(event)
+    with pytest.raises(HttpError):
+        enrich_event_from_ticket(event)
 
-    assert event.date == datetime(2026, 9, 26, 20, 0)
-    assert calls == [(ticket_url, {"record_failure": False})]
+    assert event.date == datetime(2026, 9, 26, 19, 0)
+    assert calls == [
+        (event.url, {"record_failure": False}),
+        (ticket_url, {"record_failure": False}),
+    ]
+
+
+@pytest.mark.parametrize("blocked_stage", ["detail", "ticket"])
+def test_optional_detail_and_ticket_failures_do_not_record_scraper_failures(monkeypatch, blocked_stage):
+    event = Event(
+        title="Concert", artist=None, venue="Quantic",
+        date=datetime(2027, 1, 10, 19), url="https://quantic.pub/eveniment/concert/",
+        source="quantic", category="music",
+    )
+    monkeypatch.setattr(quantic, "scrape_month", lambda *args: [event])
+
+    def fetch(url, headers=None):
+        if blocked_stage == "ticket" and url == event.url:
+            return 'tribe-events <a href="https://ticketbox.ro/event/concert">Bilete</a>'
+        raise HttpError("HTTP 404", status_code=404)
+
+    monkeypatch.setattr("services.http._fetch_http", fetch)
+    reset_fetch_failures()
+    assert quantic.scrape() == [event]
+    assert get_fetch_failures() == []
+
+
+def test_required_calendar_failures_remain_recorded(monkeypatch):
+    def fetch(*args, **kwargs):
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr("services.http._fetch_http", fetch)
+    reset_fetch_failures()
+    assert quantic.scrape_month(2027, 1) == []
+    assert get_fetch_failures()

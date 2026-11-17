@@ -2,9 +2,10 @@ from datetime import datetime
 from unittest.mock import Mock
 
 from bs4 import BeautifulSoup
+import respx
 
 from scrapers.theatre import tnb
-from services.http import HttpError
+from services.http import HttpError, get_fetch_failures, reset_fetch_failures
 
 
 LIST_VIEW_HTML = """
@@ -85,3 +86,22 @@ def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
         "https://www.tnb.ro/ro/calendar?year=2026&month=10&view=list",
         expected_text="right_items", timeout=60000,
     )
+
+
+@respx.mock
+def test_scrape_month_recovers_reader_timeout_via_official_host_alias():
+    respx.get(
+        "https://r.jina.ai/https://www.tnb.ro/ro/calendar?year=2026&month=9&view=list"
+    ).respond(422, text="Request failed: Timeout was reached")
+    respx.get(
+        "https://r.jina.ai/https://tnb.ro/ro/calendar?year=2026&month=9&view=list"
+    ).respond(200, text=LIST_VIEW_HTML)
+
+    reset_fetch_failures()
+    events = tnb.scrape_month(2026, 9)
+
+    assert [(event.title, event.date) for event in events] == [
+        ("Amintiri din copilărie", datetime(2026, 9, 5, 11)),
+        ("Moroi și păpădii la Chișinău", datetime(2026, 9, 5)),
+    ]
+    assert get_fetch_failures() == []

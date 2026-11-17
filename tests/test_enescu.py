@@ -25,21 +25,21 @@ def test_scrape_includes_international_competition_events():
       </div>
     """
 
-    with patch.object(enescu, "fetch_page", side_effect=["", competition_html]) as fetch:
+    with patch.object(enescu, "fetch_page", side_effect=[
+        competition_html.replace("2027", "2020"), competition_html,
+    ]) as fetch:
         events = enescu.scrape()
 
     assert fetch.call_args_list == [
         call(
-            enescu.reader_url(enescu.FESTIVAL_EVENTS_URL),
+            enescu.FESTIVAL_EVENTS_URL,
             needs_js=False,
-            timeout=30000,
-            headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
         call(
-            enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
+            enescu.COMPETITION_EVENTS_URL,
             needs_js=False,
-            timeout=30000,
-            headers=enescu.READER_HEADERS,
+            record_failure=False,
         ),
     ]
     assert len(events) == 1
@@ -56,7 +56,8 @@ def test_reader_url_keeps_the_official_https_source():
     )
 
 
-def test_completed_competition_can_return_zero_future_events():
+@pytest.mark.parametrize("use_reader", [False, True])
+def test_completed_competition_can_return_zero_future_events(use_reader):
     completed_html = """
     <title>Evenimente</title>
     <div class="item" itemprop="blogPost">
@@ -67,15 +68,34 @@ def test_completed_competition_can_return_zero_future_events():
       <div class="concert-preview"><h2><a href="/ro/old-concert">Finală</a></h2></div>
     </div>
     """
-    with patch.object(enescu, "fetch_page", side_effect=["", completed_html]):
+    responses = [RuntimeError("403"), completed_html] if use_reader else [completed_html]
+    with patch.object(enescu, "fetch_page", side_effect=responses * 2):
         assert enescu.scrape() == []
     assert enescu.ALLOW_EMPTY_RESULTS is True
 
 
 def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
-    with patch.object(enescu, "fetch_page", side_effect=[
-        "<title>Just a moment...</title>",
-        "<title>Evenimente</title>",
-    ]):
+    with patch.object(enescu, "fetch_page", return_value="<title>Just a moment...</title>"):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_one_invalid_listing_cannot_be_hidden_by_another_listing():
+    with patch.object(enescu, "fetch_programme", side_effect=[
+        ValueError("missing programme"),
+        enescu.BeautifulSoup("", "html.parser"),
+    ]):
+        with pytest.raises(ValueError, match="missing programme"):
+            enescu.scrape()
+
+
+def test_reader_fallback_rejects_unverifiable_empty_programme():
+    with patch.object(enescu, "fetch_page", side_effect=[
+        RuntimeError("403"), "<title>Evenimente</title>",
+    ]) as fetch:
+        with pytest.raises(ValueError, match="no verifiable programme"):
+            enescu.fetch_programme(enescu.COMPETITION_EVENTS_URL)
+    assert fetch.call_args == call(
+        enescu.reader_url(enescu.COMPETITION_EVENTS_URL),
+        needs_js=False, timeout=30000, headers=enescu.READER_HEADERS,
+    )
