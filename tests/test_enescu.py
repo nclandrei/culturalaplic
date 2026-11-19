@@ -1,6 +1,7 @@
 from unittest.mock import call, patch
 
 import pytest
+from bs4 import BeautifulSoup
 
 from scrapers.music import enescu
 
@@ -79,3 +80,17 @@ def test_cloudflare_challenge_cannot_be_mistaken_for_empty_season():
     ]):
         with pytest.raises(ValueError, match="blocked"):
             enescu.scrape()
+
+
+def test_empty_official_festival_programme_is_recognized():
+    html = '<title>Program concerte</title><div class="blog program-concerte"></div>'
+    with patch.object(enescu, "fetch_page", return_value=html):
+        assert enescu.scrape() == []
+
+
+def test_dot_separated_concert_time_is_not_replaced_with_default():
+    details = BeautifulSoup('''
+        <div class="concert-day">27</div><div class="concert-month">August</div>
+        <div class="concert-year">2027</div><div class="concert-hour">18.30</div>
+    ''', "html.parser")
+    assert enescu.parse_date(details).isoformat() == "2027-08-27T18:30:00"

@@ -15,7 +15,7 @@ EVENTS_URL = COMPETITION_EVENTS_URL
 EVENTS_URLS = (FESTIVAL_EVENTS_URL, COMPETITION_EVENTS_URL)
 ALLOW_EMPTY_RESULTS = True  # An accessible, completed festival has no future shows.
 READER_BASE_URL = "https://r.jina.ai/"
-READER_HEADERS = {"X-Return-Format": "html"}
+READER_HEADERS = {"X-Return-Format": "html", "X-Engine": "direct"}
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -49,7 +49,7 @@ def parse_date(element: Tag) -> datetime | None:
 
         hour, minute = 19, 0
         if hour_el:
-            time_match = re.search(r"(\d{1,2}):(\d{2})", hour_el.get_text())
+            time_match = re.search(r"(\d{1,2})[:.](\d{2})", hour_el.get_text())
             if time_match:
                 hour = int(time_match.group(1))
                 minute = int(time_match.group(2))
@@ -131,7 +131,7 @@ def scrape() -> list[Event]:
             continue
 
         items = soup.select(".item[itemprop='blogPost']")
-        if items or "evenimente" in title.casefold():
+        if items or soup.select_one(".blog.program-concerte") or "evenimente" in title.casefold():
             valid_listings += 1
         for item in items:
             event = parse_event(item)
