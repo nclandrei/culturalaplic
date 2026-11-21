@@ -248,6 +248,18 @@ def enrich_event_from_ticket(event: Event) -> None:
         event.url,
         expected_text="tribe-events",
     )
+    # A published running order is more precise than the calendar's access time
+    # (and remains available when an external ticket vendor blocks requests).
+    soup = BeautifulSoup(detail_html, "html.parser")
+    description = soup.select_one(".tribe-events-single-event-description")
+    if description:
+        schedule = re.search(r"\bProgram\s*:\s*(.+)", description.get_text(" ", strip=True), re.I)
+        show = re.search(
+            r"\b([01]?\d|2[0-3]):([0-5]\d)\s*[–-]\s*(?!Deschiderea|Doors|Acces)\S",
+            schedule.group(1), re.I,
+        ) if schedule else None
+        if show:
+            event.date = event.date.replace(hour=int(show.group(1)), minute=int(show.group(2)))
     ticket_url = find_ticket_url(detail_html)
     if not ticket_url:
         return
@@ -261,16 +273,17 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            record_failure=False,
         )
-    except Exception:
-        if not can_use_fallback:
-            raise
-        print(
-            "Using verified Quantic ticket datetime after blocked ticket page: "
-            f"{ticket_url}"
-        )
-        event.date = verified_fallback[1]
+    except Exception as e:
+        if can_use_fallback:
+            print(
+                "Using verified Quantic ticket datetime after blocked ticket page: "
+                f"{ticket_url}"
+            )
+            event.date = verified_fallback[1]
+        else:
+            print(f"Keeping Quantic official datetime; ticket unavailable: {ticket_url}: {e}")
         return
     ticket_title = extract_ticket_title(ticket_html)
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):
@@ -458,6 +471,7 @@ def scrape() -> list[Event]:
         except Exception as e:
             print(f"Failed to verify Quantic ticket time for {event.url}: {e}")
     
+    events = [event for event in events if event.date.date() >= now.date()]
     events.sort(key=lambda e: e.date)
     
     return events

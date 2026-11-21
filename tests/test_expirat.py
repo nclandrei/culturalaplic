@@ -53,3 +53,22 @@ def test_scrape_uses_official_iabilet_feed(monkeypatch):
 
 def test_expirat_zero_results_are_monitored():
     assert expirat.MIN_EXPECTED_EVENTS == 1
+
+
+def test_scrape_follows_cards_when_listing_has_no_json_ld(monkeypatch):
+    listing = EXPIRAT_HTML.split('<script type="application/ld+json">')[0]
+    # The explicit year and price must come from the event page, not a guessed
+    # year from the listing's yearless Romanian date.
+    detail = EXPIRAT_HTML.replace('"2026-08-19"', '"2027-08-19T20:00:00+03:00"')
+    pages = {
+        expirat.SCHEDULE_URL: listing + listing,
+        "https://expirat.iabilet.ro/bilete-byron-o-triptic-electric-acustic-improv-128427/": detail,
+    }
+    monkeypatch.setattr(expirat, "fetch_page", lambda url, **kwargs: pages[url])
+
+    events = expirat.scrape()
+
+    assert len(events) == 1
+    assert events[0].title == "byron • Triptic: Electric / Acustic / Improv"
+    assert events[0].date == datetime(2027, 8, 19, 21, 30)
+    assert events[0].price == "90 RON"

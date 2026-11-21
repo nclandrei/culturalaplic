@@ -223,3 +223,54 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_unavailable_optional_ticket_keeps_calendar_without_fetch_failures(monkeypatch):
+    import httpx
+    import respx
+    from services.http import get_fetch_failures, reset_fetch_failures
+
+    event = Event(
+        title="Aephanemer", artist="Aephanemer", venue="Quantic",
+        date=datetime(2026, 11, 18, 20, 0),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic", category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+    for status in (403, 404):
+        reset_fetch_failures()
+        with respx.mock() as router:
+            router.get(ticket_url).mock(return_value=httpx.Response(status))
+            enrich_event_from_ticket(event)
+        assert event.date == datetime(2026, 11, 18, 20, 0)
+        assert get_fetch_failures() == []
+
+
+def test_blocked_ticket_uses_official_running_order_not_doors_or_headliner(monkeypatch):
+    event = Event(
+        title="DOOMNEZEU | +SHE+ | Dronisie Răsăriteanul", artist=None,
+        venue="Quantic", date=datetime(2026, 12, 15, 7, 30),
+        url="https://quantic.pub/eveniment/doomnezeu-she-dronisie-rasariteanul/",
+        source="quantic", category="music",
+    )
+    monkeypatch.setattr(
+        quantic, "fetch_page_with_reader_fallback", lambda *args, **kwargs: '''
+          <div class="tribe-events-single-event-description">
+            <strong>Program:</strong><br>19:30 – Deschiderea porților<br>
+            20:00 – <strong>Dronisie Răsăriteanul</strong><br>
+            20:40 – <strong>+SHE+</strong><br>21:30 – <strong>Doomnezeu</strong>
+          </div>
+          <a href="https://ambilet.ro/bilete/doomnezeu">Bilete</a>
+        ''',
+    )
+
+    def blocked_fetch(*args, **kwargs):
+        raise HttpError("HTTP 403", status_code=403)
+
+    monkeypatch.setattr(quantic, "fetch_page", blocked_fetch)
+    enrich_event_from_ticket(event)
+    assert event.date == datetime(2026, 12, 15, 20, 0)
