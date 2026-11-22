@@ -261,11 +261,12 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            record_failure=False,
         )
-    except Exception:
+    except Exception as e:
         if not can_use_fallback:
-            raise
+            print(f"Keeping Quantic calendar datetime; ticket page unavailable: {ticket_url}: {e}")
+            return
         print(
             "Using verified Quantic ticket datetime after blocked ticket page: "
             f"{ticket_url}"
@@ -442,13 +443,14 @@ def scrape() -> list[Event]:
     seen_urls: set[str] = set()
     
     now = datetime.now()
+    today = now.replace(hour=0, minute=0, second=0, microsecond=0)
     current_month = now.replace(day=1)
     next_month = current_month + relativedelta(months=1)
     
     for date in [current_month, next_month]:
         month_events = scrape_month(date.year, date.month)
         for event in month_events:
-            if event.url not in seen_urls:
+            if event.date >= today and event.url not in seen_urls:
                 seen_urls.add(event.url)
                 events.append(event)
 

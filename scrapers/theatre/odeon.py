@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -82,4 +83,49 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
 
 def scrape() -> list[Event]:
     """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    html = fetch_page(EVENTS_URL)
+    soup = BeautifulSoup(html, "html.parser")
+    widget = soup.select_one("script[src*='/embed/program.js']")
+    if not widget:
+        return parse_events(html)
+
+    script = fetch_page(
+        urljoin(EVENTS_URL, widget["src"]), headers={"Referer": EVENTS_URL},
+    )
+    return parse_program(script)
+
+
+def parse_program(script: str, now: datetime | None = None) -> list[Event]:
+    """Read explicit dates from the programme widget's embedded performances."""
+    match = re.search(r"\b(?:let|const|var)\s+PERFORMANCES\s*=\s*", script)
+    if not match:
+        raise ValueError("Odeon widget returned no performance data")
+    performances, _ = json.JSONDecoder().raw_decode(script[match.end():])
+    today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for performance in performances:
+        if performance.get("status") in {"cancelled", "suspended", "postponed"}:
+            continue
+        try:
+            date = datetime.fromisoformat(
+                f"{performance['date']}T{performance['startTime']}"
+            )
+        except (KeyError, ValueError):
+            continue
+        title = performance.get("title", "").strip()
+        if not title or date < today or (title, date) in seen:
+            continue
+        seen.add((title, date))
+        hall = performance.get("venue", "").strip()
+        events.append(Event(
+            title=title,
+            artist=performance.get("subtitle") or None,
+            venue=f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon",
+            date=date,
+            url=urljoin(BASE_URL, performance.get("detailsUrl") or EVENTS_URL),
+            source="odeon",
+            category="theatre",
+            price=performance.get("ticketPrices") or None,
+        ))
+    return sorted(events, key=lambda event: event.date)
