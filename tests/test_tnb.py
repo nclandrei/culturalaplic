@@ -75,7 +75,20 @@ def test_scrape_month_prefers_reader_list_view(monkeypatch):
     fallback.assert_not_called()
 
 
+def test_scrape_month_retries_transient_reader_failure(monkeypatch):
+    monkeypatch.setattr(tnb.time, "sleep", lambda seconds: None)
+    reader = Mock(side_effect=[HttpError("HTTP 422"), LIST_VIEW_HTML])
+    monkeypatch.setattr(tnb, "fetch_page", reader)
+    fallback = Mock(side_effect=AssertionError("should not fetch blocked primary"))
+    monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)
+
+    assert len(tnb.scrape_month(2026, 10)) == 2
+    assert reader.call_count == 2
+    fallback.assert_not_called()
+
+
 def test_scrape_month_retries_official_page_if_reader_fails(monkeypatch):
+    monkeypatch.setattr(tnb.time, "sleep", lambda seconds: None)
     monkeypatch.setattr(tnb, "fetch_page", Mock(side_effect=HttpError("HTTP 422")))
     fallback = Mock(return_value=LIST_VIEW_HTML)
     monkeypatch.setattr(tnb, "fetch_page_with_reader_fallback", fallback)

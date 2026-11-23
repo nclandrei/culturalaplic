@@ -1,42 +1,81 @@
 from datetime import datetime
 
-from scrapers.theatre.odeon import parse_events
+from scrapers.theatre import odeon
+from scrapers.theatre.odeon import get_data_url, parse_events
 
 
-def _row(title: str, start: str, status: str = "EventScheduled", hall: str = "Sala Studio") -> str:
-    return f'''<div class="eventon_list_event scheduled">
-      <div class="evo_event_schema"><a itemprop="url" href="/events/wrong-calendar-url"></a>
-      <meta itemprop="startDate" content="{start}+0:00"><meta itemprop="eventStatus" content="https://schema.org/{status}"></div>
-      <span class="evcal_event_title">{title}</span>
-      <span class="evcal_event_subtitle">de Autor, regia Regizor | În cadrul unui festival</span>
-      <em class="event_location_name">{hall}, Preț bilete: 60 lei Cat. I; 40 lei Cat. II.</em>
-      <a class="evo_cusmeta_btn" href="/spectacol/test/">Detalii</a>
-    </div>'''
+def _perf(title: str, date: str, time: str = "19:30", status: str = "active", venue: str = "Sala Studio") -> dict:
+    return {
+        "date": date,
+        "startTime": time,
+        "title": title,
+        "venue": venue,
+        "status": status,
+        "subtitle": "de Autor, regia Regizor",
+        "ticketPrices": "60 lei Cat. I; 40 lei Cat. II.",
+        "detailsUrl": "https://teatrul-odeon.ro/spectacol/test/",
+        "ticketUrl": "https://bilete.teatrul-odeon.ro/test",
+        "isListed": True,
+    }
 
 
-def test_parses_explicit_dates_halls_prices_and_same_title_occurrences():
-    html = _row("Pescărușul | 14 +", "2026-10-2T19:30") + _row(
-        "Pescărușul | 14 +", "2026-12-31T18:00", hall="Sala Majestic"
+def test_data_url_comes_from_the_embedded_widget():
+    page = (
+        '<script src="https://projects.doimih.net/hub/api/embed/program.js?'
+        'tenant=tenant-teatrul-odeon&amp;showFilter=false&amp;api_key=k" async=""></script>'
     )
-    events = parse_events(html, datetime(2026, 9, 27))
-    assert [(event.title, event.date) for event in events] == [
-        ("Pescărușul", datetime(2026, 10, 2, 19, 30)),
-        ("Pescărușul", datetime(2026, 12, 31, 18, 0)),
+    assert get_data_url(page) == (
+        "https://projects.doimih.net/hub/api/embed/program-data?"
+        "tenant=tenant-teatrul-odeon&showFilter=false&api_key=k"
+    )
+
+
+def test_parses_dates_halls_prices_and_same_title_occurrences():
+    data = {"performances": [
+        _perf("Pescărușul", "2026-10-02"),
+        _perf("Pescărușul", "2026-12-31", "18:00", venue="Sala Majestic"),
+        _perf("Tur ghidat", "2026-10-03", "15:00", venue=""),
+    ]}
+    events = parse_events(data, datetime(2026, 9, 27))
+    assert [(event.title, event.date, event.venue) for event in events] == [
+        ("Pescărușul", datetime(2026, 10, 2, 19, 30), "Teatrul Odeon - Sala Studio"),
+        ("Tur ghidat", datetime(2026, 10, 3, 15, 0), "Teatrul Odeon"),
+        ("Pescărușul", datetime(2026, 12, 31, 18, 0), "Teatrul Odeon - Sala Majestic"),
     ]
-    assert events[0].venue == "Teatrul Odeon - Sala Studio"
     assert events[0].price == "60 lei Cat. I; 40 lei Cat. II"
     assert events[0].artist == "de Autor, regia Regizor"
     assert events[0].url == "https://teatrul-odeon.ro/spectacol/test/"
 
 
-def test_skips_past_cancelled_duplicate_and_malformed_entries_without_rollover():
-    future = _row("Macbeth | 14 +", "2026-10-3T19:00")
-    html = (
-        _row("Old", "2025-12-31T19:00")
-        + _row("Cancelled", "2026-10-4T19:00", "EventCancelled")
-        + _row("Broken", "not-a-date") + future + future
-    )
-    events = parse_events(html, datetime(2026, 9, 27))
+def test_skips_past_cancelled_duplicate_and_malformed_entries():
+    future = _perf("Macbeth", "2026-10-03", "19:00")
+    data = {"performances": [
+        _perf("Old", "2025-12-31"),
+        _perf("Cancelled", "2026-10-04", status="cancelled"),
+        _perf("Suspended", "2026-10-05", status="suspended"),
+        _perf("Broken", "not-a-date"),
+        future,
+        future,
+    ]}
+    events = parse_events(data, datetime(2026, 9, 27))
     assert [(event.title, event.date) for event in events] == [
         ("Macbeth", datetime(2026, 10, 3, 19, 0))
     ]
+
+
+def test_scrape_sends_official_referer_to_feed(monkeypatch):
+    calls = []
+
+    def fake_fetch_page(url, **kwargs):
+        calls.append((url, kwargs))
+        if url == odeon.EVENTS_URL:
+            return '<script src="https://hub.example/api/embed/program.js?tenant=t&amp;api_key=k"></script>'
+        return '{"success": true, "performances": [{"date": "2099-01-02", "startTime": "19:00", "title": "Macbeth", "venue": "Sala Majestic", "status": "active"}]}'
+
+    monkeypatch.setattr(odeon, "fetch_page", fake_fetch_page)
+    events = odeon.scrape()
+    assert calls[1] == (
+        "https://hub.example/api/embed/program-data?tenant=t&api_key=k",
+        {"headers": {"Referer": odeon.EVENTS_URL}},
+    )
+    assert [event.title for event in events] == ["Macbeth"]

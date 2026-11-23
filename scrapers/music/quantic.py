@@ -22,6 +22,13 @@ TICKET_HOSTS = (
     "bilet.ro",
 )
 BUCHAREST_TZ = ZoneInfo("Europe/Bucharest")
+# Ticketing sites such as AmBilet reject non-browser user agents with HTTP 403.
+TICKET_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/131.0 Safari/537.36"
+    ),
+}
 VERIFIED_TICKET_OVERRIDES = {
     (
         "https://www.ambilet.ro/bilete/"
@@ -261,6 +268,7 @@ def enrich_event_from_ticket(event: Event) -> None:
     try:
         ticket_html = fetch_page(
             ticket_url,
+            headers=TICKET_HEADERS,
             record_failure=not can_use_fallback,
         )
     except Exception:
@@ -445,10 +453,11 @@ def scrape() -> list[Event]:
     current_month = now.replace(day=1)
     next_month = current_month + relativedelta(months=1)
     
+    today = now.replace(hour=0, minute=0, second=0, microsecond=0)
     for date in [current_month, next_month]:
         month_events = scrape_month(date.year, date.month)
         for event in month_events:
-            if event.url not in seen_urls:
+            if event.date >= today and event.url not in seen_urls:
                 seen_urls.add(event.url)
                 events.append(event)
 

@@ -1,4 +1,5 @@
 import re
+import time
 from datetime import datetime
 
 from bs4 import BeautifulSoup
@@ -14,6 +15,8 @@ from services.http import (
 
 BASE_URL = "https://www.tnb.ro"
 CALENDAR_URL = f"{BASE_URL}/ro/calendar"
+READER_ATTEMPTS = 3
+READER_RETRY_DELAY_SECONDS = 5
 
 MONTHS = {
     "ian": 1, "feb": 2, "mar": 3, "apr": 4, "mai": 5, "iun": 6,
@@ -107,12 +110,15 @@ def parse_day(day_elem: BeautifulSoup) -> list[Event]:
     return events
 
 
-def scrape_month(year: int, month: int) -> list[Event]:
-    """Scrape events for a specific month."""
-    events: list[Event] = []
-    
-    url = get_calendar_url(year, month)
-    try:
+def fetch_reader_calendar(url: str) -> str | None:
+    """Fetch the list view through the reader, retrying its transient 422s.
+
+    The official site times out from CI runners, so the reader is the only
+    reliable path; it intermittently fails to fetch the slow origin.
+    """
+    for attempt in range(READER_ATTEMPTS):
+        if attempt:
+            time.sleep(READER_RETRY_DELAY_SECONDS * attempt)
         try:
             html = fetch_page(
                 f"{HTML_READER_BASE_URL}{url}",
@@ -120,9 +126,21 @@ def scrape_month(year: int, month: int) -> list[Event]:
                 timeout=60000,
                 record_failure=False,
             )
-            if "right_items" not in html:
-                raise HttpError("TNB reader returned no calendar list")
         except HttpError:
+            continue
+        if "right_items" in html:
+            return html
+    return None
+
+
+def scrape_month(year: int, month: int) -> list[Event]:
+    """Scrape events for a specific month."""
+    events: list[Event] = []
+    
+    url = get_calendar_url(year, month)
+    try:
+        html = fetch_reader_calendar(url)
+        if html is None:
             html = fetch_page_with_reader_fallback(
                 url, expected_text="right_items", timeout=60000,
             )
