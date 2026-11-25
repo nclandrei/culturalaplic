@@ -9,7 +9,12 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 from models import Event
-from services.http import fetch_page, fetch_page_with_reader_fallback
+from services.http import (
+    HTML_READER_BASE_URL,
+    HTML_READER_HEADERS,
+    fetch_page,
+    fetch_page_with_reader_fallback,
+)
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -258,20 +263,28 @@ def enrich_event_from_ticket(event: Event) -> None:
         verified_fallback
         and ticket_title_matches(event.title, verified_fallback[0])
     )
+    # Ticket pages only refine the calendar time, so their failures are not
+    # scraper failures: blocked pages go through the reader, and dead links
+    # keep the official calendar datetime.
     try:
-        ticket_html = fetch_page(
-            ticket_url,
-            record_failure=not can_use_fallback,
-        )
+        ticket_html = fetch_page(ticket_url, record_failure=False)
     except Exception:
-        if not can_use_fallback:
-            raise
-        print(
-            "Using verified Quantic ticket datetime after blocked ticket page: "
-            f"{ticket_url}"
-        )
-        event.date = verified_fallback[1]
-        return
+        if can_use_fallback:
+            print(
+                "Using verified Quantic ticket datetime after blocked ticket page: "
+                f"{ticket_url}"
+            )
+            event.date = verified_fallback[1]
+            return
+        try:
+            ticket_html = fetch_page(
+                f"{HTML_READER_BASE_URL}{ticket_url}",
+                headers=HTML_READER_HEADERS,
+                record_failure=False,
+            )
+        except Exception as e:
+            print(f"Keeping Quantic calendar time; ticket page unavailable: {e}")
+            return
     ticket_title = extract_ticket_title(ticket_html)
     if not ticket_title or not ticket_title_matches(event.title, ticket_title):
         return

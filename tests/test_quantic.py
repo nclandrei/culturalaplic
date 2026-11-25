@@ -223,3 +223,47 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
     assert calls == [(ticket_url, {"record_failure": False})]
+
+
+def test_blocked_ticket_page_uses_reader_without_failing_the_scrape(monkeypatch):
+    event = Event(
+        title="Aephanemer @Quantic",
+        artist="Aephanemer",
+        venue="Quantic",
+        date=datetime(2026, 11, 18, 19, 0),
+        url="https://quantic.pub/eveniment/aephanemer/",
+        source="quantic",
+        category="music",
+    )
+    ticket_url = "https://www.ambilet.ro/bilete/concert-aephanemer-quantic"
+    monkeypatch.setattr(
+        quantic,
+        "fetch_page_with_reader_fallback",
+        lambda *args, **kwargs: f'<a href="{ticket_url}">Bilete</a>',
+    )
+    calls = []
+
+    def fetch(url: str, **kwargs):
+        calls.append((url, kwargs.get("record_failure")))
+        if url == ticket_url:
+            raise HttpError("HTTP 403", status_code=403)
+        return """<script type="application/ld+json">
+          {"@type":"Event","name":"Aephanemer @Quantic",
+           "startDate":"2026-11-18T20:00:00"}</script>"""
+
+    monkeypatch.setattr(quantic, "fetch_page", fetch)
+
+    enrich_event_from_ticket(event)
+
+    assert event.date == datetime(2026, 11, 18, 20, 0)
+    assert calls == [
+        (ticket_url, False),
+        (f"https://r.jina.ai/{ticket_url}", False),
+    ]
+    # A dead link keeps the calendar time instead of raising.
+    monkeypatch.setattr(
+        quantic, "fetch_page",
+        lambda *a, **k: (_ for _ in ()).throw(HttpError("HTTP 404", status_code=404)),
+    )
+    enrich_event_from_ticket(event)
+    assert event.date == datetime(2026, 11, 18, 20, 0)
