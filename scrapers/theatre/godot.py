@@ -4,20 +4,19 @@ from datetime import datetime, time
 from bs4 import BeautifulSoup
 
 from models import Event
-from services.http import HTML_READER_BASE_URL, HTML_READER_HEADERS, fetch_page
+from services.http import fetch_page
 
 BASE_URL = "https://www.teatrulgodot.ro"
 EVENTS_URL = f"{BASE_URL}/spectacole/"
+# The site serves a SiteGround bot challenge first; wait for the real markup.
+LISTING_SELECTOR = ".show-item"
+DETAIL_SELECTOR = ".show-info-box, .item-spectacol-details"
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
     "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
     "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
 }
-
-
-def reader_url(url: str) -> str:
-    return f"{HTML_READER_BASE_URL}{url}"
 
 
 def parse_date(day_text: str, month_text: str, year_text: str) -> datetime | None:
@@ -46,7 +45,7 @@ def parse_date(day_text: str, month_text: str, year_text: str) -> datetime | Non
 def parse_detail_time(html: str) -> time | None:
     """Parse the explicit ``Ora:`` value from a performance detail page."""
     soup = BeautifulSoup(html, "html.parser")
-    info_box = soup.select_one(".show-info-box, .item-spectacol-details")
+    info_box = soup.select_one(DETAIL_SELECTOR)
     if not info_box:
         return None
 
@@ -138,16 +137,17 @@ def scrape() -> list[Event]:
         
         try:
             html = fetch_page(
-                reader_url(url),
-                headers=HTML_READER_HEADERS,
+                url,
+                needs_js=True,
                 timeout=60000,
+                wait_selector=LISTING_SELECTOR,
             )
         except Exception as e:
             print(f"Failed to fetch Teatrul Godot page {page}: {e}")
             break
         
         soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select(".show-item .about-col")
+        cards = soup.select(f"{LISTING_SELECTOR} .about-col")
         
         if not cards:
             break
@@ -158,9 +158,10 @@ def scrape() -> list[Event]:
                 key = (event.title, event.date.date().isoformat())
                 if key not in seen:
                     detail_html = fetch_page(
-                        reader_url(event.url),
-                        headers=HTML_READER_HEADERS,
+                        event.url,
+                        needs_js=True,
                         timeout=60000,
+                        wait_selector=DETAIL_SELECTOR,
                     )
                     start_time = parse_detail_time(detail_html)
                     if not start_time:

@@ -11,6 +11,11 @@ RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
 MAX_RETRIES = 3
 HTML_READER_BASE_URL = "https://r.jina.ai/"
 HTML_READER_HEADERS = {"X-Return-Format": "html"}
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+)
+BROWSER_HEADERS = {"User-Agent": BROWSER_USER_AGENT}
 _fetch_failures: list[str] = []
 
 
@@ -39,7 +44,11 @@ class HttpError(Exception):
 def _is_retryable_httpx(e: BaseException) -> bool:
     """Check if httpx exception is retryable."""
     if isinstance(e, httpx.HTTPStatusError):
-        return e.response.status_code in RETRYABLE_STATUS_CODES
+        status = e.response.status_code
+        # The HTML reader answers 422 when its upstream load fails transiently.
+        if status == 422 and str(e.request.url).startswith(HTML_READER_BASE_URL):
+            return True
+        return status in RETRYABLE_STATUS_CODES
     if isinstance(e, (httpx.ConnectError, httpx.ReadTimeout, httpx.ConnectTimeout)):
         return True
     return False
@@ -98,15 +107,18 @@ def _fetch_js(
         scroll_item_selector: Optional selector to count items for scroll completion
     """
     with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = (
-            browser.new_page(
-                extra_http_headers=headers,
-                timezone_id="Europe/Bucharest",
-            )
-            if headers
-            else browser.new_page(timezone_id="Europe/Bucharest")
+        # Hide headless automation markers that bot challenges such as
+        # SiteGround's "One moment, please..." page reject.
+        browser = p.chromium.launch(
+            args=["--disable-blink-features=AutomationControlled"],
         )
+        page_options = {
+            "timezone_id": "Europe/Bucharest",
+            "user_agent": BROWSER_USER_AGENT,
+        }
+        if headers:
+            page_options["extra_http_headers"] = headers
+        page = browser.new_page(**page_options)
         response = page.goto(url, timeout=timeout, wait_until="domcontentloaded")
         status = getattr(response, "status", None)
         if isinstance(status, int) and status >= 400:

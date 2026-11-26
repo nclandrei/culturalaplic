@@ -107,6 +107,70 @@ def parse_json_ld_event(
     )
 
 
+ROMANIAN_MONTHS = {
+    "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
+    "mai": 5, "iunie": 6, "iulie": 7, "august": 8,
+    "septembrie": 9, "octombrie": 10, "noiembrie": 11, "decembrie": 12,
+}
+
+
+def parse_card_event(card, now: datetime | None = None) -> Event | None:
+    """Parse an iaBilet whitelabel card when the page has no JSON-LD."""
+    link = card.select_one(".desc a[href]") or card.select_one("a[href]")
+    title_elem = card.select_one("h1")
+    date_location = card.select_one(".date-location")
+    if not link or not title_elem or not date_location:
+        return None
+
+    title = title_elem.get_text(" ", strip=True)
+    text = " ".join(date_location.get_text(" ", strip=True).split())
+    match = re.search(
+        r"\b(\d{1,2})\s+([a-zăâîșț]+)(?:\s+'(\d{2}))?",
+        text.casefold(),
+    )
+    if not title or not match:
+        return None
+    month = ROMANIAN_MONTHS.get(match.group(2))
+    if not month:
+        return None
+
+    now = now or datetime.now()
+    if match.group(3):
+        year = 2000 + int(match.group(3))
+    else:
+        year = now.year
+        if (month, int(match.group(1))) < (now.month, now.day):
+            year += 1
+    time_match = re.search(r"\bora\s+(\d{1,2}):(\d{2})", text) or re.search(
+        r"\bacces de la\s+(\d{1,2}):(\d{2})", text
+    )
+    hour, minute = (
+        (int(time_match.group(1)), int(time_match.group(2)))
+        if time_match else (20, 0)
+    )
+    try:
+        event_date = datetime(year, month, int(match.group(1)), hour, minute)
+    except ValueError:
+        return None
+
+    venue_elem = date_location.select_one("p")
+    venue = venue_elem.get_text(" ", strip=True).split(",")[0] if venue_elem else "Expirat"
+    path = urlparse(urljoin(BASE_URL, link.get("href", ""))).path
+    return Event(
+        title=title,
+        artist=(
+            title_elem.strong.get_text(" ", strip=True)
+            if title_elem.strong else extract_artist_from_title(title)
+        ),
+        venue=venue or "Expirat",
+        date=event_date,
+        url=urljoin(BASE_URL, path),
+        source="expirat",
+        category="music",
+        price=None,
+    )
+
+
 def scrape() -> list[Event]:
     """Fetch upcoming events from Expirat."""
     events: list[Event] = []
@@ -130,6 +194,13 @@ def scrape() -> list[Event]:
         if event and event.url not in seen_urls:
             seen_urls.add(event.url)
             events.append(event)
+
+    if not events:
+        for card in soup.select('[data-event-list="item"]'):
+            event = parse_card_event(card)
+            if event and event.url not in seen_urls:
+                seen_urls.add(event.url)
+                events.append(event)
 
     events.sort(key=lambda event: event.date)
     return events

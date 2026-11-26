@@ -149,6 +149,7 @@ class TestHttpRetry:
 
         browser.new_page.assert_called_once_with(
             timezone_id="Europe/Bucharest",
+            user_agent=http_service.BROWSER_USER_AGENT,
         )
 
     def test_js_fetch_rejects_http_error_pages(self):

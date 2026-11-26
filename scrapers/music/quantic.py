@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from rapidfuzz import fuzz
 
 from models import Event
-from services.http import fetch_page, fetch_page_with_reader_fallback
+from services.http import BROWSER_HEADERS, fetch_page, fetch_page_with_reader_fallback
 
 BASE_URL = "https://quantic.pub"
 EVENTS_URL = f"{BASE_URL}/evenimente/"
@@ -259,9 +259,12 @@ def enrich_event_from_ticket(event: Event) -> None:
         and ticket_title_matches(event.title, verified_fallback[0])
     )
     try:
+        # Ticket pages only refine the calendar's explicit start time, so a
+        # dead or blocked third-party ticket link must not fail the scrape.
         ticket_html = fetch_page(
             ticket_url,
-            record_failure=not can_use_fallback,
+            headers=BROWSER_HEADERS,
+            record_failure=False,
         )
     except Exception:
         if not can_use_fallback:

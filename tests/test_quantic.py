@@ -222,4 +222,6 @@ def test_verified_ambilet_block_uses_exact_source_checked_datetime(monkeypatch):
     enrich_event_from_ticket(event)
 
     assert event.date == datetime(2026, 9, 26, 20, 0)
-    assert calls == [(ticket_url, {"record_failure": False})]
+    assert calls == [
+        (ticket_url, {"headers": quantic.BROWSER_HEADERS, "record_failure": False})
+    ]

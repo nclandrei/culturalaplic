@@ -26,11 +26,10 @@ def test_scrape_uses_the_performance_time_from_the_detail_page(monkeypatch):
     """
 
     def fetch(url: str, **kwargs) -> str:
-        if url == godot.reader_url(godot.EVENTS_URL):
+        assert kwargs.get("needs_js") is True
+        if url == godot.EVENTS_URL:
             return listing_html
-        if url == godot.reader_url(
-            f"{godot.BASE_URL}/spectacole/vino-veritas-30/"
-        ):
+        if url == f"{godot.BASE_URL}/spectacole/vino-veritas-30/":
             return detail_html
         raise AssertionError(f"Unexpected URL: {url}")
 
