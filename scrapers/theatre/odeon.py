@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 from urllib.parse import urljoin
@@ -9,6 +10,13 @@ from services.http import fetch_page
 
 BASE_URL = "https://teatrul-odeon.ro"
 EVENTS_URL = f"{BASE_URL}/programul-teatrului-odeon-pe-zile/"
+SHOP_URL = "https://bilete.teatrul-odeon.ro/"
+SHOP_API_URL = f"{SHOP_URL}api/shop/shows"
+# Public tenant key the ticket shop's own JavaScript sends with every request.
+SHOP_API_HEADERS = {
+    "T": "73b5407e-d8ef-4c3a-9a59-f15430386000",
+    "Accept": "application/json",
+}
 
 
 def _clean_title(value: str) -> str:
@@ -80,6 +88,38 @@ def parse_events(html: str, now: datetime | None = None) -> list[Event]:
     return sorted(events, key=lambda event: event.date)
 
 
+def parse_shop_shows(data: list[dict], now: datetime | None = None) -> list[Event]:
+    """Parse the official ticket shop API, which lists every on-sale performance."""
+    today = (now or datetime.now()).replace(hour=0, minute=0, second=0, microsecond=0)
+    events: list[Event] = []
+    seen: set[tuple[str, datetime]] = set()
+    for show in data:
+        title = " ".join(str(show.get("name") or "").split())
+        if not title:
+            continue
+        author = " ".join(str(show.get("author") or "").split()) or None
+        url = show.get("detailsUrl") or SHOP_URL
+        for room in show.get("rooms") or []:
+            hall = room.get("name")
+            venue = f"Teatrul Odeon - {hall}" if hall else "Teatrul Odeon"
+            for representation in room.get("representations") or []:
+                try:
+                    event_date = datetime.fromisoformat(str(representation.get("date")))
+                except ValueError:
+                    continue
+                event_date = event_date.replace(tzinfo=None)
+                if event_date < today or (title, event_date) in seen:
+                    continue
+                seen.add((title, event_date))
+                events.append(Event(title, author, venue, event_date, url, "odeon", "theatre", None))
+    return sorted(events, key=lambda event: event.date)
+
+
 def scrape() -> list[Event]:
-    """Fetch upcoming performances from Teatrul Odeon's official calendar."""
-    return parse_events(fetch_page(EVENTS_URL))
+    """Fetch upcoming performances from Teatrul Odeon's calendar or ticket shop."""
+    events = parse_events(fetch_page(EVENTS_URL))
+    if events:
+        return events
+    # The WordPress calendar is often empty ("se va anunța ulterior") while the
+    # official ticket shop already sells the month's performances.
+    return parse_shop_shows(json.loads(fetch_page(SHOP_API_URL, headers=SHOP_API_HEADERS)))

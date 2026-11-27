@@ -1,3 +1,4 @@
+import json
 import re
 from datetime import datetime
 
@@ -8,6 +9,8 @@ from services.http import fetch_page
 
 BASE_URL = "https://www.rezervari.cuibulartistilor.ro"
 EVENTS_URL = BASE_URL + "/program"
+OCCURRENCES_API_URL = "https://rezervari.cuibulartistilor.ro/api/events/list/occurences"
+ALLOW_EMPTY_RESULTS = True  # Only after the booking API confirms no scheduled shows.
 
 ROMANIAN_MONTHS = {
     "ianuarie": 1, "februarie": 2, "martie": 3, "aprilie": 4,
@@ -156,6 +159,16 @@ def scrape() -> list[Event]:
                 seen.add(key)
                 events.append(event)
     
+    if not events:
+        # An empty listing is valid only when the booking API confirms it;
+        # otherwise the markup changed and the scraper must fail loudly.
+        occurrences = json.loads(fetch_page(OCCURRENCES_API_URL)).get("result")
+        if occurrences != []:
+            raise ValueError(
+                f"Cuibul Artistilor markup yielded no events but API lists "
+                f"{len(occurrences) if isinstance(occurrences, list) else 'unknown'} occurrence(s)"
+            )
+
     events.sort(key=lambda e: e.date)
     
     return events
